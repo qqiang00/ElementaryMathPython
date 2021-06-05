@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-初等数学与Python程序设计（讲义，每周更新）
+初等数学与Python程序设计（讲义）
 ==========================================
 
 欢迎来到《初等数学与Python程序设计》（讲义）。
