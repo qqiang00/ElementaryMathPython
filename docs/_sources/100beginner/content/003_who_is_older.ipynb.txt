@@ -1,0 +1,534 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第3讲 谁的年龄大"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "periodic-register",
+   "metadata": {},
+   "source": [
+    "### Problem\n",
+    "Screen and Keyboard are two main input&output devices of a computer. They are a bit like human's mouth and ears. We learned how to print out the data to screen. How does our program get data from keyboard? How can our program print out different information according to different data received from keyboard?\n",
+    "\n",
+    "屏幕和键盘是一个计算机的主要的输入/输出设备。他们有点像人类的嘴巴和眼睛。我们已经学习了如何把数据输出显示到屏幕。我们的程序如何能从键盘获取信息呢？我们的程序如何能根据不同的输入给出不同的输出呢？"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "latest-contamination",
+   "metadata": {},
+   "source": [
+    "### Objective 学习目标\n",
+    "\n",
+    "- Learn two data types: `string` and `int` 学习两种数据类型：\"字符串\"和\"整数型\"\n",
+    "- Learn to receive data from keyboard during runtime 学习在程序运行时从键盘获得数据\n",
+    "- Convert data from string to int if possible 在可能的情况下把数据从字符串转化为数字\n",
+    "- Use `if` to control program to provide different output 使用if控制程序输出不同的内容\n",
+    "- Write multiple lines of code in one cell and learn indentation in Python coding 在一个单元格中书写多行代码并学习Python代码中的缩进格式\n",
+    "    1. start with `if`, `else` key words to start a condition control statement 使用`if`，`else`关键词来引导一句条件控制代码\n",
+    "    2. use `==` to check equal 使用`==`来判断其左右两边是否相等\n",
+    "    3. use `:` at the end of a `if`, `else` statement to start the code block that belongs to this statement 使用冒号`:`来结束这条条件控制语句并引导其管辖的多行代码。\n",
+    "    4. codes belong to the `if`, or `else` statement should indent 4 letters compare with the `if` or `else` statement. 与`if`或`else`语句行相比较，属于`if`或`else`管辖的代码应该有4个字母长度的缩进。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "animated-batch",
+   "metadata": {},
+   "source": [
+    "### Math\n",
+    "\n",
+    "- Compare numbers using $\\gt$ $\\lt$ $\\ne$ $\\leq$ $\\geq$ 比较数的大小\n",
+    "- Integer 整数, Decimal 小数"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "sorted-furniture",
+   "metadata": {},
+   "source": [
+    "### Python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "direct-azerbaijan",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'str'>\n",
+      "<class 'str'>\n",
+      "<class 'int'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Each data belongs to a Type (class) 每一个数据都属于某一个类型(类)\n",
+    "# We've already met two different typs of data: string and int\n",
+    "# 我们已经接触了两种数据类型：字符串和整数\n",
+    "# Python automatically infer the type of a data\n",
+    "# Python会自动推断一个数据的类型\n",
+    "# Use type() to get a type of data\n",
+    "# 使用 Type() 来获取一个数据的类型\n",
+    "Yunzi_name = \"Yunzi\"\n",
+    "print(type(Yunzi_name))\n",
+    "Yunzi_age = \"10\"\n",
+    "print(type(Yunzi_age))\n",
+    "Yunzi_age2 = 10\n",
+    "print(type(Yunzi_age2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "breeding-hawaii",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "str"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Yunzi_name = \"Yunzi\"\n",
+    "type(Yunzi_name)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "dutch-musician",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "str"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Yunzi_age = \"10\"\n",
+    "type(Yunzi_age)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "advisory-madrid",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "int"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Yunzi_age2 = 10\n",
+    "type(Yunzi_age2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "speaking-flashing",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "int"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "number1 = 0\n",
+    "type(number1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "falling-congress",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "int"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "number2 = -2\n",
+    "type(number2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "informational-woman",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "float"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "number3 = 0.0\n",
+    "type(number3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "enabling-allen",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "age_sophie_str = input(\"Please input Sophie's age:\")\n",
+    "age_sophie = int(age_sophie)\n",
+    "print(\"Sophie's age is: \", age_sophie)\n",
+    "age_tony = input(\"Please input Tony's age:\")\n",
+    "age_tony = int(age_tony)\n",
+    "print(\"Tony's age is: \", age_tony)\n",
+    "\n",
+    "if age_sophie > age_tony:\n",
+    "    print(\"Sophie is older than Tony.\")\n",
+    "elif age_sophie == age_tony:\n",
+    "    print(\"Sophie and Tony are same old.\")\n",
+    "else:\n",
+    "    print(\"Tony is older than Sophie.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "damaged-crime",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "age_sophie_1 = input(\"Please input Sophie's age:\")\n",
+    "print(type(age_sophie_str))\n",
+    "age_sophie = int(age_sophie_1)\n",
+    "print(type(age_sophie))\n",
+    "print(type(age_sophie_1))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "correct-impact",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"how old are you?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "caring-fundamentals",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "input(\"how old are you?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "upper-survival",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "age = input(\"How old are you?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "secure-abuse",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(age)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "miniature-advocate",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(\"You are\", age, \"yeas old.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "transsexual-driver",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "age_celine = input(\"How are you?\")\n",
+    "print(\"You are\", age_celine, \"yeas old.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "subjective-spirit",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mood = input(\"How are you?\")\n",
+    "print(\"you are {}.\".format(mood))\n",
+    "# good\n",
+    "# not good."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "several-bankruptcy",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mood = input(\"How are you?\")\n",
+    "print(\"you are {}.\".format(mood))\n",
+    "if mood == \"good\": # 如果\n",
+    "    print(\"I am good too.\")\n",
+    "    print(\"I am happy to see you are good.\")\n",
+    "else: # 其它情况\n",
+    "    print(\"Why are you not good?\")\n",
+    "    print(\"Didn't you have your lunch?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "pretty-oregon",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mood = input(\"How are you?\")\n",
+    "print(\"you are {}.\".format(mood))\n",
+    "if mood == \"good\" or mood == \"Good\" or mood == \"GOOD\": # 如果\n",
+    "    print(\"I am good too.\")\n",
+    "    print(\"I am happy to see you are good.\")\n",
+    "else: # 其它情况\n",
+    "    print(\"Why are you not good?\")\n",
+    "    print(\"Didn't you have your lunch?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bacterial-damages",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "mood = input(\"How are you?\")\n",
+    "print(\"you are {}.\".format(mood))\n",
+    "if mood in [\"good\", \"Good\", \"GOOD\"]:\n",
+    "    print(\"I am good too.\")\n",
+    "    print(\"I am happy to see you are good.\")\n",
+    "else: # 其它情况\n",
+    "    print(\"Why are you not good?\")\n",
+    "    print(\"Didn't you have your lunch?\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bizarre-assurance",
+   "metadata": {},
+   "source": [
+    "### Did you know?\n",
+    "- all data in computer is represented by 1 and 0. 计算机中的所有数据都是用1和0来表示的。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {},
+   "source": [
+    "### Exercise\n",
+    "1. Write multi-line of Python codes in one cell to calculate and print out the sum of two integers that you input from the keyboard. 在一个代码单元格里书写多行Python代码来计算你从键盘输入的两个整数的和并将和打印输出\n",
+    "Requirements: 要求:\n",
+    "  - the codes you write receive two number strings from keyboard 你的代码能够从键盘接受两个数字字符串\n",
+    "  - convert these two strings to two Integer numbers, assign them to two variables. The names of the two Integer variables can be decided as you like 将这两个字符串转化为两个整数型数字并将其赋值给两个变量，变量名可以根据你自己的喜好来设定\n",
+    "  - calculate the sum of the two Integer variables, assign the result to a new Variable named `result` 计算这两个整型变量的和，并将结果赋值给一个叫`result`的变量\n",
+    "  - print out the type of the `result` variable 打印输出变量`result`的数据类型\n",
+    "  - display the result on screen with a readable sentence. 打印输出一个通俗易懂的句子来显示你计算得到的结果\n",
+    "  \n",
+    "  Run and test 5 times your codes with the following inputs (num1, num2) for each test. Observe whether the result is equal to the Sum for each test 分别使用下表中的num1,num2的值作为键盘输入运行并测试你的代码共计5次，观察结果是否与对应的Sum一样\n",
+    "  \n",
+    "  **Your should run the same code on all test data; that being said, you may not change the codes between each run.** \n",
+    "  **你应该用同样的代码来运行所有的测试数据，也就是说，你不应该在两次测试间隙修改你的代码**\n",
+    "  \n",
+    "  | num1        |     num2     |     Output         |\n",
+    "  | ----------- |:------------:| ------------------:|\n",
+    "  | 12          |     12       | The sum is 24      |\n",
+    "  | 18          |     14       | The sum is 32      |\n",
+    "  | 0           |     4        | The sum is 4       |\n",
+    "  | 1091        |     0        | The sum is 1091    |\n",
+    "  | 0           |     0        | The sum is 0       |\n",
+    "  "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "occasional-eight",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "boring-milton",
+   "metadata": {},
+   "source": [
+    "2. Write multi-line of Python codes in one cell to calculate and print out the perimeter and area of a rectagle with the length and width provided by keyboard. 在一个代码单元格里书写多行Python代码来计算一个长方形的周长和面积，确定这个长方形的长和宽从键盘输入得到。\n",
+    "Requirements: 要求:\n",
+    "  - the codes you write receive two number strings from keyboard indicating the length and width of a rectangle 你的代码能够从键盘接受两个数字字符串分别表示长方形的长和宽\n",
+    "  - convert these two strings to two Integer numbers, assign them to two variables. The names of the length and width should be easy to understand 将这两个字符串转化为两个整数型数字并将其赋值给表示长和宽的两个变量，要求这两个变量名直观易看懂\n",
+    "  - Check whether the length and width provided can form a rectangle. If not, print out \"Not a rectangle\"; otherwise, continue the following steps\n",
+    "  - calculate the perimiter and the area of this rectangle, assign the result to `perimeter` and `area` variable 计算这个长方形的周长和面积，并将结果分别赋值给名为`perimeter`和`area`的变量\n",
+    "  - print out the type of the `perimeter`和`area` variables 打印输出变量`perimeter`和`area`的数据类型\n",
+    "  - display the result on screen with a readable sentence. 打印输出一个通俗易懂的句子来显示你计算得到的结果\n",
+    "\n",
+    "  Run and test 5 times your codes with the following inputs (length, width) for each test. Observe whether the results are equal to the Perimeter and Area for each test 分别使用下表中的length和width的值作为键盘输入运行并测试你的代码共计5次，观察结果是否与对应的Perimiter和Area值一样\n",
+    "  \n",
+    "  **Your should run the same code on all test data; that being said, you may not change the codes between each run.** \n",
+    "  **你应该用同样的代码来运行所有的测试数据，也就是说，你不应该在两次测试间隙修改你的代码**\n",
+    "  \n",
+    "  Hint: use `if` to control the output\n",
+    "  提示：使用`if` 来控制输出\n",
+    "  \n",
+    "  | length    |  width     |        output                   |\n",
+    "  | --------- |:----------:|:-------------------------------:|\n",
+    "  |   12      |   12       | perimeter is: 48, area is: 144  |\n",
+    "  |   18      |   14       | perimeter is: 48, area is: 144  |\n",
+    "  |   0       |   4        |      Not a rectangle           |\n",
+    "  |   1091    |   0        |      Not a rectangle           |\n",
+    "  |   0       |   0        |      Not a rectangle           |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "civilian-audience",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "length_str = input(\"length:\")\n",
+    "width_str = input(\"wdith: \")\n",
+    "length = int(length_str)\n",
+    "width = int(width_str)\n",
+    "# length is either 长度 只能是 <= 0 或者 >0 2种可能性\n",
+    "# widht is either  宽度 只能是 <=0 或者 > 0 2种可能性\n",
+    "\n",
+    "# 任意给定一个长和宽形成的组合（与0比较）有几种可能性:4种可能性\n",
+    "#   长            宽            能组成长方形吗？       分组名\n",
+    "#   >0            >0              YES                   1\n",
+    "#   >0            <=0             NO                    2\n",
+    "#   <=0           >0              NO                    3\n",
+    "#   <=0           <=0             NO                    4\n",
+    "\n",
+    "# Example 例子\n",
+    "#   长            宽             第几组\n",
+    "#    12           12              1\n",
+    "#    0            14              3\n",
+    "#    0            0               4\n",
+    "#    11           0               2\n",
+    "#    9            0               2\n",
+    "#    0            1               3\n",
+    "#    11           7               1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "civic-volleyball",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "length_A = input(\"length you input:\")\n",
+    "length = int(length_A)\n",
+    "print(type(length))\n",
+    "print(type(length_A))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
