@@ -384,7 +384,7 @@
     "min_dividend, max_dividend = 1, 100           # 声明最小和最大被除数\n",
     "cur_dividend = min_dividend                   # 生命当前正在分析的被除数\n",
     "#TODO： add code here to declare variables that store the result\n",
-    "#       添加代码生命一些变量存储结果\n",
+    "#       添加代码声明一些变量存储结果\n",
     "while cur_dividend <= max_dividend:           # while 循环起始及条件\n",
     "    remainder1 = cur_dividend % divisor1      # 计算第一个余数\n",
     "    if remainder1 == 0:                       # 判断第一个余数是否为0，为0表示整除\n",
