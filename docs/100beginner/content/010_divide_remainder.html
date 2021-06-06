@@ -315,15 +315,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="预备知识">
 <h2>预备知识<a class="headerlink" href="#预备知识" title="永久链接至标题">¶</a></h2>
-<div class="section" id="1.模拟试商法求解除法算式:-24-\div-5的商和余数">
-<h3>1.模拟试商法求解除法算式: <span class="math notranslate nohighlight">\(24 \div 5\)</span>的商和余数<a class="headerlink" href="#1.模拟试商法求解除法算式:-24-\div-5的商和余数" title="永久链接至标题">¶</a></h3>
+<div class="section" id="1.模拟试商法求解除法算式:-23-\div-5的商和余数">
+<h3>1.模拟试商法求解除法算式: <span class="math notranslate nohighlight">\(23 \div 5\)</span>的商和余数<a class="headerlink" href="#1.模拟试商法求解除法算式:-23-\div-5的商和余数" title="永久链接至标题">¶</a></h3>
 <p>修改下面程序的错误：</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">5</span>
+<span></span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">5</span>
 <span class="n">shang</span><span class="p">,</span> <span class="n">yushu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span>
 
 <span class="k">while</span> <span class="n">shang</span> <span class="o">*</span> <span class="n">chushu</span> <span class="o">&lt;=</span> <span class="n">beichushu</span><span class="p">:</span>
@@ -331,6 +331,7 @@ div.rendered_html tbody tr:hover {
     <span class="n">shang</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># TODO： add code here to debug</span>
+<span class="n">shang</span> <span class="o">-=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> / </span><span class="si">{}</span><span class="s2"> = </span><span class="si">{}</span><span class="s2"> ... </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span><span class="p">,</span> <span class="n">shang</span><span class="p">,</span> <span class="n">yushu</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">yushu</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">能被</span><span class="si">{}</span><span class="s2">整除&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span><span class="p">))</span>
@@ -344,20 +345,39 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-24 / 5 = 5 ... 4
-24不能被5整除
+23 / 5 = 4 ... 3
+23不能被5整除
 </pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># step      4: shang  4:yushu   shang*chushu &lt;= beichushu  5:yushu    6:shang</span>
+<span class="c1"># 0(before)    0      None         /                           /          /</span>
+<span class="c1"># 1            0      None         0&lt;=23 Yes (True)         23         1</span>
+<span class="c1"># 2            1      23           5&lt;=23     True           18         2</span>
+<span class="c1"># 3            2      18           10&lt;=23 (True)            13         3</span>
+<span class="c1"># 4            3      13           True                     8          4</span>
+<span class="c1"># 5            4      8            True                     3          5</span>
+<span class="c1"># 6            5      3            5*5&lt;=23? No(False)       /          /</span>
+
+<span class="n">shang</span> <span class="o">-=</span> <span class="mi">1</span>   <span class="c1"># shang == 4</span>
+<span class="n">yushu</span>        <span class="c1"># 3</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="2.余数总是比除数小。">
 <h3>2.余数总是比除数小。<a class="headerlink" href="#2.余数总是比除数小。" title="永久链接至标题">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">5</span>
-<span class="n">shang</span><span class="p">,</span> <span class="n">yushu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">beichushu</span>
+<span></span><span class="n">beichushu</span><span class="p">,</span> <span class="n">chushu</span> <span class="o">=</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">shang</span><span class="p">,</span> <span class="n">yushu</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">beichushu</span> <span class="o">-</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">chushu</span>
 <span class="k">while</span> <span class="n">yushu</span> <span class="o">&gt;=</span> <span class="n">chushu</span><span class="p">:</span>
     <span class="n">shang</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">yushu</span> <span class="o">=</span> <span class="n">beichushu</span> <span class="o">-</span> <span class="n">shang</span> <span class="o">*</span> <span class="n">chushu</span>
@@ -375,9 +395,35 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-24 / 5 = 4 ... 4
-24不能被5整除
+23 / 5 = 4 ... 3
+23不能被5整除
 </pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># before loop 循环开始前: shang: 0, yushu = 23</span>
+
+<span class="c1"># in loop 在循环中</span>
+<span class="c1"># step   line3:yushu    yushu &gt;= chushu?     line4:shang    line5:yushu</span>
+<span class="c1"># 1</span>
+<span class="c1"># 2</span>
+<span class="c1"># 3</span>
+<span class="c1"># 4</span>
+<span class="c1"># 5</span>
+<span class="c1"># 6</span>
+<span class="c1"># 7</span>
+
+<span class="c1"># out of loop 离开循环后</span>
+<span class="c1"># line7:</span>
+<span class="c1"># line8:</span>
+<span class="c1"># line9:</span>
+<span class="c1"># line10:</span>
+<span class="c1"># line11:</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="3.新的运算符//和%">
@@ -449,7 +495,7 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">divisor1</span><span class="p">,</span> <span class="n">divisor2</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span>                    <span class="c1"># 声明两个除数</span>
 <span class="n">min_dividend</span><span class="p">,</span> <span class="n">max_dividend</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span>           <span class="c1"># 声明最小和最大被除数</span>
-<span class="n">cur_dividend</span> <span class="o">=</span> <span class="n">min_dividend</span>                   <span class="c1"># 生命当前正在分析的被除数</span>
+<span class="n">cur_dividend</span> <span class="o">=</span> <span class="n">min_dividend</span>                   <span class="c1"># 声明当前正在分析的被除数</span>
 <span class="k">while</span> <span class="n">cur_dividend</span> <span class="o">&lt;=</span> <span class="n">max_dividend</span><span class="p">:</span>           <span class="c1"># while 循环起始及条件</span>
 
     <span class="n">remainder1</span> <span class="o">=</span> <span class="n">cur_dividend</span> <span class="o">%</span> <span class="n">divisor1</span>      <span class="c1"># 计算第一个余数</span>
@@ -634,7 +680,7 @@ div.rendered_html tbody tr:hover {
 <li><a class="reference internal" href="#问题描述">问题描述</a></li>
 <li><a class="reference internal" href="#数学背景">数学背景</a></li>
 <li><a class="reference internal" href="#预备知识">预备知识</a><ul>
-<li><a class="reference internal" href="#1.模拟试商法求解除法算式:-24-\div-5的商和余数">1.模拟试商法求解除法算式: <span class="math notranslate nohighlight">\(24 \div 5\)</span>的商和余数</a></li>
+<li><a class="reference internal" href="#1.模拟试商法求解除法算式:-23-\div-5的商和余数">1.模拟试商法求解除法算式: <span class="math notranslate nohighlight">\(23 \div 5\)</span>的商和余数</a></li>
 <li><a class="reference internal" href="#2.余数总是比除数小。">2.余数总是比除数小。</a></li>
 <li><a class="reference internal" href="#3.新的运算符//和%">3.新的运算符<code class="docutils literal notranslate"><span class="pre">//</span></code>和<code class="docutils literal notranslate"><span class="pre">%</span></code></a></li>
 <li><a class="reference internal" href="#4.使用英文的变量名重写上面的代码">4.使用英文的变量名重写上面的代码</a></li>

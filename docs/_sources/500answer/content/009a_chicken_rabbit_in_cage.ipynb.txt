@@ -39,9 +39,7 @@
    "cell_type": "code",
    "execution_count": 1,
    "id": "ca3b8e59",
-   "metadata": {
-    "scrolled": false
-   },
+   "metadata": {},
    "outputs": [
     {
      "name": "stdout",
@@ -187,14 +185,7 @@
    "id": "419a48be",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "# TODO: your answers are here\n",
-    "#\n",
-    "#\n",
-    "\n",
-    "# TODO: your codes are here\n",
-    "#"
-   ]
+   "source": []
   },
   {
    "cell_type": "markdown",

@@ -57,14 +57,14 @@
    "id": "841e9239",
    "metadata": {},
    "source": [
-    "#### 1.模拟试商法求解除法算式: $24 \\div 5$的商和余数\n",
+    "#### 1.模拟试商法求解除法算式: $23 \\div 5$的商和余数\n",
     "\n",
     "   修改下面程序的错误："
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 10,
    "id": "5b22a1cb-69e8-4d67-a337-eaf431db91df",
    "metadata": {},
    "outputs": [
@@ -72,13 +72,13 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "24 / 5 = 5 ... 4\n",
-      "24不能被5整除\n"
+      "23 / 5 = 4 ... 3\n",
+      "23不能被5整除\n"
      ]
     }
    ],
    "source": [
-    "beichushu, chushu = 24, 5\n",
+    "beichushu, chushu = 23, 5\n",
     "shang, yushu = 0, None\n",
     "\n",
     "while shang * chushu <= beichushu:\n",
@@ -86,11 +86,32 @@
     "    shang += 1\n",
     "\n",
     "# TODO： add code here to debug\n",
+    "shang -= 1\n",
     "print(\"{} / {} = {} ... {}\".format(beichushu, chushu, shang, yushu))\n",
     "if yushu == 0:\n",
     "    print(\"{}能被{}整除\".format(beichushu, chushu))\n",
     "else:\n",
     "    print(\"{}不能被{}整除\".format(beichushu, chushu))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f39efcaa-e327-4d77-984c-b67b2616c618",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# step      4: shang  4:yushu   shang*chushu <= beichushu  5:yushu    6:shang\n",
+    "# 0(before)    0      None         /                           /          /\n",
+    "# 1            0      None         0<=23 Yes (True)         23         1\n",
+    "# 2            1      23           5<=23     True           18         2\n",
+    "# 3            2      18           10<=23 (True)            13         3\n",
+    "# 4            3      13           True                     8          4\n",
+    "# 5            4      8            True                     3          5\n",
+    "# 6            5      3            5*5<=23? No(False)       /          /\n",
+    "\n",
+    "shang -= 1   # shang == 4\n",
+    "yushu        # 3"
    ]
   },
   {
@@ -103,7 +124,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 11,
    "id": "57701df6-d48d-4644-a95b-3b3d73e58494",
    "metadata": {},
    "outputs": [
@@ -111,14 +132,14 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "24 / 5 = 4 ... 4\n",
-      "24不能被5整除\n"
+      "23 / 5 = 4 ... 3\n",
+      "23不能被5整除\n"
      ]
     }
    ],
    "source": [
-    "beichushu, chushu = 24, 5\n",
-    "shang, yushu = 0, beichushu\n",
+    "beichushu, chushu = 23, 5\n",
+    "shang, yushu = 0, beichushu - 0 * chushu\n",
     "while yushu >= chushu:\n",
     "    shang += 1\n",
     "    yushu = beichushu - shang * chushu\n",
@@ -128,6 +149,33 @@
     "    print(\"{}能被{}整除\".format(beichushu, chushu))\n",
     "else:\n",
     "    print(\"{}不能被{}整除\".format(beichushu, chushu))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2d38d501-6700-4a56-ab8d-b341d9c76609",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# before loop 循环开始前: shang: 0, yushu = 23\n",
+    "\n",
+    "# in loop 在循环中\n",
+    "# step   line3:yushu    yushu >= chushu?     line4:shang    line5:yushu\n",
+    "# 1\n",
+    "# 2\n",
+    "# 3\n",
+    "# 4\n",
+    "# 5\n",
+    "# 6\n",
+    "# 7\n",
+    "\n",
+    "# out of loop 离开循环后\n",
+    "# line7:\n",
+    "# line8:\n",
+    "# line9:\n",
+    "# line10:\n",
+    "# line11:"
    ]
   },
   {
@@ -254,7 +302,7 @@
    "source": [
     "divisor1, divisor2 = 6, 10                    # 声明两个除数 \n",
     "min_dividend, max_dividend = 1, 100           # 声明最小和最大被除数\n",
-    "cur_dividend = min_dividend                   # 生命当前正在分析的被除数\n",
+    "cur_dividend = min_dividend                   # 声明当前正在分析的被除数\n",
     "while cur_dividend <= max_dividend:           # while 循环起始及条件\n",
     "    \n",
     "    remainder1 = cur_dividend % divisor1      # 计算第一个余数\n",
