@@ -1,0 +1,364 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第012讲 找出一个正整数的所有因数"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d12f05dd",
+   "metadata": {},
+   "source": [
+    "### 问题描述"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3bc70ff7-5953-409f-93d2-6f6fcb8ad34f",
+   "metadata": {},
+   "source": [
+    "如果一个整数A除以另一个整数B，得到的商为Q且余数为0，那么称整数B为整数A的一个因素，同时商Q也是整数A的一个因数。例如，在除法算式：$15\\div3=5 \\cdots 0$中,被除数15除以除数3，商为5，余数为0，那么3和5都分别为15的一个因数。不难得出，任何一个比1大的整数都至少有两个因数，分别为1和它自己；同时也不难得出一个数的因数不可能比这个数大。请编写程序找出整数120的所有因数。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "animated-batch",
+   "metadata": {},
+   "source": [
+    "### 数学背景"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e57be6ca-c534-4529-8186-63d2b1547683",
+   "metadata": {},
+   "source": [
+    "1. 因数的概念"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "sorted-furniture",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### 预备知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "841e9239",
+   "metadata": {},
+   "source": [
+    "```python\n",
+    "print(\"I am learning programming.\")\n",
+    "print('I am learning programming.')\n",
+    "1+2+3+4+5+6+7+8+9+10\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d55f37d9",
+   "metadata": {},
+   "source": [
+    "### 编程求解"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "18d65641-3d30-4bea-961b-72f63ca391db",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]\n"
+     ]
+    }
+   ],
+   "source": [
+    "num = 120\n",
+    "possible_factor = 1\n",
+    "factors = []\n",
+    "while possible_factor <= num:\n",
+    "    if num % possible_factor == 0:\n",
+    "        factors.append(possible_factor)\n",
+    "    \n",
+    "    possible_factor += 1\n",
+    "        \n",
+    "print(factors)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "latest-contamination",
+   "metadata": {},
+   "source": [
+    "### 知识点小结"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afb3f674",
+   "metadata": {},
+   "source": [
+    "- Understand what a string is (理解什么是字符串)\n",
+    "- Be able to represent a string in Python (在Python中表示一个字符串)\n",
+    "- Be able to display a string on screen (能够在屏幕上显示一个字符串)\n",
+    "- Use Python as a calculator (把Python当成一个计算器使用)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "rural-branch",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "urban-glance",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bizarre-assurance",
+   "metadata": {},
+   "source": [
+    "### 计算机小知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "92100f08",
+   "metadata": {},
+   "source": [
+    "- Nowadays Computer is still not as smart as human is, but it calculates much much faster than human. 当今时代计算机的聪明程度仍然没法和人比，但是它的计算速度比人要快得多得多。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### 练习"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "de4cfdc5",
+   "metadata": {},
+   "source": [
+    "1. Use `print` to print out exactly the following sentences(including the final period). 使用`print`语句打印出完全一样的下面的句子（包括末尾的句号）。\n",
+    "    - I love China and Canada.\n",
+    "    - I like Python programming language, and I like Math too.\n",
+    "    - Our teacher's name is Qiang.\n",
+    "    - \"CN\" is the abbreviation of China.\n",
+    "    - The abbreviation of Canda is \"CAD\".\n",
+    "    \n",
+    "   The code for printing out first sentence is already given as an example:\n",
+    "   作为示例第一个句子已经给出答案：\n",
+    "   ```python\n",
+    "      print(\"I love China and Canada.\")\n",
+    "   ```\n",
+    "   Please write your codes for the rest sentences in below cells (one sentence in each cell).\n",
+    "   请在下面几个小格子里编写代码输出剩余的句子（每一个单元格输出一个句子）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "weighted-mortality",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "worst-hierarchy",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "constitutional-fairy",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "killing-boxing",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dependent-brook",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cathedral-pursuit",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "2. In the following cells, write codes to calculate the following Arithmetic expressions (one cell for each):\n",
+    "   在下面的单元格中，编写代码计算下面的算术表达式（每一个式子使用一个单元格）:\n",
+    "   \n",
+    "    - $1+3+5+7+9+11+13+15+17+19$\n",
+    "    - $10-9+8-7+6-5+4-3+2-1$\n",
+    "    - $3.14\\times 2\\times 5$\n",
+    "    - $2\\times(6+9)$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "controlled-masters",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "steady-wagner",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "colonial-edinburgh",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "clean-italian",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "controversial-sleeve",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "3. The length and width of a rectangle are 18cm and 13cm respectively. What the perimeter and the area of this rectangle? write only two lines of codes to provide the answer directly, and an extra line of code to print out the result like the follow sentence:\n",
+    "   \n",
+    "   <i>\"The perimeter of this rectangle is xxx cm, and its area is xxx cm*cm.\"</i>\n",
+    "   \n",
+    "   Replace the xxx by your results. \n",
+    "   \n",
+    "   一个长方形的长和宽分别是18厘米和13厘米，它的周长和面积分别是多少？通过只编写两行代码给出答案，并使用额外一行代码输出如下格式的一句话：\n",
+    "   \n",
+    "   <i>“这个长方形的周长是 xxx cm，它的面积是 xxx cm*cm。”</i>\n",
+    "   \n",
+    "   用你得到的结果替代上面的 xxx。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "floppy-audience",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "contemporary-indonesia",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "healthy-auditor",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
