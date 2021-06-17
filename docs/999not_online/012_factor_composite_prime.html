@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第012讲 找出一个正整数的所有因数 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第012讲 找出所有能整除120的整数 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -33,7 +33,7 @@
           <a href="../genindex.html" title="总目录"
              accesskey="I">索引</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">初等数学与Python程序设计(讲义)  文档</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">第012讲 找出一个正整数的所有因数</a></li> 
+        <li class="nav-item nav-item-this"><a href="">第012讲 找出所有能整除120的整数</a></li> 
       </ul>
     </div>  
 
@@ -290,43 +290,44 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第012讲-找出一个正整数的所有因数">
-<h1>第012讲 找出一个正整数的所有因数<a class="headerlink" href="#第012讲-找出一个正整数的所有因数" title="永久链接至标题">¶</a></h1>
-<div class="section" id="问题描述">
-<h2>问题描述<a class="headerlink" href="#问题描述" title="永久链接至标题">¶</a></h2>
-<p>如果一个整数A除以另一个整数B，得到的商为Q且余数为0，那么称整数B为整数A的一个因素，同时商Q也是整数A的一个因数。例如，在除法算式：<span class="math notranslate nohighlight">\(15\div3=5 \cdots 0\)</span>中,被除数15除以除数3，商为5，余数为0，那么3和5都分别为15的一个因数。不难得出，任何一个比1大的整数都至少有两个因数，分别为1和它自己；同时也不难得出一个数的因数不可能比这个数大。请编写程序找出整数120的所有因数。</p>
+<div class="section" id="第012讲-找出所有能整除120的整数">
+<h1>第012讲 找出所有能整除120的整数<a class="headerlink" href="#第012讲-找出所有能整除120的整数" title="永久链接至标题">¶</a></h1>
+<div class="section" id="Problem-问题描述">
+<h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
+<p>Please write program to find all integers that can divide 120 with no remainder and put them into a list named <code class="docutils literal notranslate"><span class="pre">factors</span></code>. Print out the total number of the factors and check whether 24 is in the factor list.</p>
+<p>请编写程序找出所有能整除120的整数并把他们存放到一个名为<code class="docutils literal notranslate"><span class="pre">factors</span></code>的列表型变量中。打印输出因数的总的数量，并检查24是否在列表中。</p>
 </div>
-<div class="section" id="数学背景">
-<h2>数学背景<a class="headerlink" href="#数学背景" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>因数的概念</p></li>
+<div class="section" id="Math-Background-数学背景">
+<h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><strong>Factor</strong> if the Q is the quotien of an integer A divided by another integer B, and the remainder is 0, we say that B is a factor of A; meanwhile, Q is also a factor of A. For example,<span class="math notranslate nohighlight">\(15\div3=5 \cdots 0\)</span> we say both 3 and 5 are factors of the integer 15. It is obvious that any integer greather than 1 has at least two factors: 1 and the integer itself. It is also obvious that factors is always less then or equal to the integer.</div>
+<div class="line"><strong>因数</strong> 如果一个整数A除以另一个整数B，得到的商为Q且余数为0，那么称整数B为整数A的一个因数，同时商Q也是整数A的一个因数。例如，在除法算式：<span class="math notranslate nohighlight">\(15\div3=5 \cdots 0\)</span>中,被除数15除以除数3，商为5，余数为0，那么3和5都分别为15的一个因数。不难得出，任何一个比1大的整数都至少有两个因数，分别为1和它自己；同时也不难得出一个数的因数不可能比这个数大。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Composite Number</strong>: If an integer has an extra factor other than 1 and itself, this integer is a composite number.</div>
+<div class="line"><strong>合数</strong>: 如果一个整数除了1和自身还有其他额外的因数，那么这个整数是一个合数。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>Prime Number</strong>: If an integer has only the two factors, it is called as a prime number.</div>
+<div class="line"><strong>质数</strong>: 如果一个整数只有1和它自身两个因数，那么它是一个质数。</div>
+</div>
+</li>
 </ol>
 </div>
-<div class="section" id="预备知识">
-<h2>预备知识<a class="headerlink" href="#预备知识" title="永久链接至标题">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am learning programming.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am learning programming.&#39;</span><span class="p">)</span>
-<span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="mi">6</span><span class="o">+</span><span class="mi">7</span><span class="o">+</span><span class="mi">8</span><span class="o">+</span><span class="mi">9</span><span class="o">+</span><span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="编程求解">
-<h2>编程求解<a class="headerlink" href="#编程求解" title="永久链接至标题">¶</a></h2>
+<div class="section" id="Prerequisites-预备知识">
+<h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
+<div class="section" id="1.-Declare-an-empty（without-any-element）list-variable-声明一个空（没有任何元素）的列表">
+<h3>1. Declare an empty（without any element）list variable 声明一个空（没有任何元素）的列表<a class="headerlink" href="#1.-Declare-an-empty（without-any-element）list-variable-声明一个空（没有任何元素）的列表" title="永久链接至标题">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">possible_factor</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">while</span> <span class="n">possible_factor</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">possible_factor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">possible_factor</span><span class="p">)</span>
-
-    <span class="n">possible_factor</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+<span></span><span class="n">classmates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -335,59 +336,373 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]
+[]
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="知识点小结">
-<h2>知识点小结<a class="headerlink" href="#知识点小结" title="永久链接至标题">¶</a></h2>
+<div class="section" id="2.-add-an-element-to-(the-end-of)-a-list-往列表(最后）添加一个元素">
+<h3>2. add an element to (the end of) a list 往列表(最后）添加一个元素<a class="headerlink" href="#2.-add-an-element-to-(the-end-of)-a-list-往列表(最后）添加一个元素" title="永久链接至标题">¶</a></h3>
+<p>The element of a list can be either an Integer or a String. It can even be many other data types， which we will learn in future.</p>
+<p>列表的元素既可以是整数型数据，也可以是字符串型数据，还可以是将来要学习的其他一些类型的数据。</p>
+<p>use <code class="docutils literal notranslate"><span class="pre">append</span></code> method add a string <code class="docutils literal notranslate"><span class="pre">&quot;Sophie&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">classmates</span></code> list. <code class="docutils literal notranslate"><span class="pre">.</span></code> is an operator indicating that method <code class="docutils literal notranslate"><span class="pre">append</span></code> is applied on the list variable <code class="docutils literal notranslate"><span class="pre">classmates</span></code>. The method needs to receive an argument indicating the element that will be added into the tail of the list.</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">append</span></code>方法往<code class="docutils literal notranslate"><span class="pre">classmates</span></code>列表中添加一个字符串<code class="docutils literal notranslate"><span class="pre">&quot;Sophie&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code> 是一个操作符，表明方法<code class="docutils literal notranslate"><span class="pre">append</span></code>正应用在<code class="docutils literal notranslate"><span class="pre">classmates</span></code>这个列表型变量上。该方法需要接受那个将要被添加到列表末尾的元素作为参数。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Sophie&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;]
+</pre></div></div>
+</div>
+<p>Continue to add more students to the class</p>
+<p>继续往班级同学列表里添加更多的学生</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Tony&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;, &#39;Tony&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;, &#39;Tony&#39;, &#39;Jason&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Yunzi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;, &#39;Tony&#39;, &#39;Jason&#39;, &#39;Yunzi&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Yunzi&#39;s Daddy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;, &#39;Tony&#39;, &#39;Jason&#39;, &#39;Yunzi&#39;, &#34;Yunzi&#39;s Daddy&#34;]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="2.-remove-an-element-from-a-list-从列表中删除一个元素">
+<h3>2. remove an element from a list 从列表中删除一个元素<a class="headerlink" href="#2.-remove-an-element-from-a-list-从列表中删除一个元素" title="永久链接至标题">¶</a></h3>
+<p>use <code class="docutils literal notranslate"><span class="pre">remove</span></code> method to remove “Yunzi’s Daddy” from the <code class="docutils literal notranslate"><span class="pre">classmates</span></code> list. <code class="docutils literal notranslate"><span class="pre">remove</span></code> method need to receive an argument indicating the element value that need to be removed. If this value doesn’t exist in the list, the program will report an error.</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">remove</span></code>方法从<code class="docutils literal notranslate"><span class="pre">classmates</span></code>列表中移除<code class="docutils literal notranslate"><span class="pre">&quot;Yunzi's</span> <span class="pre">Daddy&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">remove</span></code>方法需要接受将要被删除出列表的那个元素的值，这个值如果在列表中不存在，那么程序会报错。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Yunzi&#39;s Daddy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;Sophie&#39;, &#39;Tony&#39;, &#39;Jason&#39;, &#39;Yunzi&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">classmates</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Sophie&#39;s Daddy&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classmates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-24-1fc37ac8da55&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>classmates<span class="ansi-blue-fg">.</span>remove<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Sophie&#39;s Daddy&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>classmates<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: list.remove(x): x not in list
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="3.-Exercise-练习">
+<h3>3. Exercise 练习<a class="headerlink" href="#3.-Exercise-练习" title="永久链接至标题">¶</a></h3>
+<p>declare an empty list variable with the name you prefer, put at least 5 the animals you like into the list one by one, then remove those animals that you have already seen in real life(not on TV or other video channels) from the list one by one, keey only those you like but haven’t seen them face to face. Introduce these animals to your classmates.</p>
+<p>用一个你喜欢的名字声明一个列表变量，往这个变量中一个接一个的添加至少5个你喜欢的动物，然后把在你已经亲眼见过(不是在电视或其他视频频道商）动物一个接一个的从列表中删除，只留下哪些你喜欢但还没有亲眼见过的动物们。向你的同学们介绍你列出的这些动物。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="4.-check-whether-a-value-is-in-a-list-检查一个值是否存在列表中">
+<h3>4. check whether a value is in a list 检查一个值是否存在列表中<a class="headerlink" href="#4.-check-whether-a-value-is-in-a-list-检查一个值是否存在列表中" title="永久链接至标题">¶</a></h3>
+<p>To check whether a value is in a list, or an element of the list, we can use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to look at each element in the list, compare the values. If two values are same, then we can say the value is in the list, or the value is one of the element of the list. For example, the following codes check whether a string <code class="docutils literal notranslate"><span class="pre">&quot;Jason&quot;</span></code> is in the <code class="docutils literal notranslate"><span class="pre">classmates</span></code> list:</p>
+<p>为了检查一个值是否在一个列表中，或者说是否是列表的一个元素，我们可以使用一个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环来查看这个列表中的每一个元素，比较他们的值。如果两个值相同，那么我们就可以说这个值存在于这个列表中，或者说这个值是列表的一个元素。例如，要查看“Jason”是否在<code class="docutils literal notranslate"><span class="pre">classmates</span></code>列表中，我们可以使用下面的代码：</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;Jason&quot;</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">classmates</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;checking value at index: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">classmates</span><span class="p">[</span><span class="n">index</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found target in the list, inde is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+checking value at index: 0
+checking value at index: 1
+checking value at index: 2
+found target in the list, inde is: 2
+checking value at index: 3
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="5.-break(stop)-the-while-loop-when-find-the-value-当找到值后打破（停止）循环">
+<h3>5. break(stop) the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop when find the value 当找到值后打破（停止）循环<a class="headerlink" href="#5.-break(stop)-the-while-loop-when-find-the-value-当找到值后打破（停止）循环" title="永久链接至标题">¶</a></h3>
+<p>If the requirement is to only ask you to tell whether the value exists in the list, once you find one value which is equal to the target value, you can directly makde an positive statement, saying that the value is in the list. In this case, it is not necessary to look at all the other elements in the list. To break the loop, we can use <code class="docutils literal notranslate"><span class="pre">break</span></code> statement in our codes. Look at the following codes with a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement added and compare the difference of the output with previous one:</p>
+<p>如果要求仅仅是询问有一个值是否存在一个列表中，一旦我们在列表中发现这个元素，我们就可以作出肯定的判断，认为这个值存在于列表中。在这种情况下，就可以提前终止循环，没有必要再去检查列表中剩余没有看过的元素了。为了终止循环，我们可以在代码中添加一行<code class="docutils literal notranslate"><span class="pre">break</span></code>语句。请看下面加入了<code class="docutils literal notranslate"><span class="pre">break</span></code>语句的代码：</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;Jason&quot;</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">classmates</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;checking value at index: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">classmates</span><span class="p">[</span><span class="n">index</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;found target in the list, inde is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+        <span class="k">break</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="6.-Another-easy-wat-to-check-whether-a-value-is-in-a-list-另一个更简单的方式来检查一个值是否存在列表中">
+<h3>6. Another easy wat to check whether a value is in a list 另一个更简单的方式来检查一个值是否存在列表中<a class="headerlink" href="#6.-Another-easy-wat-to-check-whether-a-value-is-in-a-list-另一个更简单的方式来检查一个值是否存在列表中" title="永久链接至标题">¶</a></h3>
+<p>We can also use the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> to check wheter a value is in a list like following expression. If the result of the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>， it means a variable(value) is indeed in the list; if the expression result is <code class="docutils literal notranslate"><span class="pre">False</span></code>, it means the value is not an element of the list. When we execute this cell, it gives an output <code class="docutils literal notranslate"><span class="pre">True</span></code>, which means there is a value <code class="docutils literal notranslate"><span class="pre">&quot;Tony&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">classmates</span></code> list.</p>
+<p>我们也像下面的这行代码一样使用关键词<code class="docutils literal notranslate"><span class="pre">in</span></code>来检查一个变量（值）是否存在一个list中。如果表达式的值（输出）是<code class="docutils literal notranslate"><span class="pre">True</span></code>，则意味着要检查的变量（值）存在于列表中，反之则表示不存在。当我们执行下面的这行代码后，它会输出<code class="docutils literal notranslate"><span class="pre">True</span></code>，意味着<code class="docutils literal notranslate"><span class="pre">&quot;Tony&quot;</span></code>是列表<code class="docutils literal notranslate"><span class="pre">classmates</span></code>的一个元素。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="s2">&quot;Tony&quot;</span> <span class="ow">in</span> <span class="n">classmates</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<p>Since the above code is an expression that output either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, we can use it in a <code class="docutils literal notranslate"><span class="pre">if</span></code> condition code block like the following so that the programe prints out a more friendly output or complete some other tasks for each specific condition.</p>
+<p>由于上面这行代码是一个输出结果要么是<code class="docutils literal notranslate"><span class="pre">True</span></code>要么是<code class="docutils literal notranslate"><span class="pre">False</span></code>的表达式，我们也可以像下面那样把它放在<code class="docutils literal notranslate"><span class="pre">if</span></code>引导的条件语句块中，让程序给出一个更友好的输出或者根据不同的条件完成一些额外的人物。</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">if</span> <span class="s2">&quot;Tony&quot;</span> <span class="ow">in</span> <span class="n">classmates</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;Tony&#39; is an element of classmates list&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;Tony&#39; is not in the classmates list&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Tony&#39; is an element of classmates list
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Solution-Codes-编程求解">
+<h2>Solution Codes 编程求解<a class="headerlink" href="#Solution-Codes-编程求解" title="永久链接至标题">¶</a></h2>
+<p>Compare the two solutions, and tell the differences. How many loops have the programs expeirenced respectively? Can you make the loop tables for each solution?</p>
+<p>比较两个解决方案，说出其中的差别。两个解决方案中的while循环各经历了几次循环？针对每一个解决方案，你能写出那个表示循环的表格吗？</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution 1 解决方案1</span>
+<span class="n">target_num</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">num_checking</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">num_checking</span> <span class="o">&lt;=</span> <span class="n">target_num</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">target_num</span> <span class="o">%</span> <span class="n">num_checking</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_checking</span><span class="p">)</span>
+
+    <span class="n">num_checking</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;factors are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> factors&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">)))</span>
+
+<span class="n">element</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="k">if</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">factors</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">factors</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+factors are: [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]
+16 factors
+24 is in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution 2 解决方案2</span>
+<span class="n">target_num</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">num_checking</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">quotien</span> <span class="o">=</span> <span class="n">target_num</span>
+
+<span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">num_checking</span> <span class="o">&lt;</span> <span class="n">quotien</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">target_num</span> <span class="o">%</span> <span class="n">num_checking</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">quotien</span> <span class="o">=</span> <span class="n">target_num</span> <span class="o">//</span> <span class="n">num_checking</span>
+        <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_checking</span><span class="p">)</span>
+        <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quotien</span><span class="p">)</span>
+
+    <span class="n">num_checking</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;factors are: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> factors&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">)))</span>
+
+<span class="n">element</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="k">if</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">factors</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">factors</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+factors are: [1, 120, 2, 60, 3, 40, 4, 30, 5, 24, 6, 20, 8, 15, 10, 12]
+16 factors
+24 is in [1, 120, 2, 60, 3, 40, 4, 30, 5, 24, 6, 20, 8, 15, 10, 12]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Summary-知识点小结">
+<h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>Understand what a string is (理解什么是字符串)</p></li>
-<li><p>Be able to represent a string in Python (在Python中表示一个字符串)</p></li>
-<li><p>Be able to display a string on screen (能够在屏幕上显示一个字符串)</p></li>
-<li><p>Use Python as a calculator (把Python当成一个计算器使用)</p></li>
+<li><p>学习操作列表型变量两个常见的方法<code class="docutils literal notranslate"><span class="pre">append</span></code>和<code class="docutils literal notranslate"><span class="pre">remove</span></code></p></li>
+<li><p>列表变量的元素可以是整数类型，也可以是字符串类型，还可以是其它类型</p></li>
+<li><p>如何判断一个变量（值）是否存在于一个list中：使用while循环或使用关键词<code class="docutils literal notranslate"><span class="pre">in</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>提前终止循环</p></li>
+<li><p>复习列表型变量的<code class="docutils literal notranslate"><span class="pre">len</span></code>方法</p></li>
 </ul>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="计算机小知识">
 <h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>Nowadays Computer is still not as smart as human is, but it calculates much much faster than human. 当今时代计算机的聪明程度仍然没法和人比，但是它的计算速度比人要快得多得多。</p></li>
+<li><p>暂缺</p></li>
 </ul>
 </div>
-<div class="section" id="练习">
-<h2>练习<a class="headerlink" href="#练习" title="永久链接至标题">¶</a></h2>
+<div class="section" id="Assignments-作业">
+<h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">print</span></code> to print out exactly the following sentences(including the final period). 使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句打印出完全一样的下面的句子（包括末尾的句号）。</p>
-<ul class="simple">
-<li><p>I love China and Canada.</p></li>
-<li><p>I like Python programming language, and I like Math too.</p></li>
-<li><p>Our teacher’s name is Qiang.</p></li>
-<li><p>“CN” is the abbreviation of China.</p></li>
-<li><p>The abbreviation of Canda is “CAD”.</p></li>
-</ul>
-<p>The code for printing out first sentence is already given as an example: 作为示例第一个句子已经给出答案：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love China and Canada.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Please write your codes for the rest sentences in below cells (one sentence in each cell). 请在下面几个小格子里编写代码输出剩余的句子（每一个单元格输出一个句子）。</p>
+<li><p>create an empty list with the variable name <code class="docutils literal notranslate"><span class="pre">my_friends</span></code>, use <code class="docutils literal notranslate"><span class="pre">append</span></code> method to add at least 5 of your friend names to this list, then use the method <code class="docutils literal notranslate"><span class="pre">remove</span></code> to remove one or several of your friend names from the list. Each time after you add or remove a friend name, print out the whole <code class="docutils literal notranslate"><span class="pre">my_friends</span></code> list and its length.</p>
+<p>创建一个空的列表，变量名设为<code class="docutils literal notranslate"><span class="pre">my_friends</span></code>，使用<code class="docutils literal notranslate"><span class="pre">append</span></code>方法往这个列表里添加至少5个你的朋友名字，随后再使用<code class="docutils literal notranslate"><span class="pre">remove</span></code>方法从中移除一个或多个朋友名字。每一次当你使用<code class="docutils literal notranslate"><span class="pre">append</span></code>或<code class="docutils literal notranslate"><span class="pre">remove</span></code>方法后，都将整个<code class="docutils literal notranslate"><span class="pre">my_friends</span></code>列表的内容以及列表的长度打印出来。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -399,95 +714,72 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>In the following cells, write codes to calculate the following Arithmetic expressions (one cell for each): 在下面的单元格中，编写代码计算下面的算术表达式（每一个式子使用一个单元格）:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(1+3+5+7+9+11+13+15+17+19\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(10-9+8-7+6-5+4-3+2-1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(3.14\times 2\times 5\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2\times(6+9)\)</span></p></li>
-</ul>
+<ol class="arabic" start="2">
+<li><p>Write a program to find all factors of 144 and 385, put their factors in to two lists, one is for 144, and the other is for 385. Print out the two lists and also tell which integer has more factors.</p>
+<p>编写程序分别查找整数144和385各自的因数，把他们分别放到两个不同的列表中，编程输出这两个列表并输出谁的因数数量多</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">385</span>
+<span class="n">factors1</span><span class="p">,</span> <span class="n">factors2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num1</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">factors1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num2</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num2</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">factors2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> 的因数是 </span><span class="si">{}</span><span class="s2">, 个数是 </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">factors1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors1</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> 的因数是 </span><span class="si">{}</span><span class="s2">, 个数是 </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num2</span><span class="p">,</span> <span class="n">factors2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors2</span><span class="p">)))</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> 的因数个数多于</span><span class="si">{}</span><span class="s2">的因数个数&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> 的因数个数少于或等于</span><span class="si">{}</span><span class="s2">的因数个数&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+144 的因数是 [1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 36, 48, 72, 144], 个数是 15
+385 的因数是 [1, 5, 7, 11, 35, 55, 77, 385], 个数是 8
+144 的因数个数多于385的因数个数
+</pre></div></div>
 </div>
 <ol class="arabic" start="3">
-<li><p>The length and width of a rectangle are 18cm and 13cm respectively. What the perimeter and the area of this rectangle? write only two lines of codes to provide the answer directly, and an extra line of code to print out the result like the follow sentence:</p>
-<p>“The perimeter of this rectangle is xxx cm, and its area is xxx cm*cm.”</p>
-<p>Replace the xxx by your results.</p>
-<p>一个长方形的长和宽分别是18厘米和13厘米，它的周长和面积分别是多少？通过只编写两行代码给出答案，并使用额外一行代码输出如下格式的一句话：</p>
-<p>“这个长方形的周长是 xxx cm，它的面积是 xxx cm*cm。”</p>
-<p>用你得到的结果替代上面的 xxx。</p>
+<li><p>Following the previous question. After you have two lists for the factors of 144 and 385, Write a program to check if these two integers shared some factors, If yes, print out the shared factor(s).</p>
+<p>续前一题。 当你找到144和385的所有因数后，编写程序检查这两个数除了整数1以外还有没有共同的因数</p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">factors_for_144</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># TODO: fill the factors of 144 into [], 把144的因数放到[]里</span>
+<span class="n">factors_for_385</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># TODO: fill the factors of 144 into [], 把144的因数放到[]里</span>
+
+<span class="c1">#TODO: write codes to answer the question.</span>
+<span class="c1">#      编写你的代码来回答本题。</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="4">
+<li><p>if an integer only have two factors(1 and the integer itself), this integer is a Prime number; Otherwise, it is a Composite number. Write a program to find all the prime and composite numbers between 1 and 100 (both included). Use two lists to store all these prime and composite numbers. Finally, print out the two lists.</p>
+<p>如果一个整数的因数个数为2个（整数1和它自己），那么这个整数为“质数”，否则这个数则为合数。编写程序找出从1-100这100个连续整数中哪些是质数，哪些是合数，分别用两个列表来存储质数和合数，并最后将其打印出来。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -499,23 +791,35 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<ol class="arabic" start="5">
+<li><p>The following list <code class="docutils literal notranslate"><span class="pre">list_a</span></code> has 2 elements, both of which are integer <code class="docutils literal notranslate"><span class="pre">1</span></code>. Please write a program to add 20 more new elements to the end of <code class="docutils literal notranslate"><span class="pre">list_a</span></code> step by step while respecting the following rule: <strong>every time when you add a new element to the end of the list, its value is the sum of the values of the last two elements in the list.</strong> Print out the final list when you finish adding elements. The final list you get should have 22 elements with <code class="docutils literal notranslate"><span class="pre">17711</span></code> as its last element. Are your
+familiar with the first 10 element in this list?</p>
+<p>下面名为<code class="docutils literal notranslate"><span class="pre">list_a</span></code>的列表一开始有2个元素且值均为<code class="docutils literal notranslate"><span class="pre">1</span></code>。请编写程序往这个列表的末端逐次再添加20个新元素，<strong>要求每次新添加的元素值是当时列表的最末两位元素的值的和。</strong> 添加完毕后打印输出这个列表。你最后得到的列表应该具有22个元素，且最后一个元素的值为<code class="docutils literal notranslate"><span class="pre">17711</span></code>。你熟悉这个列表的前10个元素吗？</p>
+</li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">list_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+    <span class="n">list_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_a</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711]
+22
+</pre></div></div>
 </div>
 </div>
 </div>
@@ -529,14 +833,23 @@ div.rendered_html tbody tr:hover {
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">目录</a></h3>
   <ul>
-<li><a class="reference internal" href="#">第012讲 找出一个正整数的所有因数</a><ul>
-<li><a class="reference internal" href="#问题描述">问题描述</a></li>
-<li><a class="reference internal" href="#数学背景">数学背景</a></li>
-<li><a class="reference internal" href="#预备知识">预备知识</a></li>
-<li><a class="reference internal" href="#编程求解">编程求解</a></li>
-<li><a class="reference internal" href="#知识点小结">知识点小结</a></li>
+<li><a class="reference internal" href="#">第012讲 找出所有能整除120的整数</a><ul>
+<li><a class="reference internal" href="#Problem-问题描述">Problem 问题描述</a></li>
+<li><a class="reference internal" href="#Math-Background-数学背景">Math Background 数学背景</a></li>
+<li><a class="reference internal" href="#Prerequisites-预备知识">Prerequisites 预备知识</a><ul>
+<li><a class="reference internal" href="#1.-Declare-an-empty（without-any-element）list-variable-声明一个空（没有任何元素）的列表">1. Declare an empty（without any element）list variable 声明一个空（没有任何元素）的列表</a></li>
+<li><a class="reference internal" href="#2.-add-an-element-to-(the-end-of)-a-list-往列表(最后）添加一个元素">2. add an element to (the end of) a list 往列表(最后）添加一个元素</a></li>
+<li><a class="reference internal" href="#2.-remove-an-element-from-a-list-从列表中删除一个元素">2. remove an element from a list 从列表中删除一个元素</a></li>
+<li><a class="reference internal" href="#3.-Exercise-练习">3. Exercise 练习</a></li>
+<li><a class="reference internal" href="#4.-check-whether-a-value-is-in-a-list-检查一个值是否存在列表中">4. check whether a value is in a list 检查一个值是否存在列表中</a></li>
+<li><a class="reference internal" href="#5.-break(stop)-the-while-loop-when-find-the-value-当找到值后打破（停止）循环">5. break(stop) the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop when find the value 当找到值后打破（停止）循环</a></li>
+<li><a class="reference internal" href="#6.-Another-easy-wat-to-check-whether-a-value-is-in-a-list-另一个更简单的方式来检查一个值是否存在列表中">6. Another easy wat to check whether a value is in a list 另一个更简单的方式来检查一个值是否存在列表中</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Solution-Codes-编程求解">Solution Codes 编程求解</a></li>
+<li><a class="reference internal" href="#Summary-知识点小结">Summary 知识点小结</a></li>
 <li><a class="reference internal" href="#计算机小知识">计算机小知识</a></li>
-<li><a class="reference internal" href="#练习">练习</a></li>
+<li><a class="reference internal" href="#Assignments-作业">Assignments 作业</a></li>
 </ul>
 </li>
 </ul>
@@ -569,7 +882,7 @@ div.rendered_html tbody tr:hover {
           <a href="../genindex.html" title="总目录"
              >索引</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">初等数学与Python程序设计(讲义)  文档</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">第012讲 找出一个正整数的所有因数</a></li> 
+        <li class="nav-item nav-item-this"><a href="">第012讲 找出所有能整除120的整数</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
