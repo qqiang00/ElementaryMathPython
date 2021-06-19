@@ -1,297 +1,199 @@
 
+
 <!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>第3讲 谁的年龄大 &mdash; 初等数学与Python程序设计(讲义)  文档</title>
+  
 
-<html lang="zh_CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第3讲 谁的年龄大 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
-
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="第4讲 猜数字" href="004_guess_number.html" />
-    <link rel="prev" title="第2讲 起个名字吧" href="002_make_name_for_data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
-  </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+    <link rel="prev" title="第2讲 起个名字吧" href="002_make_name_for_data.html" /> 
+</head>
 
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+<body class="wy-body-for-nav">
 
-  <div id="navbar-start">
+   
+  <div class="wy-grid-for-nav">
     
-    
-<a class="navbar-brand" href="../../index.html">
-<p class="title">初等数学与Python程序设计(讲义)</p>
-</a>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-    
-  </div>
+          
+            <a href="../../index.html" class="icon icon-home"> 初等数学与Python程序设计(讲义)
+          
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../001preface.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../002about_author.html">关于作者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../003copyright.html">版权声明</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">第一篇 入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="001_hello_python.html">第1讲 你好，Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="002_make_name_for_data.html">第2讲 起个名字吧</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">第3讲 谁的年龄大</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Problem">Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Objective-学习目标">Objective 学习目标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Math">Math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Did-you-know?">Did you know?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="004_guess_number.html">第4讲 猜数字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="005_draw_basic_shapes.html">第5讲 绘制简单图形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="006_draw_regular_polygon.html">第6讲 绘制正多边形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="007_how_many_rice_awarded.html">第7讲 一共奖励了多少袋大米</a></li>
+<li class="toctree-l2"><a class="reference internal" href="008_law_of_sequence.html">第8讲 找规律猜数字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="009_chicken_rabbit_in_same_cage.html">第9讲 鸡兔同笼问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="010_divide_remainder_1.html">第10讲 整除与余数（一）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="011_divide_remainder_2.html">第11讲 Division and Remainder 整除和余数（二）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../200intermediate/index.html">第二篇 进阶</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../300advanced/index.html">第三篇 高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../500answer/index.html">练习答案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../600appendix/index.html">附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../800new_feature/index.html">新功能测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../990inside_back_cover.html">封三</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../991back_cover.html">封底</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">初等数学与Python程序设计(讲义)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">第一篇 入门</a> &raquo;</li>
+        
+      <li>第3讲 谁的年龄大</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/100beginner/content/003_who_is_older.ipynb.txt" rel="nofollow"> 查看页面源码</a>
+          
+        
+      </li>
+    
+  </ul>
 
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../001preface.html">
-  前言
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../002about_author.html">
-  关于作者
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../003copyright.html">
-  版权声明
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../index.html">
-  第一篇 入门
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../200intermediate/index.html">
-  第二篇 进阶
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../300advanced/index.html">
-  第三篇 高级
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../500answer/index.html">
-  练习答案
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../600appendix/index.html">
-  附录
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../800new_feature/index.html">
-  新功能测试
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../990inside_back_cover.html">
-  封三
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../991back_cover.html">
-  封底
- </a>
-</li>
-
-    
-</ul>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-  </div>
+  <hr/>
 </div>
-    </nav>
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="001_hello_python.html">
-   第1讲 你好，Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="002_make_name_for_data.html">
-   第2讲 起个名字吧
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   第3讲 谁的年龄大
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="004_guess_number.html">
-   第4讲 猜数字
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="005_draw_basic_shapes.html">
-   第5讲 绘制简单图形
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="006_draw_regular_polygon.html">
-   第6讲 绘制正多边形
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="007_how_many_rice_awarded.html">
-   第7讲 一共奖励了多少袋大米
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="008_law_of_sequence.html">
-   第8讲 找规律猜数字
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="009_chicken_rabbit_in_same_cage.html">
-   第9讲 鸡兔同笼问题
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="010_divide_remainder_1.html">
-   第10讲 整除与余数（一）
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="011_divide_remainder_2.html">
-   第11讲 Division and Remainder 整除和余数（二）
-  </a>
- </li>
-</ul>
-
-  </div>
-</nav>
-            </div>
-            
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Problem">
-   Problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Objective-学习目标">
-   Objective 学习目标
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Math">
-   Math
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Python">
-   Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Did-you-know?">
-   Did you know?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-</nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                
   
 <style>
 /* CSS for nbsphinx extension */
@@ -538,6 +440,28 @@ div.rendered_html tbody tr:nth-child(odd) {
 }
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
 }
 </style>
 <div class="section" id="第3讲-谁的年龄大">
@@ -888,7 +812,7 @@ float
 </ul>
 <p>Run and test 5 times your codes with the following inputs (num1, num2) for each test. Observe whether the result is equal to the Sum for each test 分别使用下表中的num1,num2的值作为键盘输入运行并测试你的代码共计5次，观察结果是否与对应的Sum一样</p>
 <p><strong>Your should run the same code on all test data; that being said, you may not change the codes between each run.</strong> <strong>你应该用同样的代码来运行所有的测试数据，也就是说，你不应该在两次测试间隙修改你的代码</strong></p>
-<table class="table">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 17%" />
@@ -946,7 +870,7 @@ float
 <p>Run and test 5 times your codes with the following inputs (length, width) for each test. Observe whether the results are equal to the Perimeter and Area for each test 分别使用下表中的length和width的值作为键盘输入运行并测试你的代码共计5次，观察结果是否与对应的Perimiter和Area值一样</p>
 <p><strong>Your should run the same code on all test data; that being said, you may not change the codes between each run.</strong> <strong>你应该用同样的代码来运行所有的测试数据，也就是说，你不应该在两次测试间隙修改你的代码</strong></p>
 <p>Hint: use <code class="docutils literal notranslate"><span class="pre">if</span></code> to control the output 提示：使用<code class="docutils literal notranslate"><span class="pre">if</span></code> 来控制输出</p>
-<table class="table">
+<table class="docutils align-default">
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 12%" />
@@ -1028,40 +952,51 @@ float
 </div>
 
 
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="002_make_name_for_data.html" title="previous page">第2讲 起个名字吧</a>
-    <a class='right-next' id="next-link" href="004_guess_number.html" title="next page">第4讲 猜数字</a>
-
-              </div>
-              
-          </main>
-          
-
-      </div>
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="004_guess_number.html" class="btn btn-neutral float-right" title="第4讲 猜数字" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="002_make_name_for_data.html" class="btn btn-neutral float-left" title="第2讲 起个名字吧" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
     </div>
-  
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021, Ye Qiang.<br/>
-</p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-由 <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 创建。<br/>
-</p>
-    </div>
-    
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, Ye Qiang.
+
+    </p>
   </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
 </footer>
-  </body>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
 </html>
