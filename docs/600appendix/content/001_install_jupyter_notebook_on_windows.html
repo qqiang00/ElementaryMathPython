@@ -1,189 +1,372 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>附录一 Windows操作系统下搭建Python运行环境 &mdash; 初等数学与Python程序设计(讲义)  文档</title>
-  
 
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>附录一 Windows操作系统下搭建Python运行环境 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/translations.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="新功能测试" href="../../800new_feature/index.html" />
-    <link rel="prev" title="课程介绍" href="000_intro_to_course.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
+    <link rel="prev" title="课程介绍" href="000_intro_to_course.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-          
-            <a href="../../index.html" class="icon icon-home"> 初等数学与Python程序设计(讲义)
-          
+    
 
+    <div class="container-xl">
+      <div class="row">
           
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../001preface.html">前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../002about_author.html">关于作者</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../003copyright.html">版权声明</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../100beginner/index.html">第一篇 入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../200intermediate/index.html">第二篇 进阶</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../300advanced/index.html">第三篇 高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../500answer/index.html">练习答案</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">附录</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="000_intro_to_course.html">课程介绍</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">附录一 Windows操作系统下搭建Python运行环境</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#1.-检查计算机有无安装Python解释器及其版本">1. 检查计算机有无安装Python解释器及其版本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#2.-安装Python解释器">2. 安装Python解释器</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#3.-安装虚拟环境">3. 安装虚拟环境</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#4.-安装Jupyter-Notebook">4. 安装Jupyter Notebook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#6.-退出Jupyter-Notebook及虚拟环境">6. 退出Jupyter Notebook及虚拟环境</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../800new_feature/index.html">新功能测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../990inside_back_cover.html">封三</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../991back_cover.html">封底</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">初等数学与Python程序设计(讲义)</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../index.html">附录</a> &raquo;</li>
-        
-      <li>附录一 Windows操作系统下搭建Python运行环境</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../../_sources/600appendix/content/001_install_jupyter_notebook_on_windows.ipynb.txt" rel="nofollow"> 查看页面源码</a>
-          
-        
-      </li>
-    
+      
+      <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001preface.html">
+   前言
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../002about_author.html">
+   关于作者
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../003copyright.html">
+   版权声明
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../100beginner/index.html">
+   第一篇 入门
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/001_hello_python.html">
+     第1讲 你好，Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/002_make_name_for_data.html">
+     第2讲 起个名字吧
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/003_who_is_older.html">
+     第3讲 谁的年龄大
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/004_guess_number.html">
+     第4讲 猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/005_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/006_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/007_how_many_rice_awarded.html">
+     第7讲 一共奖励了多少袋大米
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/008_law_of_sequence.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/009_chicken_rabbit_in_same_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/010_divide_remainder_1.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../100beginner/content/011_divide_remainder_2.html">
+     第11讲 Division and Remainder 整除和余数（二）
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../200intermediate/index.html">
+   第二篇 进阶
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../300advanced/index.html">
+   第三篇 高级
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../500answer/index.html">
+   练习答案
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/005a_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/006a_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/008a_law_of_sequences.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/009a_chicken_rabbit_in_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/010_divide_remainder_1_with_answer.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   附录
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="000_intro_to_course.html">
+     课程介绍
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     附录一 Windows操作系统下搭建Python运行环境
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../800new_feature/index.html">
+   新功能测试
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../800new_feature/content/markdown_test.html">
+     MarkDown test Title
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../990inside_back_cover.html">
+   封三
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../991back_cover.html">
+   封底
+  </a>
+ </li>
+</ul>
 
-  
-  <hr/>
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/600appendix/content/001_install_jupyter_notebook_on_windows.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#1.-检查计算机有无安装Python解释器及其版本">
+   1. 检查计算机有无安装Python解释器及其版本
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#2.-安装Python解释器">
+   2. 安装Python解释器
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#3.-安装虚拟环境">
+   3. 安装虚拟环境
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#4.-安装Jupyter-Notebook">
+   4. 安装Jupyter Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#6.-退出Jupyter-Notebook及虚拟环境">
+   6. 退出Jupyter Notebook及虚拟环境
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
   
 <style>
 /* CSS for nbsphinx extension */
@@ -431,28 +614,6 @@ div.rendered_html tbody tr:nth-child(odd) {
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
 </style>
 <div class="section" id="附录一-Windows操作系统下搭建Python运行环境">
 <h1>附录一 Windows操作系统下搭建Python运行环境<a class="headerlink" href="#附录一-Windows操作系统下搭建Python运行环境" title="永久链接至标题">¶</a></h1>
@@ -465,52 +626,52 @@ div.rendered_html tbody tr:hover {
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -V
 </pre></div>
 </div>
-<p><img alt="0efcf9d99f1b43d0abeea9d56e6330e4" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
+<p><img alt="71ddac39b1774edf8f897cade578b5e1" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
 <p>如果计算机上已经正确安装了Python，命令行窗口会输出已安装的版本号，例如：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Python <span class="m">3</span>.5.4
 </pre></div>
 </div>
 <p>其中<code class="docutils literal notranslate"><span class="pre">3.5.4</span></code>就是其版本号。本书建议使用<code class="docutils literal notranslate"><span class="pre">3.5.X</span></code>版本号，其中<code class="docutils literal notranslate"><span class="pre">X</span></code>可以是任意可能的数字。本书不建议使用更高级版本的Python解释器，主要是由于本书代码并未在更高版本下测试过，另外本书使用到的一些常用的库并不一定支持更新版本的Python解释器。如果你的计算机在执行上述命令后显示的版本并不是以<code class="docutils literal notranslate"><span class="pre">3.5</span></code>开头，尤其是以<code class="docutils literal notranslate"><span class="pre">2.7</span></code>开头时，强烈建议你卸载当前的版本安装3.5版本的Python解释器。</p>
 <p>如果执行上述命令显示的是如下图所示的一些信息:</p>
-<p><img alt="9bb74f49bd99496e833719ca58232192" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
+<p><img alt="55a559fb05ed4315b662fc5de31cce59" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
 <p>表明你的计算机上并没有安装Python解释器。</p>
 <p>在Windows操作系统上卸载旧版本的Python解释器与卸载一般应用程序一样，在此不再赘述。可以通过下列链接下载3.5版本的Python解释器安装程序：(<a class="reference external" href="https://www.python.org/downloads/release/python-354/">https://www.python.org/downloads/release/python-354/</a>) 。主要版本的Python解释器通常都会提供32位和64位两种安装程序文件，建议选择和计算机操作系统相同位数的版本。右键点击“我的计算机”，选择“属性”来可以查看你的计算机是32位还是64位的系统。如下图系统类别(System type)行所示：</p>
-<p><img alt="749e595679334db0996841ed62d54096" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
+<p><img alt="fba4744bc109400489557cc0360d748b" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="2.-安装Python解释器">
 <h2>2. 安装Python解释器<a class="headerlink" href="#2.-安装Python解释器" title="永久链接至标题">¶</a></h2>
 <p>下载好相应的Python解释器安装程序后，可以双击运行安装，选择“个性化安装”(Customize Installation)，同时勾选中“将Python3.5加入路径”（Add Python3.5 to Path)，如下图所示：</p>
-<p><img alt="b7a7b88f51e241479caf56e2e08d9605" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
+<p><img alt="8e70c7d207f74d6298cc21387ff2969a" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
 <p>在随后的，安装提示信息中，勾选中所有选项，包括“为本计算机上所有用户安装”（for all users）:</p>
-<p><img alt="453cdc8a96434f389f044e09a0a6a313" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
+<p><img alt="bdd7833c5d1e43208caeb14efbf5dd92" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
 <p>继续选中“为所有用户安装”（install for all users）。其余使用默认配置，跟随安装程序向导完成安装。</p>
-<p><img alt="64b82eb0be27457ab53af7b291128564" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
+<p><img alt="fbedc67689fb43c9b61a4985c666943d" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
 <p>当下图出现，即表明Python解释器已顺利安装完成。关闭该窗口。</p>
-<p><img alt="8ed4b4b31ffe40229cb8775f03ad549d" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
+<p><img alt="0942b37e0ed942a7a6611814a196e4ae" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
 <p>完成安装后，再次打开命令行工具，按照前文的描述确认符合要求版本的Python已经安装。到此，你的电脑已经具备了执行Python程序的能力了。可以重新启动计算机。</p>
 </div>
 <div class="section" id="3.-安装虚拟环境">
 <h2>3. 安装虚拟环境<a class="headerlink" href="#3.-安装虚拟环境" title="永久链接至标题">¶</a></h2>
 <p>本步骤虽不是必需，且对初学者也不是很容易理解，虽然可以直接跳过本步骤跟随下一步骤安装“jupyter notebook”，但仍然强烈建议读者跟随完成本步骤，这有助于维持你干净的计算机系统。简单地说，虚拟环境是计算机单独、额外开辟出来的一部分资源专门用于做某些特定的事情，与整个操作系统有严格的界限，也不会干扰操作系统。从Python3.3开始，创建Python虚拟环境已经变得非常容易。</p>
 <p>首先确定一个目录，这个目录将要被用来作为安装虚拟环境的位置，建议这个目录不要设置在很深层次，可以直接设在D盘符根目录下。打开Windows系统的命令行提示工具，切换至盘符D下：</p>
-<p><img alt="d565c590d71e46a8a855c3ba94f667ed" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="bb4c349bba564e669c9d30b4d5c0a0c8" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
 <p>随后在提示光标后输入如下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m venv venv
 </pre></div>
 </div>
-<p><img alt="1d878df1a0a74c099395c52e40fb7d5f" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="faf25fa0bef14e2bbfa1f085b3519943" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
 <p>这行命令表示用python所带的<code class="docutils literal notranslate"><span class="pre">venv</span></code>功能（命令中的第一个venv）在当前目录下建立一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>（命令中的第二个venv）的目录，并以该目录为根目录创建Python运行的虚拟环境。通常人们偏好使用<code class="docutils literal notranslate"><span class="pre">venv</span></code>这个目录名。顺利执行该命令后命令行提示工具不会有额外的提示，但目录<code class="docutils literal notranslate"><span class="pre">D:\</span></code>下已经多了一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>的目录，并且其下也已经有了一些子目录和文件，表明虚拟环境已经创建好了。</p>
 <p>虚拟环境创建好了之后会复制操作系统内安装的Python解释器的相关库。虚拟环境需要激活才能有效使用，它通常在被使用前通过命令激活，在使用结束后通过命令使之离开激活状态。在虚拟环境<code class="docutils literal notranslate"><span class="pre">venv</span></code>目录下有一个<code class="docutils literal notranslate"><span class="pre">Script</span></code>子目录，该子目录下有“activate.bat”和“deactivate.bat”两个文件，分别用于激活是失活虚拟环境。例如我们要激活刚刚创建的虚拟环境，可以在命令行提示工具下输入如下命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>D:<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
 </pre></div>
 </div>
-<p><img alt="999a59a6f70c49279ddb4ca876fb4436" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
+<p><img alt="0a77f9da056f49899f2854d847d6638e" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
 <p>激活后，命令行提示工具的提示符前会多出字符串<code class="docutils literal notranslate"><span class="pre">(venv)</span></code>，表明当前处在虚拟环境下，在该环境下执行Python程序时仅调用当前虚拟环境下的Python解释器下的一些库。使用命令</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip list
 </pre></div>
 </div>
 <p>查看当前已经安装的Python库，结果可能如下图所示：</p>
-<p><img alt="3ec28199ff45421b9a0d570c5b7a98ae" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
+<p><img alt="b7291eda4f5345afb9373fd67ec4f428" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="4.-安装Jupyter-Notebook">
 <h2>4. 安装Jupyter Notebook<a class="headerlink" href="#4.-安装Jupyter-Notebook" title="永久链接至标题">¶</a></h2>
@@ -519,33 +680,33 @@ div.rendered_html tbody tr:hover {
 python -m pip install --upgrade setuptools
 </pre></div>
 </div>
-<p><img alt="54454c04f4c549a4a81999d659f86aa4" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
+<p><img alt="19751d4087004da1a25a533530d44c13" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
 <p>执行完上述命令后，使用下面的命令来安装“Jupyter Notebook”：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m pip install jupyterlab
 </pre></div>
 </div>
-<p><img alt="fc9b22ec315446d694a4c7dd3872b87c" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="6852fd0a312041f6896eaf96897e94d3" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
 <p>该过程由于需要安装较多的支持库，因此需要的时间略长些。一切顺利的情况下，Jupyter Notebook就安装好了，如下图所示：</p>
-<p><img alt="f4400d0e158947a4aba0632f9f026c01" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="2caf2ec11a884de6a43ef1e162a280bc" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
 <p>在当前虚拟环境下执行下列命令：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>
 </div>
-<p><img alt="18128a013f3b40058da7e0e79bbae05f" class="no-scaled-link" src="../../_images/0202_python_run_jupyter_notebook.png" style="width: 500px;" /></p>
-<p>就启动Jupyter Notebook服务，并打开浏览器，进入Jupyter Notebook提供的基于网页的交互式编程环境了： <img alt="dc88e4df61924d6d9ef69adcd9a330da" class="no-scaled-link" src="../../_images/0301_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="f8ce7888ad6247acb1cd5c44955bd055" class="no-scaled-link" src="../../_images/0202_python_run_jupyter_notebook.png" style="width: 500px;" /></p>
+<p>就启动Jupyter Notebook服务，并打开浏览器，进入Jupyter Notebook提供的基于网页的交互式编程环境了： <img alt="2fd249b8ede24c8b949e8ebf4cb2752e" class="no-scaled-link" src="../../_images/0301_jupyter_notebook.png" style="width: 500px;" /></p>
 <p>你看到的界面可能比上图显示的文件夹要多，这取决于你在命令行提示窗口输入“jupyter notebook”时的当前目录。 ### 5. 使用Jupyter Notebook进行Python交互式编程 使用Jupyter Notebook进行Python编程时，需要先建立一个notebook文件。在上图所示的右侧偏上方区域点击按钮“New”，在弹出的项目中选择“Python3”，如下图所示。</p>
-<p><img alt="962ea2aee2d04cb0aa6003ed0c18b85d" class="no-scaled-link" src="../../_images/0302_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
+<p><img alt="2e8f55ef05a44a1989882972800af429" class="no-scaled-link" src="../../_images/0302_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
 <p>如此就建立了一个以Python3为解释器的交互式编程环境，如下图所示。图中的绿色文本框内可以用来编写Python程序代码，书写完毕后可以用过点击上方的“运行”(Run)按钮来执行本段代码，程序执行的结果会直接出现在该段代码的下方。</p>
-<p><img alt="32a8871d621c462ba28cd08fca89ce58" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
+<p><img alt="be662961004349239b84ee98f3175146" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
 <p>还可以通过点击上方工具栏上的“+”号来增加代码输入框，选中的输入框以特殊的边框颜色表示。也可以在选中某一个输入框后，切换工具栏上方的属性。常见的输入框的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。此外，还可也在该窗口内重命名这个notebook文件，直接点击最上方的文件名（上图中显示的文件名为
 Untitled），会弹出一个输入框，提示修改文件名，在这里可以输入你想要的文件名。</p>
-<p><img alt="5a31eb891baa4fab8b070b218ee1cbf3" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_run_code.png" style="width: 500px;" /></p>
+<p><img alt="ef73f85c47fe4153ab1c8eacb6f32b47" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_run_code.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="6.-退出Jupyter-Notebook及虚拟环境">
 <h2>6. 退出Jupyter Notebook及虚拟环境<a class="headerlink" href="#6.-退出Jupyter-Notebook及虚拟环境" title="永久链接至标题">¶</a></h2>
-<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter notebook”而启动noteboo的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="829900e60383441086a2206f7ec91fd8" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
+<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter notebook”而启动noteboo的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="9c04c56048374027ba4293bba1bcc4b6" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
 <p>通过在命令行提示窗口内执行虚拟环境中路径为“venv:nbsphinx-math:<cite>Scripts</cite><span class="math">\deactivate</span>.bat”离开虚拟环境。如下图所示。</p>
-<p><img alt="da7f58fb4f1f4756939200a0d83f97a8" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
+<p><img alt="ae082b7b54174cb6a26e460f60fbc836" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
 <p>如此，就完全顺利退出了Windows操作系统下的虚拟Python编程环境。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -560,51 +721,36 @@ Untitled），会弹出一个输入框，提示修改文件名，在这里可以
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../../800new_feature/index.html" class="btn btn-neutral float-right" title="新功能测试" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="000_intro_to_course.html" class="btn btn-neutral float-left" title="课程介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-    </div>
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="000_intro_to_course.html" title="previous page">课程介绍</a>
+    <a class='right-next' id="next-link" href="../../800new_feature/index.html" title="next page">新功能测试</a>
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2021, Ye Qiang.
-
-    </p>
-  </div>
-    
-    
-    
-    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
-
-</footer>
         </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; Copyright 2021, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
       </div>
-
-    </section>
-
-  </div>
+    </div>
   
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
-  
-    
-   
-
-</body>
+  </body>
 </html>
