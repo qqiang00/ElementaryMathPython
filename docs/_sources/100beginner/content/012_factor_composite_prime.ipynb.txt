@@ -1,0 +1,868 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第012讲 找出所有能整除120的整数"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d12f05dd",
+   "metadata": {},
+   "source": [
+    "### Problem 问题描述"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3bc70ff7-5953-409f-93d2-6f6fcb8ad34f",
+   "metadata": {},
+   "source": [
+    "Please write program to find all integers that can divide 120 with no remainder and put them into a list named `factors`. Print out the total number of the factors and check whether 24 is in the factors list.\n",
+    "\n",
+    "请编写程序找出所有能整除120的整数并把他们存放到一个名为`factors`的列表型变量中。打印输出因数的总的数量，并检查24是否在列表中。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "animated-batch",
+   "metadata": {},
+   "source": [
+    "### Math Background 数学背景"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e57be6ca-c534-4529-8186-63d2b1547683",
+   "metadata": {},
+   "source": [
+    "1. **Factor** if the Q is the quotien of an integer A divided by another integer B, and the remainder is 0, we say that B is a factor of A; meanwhile, Q is also a factor of A. For example,$15\\div3=5 \\cdots 0$ we say both 3 and 5 are factors of the integer 15. It is obvious that any integer greather than 1 has at least two factors: 1 and the integer itself. It is also obvious that factors is always less then or equal to the integer.    \n",
+    "   **因数** 如果一个整数A除以另一个整数B，得到的商为Q且余数为0，那么称整数B为整数A的一个因数，同时商Q也是整数A的一个因数。例如，在除法算式：$15\\div3=5 \\cdots 0$中,被除数15除以除数3，商为5，余数为0，那么3和5都分别为15的一个因数。不难得出，任何一个比1大的整数都至少有两个因数，分别为1和它自己；同时也不难得出一个数的因数不可能比这个数大。\n",
+    "   \n",
+    "2. **Composite Number**: If an integer has an extra factor other than 1 and itself, this integer is a composite number.  \n",
+    "   **合数**: 如果一个整数除了1和自身还有其他额外的因数，那么这个整数是一个合数。\n",
+    "   \n",
+    "3. **Prime Number**: If an integer has only the two factors, it is called as a prime number.   \n",
+    "   **质数**: 如果一个整数只有1和它自身两个因数，那么它是一个质数。\n",
+    "   "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "sorted-furniture",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Prerequisites 预备知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "844198c9-cd03-4472-b2cd-d4f3b7f973d3",
+   "metadata": {},
+   "source": [
+    "#### 1. Declare an empty（without any element）list variable 声明一个空（没有任何元素）的列表"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "522ec88e-0b39-4559-ade0-2b729b37f072",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[]\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates = []       # 同学： \"Jason\", \"Tony\", \"Sophie\", \"Yunzi\"\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5d50e84c-45a1-429f-8c9f-9e092989eb25",
+   "metadata": {},
+   "source": [
+    "#### 2. add an element to (the end of) a list 往列表(最后）添加一个元素\n",
+    "\n",
+    "The element of a list can be either an Integer or a String. It can even be many other data types， which we will learn in future.\n",
+    "\n",
+    "列表的元素既可以是整数型数据，也可以是字符串型数据，还可以是将来要学习的其他一些类型的数据。\n",
+    "\n",
+    "use `append` method add a string `\"Sophie\"` to the `classmates` list. `.` is an operator indicating that method `append` is applied on the list variable `classmates`. The method needs to receive an argument indicating the element that will be added into the tail of the list.\n",
+    "\n",
+    "使用`append`方法往`classmates`列表中添加一个字符串`\"Sophie\"`, `.` 是一个操作符，表明方法`append`正应用在`classmates`这个列表型变量上。该方法需要接受那个将要被添加到列表末尾的元素作为参数。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b63ae620-d33e-410e-a40e-5b140f01fce8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie']\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.append(\"Sophie\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7bed1b9-f20c-4abe-8814-c5f424bf2843",
+   "metadata": {},
+   "source": [
+    "Continue to add more students to the class\n",
+    "\n",
+    "继续往班级同学列表里添加更多的学生"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "1e8ce9fc-0d15-4dca-b85e-1d60ed36608d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony']\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.append(\"Tony\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "69d22596-5eac-4351-9d5d-a3b090df180e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony', 'Jason']\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.append(\"Jason\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "20d4a8ea-64c4-474d-9c1b-db9b4a66bfe3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony', 'Jason', 'Yunzi']\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.append(\"Yunzi\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "b288ca9f-236c-48e3-b375-5c64037aaefe",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony', 'Jason', 'Yunzi', \"Tony's Daddy\"]\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.append(\"Tony's Daddy\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "feaae39c-1a3e-475a-8a37-8b251e387ced",
+   "metadata": {},
+   "source": [
+    "#### 2. remove an element from a list 从列表中删除一个元素\n",
+    "\n",
+    "use `remove` method to remove \"Yunzi's Daddy\" from the `classmates` list. `remove` method need to receive an argument indicating the element value that need to be removed. If this value doesn't exist in the list, the program will report an error.\n",
+    "\n",
+    "使用`remove`方法从`classmates`列表中移除`\"Yunzi's Daddy\"`. `remove`方法需要接受将要被删除出列表的那个元素的值，这个值如果在列表中不存在，那么程序会报错。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "2c2e74f7-ba21-4750-bcac-92bebc00f0ea",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony', 'Jason', 'Yunzi']\n"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.remove(\"Tony's Daddy\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "f601f09d-aab4-446a-a035-4f80fa9a44c1",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ValueError",
+     "evalue": "list.remove(x): x not in list",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-8-1fc37ac8da55>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mclassmates\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mremove\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Sophie's Daddy\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mclassmates\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mValueError\u001b[0m: list.remove(x): x not in list"
+     ]
+    }
+   ],
+   "source": [
+    "classmates.remove(\"Sophie's Daddy\")\n",
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "03ea0831-64c4-44bd-a572-d4b7b2e55c37",
+   "metadata": {},
+   "source": [
+    "#### 3. Exercise 练习\n",
+    "\n",
+    "Declare an empty list variable with the name you prefer, put at least 5 names of the animals you like into the list one by one, then remove those animals that you have already seen in real life(not on TV or other video channels) from the list one by one, keey only those you like but haven't seen them face to face. Introduce these animals to your classmates.\n",
+    "\n",
+    "用一个你喜欢的名字声明一个列表变量，往这个变量中一个接一个的添加至少5个你喜欢的动物，然后把在你已经亲眼见过(不是在电视或其他视频频道商）动物一个接一个的从列表中删除，只留下哪些你喜欢但还没有亲眼见过的动物们。向你的同学们介绍你列出的这些动物。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cf267bc3-2e2c-42cf-ae3d-699271bc917a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4e5f8417-77d5-4b5c-b420-66372d356d89",
+   "metadata": {},
+   "source": [
+    "#### 4. check whether a value is in a list 检查一个值是否存在列表中\n",
+    "\n",
+    "To check whether a value is in a list, or an element of the list, we can use a `while` loop to look at each element in the list, compare the values. If two values are same, then we can say the value is in the list, or the value is one of the element of the list. For example, the following codes check whether a string `\"Jason\"` is in the `classmates` list:\n",
+    "\n",
+    "为了检查一个值是否在一个列表中，或者说是否是列表的一个元素，我们可以使用一个`while`循环来查看这个列表中的每一个元素，比较他们的值。如果两个值相同，那么我们就可以说这个值存在于这个列表中，或者说这个值是列表的一个元素。例如，要查看\"Jason\"是否在`classmates`列表中，我们可以使用下面的代码："
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "70ae0dcc-4bef-4430-ac78-dea982aa55e0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sophie', 'Tony', 'Jason', 'Yunzi']\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(classmates)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "a3f4492a-1f8e-4fe5-b28d-2a84e5c24c34",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "checking value at index: 0\n",
+      "checking value at index: 1\n",
+      "checking value at index: 2\n",
+      "found target in the list, inde is: 2\n",
+      "checking value at index: 3\n"
+     ]
+    }
+   ],
+   "source": [
+    "target = \"Jason\"\n",
+    "index = 0\n",
+    "while index < len(classmates):\n",
+    "    print(\"checking value at index: {}\".format(index))\n",
+    "    if target == classmates[index]:\n",
+    "        print(\"found target in the list, inde is: {}\".format(index)) \n",
+    "    \n",
+    "    index += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ec8cc2e2-8cd9-4a44-bb30-632b06585c47",
+   "metadata": {},
+   "source": [
+    "#### 5. break(stop) the `while` loop when find the value 当找到值后打破（停止）循环\n",
+    "\n",
+    "If the requirement is to only ask you to tell whether the value exists in the list, once you find one value which is equal to the target value, you can directly makde an positive statement, saying that the value is in the list. In this case, it is not necessary to look at all the other elements in the list. To break the loop, we can use `break` statement in our codes. Look at the following codes with a `break` statement added and compare the difference of the output with previous one:\n",
+    "\n",
+    "如果要求仅仅是询问有一个值是否存在一个列表中，一旦我们在列表中发现这个元素，我们就可以作出肯定的判断，认为这个值存在于列表中。在这种情况下，就可以提前终止循环，没有必要再去检查列表中剩余没有看过的元素了。为了终止循环，我们可以在代码中添加一行`break`语句。请看下面加入了`break`语句的代码："
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "d2a16cec-2bf2-4d88-85ed-971197a910a1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "checking value at index: 0\n",
+      "checking value at index: 1\n",
+      "checking value at index: 2\n",
+      "found target in the list, inde is: 2\n"
+     ]
+    }
+   ],
+   "source": [
+    "target = \"Jason\"\n",
+    "index = 0\n",
+    "while index < len(classmates):\n",
+    "    print(\"checking value at index: {}\".format(index))\n",
+    "    if target == classmates[index]:\n",
+    "        print(\"found target in the list, inde is: {}\".format(index)) \n",
+    "        break\n",
+    "        \n",
+    "    index += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25d6a835-3bb4-4d8b-bc6b-deeae2e98766",
+   "metadata": {},
+   "source": [
+    "#### 6. Another easy wat to check whether a value is in a list 另一个更简单的方式来检查一个值是否存在列表中\n",
+    "\n",
+    "We can also use the keyword `in` to check wheter a value is in a list like following expression. If the result of the expression is `True`， it means a variable(value) is indeed in the list; if the expression result is `False`, it means the value is not an element of the list. When we execute this cell, it gives an output `True`, which means there is a value `\"Tony\"` in the `classmates` list.\n",
+    "\n",
+    "我们也像下面的这行代码一样使用关键词`in`来检查一个变量（值）是否存在一个list中。如果表达式的值（输出）是`True`，则意味着要检查的变量（值）存在于列表中，反之则表示不存在。当我们执行下面的这行代码后，它会输出`True`，意味着`\"Tony\"`是列表`classmates`的一个元素。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "e317d0f3-8d76-42de-8e7b-cf60e278a352",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"Tony\" in classmates"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "6a298b4a-398d-4385-bd04-0ee18534104e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"Tony's Daddy\" in classmates # None, false, False"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "4a57e520-6be1-4933-95c0-c8bdf7f69150",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"jason\" in classmates # False"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "55c245c3-a982-4b92-9389-09367d5e1386",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"Jason\" in classmates # True"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e1f6cd0e-f347-4199-ae83-289060a0f955",
+   "metadata": {},
+   "source": [
+    "Since the above code is an expression that output either `True` or `False`, we can use it in a `if` condition code block like the following so that the programe prints out a more friendly output or complete some other tasks for each specific condition.\n",
+    "\n",
+    "由于上面这行代码是一个输出结果要么是`True`要么是`False`的表达式，我们也可以像下面那样把它放在`if`引导的条件语句块中，让程序给出一个更友好的输出或者根据不同的条件完成一些额外的人物。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "54bf97e2-ac47-4f28-a8cf-7235f354a03c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "'Tony' is an element of classmates list\n"
+     ]
+    }
+   ],
+   "source": [
+    "if \"Tony\" in classmates:\n",
+    "    print(\"'Tony' is an element of classmates list\")\n",
+    "else:\n",
+    "    print(\"'Tony' is not in the classmates list\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d55f37d9",
+   "metadata": {},
+   "source": [
+    "### Solution Codes 编程求解\n",
+    "\n",
+    "Compare the two solutions, and tell the differences. How many loops have the programs expeirenced respectively? Can you make the loop tables for each solution?\n",
+    "\n",
+    "比较两个解决方案，说出其中的差别。两个解决方案中的while循环各经历了几次循环？针对每一个解决方案，你能写出那个表示循环的表格吗？"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "18d65641-3d30-4bea-961b-72f63ca391db",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "factors are: [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]\n",
+      "16 factors\n",
+      "24 is in [1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Solution 1 解决方案1\n",
+    "target_num = 120           \n",
+    "num_checking = 1\n",
+    "factors = []\n",
+    "while num_checking <= target_num:\n",
+    "    if target_num % num_checking == 0:\n",
+    "        factors.append(num_checking)\n",
+    "    \n",
+    "    num_checking += 1\n",
+    "        \n",
+    "print(\"factors are: {}\".format(factors))\n",
+    "print(\"{} factors\".format(len(factors)))\n",
+    "\n",
+    "element = 24\n",
+    "if element in factors:\n",
+    "    print(\"{} is in {}\".format(element, factors))\n",
+    "else:\n",
+    "    print(\"{} is not in {}\".format(element, factors))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "5c8a885e-51be-4b23-9f54-c443fad68c73",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "factors are: [1, 120, 2, 60, 3, 40, 4, 30, 5, 24, 6, 20, 8, 15, 10, 12]\n",
+      "16 factors\n",
+      "24 is in [1, 120, 2, 60, 3, 40, 4, 30, 5, 24, 6, 20, 8, 15, 10, 12]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Solution 2 解决方案2\n",
+    "target_num = 120           \n",
+    "num_checking = 1\n",
+    "quotien = target_num \n",
+    "\n",
+    "factors = []\n",
+    "while num_checking < quotien:\n",
+    "    if target_num % num_checking == 0:\n",
+    "        quotien = target_num // num_checking\n",
+    "        factors.append(num_checking)\n",
+    "        factors.append(quotien)\n",
+    "    \n",
+    "    num_checking += 1\n",
+    "        \n",
+    "print(\"factors are: {}\".format(factors))\n",
+    "print(\"{} factors\".format(len(factors)))\n",
+    "\n",
+    "element = 24\n",
+    "if element in factors:\n",
+    "    print(\"{} is in {}\".format(element, factors))\n",
+    "else:\n",
+    "    print(\"{} is not in {}\".format(element, factors))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "53fd2b3c-d63b-429c-b585-b90090092930",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "30\n",
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(120 // 4)\n",
+    "print(120 % 4)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "371ec5c3-f3e7-48e1-9725-c1dbd05058a8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n",
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(120 //30 )\n",
+    "print(120 % 30)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "latest-contamination",
+   "metadata": {},
+   "source": [
+    "### Summary 知识点小结"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afb3f674",
+   "metadata": {},
+   "source": [
+    "- 学习操作列表型变量两个常见的方法`append`和`remove`\n",
+    "- 列表变量的元素可以是整数类型，也可以是字符串类型，还可以是其它类型\n",
+    "- 如何判断一个变量（值）是否存在于一个list中：使用while循环或使用关键词`in`\n",
+    "- `break`提前终止循环\n",
+    "- 复习列表型变量的`len`方法"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bizarre-assurance",
+   "metadata": {},
+   "source": [
+    "### 计算机小知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "92100f08",
+   "metadata": {},
+   "source": [
+    "- 暂缺"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Assignments 作业"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "af3779fd-73fd-485e-b9af-81800f214694",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "1. create an empty list with the variable name `my_friends`, use `append` method to add at least 5 of your friend names to this list, then use the method `remove` to remove one or several of your friend names from the list. Each time after you add or remove a friend name, print out the whole `my_friends` list and its length.  \n",
+    "\n",
+    "   创建一个空的列表，变量名设为`my_friends`，使用`append`方法往这个列表里添加至少5个你的朋友名字，随后再使用`remove`方法从中移除一个或多个朋友名字。每一次当你使用`append`或`remove`方法后，都将整个`my_friends`列表的内容以及列表的长度打印出来。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "17eb3f0c-0561-4604-8eec-26d084f611c7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7460a241-af19-4d7a-858f-c2e693b1722b",
+   "metadata": {},
+   "source": [
+    "2. Write a program to find all factors of 144 and 385, put their factors in to two lists, one is for 144, and the other is for 385. Print out the two lists and also tell which integer has more factors.  \n",
+    "\n",
+    "   编写程序分别查找整数144和385各自的因数，把他们分别放到两个不同的列表中，编程输出这两个列表并输出谁的因数数量多"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "32fb5105-b6a8-42ab-871a-7541d135e99f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "144 的因数是 [], 个数是 0\n",
+      "385 的因数是 [], 个数是 0\n",
+      "144 的因数个数少于或等于385的因数个数\n"
+     ]
+    }
+   ],
+   "source": [
+    "num1, num2 = 144, 385\n",
+    "factors1, factors2 = [], []\n",
+    "\n",
+    "#TODO: write codes to answer the question.\n",
+    "#      编写你的代码来回答本题。\n",
+    "\n",
+    "print(\"{} 的因数是 {}, 个数是 {}\".format(num1, factors1, len(factors1)))\n",
+    "print(\"{} 的因数是 {}, 个数是 {}\".format(num2, factors2, len(factors2)))\n",
+    "if len(factors1) > len(factors2):\n",
+    "    print(\"{} 的因数个数多于{}的因数个数\".format(num1, num2))\n",
+    "else:\n",
+    "    print(\"{} 的因数个数少于或等于{}的因数个数\".format(num1, num2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f97f26a0-e13f-48ba-9135-9ab110695803",
+   "metadata": {},
+   "source": [
+    "3. Following the previous question. After you have two lists for the factors of 144 and 385, Write a program to check if these two integers shared some factors, If yes, print out the shared factor(s).\n",
+    "   \n",
+    "   续前一题。 当你找到144和385的所有因数后，编写程序检查这两个数除了整数1以外还有没有共同的因数"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "14628f53-382c-481a-9d59-713ed911c700",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "factors_for_144 = [] # TODO: fill the factors of 144 into [], 把144的因数放到[]里\n",
+    "factors_for_385 = [] # TODO: fill the factors of 144 into [], 把144的因数放到[]里\n",
+    "\n",
+    "#TODO: write codes to answer the question.\n",
+    "#      编写你的代码来回答本题。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d13098be-4c79-4376-8afa-35a4bc7c8083",
+   "metadata": {},
+   "source": [
+    "4. if an integer only have two factors(1 and the integer itself), this integer is a Prime number; Otherwise, it is a Composite number. Write a program to find all the prime and composite numbers between 2 and 100 (both included). Use two lists to store all these prime and composite numbers. Finally, print out the two lists.\n",
+    "\n",
+    "   \n",
+    "   如果一个整数的因数个数为2个（整数1和它自己），那么这个整数为“质数”，否则这个数则为合数。编写程序找出从2-100这100个连续整数中哪些是质数，哪些是合数，分别用两个列表来存储质数和合数，并最后将其打印出来。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "7d152559-9abe-4b74-941d-f4aff3badd40",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Prime numbers: []\n",
+      "Composite numbers: []\n"
+     ]
+    }
+   ],
+   "source": [
+    "num_start, num_end = 2, 100\n",
+    "list_prime = []\n",
+    "list_composite = []\n",
+    "# TODO: Add your codes here\n",
+    "\n",
+    "print(\"Prime numbers: {}\".format(list_prime))\n",
+    "print(\"Composite numbers: {}\".format(list_composite))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2f0289b-1790-4e59-9ff3-b4a3da7743ce",
+   "metadata": {},
+   "source": [
+    "5. The following list `list_a` has 2 elements, both of which are integer `1`. Please write a program to add 20 more new elements to the end of `list_a` step by step while respecting the following rule: **every time when you add a new element to the end of the list, its value is the sum of the values of the last two elements in the list.** Print out the final list when you finish adding elements. The final list you get should have 22 elements with `17711` as its last element. Are your familiar with the first 10 element in this list?\n",
+    "\n",
+    "   下面名为`list_a`的列表一开始有2个元素且值均为`1`。请编写程序往这个列表的末端逐次再添加20个新元素，**要求每次新添加的元素值是当时列表的最末两位元素的值的和。** 添加完毕后打印输出这个列表。你最后得到的列表应该具有22个元素，且最后一个元素的值为`17711`。你熟悉这个列表的前10个元素吗？"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "78b05128-b89d-4a5b-bcde-45bcd833d1c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "your answer is not correct\n"
+     ]
+    }
+   ],
+   "source": [
+    "list_a = [1, 1]\n",
+    "\n",
+    "#TODO: write codes to answer the question.\n",
+    "#      编写你的代码来回答本题。\n",
+    "\n",
+    "if len(list_a) != 22 or list_a[-1] != \"17711\":\n",
+    "    print(\"your answer is not correct\")\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
