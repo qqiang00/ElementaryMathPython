@@ -389,7 +389,7 @@
    "id": "25d6a835-3bb4-4d8b-bc6b-deeae2e98766",
    "metadata": {},
    "source": [
-    "#### 6. Another easy wat to check whether a value is in a list 另一个更简单的方式来检查一个值是否存在列表中\n",
+    "#### 6. Another easy way to check whether a value is in a list 另一个更简单的方式来检查一个值是否存在列表中\n",
     "\n",
     "We can also use the keyword `in` to check wheter a value is in a list like following expression. If the result of the expression is `True`， it means a variable(value) is indeed in the list; if the expression result is `False`, it means the value is not an element of the list. When we execute this cell, it gives an output `True`, which means there is a value `\"Tony\"` in the `classmates` list.\n",
     "\n",
@@ -737,8 +737,8 @@
     "num1, num2 = 144, 385\n",
     "factors1, factors2 = [], []\n",
     "\n",
-    "#TODO: write codes to answer the question.\n",
-    "#      编写你的代码来回答本题。\n",
+    "#TODO: Add your codes here\n",
+    "#      添加你的代码来回答本题。\n",
     "\n",
     "print(\"{} 的因数是 {}, 个数是 {}\".format(num1, factors1, len(factors1)))\n",
     "print(\"{} 的因数是 {}, 个数是 {}\".format(num2, factors2, len(factors2)))\n",
@@ -766,10 +766,10 @@
    "outputs": [],
    "source": [
     "factors_for_144 = [] # TODO: fill the factors of 144 into [], 把144的因数放到[]里\n",
-    "factors_for_385 = [] # TODO: fill the factors of 144 into [], 把144的因数放到[]里\n",
+    "factors_for_385 = [] # TODO: fill the factors of 385 into [], 把385的因数放到[]里\n",
     "\n",
-    "#TODO: write codes to answer the question.\n",
-    "#      编写你的代码来回答本题。"
+    "#TODO: Add your codes here\n",
+    "#      添加你的代码来回答本题。"
    ]
   },
   {
@@ -802,7 +802,9 @@
     "num_start, num_end = 2, 100\n",
     "list_prime = []\n",
     "list_composite = []\n",
-    "# TODO: Add your codes here\n",
+    "\n",
+    "#TODO: Add your codes here\n",
+    "#      添加你的代码来回答本题。\n",
     "\n",
     "print(\"Prime numbers: {}\".format(list_prime))\n",
     "print(\"Composite numbers: {}\".format(list_composite))"
@@ -835,8 +837,8 @@
    "source": [
     "list_a = [1, 1]\n",
     "\n",
-    "#TODO: write codes to answer the question.\n",
-    "#      编写你的代码来回答本题。\n",
+    "#TODO: Add your codes here\n",
+    "#      添加你的代码来回答本题。\n",
     "\n",
     "if len(list_a) != 22 or list_a[-1] != \"17711\":\n",
     "    print(\"your answer is not correct\")\n",
