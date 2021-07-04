@@ -645,13 +645,29 @@ div.rendered_html tbody tr:hover {
 <p><strong>Time</strong>: 2021-07-03 20:00 - 21:30 (GMT-4)</p>
 <p><strong>Name</strong>:______________________</p>
 <p><strong>Score</strong>:_____________________</p>
-<p><strong>Instruction</strong>: 1. You are allowed to use Internet but not allowed to ask for someone else’s help through Internet. 可以使用互联网，但不能通过互联网寻求他人帮助。 2. You are allowed to ask for your parents’ help. Your parents may only give you oral direction; he or she cannot write the codes for you directly. 可以寻求爸爸妈妈的帮助，但是爸爸妈妈只能给你口头指导，不能代替你写代码 3. You need to open your video all the time so that your teacher can see what you are doing.
-考试期间全程打开视频让老师知道你在做什么 4. You may mute yourself. But if you have some questions to ask, you may unmute and talk to your teacher.正常情况下你应该静音，如果你有问题要询问老师，可以取消静音和老师对话。 5. Once time is up, completely stop, change the file name to “[yourname]_quiz.ipynb” and upload(or email) your file before 9：30. 一旦时间结束，立即停止答题，将文件名修改为“[你的名字]_quiz.ipynb” 上传（或email)你的文件。</p>
-<p><strong>Notes</strong>: 1. There are 5 questions. Each worth 20 points. 一共有5道题目，每题20分。 2. You may modify the codes or add new codes lines following each<code class="docutils literal notranslate"><span class="pre">#TODO</span></code> instruction.你需要遵循<code class="docutils literal notranslate"><span class="pre">#TODO</span></code>提供的要求来修改现有的代码或新增一行或多行代码。</p>
-<hr><div class="section" id="Question-1">
+<p><strong>Instruction</strong>:</p>
+<ol class="arabic simple">
+<li><p>You are allowed to use Internet but not allowed to ask for someone else’s help through Internet. 可以使用互联网，但不能通过互联网寻求他人帮助。</p></li>
+<li><p>You are allowed to ask for your parents’ help. Your parents may only give you oral direction; he or she cannot write the codes for you directly. 可以寻求爸爸妈妈的帮助，但是爸爸妈妈只能给你口头指导，不能代替你写代码</p></li>
+<li><p>You need to open your video all the time so that your teacher can see what you are doing. 考试期间全程打开视频让老师知道你在做什么</p></li>
+<li><p>You may mute yourself. But if you have some questions to ask, you may unmute and talk to your teacher.正常情况下你应该静音，如果你有问题要询问老师，可以取消静音和老师对话。</p></li>
+<li><p>Once time is up, completely stop, change the file name to “[yourname]_quiz.ipynb” and upload(or email) your file before 9：30. 一旦时间结束，立即停止答题，将文件名修改为“[你的名字]_quiz.ipynb” 上传（或email)你的文件。</p></li>
+</ol>
+<p><strong>Notes</strong>:</p>
+<ol class="arabic">
+<li><p>There are 5 questions. Each worth 20 points. 一共有5道题目，每题20分。</p></li>
+<li><p>You may modify the codes or add new codes lines following each<code class="docutils literal notranslate"><span class="pre">#TODO</span></code> instruction.你需要遵循<code class="docutils literal notranslate"><span class="pre">#TODO</span></code>提供的要求来修改现有的代码或新增一行或多行代码。</p>
+<hr></li>
+</ol>
+<div class="section" id="Question-1">
 <h2>Question 1<a class="headerlink" href="#Question-1" title="永久链接至标题">¶</a></h2>
 <p>Complete the following codes so that the program can:</p>
-<p>完成下面的代码使得程序能够： 1. let the compute wait for your input from keyboard with prompt “Please input a number:”; 让计算机等待来自键盘的输入，给出提示文字:“请输入一个数:”; 2. type 100 by keyboard; 从键盘输入100; 3. check the number from keyboard is odd or even, print the result. 检查输入的数是奇数还是偶数，打印出结果</p>
+<p>完成下面的代码使得程序能够：</p>
+<ol class="arabic simple">
+<li><p>let the compute wait for your input from keyboard with prompt “Please input a number:”; 让计算机等待来自键盘的输入，给出提示文字:“请输入一个数:”;</p></li>
+<li><p>type 100 by keyboard; 从键盘输入100;</p></li>
+<li><p>check the number from keyboard is odd or even, print the result. 检查输入的数是奇数还是偶数，打印出结果</p></li>
+</ol>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -787,29 +803,41 @@ The difference is always greather than or euqal to 0.
 <p>一个装水的容器有一个进水口和一个出水口。如果同时把进水口和出水口打开，每秒钟会有5升的水从进水口流入这个容器，同时有3升的水从出水口流出这个容器。已知容器最多可以装500升的水，且在时刻0，容器里已有100升的水。此时把进水口和出水口同时打开，经过一段时间后这个容器是否会装满水？如果是，大概经过多少时间容器会满；如果不是，为什么？</p>
 <p>通过补全下面的带来来完成这个问题。</p>
 <p>By completing the following codes to answer this question.</p>
-in_speed, out_speed = 5, 3
-max_water_in_container = 500
-cur_water_in_container = 100
-time_passed = 0
-delta_time = 1
-while True:
-    cur_water_in_container += (in_speed - out_speed) * delta_time
-    # TODO: update time_passed with proper value.
-    #       用恰当的值更新变量 time_passed
-    if cur_water_in_container >= max_water_in_container:
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">in_speed</span><span class="p">,</span> <span class="n">out_speed</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">max_water_in_container</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">cur_water_in_container</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">time_passed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">delta_time</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">cur_water_in_container</span> <span class="o">+=</span> <span class="p">(</span><span class="n">in_speed</span> <span class="o">-</span> <span class="n">out_speed</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta_time</span>
+    <span class="c1"># TODO: update time_passed with proper value.</span>
+    <span class="c1">#       用恰当的值更新变量 time_passed</span>
+    <span class="k">if</span> <span class="n">cur_water_in_container</span> <span class="o">&gt;=</span> <span class="n">max_water_in_container</span><span class="p">:</span>
 
-        pass
-        # TODO: add some code to break the while loop
-        #       添加一些代码来终止循环
+        <span class="k">pass</span>
+        <span class="c1"># TODO: add some code to break the while loop</span>
+        <span class="c1">#       添加一些代码来终止循环</span>
 
 
-print("after about {} second, the container will be full.".format(time_passed))
-print("经过{}秒，容器将会被水注满。".format(time_passed))<hr></div>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after about </span><span class="si">{}</span><span class="s2"> second, the container will be full.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_passed</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;经过</span><span class="si">{}</span><span class="s2">秒，容器将会被水注满。&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_passed</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<hr></div>
 <div class="section" id="Question-5">
 <h2>Question 5<a class="headerlink" href="#Question-5" title="永久链接至标题">¶</a></h2>
 <p>Complete the following codes so that the program can draw 10 centered suqares with side length increasing by 20 like the following figure shows:</p>
 <p>补全下面的代码使得程序能够在绘图区的中央绘制如下图所示的10个边长依次增大20的正方形：</p>
-<p><img alt="d9ad07716cee44f5b09fa6f5eebe72de" src="../../_images/L012Quiz_10_centered_squares.png" /></p>
+<p><img alt="ce618f9c6e9549a4ab2f4dfe45748394" src="../../_images/L012Quiz_10_centered_squares.png" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
