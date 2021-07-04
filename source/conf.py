@@ -68,4 +68,5 @@ html_static_path = ['_static']
 
 supress_warnings=['myst.mathjax']
 
-myst_update_mathjax=False
+myst_update_mathjax = False
+# nbsphinx_allow_errors = True
