@@ -1,0 +1,1313 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第13讲 认识和绘制数轴 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="第二篇 进阶" href="../../200intermediate/index.html" />
+    <link rel="prev" title="Quiz 测验" href="012C_quiz.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001preface.html">
+   前言
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../002about_author.html">
+   关于作者
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../003copyright.html">
+   版权声明
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   第一篇 入门
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="001_hello_python.html">
+     第1讲 你好，Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="002_make_name_for_data.html">
+     第2讲 起个名字吧
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="003_who_is_older.html">
+     第3讲 谁的年龄大
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="004_guess_number.html">
+     第4讲 猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="005_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="006_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="007_how_many_rice_awarded.html">
+     第7讲 一共奖励了多少袋大米
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="008_law_of_sequence.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="009_chicken_rabbit_in_same_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="010_divide_remainder_1.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="011_divide_remainder_2.html">
+     第11讲 Division and Remainder 整除和余数（二）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012A_factor_composite_prime.html">
+     第12讲 找出所有能整除120的整数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012B_review.html">
+     Review 复习
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012C_quiz.html">
+     Quiz 测验
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     第13讲 认识和绘制数轴
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../200intermediate/index.html">
+   第二篇 进阶
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../300advanced/index.html">
+   第三篇 高级
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../500answer/index.html">
+   练习答案
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/005a_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/006a_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/008a_law_of_sequences.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/009a_chicken_rabbit_in_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/010_divide_remainder_1_with_answer.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/011_divide_remainder_2_with_answer.html">
+     第11讲 整除和余数（二）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/012A_factor_composite_prime_with_answer.html">
+     第12讲 找出所有能整除120的整数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/012C_quiz-answer.html">
+     Answer for Quiz 测验参考答案
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../600appendix/index.html">
+   附录
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../600appendix/content/000_intro_to_course.html">
+     课程介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../600appendix/content/001_install_jupyter_notebook_on_windows.html">
+     附录一 Windows操作系统下搭建Python运行环境
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../800new_feature/index.html">
+   新功能测试
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../800new_feature/content/markdown_test.html">
+     MarkDown test Title
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../990inside_back_cover.html">
+   封三
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../991back_cover.html">
+   封底
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/100beginner/content/013_draw_axis.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题描述">
+   Problem 问题描述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Math-Background-数学背景">
+   Math Background 数学背景
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Prerequisites-预备知识">
+   Prerequisites 预备知识
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-write方法可以在绘图区书写字符串">
+     1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       write
+      </span>
+     </code>
+     方法可以在绘图区书写字符串
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-tuple元组数据类型">
+     2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tuple
+      </span>
+     </code>
+     元组数据类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#3.-理解同一个方法在接受不同的参数值时执行结果的比较">
+     3. 理解同一个方法在接受不同的参数值时执行结果的比较
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#4.-对比输出的文字，观察下面的几条write方法在接受不同的font值时效果有什么不同。">
+     4. 对比输出的文字，观察下面的几条
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       write
+      </span>
+     </code>
+     方法在接受不同的
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       font
+      </span>
+     </code>
+     值时效果有什么不同。
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#5.-区分()何时表示元组数据何时表示方法接受的参数">
+     5. 区分
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ()
+      </span>
+     </code>
+     何时表示元组数据何时表示方法接受的参数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#6.-练习">
+     6. 练习
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-编程求解">
+   Solution 编程求解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Summary-知识点小结">
+   Summary 知识点小结
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#计算机小知识">
+   计算机小知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="第13讲-认识和绘制数轴">
+<h1>第13讲 认识和绘制数轴<a class="headerlink" href="#第13讲-认识和绘制数轴" title="永久链接至标题">¶</a></h1>
+<div class="section" id="Problem-问题描述">
+<h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
+<p>在长宽分别为600和400像素的绘图区域绘制如下图所示的一条标有刻度、水平方向的带箭头指示方向的数轴。其中数轴的左右两端距离绘图区域左右边界均为20像素，相邻刻度的距离为50像素，刻度线的长度为20像素，表示刻度线数值的数字在刻度线的正下方且底端距离数轴20个像素。</p>
+<p><img alt="3deed82b88e54734b44b27ab49187e51" class="no-scaled-link" src="../../_images/L013_axis2.png" style="width: 600px;" /></p>
+</div>
+<div class="section" id="Math-Background-数学背景">
+<h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>数轴的构成</p></li>
+<li><p>数轴原点，正负数在数轴轴上的位置比较</p></li>
+<li><p>每一个数在数轴上都有一个点相对应，两个数的差在数轴上表示的是这两个数对应的两个点之间的距离。</p></li>
+</ol>
+</div>
+<div class="section" id="Prerequisites-预备知识">
+<h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
+<div class="section" id="1.-write方法可以在绘图区书写字符串">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">write</span></code>方法可以在绘图区书写字符串<a class="headerlink" href="#1.-write方法可以在绘图区书写字符串" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">400</span>   <span class="c1"># 窗口的宽度和高度（单位为：像素）</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>比较提起画笔和放下画笔时下面的代码执行的效果有什么不同</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sophie&quot;</span><span class="p">,</span> <span class="n">move</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pd</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Tony&quot;</span><span class="p">,</span> <span class="n">move</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pd</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sophie&quot;</span><span class="p">,</span> <span class="n">move</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="2.-tuple元组数据类型">
+<h3>2. <code class="docutils literal notranslate"><span class="pre">tuple</span></code>元组数据类型<a class="headerlink" href="#2.-tuple元组数据类型" title="永久链接至标题">¶</a></h3>
+<p>pos_x 是一个tuple类型的变量</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pos_x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>       <span class="c1"># pos_x 是一个tuple类型的变量</span>
+</pre></div>
+</div>
+</div>
+<p>可以使用索引来获取tuple类型变量的元素</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">pos_x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos_x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>      <span class="c1"># 可以使用索引来获取tuple类型变量的元素</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+30 20
+</pre></div></div>
+</div>
+<p>可以使用len()方法来获取tuple类型数据的元素个数</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">len</span><span class="p">(</span><span class="n">pos_x</span><span class="p">)</span>                     <span class="c1"># 可以使用len()方法来获取tuple类型数据的元素个数</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+2
+</pre></div></div>
+</div>
+<p>不可以更改tuple类型变量里某一个元素的值。例如执行下面的代码将发生错误 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">pos_x[0]</span> <span class="pre">=</span> <span class="pre">40</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-24-d852e9299be9&gt; in &lt;module&gt;
+----&gt; 1 pos_x[0] = 40
+
+TypeError: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># pos_x[0] = 40                  # 不可以更改tuple类型变量里某一个元素的值</span>
+</pre></div>
+</div>
+</div>
+<p>可以给整个tuple类型变量赋予一个新的tuple值</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">pos_x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>               <span class="c1"># 可以给整个tuple类型变量赋予一个新的tuple值</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>型的变量里的元素的类型可以互不相同</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sophie</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Sophie&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">,</span> <span class="s2">&quot;Grade4&quot;</span><span class="p">)</span> <span class="c1"># tuple型的变量里的元素的类型可以互不相同</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sophie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&#39;Sophie&#39;, 11, &#39;Female&#39;, &#39;Grade4&#39;)
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="3.-理解同一个方法在接受不同的参数值时执行结果的比较">
+<h3>3. 理解同一个方法在接受不同的参数值时执行结果的比较<a class="headerlink" href="#3.-理解同一个方法在接受不同的参数值时执行结果的比较" title="永久链接至标题">¶</a></h3>
+<p>对比输出的文字和海龟位置，观察下面的两条<code class="docutils literal notranslate"><span class="pre">write</span></code>方法在接受不同的<code class="docutils literal notranslate"><span class="pre">align</span></code>值或时效果有什么不同。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="4.-对比输出的文字，观察下面的几条write方法在接受不同的font值时效果有什么不同。">
+<h3>4. 对比输出的文字，观察下面的几条<code class="docutils literal notranslate"><span class="pre">write</span></code>方法在接受不同的<code class="docutils literal notranslate"><span class="pre">font</span></code>值时效果有什么不同。<a class="headerlink" href="#4.-对比输出的文字，观察下面的几条write方法在接受不同的font值时效果有什么不同。" title="永久链接至标题">¶</a></h3>
+<p>参数<code class="docutils literal notranslate"><span class="pre">font</span></code>是一个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型的变量</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># no reset() here 这里没有reset()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">bk</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>    <span class="c1"># 后退200</span>
+<span class="n">write</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="5.-区分()何时表示元组数据何时表示方法接受的参数">
+<h3>5. 区分<code class="docutils literal notranslate"><span class="pre">()</span></code>何时表示元组数据何时表示方法接受的参数<a class="headerlink" href="#5.-区分()何时表示元组数据何时表示方法接受的参数" title="永久链接至标题">¶</a></h3>
+<p>看<code class="docutils literal notranslate"><span class="pre">()</span></code>前面有没有紧跟一个方法名, 下面这行代码声明了一个元组型变量，变量名为<code class="docutils literal notranslate"><span class="pre">jason</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jason</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Italic&quot;</span><span class="p">))</span> <span class="c1">#</span>
+</pre></div>
+</div>
+<p>下面这行代码是在执行一个名为<code class="docutils literal notranslate"><span class="pre">jason</span></code>的方法</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jason</span><span class="p">(</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;Italic&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="6.-练习">
+<h3>6. 练习<a class="headerlink" href="#6.-练习" title="永久链接至标题">¶</a></h3>
+<p>编写下面的代码，更改变量<code class="docutils literal notranslate"><span class="pre">name</span></code>的值为你的名字，观察代码执行的效果。</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 如果没有导入绘图库相关方法以及执行setup方法，请解除下面几行代码的注释</span>
+<span class="c1"># from turtle import setup, reset, pu, pd, bye, left, right, fd, bk, screensize</span>
+<span class="c1"># from turtle import goto, seth, write, ht, st, home</span>
+<span class="c1"># width, height = 600, 400   # 窗口的宽度和高度（单位为：像素）</span>
+<span class="c1"># setup(600, 400, 0, 0)</span>
+<span class="n">reset</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">ht</span><span class="p">()</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Qiang&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My name is </span><span class="si">{}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">Nice to meet you.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Solution-编程求解">
+<h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">400</span>   <span class="c1"># 窗口的宽度和高度（单位为：像素）</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>            <span class="c1"># 原点的位置</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="mi">20</span>               <span class="c1"># 数轴端点距离绘图区边界距离</span>
+<span class="n">max_x</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">padding</span>  <span class="c1"># x轴最大值</span>
+<span class="n">show_arrow</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># 是否显示箭头</span>
+<span class="n">mark_interval</span> <span class="o">=</span> <span class="mi">50</span>         <span class="c1"># 刻度线间距</span>
+<span class="n">mark_line_length</span> <span class="o">=</span> <span class="mi">10</span>           <span class="c1"># 刻度线高度</span>
+<span class="n">text_offset</span> <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># 坐标值距离坐标线的距离</span>
+
+<span class="n">mark_degree</span> <span class="o">=</span> <span class="mi">90</span>           <span class="c1"># 坐标刻度与坐标轴夹角</span>
+<span class="n">arrow_length</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># 箭头长度</span>
+<span class="n">arrow_degree</span> <span class="o">=</span> <span class="mi">30</span>          <span class="c1"># 箭头与坐标轴夹角</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="mi">1</span>                <span class="c1"># 每次坐标值变化的幅度</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution1: without using goto() 第一种方法：不使用goto()</span>
+
+<span class="n">reset</span><span class="p">()</span>    <span class="c1"># 重置绘图区</span>
+<span class="n">min_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">max_x</span>   <span class="c1"># 根据坐标轴允许的最大值，获取该坐标轴允许的最小值</span>
+<span class="n">pu</span><span class="p">()</span>       <span class="c1"># 提起画笔，暂停绘图</span>
+<span class="n">home</span><span class="p">()</span>     <span class="c1"># Move turtle to the origin – coordinates (0,0) 移动小海龟至初始位置</span>
+           <span class="c1"># and set its heading to its start-orientation  并设置朝向为初始朝向</span>
+<span class="n">bk</span><span class="p">(</span><span class="n">max_x</span><span class="p">)</span>  <span class="c1"># backward max_x</span>
+<span class="n">pd</span><span class="p">()</span>       <span class="c1"># 落下画笔，准备绘图</span>
+
+<span class="c1"># draw mark 绘制刻度线</span>
+<span class="n">cur_x</span><span class="p">,</span> <span class="n">last_x</span> <span class="o">=</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_x</span>          <span class="c1"># 海龟当前位置和最近一次绘图后停留的位置</span>
+<span class="k">while</span> <span class="n">cur_x</span> <span class="o">&lt;=</span> <span class="n">max_x</span><span class="p">:</span>                 <span class="c1"># 循环</span>
+    <span class="k">if</span> <span class="n">cur_x</span> <span class="o">%</span> <span class="n">mark_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>      <span class="c1"># 海龟的位置是相邻刻度间隔长度的整数倍</span>
+        <span class="n">length_move</span> <span class="o">=</span> <span class="n">cur_x</span> <span class="o">-</span> <span class="n">last_x</span>    <span class="c1"># 计算海龟应该前进的长度</span>
+        <span class="n">pd</span><span class="p">()</span>                            <span class="c1"># 落下画笔，准备绘图</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">length_move</span><span class="p">)</span>                 <span class="c1"># 海龟前进（绘制一小段）</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">mark_degree</span><span class="p">)</span>               <span class="c1"># 向左转90度，海龟朝正上方，准备绘制刻度线</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">mark_line_length</span><span class="p">)</span>                 <span class="c1"># 绘制刻度线</span>
+        <span class="n">pu</span><span class="p">()</span>                            <span class="c1"># 把画笔提起暂停绘图</span>
+        <span class="n">bk</span><span class="p">(</span><span class="n">mark_line_length</span> <span class="o">+</span> <span class="n">text_offset</span><span class="p">)</span>   <span class="c1"># 后退（向下）一段长度</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">cur_x</span> <span class="o">//</span> <span class="n">mark_interval</span><span class="p">))</span>
+                                        <span class="c1"># 准备刻度值字符串（由整型数据转换而来）</span>
+        <span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>     <span class="c1"># 在当前位置以居中的形式书写文字字符串</span>
+        <span class="n">fd</span><span class="p">(</span><span class="n">text_offset</span><span class="p">)</span>                 <span class="c1"># 前进（向上）一小段长度</span>
+        <span class="n">right</span><span class="p">(</span><span class="n">mark_degree</span><span class="p">)</span>              <span class="c1"># 向右转90度，海龟次朝向右侧</span>
+        <span class="n">last_x</span> <span class="o">=</span> <span class="n">cur_x</span>                  <span class="c1"># 记录海龟当前位置，为下次绘图的起点</span>
+
+    <span class="n">cur_x</span> <span class="o">+=</span> <span class="n">delta_x</span>                  <span class="c1"># 当前位置增加一小段长度（个单位距离：像素）</span>
+
+<span class="n">pd</span><span class="p">()</span>                                  <span class="c1"># 落下画笔，准备绘制</span>
+<span class="n">fd</span><span class="p">(</span><span class="n">max_x</span> <span class="o">-</span> <span class="n">last_x</span><span class="p">)</span>                    <span class="c1"># 绘制最后一个刻度线到数轴最大x值这一小段</span>
+
+<span class="k">if</span> <span class="n">show_arrow</span><span class="p">:</span>                        <span class="c1"># 如果需要绘制箭头</span>
+    <span class="n">right</span><span class="p">(</span><span class="n">arrow_degree</span><span class="p">)</span>                 <span class="c1"># 向右转，海龟朝向右侧偏下</span>
+    <span class="n">bk</span><span class="p">(</span><span class="n">arrow_length</span><span class="p">)</span>                    <span class="c1"># 后退一定距离，绘制箭头一边</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">arrow_length</span><span class="p">)</span>                    <span class="c1"># 回到max_x位置</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">arrow_degree</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>              <span class="c1"># 向左转，海龟朝向右侧偏上</span>
+    <span class="n">bk</span><span class="p">(</span><span class="n">arrow_length</span><span class="p">)</span>                    <span class="c1"># 后退一定距离，绘制箭头另一边</span>
+
+<span class="n">ht</span><span class="p">()</span>                                  <span class="c1"># 隐藏海龟</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution2: using goto() 第二种方法：使用goto()</span>
+<span class="n">reset</span><span class="p">()</span>
+<span class="n">min_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">max_x</span>
+
+<span class="c1"># draw line</span>
+<span class="n">pu</span><span class="p">()</span>       <span class="c1"># 提起画笔，暂停绘图</span>
+<span class="n">home</span><span class="p">()</span>     <span class="c1"># Move turtle to the origin – coordinates (0,0) 移动小海龟至初始位置</span>
+           <span class="c1"># and set its heading to its start-orientation  并设置朝向为初始朝向</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># go to the left end of the line  移动海龟到坐标轴直线的最左端</span>
+<span class="n">pd</span><span class="p">()</span>       <span class="c1"># 落下画笔，准备绘图</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># go to the right end of the line 移动海龟到坐标轴直线的最右段</span>
+
+<span class="c1"># draw mark 绘制刻度线</span>
+<span class="n">cur_x</span> <span class="o">=</span> <span class="n">min_x</span>
+<span class="k">while</span> <span class="n">cur_x</span> <span class="o">&lt;=</span> <span class="n">max_x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">cur_x</span> <span class="o">%</span> <span class="n">mark_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pu</span><span class="p">()</span>
+        <span class="n">goto</span><span class="p">(</span><span class="n">cur_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">pd</span><span class="p">()</span>
+        <span class="n">goto</span><span class="p">(</span><span class="n">cur_x</span><span class="p">,</span> <span class="n">mark_line_length</span><span class="p">)</span>         <span class="c1"># 绘制刻度线</span>
+
+        <span class="n">pu</span><span class="p">()</span>
+        <span class="n">goto</span><span class="p">(</span><span class="n">cur_x</span><span class="p">,</span> <span class="o">-</span><span class="n">text_offset</span><span class="p">)</span>
+        <span class="n">pd</span><span class="p">()</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">cur_x</span><span class="o">//</span><span class="n">mark_interval</span><span class="p">))</span>
+        <span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">)</span>      <span class="c1"># 书写刻度值</span>
+
+    <span class="n">cur_x</span> <span class="o">+=</span> <span class="n">delta_x</span>
+
+<span class="k">if</span> <span class="n">show_arrow</span><span class="p">:</span>
+    <span class="n">arrow_x</span><span class="p">,</span> <span class="n">arrow_y</span> <span class="o">=</span> <span class="n">max_x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span>
+    <span class="n">pu</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">pd</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">arrow_x</span><span class="p">,</span> <span class="n">arrow_y</span><span class="p">)</span>
+    <span class="n">pu</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">pd</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">arrow_x</span><span class="p">,</span> <span class="o">-</span><span class="n">arrow_y</span><span class="p">)</span>
+
+<span class="n">ht</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Summary-知识点小结">
+<h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>turtle绘图库里的新方法<code class="docutils literal notranslate"><span class="pre">write</span></code>可以在绘图区海龟的当前位置书写文字；</p></li>
+<li><p>新的数据类型：<code class="docutils literal notranslate"><span class="pre">tuple</span></code>元组数据类型，它与<code class="docutils literal notranslate"><span class="pre">list</span></code>数据类型非常类似，但也有区别；</p></li>
+<li><p>在执行一个方法时，方法名后面的小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>内可以接受一个或多个不同的数据，这些数据成为该方法可以接受的参数。方法接受的参数的值不一样，执行该方法最后得到的结果也通常不同；</p></li>
+<li><p>复习格式化字符串的<code class="docutils literal notranslate"><span class="pre">format</span></code>方法；</p></li>
+<li><p>复习<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，并将<code class="docutils literal notranslate"><span class="pre">while</span></code>过程中循环应用到绘图过程中；</p></li>
+<li><p>复习操作符<code class="docutils literal notranslate"><span class="pre">//</span></code>和<code class="docutils literal notranslate"><span class="pre">%</span></code>。</p></li>
+</ol>
+</div>
+<div class="section" id="计算机小知识">
+<h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
+<p>像素，字体<code class="docutils literal notranslate"><span class="pre">font</span></code></p>
+</div>
+<div class="section" id="Assignments-作业">
+<h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>仔细阅读本讲示例中给出的两种绘制坐标轴方法，回答下面的问题： Read carefully the two solutions demonstrated in the lecture, answer the following questions:</p>
+<ol class="arabic simple">
+<li><p>给第二种方法中的每一行代码添加注释 Add comments for every code line of the second solution to tell the meaning of each code line.</p></li>
+<li><p>比较并说出两种方法在绘制坐标轴的差别 Compare the two solutions and tell the difference of them in drawing the axis.</p></li>
+<li><p>两种方法绘制出来的箭头一模一样吗？为什么？ Are the arrows drawn by the two solutoins exactly same? why?</p></li>
+</ol>
+</li>
+</ol>
+<p>（在这里写上你的回答 Write your answer here）</p>
+<ol class="arabic simple" start="2">
+<li><p>编程绘制如下图所示的水平坐标轴。所用的刻度间距、刻度线长度等排版指标军与本讲示例相同。其中，与本讲示例不同的是： By programming, draw horizontal axies as the following figure shows. Most of the parameters, including the marker interval, marker length, etc, have the same value as in the lecture. However, there are still some significant differences, which are:</p>
+<ol class="arabic simple">
+<li><p>将表示0刻度坐标值的文字“0”的位置向右移动距离10，刻度线仍保持与相邻的刻度线等距离不变； Move the text “0”, which indicating the value 0 on the axis, 10 pixels right to its original position. Keep the mark line where it is.</p></li>
+<li><p>在箭头的下方添加字母“x”，字母“x”使用的字体是“Arial”,字号大小为10，风格为“斜体”。Add a letter “x” under the arrow at the right end of the axis, use font “Arial”, size 10, and “italic” to write the “x”</p></li>
+<li><p>当调整绘图区域的大小为宽为800像素时，你的代码应该仅需要更新绘图区的宽度而不改变其他地方就能直接调整数轴长度和刻度的显示。When the width of drawing area changed to 800 pixels from 600 pixels, your codes should only need to change the value of <code class="docutils literal notranslate"><span class="pre">width</span></code> while keep others unchanged to draw the axis with new length and markers.</p></li>
+</ol>
+</li>
+</ol>
+<p><img alt="c3c4073a011a4453acc24639fa88baab" src="../../_images/L013_assignment12.png" /></p>
+<p><img alt="9167a1869e6840238af97850755a7859" src="../../_images/L013_assignment1_22.png" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">400</span>   <span class="c1"># 窗口的宽度和高度（单位为：像素）</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>            <span class="c1"># 原点的位置</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="mi">20</span>               <span class="c1"># 数轴端点距离绘图区边界距离</span>
+<span class="n">max_x</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">padding</span>  <span class="c1"># x轴最大值</span>
+<span class="n">show_arrow</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># 是否显示箭头</span>
+<span class="n">mark_interval</span> <span class="o">=</span> <span class="mi">50</span>         <span class="c1"># 刻度线间距</span>
+<span class="n">mark_line_length</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># 刻度线高度</span>
+<span class="n">text_offset</span> <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># 坐标值距离坐标线的距离</span>
+
+<span class="n">mark_degree</span> <span class="o">=</span> <span class="mi">90</span>           <span class="c1"># 坐标刻度与坐标轴夹角</span>
+<span class="n">arrow_length</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># 箭头长度</span>
+<span class="n">arrow_degree</span> <span class="o">=</span> <span class="mi">30</span>          <span class="c1"># 箭头与坐标轴夹角</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1">#TODO: Add your own codes here 在这里添加你自己的代码</span>
+
+<span class="n">ht</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>编程绘制一条如下图所示的垂直方向上的坐标轴。要求：By programming, draw an ertical axis as the following figure shows. Requirement：</p>
+<ol class="arabic simple">
+<li><p>该图所是的坐标轴基本上是把水平方向的坐标轴围绕这坐标原点向左侧旋转90度得到； The axis can basically be considered as a 90 degree of anti-closewise rotation of the horizontal axis illustrated in the lecture with original zero point as the rotation center;</p></li>
+<li><p>大部分控制数轴风格的参数值与示例中的一样，下列除外：但是刻度线位于坐标轴的右侧，刻度值位于坐标轴的左侧。Most of the parameters controlling the style of the axis are same as introduced in the lecture, except: the marker lines are located on right side of the axis line, and the marker values are on the left side;</p></li>
+<li><p>隐藏表示0刻度坐标值的文字“0”以及对应的刻度线； Hide the marker line and the marker value for origin point;</p></li>
+<li><p>在箭头的左侧添加字母“y”，字母“y”使用的字体是“Arial”,字号大小为10，风格为“斜体”。Add the letter “y” on left side of the axis end, the font for “y” is “Arial”, size is 10, and style is “italic”;</p></li>
+<li><p>如果绘图区的高度发生改变不再是400像素，你的代码应仅需要修改一处就能重新绘制出填满大部分（保留上下个20像素高的间隙）绘图区高度的数轴。If the height of drawing area is changed to any other value other than 400 pixels, your codes should only need to change one place in order to draw the new vertical axis that fullfill the most height of the draw area (keep 20 pixels paddings for both ends).</p></li>
+</ol>
+</li>
+</ol>
+<p><img alt="146c2d4804704aa5afaea234898c6350" class="no-scaled-link" src="../../_images/L013_assignment32.png" style="height: 400px;" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1">#TODO: Add your own codes here 在这里添加你自己的代码</span>
+
+<span class="n">ht</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>编程绘制一条如下图所示的水平坐标轴。与本讲示例不同的是：By programming, draw a horizontal axis with major and minor marker lines as shown in the figure. Most of the parameters that control the style of the aixs remain same as introduced in the lecture, except:</p>
+<ol class="arabic simple">
+<li><p>在刻度线的内部再绘制9条段的次要刻度线，这样原来相邻的两条刻度线被等间距的分为10个等分，每个等分对应的长度为5；Add 9 minor marker lines within two major marker lines so that every major marker interval is divided into 10 equal minor marker intervals, each 5 pixles length;</p></li>
+<li><p>与原来刻度线的宽度为10不同，次要刻度线的宽度为6； the length of the minor marker line is 6 pixels, keep the length of the major marker line 10 pixels unchanged;</p></li>
+<li><p>(困难，可选做）在左右两侧整数刻度之外的区域**不要**绘制次要刻度线；(Difficult, Optional) Do <strong>NOT</strong> add minor maker lines on the parts where the position is smaller than the minimal major marker value or larger than the maximal major marker value;</p></li>
+<li><p>将表示0刻度坐标值的文字“0”的位置向右移动距离10，刻度线仍保持与相邻的刻度线等距离不变； Move the text “0”, which indicating the value 0 on the axis, 10 pixels right to its original position. Keep the mark line where it is;</p></li>
+<li><p>在箭头的下方添加字母“x”，字母“x”使用的字体是“Arial”,字号大小为10，风格为“斜体”。Add a letter “x” under the arrow at the right end of the axis, use font “Arial”, size 10, and “italic” to write the “x”;</p></li>
+<li><p>当调整绘图区域的大小为宽为800像素时，你的代码应该仅需要更新绘图区的宽度而不改变其他地方就能直接调整数轴长度和刻度的显示。When the width of drawing area changed to 800 pixels from 600 pixels, your codes should only need to change the value of <code class="docutils literal notranslate"><span class="pre">width</span></code> while keep others unchanged to draw the axis with new length and markers.</p></li>
+</ol>
+</li>
+</ol>
+<p><img alt="a677137e808445a7be26f6c52a9a404d" class="no-scaled-link" src="../../_images/L013_assignment42.png" style="height: 400px;" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1">#TODO: Add your own codes here 在这里添加你自己的代码</span>
+
+<span class="n">ht</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="012C_quiz.html" title="previous page">Quiz 测验</a>
+    <a class='right-next' id="next-link" href="../../200intermediate/index.html" title="next page">第二篇 进阶</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; Copyright 2021, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
