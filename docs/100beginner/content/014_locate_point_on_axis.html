@@ -702,14 +702,14 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>执行下面代码单元格中的代码绘制一个数轴。在数轴上找到列表变量<code class="docutils literal notranslate"><span class="pre">nums</span></code>里每一个数（元素）对应的点在数轴上的位置，然后用另一个列表变量<code class="docutils literal notranslate"><span class="pre">colors</span></code>里相应位置的字符串表示的颜色来标记每一个点。结果如图所示。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>  <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><img alt="79b6fd18c3194a4eae485339be356d5f" class="no-scaled-link" src="../../_images/L014_mark_points_on_axis.png" style="width: 600px;" /></p>
+<p><img alt="7fa1dfb7b21e4beaa5969095a500aed1" class="no-scaled-link" src="../../_images/L014_mark_points_on_axis.png" style="width: 600px;" /></p>
 <p>绘制数轴的代码如下：</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -721,7 +721,7 @@ div.rendered_html tbody tr:hover {
 <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">400</span>   <span class="c1"># 窗口的宽度和高度（单位为：像素）</span>
 <span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="n">SCALE</span> <span class="o">=</span> <span class="mi">50</span>                 <span class="c1"># 刻度线间距，比例尺</span>
+
 <span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>            <span class="c1"># 原点的位置</span>
 <span class="n">padding</span> <span class="o">=</span> <span class="mi">20</span>               <span class="c1"># 数轴端点距离绘图区边界距离</span>
 <span class="n">max_x</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">padding</span>  <span class="c1"># x轴最大值</span>
@@ -737,11 +737,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reset</span><span class="p">()</span>
+<span></span><span class="n">SCALE</span> <span class="o">=</span> <span class="mi">50</span>                <span class="c1"># 刻度线间距，比例尺</span>
+<span class="n">reset</span><span class="p">()</span>
 <span class="n">min_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">max_x</span>
 <span class="n">mark_minor_length</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">mark_minor_interval</span> <span class="o">=</span> <span class="mi">5</span>
@@ -809,8 +810,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="1.-理解比例的概念">
 <h3>1. 理解比例的概念<a class="headerlink" href="#1.-理解比例的概念" title="永久链接至标题">¶</a></h3>
 <p>一个人行走的速度不变，那么这个人行走的距离和时间成一定的比例，速度就是这个比例常数。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -822,9 +823,17 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+when speed is 5 m/s, distance is 50 meters after 10 seconds
+</pre></div></div>
+</div>
 <p>一个圆的周长和它的直径成一定的比例，这個比例是一个固定的值，大约为3.14。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -836,9 +845,17 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a circle&#39;s perimeter is 31.400000000000002 if its diameter is 10
+</pre></div></div>
+</div>
 <p>在turtle的画布里画数轴，如果选择比例尺为50，也就是数轴上相邻两个整数的距离是50个计算机像素的长度，这个比例尺是人为设置的一个比例。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -849,6 +866,14 @@ div.rendered_html tbody tr:hover {
       <span class="nb">format</span><span class="p">(</span><span class="n">SCALE</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">should_move</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+when scale is 50, number 1 is 50 pixels right to the 0 point
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="2.-创建方法完成标记避免重复代码">
@@ -868,7 +893,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>例如我们可以把绘制数轴的工作写在一个方法里。下面的代码完整的定义和实现了<code class="docutils literal notranslate"><span class="pre">draw_axis</span></code>这个方法：</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -943,7 +968,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>有了这个方法，就可以执行下面的代码来绘制一个数轴</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -957,7 +982,7 @@ div.rendered_html tbody tr:hover {
 <h3>3. 创建可以接受参数的方法<a class="headerlink" href="#3.-创建可以接受参数的方法" title="永久链接至标题">¶</a></h3>
 <p>可以考虑让一个方法接受不同的数据来完成类似但不完全相同的功能。回想以下<code class="docutils literal notranslate"><span class="pre">print</span></code>方法在接受不同的字符串时，会打印出相应不同的字符串内容。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1005,7 +1030,7 @@ print method receives different strings, and print it out.
 <div class="section" id="4.-用不同的颜色和大小的圆作标记">
 <h3>4. 用不同的颜色和大小的圆作标记<a class="headerlink" href="#4.-用不同的颜色和大小的圆作标记" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1013,8 +1038,8 @@ print method receives different strings, and print it out.
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1023,21 +1048,27 @@ print method receives different strings, and print it out.
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reset</span><span class="p">()</span>
-<span class="n">pen</span><span class="p">(</span><span class="n">pensize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pencolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">ht</span><span class="p">()</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;shown&#39;: True,
+ &#39;pendown&#39;: True,
+ &#39;pencolor&#39;: &#39;black&#39;,
+ &#39;fillcolor&#39;: &#39;black&#39;,
+ &#39;pensize&#39;: 1,
+ &#39;speed&#39;: 3,
+ &#39;resizemode&#39;: &#39;noresize&#39;,
+ &#39;stretchfactor&#39;: (1.0, 1.0),
+ &#39;shearfactor&#39;: 0.0,
+ &#39;outline&#39;: 1,
+ &#39;tilt&#39;: 0.0}
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1058,18 +1089,8 @@ print method receives different strings, and print it out.
 <p>在turtle画布上线让海龟停留在数轴上的坐标值为<code class="docutils literal notranslate"><span class="pre">1</span></code>的起始位置，把这个位置用大小为5，颜色为“blue”的点做一个标记；确保画笔处于落下状态记录海龟行走轨迹，让海龟任意行走一段距离至新的位置，对应的x值为<code class="docutils literal notranslate"><span class="pre">3</span></code>，用大小为2，颜色为“black”的画笔绘制这段线段，并用大小为5，颜色为“red”的点标记这个海龟目前的位置，最后隐藏海龟。</p>
 <p>为了标记海龟在数轴上的一个位置，我们需要知道哪些信息？需要执行哪些步骤？</p>
 <p>答案：我们需要事先知道这个位置代表的数字是多少以及用多大和什么颜色的点来标记这个位置。因为不知道先前海龟的画笔是提起还是落下，我们需要依次执行如下的步骤： 1. 第一步时使用pu()方法将画笔提起； 2. 第二步是将海龟移动到要求标记的位置； 3. 第三步是使用pd()落下画笔； 4. 第四步是使用dot()方法在新的位置上作标记，标记的时候事先选好标记点的大小和颜色。</p>
-from turtle import setup, reset, pu, pd, bye, left, right, fd, bk, screensize
-from turtle import goto, seth, write, ht, st, home, pen, dot
-width, height = 600, 400   # 窗口的宽度和高度（单位为：像素）
-setup(width, height, 0, 0)
-SCALE = 50                 # 刻度线间距，比例尺
-
-# TODO: draw an axis first using codes provided at the begining.
-#       用本讲提供的绘制枢轴的代码先在绘图区绘制出数轴
-
-# TODO: do this exercise after an axis is drawn
-#       在已经绘制好数轴的基础上完成本练习<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1095,7 +1116,7 @@ SCALE = 50                 # 刻度线间距，比例尺
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <p>创建下面的方法完成在指定位置标记一个点的工作</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1116,7 +1137,7 @@ SCALE = 50                 # 刻度线间距，比例尺
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1124,7 +1145,7 @@ SCALE = 50                 # 刻度线间距，比例尺
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>  <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 
 <span class="n">reset</span><span class="p">()</span>                               <span class="c1"># 重置画布</span>
-<span class="n">draw_axis</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>              <span class="c1"># 调用执行绘制数轴的方法</span>
+<span class="n">draw_axis</span><span class="p">()</span>              <span class="c1"># 调用执行绘制数轴的方法</span>
 <span class="n">i</span><span class="p">,</span> <span class="n">n_dot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_dot</span><span class="p">:</span>
     <span class="n">mark</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">SCALE</span><span class="p">)</span> <span class="c1"># 调用执行新创建的方法</span>
@@ -1174,9 +1195,44 @@ but it always has the same mass.</p>
 <li><p>the method accepts two parameters, the names of which is up to you. 方法接受两个整数型参数，参数名可自由设定</p></li>
 <li><p>within the method, compare the values of the two parameters, output the larger one with the format of “XX is larger.”. If two numbers are euqal output: “Two numbers are equal.” 在方法内部，比较这两个数，打印输出较大的那个数，如果两个数相等则打印输出“两个数相等”。</p></li>
 </ol>
-<p>Run and test your methods 5 time with the following values of parameters. Observe if your method’s output is the same as the output provided below. 创建好这个方法后，依次用下面的两组数来测试你创建的方法，观察输出的结果是否与预期的结果相同： | num1 | num2 | Output | | ———– |:————:| ——————:| | 12 | 12 | Two numbers are equal. | | 18 | 14 | 18 is larger. | | 0 | 4 | 4 is larger. | | 1091 | 0 | 1091 is larger. | | 0 | 0 | Two numbers are equal. |</p>
+<p>Run and test your methods 5 time with the following values of parameters. Observe if your method’s output is the same as the output provided below. 创建好这个方法后，依次用下面的两组数来测试你创建的方法，观察输出的结果是否与预期的结果相同：</p>
 </li>
 </ol>
+<table class="table">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>num1</p></th>
+<th class="head"><p>num2</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>12</p></td>
+<td><p>Two numbers are equal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>14</p></td>
+<td><p>18 is larger.</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>4</p></td>
+<td><p>4 is larger.</p></td>
+</tr>
+<tr class="row-odd"><td><p>1091</p></td>
+<td><p>0</p></td>
+<td><p>1091 is larger.</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>Two numbers are equal.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>

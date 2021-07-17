@@ -38,7 +38,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="第二篇 进阶" href="../../200intermediate/index.html" />
+    <link rel="next" title="第14讲 在数轴上标记不同的数" href="014_locate_point_on_axis.html" />
     <link rel="prev" title="Quiz 测验" href="012C_quiz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -168,6 +168,11 @@
      第13讲 认识和绘制数轴
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="014_locate_point_on_axis.html">
+     第14讲 在数轴上标记不同的数
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -242,6 +247,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../500answer/content/012C_quiz-answer.html">
      Answer for Quiz 测验参考答案
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/013_draw_axis_with_answer.html">
+     第13讲 认识和绘制数轴
     </a>
    </li>
   </ul>
@@ -727,7 +737,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>在长宽分别为600和400像素的绘图区域绘制如下图所示的一条标有刻度、水平方向的带箭头指示方向的数轴。其中数轴的左右两端距离绘图区域左右边界均为20像素，相邻刻度的距离为50像素，刻度线的长度为20像素，表示刻度线数值的数字在刻度线的正下方且底端距离数轴20个像素。</p>
-<p><img alt="3deed82b88e54734b44b27ab49187e51" class="no-scaled-link" src="../../_images/L013_axis2.png" style="width: 600px;" /></p>
+<p><img alt="e2783fb568494042916935716ca6cb78" class="no-scaled-link" src="../../_images/L013_axis2.png" style="width: 600px;" /></p>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
@@ -742,7 +752,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="1.-write方法可以在绘图区书写字符串">
 <h3>1. <code class="docutils literal notranslate"><span class="pre">write</span></code>方法可以在绘图区书写字符串<a class="headerlink" href="#1.-write方法可以在绘图区书写字符串" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -755,7 +765,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>比较提起画笔和放下画笔时下面的代码执行的效果有什么不同</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -766,7 +776,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -777,7 +787,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -792,7 +802,7 @@ div.rendered_html tbody tr:hover {
 <h3>2. <code class="docutils literal notranslate"><span class="pre">tuple</span></code>元组数据类型<a class="headerlink" href="#2.-tuple元组数据类型" title="永久链接至标题">¶</a></h3>
 <p>pos_x 是一个tuple类型的变量</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -801,8 +811,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>可以使用索引来获取tuple类型变量的元素</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -810,32 +820,15 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-30 20
-</pre></div></div>
-</div>
 <p>可以使用len()方法来获取tuple类型数据的元素个数</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="nb">len</span><span class="p">(</span><span class="n">pos_x</span><span class="p">)</span>                     <span class="c1"># 可以使用len()方法来获取tuple类型数据的元素个数</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-2
-</pre></div></div>
 </div>
 <p>不可以更改tuple类型变量里某一个元素的值。例如执行下面的代码将发生错误 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">pos_x[0]</span> <span class="pre">=</span> <span class="pre">40</span></code></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
@@ -847,7 +840,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </pre></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -857,7 +850,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 <p>可以给整个tuple类型变量赋予一个新的tuple值</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -866,8 +859,8 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>型的变量里的元素的类型可以互不相同</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -876,20 +869,12 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-(&#39;Sophie&#39;, 11, &#39;Female&#39;, &#39;Grade4&#39;)
-</pre></div></div>
-</div>
 </div>
 <div class="section" id="3.-理解同一个方法在接受不同的参数值时执行结果的比较">
 <h3>3. 理解同一个方法在接受不同的参数值时执行结果的比较<a class="headerlink" href="#3.-理解同一个方法在接受不同的参数值时执行结果的比较" title="永久链接至标题">¶</a></h3>
 <p>对比输出的文字和海龟位置，观察下面的两条<code class="docutils literal notranslate"><span class="pre">write</span></code>方法在接受不同的<code class="docutils literal notranslate"><span class="pre">align</span></code>值或时效果有什么不同。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -900,7 +885,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -915,7 +900,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <h3>4. 对比输出的文字，观察下面的几条<code class="docutils literal notranslate"><span class="pre">write</span></code>方法在接受不同的<code class="docutils literal notranslate"><span class="pre">font</span></code>值时效果有什么不同。<a class="headerlink" href="#4.-对比输出的文字，观察下面的几条write方法在接受不同的font值时效果有什么不同。" title="永久链接至标题">¶</a></h3>
 <p>参数<code class="docutils literal notranslate"><span class="pre">font</span></code>是一个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型的变量</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -926,7 +911,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -937,7 +922,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -948,7 +933,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -959,7 +944,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -986,7 +971,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <h3>6. 练习<a class="headerlink" href="#6.-练习" title="永久链接至标题">¶</a></h3>
 <p>编写下面的代码，更改变量<code class="docutils literal notranslate"><span class="pre">name</span></code>的值为你的名字，观察代码执行的效果。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1009,7 +994,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1021,7 +1006,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1030,7 +1015,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <span class="n">max_x</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">padding</span>  <span class="c1"># x轴最大值</span>
 <span class="n">show_arrow</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># 是否显示箭头</span>
 <span class="n">mark_interval</span> <span class="o">=</span> <span class="mi">50</span>         <span class="c1"># 刻度线间距</span>
-<span class="n">mark_line_length</span> <span class="o">=</span> <span class="mi">10</span>           <span class="c1"># 刻度线高度</span>
+<span class="n">mark_line_length</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># 刻度线高度</span>
 <span class="n">text_offset</span> <span class="o">=</span> <span class="mi">20</span>           <span class="c1"># 坐标值距离坐标线的距离</span>
 
 <span class="n">mark_degree</span> <span class="o">=</span> <span class="mi">90</span>           <span class="c1"># 坐标刻度与坐标轴夹角</span>
@@ -1041,20 +1026,24 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># Solution1: without using goto() 第一种方法：不使用goto()</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">speed</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="n">reset</span><span class="p">()</span>    <span class="c1"># 重置绘图区</span>
 <span class="n">min_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">max_x</span>   <span class="c1"># 根据坐标轴允许的最大值，获取该坐标轴允许的最小值</span>
+
 <span class="n">pu</span><span class="p">()</span>       <span class="c1"># 提起画笔，暂停绘图</span>
 <span class="n">home</span><span class="p">()</span>     <span class="c1"># Move turtle to the origin – coordinates (0,0) 移动小海龟至初始位置</span>
            <span class="c1"># and set its heading to its start-orientation  并设置朝向为初始朝向</span>
-<span class="n">bk</span><span class="p">(</span><span class="n">max_x</span><span class="p">)</span>  <span class="c1"># backward max_x</span>
+<span class="n">bk</span><span class="p">(</span><span class="n">max_x</span><span class="p">)</span>  <span class="c1"># backward max_x           # fd(min_x)</span>
 <span class="n">pd</span><span class="p">()</span>       <span class="c1"># 落下画笔，准备绘图</span>
-
+<span class="n">speed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="c1"># draw mark 绘制刻度线</span>
 <span class="n">cur_x</span><span class="p">,</span> <span class="n">last_x</span> <span class="o">=</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">min_x</span>          <span class="c1"># 海龟当前位置和最近一次绘图后停留的位置</span>
 <span class="k">while</span> <span class="n">cur_x</span> <span class="o">&lt;=</span> <span class="n">max_x</span><span class="p">:</span>                 <span class="c1"># 循环</span>
@@ -1073,6 +1062,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
         <span class="n">right</span><span class="p">(</span><span class="n">mark_degree</span><span class="p">)</span>              <span class="c1"># 向右转90度，海龟次朝向右侧</span>
         <span class="n">last_x</span> <span class="o">=</span> <span class="n">cur_x</span>                  <span class="c1"># 记录海龟当前位置，为下次绘图的起点</span>
 
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="n">cur_x</span> <span class="o">+=</span> <span class="n">delta_x</span>                  <span class="c1"># 当前位置增加一小段长度（个单位距离：像素）</span>
 
 <span class="n">pd</span><span class="p">()</span>                                  <span class="c1"># 落下画笔，准备绘制</span>
@@ -1090,7 +1080,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1105,6 +1095,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <span class="n">goto</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># go to the left end of the line  移动海龟到坐标轴直线的最左端</span>
 <span class="n">pd</span><span class="p">()</span>       <span class="c1"># 落下画笔，准备绘图</span>
 <span class="n">goto</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># go to the right end of the line 移动海龟到坐标轴直线的最右段</span>
+
 
 <span class="c1"># draw mark 绘制刻度线</span>
 <span class="n">cur_x</span> <span class="o">=</span> <span class="n">min_x</span>
@@ -1137,6 +1128,70 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 <span class="n">ht</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">st</span><span class="p">()</span>
+<span class="n">pu</span><span class="p">()</span>
+<span class="n">home</span><span class="p">()</span>
+<span class="n">pd</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">goto</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">cur_x</span><span class="o">//</span><span class="n">mark_interval</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cur_x</span><span class="p">,</span> <span class="n">mark_interval</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+290.0 50
+5
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">-</span><span class="mi">1</span><span class="o">//</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-1
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Summary-知识点小结">
@@ -1175,8 +1230,8 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </ol>
 </li>
 </ol>
-<p><img alt="c3c4073a011a4453acc24639fa88baab" src="../../_images/L013_assignment12.png" /></p>
-<p><img alt="9167a1869e6840238af97850755a7859" src="../../_images/L013_assignment1_22.png" /></p>
+<p><img alt="ca09a8b61dd14e1d934a5e898e70402a" src="../../_images/L013_assignment12.png" /></p>
+<p><img alt="bd78a9f60d544a0d8115ac7b09500a63" src="../../_images/L013_assignment1_22.png" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1225,7 +1280,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </ol>
 </li>
 </ol>
-<p><img alt="146c2d4804704aa5afaea234898c6350" class="no-scaled-link" src="../../_images/L013_assignment32.png" style="height: 400px;" /></p>
+<p><img alt="16c5179eacbb476e8af835ecda939425" class="no-scaled-link" src="../../_images/L013_assignment32.png" style="height: 400px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1251,7 +1306,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
 </ol>
 </li>
 </ol>
-<p><img alt="a677137e808445a7be26f6c52a9a404d" class="no-scaled-link" src="../../_images/L013_assignment42.png" style="height: 400px;" /></p>
+<p><img alt="76d9a7ae953a456396b5e377623fb47c" class="no-scaled-link" src="../../_images/L013_assignment42.png" style="height: 400px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1284,7 +1339,7 @@ TypeError: &#39;tuple&#39; object does not support item assignment
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="012C_quiz.html" title="previous page">Quiz 测验</a>
-    <a class='right-next' id="next-link" href="../../200intermediate/index.html" title="next page">第二篇 进阶</a>
+    <a class='right-next' id="next-link" href="014_locate_point_on_axis.html" title="next page">第14讲 在数轴上标记不同的数</a>
 
         </div>
         
