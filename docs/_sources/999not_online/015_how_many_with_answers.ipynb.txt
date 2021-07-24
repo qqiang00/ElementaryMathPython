@@ -1,0 +1,635 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第15讲 编写方法绘制线段"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d12f05dd",
+   "metadata": {},
+   "source": [
+    "### Problem 问题描述"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7cd1f0b-8266-49f3-a77e-806bec2c40ce",
+   "metadata": {},
+   "source": [
+    "数轴上有6个点，对应的数字分别为`[-4.5, -2.0, 0, 1.5, 3.5, 5.0]`。连接其中任意的两个点可以形成一条线段。请问这6个点一共可形成多少条线段？参照下图，在宽高分别为600和400的绘图区绘制一条数轴，在数轴上标记这些点，并用不同颜色绘制出这6个点能形成的所有的线段并给每条线段标记一个序号。为避免绘制出的线段相互重合，每条线段间隔10个像素。图中已经绘制出了从`-4.5`开始到所有其它点的线段。\n",
+    "\n",
+    "下面的代码已经完成了数轴绘制和对每一个点的标记。\n",
+    "\n",
+    "<img src=\"figures/L015_draw_all_lines.png\" width=\"600px\"/>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ac95c512-72bf-4b51-a579-4a375b029bd3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import setup, reset, pu, pd, bye, left, right, fd, bk, screensize\n",
+    "from turtle import goto, seth, write, ht, st, home, pen, dot\n",
+    "\n",
+    "nums = [-4.5, -2.0, 0, 1.5, 3.5, 5.0]\n",
+    "colors = [\"orange\", \"black\", \"red\",  \"green\", \"blue\"]\n",
+    "SCALE = 50\n",
+    "width, height = 600, 400   # 窗口的宽度和高度（单位为：像素）\n",
+    "setup(width, height, 0, 0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "d9b104fc-524c-426b-bd99-bb1acb926c01",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from qianglib import draw_axis, mark\n",
+    "reset()\n",
+    "draw_axis(width, height, SCALE)\n",
+    "nums = [-4.5, -2.0, 0, 1.5, 3.5, 5.0]\n",
+    "colors = [\"orange\", \"black\", \"red\",  \"green\", \"blue\"]\n",
+    "i = 0\n",
+    "n_colors = len(colors)\n",
+    "while i < len(nums):\n",
+    "    mark(nums[i], size=5, color=colors[i % n_colors])\n",
+    "    i += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "animated-batch",
+   "metadata": {},
+   "source": [
+    "### Math Background 数学背景\n",
+    "\n",
+    "1. 简单的排列组合"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "sorted-furniture",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Prerequisites 预备知识\n",
+    "\n",
+    "#### 1. 排列和组合\n",
+    "\n",
+    "- 5个小朋友Jason, Sophie, Tony, Yunzi, Celine按从前到后的次序排成一个纵队，可以拍成多少个不一样的队伍？\n",
+    "- 从同样5个小朋友中抽出3个小朋友出来玩一个三人游戏，剩下的2个小朋友在一起玩另一个二人游戏，一共有多少种分组的方法。玩游戏的分组不考虑次序。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "824c140c-4d86-4fc5-8753-f0fd8aa00cf2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "classmates = [\"Jason\", \"Sophie\", \"Tony\", \"Yunzi\", \"Celine\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8ead47cb-2dc9-46d0-b137-f82e8b157b68",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac3f3f62-7bb0-4f00-9a4e-4085b96c14dd",
+   "metadata": {},
+   "source": [
+    "#### 2. 充分理解`goto(x, y)`的意义"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "877a379e-17ab-49b7-86be-14344f17b3c0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "st()             # show turtle\n",
+    "pu()\n",
+    "goto(100, 0)     # turtle moved to 2.0 on x Axis.\n",
+    "dot(5, \"red\")\n",
+    "goto(100, 50)    # turtle moved to 50 pixels above 2.0 on x Axis\n",
+    "dot(5, \"blue\")\n",
+    "goto(100, -50)   # turtle moved to 50 pixles below 2.0 on x Axis\n",
+    "dot(5, \"black\")\n",
+    "ht()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "43fab4d8-7ec4-4046-a25f-207ca17b7206",
+   "metadata": {},
+   "source": [
+    "#### 3. 声明绘制一条线段的方法\n",
+    "- 考虑绘制一条线段需要知道哪些数据：线段的两个端点的位置，线的粗细以及颜色\n",
+    "- 给方法以及这些数据进行命名，方法名可定为`line`，两个端点的位置可以分别为`start`,`end`，线的粗细设为`linewidth`，颜色为`color`\n",
+    "- 为了避免绘出的线发生重叠，考虑讲线段整体网上平移一定的距离，这个距离可以用变量`offset`来表示，\n",
+    "- 不要忘记了还有一个比例尺，用变量`scale`表示。\n",
+    "\n",
+    "这样我们可以如下声明绘制线条的方法:\n",
+    "```python\n",
+    "def line(start, end, linewidth, color, offset, scale):\n",
+    "    #TODO: need implementation 需要实现该方法\n",
+    "    return\n",
+    "```\n",
+    "其中`def`是一个关键词，它表明将要声明一个方法`line`是方法名，上述所有在方法名后的括号`()`内声明的变量名又叫方法接受的**参数**。改行以冒号`:`结束，随后每一行代码相对于`def`都有缩进，直到最后执行`return`语句，完成这个方法或者缩进结束。冒号以后开始的直至`return`语句（或者缩进结束）构成了这个方法的**方法体**。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c8393444-89d0-4f28-a491-0a5e343b4b62",
+   "metadata": {},
+   "source": [
+    "#### 4. 实现先前声明的方法\n",
+    "\n",
+    "实现一个方法指的是在方法体内部编写代码以完成方法设定的功能的过程。\n",
+    "\n",
+    "在`line`方法体内，我们需要依次完成下面5个步骤：\n",
+    "1. 提起画笔\n",
+    "2. 移动画笔至要绘制线段的一个端点(`start`)，端点的位置与参数`start`、`offset`和`scale`的值有关。\n",
+    "3. 设定好画笔的颜色和粗细\n",
+    "4. 落下画笔准备绘制\n",
+    "5. 移动画笔至要绘制线段的另一个端点(`end`)，同样位置需要计算得到。\n",
+    "\n",
+    "在上面的几个步骤中，设置画笔颜色和粗细这一步的次序可以相对随意些。\n",
+    "\n",
+    "这样我们可以如下声明绘制线条的方法：\n",
+    "```python\n",
+    "def line(start, end, linewidth, color, offset, scale):\n",
+    "    pu()                                   # 提起画笔\n",
+    "    pen(penize=linewidth, pencolor=color)  # 设定画笔粗细和颜色\n",
+    "    goto(start * scale, offset)            # 移动画笔至某端点\n",
+    "    pd()                                   # 落下画笔准备绘图\n",
+    "    goto(end * scale, offset)              # 移动画笔值另端点完成线条绘制\n",
+    "    return                                 # 离开方法，返回。\n",
+    "```\n",
+    "有了这样的实现，我们就可以在代码中调用这个方法来完成一条线段的绘制，下面的代码使用黑色的画笔，3个像素的粗细来绘制一条从(-4.5*SCALE, 15)表示的点到（-2.0*SCALE, 15)表示的点之间的线段。这条线段位于x轴上方5个像素。如下图所示：\n",
+    "```python\n",
+    "line(-4.5, -2.0, 3, \"black\", 15, SCALE)\n",
+    "```\n",
+    "\n",
+    "<img src=\"figures/L015_one_line.png\" width=\"600px\"/>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72d7d1f6-b0b7-492c-8ce6-ae9b8b04f89d",
+   "metadata": {},
+   "source": [
+    "在调用方法时，给方法提供的参数的次序需要与声明方法时的次序一致，否则会出错或预期以外的功能。\n",
+    "\n",
+    "如果需要给绘制的线段进行标号，那么需要额外完成一些诸如：提起、移动画笔和绘制文字的步骤。同时我们还应该有标号使用的数字（或文字），需要新设定一个参数来表示它，可以用`label`来表示，下面的代码请读者自己添加这几行代码给这个方法添加线段标号的功能。\n",
+    "```python\n",
+    "def line(start, end, linewidth, color, offset, scale, label):\n",
+    "    # .....                           # 省略了之前的一些代码\n",
+    "    pu()                              # 提起画笔\n",
+    "    goto(start * scale - 10, offset)  # 移动画笔至要标号的位置\n",
+    "    write(str(label), align=\"right\")  # 书写标号使用默认字体\n",
+    "    return                            # 离开方法，返回\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ea455b6a-6e8a-4407-9ab3-fc430668daf2",
+   "metadata": {},
+   "source": [
+    "#### 5. 练习：\n",
+    "1. 补全line方法使得其可以对所绘制的线段进行标号"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "52b9f525-e30f-420b-8743-c1f910d7100a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd941e81-14ae-4482-ba28-329f69e2411f",
+   "metadata": {},
+   "source": [
+    "2. 调用你刚刚完成的具有标号功能的`line`方法，绘制一条线段。线段的起点对应数轴上-2.0表示的位置，终点对应数轴上5.0表示的位置，线宽选择5个像素，颜色从提供的颜色中任意选择一种，绘制的线段距离x轴的约50像素远，比例尺选择默认的比例尺，标号用你自己的名字字符串（例如\"Celine\"）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d1942d42-c3ac-4747-a852-60d369670d99",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "51c28b11-2b6e-4505-a253-9e5d727aa315",
+   "metadata": {},
+   "source": [
+    "### 3. Solution 编程求解"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "1385bffc-5e4a-4f81-93de-d457a3ac8f9e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def line(start, end, linewidth, color, offset, scale, label):\n",
+    "    pu()                                   # 提起画笔\n",
+    "    pen(pensize=linewidth, pencolor=color) # 设定画笔粗细和颜色\n",
+    "    goto(start * scale, offset)            # 移动画笔至某端点\n",
+    "    pd()                                   # 落下画笔准备绘图\n",
+    "    goto(end * scale, offset)              # 移动画笔值另端点完成线条绘制\n",
+    "    pu()                                   # 提起画笔\n",
+    "    goto(start * scale - 10, offset)       # 移动画笔至要标号的位置\n",
+    "    write(str(label), align=\"right\")       # 书写标号使用默认字体\n",
+    "    return                                 # 离开方法，返回"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "7cf47ff7-50c8-4c5e-8540-bd0da146a045",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "i, j = 0, 1\n",
+    "height = 10\n",
+    "n_drawn = 0\n",
+    "while i < len(nums) - 1:\n",
+    "    j = i + 1\n",
+    "    while j < len(nums):\n",
+    "        line(nums[i], nums[j], 3, colors[n_drawn % n_colors],  # 可以换行\n",
+    "             height * (n_drawn + 1), SCALE, label=n_drawn+1)\n",
+    "        n_drawn += 1\n",
+    "        j += 1\n",
+    "       \n",
+    "    i += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "latest-contamination",
+   "metadata": {},
+   "source": [
+    "### Summary 知识点小结"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afb3f674",
+   "metadata": {},
+   "source": [
+    "1. 如何用循环嵌套循环来列举各种可能的排列组合\n",
+    "2. 充分理解`goto`方法及其接受的参数的意义\n",
+    "3. 学习编写接受参数的方法，理解参数的次序的重要性\n",
+    "4. 学习调用自己编写的方法\n",
+    "5. 复习`dot`方法，复习比例尺概念"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bizarre-assurance",
+   "metadata": {},
+   "source": [
+    "### 计算机小知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "92100f08",
+   "metadata": {},
+   "source": [
+    "暂缺"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Assignments 作业\n",
+    "**注意**：本讲所有的作业涉及到绘图时均使用本讲示例所使用的数轴和比例尺。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "controversial-sleeve",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "1. 创建两个不同的方法计算两个不同的正整数之间所有正整数的和，其中一个方法得到的和包括给出的这两个正整数参数；另一个方法得到的和不包括给出的这两个正整数参数。在两个方法体内部输出得到的和。观察比较结果有什么不一样。并用下面的一系列数据来测试你编写的方法。\n",
+    "\n",
+    "\n",
+    "   | num1      |  num2      |  sum(include num1,2) | sum(exclude num1,2) |\n",
+    "   | ---------:|-----------:|:---------------------|:--------------------|\n",
+    "   |   12      |   12       |  sum(inclu) = 24     | sum(exclu) = 0      |\n",
+    "   |    1      |   10       |  sum(inclu) = 55     | sum(exclu) = 44     |\n",
+    "   |   10      |    1       |  sum(inclu) = 55     | sum(exclu) = 44     |   \n",
+    "   |  100      | 1000       |  sum(inclu) = 495550 | sum(exclu) = 444450 |   "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "5d1d5395-dda6-45bf-a0d9-34a002330adb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def sum_include(num1, num2):\n",
+    "    smaller, larger = num1, num2\n",
+    "    if smaller > larger:\n",
+    "        smaller, larger = num2, num1\n",
+    "    cur_num, result = smaller, 0\n",
+    "    while cur_num <= larger:\n",
+    "        result += cur_num\n",
+    "        cur_num += 1\n",
+    "    \n",
+    "    print(\"sum(inclu) = {}\".format(result))\n",
+    "    \n",
+    "def sum_exclude(num1, num2):\n",
+    "    smaller, larger = num1, num2\n",
+    "    if smaller > larger:\n",
+    "        smaller, larger = num2, num1\n",
+    "    cur_num, result = smaller + 1, 0\n",
+    "    while cur_num < larger:\n",
+    "        result += cur_num\n",
+    "        cur_num += 1\n",
+    "    \n",
+    "    print(\"sum(exclu) = {}\".format(result))\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "b8b5098a-9e3d-4b6e-b659-3f93007a7611",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sum(inclu) = 12\n",
+      "sum(exclu) = 0\n",
+      "sum(inclu) = 55\n",
+      "sum(exclu) = 44\n",
+      "sum(inclu) = 495550\n",
+      "sum(exclu) = 494450\n"
+     ]
+    }
+   ],
+   "source": [
+    "sum_include(12, 12)\n",
+    "sum_exclude(12, 12)\n",
+    "sum_include(1, 10)\n",
+    "sum_exclude(10, 1)\n",
+    "sum_include(100, 1000)\n",
+    "sum_exclude(100, 1000)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e39bdaad-d130-43a9-bd96-a2abdc8ba199",
+   "metadata": {},
+   "source": [
+    "2. 仅编写一个方法来完成前一题。\n",
+    "\n",
+    "   **提示**：在创建这个新方法时，新增加一个参数，这个参数可以取两个不同的值，在方法体内不根据这个参数的值来动态的决定计算的和是否包括前两个正整数参数。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "bae0a7e2-2004-4efd-b393-2a588d3a8b7b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def sum_optional(num1, num2, include):\n",
+    "    smaller, larger = num1, num2\n",
+    "    if smaller > larger:\n",
+    "        smaller, larger = num2, num1\n",
+    "    result = 0\n",
+    "    cur_num, max_num = smaller + 1, larger - 1\n",
+    "    if include == True:\n",
+    "        cur_num = smaller\n",
+    "        max_num = larger\n",
+    "    while cur_num <= max_num:\n",
+    "        result += cur_num\n",
+    "        cur_num += 1\n",
+    "    \n",
+    "    print(\"sum(inclu) = {}\".format(result))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "3b74c451-a59e-4dfd-91b4-1f1d2e3b13bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sum(inclu) = 12\n",
+      "sum(inclu) = 0\n",
+      "sum(inclu) = 55\n",
+      "sum(inclu) = 44\n",
+      "sum(inclu) = 495550\n",
+      "sum(inclu) = 494450\n"
+     ]
+    }
+   ],
+   "source": [
+    "sum_optional(12, 12, True)\n",
+    "sum_optional(12, 12, False)\n",
+    "sum_optional(1, 10, True)\n",
+    "sum_optional(10, 1, False)\n",
+    "sum_optional(100, 1000, True)\n",
+    "sum_optional(100, 1000, False)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "016ee845-734f-4557-ae59-49bab8a9fc44",
+   "metadata": {},
+   "source": [
+    "3. 声明并且实现一个方法，该方法接受数轴上的一个点表示的数字作为参数1，另一个数作为参数2，完成以参数1为表示的位置为中心、参数2表示的数据为边长其中两条边平行于x轴的正方形的绘制，同时要求你实现的这个方法在绘制正方形时可以在调用方法时确定正方形边的颜色和线宽。\n",
+    "   实现这个方法后，用下面的数据来绘制3个正方形。结果应如图所示：\n",
+    "   | center    |  side length |  color    |   line width   |  \n",
+    "   | ---------:|-----------:|:---------:|:---------:|\n",
+    "   |   -2.0    |   2.0      |  red      |   3     |\n",
+    "   |    1.5    |   3.0      |  green    |   4     |\n",
+    "   |    0.0    |   1.0      |  blue     |   3     |\n",
+    "   \n",
+    "   \n",
+    "   **要求**：使用`goto`方法来移动画笔，禁止使用`left`,`right`,`fd`,`bk`等方法。\n",
+    "   \n",
+    "   <img src=\"figures/L015_exercise_3.png\" width=\"600px\"/>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "9a20d751-3e2b-46ec-b927-b51fe90ff100",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def square(center, side_length, color, line_width, scale):\n",
+    "    pu()\n",
+    "    center = center * scale\n",
+    "    side_length = side_length * scale\n",
+    "    half_side = side_length/2\n",
+    "    goto(center + half_side, -half_side)\n",
+    "    pen(pensize=line_width, pencolor=color)\n",
+    "    pd()\n",
+    "    goto(center + half_side, half_side)\n",
+    "    goto(center - half_side, half_side)\n",
+    "    goto(center - half_side, -half_side)\n",
+    "    goto(center + half_side, -half_side)\n",
+    "    return\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "96c72b57-302b-490e-9ec2-46aaf6e2caa1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "reset()\n",
+    "draw_axis(width, height, SCALE)\n",
+    "square(-2.0, 2.0, \"red\", 3, SCALE)\n",
+    "square(1.5, 3.0, \"green\", 4, SCALE)\n",
+    "square(0.0, 1.0, \"blue\", 3, SCALE)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a52103c9-4f5d-4690-8be7-e54dae4286eb",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "4. 声明并且实现一个方法，该方法接受数轴上的两个不同的点表示的数字作为参数，完成以这两个点为端点的位于数轴上方的一个正三角形的绘制，同时要求你实现的这个方法在绘制正三角形时可以在调用方法时确定三角形边的颜色和线宽。\n",
+    "   实现这个方法后，用下面的数据来绘制3个三角形。结果应如图所示：\n",
+    "   | num1      |  num2      |  color    |   line width   |  \n",
+    "   | ---------:|-----------:|:---------:|:---------:|\n",
+    "   |   -4.5    |   0.0      |  red      |   3     |\n",
+    "   |   -2.0    |   1.5      |  green    |   4     |\n",
+    "   |   1.5     |   3.5      |  blue     |   5     |\n",
+    "   \n",
+    "   \n",
+    "   **要求**：尽可能不使用`left`,`right`,`fd`,`bk`等方法，而使用`goto`方法来移动画笔。   \n",
+    "   **提示**：使用goto方法时，需要用到一个数值`1.732`来帮助定位三角形的端点。请在你实现方法的代码里使用这个数值。\n",
+    "   \n",
+    "     <img src=\"figures/L015_exercise_4.png\" width=\"600px\"/>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "8723598d-2088-434f-9ad3-36f5ecd7ef71",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def regular_triangle(num1, num2, color, line_width, scale):\n",
+    "    num1 *= scale\n",
+    "    num2 *= scale\n",
+    "    side_length = num1 - num2\n",
+    "    if side_length < 0:\n",
+    "        side_length = -side_length\n",
+    "    pen(pensize=line_width, pencolor=color)\n",
+    "    pu()\n",
+    "    goto(num1, 0)\n",
+    "    pd()\n",
+    "    goto(num2, 0)\n",
+    "    num3_x, num3_y = (num1+num2)/2, side_length * 1.732 / 2\n",
+    "    goto(num3_x, num3_y)\n",
+    "    goto(num1, 0)    \n",
+    "    return"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "ddfa025e-6465-4721-8e92-24afe60940ab",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "reset()\n",
+    "draw_axis(width, height, SCALE)\n",
+    "regular_triangle(-4.5, 0, \"red\", 3, SCALE)\n",
+    "regular_triangle(-2.0, 1.5, \"green\", 4, SCALE)\n",
+    "regular_triangle(1.5, 3.5, \"blue\", 5, SCALE)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bb3720ff-3cbc-476e-a7fb-ed0bc00537d8",
+   "metadata": {},
+   "source": [
+    "5. 用数字\"1,2,3,4\"这4个数字来组成一个5位数，其中每一个数至少用到1次，一共可以组成多少个5位数，其中最小的和最大的数分别是什么数？\n",
+    "\n",
+    "   **提示1**: `123 = 1*100 + 2*10 + 3*1`  \n",
+    "   **提示2**: 可以使用一个`list`类型的变量，把所有找到的5位数都存放在这个变量中，这个列表型变量的长度就是所有5位数的个数，列表中最大和最小的元素就分别是能形成的最大的和最小的5位数"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5a7e4591-20f5-45eb-960b-7f08ea037463",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
