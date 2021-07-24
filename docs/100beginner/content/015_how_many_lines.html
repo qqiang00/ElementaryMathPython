@@ -722,7 +722,7 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>数轴上有6个点，对应的数字分别为<code class="docutils literal notranslate"><span class="pre">[-4.5,</span> <span class="pre">-2.0,</span> <span class="pre">0,</span> <span class="pre">1.5,</span> <span class="pre">3.5,</span> <span class="pre">5.0]</span></code>。连接其中任意的两个点可以形成一条线段。请问这6个点一共可形成多少条线段？参照下图，在宽高分别为600和400的绘图区绘制一条数轴，在数轴上标记这些点，并用不同颜色绘制出这6个点能形成的所有的线段并给每条线段标记一个序号。为避免绘制出的线段相互重合，每条线段间隔10个像素。图中已经绘制出了从<code class="docutils literal notranslate"><span class="pre">-4.5</span></code>开始到所有其它点的线段。</p>
 <p>下面的代码已经完成了数轴绘制和对每一个点的标记。</p>
-<p><img alt="b4deeab694b3405280713e25a7c9fe56" class="no-scaled-link" src="../../_images/L015_draw_all_lines.png" style="width: 600px;" /></p>
+<p><img alt="c241115253d3496d920a8713e115ddc9" class="no-scaled-link" src="../../_images/L015_draw_all_lines.png" style="width: 600px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -773,7 +773,7 @@ div.rendered_html tbody tr:hover {
 <li><p>从同样5个小朋友中抽出3个小朋友出来玩一个三人游戏，剩下的2个小朋友在一起玩另一个二人游戏，一共有多少种分组的方法。玩游戏的分组不考虑次序。</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -794,7 +794,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="2.-充分理解goto(x,-y)的意义">
 <h3>2. 充分理解<code class="docutils literal notranslate"><span class="pre">goto(x,</span> <span class="pre">y)</span></code>的意义<a class="headerlink" href="#2.-充分理解goto(x,-y)的意义" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -816,7 +816,7 @@ div.rendered_html tbody tr:hover {
 <ul class="simple">
 <li><p>考虑绘制一条线段需要知道哪些数据：线段的两个端点的位置，线的粗细以及颜色</p></li>
 <li><p>给方法以及这些数据进行命名，方法名可定为<code class="docutils literal notranslate"><span class="pre">line</span></code>，两个端点的位置可以分别为<code class="docutils literal notranslate"><span class="pre">start</span></code>,<code class="docutils literal notranslate"><span class="pre">end</span></code>，线的粗细设为<code class="docutils literal notranslate"><span class="pre">linewidth</span></code>，颜色为<code class="docutils literal notranslate"><span class="pre">color</span></code></p></li>
-<li><p>为了避免绘出的线发生重叠，考虑讲线段整体网上平移一定的距离，这个距离可以用变量<code class="docutils literal notranslate"><span class="pre">offset</span></code>来表示，</p></li>
+<li><p>为了避免绘出的线发生重叠，考虑将线段整体往上平移一定的距离，这个距离可以用变量<code class="docutils literal notranslate"><span class="pre">offset</span></code>来表示，</p></li>
 <li><p>不要忘记了还有一个比例尺，用变量<code class="docutils literal notranslate"><span class="pre">scale</span></code>表示。</p></li>
 </ul>
 <p>这样我们可以如下声明绘制线条的方法:</p>
@@ -835,18 +835,18 @@ div.rendered_html tbody tr:hover {
 <p>这样我们可以如下声明绘制线条的方法：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">linewidth</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
     <span class="n">pu</span><span class="p">()</span>                                   <span class="c1"># 提起画笔</span>
-    <span class="n">pen</span><span class="p">(</span><span class="n">penize</span><span class="o">=</span><span class="n">linewidth</span><span class="p">,</span> <span class="n">pencolor</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>  <span class="c1"># 设定画笔粗细和颜色</span>
+    <span class="n">pen</span><span class="p">(</span><span class="n">pensize</span><span class="o">=</span><span class="n">linewidth</span><span class="p">,</span> <span class="n">pencolor</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>  <span class="c1"># 设定画笔粗细和颜色</span>
     <span class="n">goto</span><span class="p">(</span><span class="n">start</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>            <span class="c1"># 移动画笔至某端点</span>
     <span class="n">pd</span><span class="p">()</span>                                   <span class="c1"># 落下画笔准备绘图</span>
     <span class="n">goto</span><span class="p">(</span><span class="n">end</span> <span class="o">*</span> <span class="n">scale</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>              <span class="c1"># 移动画笔值另端点完成线条绘制</span>
     <span class="k">return</span>                                 <span class="c1"># 离开方法，返回。</span>
 </pre></div>
 </div>
-<p>有了这样的实现，我们就可以在代码中调用这个方法来完成一条线段的绘制，下面的代码使用黑色的画笔，3个像素的粗细来绘制一条从(-4.5<em>SCALE, 15)表示的点到（-2.0</em>SCALE, 15)表示的点之间的线段。这条线段位于x轴上方5个像素。如下图所示：</p>
+<p>有了这样的实现，我们就可以在代码中调用这个方法来完成一条线段的绘制，下面的代码使用黑色的画笔，3个像素的粗细来绘制一条从(<code class="docutils literal notranslate"><span class="pre">-4.5*SCALE</span></code>, <code class="docutils literal notranslate"><span class="pre">15</span></code>)表示的点到（<code class="docutils literal notranslate"><span class="pre">-2.0*SCALE</span></code>, <code class="docutils literal notranslate"><span class="pre">15</span></code>)表示的点之间的线段。这条线段位于x轴上方5个像素。如下图所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">SCALE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="f9cc33777f024d01af64f187a3e6c084" class="no-scaled-link" src="../../_images/L015_one_line.png" style="width: 600px;" /></p>
+<p><img alt="b2b08ae061cd4a608aba4295f04e6f97" class="no-scaled-link" src="../../_images/L015_one_line.png" style="width: 600px;" /></p>
 <p>在调用方法时，给方法提供的参数的次序需要与声明方法时的次序一致，否则会出错或预期以外的功能。</p>
 <p>如果需要给绘制的线段进行标号，那么需要额外完成一些诸如：提起、移动画笔和绘制文字的步骤。同时我们还应该有标号使用的数字（或文字），需要新设定一个参数来表示它，可以用<code class="docutils literal notranslate"><span class="pre">label</span></code>来表示，下面的代码请读者自己添加这几行代码给这个方法添加线段标号的功能。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">linewidth</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -888,8 +888,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="3.-Solution-编程求解">
 <h2>3. Solution 编程求解<a class="headerlink" href="#3.-Solution-编程求解" title="永久链接至标题">¶</a></h2>
+<p><img alt="b3242dd3eadc4ccd88b9d8db09515cc7" class="no-scaled-link" src="../../_images/L015_solution_figure.png" style="width: 600px;" /></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -907,11 +908,14 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>  <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>                 <span class="c1"># index i, j:  start, end in nums</span>
 <span class="n">height</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">n_drawn</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
@@ -988,11 +992,16 @@ by using the data provided in below table and print out the result following the
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># use this cell to create your methods</span>
+<span></span># use this cell to create your methods
+1        10
+
+sum1 = 1 +  2 +3 + 。。。 +10
+
+sum2 = 2 + 3 + 。。+ 9
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1020,7 @@ by using the data provided in below table and print out the result following the
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1020,7 +1029,7 @@ by using the data provided in below table and print out the result following the
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1063,11 +1072,14 @@ square should be parallel to X axis. Besides, your method should also be able to
 </tr>
 </tbody>
 </table>
-<p><strong>要求</strong>：使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔，禁止使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法。 <strong>Requirement</strong>: Only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen, you are not allowed to use methods like <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>; <strong>提示</strong>：先计算出正方形每一个顶点的位置。 <strong>Hint</strong>: Calculate the position of each vertex of the square bfore you draw it. <img alt="ad9a4a9097284193b0c6e62927ca4090" class="no-scaled-link" src="../../_images/L015_exercise_3.png" style="width: 600px;" /></p>
+<p><strong>要求</strong>：使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔，禁止使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法。</p>
+<p><strong>Requirement</strong>: Only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen, you are not allowed to use methods like <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>;</p>
+<p><strong>提示</strong>：先计算出正方形每一个顶点的位置。</p>
+<p><strong>Hint</strong>: Calculate the position of each vertex of the square bfore you draw it. <img alt="c587a35208784e77ab7c99e3b353b44b" class="no-scaled-link" src="../../_images/L015_exercise_3.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1076,7 +1088,7 @@ square should be parallel to X axis. Besides, your method should also be able to
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1119,12 +1131,15 @@ colors and line widths. 实现这个方法后，用下面的数据来绘制3个�
 </tr>
 </tbody>
 </table>
-<p><strong>要求</strong>：尽可能不使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法，而使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔。 <strong>Requirement</strong>: Try to only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen instead of using <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>. <strong>提示</strong>：使用goto方法时，需要用到一个数值<code class="docutils literal notranslate"><span class="pre">1.732</span></code>来帮助定位三角形的端点。请在你实现方法的代码里使用这个数值。 <strong>Hint</strong>: You may need <code class="docutils literal notranslate"><span class="pre">1.732</span></code> to help locate the position of a vertex. Please use this value when implementing your method.</p>
-<p><img alt="e08e7fb133eb4f3bb028eeb848995332" class="no-scaled-link" src="../../_images/L015_exercise_4.png" style="width: 600px;" /></p>
+<p><strong>要求</strong>：尽可能不使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法，而使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔。</p>
+<p><strong>Requirement</strong>: Try to only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen instead of using <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>.</p>
+<p><strong>提示</strong>：使用goto方法时，需要用到一个数值<code class="docutils literal notranslate"><span class="pre">1.732</span></code>来帮助定位三角形的端点。请在你实现方法的代码里使用这个数值。</p>
+<p><strong>Hint</strong>: You may need <code class="docutils literal notranslate"><span class="pre">1.732</span></code> to help locate the position of a vertex. Please use this value when implementing your method.</p>
+<p><img alt="8c5595e428474a4ca63a3e4664a70d17" class="no-scaled-link" src="../../_images/L015_exercise_4.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1133,7 +1148,7 @@ colors and line widths. 实现这个方法后，用下面的数据来绘制3个�
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1141,10 +1156,34 @@ colors and line widths. 实现这个方法后，用下面的数据来绘制3个�
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>用数字“1,2,3,4”这4个数字来组成一个5位数，其中每一个数至少用到1次，一共可以组成多少个5位数，其中最小的和最大的数分别是什么数？ Comose a 5-digit positive integer using the number 1,2,3, and 4 on each bit. Each number should at least be used once. How many 5-digit positive number can be composed? what is the minimal and maximal integer? <strong>提示1 Hint1</strong>: <code class="docutils literal notranslate"><span class="pre">123</span> <span class="pre">=</span> <span class="pre">1*100</span> <span class="pre">+</span> <span class="pre">2*10</span> <span class="pre">+</span> <span class="pre">3*1</span></code>
-<strong>提示2</strong>: 可以使用一个<code class="docutils literal notranslate"><span class="pre">list</span></code>类型的变量，把所有找到的5位数都存放在这个变量中，这个列表型变量的长度就是所有5位数的个数，列表中最大和最小的元素就分别是能形成的最大的和最小的5位数 <strong>Hint2</strong>： You can use a <code class="docutils literal notranslate"><span class="pre">list</span></code> variable, put all the integers to it, then the length of this variable is the number of all integers. and minimal and maximal elements are the minimal and maximal value of all composed 5-digit integers.</p></li>
+<ol class="arabic" start="5">
+<li><p>用数字“1,2,3,4”这4个数字来组成一个5位数，其中每一个数至少用到1次，一共可以组成多少个5位数，其中最小的和最大的数分别是什么数？</p>
+<p>Comose a 5-digit positive integer using the number 1,2,3, and 4 on each bit. Each number should at least be used once. How many 5-digit positive number can be composed? what is the minimal and maximal integer?</p>
+<p><strong>提示1 Hint1</strong>: <code class="docutils literal notranslate"><span class="pre">123</span> <span class="pre">=</span> <span class="pre">1*100</span> <span class="pre">+</span> <span class="pre">2*10</span> <span class="pre">+</span> <span class="pre">3*1</span></code></p>
+<p><strong>提示2</strong>: 可以使用一个<code class="docutils literal notranslate"><span class="pre">list</span></code>类型的变量，把所有找到的5位数都存放在这个变量中，这个列表型变量的长度就是所有5位数的个数，列表中最大和最小的元素就分别是能形成的最大的和最小的5位数</p>
+<p><strong>Hint2</strong>： You can use a <code class="docutils literal notranslate"><span class="pre">list</span></code> variable, put all the integers to it, then the length of this variable is the number of all integers. and minimal and maximal elements are the minimal and maximal value of all composed 5-digit integers.</p>
+</li>
 </ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">11234</span>
+<span class="mi">12234</span>
+<span class="mi">12344</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+12344
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
