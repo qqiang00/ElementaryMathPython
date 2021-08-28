@@ -717,9 +717,9 @@ div.rendered_html tbody tr:hover {
 <p>方法为什么可以有返回值，返回值的意义是什么？</p>
 <p>如何创建一个有实际返回值的方法？语法规则是什么？</p>
 <p>以计算任意两个整数之间所有整数和为例，如果方法没有返回值，我们需要在方法内部使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句打印输出得到的结果：</p>
+<p>以Yunzi小朋友的弟弟Yunlei打扫卫生为例：</p>
 </li>
 </ol>
-<p>以Yunzi小朋友的弟弟Yunlei打扫卫生为例：</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
 </pre></div>
@@ -822,7 +822,9 @@ Well done! meiyou chaoshi le yunlei
 [yunlei told yunzi, clean now!]
 </pre></div></div>
 </div>
-<p>完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用`print`语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。
+</pre></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
 </pre></div>
@@ -1109,9 +1111,12 @@ False
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Implement a method:<code class="docutils literal notranslate"><span class="pre">square</span></code> that receives one <strong>int</strong> or <strong>float</strong> argument <code class="docutils literal notranslate"><span class="pre">x</span></code>. This method will calculate the square of <code class="docutils literal notranslate"><span class="pre">x</span></code>, take <code class="docutils literal notranslate"><span class="pre">square</span></code> as the resturn value of this method. run this method with the argument value as each element in the list <code class="docutils literal notranslate"><span class="pre">nums</span></code> below, put each square to a new list <code class="docutils literal notranslate"><span class="pre">squares</span></code>. in order. Finally, print out <code class="docutils literal notranslate"><span class="pre">squares</span></code> list.
-实现一个名为<code class="docutils literal notranslate"><span class="pre">square</span></code>的方法，这个方法接受一个名为<code class="docutils literal notranslate"><span class="pre">x</span></code>的参数，它计算<code class="docutils literal notranslate"><span class="pre">x</span></code>的平方(自己和自己相乘）并将结果作为方法的返回值。把<code class="docutils literal notranslate"><span class="pre">nums</span></code>列表型变量里的每一个元素作为参数送入并运行该方法，将得到的结果作为元素放入一个新的列表型变量<code class="docutils literal notranslate"><span class="pre">squares</span></code>。最后打印这个<code class="docutils literal notranslate"><span class="pre">squares</span></code>变量。 Note: You only need to implement the method. all other codes are already provided. 注：你只需要声明方法，其他的代码已经给出</p></li>
+<ol class="arabic">
+<li><p>Implement a method:<code class="docutils literal notranslate"><span class="pre">square</span></code> that receives one <strong>int</strong> or <strong>float</strong> argument <code class="docutils literal notranslate"><span class="pre">x</span></code>. This method will calculate the square of <code class="docutils literal notranslate"><span class="pre">x</span></code>, take <code class="docutils literal notranslate"><span class="pre">square</span></code> as the resturn value of this method. run this method with the argument value as each element in the list <code class="docutils literal notranslate"><span class="pre">nums</span></code> below, put each square to a new list <code class="docutils literal notranslate"><span class="pre">squares</span></code>. in order. Finally, print out <code class="docutils literal notranslate"><span class="pre">squares</span></code> list.</p>
+<p>实现一个名为<code class="docutils literal notranslate"><span class="pre">square</span></code>的方法，这个方法接受一个名为<code class="docutils literal notranslate"><span class="pre">x</span></code>的参数，它计算<code class="docutils literal notranslate"><span class="pre">x</span></code>的平方(自己和自己相乘）并将结果作为方法的返回值。把<code class="docutils literal notranslate"><span class="pre">nums</span></code>列表型变量里的每一个元素作为参数送入并运行该方法，将得到的结果作为元素放入一个新的列表型变量<code class="docutils literal notranslate"><span class="pre">squares</span></code>。最后打印这个<code class="docutils literal notranslate"><span class="pre">squares</span></code>变量。</p>
+<p>Note: You only need to implement the method. all other codes are already provided.</p>
+<p>注：你只需要声明方法，其他的代码已经给出</p>
+</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[76]:
@@ -1150,9 +1155,12 @@ False
 [None, None, None, None, None, None, None, None, None, None, None, None]
 </pre></div></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Implement a method:<code class="docutils literal notranslate"><span class="pre">square_on_list</span></code> that receives one <strong>list</strong> argument <code class="docutils literal notranslate"><span class="pre">x</span></code>. This method will calculate the square of each element in <code class="docutils literal notranslate"><span class="pre">x</span></code>, and put the result into a new list. Finally, the method returns this new list. 实现一个名为<code class="docutils literal notranslate"><span class="pre">square_on_list</span></code>的方法，这个方法接受一个列表型参数：<code class="docutils literal notranslate"><span class="pre">x</span></code>，该方法计算<code class="docutils literal notranslate"><span class="pre">x</span></code>的每一个元素的平方并将结果组成一个新的列表性变量，并把这个新的变量作为方法的返回值。 Note: You only need to implement the method. all other codes, include the original
-list variable <code class="docutils literal notranslate"><span class="pre">nums</span></code>, are already provided. 注：你只需要声明方法，其他的代码(包括原始列表变量<code class="docutils literal notranslate"><span class="pre">nums</span></code>)已经给出。</p></li>
+<ol class="arabic" start="2">
+<li><p>Implement a method:<code class="docutils literal notranslate"><span class="pre">square_on_list</span></code> that receives one <strong>list</strong> argument <code class="docutils literal notranslate"><span class="pre">x</span></code>. This method will calculate the square of each element in <code class="docutils literal notranslate"><span class="pre">x</span></code>, and put the result into a new list. Finally, the method returns this new list.</p>
+<p>实现一个名为<code class="docutils literal notranslate"><span class="pre">square_on_list</span></code>的方法，这个方法接受一个列表型参数：<code class="docutils literal notranslate"><span class="pre">x</span></code>，该方法计算<code class="docutils literal notranslate"><span class="pre">x</span></code>的每一个元素的平方并将结果组成一个新的列表性变量，并把这个新的变量作为方法的返回值。</p>
+<p>Note: You only need to implement the method. all other codes, include the original list variable <code class="docutils literal notranslate"><span class="pre">nums</span></code>, are already provided.</p>
+<p>注：你只需要声明方法，其他的代码(包括原始列表变量<code class="docutils literal notranslate"><span class="pre">nums</span></code>)已经给出。</p>
+</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
@@ -1189,16 +1197,20 @@ None
 </pre></div></div>
 </div>
 <ol class="arabic" start="3">
-<li><p>圆的周长公式为: The formular for calculating circumference of a circle defined by a radius is:</p>
+<li><p>圆的周长公式为:</p>
+<p>The formular for calculating circumference of a circle defined by a radius is:</p>
 <div class="math notranslate nohighlight">
 \[C =2 \pi  r\]</div>
-<p>其中<span class="math notranslate nohighlight">\(r\)</span>是圆的半径，<span class="math notranslate nohighlight">\(\pi\)</span>是圆周率，值约为3.14，表示的是圆的周长与直径的的比值。圆的直径是圆上任意两个点的距离的最大值，圆的直径是半径的两倍。 where <span class="math notranslate nohighlight">\(\pi\)</span> is the ratio of the circumference of a circle to its diameter, Its value is approximately equal to 3.14. The diameter of a circle is the maximum value of the distance between any two points on the circle, The radius of a circle is half of the diameters.</p>
-<p><img alt="fc4f03fe66f545c99edeb653bdbe92a8" class="no-scaled-link" src="../../_images/L017_circle_diameter_radius.png" style="width: 300px;" /></p>
-<p>现在有50个圆，其半径分别为下列一组数据： Here are 50 circles with radius values given below:</p>
+<p>其中<span class="math notranslate nohighlight">\(r\)</span>是圆的半径，<span class="math notranslate nohighlight">\(\pi\)</span>是圆周率，值约为3.14，表示的是圆的周长与直径的的比值。圆的直径是圆上任意两个点的距离的最大值，圆的直径是半径的两倍。</p>
+<p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the ratio of the circumference of a circle to its diameter, Its value is approximately equal to 3.14. The diameter of a circle is the maximum value of the distance between any two points on the circle, The radius of a circle is half of the diameters.</p>
+<p><img alt="9c404b6ccb1f4e2498b286403d4e930e" class="no-scaled-link" src="../../_images/L017_circle_diameter_radius.png" style="width: 300px;" /></p>
+<p>现在有50个圆，其半径分别为下列一组数据：</p>
+<p>Here are 50 circles with radius values given below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">30.48</span><span class="p">,</span> <span class="mf">28.66</span><span class="p">,</span> <span class="mf">49.76</span><span class="p">,</span> <span class="mf">23.95</span><span class="p">,</span> <span class="mf">21.96</span><span class="p">,</span> <span class="mf">49.82</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">30.95</span><span class="p">,</span> <span class="mf">22.63</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">47.91</span><span class="p">,</span> <span class="mf">47.54</span><span class="p">,</span> <span class="mf">49.41</span><span class="p">,</span> <span class="mf">21.18</span><span class="p">,</span> <span class="mf">40.41</span><span class="p">,</span> <span class="mf">42.77</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">30.39</span><span class="p">,</span> <span class="mf">29.97</span><span class="p">,</span> <span class="mf">22.57</span><span class="p">,</span> <span class="mf">29.09</span><span class="p">,</span> <span class="mf">33.31</span><span class="p">,</span> <span class="mf">40.26</span><span class="p">,</span> <span class="mf">49.88</span><span class="p">,</span> <span class="mf">31.52</span><span class="p">,</span> <span class="mf">42.23</span><span class="p">,</span> <span class="mf">27.66</span><span class="p">,</span> <span class="mf">32.01</span><span class="p">,</span> <span class="mf">48.19</span><span class="p">,</span> <span class="mf">32.92</span><span class="p">,</span> <span class="mf">37.53</span><span class="p">,</span> <span class="mf">35.61</span><span class="p">,</span> <span class="mf">49.8</span><span class="p">,</span> <span class="mf">35.55</span><span class="p">,</span> <span class="mf">38.98</span><span class="p">,</span> <span class="mf">32.59</span><span class="p">,</span> <span class="mf">48.98</span><span class="p">,</span> <span class="mf">35.02</span><span class="p">,</span> <span class="mf">23.97</span><span class="p">,</span> <span class="mf">27.55</span><span class="p">,</span> <span class="mf">31.84</span><span class="p">,</span> <span class="mf">41.39</span><span class="p">,</span> <span class="mf">24.61</span><span class="p">,</span> <span class="mf">31.27</span><span class="p">,</span> <span class="mf">24.94</span><span class="p">,</span> <span class="mf">49.23</span><span class="p">,</span> <span class="mf">39.81</span><span class="p">,</span> <span class="mf">48.12</span><span class="p">,</span> <span class="mf">21.91</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>请你编写一个方法专门计算一个给定半径的圆的周长，并编写其他的程序来调用你编写的方法来，来找出上面所有的圆中周长最大的一个圆其半径是多少？其对应的周长是多少？ Please create(define and implement) a method to calculate the circumference of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose circumference is the largest. Give the value of the radius and circumference of the circle.</p>
+<p>请你编写一个方法专门计算一个给定半径的圆的周长，并编写其他的程序来调用你编写的方法来，来找出上面所有的圆中周长最大的一个圆其半径是多少？其对应的周长是多少？</p>
+<p>Please create(define and implement) a method to calculate the circumference of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose circumference is the largest. Give the value of the radius and circumference of the circle.</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1219,14 +1231,17 @@ None
 </div>
 </div>
 <ol class="arabic" start="4">
-<li><p>（难，选做）Jason, Sophie, Tony, Yunzi 四个人的身高分别为: 150, 125, 130, 146 (单位均为厘米),请编写一个方法使其能够完成：将这四个人的身高数据按照从大到小的顺序排列。对创建的这个方法的要求如下： (hard, optional) The heights of the four classmates(Jason, Sophie, Tony, and Yunzi) are 150, 125, 130, and 146 (unit: cm). Please implement a method to sort the heights data in a descending order. Here are the requirements for the method you will implement:</p>
+<li><p>（难，选做）Jason, Sophie, Tony, Yunzi 四个人的身高分别为: 150, 125, 130, 146 (单位均为厘米),请编写一个方法使其能够完成：将这四个人的身高数据按照从大到小的顺序排列。对创建的这个方法的要求如下：</p>
+<p>(hard, optional) The heights of the four classmates(Jason, Sophie, Tony, and Yunzi) are 150, 125, 130, and 146 (unit: cm). Please implement a method to sort the heights data in a descending order. Here are the requirements for the method you will implement:</p>
 <ul class="simple">
 <li><p>方法名已给出: <code class="docutils literal notranslate"><span class="pre">sort_height</span></code>. The method name is given: <code class="docutils literal notranslate"><span class="pre">sort_height</span></code>.</p></li>
 <li><p>该方法接受一个列表型变量参数，该列表型变量的长度可以不限定为本题的4（4代表4个小朋友的身高数据）The method receives one list argument, the length of which is not limited by 4 (4 represents 4 classmates) in this question.</p></li>
 <li><p>该方法返回一个列表型变量，其元素是按照从大到小的顺序排列。 The method returns a new list variable, the element of which is sorted in a descending order.</p></li>
 </ul>
-<p>你仅需要编写这个方法实现部分，调用以及验证你写的方法的代码已经给出，你应该不要更改它。 You only need to write code to implement this mehtod. Codes for running and testing it are already provided which you should not modify.</p>
-<p><strong>提示</strong>:对于题中给出的升高数据，其正确排序后的结果应该是:[150, 146, 130, 125] <strong>Hint</strong>: the correct sorted heights for this 4 classmates should be:[150, 146, 130, 125]</p>
+<p>你仅需要编写这个方法实现部分，调用以及验证你写的方法的代码已经给出，你应该不要更改它。</p>
+<p>You only need to write code to implement this mehtod. Codes for running and testing it are already provided which you should not modify.</p>
+<p><strong>提示</strong>:对于题中给出的升高数据，其正确排序后的结果应该是:[150, 146, 130, 125]</p>
+<p><strong>Hint</strong>: the correct sorted heights for this 4 classmates should be:[150, 146, 130, 125]</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
