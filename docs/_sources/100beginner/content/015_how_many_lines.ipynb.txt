@@ -85,18 +85,17 @@
     "\n",
     "#### 1. 排列和组合\n",
     "\n",
-    "- 5个小朋友Jason, Sophie, Tony, Yunzi, Celine按从前到后的次序排成一个纵队，可以拍成多少个不一样的队伍？\n",
-    "- 从同样5个小朋友中抽出3个小朋友出来玩一个三人游戏，剩下的2个小朋友在一起玩另一个二人游戏，一共有多少种分组的方法。玩游戏的分组不考虑次序。"
+    "- 4个小朋友Jason, Sophie, Tony, Yunzi按从前到后的次序排成一个纵队，可以排成多少个不一样的队伍？"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "824c140c-4d86-4fc5-8753-f0fd8aa00cf2",
    "metadata": {},
    "outputs": [],
    "source": [
-    "classmates = [\"Jason\", \"Sophie\", \"Tony\", \"Yunzi\", \"Celine\"]"
+    "classmates = [\"Jason\", \"Sophie\", \"Tony\", \"Yunzi\"]"
    ]
   },
   {
@@ -515,9 +514,9 @@
    "id": "bb3720ff-3cbc-476e-a7fb-ed0bc00537d8",
    "metadata": {},
    "source": [
-    "5. 用数字\"1,2,3,4\"这4个数字来组成一个5位数，其中每一个数至少用到1次，一共可以组成多少个5位数，其中最小的和最大的数分别是什么数？<br>\n",
+    "5. [**难，选做**]用数字\"1,2,3,4\"这4个数字来组成一个5位数，其中每一个数至少用到1次，一共可以组成多少个5位数，其中最小的和最大的数分别是什么数？<br>\n",
     "\n",
-    "   Comose a 5-digit positive integer using the number 1,2,3, and 4 on each bit. Each number should at least be used once. How many 5-digit positive number can be composed? what is the minimal and maximal integer?<br>\n",
+    "   [**hard, optional**]Comose a 5-digit positive integer using the number 1,2,3, and 4 on each bit. Each number should at least be used once. How many 5-digit positive number can be composed? what is the minimal and maximal integer?<br>\n",
     "   \n",
     "   **提示1 Hint1**: `123 = 1*100 + 2*10 + 3*1`  <br>\n",
     "   \n",
@@ -528,31 +527,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "5a7e4591-20f5-45eb-960b-7f08ea037463",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "12344"
-      ]
-     },
-     "execution_count": 5,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "11234\n",
-    "12234\n",
-    "12344"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": null,
-   "id": "8f1a8d55-1896-4427-80b3-24e2f4056e4c",
+   "id": "5a7e4591-20f5-45eb-960b-7f08ea037463",
    "metadata": {},
    "outputs": [],
    "source": []
