@@ -719,34 +719,13 @@ div.rendered_html tbody tr:hover {
 <p>以计算任意两个整数之间所有整数和为例，如果方法没有返回值，我们需要在方法内部使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句打印输出得到的结果：</p>
 </li>
 </ol>
+<p>以Yunzi小朋友的弟弟Yunlei打扫卫生为例：</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># 方法1 while 循环</span>
-<span class="k">def</span> <span class="nf">sum_inclu1</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-    <span class="n">cur_num</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">cur_num</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="n">cur_num</span>
-        <span class="n">cur_num</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="k">def</span> <span class="nf">time_now</span><span class="p">():</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-
-<span class="k">def</span> <span class="nf">goto_room</span><span class="p">(</span><span class="n">room</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">goto_room</span><span class="p">(</span><span class="n">room</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[yunlei goto </span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">room</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="n">tool</span><span class="p">):</span>
@@ -774,12 +753,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-<span></span><span class="k">def</span> <span class="nf">dasaoweisheng</span><span class="p">(</span><span class="n">dongxi</span><span class="p">,</span>
+<span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="k">def</span> <span class="nf">dasaoweisheng</span><span class="p">(</span><span class="n">dongxi</span><span class="p">,</span>
                   <span class="n">room</span><span class="p">,</span>
                   <span class="n">is_wall_need</span><span class="p">,</span>
                   <span class="n">tool</span><span class="p">,</span>
@@ -818,7 +797,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -831,20 +810,21 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-start cleaning at 1630160681.4401233
+start cleaning at 1630162417.6821954
 [yunlei goto yunzi_bed_room]
 [yunlei take the tool box]
 [prepare to clean]
 [wo zhengzai shuidajiao]
 [yunlei is cleaning books on the floor]
-end time: 1630160687.4461002
-time cost: 6.005976915359497
+end time: 1630162423.6891494
+time cost: 6.006953954696655
 Well done! meiyou chaoshi le yunlei
 [yunlei told yunzi, clean now!]
 </pre></div></div>
 </div>
+<p>完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[82]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -884,7 +864,7 @@ Well done! meiyou chaoshi le yunlei
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -906,7 +886,7 @@ Well done! meiyou chaoshi le yunlei
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -914,17 +894,8 @@ Well done! meiyou chaoshi le yunlei
 True
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -947,73 +918,6 @@ True
 False
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># 方法2 for 循环</span>
-<span class="k">def</span> <span class="nf">sum_inclu2</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="n">cur_num</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sum_inclu2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-5050
-</pre></div></div>
-</div>
-<p>完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">sum_inclu3</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-    <span class="n">result_in</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">cur_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">result_in</span> <span class="o">+=</span> <span class="n">cur_num</span>
-
-    <span class="k">return</span> <span class="n">result_in</span>         <span class="c1"># return a variable in the method.</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">result_out</span> <span class="o">=</span> <span class="n">sum_inclu3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_out</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-5050
-</pre></div></div>
-</div>
-<p>讲解上面的两段代码中<code class="docutils literal notranslate"><span class="pre">result_in</span></code>和<code class="docutils literal notranslate"><span class="pre">result_out</span></code>各自的用途和出现的位置。</p>
 <ol class="arabic" start="2">
 <li><p>一个数的相反数是这个数乘以-1的结果，一个正数的绝对值是这个数自己，一个负数的绝对值是这个数的相反数，0的相反数和绝对值都还是0.</p>
 <p>下面的方法把<code class="docutils literal notranslate"><span class="pre">print</span></code>包括在方法内部了。</p>
@@ -1285,17 +1189,35 @@ None
 </pre></div></div>
 </div>
 <ol class="arabic" start="3">
-<li><p>圆的周长公式为: The formular for calculating perimeter of a circle defined by a radius is:</p>
+<li><p>圆的周长公式为: The formular for calculating circumference of a circle defined by a radius is:</p>
 <div class="math notranslate nohighlight">
-\[l =2 \pi  r\]</div>
-<p>其中<span class="math notranslate nohighlight">\(r\)</span>是圆的半径。where <span class="math notranslate nohighlight">\(r\)</span> is the radius of a circle.</p>
-<p>现在有50个圆，其半径分别位下列一组数据： Here are 50 circles with radius values given below:</p>
+\[C =2 \pi  r\]</div>
+<p>其中<span class="math notranslate nohighlight">\(r\)</span>是圆的半径，<span class="math notranslate nohighlight">\(\pi\)</span>是圆周率，值约为3.14，表示的是圆的周长与直径的的比值。圆的直径是圆上任意两个点的距离的最大值，圆的直径是半径的两倍。 where <span class="math notranslate nohighlight">\(\pi\)</span> is the ratio of the circumference of a circle to its diameter, Its value is approximately equal to 3.14. The diameter of a circle is the maximum value of the distance between any two points on the circle, The radius of a circle is half of the diameters.</p>
+<p><img alt="fc4f03fe66f545c99edeb653bdbe92a8" class="no-scaled-link" src="../../_images/L017_circle_diameter_radius.png" style="width: 300px;" /></p>
+<p>现在有50个圆，其半径分别为下列一组数据： Here are 50 circles with radius values given below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">30.48</span><span class="p">,</span> <span class="mf">28.66</span><span class="p">,</span> <span class="mf">49.76</span><span class="p">,</span> <span class="mf">23.95</span><span class="p">,</span> <span class="mf">21.96</span><span class="p">,</span> <span class="mf">49.82</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">30.95</span><span class="p">,</span> <span class="mf">22.63</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">47.91</span><span class="p">,</span> <span class="mf">47.54</span><span class="p">,</span> <span class="mf">49.41</span><span class="p">,</span> <span class="mf">21.18</span><span class="p">,</span> <span class="mf">40.41</span><span class="p">,</span> <span class="mf">42.77</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">30.39</span><span class="p">,</span> <span class="mf">29.97</span><span class="p">,</span> <span class="mf">22.57</span><span class="p">,</span> <span class="mf">29.09</span><span class="p">,</span> <span class="mf">33.31</span><span class="p">,</span> <span class="mf">40.26</span><span class="p">,</span> <span class="mf">49.88</span><span class="p">,</span> <span class="mf">31.52</span><span class="p">,</span> <span class="mf">42.23</span><span class="p">,</span> <span class="mf">27.66</span><span class="p">,</span> <span class="mf">32.01</span><span class="p">,</span> <span class="mf">48.19</span><span class="p">,</span> <span class="mf">32.92</span><span class="p">,</span> <span class="mf">37.53</span><span class="p">,</span> <span class="mf">35.61</span><span class="p">,</span> <span class="mf">49.8</span><span class="p">,</span> <span class="mf">35.55</span><span class="p">,</span> <span class="mf">38.98</span><span class="p">,</span> <span class="mf">32.59</span><span class="p">,</span> <span class="mf">48.98</span><span class="p">,</span> <span class="mf">35.02</span><span class="p">,</span> <span class="mf">23.97</span><span class="p">,</span> <span class="mf">27.55</span><span class="p">,</span> <span class="mf">31.84</span><span class="p">,</span> <span class="mf">41.39</span><span class="p">,</span> <span class="mf">24.61</span><span class="p">,</span> <span class="mf">31.27</span><span class="p">,</span> <span class="mf">24.94</span><span class="p">,</span> <span class="mf">49.23</span><span class="p">,</span> <span class="mf">39.81</span><span class="p">,</span> <span class="mf">48.12</span><span class="p">,</span> <span class="mf">21.91</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>请你编写一个方法专门计算一个给定半径的圆的周长，并编写其他的程序来调用你编写的方法来，来找出上面所有的圆中周长最大的一个圆其半径是多少？其对应的周长是多少？ Please create(define and implement) a method to calculate the perimeter of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose perimeter is the largest. Give the value of the radius and perimeter of the circle.</p>
+<p>请你编写一个方法专门计算一个给定半径的圆的周长，并编写其他的程序来调用你编写的方法来，来找出上面所有的圆中周长最大的一个圆其半径是多少？其对应的周长是多少？ Please create(define and implement) a method to calculate the circumference of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose circumference is the largest. Give the value of the radius and circumference of the circle.</p>
 </li>
 </ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># You need to define, implement, and invoke the method all by yourself to answer this question.</span>
+<span class="c1"># 你需要独自声明、实现、和调用这个方法来完成本题</span>
+
+<span class="c1"># Start your code here</span>
+<span class="c1"># 开始你的代码</span>
+
+
+
+
+</pre></div>
+</div>
+</div>
 <ol class="arabic" start="4">
 <li><p>（难，选做）Jason, Sophie, Tony, Yunzi 四个人的身高分别为: 150, 125, 130, 146 (单位均为厘米),请编写一个方法使其能够完成：将这四个人的身高数据按照从大到小的顺序排列。对创建的这个方法的要求如下： (hard, optional) The heights of the four classmates(Jason, Sophie, Tony, and Yunzi) are 150, 125, 130, and 146 (unit: cm). Please implement a method to sort the heights data in a descending order. Here are the requirements for the method you will implement:</p>
 <ul class="simple">

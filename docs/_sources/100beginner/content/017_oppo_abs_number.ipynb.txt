@@ -60,40 +60,18 @@
     "   如何创建一个有实际返回值的方法？语法规则是什么？\n",
     "   \n",
     "   以计算任意两个整数之间所有整数和为例，如果方法没有返回值，我们需要在方法内部使用`print`语句打印输出得到的结果：\n",
+    "   \n",
+    "以Yunzi小朋友的弟弟Yunlei打扫卫生为例：\n",
     "   "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "52b4df29-ad9c-45a6-a9d3-69f9a9c16c08",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# 方法1 while 循环\n",
-    "def sum_inclu1(start, end):\n",
-    "    cur_num, result = start, 0\n",
-    "    while cur_num <= end:\n",
-    "        result += cur_num\n",
-    "        cur_num += 1\n",
-    "        \n",
-    "    print(result)\n",
-    "    return \n",
-    "    "
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 58,
+   "execution_count": 79,
    "id": "500e844d-083f-44ad-a69c-c1bc6c561dbf",
    "metadata": {},
    "outputs": [],
    "source": [
-    "import time \n",
-    "def time_now():\n",
-    "    time.time()\n",
-    "    print(time.time())\n",
-    "    \n",
     "def goto_room(room):\n",
     "    print(\"[yunlei goto {}]\".format(room))\n",
     "    \n",
@@ -121,12 +99,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 59,
+   "execution_count": 80,
    "id": "e9f6883a-6a42-4292-be78-4949bb2cefaf",
    "metadata": {},
    "outputs": [],
    "source": [
-    "\n",
+    "import time \n",
     "def dasaoweisheng(dongxi, \n",
     "                  room, \n",
     "                  is_wall_need, \n",
@@ -166,7 +144,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 61,
+   "execution_count": 81,
    "id": "796bcdbb-a38c-475b-b74f-de99d9226b14",
    "metadata": {},
    "outputs": [
@@ -174,14 +152,14 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "start cleaning at 1630160681.4401233\n",
+      "start cleaning at 1630162417.6821954\n",
       "[yunlei goto yunzi_bed_room]\n",
       "[yunlei take the tool box]\n",
       "[prepare to clean]\n",
       "[wo zhengzai shuidajiao]\n",
       "[yunlei is cleaning books on the floor]\n",
-      "end time: 1630160687.4461002\n",
-      "time cost: 6.005976915359497\n",
+      "end time: 1630162423.6891494\n",
+      "time cost: 6.006953954696655\n",
       "Well done! meiyou chaoshi le yunlei\n",
       "[yunlei told yunzi, clean now!]\n"
      ]
@@ -192,8 +170,16 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "6ed096cd-e720-4fd9-af3f-2e8263c85179",
+   "metadata": {},
+   "source": [
+    "完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用`print`语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。"
+   ]
+  },
+  {
    "cell_type": "code",
-   "execution_count": 62,
+   "execution_count": 82,
    "id": "49e91554-2091-420f-8e3e-90daa79d94fa",
    "metadata": {},
    "outputs": [],
@@ -234,7 +220,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 63,
+   "execution_count": 83,
    "id": "6f1be0fb-ae44-4b74-9d44-ccab042f2837",
    "metadata": {},
    "outputs": [
@@ -256,7 +242,7 @@
        "True"
       ]
      },
-     "execution_count": 63,
+     "execution_count": 83,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -267,15 +253,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "d6dbe1bc-88f0-4ac1-902d-0f0b41b6ab00",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 65,
+   "execution_count": 84,
    "id": "767173b7-c784-4a0b-80fb-64d0264cbea2",
    "metadata": {},
    "outputs": [
@@ -296,91 +274,6 @@
    "source": [
     "is_yunlei_delayed = dasaoweisheng_silently(\"shoes\", \"daddy_bed_room\", False, \"box\", 10, False, True)\n",
     "print(is_yunlei_delayed)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 6,
-   "id": "091d2c01-d1d6-4769-83cf-5402e8808fe0",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# 方法2 for 循环\n",
-    "def sum_inclu2(start, end):\n",
-    "    result = 0\n",
-    "    for cur_num in range(start, end + 1):\n",
-    "        result += cur_num\n",
-    "        \n",
-    "    print(result)\n",
-    "    return"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 7,
-   "id": "69cbfa82-5cba-4f3a-adca-9d4e6100eabc",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "5050\n"
-     ]
-    }
-   ],
-   "source": [
-    "sum_inclu2(1, 100)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6ed096cd-e720-4fd9-af3f-2e8263c85179",
-   "metadata": {},
-   "source": [
-    "完成一个运算的方法，在方法内部可以仅执行一些计算，而不必要执行显示最终数据的任务，也就是说方法内部可以而且应该不需要使用`print`语句来显示最终得到的结果，这个结果应该可以直接拿来使用或者赋值给某一个变量，为此可以给方法的最后添加一个语句来返回这个结果至方法外部。"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 24,
-   "id": "49dd5e29-b323-40c8-8377-4b2244caac34",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "def sum_inclu3(start, end):\n",
-    "    result_in = 0\n",
-    "    for cur_num in range(start, end + 1):\n",
-    "        result_in += cur_num\n",
-    "        \n",
-    "    return result_in         # return a variable in the method."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 10,
-   "id": "5901399f-995b-41c6-b3d3-6ad475f1720a",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "5050\n"
-     ]
-    }
-   ],
-   "source": [
-    "result_out = sum_inclu3(1, 100)\n",
-    "print(result_out)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "d55670ec-a4d6-4cad-9475-c456cec71597",
-   "metadata": {},
-   "source": [
-    "讲解上面的两段代码中`result_in`和`result_out`各自的用途和出现的位置。"
    ]
   },
   {
@@ -727,17 +620,37 @@
    "metadata": {},
    "source": [
     "3. 圆的周长公式为:<br>\n",
-    "   The formular for calculating perimeter of a circle defined by a radius is:\n",
-    "   $$l =2 \\pi  r$$\n",
-    "   其中$r$是圆的半径。where $r$ is the radius of a circle.<br>\n",
+    "   The formular for calculating circumference of a circle defined by a radius is:\n",
+    "   $$C =2 \\pi  r$$\n",
+    "   其中$r$是圆的半径，$\\pi$是圆周率，值约为3.14，表示的是圆的周长与直径的的比值。圆的直径是圆上任意两个点的距离的最大值，圆的直径是半径的两倍。<br>\n",
+    "   where $\\pi$ is the ratio of the circumference of a circle to its diameter, Its value is approximately equal to 3.14. The diameter of a circle is the maximum value of the distance between any two points on the circle, The radius of a circle is half of the diameters.<br>\n",
+    "\n",
+    "   <img src=\"figures/L017_circle_diameter_radius.png\" width=\"300px\"/>\n",
     "   \n",
-    "   现在有50个圆，其半径分别位下列一组数据：<br>\n",
+    "   现在有50个圆，其半径分别为下列一组数据：<br>\n",
     "   Here are 50 circles with radius values given below:<br>\n",
     "   ```python\n",
     "   [30.48, 28.66, 49.76, 23.95, 21.96, 49.82, 38.55, 30.95, 22.63, 38.55, 47.91, 47.54, 49.41, 21.18, 40.41, 42.77, 24.52, 24.52, 30.39, 29.97, 22.57, 29.09, 33.31, 40.26, 49.88, 31.52, 42.23, 27.66, 32.01, 48.19, 32.92, 37.53, 35.61, 49.8, 35.55, 38.98, 32.59, 48.98, 35.02, 23.97, 27.55, 31.84, 41.39, 24.61, 31.27, 24.94, 49.23, 39.81, 48.12, 21.91]\n",
     "   ```\n",
     "   请你编写一个方法专门计算一个给定半径的圆的周长，并编写其他的程序来调用你编写的方法来，来找出上面所有的圆中周长最大的一个圆其半径是多少？其对应的周长是多少？<br>\n",
-    "   Please create(define and implement) a method to calculate the perimeter of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose perimeter is the largest. Give the value of the radius and perimeter of the circle."
+    "   Please create(define and implement) a method to calculate the circumference of a circle given by a radius value. Writer some other codes to run your method and finally find the circle whose circumference is the largest. Give the value of the radius and circumference of the circle."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "id": "d98f40cc-2943-4f01-abe5-8d02a88d20a8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# You need to define, implement, and invoke the method all by yourself to answer this question.\n",
+    "# 你需要独自声明、实现、和调用这个方法来完成本题\n",
+    "\n",
+    "# Start your code here\n",
+    "# 开始你的代码\n",
+    "\n",
+    "\n",
+    "\n"
    ]
   },
   {
