@@ -1199,27 +1199,30 @@ about their activities in the summer holidays. How many one-to-one video meeting
 There are 6 video meetings.
 </pre></div></div>
 </div>
-# modify the index so that receiver's index (index2) is increasing(from smaller to larger).
+<p><strong>Exercise: modify the index so that receiver’s index (index2) is increasing(from smaller to larger).</strong></p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>classmates = [&quot;Sophie&quot;, &quot;Tony&quot;, &quot;Jason&quot;, &quot;Yunzi&quot;]
+index1 index2   call between              condition            note
+0      3        Sohpie(0) -&gt; Yunzi(3)     index1 &lt; index2
+0      2        Sophie(0) -&gt; Jason(2)     index1 &lt; index2
+0      1        Sophie(0) -&gt; Tony(1)      index1 &lt; index2
+0      0        Sophie(0) -&gt; Sophie(0)    index1 == index2     X  call self 打给自己
 
-classmates = ["Sophie", "Tony", "Jason", "Yunzi"]
-index1 = 0, index2 = 3 => Sohpie(0) -> Yunzi(3)         index1 < index2
-         0           2    Sophie(0) -> Jason(2)         index1 < index2
-         0           1    Sophie(0) -> Tony(1)          index1 < index2
-         0           0    Sophie(0) -> Sophie(0)     X  index1 == index2         call self
+1      3        Tony(1) -&gt; Yunzi(3)       index1 &lt; index2
+1      2        Tony(1) -&gt; Jason(2)       index1 &lt; index2
+1      1        Tony(1) -&gt; Tony(1)        index1 == index2     X  call self
+1      0        Tony(1) -&gt; Sophie(0)      index1 &gt; index2      X  already called 已经打过了
 
-index1 = 1, index2 = 3 => Tony(1) -> Yunzi(3)           index1 < index2
-         1,          2 => Tony(1) -> Jason(2)           index1 < index2
-         1,          1 => Tony(1) -> Tony(1)         X  index1 == index2         call self 打给自己
-         1,          0 => Tony(1) -> Sophie(0)       X  index1 > index2          already called 已经打过了
+2      3        Jason(2) -&gt; Yunzi(3)      index1 &lt; index2
+2      2        Jason(2) -&gt; Jason(2)      index1 == index2     X  call self
+2      1        Jason(2) -&gt; Tony(1)       index1 &gt; index2      X  already called
+2      0        Jason(2) -&gt; Sophie(0)     index1 &gt; index2      X  already called
 
-index1 = 2, index2 = 3 => Jason(2) -> Yunzi(3)          index1 < index2
-         2,          2 => Jason(2) -> Jason(2)       X  index1 == index2         call self
-         2,          1 => Jason(2) -> Tony(1)        X  index1 > index2          already called
-         2           0 => Jason(2) -> Sophie(0)      X  index1 > index2          already called
-
-index1 = 3, index2 = 3 => Yunzi(3) -> Yunzi(3)       X  index1 == index2         call self
-         3,          2 => Yunzi(3) -> Jason(2)       X  index1 > index2          already called
-         ......<div class="nbinput docutils container">
+3      3        Yunzi(3) -&gt; Yunzi(3)      index1 == index2     X  call self
+3      2        Yunzi(3) -&gt; Jason(2)      index1 &gt; index2      X  already called
+......
+</pre></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
@@ -1310,25 +1313,29 @@ Caller: Jason
 There are 6 video meetings.
 </pre></div></div>
 </div>
-classmates = ["Sophie", "Tony", "Jason", "Yunzi"]
-index1 = 0, index2 = 3 => Sohpie(0) -> Yunzi(3)         index1 < index2
-         0           2    Sophie(0) -> Jason(2)         index1 < index2
-         0           1    Sophie(0) -> Tony(1)          index1 < index2
-         0           0    Sophie(0) -> Sophie(0)     X  index1 == index2         call self
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>classmates = [&quot;Sophie&quot;, &quot;Tony&quot;, &quot;Jason&quot;, &quot;Yunzi&quot;]
+index1 index2   call between              condition            note
+0      3        Sohpie(0) -&gt; Yunzi(3)     index1 &lt; index2
+0      2        Sophie(0) -&gt; Jason(2)     index1 &lt; index2
+0      1        Sophie(0) -&gt; Tony(1)      index1 &lt; index2
+0      0        Sophie(0) -&gt; Sophie(0)    index1 == index2     X  call self 打给自己
 
-index1 = 1, index2 = 3 => Tony(1) -> Yunzi(3)           index1 < index2
-         1,          2 => Tony(1) -> Jason(2)           index1 < index2
-         1,          1 => Tony(1) -> Tony(1)         X  index1 == index2         call self 打给自己
-         1,          0 => Tony(1) -> Sophie(0)       X  index1 > index2          already called 已经打过了
+1      3        Tony(1) -&gt; Yunzi(3)       index1 &lt; index2
+1      2        Tony(1) -&gt; Jason(2)       index1 &lt; index2
+1      1        Tony(1) -&gt; Tony(1)        index1 == index2     X  call self
+1      0        Tony(1) -&gt; Sophie(0)      index1 &gt; index2      X  already called 已经打过了
 
-index1 = 2, index2 = 3 => Jason(2) -> Yunzi(3)          index1 < index2
-         2,          2 => Jason(2) -> Jason(2)       X  index1 == index2         call self
-         2,          1 => Jason(2) -> Tony(1)        X  index1 > index2          already called
-         2           0 => Jason(2) -> Sophie(0)      X  index1 > index2          already called
+2      3        Jason(2) -&gt; Yunzi(3)      index1 &lt; index2
+2      2        Jason(2) -&gt; Jason(2)      index1 == index2     X  call self
+2      1        Jason(2) -&gt; Tony(1)       index1 &gt; index2      X  already called
+2      0        Jason(2) -&gt; Sophie(0)     index1 &gt; index2      X  already called
 
-index1 = 3, index2 = 3 => Yunzi(3) -> Yunzi(3)       X  index1 == index2         call self
-         3,          2 => Yunzi(3) -> Jason(2)       X  index1 > index2          already called
-         ......<div class="nbinput docutils container">
+3      3        Yunzi(3) -&gt; Yunzi(3)      index1 == index2     X  call self
+3      2        Yunzi(3) -&gt; Jason(2)      index1 &gt; index2      X  already called
+......
+</pre></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
