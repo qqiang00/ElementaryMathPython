@@ -1,0 +1,1790 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第7讲 一共奖励了多少袋大米 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="第8讲 找规律猜数字" href="008_law_of_sequence.html" />
+    <link rel="prev" title="第6讲 绘制正多边形" href="006_draw_regular_polygon.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../001preface.html">
+   前言
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../002about_author.html">
+   关于作者
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../003copyright.html">
+   版权声明
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   第一篇 入门
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="001_hello_python.html">
+     第1讲 你好，Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="002_make_name_for_data.html">
+     第2讲 起个名字吧
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="003_who_is_older.html">
+     第3讲 谁的年龄大
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="004_guess_number.html">
+     第4讲 猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="005_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="006_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     第7讲 一共奖励了多少袋大米
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="008_law_of_sequence.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="009_chicken_rabbit_in_same_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="010_divide_remainder_1.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="011_divide_remainder_2.html">
+     第11讲 整除和余数（二）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012A_factor_composite_prime.html">
+     第12讲 找出所有能整除120的整数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012B_review.html">
+     Review 复习
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="012C_quiz.html">
+     Quiz 测验
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="013_draw_axis.html">
+     第13讲 认识和绘制数轴
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="014_locate_point_on_axis.html">
+     第14讲 在数轴上标记不同的数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="015_how_many_lines.html">
+     第15讲 编写方法绘制线段
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="016_how_many_queues.html">
+     第16讲 一共可以排出多少个不同的队伍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="017_oppo_abs_number.html">
+     第17讲 编写方法求一个数的相反数和绝对值
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../200intermediate/index.html">
+   第二篇 进阶
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../300advanced/index.html">
+   第三篇 高级
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../500answer/index.html">
+   练习答案
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/005a_draw_basic_shapes.html">
+     第5讲 绘制简单图形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/006a_draw_regular_polygon.html">
+     第6讲 绘制正多边形
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/008a_law_of_sequences.html">
+     第8讲 找规律猜数字
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/009a_chicken_rabbit_in_cage.html">
+     第9讲 鸡兔同笼问题
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/010_divide_remainder_1_with_answer.html">
+     第10讲 整除与余数（一）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/011_divide_remainder_2_with_answer.html">
+     第11讲 整除和余数（二）
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/012A_factor_composite_prime_with_answer.html">
+     第12讲 找出所有能整除120的整数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/012C_quiz-answer.html">
+     Answer for Quiz 测验参考答案
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/013_draw_axis_with_answer.html">
+     第13讲 认识和绘制数轴
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/014_locate_points_answer.html">
+     第14讲 在数轴上标记不同的数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/015_how_many_with_answer.html">
+     第15讲 编写方法绘制线段
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/016_how_many_queues_with_answer.html">
+     第16讲 一共可以排出多少个不同的队伍
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../600appendix/index.html">
+   附录
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../600appendix/content/000_intro_to_course.html">
+     课程介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../600appendix/content/001_install_jupyter_notebook_on_windows.html">
+     附录一 Windows操作系统下搭建Python运行环境
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../800new_feature/index.html">
+   新功能测试
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../800new_feature/content/markdown_test.html">
+     MarkDown test Title
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../990inside_back_cover.html">
+   封三
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../991back_cover.html">
+   封底
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/100beginner/content/007_how_many_rice_awarded.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem">
+   Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Objective-学习目标">
+   Objective 学习目标
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Math">
+   Math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Python">
+   Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Did-you-know?">
+   Did you know?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="第7讲-一共奖励了多少袋大米">
+<h1>第7讲 一共奖励了多少袋大米<a class="headerlink" href="#第7讲-一共奖励了多少袋大米" title="永久链接至标题">¶</a></h1>
+<div class="section" id="Problem">
+<h2>Problem<a class="headerlink" href="#Problem" title="永久链接至标题">¶</a></h2>
+<p>在古代，由于科学技术水平并不是很发达，人们并不是总能吃饱，因而像米面这样的食物就显得很珍贵，经常会被用来作为礼物赠送或奖赏给关系亲密的人。有这样一位生活在古代的国王，他准备给他手下一位非常得力的将军2000袋大米作为奖赏，可是他并不打算将这2000袋大米一次全部赏给这位将军，而是在第1天奖赏1袋大米，第2天奖赏2袋，第3天奖赏3袋，也就是每一天都在前一天奖赏的大米袋数上增加1袋，这样连续每天奖赏直到国王自己手中剩下的大米不够下一次对将军的奖赏为止。现在请你算一算，按照国王这样的奖赏办法，2000袋的奖赏大米足够连续奖赏这位将军多少天？在最后一天国王手中剩下的大米不够当天的奖赏时，国王手中剩下多少袋大米？</p>
+</div>
+<div class="section" id="Objective-学习目标">
+<h2>Objective 学习目标<a class="headerlink" href="#Objective-学习目标" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>学习<code class="docutils literal notranslate"><span class="pre">while</span></code>引导的循环语句，理解循环语句语法构成、循环体以及退出循环的条件判断等</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>进行“不少于”、“不多于”等比较</p></li>
+<li><p>体验循环语句对编写不重复代码的帮助</p></li>
+<li><p>理解掌握变量自增、自减代码的完整和简便写法（例如：<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">1</span></code>)</p></li>
+<li><p>思考如何管理大量的一组同类性质的数据</p></li>
+<li><p>字符串中<code class="docutils literal notranslate"><span class="pre">\n</span></code>,<code class="docutils literal notranslate"><span class="pre">\t</span></code>,<code class="docutils literal notranslate"><span class="pre">\r</span></code>的意义</p></li>
+<li><p>开始尝试理解程序的bug，错误和bug的区别。</p></li>
+</ul>
+</div>
+<div class="section" id="Math">
+<h2>Math<a class="headerlink" href="#Math" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>数列的概念</p></li>
+<li><p>数的大小比较</p></li>
+<li><p>寻找解决实际问题中不变的量</p></li>
+</ul>
+</div>
+<div class="section" id="Python">
+<h2>Python<a class="headerlink" href="#Python" title="永久链接至标题">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># How do you solve this problem if using arithmetic calculation instead of programming</span>
+<span class="c1"># 思考如果不使用用编程，而使用传统算术的方法来求解这个问题，你会怎么做？</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution 0</span>
+<span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">=</span> <span class="n">days_awarded</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">=</span> <span class="n">rice_to_general</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+days awarded:  62 , rice left in king: 47 , total rice in general:  1953
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Another solution with detailed explanation and output</span>
+<span class="c1"># 另一个有详细解释和输出的实现方案</span>
+
+<span class="c1"># declare and initiate some variables before calculating</span>
+<span class="c1"># 在正式计算模拟前声明一些变量，并给这些变量一些初始的数值</span>
+
+<span class="c1"># rice that King has at the very begining</span>
+<span class="c1"># 国王一开始打算奖赏的大米总袋数 2000</span>
+<span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="c1"># rice that King has for awarding</span>
+<span class="c1"># 国王手中拥有的用来奖赏的大米</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+
+<span class="c1"># rice that General awarded from King</span>
+<span class="c1"># 将军手中所有的奖赏大米</span>
+<span class="n">rice_in_general</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># rice that will awarded to General in some day，set to 0 in the begining</span>
+<span class="c1"># 某一天里，将军从国王那里获得的大米代数，一开始设为1</span>
+<span class="n">rice_to_general</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># days already awarded, set to 0 in the begining</span>
+<span class="c1"># 已经奖赏的天数，一开始没有奖赏，设为0天</span>
+<span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># No. of current day</span>
+<span class="c1"># 当前是第几天</span>
+<span class="n">cur_day</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># while rice in King is more than the rice that will be awarded to General</span>
+<span class="c1"># 当国王手中（剩余）的大米足够下一次发给将军时</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">今天是第&quot;</span><span class="p">,</span> <span class="n">cur_day</span><span class="p">,</span> <span class="s2">&quot;天&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  国王有大米:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span> <span class="s2">&quot;袋，需要奖赏给将军: &quot;</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="s2">&quot;袋&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  国王大米足够，开始奖赏:&quot;</span><span class="p">)</span>
+    <span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king</span> <span class="o">-</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">=</span> <span class="n">rice_in_general</span> <span class="o">+</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">=</span> <span class="n">days_awarded</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  今天的奖赏已经完成，奖赏了&quot;</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  国王还剩下&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span> <span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  将军目前共有:&quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">,</span><span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  到今天为止，一共连续奖赏了&quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span> <span class="s2">&quot;天&quot;</span><span class="p">)</span>
+    <span class="c1"># prepare rice awarded to general for next day</span>
+    <span class="n">rice_to_general_next_day</span> <span class="o">=</span> <span class="n">rice_to_general</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  明天的奖赏将会是&quot;</span><span class="p">,</span> <span class="n">rice_to_general_next_day</span><span class="p">,</span><span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+
+    <span class="c1"># here comes the next day 第二天来了</span>
+    <span class="n">cur_day</span> <span class="o">=</span> <span class="n">cur_day</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># update rice_to_general for compare with rice_in_king</span>
+    <span class="c1"># 更新这一天要奖赏给将军的大米袋数</span>
+    <span class="n">rice_to_general</span> <span class="o">=</span> <span class="n">rice_to_general_next_day</span>
+
+<span class="c1"># when program are executed here, it means king&#39;s rice is not enough for</span>
+<span class="c1"># nex day&#39;s awarding.</span>
+<span class="c1"># 当程序运行到此处时，说明国王的大米已经不够第二天的奖赏了</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">今天是第&quot;</span><span class="p">,</span> <span class="n">cur_day</span><span class="p">,</span> <span class="s2">&quot;天，国王的大米不够了，奖赏停止。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  国王还剩下&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span> <span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  今天原本需要奖赏将军&quot;</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  国王一共奖赏给了将军&quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">,</span> <span class="s2">&quot;袋大米&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+今天是第 1 天
+  国王有大米: 2000 袋，需要奖赏给将军:  1 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 1 袋大米
+  国王还剩下 1999 袋大米
+  将军目前共有: 1 袋大米
+  到今天为止，一共连续奖赏了 1 天
+  明天的奖赏将会是 2 袋大米
+
+今天是第 2 天
+  国王有大米: 1999 袋，需要奖赏给将军:  2 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 2 袋大米
+  国王还剩下 1997 袋大米
+  将军目前共有: 3 袋大米
+  到今天为止，一共连续奖赏了 2 天
+  明天的奖赏将会是 3 袋大米
+
+今天是第 3 天
+  国王有大米: 1997 袋，需要奖赏给将军:  3 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 3 袋大米
+  国王还剩下 1994 袋大米
+  将军目前共有: 6 袋大米
+  到今天为止，一共连续奖赏了 3 天
+  明天的奖赏将会是 4 袋大米
+
+今天是第 4 天
+  国王有大米: 1994 袋，需要奖赏给将军:  4 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 4 袋大米
+  国王还剩下 1990 袋大米
+  将军目前共有: 10 袋大米
+  到今天为止，一共连续奖赏了 4 天
+  明天的奖赏将会是 5 袋大米
+
+今天是第 5 天
+  国王有大米: 1990 袋，需要奖赏给将军:  5 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 5 袋大米
+  国王还剩下 1985 袋大米
+  将军目前共有: 15 袋大米
+  到今天为止，一共连续奖赏了 5 天
+  明天的奖赏将会是 6 袋大米
+
+今天是第 6 天
+  国王有大米: 1985 袋，需要奖赏给将军:  6 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 6 袋大米
+  国王还剩下 1979 袋大米
+  将军目前共有: 21 袋大米
+  到今天为止，一共连续奖赏了 6 天
+  明天的奖赏将会是 7 袋大米
+
+今天是第 7 天
+  国王有大米: 1979 袋，需要奖赏给将军:  7 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 7 袋大米
+  国王还剩下 1972 袋大米
+  将军目前共有: 28 袋大米
+  到今天为止，一共连续奖赏了 7 天
+  明天的奖赏将会是 8 袋大米
+
+今天是第 8 天
+  国王有大米: 1972 袋，需要奖赏给将军:  8 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 8 袋大米
+  国王还剩下 1964 袋大米
+  将军目前共有: 36 袋大米
+  到今天为止，一共连续奖赏了 8 天
+  明天的奖赏将会是 9 袋大米
+
+今天是第 9 天
+  国王有大米: 1964 袋，需要奖赏给将军:  9 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 9 袋大米
+  国王还剩下 1955 袋大米
+  将军目前共有: 45 袋大米
+  到今天为止，一共连续奖赏了 9 天
+  明天的奖赏将会是 10 袋大米
+
+今天是第 10 天
+  国王有大米: 1955 袋，需要奖赏给将军:  10 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 10 袋大米
+  国王还剩下 1945 袋大米
+  将军目前共有: 55 袋大米
+  到今天为止，一共连续奖赏了 10 天
+  明天的奖赏将会是 11 袋大米
+
+今天是第 11 天
+  国王有大米: 1945 袋，需要奖赏给将军:  11 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 11 袋大米
+  国王还剩下 1934 袋大米
+  将军目前共有: 66 袋大米
+  到今天为止，一共连续奖赏了 11 天
+  明天的奖赏将会是 12 袋大米
+
+今天是第 12 天
+  国王有大米: 1934 袋，需要奖赏给将军:  12 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 12 袋大米
+  国王还剩下 1922 袋大米
+  将军目前共有: 78 袋大米
+  到今天为止，一共连续奖赏了 12 天
+  明天的奖赏将会是 13 袋大米
+
+今天是第 13 天
+  国王有大米: 1922 袋，需要奖赏给将军:  13 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 13 袋大米
+  国王还剩下 1909 袋大米
+  将军目前共有: 91 袋大米
+  到今天为止，一共连续奖赏了 13 天
+  明天的奖赏将会是 14 袋大米
+
+今天是第 14 天
+  国王有大米: 1909 袋，需要奖赏给将军:  14 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 14 袋大米
+  国王还剩下 1895 袋大米
+  将军目前共有: 105 袋大米
+  到今天为止，一共连续奖赏了 14 天
+  明天的奖赏将会是 15 袋大米
+
+今天是第 15 天
+  国王有大米: 1895 袋，需要奖赏给将军:  15 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 15 袋大米
+  国王还剩下 1880 袋大米
+  将军目前共有: 120 袋大米
+  到今天为止，一共连续奖赏了 15 天
+  明天的奖赏将会是 16 袋大米
+
+今天是第 16 天
+  国王有大米: 1880 袋，需要奖赏给将军:  16 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 16 袋大米
+  国王还剩下 1864 袋大米
+  将军目前共有: 136 袋大米
+  到今天为止，一共连续奖赏了 16 天
+  明天的奖赏将会是 17 袋大米
+
+今天是第 17 天
+  国王有大米: 1864 袋，需要奖赏给将军:  17 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 17 袋大米
+  国王还剩下 1847 袋大米
+  将军目前共有: 153 袋大米
+  到今天为止，一共连续奖赏了 17 天
+  明天的奖赏将会是 18 袋大米
+
+今天是第 18 天
+  国王有大米: 1847 袋，需要奖赏给将军:  18 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 18 袋大米
+  国王还剩下 1829 袋大米
+  将军目前共有: 171 袋大米
+  到今天为止，一共连续奖赏了 18 天
+  明天的奖赏将会是 19 袋大米
+
+今天是第 19 天
+  国王有大米: 1829 袋，需要奖赏给将军:  19 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 19 袋大米
+  国王还剩下 1810 袋大米
+  将军目前共有: 190 袋大米
+  到今天为止，一共连续奖赏了 19 天
+  明天的奖赏将会是 20 袋大米
+
+今天是第 20 天
+  国王有大米: 1810 袋，需要奖赏给将军:  20 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 20 袋大米
+  国王还剩下 1790 袋大米
+  将军目前共有: 210 袋大米
+  到今天为止，一共连续奖赏了 20 天
+  明天的奖赏将会是 21 袋大米
+
+今天是第 21 天
+  国王有大米: 1790 袋，需要奖赏给将军:  21 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 21 袋大米
+  国王还剩下 1769 袋大米
+  将军目前共有: 231 袋大米
+  到今天为止，一共连续奖赏了 21 天
+  明天的奖赏将会是 22 袋大米
+
+今天是第 22 天
+  国王有大米: 1769 袋，需要奖赏给将军:  22 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 22 袋大米
+  国王还剩下 1747 袋大米
+  将军目前共有: 253 袋大米
+  到今天为止，一共连续奖赏了 22 天
+  明天的奖赏将会是 23 袋大米
+
+今天是第 23 天
+  国王有大米: 1747 袋，需要奖赏给将军:  23 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 23 袋大米
+  国王还剩下 1724 袋大米
+  将军目前共有: 276 袋大米
+  到今天为止，一共连续奖赏了 23 天
+  明天的奖赏将会是 24 袋大米
+
+今天是第 24 天
+  国王有大米: 1724 袋，需要奖赏给将军:  24 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 24 袋大米
+  国王还剩下 1700 袋大米
+  将军目前共有: 300 袋大米
+  到今天为止，一共连续奖赏了 24 天
+  明天的奖赏将会是 25 袋大米
+
+今天是第 25 天
+  国王有大米: 1700 袋，需要奖赏给将军:  25 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 25 袋大米
+  国王还剩下 1675 袋大米
+  将军目前共有: 325 袋大米
+  到今天为止，一共连续奖赏了 25 天
+  明天的奖赏将会是 26 袋大米
+
+今天是第 26 天
+  国王有大米: 1675 袋，需要奖赏给将军:  26 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 26 袋大米
+  国王还剩下 1649 袋大米
+  将军目前共有: 351 袋大米
+  到今天为止，一共连续奖赏了 26 天
+  明天的奖赏将会是 27 袋大米
+
+今天是第 27 天
+  国王有大米: 1649 袋，需要奖赏给将军:  27 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 27 袋大米
+  国王还剩下 1622 袋大米
+  将军目前共有: 378 袋大米
+  到今天为止，一共连续奖赏了 27 天
+  明天的奖赏将会是 28 袋大米
+
+今天是第 28 天
+  国王有大米: 1622 袋，需要奖赏给将军:  28 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 28 袋大米
+  国王还剩下 1594 袋大米
+  将军目前共有: 406 袋大米
+  到今天为止，一共连续奖赏了 28 天
+  明天的奖赏将会是 29 袋大米
+
+今天是第 29 天
+  国王有大米: 1594 袋，需要奖赏给将军:  29 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 29 袋大米
+  国王还剩下 1565 袋大米
+  将军目前共有: 435 袋大米
+  到今天为止，一共连续奖赏了 29 天
+  明天的奖赏将会是 30 袋大米
+
+今天是第 30 天
+  国王有大米: 1565 袋，需要奖赏给将军:  30 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 30 袋大米
+  国王还剩下 1535 袋大米
+  将军目前共有: 465 袋大米
+  到今天为止，一共连续奖赏了 30 天
+  明天的奖赏将会是 31 袋大米
+
+今天是第 31 天
+  国王有大米: 1535 袋，需要奖赏给将军:  31 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 31 袋大米
+  国王还剩下 1504 袋大米
+  将军目前共有: 496 袋大米
+  到今天为止，一共连续奖赏了 31 天
+  明天的奖赏将会是 32 袋大米
+
+今天是第 32 天
+  国王有大米: 1504 袋，需要奖赏给将军:  32 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 32 袋大米
+  国王还剩下 1472 袋大米
+  将军目前共有: 528 袋大米
+  到今天为止，一共连续奖赏了 32 天
+  明天的奖赏将会是 33 袋大米
+
+今天是第 33 天
+  国王有大米: 1472 袋，需要奖赏给将军:  33 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 33 袋大米
+  国王还剩下 1439 袋大米
+  将军目前共有: 561 袋大米
+  到今天为止，一共连续奖赏了 33 天
+  明天的奖赏将会是 34 袋大米
+
+今天是第 34 天
+  国王有大米: 1439 袋，需要奖赏给将军:  34 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 34 袋大米
+  国王还剩下 1405 袋大米
+  将军目前共有: 595 袋大米
+  到今天为止，一共连续奖赏了 34 天
+  明天的奖赏将会是 35 袋大米
+
+今天是第 35 天
+  国王有大米: 1405 袋，需要奖赏给将军:  35 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 35 袋大米
+  国王还剩下 1370 袋大米
+  将军目前共有: 630 袋大米
+  到今天为止，一共连续奖赏了 35 天
+  明天的奖赏将会是 36 袋大米
+
+今天是第 36 天
+  国王有大米: 1370 袋，需要奖赏给将军:  36 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 36 袋大米
+  国王还剩下 1334 袋大米
+  将军目前共有: 666 袋大米
+  到今天为止，一共连续奖赏了 36 天
+  明天的奖赏将会是 37 袋大米
+
+今天是第 37 天
+  国王有大米: 1334 袋，需要奖赏给将军:  37 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 37 袋大米
+  国王还剩下 1297 袋大米
+  将军目前共有: 703 袋大米
+  到今天为止，一共连续奖赏了 37 天
+  明天的奖赏将会是 38 袋大米
+
+今天是第 38 天
+  国王有大米: 1297 袋，需要奖赏给将军:  38 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 38 袋大米
+  国王还剩下 1259 袋大米
+  将军目前共有: 741 袋大米
+  到今天为止，一共连续奖赏了 38 天
+  明天的奖赏将会是 39 袋大米
+
+今天是第 39 天
+  国王有大米: 1259 袋，需要奖赏给将军:  39 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 39 袋大米
+  国王还剩下 1220 袋大米
+  将军目前共有: 780 袋大米
+  到今天为止，一共连续奖赏了 39 天
+  明天的奖赏将会是 40 袋大米
+
+今天是第 40 天
+  国王有大米: 1220 袋，需要奖赏给将军:  40 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 40 袋大米
+  国王还剩下 1180 袋大米
+  将军目前共有: 820 袋大米
+  到今天为止，一共连续奖赏了 40 天
+  明天的奖赏将会是 41 袋大米
+
+今天是第 41 天
+  国王有大米: 1180 袋，需要奖赏给将军:  41 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 41 袋大米
+  国王还剩下 1139 袋大米
+  将军目前共有: 861 袋大米
+  到今天为止，一共连续奖赏了 41 天
+  明天的奖赏将会是 42 袋大米
+
+今天是第 42 天
+  国王有大米: 1139 袋，需要奖赏给将军:  42 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 42 袋大米
+  国王还剩下 1097 袋大米
+  将军目前共有: 903 袋大米
+  到今天为止，一共连续奖赏了 42 天
+  明天的奖赏将会是 43 袋大米
+
+今天是第 43 天
+  国王有大米: 1097 袋，需要奖赏给将军:  43 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 43 袋大米
+  国王还剩下 1054 袋大米
+  将军目前共有: 946 袋大米
+  到今天为止，一共连续奖赏了 43 天
+  明天的奖赏将会是 44 袋大米
+
+今天是第 44 天
+  国王有大米: 1054 袋，需要奖赏给将军:  44 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 44 袋大米
+  国王还剩下 1010 袋大米
+  将军目前共有: 990 袋大米
+  到今天为止，一共连续奖赏了 44 天
+  明天的奖赏将会是 45 袋大米
+
+今天是第 45 天
+  国王有大米: 1010 袋，需要奖赏给将军:  45 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 45 袋大米
+  国王还剩下 965 袋大米
+  将军目前共有: 1035 袋大米
+  到今天为止，一共连续奖赏了 45 天
+  明天的奖赏将会是 46 袋大米
+
+今天是第 46 天
+  国王有大米: 965 袋，需要奖赏给将军:  46 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 46 袋大米
+  国王还剩下 919 袋大米
+  将军目前共有: 1081 袋大米
+  到今天为止，一共连续奖赏了 46 天
+  明天的奖赏将会是 47 袋大米
+
+今天是第 47 天
+  国王有大米: 919 袋，需要奖赏给将军:  47 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 47 袋大米
+  国王还剩下 872 袋大米
+  将军目前共有: 1128 袋大米
+  到今天为止，一共连续奖赏了 47 天
+  明天的奖赏将会是 48 袋大米
+
+今天是第 48 天
+  国王有大米: 872 袋，需要奖赏给将军:  48 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 48 袋大米
+  国王还剩下 824 袋大米
+  将军目前共有: 1176 袋大米
+  到今天为止，一共连续奖赏了 48 天
+  明天的奖赏将会是 49 袋大米
+
+今天是第 49 天
+  国王有大米: 824 袋，需要奖赏给将军:  49 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 49 袋大米
+  国王还剩下 775 袋大米
+  将军目前共有: 1225 袋大米
+  到今天为止，一共连续奖赏了 49 天
+  明天的奖赏将会是 50 袋大米
+
+今天是第 50 天
+  国王有大米: 775 袋，需要奖赏给将军:  50 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 50 袋大米
+  国王还剩下 725 袋大米
+  将军目前共有: 1275 袋大米
+  到今天为止，一共连续奖赏了 50 天
+  明天的奖赏将会是 51 袋大米
+
+今天是第 51 天
+  国王有大米: 725 袋，需要奖赏给将军:  51 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 51 袋大米
+  国王还剩下 674 袋大米
+  将军目前共有: 1326 袋大米
+  到今天为止，一共连续奖赏了 51 天
+  明天的奖赏将会是 52 袋大米
+
+今天是第 52 天
+  国王有大米: 674 袋，需要奖赏给将军:  52 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 52 袋大米
+  国王还剩下 622 袋大米
+  将军目前共有: 1378 袋大米
+  到今天为止，一共连续奖赏了 52 天
+  明天的奖赏将会是 53 袋大米
+
+今天是第 53 天
+  国王有大米: 622 袋，需要奖赏给将军:  53 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 53 袋大米
+  国王还剩下 569 袋大米
+  将军目前共有: 1431 袋大米
+  到今天为止，一共连续奖赏了 53 天
+  明天的奖赏将会是 54 袋大米
+
+今天是第 54 天
+  国王有大米: 569 袋，需要奖赏给将军:  54 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 54 袋大米
+  国王还剩下 515 袋大米
+  将军目前共有: 1485 袋大米
+  到今天为止，一共连续奖赏了 54 天
+  明天的奖赏将会是 55 袋大米
+
+今天是第 55 天
+  国王有大米: 515 袋，需要奖赏给将军:  55 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 55 袋大米
+  国王还剩下 460 袋大米
+  将军目前共有: 1540 袋大米
+  到今天为止，一共连续奖赏了 55 天
+  明天的奖赏将会是 56 袋大米
+
+今天是第 56 天
+  国王有大米: 460 袋，需要奖赏给将军:  56 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 56 袋大米
+  国王还剩下 404 袋大米
+  将军目前共有: 1596 袋大米
+  到今天为止，一共连续奖赏了 56 天
+  明天的奖赏将会是 57 袋大米
+
+今天是第 57 天
+  国王有大米: 404 袋，需要奖赏给将军:  57 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 57 袋大米
+  国王还剩下 347 袋大米
+  将军目前共有: 1653 袋大米
+  到今天为止，一共连续奖赏了 57 天
+  明天的奖赏将会是 58 袋大米
+
+今天是第 58 天
+  国王有大米: 347 袋，需要奖赏给将军:  58 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 58 袋大米
+  国王还剩下 289 袋大米
+  将军目前共有: 1711 袋大米
+  到今天为止，一共连续奖赏了 58 天
+  明天的奖赏将会是 59 袋大米
+
+今天是第 59 天
+  国王有大米: 289 袋，需要奖赏给将军:  59 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 59 袋大米
+  国王还剩下 230 袋大米
+  将军目前共有: 1770 袋大米
+  到今天为止，一共连续奖赏了 59 天
+  明天的奖赏将会是 60 袋大米
+
+今天是第 60 天
+  国王有大米: 230 袋，需要奖赏给将军:  60 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 60 袋大米
+  国王还剩下 170 袋大米
+  将军目前共有: 1830 袋大米
+  到今天为止，一共连续奖赏了 60 天
+  明天的奖赏将会是 61 袋大米
+
+今天是第 61 天
+  国王有大米: 170 袋，需要奖赏给将军:  61 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 61 袋大米
+  国王还剩下 109 袋大米
+  将军目前共有: 1891 袋大米
+  到今天为止，一共连续奖赏了 61 天
+  明天的奖赏将会是 62 袋大米
+
+今天是第 62 天
+  国王有大米: 109 袋，需要奖赏给将军:  62 袋
+  国王大米足够，开始奖赏:
+  今天的奖赏已经完成，奖赏了 62 袋大米
+  国王还剩下 47 袋大米
+  将军目前共有: 1953 袋大米
+  到今天为止，一共连续奖赏了 62 天
+  明天的奖赏将会是 63 袋大米
+
+今天是第 63 天，国王的大米不够了，奖赏停止。
+  国王还剩下 47 袋大米
+  今天原本需要奖赏将军 63 袋大米
+  国王一共奖赏给了将军 1953 袋大米
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sophie</span><span class="se">\n</span><span class="s1">s name is </span><span class="se">\n</span><span class="s1">Yefei </span><span class="se">\t</span><span class="s1">adsfafd&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sophie
+s name is
+Yefei   adsfafd
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># correction 纠正</span>
+<span class="c1"># number of parameters in method &#39;print&#39; can be infinite, not 1.</span>
+<span class="c1"># print方法可以接受的数据个数可以是无限多个，不是1个.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">1244</span><span class="p">,</span> <span class="mi">567</span><span class="p">,</span> <span class="mi">1234</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+123 1244 567 1234
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># \t         \r</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Luchuannnnn</span><span class="se">\r</span><span class="s2"> Yunzi       &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ Yunzi
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">Jason</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-7-2b72bd52416b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>Jason<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;Jason&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># review randint, find bugs in the follow codes</span>
+<span class="c1"># 复习randint, 寻找下面代码中的bug</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">n_tries</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n_tries</span><span class="p">,</span> <span class="s2">&quot;try, num generated is&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">n_tries</span> <span class="o">=</span> <span class="n">n_tries</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tried randint(1, 10)&quot;</span><span class="p">,</span> <span class="n">n_tries</span><span class="p">,</span> <span class="s2">&quot;times </span><span class="se">\n</span><span class="s2">before we got 10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a =&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a =&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">-=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">/=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rice_in_generals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p</span> <span class="o">=</span> <span class="nb">print</span>
+<span class="n">p</span><span class="p">(</span><span class="s2">&quot;this is my method for printing on Python&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Did-you-know?">
+<h2>Did you know?<a class="headerlink" href="#Did-you-know?" title="永久链接至标题">¶</a></h2>
+<p>现代计算机编程语言有很多种，每一种现代计算机语言都有自己的语法来表示条件和循环控制。此外，在Python语言中，<code class="docutils literal notranslate"><span class="pre">while</span></code>引导的循环语句只是实现循环的形式之一。</p>
+</div>
+<div class="section" id="Exercise">
+<h2>Exercise<a class="headerlink" href="#Exercise" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p>通常一个问题会有不止一种编程方案来求解，像本节的国王问题，本题下的代码单元格里提供了包括原始解法在内的一共3不同的编程写法，其中另外2种写法在国王打算奖赏的大米数量为2000的时候都也得到正确的答案，但是其中的一种方法当国王大米数量不是2000的时候有可能会得到错误的结果。试着将国王一开始拟奖赏的大米总数从2000修改为2016，分别运行本讲示例中的解法以及本练习题额外提供的两种解法，观察三种解法给出的结果有什么不同，指出本题提供的哪一种解法是错误的。尝试着去解释为什么会出现这样的错误。</p>
+<p>把你的答案写在这里：</p>
+<ul class="simple">
+<li><p>第（）种额外解决方案是错误的；</p></li>
+<li><p>当国王一开始的大米总数变为2016时，它给出的答案是：（），与另外两种方法得到的结果不一样；</p></li>
+<li><p>出现这种错误的原因是：</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># try to change the value to 2000 and 2016</span>
+<span class="c1"># 尝试修改变量 rice_in_king_initial 值分别为2000， 2016</span>
+<span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2016</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution 0 (Original for the lecture)</span>
+<span class="c1"># 第0中解决方案（原始解决方案）</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Extra Solution 1</span>
+<span class="c1"># 第一种额外解决方案</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Extra Solution 2</span>
+<span class="c1"># 第二种额外解决方案</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>如果在本讲的大米奖赏问题中，把国王第一天对将军的奖赏从1袋大米增加为10袋大米，以后每过一天仍然在前一天的基础上多奖赏一袋，那么2000袋大米可以奖赏多少天，国王手中是否有剩余的大米？如果国王一开始的大米为2016袋结果又是怎样呢？请在下面的代码单元格中修改原始的代码后，求解该问题。并将答案写本单元格相应的位置。</p>
+<p>提示：你只需要修改一行代码即可</p>
+<p>把你的结果写在这里：</p>
+<ul class="simple">
+<li><p>国王一开始有2000袋大米，可连续奖赏（）天，国王剩余（）袋；</p></li>
+<li><p>国王一开始有2016袋大米，可连续奖赏（）天，国王剩余（）袋。</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="3">
+<li><p>继续以本讲示例的大米问题为背景，如果把国王对将军的奖赏从每天增加1袋大米到每天增加10袋大米，保持第一天的奖赏为1袋大米不变。那么2000袋大米可以奖赏多少天？国王手中是否有剩余的大米？如果国王一开始的大米为2016袋结果又是怎样呢？请在下面的代码单元格中修改现成的代码后，求解该问题。</p>
+<p>提示：你只需要修改一行代码即可</p>
+<p>把你的结果写在这里：</p>
+<ul class="simple">
+<li><p>国王一开始有2000袋大米，可连续奖赏（）天，国王剩余（）袋；</p></li>
+<li><p>国王一开始有2016袋大米，可连续奖赏（）天，国王剩余（）袋。</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="4">
+<li><p>继续以本讲示例的大米问题为背景，如果把国王对将军的奖赏改为：第一天奖赏1袋，第2天奖赏2袋，第三天奖赏4袋，第4天奖赏8袋，…。也就是每一天的奖赏都是前一天奖赏的2倍。那么2000袋大米可以奖赏多少天？国王手中是否有剩余的大米？如果国王一开始的大米为2016袋结果又是怎样呢？请在下面的代码单元格中修改现成的代码后，求解该问题。</p>
+<p>提示：你只需要修改一行代码即可</p>
+<p>把你的结果写在这里：</p>
+<ul class="simple">
+<li><p>国王一开始有2000袋大米，可连续奖赏（）天，国王剩余（）袋；</p></li>
+<li><p>国王一开始有2016袋大米，可连续奖赏（）天，国王剩余（）袋。</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rice_in_king_initial</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">rice_in_king</span> <span class="o">=</span> <span class="n">rice_in_king_initial</span>
+<span class="n">rice_in_general</span><span class="p">,</span> <span class="n">rice_to_general</span><span class="p">,</span> <span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">rice_in_king</span> <span class="o">&gt;=</span> <span class="n">rice_to_general</span><span class="p">:</span>
+    <span class="n">rice_in_king</span> <span class="o">-=</span> <span class="n">rice_to_general</span>
+    <span class="n">rice_in_general</span> <span class="o">+=</span> <span class="n">rice_to_general</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">rice_to_general</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days awarded: &quot;</span><span class="p">,</span> <span class="n">days_awarded</span><span class="p">,</span>
+      <span class="s2">&quot;, rice left in king:&quot;</span><span class="p">,</span> <span class="n">rice_in_king</span><span class="p">,</span>
+      <span class="s2">&quot;, total rice in general: &quot;</span><span class="p">,</span> <span class="n">rice_in_general</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>自己动手编写一段包括<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句的程序，计算打印出从1开始到100所有100个连续的自然数的和。你的程序应该返回的正确数值是5050。如果让你求解1-100这100个自然数内所有奇数或偶数的和，你的程序应该做怎样的修改？最后的答案分别是什么？</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="006_draw_regular_polygon.html" title="previous page">第6讲 绘制正多边形</a>
+    <a class='right-next' id="next-link" href="008_law_of_sequence.html" title="next page">第8讲 找规律猜数字</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; Copyright 2021, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
