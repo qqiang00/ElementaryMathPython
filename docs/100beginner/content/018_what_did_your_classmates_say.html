@@ -728,9 +728,23 @@ Jason这样的顺序来确定密文的发送对象。即，Jason将会把密文�
 <p>Useful Programming Tricks:</p>
 <p>下面一些<strong>编程知识</strong>可能会用得到</p>
 <ol class="arabic simple">
-<li><p>Both the “original text” or “ciphertext” can be stored in a string variable. For example, you can use the following code to store the original text in above example: 不管是“原文”还是“密文”，都可以用一个字符串型的变量来存储。例如可以使用下面的代码来存储本里中的原文： <code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">my_sentence</span> <span class="pre">=</span> <span class="pre">&quot;play</span> <span class="pre">video</span> <span class="pre">game</span> <span class="pre">after</span> <span class="pre">dinner&quot;</span></code></p></li>
-<li><p>String data is somewhat similar to list data. You can also use index to get the character at a certain position in a string, or use the <code class="docutils literal notranslate"><span class="pre">len</span></code> method to get the total number of characters in the string. Run each line of code below to observe this kind of operation: 字符串类型的数据有些类似列表型数据，也可以使用索引值来获取字符串中某一个位置的字符，也可以使用<code class="docutils literal notranslate"><span class="pre">len</span></code>方法来获取字符串中总的字符的个数。运行下面的每一行代码观察体会这种操作：
-<code class="docutils literal notranslate"><span class="pre">python</span>&#160; <span class="pre">my_sentence</span> <span class="pre">=</span> <span class="pre">&quot;play</span> <span class="pre">video</span> <span class="pre">game</span> <span class="pre">after</span> <span class="pre">dinner&quot;</span>&#160; <span class="pre">first_letter</span> <span class="pre">=</span> <span class="pre">my_sentence[0]</span>&#160; <span class="pre">second_letter</span> <span class="pre">=</span> <span class="pre">my_sentence[1]</span>&#160; <span class="pre">last_letter</span> <span class="pre">=</span> <span class="pre">my_sentence[-1]</span>&#160; <span class="pre">n_len</span> <span class="pre">=</span> <span class="pre">len(my_sentence)</span>&#160; <span class="pre">print(first_letter,</span> <span class="pre">second_letter,</span> <span class="pre">last_letter,</span> <span class="pre">n_len)</span></code></p></li>
+<li><p>Both the “original text” or “ciphertext” can be stored in a string variable. For example, you can use the following code to store the original text in above example: 不管是“原文”还是“密文”，都可以用一个字符串型的变量来存储。例如可以使用下面的代码来存储本里中的原文：</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;play video game after dinner&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>String data is somewhat similar to list data. You can also use index to get the character at a certain position in a string, or use the <code class="docutils literal notranslate"><span class="pre">len</span></code> method to get the total number of characters in the string. Run each line of code below to observe this kind of operation: 字符串类型的数据有些类似列表型数据，也可以使用索引值来获取字符串中某一个位置的字符，也可以使用<code class="docutils literal notranslate"><span class="pre">len</span></code>方法来获取字符串中总的字符的个数。运行下面的每一行代码观察体会这种操作：</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;play video game after dinner&quot;</span>
+<span class="n">first_letter</span> <span class="o">=</span> <span class="n">my_sentence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">second_letter</span> <span class="o">=</span> <span class="n">my_sentence</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">last_letter</span> <span class="o">=</span> <span class="n">my_sentence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_letter</span><span class="p">,</span> <span class="n">second_letter</span><span class="p">,</span> <span class="n">last_letter</span><span class="p">,</span> <span class="n">n_len</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
 <li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> operator is required 需要使用<code class="docutils literal notranslate"><span class="pre">%</span></code>操作符。</p></li>
 <li><p>condition and loop flow controls are needed. 需要使用条件和循环控制语句。</p></li>
 </ol>
