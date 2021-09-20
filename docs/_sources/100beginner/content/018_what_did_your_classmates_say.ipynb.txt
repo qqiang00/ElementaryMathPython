@@ -1,0 +1,163 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1f705e94-1fb0-493c-82ac-4cf25ad1369a",
+   "metadata": {},
+   "source": [
+    "## 第18讲 **Activity 活动**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "97fb9181-903e-4c30-89ab-7b9d2ec923aa",
+   "metadata": {},
+   "source": [
+    "### Background 背景"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "210072e3-08bf-4985-aac5-726bc91aff9b",
+   "metadata": {},
+   "source": [
+    "Jason wanted to send a secret message to Tony in a public group where all four classmates are there. In order to prevent the other two children from knowing the content of Jason’s message, Jason decided to transform the message by following rules: Every letter in the sentence will be replaced with the third letter after it in the order of alphabet. The new sentence will looks meaningless.\n",
+    "\n",
+    "Jason想要在一个有着Jason，Yunzi，Tony和Sophie的4人群里发送一条秘密消息给Tony，为了不让另外两个小朋友知道Jason发给Tony的消息内容，Jason想了一个办法：他会把他发送给Tony的那句话中的每一个字母用这个字母在字母顺序表中往后数第3位的字母代替，这样重新组成一个看上去没有意思的一串乱码。\n",
+    "\n",
+    "For example, assume Jason's message to Tony is: \"**Play a game after dinner**\" (晚饭后玩游戏). The transformed sentence becomes \"**sodb ylghr jdphv diwhu glqqhu**\". Among them, the first letter \"p\" becomes \"s\" because in the alphabetical order table, the letter \"s\" is the third after the letter \"p\". Similarly, \"l\" is replaced by \"o\", and \"a\" is replaced by \"d\". The letter \"y\" appears at the tail part of the alphabet table, there may not be enough letters after it. In this case, continue counting by cycling to the begining of the alphabet table. In this example, the letter \"y\" has been replaced by \"b\". Characters that are not letters, such as \" \"(space), will not be changed, and the space will be reserved in the transformed sentence.\n",
+    "\n",
+    "举个例子，假如Jason要发送给Tony的消息是:\"play video games after dinner\"(晚饭后玩游戏）。变换之后就变成了\"sodb ylghr jdphv diwhu glqqhu\"。其中原文第一个字母\"p\"变成了\"s\"，这是由于在字母顺序表中，字母\"s\"在字母\"p\"后面第3个位置。类似的，\"l\"被\"o\"替换了，\"a\"被\"d\"替换了。字母\"y\"出现在字母表中的尾部，它的后面可能没有足够数量的字母，此时不够的可以从字母表的开始\"a\"接续。本例中，字母\"y\"被\"b\"替换了。碰到字母表中没有的字符，例如\" \"(空格)，可以不做变换，保留空格。\n",
+    "\n",
+    "When Jason sends the transformed sentence to the group, if people don't know Jason's transformation rules, no one will be able to understand Jason's text. So how can Jason make Tony understand. Jason needs to tell Tony his rules, especially the number **3** he uses. Because this number 3 determines what each new letter is. After Tony understand this rule, he can easily restore the original content, and finally know that Jason wants to play games with him after dinner.\n",
+    "\n",
+    "当Jason把变换后的这句话发送到群里时，如果不知道Jason的变换规则，没有小朋友能够明白Jason的意思。那Jason该如何让Tony看懂这句话呢。这就需要Jason事先告诉Tony他的变换规则，特别是他使用的数字3。因为这个数字3决定了每一个字母会变成哪一个新字母。当Tony知道了这个秘密后，他就能把这条看似乱码的信息还原回有意义的内容，最终知道原来Jason是想和他吃晚饭后一起玩游戏。\n",
+    "\n",
+    "This process of converting simple readable sentence into an hard-to-understand sentence is called \"**encryption**\"; conversely, the process of restoring simple readable text from the hard-to-understand sentence is called \"**decryption**\". The hard-to-understand sentence is called \"**ciphertext**\". The method used for encryption is called encryption \"algorithm\", and some key data in the algorithm is called \"**key**\". For example, in our example, the number 3 is the **key**. The key is a secret and should not be shared with others except you intend to.\n",
+    "\n",
+    "这种把简单的文字编程看似杂乱无章的信息以便传递秘密消息的过程称为”加密“；反之，把看似杂乱无章信息还原为有意义的原文的过程称为”解密“。这其中看似杂乱无章的信息称为”密文“。加密使用的方法称为加密”算法“，算法中一些关键的数据称为”密钥“。例如在我们举的例子中，数字3就是密钥。密钥是一个秘密，一般不轻易与他人分享。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e8f172ea-031b-4df7-b39d-aaa5d443e8d5",
+   "metadata": {},
+   "source": [
+    "### Activity 活动"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b366d57-805b-492b-8670-26aa0ec5be6c",
+   "metadata": {},
+   "source": [
+    "Now please use the above encryption method, choose another key (between 1-10), encrypt an original message and send it to another kid. Without telling him the key you chose, see if the clasmate can decrypt your original text.\n",
+    "\n",
+    "现在请你使用上面的加密方法，选用另一个密钥（1-10之间），将一条原文信息加密后发送给另一个小朋友。在不告诉对方你选用的密钥的情况下，看看对方能不能解密出你的原文。\n",
+    "\n",
+    "Specific requirements are as follows:\n",
+    "\n",
+    "具体要求如下：\n",
+    "1. Each student should receive a ciphertext from another child and try to decrypt it. 每一个小朋友将要受到来自另一个小朋友发来的密文，并尝试将其解密。\n",
+    "2. Each student should prepare a simple readable sentence by himself, choose a number (key), encrypt the sentence according to the encryption algorithm given above, get the \"ciphertext\", and send the ciphertext to a third child .每一个小朋友也要自己准备一句话，选好一个数字（密钥），将这段话按照上面给出的加密算法加密，得到“密文”，并将密文发送给第三个小朋友。\n",
+    "3. Use the order: Jason -> Yunzi -> Tony -> Sophie -> Jason to determine the sender and receiver of the ciphertext. That is, Jason will send the ciphertext to Yunzi, and will also receive and try to decrypt the ciphertext from Sophie. This activity is conducted publicly in the WeChat group. When sending your ciphertext, please also notify the receiver. 按照：Jason -> Yunzi -> Tony -> Sophie -> Jason这样的顺序来确定密文的发送对象。即，Jason将会把密文发送给Yunzi，同时也会收到并尝试解密来自Sophie的密文。这个活动在微信群里公开进行，在发送你的密文时，请同时注明谁应该接收并负责解密这条密文。\n",
+    "4. You need to write a Python program (method is preferred) to encrypt a sentence and decrypt a ciphertext. Before writing a program, it is recommended that you also try the encryption and decryption manually (with pen and paper). 你需要编写Python程序（建议使用编写方法的形式）来进行对一句话进行加密或者对一条密文进行解密。在编写程序前，建议你也以手工（用笔和纸）的方式尝试加密解密。\n",
+    "5. Every student needs to send out the cipher text before the end of Wednesday, and try to decrypt the original text before Saturday. 每一个小朋友需要在周三结束前讲密文发出，尝试在周六前解密出原文。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2c7e599-2173-4666-82f4-9025ab089a23",
+   "metadata": {},
+   "source": [
+    "### Hint 提示"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2516b69a-1ecc-4a05-aeed-41bc9c2c0ec7",
+   "metadata": {},
+   "source": [
+    "Useful Programming Tricks:\n",
+    "\n",
+    "下面一些**编程知识**可能会用得到\n",
+    "\n",
+    "1. Both the \"original text\" or \"ciphertext\" can be stored in a string variable. For example, you can use the following code to store the original text in above example:  不管是“原文”还是“密文”，都可以用一个字符串型的变量来存储。例如可以使用下面的代码来存储本里中的原文：\n",
+    "```python\n",
+    "my_sentence = \"play video game after dinner\"\n",
+    "```\n",
+    "2. String data is somewhat similar to list data. You can also use index to get the character at a certain position in a string, or use the `len` method to get the total number of characters in the string. Run each line of code below to observe this kind of operation:  字符串类型的数据有些类似列表型数据，也可以使用索引值来获取字符串中某一个位置的字符，也可以使用`len`方法来获取字符串中总的字符的个数。运行下面的每一行代码观察体会这种操作：\n",
+    "```python\n",
+    "my_sentence = \"play video game after dinner\"\n",
+    "first_letter = my_sentence[0]\n",
+    "second_letter = my_sentence[1]\n",
+    "last_letter = my_sentence[-1]\n",
+    "n_len = len(my_sentence)\n",
+    "print(first_letter, second_letter, last_letter, n_len)\n",
+    "```\n",
+    "3. `%` operator is required 需要使用`%`操作符\n",
+    "4. condition and loop flow controls are needed. 需要使用条件和循环控制语句。\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "c189c4ea-4301-4ecd-b1a8-2867af5aa1be",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "p l r 28\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_sentence = \"play video game after dinner\"\n",
+    "first_letter = my_sentence[0]\n",
+    "second_letter = my_sentence[1]\n",
+    "last_letter = my_sentence[-1]\n",
+    "n_len = len(my_sentence)\n",
+    "print(first_letter, second_letter, last_letter, n_len)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "41503fb9-13ba-45df-9f75-46d3c0682d08",
+   "metadata": {},
+   "source": [
+    "### Your Code 你的代码"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "eede774f-1aa0-4d05-9fb2-ca261b240884",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
