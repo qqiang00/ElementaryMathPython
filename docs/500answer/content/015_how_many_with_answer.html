@@ -190,10 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../100beginner/content/018_what_did_your_classmates_say.html">
-     第18讲
-     <strong>
-      Activity 活动
-     </strong>
+     第18讲 同学给你发了什么消息
     </a>
    </li>
   </ul>
@@ -290,6 +287,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="016_how_many_queues_with_answer.html">
      第16讲 一共可以排出多少个不同的队伍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="017_oppo_abs_number.html">
+     第17讲 编写方法求一个数的相反数和绝对值
     </a>
    </li>
   </ul>
@@ -785,7 +787,7 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>数轴上有6个点，对应的数字分别为<code class="docutils literal notranslate"><span class="pre">[-4.5,</span> <span class="pre">-2.0,</span> <span class="pre">0,</span> <span class="pre">1.5,</span> <span class="pre">3.5,</span> <span class="pre">5.0]</span></code>。连接其中任意的两个点可以形成一条线段。请问这6个点一共可形成多少条线段？参照下图，在宽高分别为600和400的绘图区绘制一条数轴，在数轴上标记这些点，并用不同颜色绘制出这6个点能形成的所有的线段并给每条线段标记一个序号。为避免绘制出的线段相互重合，每条线段间隔10个像素。图中已经绘制出了从<code class="docutils literal notranslate"><span class="pre">-4.5</span></code>开始到所有其它点的线段。</p>
 <p>下面的代码已经完成了数轴绘制和对每一个点的标记。</p>
-<p><img alt="86a983e176644427a5e8edab8e8b046a" class="no-scaled-link" src="500answer/content/figures/L015_draw_all_lines.png" style="width: 600px;" /></p>
+<p><img alt="616127399c6b4a09a1d4215ccfe18930" class="no-scaled-link" src="500answer/content/figures/L015_draw_all_lines.png" style="width: 600px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1761,7 +1763,7 @@ range(0, 1)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">SCALE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="32627fe098d748a8b0c0e4b0c4197978" class="no-scaled-link" src="500answer/content/figures/L015_one_line.png" style="width: 600px;" /></p>
+<p><img alt="b19a5b1a2c6347e58ba69d4df596cca5" class="no-scaled-link" src="500answer/content/figures/L015_one_line.png" style="width: 600px;" /></p>
 <p>在调用方法时，给方法提供的参数的次序需要与声明方法时的次序一致，否则会出错或预期以外的功能。</p>
 <p>如果需要给绘制的线段进行标号，那么需要额外完成一些诸如：提起、移动画笔和绘制文字的步骤。同时我们还应该有标号使用的数字（或文字），需要新设定一个参数来表示它，可以用<code class="docutils literal notranslate"><span class="pre">label</span></code>来表示，下面的代码请读者自己添加这几行代码给这个方法添加线段标号的功能。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">linewidth</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -2079,7 +2081,7 @@ sum(inclu) = 494450
 <div class="line">| ———:<a href="#id11"><span class="problematic" id="id12">|———–:|</span></a>:———:<a href="#id7"><span class="problematic" id="id8">|</span></a>:———:| | -2.0 | 2.0 | red | 3 | | 1.5 | 3.0 | green | 4 | | 0.0 | 1.0 | blue | 3 |</div>
 </div>
 <p><strong>要求</strong>：使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔，禁止使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法。</p>
-<p><img alt="26f37108eca146d994ff757ef2f053d9" class="no-scaled-link" src="500answer/content/figures/L015_exercise_3.png" style="width: 600px;" /></p>
+<p><img alt="cdc51fa71bb54223b6b2cc1aa5c7f087" class="no-scaled-link" src="500answer/content/figures/L015_exercise_3.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -2125,7 +2127,7 @@ sum(inclu) = 494450
 <div class="line"><strong>要求</strong>：尽可能不使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法，而使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔。</div>
 <div class="line"><strong>提示</strong>：使用goto方法时，需要用到一个数值<code class="docutils literal notranslate"><span class="pre">1.732</span></code>来帮助定位三角形的端点。请在你实现方法的代码里使用这个数值。</div>
 </div>
-<p><img alt="ef199fa3297e4ff7873afa3d10061086" class="no-scaled-link" src="500answer/content/figures/L015_exercise_4.png" style="width: 600px;" /></p>
+<p><img alt="3c4f08b359d2432daebcb55a2fe5b60c" class="no-scaled-link" src="500answer/content/figures/L015_exercise_4.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">

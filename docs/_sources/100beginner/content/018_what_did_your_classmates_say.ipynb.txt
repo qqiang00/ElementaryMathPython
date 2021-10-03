@@ -5,7 +5,7 @@
    "id": "1f705e94-1fb0-493c-82ac-4cf25ad1369a",
    "metadata": {},
    "source": [
-    "## 第18讲 **Activity 活动**"
+    "## 第18讲 同学给你发了什么消息"
    ]
   },
   {
@@ -13,7 +13,15 @@
    "id": "97fb9181-903e-4c30-89ab-7b9d2ec923aa",
    "metadata": {},
    "source": [
-    "### Background 背景"
+    "### Problem 问题描述"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5a6e5a98-28ee-495c-8758-ee08b8df8825",
+   "metadata": {},
+   "source": [
+    "#### Background 背景"
    ]
   },
   {
@@ -43,7 +51,7 @@
    "id": "e8f172ea-031b-4df7-b39d-aaa5d443e8d5",
    "metadata": {},
    "source": [
-    "### Activity 活动"
+    "#### Activity 活动"
    ]
   },
   {
@@ -70,10 +78,20 @@
   },
   {
    "cell_type": "markdown",
+   "id": "6e8ee564-dd58-4592-9699-cd8dab589070",
+   "metadata": {},
+   "source": [
+    "### Math Background 数学背景\n",
+    "\n",
+    "无"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "f2c7e599-2173-4666-82f4-9025ab089a23",
    "metadata": {},
    "source": [
-    "### Hint 提示"
+    "### Prerequisites 预备知识"
    ]
   },
   {
@@ -81,10 +99,6 @@
    "id": "2516b69a-1ecc-4a05-aeed-41bc9c2c0ec7",
    "metadata": {},
    "source": [
-    "Useful Programming Tricks:\n",
-    "\n",
-    "下面一些**编程知识**可能会用得到\n",
-    "\n",
     "1. Both the \"original text\" or \"ciphertext\" can be stored in a string variable. For example, you can use the following code to store the original text in above example:  不管是“原文”还是“密文”，都可以用一个字符串型的变量来存储。例如可以使用下面的代码来存储本里中的原文：\n",
     "```python\n",
     "my_sentence = \"play video game after dinner\"\n",
@@ -105,7 +119,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 2,
    "id": "c189c4ea-4301-4ecd-b1a8-2867af5aa1be",
    "metadata": {},
    "outputs": [
@@ -131,7 +145,187 @@
    "id": "41503fb9-13ba-45df-9f75-46d3c0682d08",
    "metadata": {},
    "source": [
-    "### Your Code 你的代码"
+    "### Solution 解决方案"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "bb4f140d-939b-4f2a-8a03-c5549ee7b0c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ABC = \"abcdefghijklmnopqrstuvwxyz\"\n",
+    "def encrypt(origin_str, offset=3, my_dict=ABC):\n",
+    "    encrypted = \"\"\n",
+    "    for c in origin_str:\n",
+    "        try:\n",
+    "            index = my_dict.index(c)\n",
+    "            encrypted += my_dict[(index+offset)%len(my_dict)]\n",
+    "        except:\n",
+    "            encrypted += c\n",
+    "\n",
+    "    return encrypted\n",
+    "\n",
+    "def decrypt(encrypted_str, offset=3, my_dict=ABC):\n",
+    "    origin_str = \"\"\n",
+    "    for c in encrypted_str:\n",
+    "        try:\n",
+    "            index = my_dict.index(c)\n",
+    "            targ_index = index-offset+len(my_dict) if index-offset < 0 else index-offset\n",
+    "            origin_str += my_dict[targ_index]\n",
+    "        except:\n",
+    "            origin_str += c\n",
+    "            \n",
+    "    return origin_str\n",
+    "\n",
+    "def brute_force_solution(encrypted_str, my_dict=ABC, max_offset=25):\n",
+    "    offset = 1\n",
+    "    while offset <= max_offset:        \n",
+    "        guess = decrypt(encrypted_str, offset=offset, my_dict=my_dict)\n",
+    "        print(\"Guess with Offset {:2}: {}\".format(offset, guess))\n",
+    "        offset += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "b015a4b9-d34a-416e-a5e6-5a045370efb7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sodb ylghr jdphv diwhu glqqhu\n"
+     ]
+    }
+   ],
+   "source": [
+    "origin_str = \"play video games after dinner\"\n",
+    "offset = 3\n",
+    "\n",
+    "encrypted = encrypt(origin_str, offset=offset)\n",
+    "print(encrypted)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "39528cd1-e6ce-4b22-922f-a01f1f58f48c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Guess with Offset  1: olssv, ovd hyl fvb\n",
+      "Guess with Offset  2: nkrru, nuc gxk eua\n",
+      "Guess with Offset  3: mjqqt, mtb fwj dtz\n",
+      "Guess with Offset  4: lipps, lsa evi csy\n",
+      "Guess with Offset  5: khoor, krz duh brx\n",
+      "Guess with Offset  6: jgnnq, jqy ctg aqw\n",
+      "Guess with Offset  7: ifmmp, ipx bsf zpv\n",
+      "Guess with Offset  8: hello, how are you\n",
+      "Guess with Offset  9: gdkkn, gnv zqd xnt\n",
+      "Guess with Offset 10: fcjjm, fmu ypc wms\n",
+      "Guess with Offset 11: ebiil, elt xob vlr\n",
+      "Guess with Offset 12: dahhk, dks wna ukq\n",
+      "Guess with Offset 13: czggj, cjr vmz tjp\n",
+      "Guess with Offset 14: byffi, biq uly sio\n",
+      "Guess with Offset 15: axeeh, ahp tkx rhn\n",
+      "Guess with Offset 16: zwddg, zgo sjw qgm\n",
+      "Guess with Offset 17: yvccf, yfn riv pfl\n",
+      "Guess with Offset 18: xubbe, xem qhu oek\n",
+      "Guess with Offset 19: wtaad, wdl pgt ndj\n",
+      "Guess with Offset 20: vszzc, vck ofs mci\n",
+      "Guess with Offset 21: uryyb, ubj ner lbh\n",
+      "Guess with Offset 22: tqxxa, tai mdq kag\n",
+      "Guess with Offset 23: spwwz, szh lcp jzf\n",
+      "Guess with Offset 24: rovvy, ryg kbo iye\n",
+      "Guess with Offset 25: qnuux, qxf jan hxd\n"
+     ]
+    }
+   ],
+   "source": [
+    "encrypted_by_sophie = \"pmttw, pwe izm gwc\"\n",
+    "brute_force_solution(encrypted_by_sophie)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "d1527c00-6e0d-409f-97ad-cd07a94c35c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Guess with Offset  1: xiegl qi lsa xs tvskveq\n",
+      "Guess with Offset  2: whdfk ph krz wr surjudp\n",
+      "Guess with Offset  3: vgcej og jqy vq rtqitco\n",
+      "Guess with Offset  4: ufbdi nf ipx up qsphsbn\n",
+      "Guess with Offset  5: teach me how to program\n",
+      "Guess with Offset  6: sdzbg ld gnv sn oqnfqzl\n",
+      "Guess with Offset  7: rcyaf kc fmu rm npmepyk\n",
+      "Guess with Offset  8: qbxze jb elt ql moldoxj\n",
+      "Guess with Offset  9: pawyd ia dks pk lnkcnwi\n",
+      "Guess with Offset 10: ozvxc hz cjr oj kmjbmvh\n",
+      "Guess with Offset 11: nyuwb gy biq ni jlialug\n",
+      "Guess with Offset 12: mxtva fx ahp mh ikhzktf\n",
+      "Guess with Offset 13: lwsuz ew zgo lg hjgyjse\n",
+      "Guess with Offset 14: kvrty dv yfn kf gifxird\n",
+      "Guess with Offset 15: juqsx cu xem je fhewhqc\n",
+      "Guess with Offset 16: itprw bt wdl id egdvgpb\n",
+      "Guess with Offset 17: hsoqv as vck hc dfcufoa\n",
+      "Guess with Offset 18: grnpu zr ubj gb cebtenz\n",
+      "Guess with Offset 19: fqmot yq tai fa bdasdmy\n",
+      "Guess with Offset 20: eplns xp szh ez aczrclx\n",
+      "Guess with Offset 21: dokmr wo ryg dy zbyqbkw\n",
+      "Guess with Offset 22: cnjlq vn qxf cx yaxpajv\n",
+      "Guess with Offset 23: bmikp um pwe bw xzwoziu\n",
+      "Guess with Offset 24: alhjo tl ovd av wyvnyht\n",
+      "Guess with Offset 25: zkgin sk nuc zu vxumxgs\n"
+     ]
+    }
+   ],
+   "source": [
+    "encrypted_by_yunzi = \"yjfhm rj mtb yt uwtlwfr\"\n",
+    "brute_force_solution(encrypted_by_yunzi)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0fc770ce-83de-4cba-ad1c-efe15dc2ed34",
+   "metadata": {},
+   "source": [
+    "### Summary 知识点小结\n",
+    "1. string variable vs. list variable"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "443f10c1-4dea-408a-84b4-fbcbb8f957ff",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "822614c0-b19d-41f5-b423-9939b075a5e8",
+   "metadata": {},
+   "source": [
+    "### Assignments 作业"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "26a27c0d-af3c-4f16-add0-b7dee62d6768",
+   "metadata": {},
+   "source": [
+    "1. 思考本节介绍的加密方法有什么优点和缺点？ Think about the advantanges and weaknesses of the encryption algorithms."
    ]
   },
   {

@@ -188,10 +188,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../100beginner/content/018_what_did_your_classmates_say.html">
-     第18讲
-     <strong>
-      Activity 活动
-     </strong>
+     第18讲 同学给你发了什么消息
     </a>
    </li>
   </ul>
@@ -288,6 +285,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../500answer/content/016_how_many_queues_with_answer.html">
      第16讲 一共可以排出多少个不同的队伍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../500answer/content/017_oppo_abs_number.html">
+     第17讲 编写方法求一个数的相反数和绝对值
     </a>
    </li>
   </ul>
@@ -691,26 +693,45 @@ div.rendered_html tbody tr:hover {
 <li><p>需要使用<code class="docutils literal notranslate"><span class="pre">%</span></code>操作符</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">origin_str</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">):</span>
+<span></span><span class="n">ABC</span> <span class="o">=</span> <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">origin_str</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="n">ABC</span><span class="p">):</span>
     <span class="n">encrypted</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">origin_str</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">index</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
             <span class="n">encrypted</span> <span class="o">+=</span> <span class="n">my_dict</span><span class="p">[(</span><span class="n">index</span><span class="o">+</span><span class="n">offset</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(my_dict)]
-
         <span class="k">except</span><span class="p">:</span>
             <span class="n">encrypted</span> <span class="o">+=</span> <span class="n">c</span>
 
     <span class="k">return</span> <span class="n">encrypted</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">encrypted_str</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="n">origin_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">encrypted_str</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+            <span class="n">targ_index</span> <span class="o">=</span> <span class="n">index</span><span class="o">-</span><span class="n">offset</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span> <span class="k">if</span> <span class="n">index</span><span class="o">-</span><span class="n">offset</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">index</span><span class="o">-</span><span class="n">offset</span>
+            <span class="n">origin_str</span> <span class="o">+=</span> <span class="n">my_dict</span><span class="p">[</span><span class="n">targ_index</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">origin_str</span> <span class="o">+=</span> <span class="n">c</span>
+
+    <span class="k">return</span> <span class="n">origin_str</span>
+
+<span class="k">def</span> <span class="nf">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_str</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="n">ABC</span><span class="p">,</span> <span class="n">max_offset</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">offset</span> <span class="o">&lt;=</span> <span class="n">max_offset</span><span class="p">:</span>
+        <span class="n">guess</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">encrypted_str</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="n">my_dict</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess with Offset </span><span class="si">{:2}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">guess</span><span class="p">))</span>
+        <span class="n">offset</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -729,6 +750,108 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 sodb ylghr jdphv diwhu glqqhu
 </pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">encrypted_by_sophie</span> <span class="o">=</span> <span class="s2">&quot;pmttw, pwe izm gwc&quot;</span>
+<span class="n">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_by_sophie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Guess with Offset  1: olssv, ovd hyl fvb
+Guess with Offset  2: nkrru, nuc gxk eua
+Guess with Offset  3: mjqqt, mtb fwj dtz
+Guess with Offset  4: lipps, lsa evi csy
+Guess with Offset  5: khoor, krz duh brx
+Guess with Offset  6: jgnnq, jqy ctg aqw
+Guess with Offset  7: ifmmp, ipx bsf zpv
+Guess with Offset  8: hello, how are you
+Guess with Offset  9: gdkkn, gnv zqd xnt
+Guess with Offset 10: fcjjm, fmu ypc wms
+Guess with Offset 11: ebiil, elt xob vlr
+Guess with Offset 12: dahhk, dks wna ukq
+Guess with Offset 13: czggj, cjr vmz tjp
+Guess with Offset 14: byffi, biq uly sio
+Guess with Offset 15: axeeh, ahp tkx rhn
+Guess with Offset 16: zwddg, zgo sjw qgm
+Guess with Offset 17: yvccf, yfn riv pfl
+Guess with Offset 18: xubbe, xem qhu oek
+Guess with Offset 19: wtaad, wdl pgt ndj
+Guess with Offset 20: vszzc, vck ofs mci
+Guess with Offset 21: uryyb, ubj ner lbh
+Guess with Offset 22: tqxxa, tai mdq kag
+Guess with Offset 23: spwwz, szh lcp jzf
+Guess with Offset 24: rovvy, ryg kbo iye
+Guess with Offset 25: qnuux, qxf jan hxd
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">encrypted_by_jason</span> <span class="o">=</span> <span class="s2">&quot;l orthodox whqqlv&quot;</span>
+<span class="n">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_by_jason</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Guess with Offset  1: k nqsgncnw vgppku
+Guess with Offset  2: j mprfmbmv ufoojt
+Guess with Offset  3: i loqelalu tennis
+Guess with Offset  4: h knpdkzkt sdmmhr
+Guess with Offset  5: g jmocjyjs rcllgq
+Guess with Offset  6: f ilnbixir qbkkfp
+Guess with Offset  7: e hkmahwhq pajjeo
+Guess with Offset  8: d gjlzgvgp oziidn
+Guess with Offset  9: c fikyfufo nyhhcm
+Guess with Offset 10: b ehjxeten mxggbl
+Guess with Offset 11: a dgiwdsdm lwffak
+Guess with Offset 12: z cfhvcrcl kveezj
+Guess with Offset 13: y begubqbk juddyi
+Guess with Offset 14: x adftapaj itccxh
+Guess with Offset 15: w zceszozi hsbbwg
+Guess with Offset 16: v ybdrynyh graavf
+Guess with Offset 17: u xacqxmxg fqzzue
+Guess with Offset 18: t wzbpwlwf epyytd
+Guess with Offset 19: s vyaovkve doxxsc
+Guess with Offset 20: r uxznujud cnwwrb
+Guess with Offset 21: q twymtitc bmvvqa
+Guess with Offset 22: p svxlshsb aluupz
+Guess with Offset 23: o ruwkrgra zkttoy
+Guess with Offset 24: n qtvjqfqz yjssnx
+Guess with Offset 25: m psuipepy xirrmw
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
 </div>
 </div>
 
