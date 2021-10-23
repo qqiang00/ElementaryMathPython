@@ -38,7 +38,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="第二篇 进阶" href="../../200intermediate/index.html" />
+    <link rel="next" title="第19讲 重新认识矩形" href="019_can_build_horizontal_rectangle.html" />
     <link rel="prev" title="第17讲 编写方法求一个数的相反数和绝对值" href="017_oppo_abs_number.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -193,6 +193,11 @@
      第18讲 同学给你发了什么消息
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="019_can_build_horizontal_rectangle.html">
+     第19讲 重新认识矩形
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -292,6 +297,18 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../500answer/content/017_oppo_abs_number.html">
      第17讲 编写方法求一个数的相反数和绝对值
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/018_what_did_your_classmates_say.html">
+     <strong>
+      Assignment
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../500answer/content/019_can_build_horizontal_rectangle.html">
+     第19讲 重新认识矩形
     </a>
    </li>
   </ul>
@@ -798,11 +815,48 @@ Jason这样的顺序来确定密文的发送对象。即，Jason将会把密文�
 p l r 28
 </pre></div></div>
 </div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Original Text            Encrypted Codes             n(key)          Guesed Original Text.
+</pre></div>
+</div>
+<p>Sophie i like coding b ebdx vhwbgz 19=26-7 Yunzi teach me how to program yjfhm rj mtb yt uwtlwfr 5 Jason i love tennis l oryh wqqlv 3 Tony i love coding o rubk iujotm 6</p>
+<p>n 1 2 3 4 5 u v w x y z</p>
+<ol class="arabic simple">
+<li><p>A -&gt; a, B -&gt; b</p></li>
+<li><p>-&gt; , . -&gt; .</p></li>
+<li><p>n: order 顺序 字母表</p></li>
+</ol>
+<p>original text -&gt; encrypted codes</p>
+<ol class="arabic simple">
+<li><p>Original Text</p></li>
+<li><p>n</p></li>
+<li><p>Alphabet Table(order)</p></li>
+</ol>
+<p>n 1 2 3 4 5 6 7 b a z y x w v u l k j i</p>
 </div>
 <div class="section" id="Solution-解决方案">
 <h2>Solution 解决方案<a class="headerlink" href="#Solution-解决方案" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ABC</span> <span class="o">=</span> <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+26
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -840,7 +894,34 @@ p l r 28
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">encrpyted_code</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="s2">&quot;zoom didn&#39;t work well today&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">my_dict</span><span class="o">=</span><span class="n">ABC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">encrpyted_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dssq hmhr&#39;x asvo aipp xshec
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -861,11 +942,11 @@ sodb ylghr jdphv diwhu glqqhu
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">encrypted_by_sophie</span> <span class="o">=</span> <span class="s2">&quot;pmttw, pwe izm gwc&quot;</span>
+<span></span><span class="n">encrypted_by_sophie</span> <span class="o">=</span> <span class="s2">&quot;b ebdx vhwbgz &quot;</span>
 <span class="n">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_by_sophie</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -875,35 +956,35 @@ sodb ylghr jdphv diwhu glqqhu
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Guess with Offset  1: olssv, ovd hyl fvb
-Guess with Offset  2: nkrru, nuc gxk eua
-Guess with Offset  3: mjqqt, mtb fwj dtz
-Guess with Offset  4: lipps, lsa evi csy
-Guess with Offset  5: khoor, krz duh brx
-Guess with Offset  6: jgnnq, jqy ctg aqw
-Guess with Offset  7: ifmmp, ipx bsf zpv
-Guess with Offset  8: hello, how are you
-Guess with Offset  9: gdkkn, gnv zqd xnt
-Guess with Offset 10: fcjjm, fmu ypc wms
-Guess with Offset 11: ebiil, elt xob vlr
-Guess with Offset 12: dahhk, dks wna ukq
-Guess with Offset 13: czggj, cjr vmz tjp
-Guess with Offset 14: byffi, biq uly sio
-Guess with Offset 15: axeeh, ahp tkx rhn
-Guess with Offset 16: zwddg, zgo sjw qgm
-Guess with Offset 17: yvccf, yfn riv pfl
-Guess with Offset 18: xubbe, xem qhu oek
-Guess with Offset 19: wtaad, wdl pgt ndj
-Guess with Offset 20: vszzc, vck ofs mci
-Guess with Offset 21: uryyb, ubj ner lbh
-Guess with Offset 22: tqxxa, tai mdq kag
-Guess with Offset 23: spwwz, szh lcp jzf
-Guess with Offset 24: rovvy, ryg kbo iye
-Guess with Offset 25: qnuux, qxf jan hxd
+Guess with Offset  1: a dacw ugvafy
+Guess with Offset  2: z czbv tfuzex
+Guess with Offset  3: y byau setydw
+Guess with Offset  4: x axzt rdsxcv
+Guess with Offset  5: w zwys qcrwbu
+Guess with Offset  6: v yvxr pbqvat
+Guess with Offset  7: u xuwq oapuzs
+Guess with Offset  8: t wtvp nzotyr
+Guess with Offset  9: s vsuo mynsxq
+Guess with Offset 10: r urtn lxmrwp
+Guess with Offset 11: q tqsm kwlqvo
+Guess with Offset 12: p sprl jvkpun
+Guess with Offset 13: o roqk iujotm
+Guess with Offset 14: n qnpj htinsl
+Guess with Offset 15: m pmoi gshmrk
+Guess with Offset 16: l olnh frglqj
+Guess with Offset 17: k nkmg eqfkpi
+Guess with Offset 18: j mjlf dpejoh
+Guess with Offset 19: i like coding
+Guess with Offset 20: h khjd bnchmf
+Guess with Offset 21: g jgic ambgle
+Guess with Offset 22: f ifhb zlafkd
+Guess with Offset 23: e hega ykzejc
+Guess with Offset 24: d gdfz xjydib
+Guess with Offset 25: c fcey wixcha
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -942,6 +1023,90 @@ Guess with Offset 22: cnjlq vn qxf cx yaxpajv
 Guess with Offset 23: bmikp um pwe bw xzwoziu
 Guess with Offset 24: alhjo tl ovd av wyvnyht
 Guess with Offset 25: zkgin sk nuc zu vxumxgs
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">encrypted_by_jason</span> <span class="o">=</span> <span class="s2">&quot;l oryh wqqlv &quot;</span>
+<span class="n">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_by_jason</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Guess with Offset  1: k nqxg vppku
+Guess with Offset  2: j mpwf uoojt
+Guess with Offset  3: i love tnnis
+Guess with Offset  4: h knud smmhr
+Guess with Offset  5: g jmtc rllgq
+Guess with Offset  6: f ilsb qkkfp
+Guess with Offset  7: e hkra pjjeo
+Guess with Offset  8: d gjqz oiidn
+Guess with Offset  9: c fipy nhhcm
+Guess with Offset 10: b ehox mggbl
+Guess with Offset 11: a dgnw lffak
+Guess with Offset 12: z cfmv keezj
+Guess with Offset 13: y belu jddyi
+Guess with Offset 14: x adkt iccxh
+Guess with Offset 15: w zcjs hbbwg
+Guess with Offset 16: v ybir gaavf
+Guess with Offset 17: u xahq fzzue
+Guess with Offset 18: t wzgp eyytd
+Guess with Offset 19: s vyfo dxxsc
+Guess with Offset 20: r uxen cwwrb
+Guess with Offset 21: q twdm bvvqa
+Guess with Offset 22: p svcl auupz
+Guess with Offset 23: o rubk zttoy
+Guess with Offset 24: n qtaj yssnx
+Guess with Offset 25: m pszi xrrmw
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">encrypted_by_tony</span> <span class="o">=</span> <span class="s2">&quot;o rubk iujotm &quot;</span>
+<span class="n">brute_force_solution</span><span class="p">(</span><span class="n">encrypted_by_tony</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Guess with Offset  1: n qtaj htinsl
+Guess with Offset  2: m pszi gshmrk
+Guess with Offset  3: l oryh frglqj
+Guess with Offset  4: k nqxg eqfkpi
+Guess with Offset  5: j mpwf dpejoh
+Guess with Offset  6: i love coding
+Guess with Offset  7: h knud bnchmf
+Guess with Offset  8: g jmtc ambgle
+Guess with Offset  9: f ilsb zlafkd
+Guess with Offset 10: e hkra ykzejc
+Guess with Offset 11: d gjqz xjydib
+Guess with Offset 12: c fipy wixcha
+Guess with Offset 13: b ehox vhwbgz
+Guess with Offset 14: a dgnw ugvafy
+Guess with Offset 15: z cfmv tfuzex
+Guess with Offset 16: y belu setydw
+Guess with Offset 17: x adkt rdsxcv
+Guess with Offset 18: w zcjs qcrwbu
+Guess with Offset 19: v ybir pbqvat
+Guess with Offset 20: u xahq oapuzs
+Guess with Offset 21: t wzgp nzotyr
+Guess with Offset 22: s vyfo mynsxq
+Guess with Offset 23: r uxen lxmrwp
+Guess with Offset 24: q twdm kwlqvo
+Guess with Offset 25: p svcl jvkpun
 </pre></div></div>
 </div>
 </div>
@@ -984,7 +1149,7 @@ Guess with Offset 25: zkgin sk nuc zu vxumxgs
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="017_oppo_abs_number.html" title="previous page">第17讲 编写方法求一个数的相反数和绝对值</a>
-    <a class='right-next' id="next-link" href="../../200intermediate/index.html" title="next page">第二篇 进阶</a>
+    <a class='right-next' id="next-link" href="019_can_build_horizontal_rectangle.html" title="next page">第19讲 重新认识矩形</a>
 
         </div>
         

@@ -1,0 +1,242 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1f705e94-1fb0-493c-82ac-4cf25ad1369a",
+   "metadata": {},
+   "source": [
+    "### **Assignment**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "210072e3-08bf-4985-aac5-726bc91aff9b",
+   "metadata": {},
+   "source": [
+    "Jason想要在一个有着Jason，Yunzi，Tony和Sophie的4人群里发送一条秘密消息给Tony，为了不让另外两个小朋友知道Jason发给Tony的消息内容，Jason想了一个办法：他会把他发送给Tony的那句话中的每一个字母用这个字母在字母顺序表中往后数第3位的字母代替，这样重新组成一个看上去没有意思的一串乱码。\n",
+    "\n",
+    "举个例子，假如Jason要发送给Tony的消息是:\"play video games after dinner\"(晚饭后玩游戏）。变换之后就变成了\"sodb ylghr jdphv diwhu glqqhu\"。其中原文第一个字母\"p\"变成了\"s\"，这是由于在字母顺序表中，字母\"s\"在字母\"p\"后面第3个位置。类似的，\"l\"被\"o\"替换了，\"a\"被\"d\"替换了。字母\"y\"出现在字母表中的尾部，它的后面可能没有足够数量的字母，此时不够的可以从字母表的开始\"a\"接续。本例中，字母\"y\"被\"b\"替换了。碰到字母表中没有的字符，例如\" \"(空格)，可以不做变换，保留空格。\n",
+    "\n",
+    "当Jason把变换后的这句话发送到群里时，如果不知道Jason的变换规则，没有小朋友能够明白Jason的意思。那Jason该如何让Tony看懂这句话呢。这就需要Jason事先告诉Tony他的变换规则，特别是他使用的数字3。因为这个数字3决定了每一个字母会变成哪一个新字母。当Tony知道了这个秘密后，他就能把这条看似乱码的信息还原回有意义的内容，最终知道原来Jason是想和他吃晚饭后一起玩游戏。\n",
+    "\n",
+    "这种把简单的文字编程看似杂乱无章的信息以便传递秘密消息的过程称为”加密“；反之，把看似杂乱无章信息还原为有意义的原文的过程称为”解密“。这其中看似杂乱无章的信息称为”密文“。加密使用的方法称为加密”算法“，算法中一些关键的数据称为”密钥“。例如在我们举的例子中，数字3就是密钥。密钥是一个秘密，不轻易与他人分享。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b366d57-805b-492b-8670-26aa0ec5be6c",
+   "metadata": {},
+   "source": [
+    "现在请你使用上面的加密方法，选用另一个密钥（1-10之间），将一条原文信息加密后发送给另一个小朋友。在不告诉对方你选用的密钥的情况下，看看对方能不能解密出你的原文。\n",
+    "\n",
+    "具体要求如下：\n",
+    "1. 每一个小朋友将要受到来自另一个小朋友发来的密文，并尝试将其解密。\n",
+    "2. 每一个小朋友也要自己准备一句话，选好一个数字（密钥），将这段话按照上面给出的加密算法加密，得到“密文”，并将密文发送给第三个小朋友。\n",
+    "3. 按照：Jason -> Yunzi -> Tony -> Sophie -> Jason这样的顺序来确定密文的发送对象。即，Jason将会把密文发送给Yunzi，同时也会收到并尝试解密来自Sophie的密文。这个活动在微信群里公开进行。\n",
+    "4. 你需要编写Python程序（建议使用编写方法的形式）来进行对一句话进行加密或者对一条密文进行解密。在编写程序前，建议你也以手工（用笔和纸）的方式尝试加密解密。\n",
+    "5. 每一个小朋友需要在周三结束前讲密文发出，尝试在周六前解密出原文。\n",
+    "\n",
+    "\n",
+    "下面一些**编程知识**可能会用得到\n",
+    "1. 不管是“原文”还是“密文”，都可以用一个字符串型的变量来存储。例如可以使用下面的代码来存储本里中的原文：\n",
+    "```python\n",
+    "my_sentence = \"play video game after dinner\"\n",
+    "```\n",
+    "2. 字符串类型的数据有些类似列表型数据，也可以使用索引值来获取字符串中某一个位置的字符，也可以使用`len`方法来获取字符串中总的字符的个数。运行下面的每一行代码观察体会这种操作：\n",
+    "```python\n",
+    "my_sentence = \"play video game after dinner\"\n",
+    "first_letter = my_sentence[0]\n",
+    "second_letter = my_sentence[1]\n",
+    "last_letter = my_sentence[-1]\n",
+    "n_len = len(my_sentence)\n",
+    "print(first_letter, second_letter, last_letter, n_len)\n",
+    "```\n",
+    "3. 需要使用`%`操作符\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "2aac32e5-4824-4f33-9f44-65b9ba3c1bae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ABC = \"abcdefghijklmnopqrstuvwxyz\"\n",
+    "def encrypt(origin_str, offset=3, my_dict=ABC):\n",
+    "    encrypted = \"\"\n",
+    "    for c in origin_str:\n",
+    "        try:\n",
+    "            index = my_dict.index(c)\n",
+    "            encrypted += my_dict[(index+offset)%len(my_dict)]\n",
+    "        except:\n",
+    "            encrypted += c\n",
+    "\n",
+    "    return encrypted\n",
+    "\n",
+    "def decrypt(encrypted_str, offset=3, my_dict=ABC):\n",
+    "    origin_str = \"\"\n",
+    "    for c in encrypted_str:\n",
+    "        try:\n",
+    "            index = my_dict.index(c)\n",
+    "            targ_index = index-offset+len(my_dict) if index-offset < 0 else index-offset\n",
+    "            origin_str += my_dict[targ_index]\n",
+    "        except:\n",
+    "            origin_str += c\n",
+    "            \n",
+    "    return origin_str\n",
+    "\n",
+    "def brute_force_solution(encrypted_str, my_dict=ABC, max_offset=25):\n",
+    "    offset = 1\n",
+    "    while offset <= max_offset:        \n",
+    "        guess = decrypt(encrypted_str, offset=offset, my_dict=my_dict)\n",
+    "        print(\"Guess with Offset {:2}: {}\".format(offset, guess))\n",
+    "        offset += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "6b8d5af1-3e6b-4036-8852-355ad00d98ef",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "sodb ylghr jdphv diwhu glqqhu\n"
+     ]
+    }
+   ],
+   "source": [
+    "origin_str = \"play video games after dinner\"\n",
+    "offset = 3\n",
+    "\n",
+    "encrypted = encrypt(origin_str, offset=offset)\n",
+    "print(encrypted)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "f6ab911c-4d57-4757-b4d4-f164b45efc71",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Guess with Offset  1: olssv, ovd hyl fvb\n",
+      "Guess with Offset  2: nkrru, nuc gxk eua\n",
+      "Guess with Offset  3: mjqqt, mtb fwj dtz\n",
+      "Guess with Offset  4: lipps, lsa evi csy\n",
+      "Guess with Offset  5: khoor, krz duh brx\n",
+      "Guess with Offset  6: jgnnq, jqy ctg aqw\n",
+      "Guess with Offset  7: ifmmp, ipx bsf zpv\n",
+      "Guess with Offset  8: hello, how are you\n",
+      "Guess with Offset  9: gdkkn, gnv zqd xnt\n",
+      "Guess with Offset 10: fcjjm, fmu ypc wms\n",
+      "Guess with Offset 11: ebiil, elt xob vlr\n",
+      "Guess with Offset 12: dahhk, dks wna ukq\n",
+      "Guess with Offset 13: czggj, cjr vmz tjp\n",
+      "Guess with Offset 14: byffi, biq uly sio\n",
+      "Guess with Offset 15: axeeh, ahp tkx rhn\n",
+      "Guess with Offset 16: zwddg, zgo sjw qgm\n",
+      "Guess with Offset 17: yvccf, yfn riv pfl\n",
+      "Guess with Offset 18: xubbe, xem qhu oek\n",
+      "Guess with Offset 19: wtaad, wdl pgt ndj\n",
+      "Guess with Offset 20: vszzc, vck ofs mci\n",
+      "Guess with Offset 21: uryyb, ubj ner lbh\n",
+      "Guess with Offset 22: tqxxa, tai mdq kag\n",
+      "Guess with Offset 23: spwwz, szh lcp jzf\n",
+      "Guess with Offset 24: rovvy, ryg kbo iye\n",
+      "Guess with Offset 25: qnuux, qxf jan hxd\n"
+     ]
+    }
+   ],
+   "source": [
+    "encrypted_by_sophie = \"pmttw, pwe izm gwc\"\n",
+    "brute_force_solution(encrypted_by_sophie)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "53a1ca60-c798-4290-a241-9c82ea9fe58c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Guess with Offset  1: k nqsgncnw vgppku\n",
+      "Guess with Offset  2: j mprfmbmv ufoojt\n",
+      "Guess with Offset  3: i loqelalu tennis\n",
+      "Guess with Offset  4: h knpdkzkt sdmmhr\n",
+      "Guess with Offset  5: g jmocjyjs rcllgq\n",
+      "Guess with Offset  6: f ilnbixir qbkkfp\n",
+      "Guess with Offset  7: e hkmahwhq pajjeo\n",
+      "Guess with Offset  8: d gjlzgvgp oziidn\n",
+      "Guess with Offset  9: c fikyfufo nyhhcm\n",
+      "Guess with Offset 10: b ehjxeten mxggbl\n",
+      "Guess with Offset 11: a dgiwdsdm lwffak\n",
+      "Guess with Offset 12: z cfhvcrcl kveezj\n",
+      "Guess with Offset 13: y begubqbk juddyi\n",
+      "Guess with Offset 14: x adftapaj itccxh\n",
+      "Guess with Offset 15: w zceszozi hsbbwg\n",
+      "Guess with Offset 16: v ybdrynyh graavf\n",
+      "Guess with Offset 17: u xacqxmxg fqzzue\n",
+      "Guess with Offset 18: t wzbpwlwf epyytd\n",
+      "Guess with Offset 19: s vyaovkve doxxsc\n",
+      "Guess with Offset 20: r uxznujud cnwwrb\n",
+      "Guess with Offset 21: q twymtitc bmvvqa\n",
+      "Guess with Offset 22: p svxlshsb aluupz\n",
+      "Guess with Offset 23: o ruwkrgra zkttoy\n",
+      "Guess with Offset 24: n qtvjqfqz yjssnx\n",
+      "Guess with Offset 25: m psuipepy xirrmw\n"
+     ]
+    }
+   ],
+   "source": [
+    "encrypted_by_jason = \"l orthodox whqqlv\"\n",
+    "brute_force_solution(encrypted_by_jason)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8e38389f-6372-49ce-8972-eae3d2866274",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b7ee6d34-9ea6-4baa-95d1-f90f67f43cd7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
