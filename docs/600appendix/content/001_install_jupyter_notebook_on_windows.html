@@ -452,13 +452,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#4.-安装Jupyter-Notebook">
-   4. 安装Jupyter Notebook
+  <a class="reference internal nav-link" href="#4.-安装Jupyter-Lab">
+   4. 安装Jupyter Lab
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#6.-退出Jupyter-Notebook及虚拟环境">
-   6. 退出Jupyter Notebook及虚拟环境
+  <a class="reference internal nav-link" href="#5.-使用Jupyter-Notebook进行Python交互式编程">
+   5. 使用Jupyter Notebook进行Python交互式编程
   </a>
  </li>
 </ul>
@@ -472,356 +472,105 @@
         
               <div>
                 
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="section" id="附录二-Windows操作系统下搭建Python运行环境">
+  <div class="section" id="附录二-Windows操作系统下搭建Python运行环境">
 <h1>附录二 Windows操作系统下搭建Python运行环境<a class="headerlink" href="#附录二-Windows操作系统下搭建Python运行环境" title="永久链接至标题">¶</a></h1>
-<p>本书的所有程序代码均以3.5版的Python解释器为基础，并且在Jupyter Notebook下编写运行。本附录将指导读者在Windows操作系统下搭建本书建议使用的Python解释环境及Jupyter Notebook库，以便读者能更好的学习本书的示例代码、完成相应的练习。</p>
-<p>Python语言及其解释器从诞生至今经历了20多年的发展，版本号也从1.0发展到了3.8。这其中以2.7版本为重要分水岭，在此前后Python的语法规则有非常大的变化，2.7主要版本之后的更新直接跳至3.0及以上主要版本。由于历史原因，许多商业程序至今仍按照早期Python语法来编写或者依赖早期版本的Python解释器。当然更多的商业程序或软件是按照3.0及以上版本的语法规则来编写的。本书使用3.5版Python解释器。Python的官方网站 (www.python.org) 详细说明了每一个版本的更新内容，有兴趣的读者可以查阅。</p>
-<p>Jupyter Notebook是基于网页的用于交互计算的应用程序，可被应用于全过程计算：开发、文档编写、运行代码和展示结果。具体的说，它是以网页的形式打开，可以在网页页面中直接编写代码和运行代码，代码的运行结果也会直接在代码块下显示的程序。如在编程过程中需要编写说明文档，可在同一个页面中直接编写，便于作及时的说明和解释。</p>
+<p>本书的所有程序代码均以3.X版的Python解释器为基础，并且在Jupyter Lab下编写运行。本附录将指导读者在Windows操作系统下搭建本书建议使用的Python解释环境及Jupyter Notebook库，以便读者能更好的学习本书的示例代码、完成相应的练习。</p>
+<p>Python语言及其解释器从诞生至今经历了20多年的发展，版本号也从1.0发展到了3.10。这其中以2.7版本为重要分水岭，在此前后Python的语法规则有非常大的变化，2.7主要版本之后的更新直接跳至3.0及以上主要版本。当前主流商业程序或软件按照3.0及以上版本的语法规则来编写的。本书使用3.7版Python解释器。Python的官方网站 (www.python.org) 详细说明了每一个版本的更新内容，有兴趣的读者可以查阅。</p>
+<p>Jupyter Lab是基于网页的用于交互计算的应用程序，可被应用于全过程计算：开发、文档编写、运行代码和展示结果。具体的说，它是以网页的形式打开，可以在网页页面中直接编写代码和运行代码，代码的运行结果也会直接在代码块下显示的程序。如在编程过程中需要编写说明文档，可在同一个页面中直接编写，便于作及时的说明和解释。</p>
 <div class="section" id="1.-检查计算机有无安装Python解释器及其版本">
 <h2>1. 检查计算机有无安装Python解释器及其版本<a class="headerlink" href="#1.-检查计算机有无安装Python解释器及其版本" title="永久链接至标题">¶</a></h2>
 <p>首先需要检查当前计算机上是否安装了Python语言解释器及其版本。通常Windows操作系统并不会默认安装Python语言解释器，但是读者可能曾经主动或被动安装过。以Windows10操作系统为例，打开Windows下的命令行工具，如下图所示。输入命令：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -V
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -V
 </pre></div>
 </div>
-<p><img alt="2e64b9f38d2e4d5e827e3a918a218df3" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
+<p><img alt="13ac166fcf374835ac71eb2c713bd131" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
 <p>如果计算机上已经正确安装了Python，命令行窗口会输出已安装的版本号，例如：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Python <span class="m">3</span>.5.4
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.5.4
 </pre></div>
 </div>
-<p>其中<code class="docutils literal notranslate"><span class="pre">3.5.4</span></code>就是其版本号。本书建议使用<code class="docutils literal notranslate"><span class="pre">3.5.X</span></code>版本号，其中<code class="docutils literal notranslate"><span class="pre">X</span></code>可以是任意可能的数字。本书不建议使用更高级版本的Python解释器，主要是由于本书代码并未在更高版本下测试过，另外本书使用到的一些常用的库并不一定支持更新版本的Python解释器。如果你的计算机在执行上述命令后显示的版本并不是以<code class="docutils literal notranslate"><span class="pre">3.5</span></code>开头，尤其是以<code class="docutils literal notranslate"><span class="pre">2.7</span></code>开头时，强烈建议你卸载当前的版本安装3.5版本的Python解释器。</p>
+<p>其中<code class="docutils literal notranslate"><span class="pre">3.5.4</span></code>就是其版本号。本书建议使用<code class="docutils literal notranslate"><span class="pre">3.5.X</span></code>版本号，其中<code class="docutils literal notranslate"><span class="pre">X</span></code>可以是任意可能的数字。本课程涉及的绝大多数代码支持3.5至3.7之间的版本。这里仅以以<code class="docutils literal notranslate"><span class="pre">3.5</span></code>版本的Python解释器为例。</p>
 <p>如果执行上述命令显示的是如下图所示的一些信息:</p>
-<p><img alt="70de5901ce554f21a46ec05789664522" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
+<p><img alt="5e774ffbd434434185bc85ed732c78a4" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
 <p>表明你的计算机上并没有安装Python解释器。</p>
 <p>在Windows操作系统上卸载旧版本的Python解释器与卸载一般应用程序一样，在此不再赘述。可以通过下列链接下载3.5版本的Python解释器安装程序：(<a class="reference external" href="https://www.python.org/downloads/release/python-354/">https://www.python.org/downloads/release/python-354/</a>) 。主要版本的Python解释器通常都会提供32位和64位两种安装程序文件，建议选择和计算机操作系统相同位数的版本。右键点击“我的计算机”，选择“属性”来可以查看你的计算机是32位还是64位的系统。如下图系统类别(System type)行所示：</p>
-<p><img alt="42bf11e6f01f484487e174dc75c51a40" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
+<p><img alt="fa80f55d29734627899e186205dd787a" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="2.-安装Python解释器">
 <h2>2. 安装Python解释器<a class="headerlink" href="#2.-安装Python解释器" title="永久链接至标题">¶</a></h2>
 <p>下载好相应的Python解释器安装程序后，可以双击运行安装，选择“个性化安装”(Customize Installation)，同时勾选中“将Python3.5加入路径”（Add Python3.5 to Path)，如下图所示：</p>
-<p><img alt="ef2ad42716e7435196b9fdd8e5a25bee" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
+<p><img alt="218682951d4b4dcc8daf9c0f969a32aa" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
 <p>在随后的，安装提示信息中，勾选中所有选项，包括“为本计算机上所有用户安装”（for all users）:</p>
-<p><img alt="b6e0df43593e4a6db5500241fa882cb9" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
+<p><img alt="76901d456b344abf97b8e8ed721773ba" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
 <p>继续选中“为所有用户安装”（install for all users）。其余使用默认配置，跟随安装程序向导完成安装。</p>
-<p><img alt="2b6a30cf477d44858ecbb6de3273639e" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
+<p><img alt="506777cc145e4913a8b3aafe8744c252" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
 <p>当下图出现，即表明Python解释器已顺利安装完成。关闭该窗口。</p>
-<p><img alt="f319db7bde674ac0a04f4a5484bebc08" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
+<p><img alt="585096dc89594aa982592b3dd68e08ae" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
 <p>完成安装后，再次打开命令行工具，按照前文的描述确认符合要求版本的Python已经安装。到此，你的电脑已经具备了执行Python程序的能力了。可以重新启动计算机。</p>
 </div>
 <div class="section" id="3.-安装虚拟环境">
 <h2>3. 安装虚拟环境<a class="headerlink" href="#3.-安装虚拟环境" title="永久链接至标题">¶</a></h2>
-<p>本步骤虽不是必需，且对初学者也不是很容易理解，虽然可以直接跳过本步骤跟随下一步骤安装“jupyter notebook”，但仍然强烈建议读者跟随完成本步骤，这有助于维持你干净的计算机系统。简单地说，虚拟环境是计算机单独、额外开辟出来的一部分资源专门用于做某些特定的事情，与整个操作系统有严格的界限，也不会干扰操作系统。从Python3.3开始，创建Python虚拟环境已经变得非常容易。</p>
+<p>本步骤虽不是必需，且对初学者也不是很容易理解，虽然可以直接跳过本步骤跟随下一步骤安装“jupyter lab”，但仍然强烈建议读者跟随完成本步骤，这有助于维持你干净的计算机系统。简单地说，虚拟环境是计算机单独、额外开辟出来的一部分资源专门用于做某些特定的事情，与整个操作系统有严格的界限，也不会干扰操作系统。从Python3.3开始，创建Python虚拟环境已经变得非常容易。</p>
 <p>首先确定一个目录，这个目录将要被用来作为安装虚拟环境的位置，建议这个目录不要设置在很深层次，可以直接设在D盘符根目录下。打开Windows系统的命令行提示工具，切换至盘符D下：</p>
-<p><img alt="ca8a20a3855c427087f6e6b94f301e1c" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="a8f07e997dce4d7a907eb0306f4de0a9" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
 <p>随后在提示光标后输入如下命令：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m venv venv
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m venv venv
 </pre></div>
 </div>
-<p><img alt="76748d2ee8044f4584a0dfe5b53cfa15" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="eb486d4dc7df4718b9b635a7471ea5eb" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
 <p>这行命令表示用python所带的<code class="docutils literal notranslate"><span class="pre">venv</span></code>功能（命令中的第一个venv）在当前目录下建立一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>（命令中的第二个venv）的目录，并以该目录为根目录创建Python运行的虚拟环境。通常人们偏好使用<code class="docutils literal notranslate"><span class="pre">venv</span></code>这个目录名。顺利执行该命令后命令行提示工具不会有额外的提示，但目录<code class="docutils literal notranslate"><span class="pre">D:\</span></code>下已经多了一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>的目录，并且其下也已经有了一些子目录和文件，表明虚拟环境已经创建好了。</p>
 <p>虚拟环境创建好了之后会复制操作系统内安装的Python解释器的相关库。虚拟环境需要激活才能有效使用，它通常在被使用前通过命令激活，在使用结束后通过命令使之离开激活状态。在虚拟环境<code class="docutils literal notranslate"><span class="pre">venv</span></code>目录下有一个<code class="docutils literal notranslate"><span class="pre">Script</span></code>子目录，该子目录下有“activate.bat”和“deactivate.bat”两个文件，分别用于激活是失活虚拟环境。例如我们要激活刚刚创建的虚拟环境，可以在命令行提示工具下输入如下命令：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>D:<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate.bat
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>D:\venv\Scripts\activate.bat
 </pre></div>
 </div>
-<p><img alt="8c0c2ce41f644fa481066936c5edc63e" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
+<p><img alt="cd71eb52faf34f3f9b625054247cca23" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
 <p>激活后，命令行提示工具的提示符前会多出字符串<code class="docutils literal notranslate"><span class="pre">(venv)</span></code>，表明当前处在虚拟环境下，在该环境下执行Python程序时仅调用当前虚拟环境下的Python解释器下的一些库。使用命令</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip list
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>pip list
 </pre></div>
 </div>
 <p>查看当前已经安装的Python库，结果可能如下图所示：</p>
-<p><img alt="a6653d8fc4424460accd1fbd8968544e" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
+<p><img alt="3fea112a3ee74f81b57fd5083511dabf" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
 </div>
-<div class="section" id="4.-安装Jupyter-Notebook">
-<h2>4. 安装Jupyter Notebook<a class="headerlink" href="#4.-安装Jupyter-Notebook" title="永久链接至标题">¶</a></h2>
-<p>通常当操作系统刚装好Python解释器，通常会带有两个库，一个是“pip”，另一个是“setuptools”，这两个库也会随着虚拟环境的创建而被复制至虚拟环境下。在安装Jupyter Notebook前，依次使用下面两条命令来更新这两个库：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m pip install --upgrade pip
+<div class="section" id="4.-安装Jupyter-Lab">
+<h2>4. 安装Jupyter Lab<a class="headerlink" href="#4.-安装Jupyter-Lab" title="永久链接至标题">¶</a></h2>
+<p>通常当操作系统刚装好Python解释器，通常会带有两个库，一个是“pip”，另一个是“setuptools”，这两个库也会随着虚拟环境的创建而被复制至虚拟环境下。在安装Jupyter Lab前，依次使用下面两条命令来更新这两个库：</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m pip install --upgrade pip
 python -m pip install --upgrade setuptools
 </pre></div>
 </div>
-<p><img alt="4b3d4efa3f73435dbfc4fe535897405e" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
-<p>执行完上述命令后，使用下面的命令来安装“Jupyter Notebook”：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m pip install jupyterlab
+<p><img alt="7395fb93a15f4403ba8c88fda71f5241" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
+<p>执行完上述命令后，使用下面的命令来安装“Jupyter Lab”：</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m pip install jupyterlab
 </pre></div>
 </div>
-<p><img alt="68e2a3f0f3e343759602b8a36c01bd82" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
-<p>该过程由于需要安装较多的支持库，因此需要的时间略长些。一切顺利的情况下，Jupyter Notebook就安装好了，如下图所示：</p>
-<p><img alt="c910303242a146f88b6de916cf3fb6f5" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
-<p>在当前虚拟环境下执行下列命令：</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter notebook
+<p><img alt="5df5dc1e946c4ebfa4a2b3161a2d34a4" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p>该过程由于需要安装较多的支持库，因此需要的时间略长些。一切顺利的情况下，Jupyter Lab就安装好了，如下图所示：</p>
+<p><img alt="4ed85ca8e68546448ba5c7d3354f7b50" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
+</div>
+<div class="section" id="5.-使用Jupyter-Notebook进行Python交互式编程">
+<h2>5. 使用Jupyter Notebook进行Python交互式编程<a class="headerlink" href="#5.-使用Jupyter-Notebook进行Python交互式编程" title="永久链接至标题">¶</a></h2>
+<p>在当前虚拟环境下，如下图所示，通过命令行输入下列命令并按回车执行该命令：</p>
+<div class="highlight-code notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
-<p><img alt="17cedd3851cc411896f0510ae0f8f31b" class="no-scaled-link" src="../../_images/0202_python_run_jupyter_notebook.png" style="width: 500px;" /></p>
-<p>就启动Jupyter Notebook服务，并打开浏览器，进入Jupyter Notebook提供的基于网页的交互式编程环境了： <img alt="c13022591df64ede8c0d46ae2fb48386" class="no-scaled-link" src="../../_images/0301_jupyter_notebook.png" style="width: 500px;" /></p>
-<p>你看到的界面可能比上图显示的文件夹要多，这取决于你在命令行提示窗口输入“jupyter notebook”时的当前目录。 ### 5. 使用Jupyter Notebook进行Python交互式编程 使用Jupyter Notebook进行Python编程时，需要先建立一个notebook文件。在上图所示的右侧偏上方区域点击按钮“New”，在弹出的项目中选择“Python3”，如下图所示。</p>
-<p><img alt="6959d2ab3ce945bc95e2241a1c603413" class="no-scaled-link" src="../../_images/0302_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
-<p>如此就建立了一个以Python3为解释器的交互式编程环境，如下图所示。图中的绿色文本框内可以用来编写Python程序代码，书写完毕后可以用过点击上方的“运行”(Run)按钮来执行本段代码，程序执行的结果会直接出现在该段代码的下方。</p>
-<p><img alt="a915bd56acbb4581ba7cca8c273b61ae" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_create_file.png" style="width: 500px;" /></p>
-<p>还可以通过点击上方工具栏上的“+”号来增加代码输入框，选中的输入框以特殊的边框颜色表示。也可以在选中某一个输入框后，切换工具栏上方的属性。常见的输入框的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。此外，还可也在该窗口内重命名这个notebook文件，直接点击最上方的文件名（上图中显示的文件名为
-Untitled），会弹出一个输入框，提示修改文件名，在这里可以输入你想要的文件名。</p>
-<p><img alt="d1b254f605864eed972bbffb2904ed72" class="no-scaled-link" src="../../_images/0303_jupyter_notebook_run_code.png" style="width: 500px;" /></p>
+<p><img alt="0c91d358863c433aa450b29da8945f8b" class="no-scaled-link" src="../../_images/0203_command_jupyter_lab.png" style="width: 500px;" /></p>
+<p>上述命令的运行需要一些时间等后，稍后启动Jupyter Lab服务，并打开浏览器，进入如下图所示的Jupyter Lab提供的基于网页的交互式编程环境：</p>
+<p><img alt="65c27159c24c4e88be0b35eda4eb6568" class="no-scaled-link" src="../../_images/0301_jupyter_lab_launch.png" style="width: 500px;" /></p>
+<p>上图界面左侧显示的内容和资源管理器中的内容一致，右侧有几个交大的方形按钮，选中“Notebook”栏目下的“Python 3”方形按钮，会打开一个新的窗口供编写代码。如下图所示。</p>
+<p><img alt="23012fc2e6394e86ad11e978b1d6f68b" class="no-scaled-link" src="../../_images/0302_jupyter_lab_new_file.png" style="width: 500px;" /></p>
+<p>如此就在界面的右侧建立并展示了一个以Python3为解释器的交互式编程环境文件，该文件名默认为“untitled.ipynb”。其中蓝色竖条右侧的灰色区域可以用鼠标点击选中形成一个代码输入单元。我们像下图中显示的那样输入如下的一行Python代码:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我正在Jupyter Lab编程环境下编写Python代码&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="6.-退出Jupyter-Notebook及虚拟环境">
-<h2>6. 退出Jupyter Notebook及虚拟环境<a class="headerlink" href="#6.-退出Jupyter-Notebook及虚拟环境" title="永久链接至标题">¶</a></h2>
-<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter notebook”而启动noteboo的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="a10fa29c909f4345916929a517dfbe7f" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
+<p><img alt="52b005f302b94fb5bb236445d3063748" class="no-scaled-link" src="../../_images/0303_jupyter_lab_write_code.png" style="width: 500px;" /></p>
+<p>书写完毕后，将鼠标或光标保留在当前单元格内，保持左侧的蓝色竖条可见，通过下面三种方式之一来执行这一个代码单元格： 1. 点击并展开菜单“Run”，点击第一个子菜单“Selected Cells” 2. 直接点击界面右侧单元格上方工具栏中的表示向右的三角形按钮来运行当前单元格 3. 直接同时按下键盘中的“Shift”和“Enter”键</p>
+<p>运行后，可以看出当前单元格下方多出一行文字，那就是这一行程序的输出信息。</p>
+<p><img alt="0bf4328cde7e49159790e7c31fe61c0c" class="no-scaled-link" src="../../_images/0304_jupyter_lab_run_code.png" style="width: 500px;" /></p>
+<p>还可以通过点击工具栏上的“+”号来增加单元格。可以在选中某一个单元格后，切换工具栏上方的属性。常见的单元格的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。 此外，可以通过界面左侧的文件浏览视图来修改当前文件的文件名。选中一个文件并右键点击，选择“rename”，在弹出的窗口里输入你想要的文件名。</p>
+<p>更多关于如何使用“Jupyter Lab”的内容将在课程中详细介绍。 ### 6. 退出Jupyter Notebook及虚拟环境</p>
+<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter lab”的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="3a225b1fdc4348ba8cf6a7db3a327cb3" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
 <p>通过在命令行提示窗口内执行虚拟环境中路径为“venv:nbsphinx-math:<cite>Scripts</cite><span class="math">\deactivate</span>.bat”离开虚拟环境。如下图所示。</p>
-<p><img alt="9e988b7bb6a9426d9f80ed612e06889a" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
+<p><img alt="2ef2afa64f444c61900a3dc025e7cd4d" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
 <p>如此，就完全顺利退出了Windows操作系统下的虚拟Python编程环境。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
