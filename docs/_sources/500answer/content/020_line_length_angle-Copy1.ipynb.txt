@@ -17,7 +17,7 @@
    "source": [
     "### Answer for Assignments 作业参考答案\n",
     "\n",
-    "<span style=\"color:red\">**Run the following codes to open draw area and register the two methods before running the answer codes for each assignment</span>**"
+    "<span style=\"color:red\">**Run the following codes to open draw area and register the two methods before running the answer codes for each assignment**</span>"
    ]
   },
   {
@@ -267,7 +267,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 10,
    "id": "f6042404-5a5e-4702-90ca-9153821d0ebf",
    "metadata": {},
    "outputs": [

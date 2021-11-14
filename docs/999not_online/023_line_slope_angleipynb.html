@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第20讲 线段与坐标轴的平行关系及长度 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第22讲 线段的倾斜程度 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -199,6 +199,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../100beginner/content/020_line_length_angle.html">
      第20讲 线段与坐标轴的平行关系及长度
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../100beginner/content/021_square.html">
+     第20讲 正方形与乘方
     </a>
    </li>
   </ul>
@@ -414,7 +419,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/999not_online/020_line_length_angle.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/999not_online/023_line_slope_angleipynb.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -738,62 +743,17 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第20讲-线段与坐标轴的平行关系及长度">
-<h1>第20讲 线段与坐标轴的平行关系及长度<a class="headerlink" href="#第20讲-线段与坐标轴的平行关系及长度" title="永久链接至标题">¶</a></h1>
+<div class="section" id="第22讲-线段的倾斜程度">
+<h1>第22讲 线段的倾斜程度<a class="headerlink" href="#第22讲-线段的倾斜程度" title="永久链接至标题">¶</a></h1>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
-<p>已知一个点在平面直角坐标系中的位置可以用一个包含2个元素的<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型的变量表示:<code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>，并且连接两个点并以两点为端点可以绘制出一条线段。 Given that the position of a point in a plane can be uniquely defined by a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> variable with a length of 2: <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>, and a line can be drawn if the two points are used as endpoints.</p>
-<p>请 Please： 1. 使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
-<ol class="arabic simple" start="2">
-<li><p>下面的5组数据中的每一组数据分别表示2个点的坐标，并对应一条线段。请绘制出对应的每一条线段，并标记每一个端点。Each of the following 5 sets of data respectively represents the coordinates of 2 points, and corresponding to a line segment. Please draw each corresponding line segment and mark each end point.</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
 <ol class="arabic simple">
-<li><p>Line 1: A(5, 5), B(5, 17)</p></li>
-<li><p>Line 2: C(12, 3), D(28, 3)</p></li>
-<li><p>Line 3: E(10, 15), F(20, 5)</p></li>
-<li><p>Line 4: G(20, 8), H(30, 15)</p></li>
-<li><p>Line 5: I(15,23), J(30, 10)</p></li>
+<li><p>以点A(5, 5)为一个端点，点B(35, 20)为另一个端点，绘制出一条线段AB。</p></li>
 </ol>
-</li>
+<ol class="arabic simple" start="2">
+<li><p>在坐标中线段AB的下方，寻找点C，使得连接AC和BC的线段分别平行与X轴和Y轴，给出点C的位置(横纵坐标值)</p></li>
 </ol>
-<ol class="arabic simple" start="3">
-<li><p>说出哪个(些)线段与坐标轴平行，哪些(个)线段与坐标轴不平行，大概说出每一条线段的长度。 Tell which line segment(s) are parallel to the coordinate axis, and which line segment(s) are not. Roughly tell the length of each line segment.</p></li>
-</ol>
-<ol class="arabic simple" start="4">
-<li><p>补全下面的方法判断两个点确定的线段是否与某一坐标轴平行。Complete the following method to determine whether the line segment determined by two points is parallel to either of the coordinate axises.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_parallel_to_either_axis</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-     <span class="c1">#TODO: add your code here</span>
-     <span class="c1">#      添加你的代码</span>
-     <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>补全下面的方法计算与某一坐标轴平行的线段的长度。 Complete the following method to calculate the length of a line segment defined by two points and parallel to an axis.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line_length</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-     <span class="k">if</span> <span class="n">is_parallel_to_either_axis</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-         <span class="c1">#TODO: add your code here</span>
-         <span class="c1">#      添加你的代码</span>
-
-     <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="6">
-<li><p>编写自己的代码，使用第5步完成的方法，计算图中与某一坐标轴平行的线段的长度。打印方法得到的结果并与你在第3步预估的结果比较。 Write your own code and use the method completed in step 5 to calculate the length of a line segment parallel to a certain coordinate axis in the figure. Print the result of the method and compare it with the result you estimated in step 3.</p></li>
-<li><p>思考：如果两个点确定的线段不与任何一条坐标轴平行，如何(编程)计算这条线段的长度? Thinking: If the line segment determined by two points is not parallel to any coordinate axis, how to calculate (programmatically) the length of this line segment?</p></li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<p><strong>Answer Area</strong></p>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
@@ -833,153 +793,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">is_parallel_to_either_axis</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    point1 : tuple of length 2, example (10, 5)</span>
-<span class="sd">    point2 : tuple of length 2, ...</span>
-<span class="sd">    return: True / False</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># point1 : tuple (x, y)</span>
-    <span class="c1"># point2 : tuple (x, y)</span>
-    <span class="c1"># return: True / False</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-</div>
 <ol class="arabic simple" start="2">
 <li></li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">17</span><span class="p">),</span>
-          <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-          <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
-          <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
-          <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-         <span class="p">]</span>
-
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yellow&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;cyan&quot;</span><span class="p">]</span>
-<span class="n">markers</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJ&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">line</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="n">marker</span> <span class="o">=</span> <span class="n">markers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        <span class="n">mark</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">marker</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic" start="3">
-<li><p>AB is parallel to Y axis; CD is parallel to X axis; all other lines are not parallel to either X or Y axis.</p>
-<p>If a line segment is parallel to X or Y axis，the coordinate values of the two points that define the line segment follows the following rule: 如果一个线段与X或者Y轴平行，决定这个线段的两个端点的坐标值有下面的规律：</p>
-<p>For example 举例：</p>
-<p>line segment CD is parallel to X axis, C and D are endpoints with coordinate values are (12, 3) and (28, 3), respectively. The length of line segment CD can be figured out by the horizontal coordinate values, which are 12 and 28; the vertical coordinate vlues of C and D are the same.</p>
-<p>线段CD平行于X轴，C和D是这个线段上的两个端点，然后C的坐标是(12,3), D的坐标是(28,3)。这个线段的长度可以用CD的横坐标值来计算，他们的纵坐标值是相等的，都是3。</p>
-<p>line segment AB is parallel to Y axis, the horizontal coordinate values of A and B are equal to 5, their vertical coordinate values can be used to calculate the length of AB.</p>
-<p>AB, (5,5), (5,17) parallel to Y Axis, 横坐标值相同，都是5，纵坐标的值可以用来计算线段AB的长度。</p>
-</li>
-</ol>
-<ol class="arabic simple" start="4">
-<li></li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">is_parallel_to_either_axis</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="5">
-<li></li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">line_length</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">is_parallel_to_either_axis</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;length of line: </span><span class="si">{}</span><span class="s2"> to </span><span class="si">{}</span><span class="s2"> is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;two points are same.&quot;</span><span class="p">)</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># None</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;line: </span><span class="si">{}</span><span class="s2"> to </span><span class="si">{}</span><span class="s2"> is not parallel to either axis&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">))</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  I don&#39;t know how to calculate its length&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="6">
-<li></li>
-</ol>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">line_length</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-length of line: (5, 5) to (5, 17) is 12
-length of line: (12, 3) to (28, 3) is 16
-line: (10, 15) to (20, 5) is not parallel to either axis
-  I don&#39;t know how to calculate its length
-line: (20, 8) to (30, 15) is not parallel to either axis
-  I don&#39;t know how to calculate its length
-line: (15, 23) to (30, 10) is not parallel to either axis
-  I don&#39;t know how to calculate its length
-</pre></div></div>
-</div>
 </div>
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
@@ -987,25 +803,7 @@ line: (15, 23) to (30, 10) is not parallel to either axis
 <li><p>复习tuple</p></li>
 <li><p>复习qianglib的一些方法</p></li>
 <li><p>复习方法的返回值</p></li>
-<li><p>介绍方法<code class="docutils literal notranslate"><span class="pre">abs</span></code></p></li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">qiang_abs</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    x is a integer or decimal value</span>
-<span class="sd">    returns: aboslute value of x</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">x</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="计算机小知识">
 <h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
@@ -1013,43 +811,15 @@ line: (15, 23) to (30, 10) is not parallel to either axis
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<ol class="arabic">
-<li><p>Given the coordinate values of eight points as follows: 已知八个点的坐标分别为:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A. (5, 5)
-B. (10, 0)
-C. (20, 0)
-D. (25, 5)
-E. (25, 15)
-F. (20, 20)
-G. (10, 20)
-H. (5, 15)
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<p>write code to tell, among <strong>all</strong> the line segments defined by any two points in the above eight points, which are parallel to X or Y axis, what are the lengthes of them? 编程求解这些点能够组成的<strong>所有</strong>线段中，有哪些是与坐标轴平行的，他们的长度分别是多少？</p>
-</li>
-</ol>
-<ol class="arabic" start="2">
-<li><p>Write code to draw a <strong>line sgement</strong> with the two end points are A(10, 10) and B(30, 10); extend the line segment horizontally until it reaches the border of the coordiante paper, which formes a <strong>line</strong> AB. The relation ship between any point in the paper and the line AB could only be one of the following:</p>
-<p>编写程序在坐标纸上以点A(10, 10)和B(30, 10)为端点绘制出一条“线段AB”，同时左右无限延长AB可以得到一条没有端点的直线，可以记为“直线AB”，坐标纸中的任何一个点与直线AB的位置关系只可能是下面情况中的一种：</p>
-<ol class="arabic simple">
-<li><p>The point is on line AB 这个点在直线AB上</p></li>
-<li><p>The point is above line AB 这个点在直线AB的上方</p></li>
-<li><p>The point is below line AB 这个点在直线AB的下方</p></li>
-</ol>
-<p>Write a method to tell the position relation ship between any point and line AB. The method only receive one parameter, which is a point defined by tuple (x, y), and output one of the three possibilities. 编写一个方法给出坐标纸中的任何一个点与该直线AB的位置关系。该方法只接受一个参数，它以(x, y)表示的tuple类型变量表示点的坐标，该方法返回上述三种可能的位置关系中的一种。</p>
-<p>For each of the following poitns, mark it in the paper, observe its position with respect to line AB. Call the method you created and compare the result of your method and your observation. Are the two result same? 针对下面的每一个点，在坐标纸中标记它，观察并记录它与直线AB的位置关系。随后编程调用你编写的方法，将各点的坐标作为方法的参数观察方法的返回值，比较你观察记录的结果与方法输出的结果，他们的结果是否一致？</p>
-<ol class="arabic simple">
-<li><p>(0, 0)</p></li>
-<li><p>(10, 0)</p></li>
-<li><p>(10, 10)</p></li>
-<li><p>(20, 10)</p></li>
-<li><p>(35, 10)</p></li>
-<li><p>(25, 20)</p></li>
-<li><p>(10, 23)</p></li>
-<li><p>(0, 10)</p></li>
-</ol>
-</li>
-</ol>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
