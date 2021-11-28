@@ -89,22 +89,6 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6f041a5f-71c1-477c-95be-7e3361e55a3c",
-   "metadata": {},
-   "source": [
-    "**Answer Area**"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "f98826bb-85f0-431c-b110-c72f99caf65a",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
    "id": "1270f26d-e2ca-45e0-a679-ec82361795da",
    "metadata": {},
    "source": [
@@ -142,16 +126,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "fe71a786-9c32-4ccb-8ac0-747e43eb8623",
-   "metadata": {},
-   "source": [
-    "1. "
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "id": "b1ae7be3-fdde-46b5-820e-c35a55d2fbe0",
    "metadata": {},
    "outputs": [],
@@ -163,7 +139,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "id": "bed66e63-7d02-4c22-bf10-8863883aab94",
    "metadata": {},
    "outputs": [],
@@ -174,8 +150,16 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "fe71a786-9c32-4ccb-8ac0-747e43eb8623",
+   "metadata": {},
+   "source": [
+    "1. "
+   ]
+  },
+  {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "id": "0cf88bf6-e6ba-4f56-a1fb-09b5e09d594b",
    "metadata": {},
    "outputs": [],
@@ -186,7 +170,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": null,
    "id": "a4a0d700-2265-4af1-b6c9-408be9bb5635",
    "metadata": {},
    "outputs": [],
@@ -197,26 +181,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "id": "b052fe87-5adc-4316-ba94-194acab8c074",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "10\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "side_length = B[0] - A[0]\n",
     "print(side_length)"
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "97170fed-9174-4af2-8dad-6140db8ab723",
+   "metadata": {},
+   "source": [
+    "2."
+   ]
+  },
+  {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "id": "a5bc912d-ff31-4d1d-8769-44fa70ccb19b",
    "metadata": {},
    "outputs": [],
@@ -227,7 +211,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "id": "56d93e4d-97a4-467c-aa43-e0c2fed11816",
    "metadata": {},
    "outputs": [],
@@ -238,7 +222,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": null,
    "id": "4118544a-76bf-43c0-bc74-99f231247d07",
    "metadata": {},
    "outputs": [],
@@ -246,12 +230,12 @@
     "square_down = [A, B, C, D]  \n",
     "            # [A, D, C, B]\n",
     "            # [B, C, D ，A]\n",
-    "polygon(square_down, color=\"red\", linewidth=3)       \n"
+    "polygon(square_down, color=\"red\", linewidth=3)       "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": null,
    "id": "3ecb3a7d-701f-4001-b6b2-bd7efb406f0b",
    "metadata": {},
    "outputs": [],
@@ -262,7 +246,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": null,
    "id": "ffff4797-9472-42cc-8b13-176f3717a671",
    "metadata": {},
    "outputs": [],
@@ -273,7 +257,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": null,
    "id": "a29ad60d-b9b9-46af-9aae-1b81900dcddd",
    "metadata": {},
    "outputs": [],
@@ -283,106 +267,111 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 13,
-   "id": "30fb64d2-0aff-44dd-9e4e-1c52b5535e74",
+   "cell_type": "markdown",
+   "id": "b9f21440-8672-4b85-9df8-d9cfe623b0bc",
    "metadata": {},
-   "outputs": [],
    "source": [
-    "square_unit = [(1, 1), (1, 2), (2, 2), (2, 1)]\n",
-    "polygon(square_unit, fillcolor=\"black\", color=\"black\")"
+    "3. "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
-   "id": "7d7052d2-2621-46dd-a3bb-658298b433e4",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "square_unit2 = [(1, 5), (3, 5), (3, 7), (1, 7)]\n",
-    "polygon(square_unit2, fillcolor=\"yellow\", color=\"black\")"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": null,
    "id": "a1da77b9-5d4a-433b-b2ec-f3056edf9806",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "4\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
-    "a = 2\n",
-    "area = a*a\n",
-    "print(area)"
+    "num_square_unit = side_length * side_length\n",
+    "print(\"number of square unit: {}\".format(num_square_unit))"
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 15,
-   "id": "d93dbef7-7c1b-4994-8e4c-a0bfd559b289",
+   "cell_type": "markdown",
+   "id": "23b1bba4-d09e-48fa-86a0-5ffd6d411755",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "4\n"
-     ]
-    }
-   ],
    "source": [
-    "area2 = a**2\n",
-    "print(area2)"
+    "4.\n",
+    "\n",
+    "| A       |  B      | Side Length | #Unit Square(Area) |\n",
+    "|:---------:|:---------:|----:|--------------------:|\n",
+    "|(10, 12) |(11, 12) |  1   |      1                   |\n",
+    "|(10, 12) |(12, 12) |  2   |      4                   |\n",
+    "|(10, 12) |(13, 12) |  3   |      9                   |\n",
+    "|(10, 12) |(14, 12) |  4   |       16                 |\n",
+    "|(10, 12) |(15, 12) |  5   |      25                  |\n",
+    "|(10, 12) |(16, 12) |  6   |      36                  |\n",
+    "|(10, 12) |(17, 12) |  7   |      49                  |\n",
+    "|(10, 12) |(18, 12) |  8   |      64                  |\n",
+    "|(10, 12) |(19, 12) |  9   |      81                  |\n",
+    "|(10, 12) |(20, 12) |  10   |     100                 |\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "24596bc3-18a1-4c26-b202-71ad869fb19e",
+   "metadata": {},
+   "source": [
+    "5."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": null,
    "id": "9cd3ee42-cff9-4748-8e97-b47f55ab9527",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "4\n"
-     ]
-    },
-    {
-     "data": {
-      "text/plain": [
-       "True"
-      ]
-     },
-     "execution_count": 16,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "print(a**2)  # 平方, sqaure, exponent of 2, power of 2\n",
-    "a**2 == a*a"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 17,
-   "id": "6ede6ace-b1dd-462b-b530-aefd3aa8a728",
    "metadata": {},
    "outputs": [],
    "source": [
     "def square_area(side_length):\n",
-    "    area = None\n",
-    "    # TODO\n",
-    "    return area"
+    "    return side_length**2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "96932220-1f5c-4533-9130-ff4ebd109404",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for side_length in range(1, 11):\n",
+    "    area = square_area(side_length)\n",
+    "    print(\"area for side length {:2} is {:3}\".format(side_length, area))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "69475c3d-0d44-4b23-9fd6-f9b336bb6845",
+   "metadata": {},
+   "source": [
+    "6."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6ede6ace-b1dd-462b-b530-aefd3aa8a728",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def side_length_of_square(area):\n",
+    "    side_length = 0\n",
+    "    dx = 0.001\n",
+    "    while square_area(side_length) < area:\n",
+    "        side_length += dx\n",
+    "    \n",
+    "    return side_length"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39ed86e2-a5cd-448a-b53c-56dc79383624",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for area in [1, 4, 9, 15, 25, 30]:\n",
+    "    side_length = side_length_of_square(area)\n",
+    "    print(\"side length for square area {:2} is close to {:<4.3}\".format(\n",
+    "        area, side_length))    "
    ]
   },
   {
@@ -458,34 +447,6 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 18,
-   "id": "441510dc-9d32-41f3-8f90-4649f07e30cb",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Declare and implement your method\n",
-    "def draw_square(center, side_length):\n",
-    "    #TODO add your own code here\n",
-    "    return"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 19,
-   "id": "e63e1387-db63-457f-94db-cf3f48b62271",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# call your method to draw\n",
-    "center = (15, 15)\n",
-    "side_lengths = [2, 4, 6, 10, 12]\n",
-    "# use for or while loop to draw 5 squares, using the method just created.\n",
-    "\n",
-    "# TODO add your own code here"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "id": "04b5ee4c-8dd0-451e-b339-3384cb6dffe4",
    "metadata": {},
@@ -493,16 +454,6 @@
     "2. 整数3，4和5这三个数字之间有一种奇妙的关系：$$3^2 + 4^2 = 5^2$$ 这种关系可以描述为：**3个整数（可以不是相邻的）中，两个较小整数的平方的和恰好等于最大的那个整数的平方**。事实上满足这样关系的整数有无数组。例如5，12和13也是这样($5^2 + 12^2 = 13^2$)。请你编写一段程序找出最大的数不超过100时的所有满足这种关系的3个整数组合。\n",
     "\n",
     "   There is a wonderful relationship between the three numbers of integers 3, 4 and 5:$$3^2 + 4^2 = 5^2$$ This relationship can be described as: **Among 3 integers (which may not be adjacent), the sum of the squares of the two smaller integers is exactly equal to the square of the largest integer**. In fact, there are infinite number of such set. Here is another case: 5, 12, and 13, where $5^2 + 12^2 = 13^2$. Please write a program to find all combinations of 3 integers that satisfy this relationship when the largest number does not exceed 100."
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 20,
-   "id": "beac7442-cfde-45d1-98c0-3740edfbfedb",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#TODO write your code here"
    ]
   },
   {
@@ -526,28 +477,40 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": null,
    "id": "5dfc553c-35ec-4d46-9340-d8837ce37f1f",
    "metadata": {},
    "outputs": [],
    "source": [
     "def verify_law(n):\n",
     "    is_law_correct = None\n",
-    "    #TODO add your own code here\n",
     "    return is_law_correct"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": null,
    "id": "3703937a-3d29-4068-a316-7555d729402a",
    "metadata": {},
    "outputs": [],
    "source": [
     "for i in range(1, 101):\n",
     "    #TODO call your method and print out the result.\n",
+    "    result = verify_law(i)\n",
+    "    if result is True:\n",
+    "        print(\"for n = {:3}, the law holds\".format(i))\n",
+    "    else:\n",
+    "        print(\"for n = {:3}, the law doesn't hold\".format(i))\n",
     "    pass"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "df4769a7-1dab-43d1-ba66-c13742f65f0d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
