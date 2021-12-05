@@ -5,7 +5,7 @@
    "id": "relative-location",
    "metadata": {},
    "source": [
-    "## 第22讲 两个数的和与差的平方"
+    "## 第22讲 两个数和与差的平方及几何意义"
    ]
   },
   {
@@ -29,7 +29,7 @@
    "id": "075dc2c3-429c-4e18-af1c-d6dadc442312",
    "metadata": {},
    "source": [
-    "1. 绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位值书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use \"red\" color and line width 3 to draw it. Write a letter \"A\" in the center of the square."
+    "1. 绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位置书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use \"red\" color and line width 3 to draw it. Write a letter \"A\" in the center of the square."
    ]
   },
   {
@@ -37,7 +37,7 @@
    "id": "85c32d31-f2ea-4ac1-bb4f-783f228d8829",
    "metadata": {},
    "source": [
-    "2. 绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。  Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use \"blue\" color and line width 3 to draw it. Write a letter \"A\" in the center of the square."
+    "2. 绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。  Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use \"blue\" color and line width 3 to draw it. Write a letter \"B\" in the center of the square."
    ]
   },
   {

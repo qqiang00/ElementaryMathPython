@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第22讲 两个数的和与差的平方 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第22讲 两个数和与差的平方及几何意义 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -210,7 +210,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     第22讲 两个数的和与差的平方
+     第22讲 两个数和与差的平方及几何意义
     </a>
    </li>
   </ul>
@@ -752,16 +752,16 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第22讲-两个数的和与差的平方">
-<h1>第22讲 两个数的和与差的平方<a class="headerlink" href="#第22讲-两个数的和与差的平方" title="永久链接至标题">¶</a></h1>
+<div class="section" id="第22讲-两个数和与差的平方及几何意义">
+<h1>第22讲 两个数和与差的平方及几何意义<a class="headerlink" href="#第22讲-两个数和与差的平方及几何意义" title="永久链接至标题">¶</a></h1>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
 <ol class="arabic simple">
-<li><p>绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位值书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use”red” color and line width 3 to draw it. Write a letter “A” in the center of the square.</p></li>
+<li><p>绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位置书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use”red” color and line width 3 to draw it. Write a letter “A” in the center of the square.</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><p>绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。 Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use”blue” color and line width 3 to draw it. Write a letter “A” in the
+<li><p>绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。 Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use”blue” color and line width 3 to draw it. Write a letter “B” in the
 center of the square.</p></li>
 </ol>
 <ol class="arabic simple" start="3">
@@ -769,7 +769,7 @@ center of the square.</p></li>
 and line width 2 to draw it.</p></li>
 </ol>
 <ol class="arabic simple" start="4">
-<li><p>第三个正方形被分割为4个部分，分别为正方形A、B、以及正方形A的上方B的左侧和正方形A的右方B的下方的剩余的两块矩形区域，记作C和D并在图上标记C，D。the Third square is divided into 4 parts: square A, B, and rectangle above A, and rectangle below B, denoted as C and D, respectively. 完成后的图形应该如下图所示： The finished figure should look like the following: <img alt="31d666b567a348d1bf7c8b4c8fbe1cab" class="no-scaled-link" src="../../_images/L022_square_sum.png" style="width: 600px;" /></p></li>
+<li><p>第三个正方形被分割为4个部分，分别为正方形A、B、以及正方形A的上方B的左侧和正方形A的右方B的下方的剩余的两块矩形区域，记作C和D并在图上标记C，D。the Third square is divided into 4 parts: square A, B, and rectangle above A, and rectangle below B, denoted as C and D, respectively. 完成后的图形应该如下图所示： The finished figure should look like the following: <img alt="3891614cf90c431ca645e998eef81545" class="no-scaled-link" src="../../_images/L022_square_sum.png" style="width: 600px;" /></p></li>
 </ol>
 <ol class="arabic simple" start="5">
 <li><p>先根据第三个正方形的边长计算该正方形的面积，记作S1。再根据这个正方形由四块区域ABCD组成，计算这四块区域的面积的和，记作S2。S1的大小和S2的大小应该相等。First calculate the area of the third square based on the side length of it, denoted as S1. Then according to this square is composed of four areas A,B,C, and D, calculate the sum of the four areas, denoted as S2. S1 should be exactly equal to S2.</p></li>
