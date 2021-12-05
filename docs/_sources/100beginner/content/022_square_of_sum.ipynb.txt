@@ -117,7 +117,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 47,
+   "execution_count": 18,
    "id": "06a7859a-b00c-46b3-ae98-5b423dc22f8e",
    "metadata": {},
    "outputs": [],
@@ -127,35 +127,134 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 19,
    "id": "81b406f0-0270-4d1b-b0fc-546b5f3046b5",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "SPA = (7, 2) # start point A, lower bottom 左下角顶点\n",
+    "side_A, side_B = 10, 8 # side length"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 20,
+   "id": "c23c7470-c2a0-415c-80e2-f471501f01e0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_square(left_bottom, side_length):\n",
+    "    square = []\n",
+    "    x, y = left_bottom[0], left_bottom[1]\n",
+    "    square.append(left_bottom)\n",
+    "    square.append((x+side_length, y))\n",
+    "    square.append((x+side_length, y+side_length))\n",
+    "    square.append((x, y+side_length))\n",
+    "    return square\n",
+    "\n",
+    "def get_center(left_bottom, side_length):\n",
+    "    x = left_bottom[0]+side_length/2\n",
+    "    y = left_bottom[1]+side_length/2\n",
+    "    return (x, y)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
    "id": "fb5c795f-de79-4d8e-a91b-70fa490b678d",
    "metadata": {},
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[(7, 2), (17, 2), (17, 12), (7, 12)]\n"
+     ]
+    }
+   ],
+   "source": [
+    "square_A = get_square(SPA, side_A)\n",
+    "print(square_A)\n",
+    "polygon(square_A, linewidth=3, color=\"red\")\n",
+    "center_A = get_center(SPA, side_A)\n",
+    "text(center_A, \"A\", align=\"center\", font=(\"Arial\", 30, \"normal\"), color=\"red\")"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 22,
    "id": "317b32e4-0576-43b6-b073-c59a98e7bdc3",
    "metadata": {},
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[(17, 12), (25, 12), (25, 20), (17, 20)]\n"
+     ]
+    }
+   ],
+   "source": [
+    "SPB = (SPA[0]+side_A, SPA[1]+side_A)\n",
+    "square_B = get_square(SPB, side_B)\n",
+    "print(square_B)\n",
+    "polygon(square_B, linewidth=3, color=\"blue\")\n",
+    "center_B = get_center(SPB, side_B)\n",
+    "text(center_B, \"B\", align=\"center\", font=(\"Arial\", 30, \"normal\"), color=\"blue\")"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 23,
    "id": "0edf7d27-96fd-485c-9609-6fa9c5ea9685",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "square_big = get_square(SPA, side_A+side_B)\n",
+    "polygon(square_big, linewidth=2, color=\"black\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "67d88e8a-6d60-4277-b8e8-d967eaaad215",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pos_C = (center_A[0], SPB[1]+side_B/2)\n",
+    "text(pos_C, \"C\", align=\"center\", font=(\"Arial\", 30, \"normal\"), color=\"black\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "a2bfd796-f44c-4504-9f94-0566cf4504bf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pos_D = (center_B[0], center_A[1])\n",
+    "text(pos_D, \"D\", align=\"center\", font=(\"Arial\", 30, \"normal\"), color=\"black\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "6fb66c25-f78e-410a-a117-6c5146434cbe",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "S1 = (side_A + side_B)**2\n",
+    "S2 = side_A**2 + side_B**2 + 2 * side_A * side_B\n",
+    "print(S1 == S2)"
+   ]
   },
   {
    "cell_type": "markdown",
