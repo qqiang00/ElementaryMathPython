@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>附录二 第一期招生通知（草稿） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>附录二 第一期招生通知 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -353,7 +353,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     附录二 第一期招生通知（草稿）
+     附录二 第一期招生通知
     </a>
    </li>
    <li class="toctree-l2">
@@ -522,8 +522,256 @@
         
               <div>
                 
-  <div class="section" id="附录二-第一期招生通知（草稿）">
-<h1>附录二 第一期招生通知（草稿）<a class="headerlink" href="#附录二-第一期招生通知（草稿）" title="永久链接至标题">¶</a></h1>
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="附录二-第一期招生通知">
+<h1>附录二 第一期招生通知<a class="headerlink" href="#附录二-第一期招生通知" title="永久链接至标题">¶</a></h1>
 <p>2022年1月1日发布，最近更新日期：2022年1月1日</p>
 <p>家长朋友们：</p>
 <p>经过近一年的筹备和试讲，由叶强老师设计并主讲的《用Python学数学》初级编程培训班现在开始招收小学4年级（含）以上的小朋友们了。 如果您希望自己的孩子既能学习到一些编程知识和技能同时也能加深对相应数学知识的理解，那么这个课程值得您的关注。</p>
@@ -557,11 +805,12 @@
 <li><p>在开学后2周以内，如果有学生退出，等候区的学生依次会被通知入学；</p></li>
 <li><p>开学2周后仍然在等候区的学生将不再被录取；</p></li>
 <li><p>被录取的学生有资格注册学期，按照教学日历完成每一学期的学习；</p></li>
-<li><p>被录取有资格注册的学生在学期开学前一周仍未注册的将被视为自动放弃；</p></li>
-<li><p>因放弃注册空出的名额将会派法给等候区内排名最考前的学生；</p></li>
+<li><p>被录取有资格注册的学生在学期开学<strong>前一周</strong>仍未注册的将被视为自动放弃；</p></li>
+<li><p>因放弃注册空出的名额将会派发给等候区内排名最靠前的学生；</p></li>
 <li><p>学生因病因事请假没有参加的课程没有补课，但会提供上课的完整视频供自学；</p></li>
 <li><p>学生因病因事请假没有参加期中和期末考试，协商日期安排一次补考，补考仍未参加则不得参加后续课程且不退还学费；</p></li>
 <li><p>学生因病因事请假等考勤记录不计入学期考核；</p></li>
+<li><p>老师因病因事请假或者有超过2/3的学生集中要求请假，相关课程依次顺延；原则上这类时间一学期不得超过三次；</p></li>
 <li><p>学期结束考核及格可以进入下一学期学习；</p></li>
 <li><p>学期结束考核不及格不得进入下一学期学习，但有优先再下一年度入学的机会；</p></li>
 <li><p>期末的总体考核的分配为：平时作业占比为40%，期中考试占20%，期末考试占40%，评分超过60%为及格，超过85%为优秀。</p></li>
@@ -598,7 +847,7 @@
 <div class="section" id="学费、优惠和奖励计划">
 <h2>学费、优惠和奖励计划<a class="headerlink" href="#学费、优惠和奖励计划" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>初级班学费暂定为:CAD960(RMB4800)/学期。当加币兑换人民币在区间4.7-5.3:1，可选择任意一个币种支付；当汇率超出此范围，只能选择学员所在地的币种进行支付；</p></li>
+<li><p>初级班学费暂定为:CAD960(RMB4800)/学期。当加币兑换人民币在区间4.7-5.3:1，可选择任意一个币种支付；当汇率超出此范围，只能选择学员所在地的币种进行支付；如果人民币和加币均不是学生所在地的常用货币，那么学生仍然可以任意选择一个币种对应的金额支付；</p></li>
 <li><p>重要时间节点：每个学期，已注册的学生最迟需在<strong>开学后第二周截止前</strong>完成当期缴费。如果发生逾期，将收取每日<strong>1%的滞纳金</strong>，超过<strong>一周</strong>仍未缴费，则自动丧失学籍，不得参加<strong>第三周</strong>的课程学习；</p></li>
 <li><p>与圈子相关的优惠：微信朋友圈好友享受<strong>8折</strong>优惠，朋友圈好友推荐的可享受<strong>9折</strong>优惠，优惠范围目前暂设为首个学年的三个学期；“微信朋友圈好友”指2021年12月31日（含）前与老师是好友关系；</p></li>
 <li><p>与成绩相关的优惠： 当班级人数超过（含）5人时，期末综合成绩排班级第一名的学生，下一个学期的学费可以再增加1折的优惠，即享受原价的7折（或8折）优惠；期末综合成绩排名第2的学生，相应增加的折扣为0.5折，即享受原价的7.5折（或8.5折）优惠。当班级人数为3-5人时，仅第一名享有0.5的折扣；当班级人数仅为2人时，不设优惠。原则上每一个学期末均会计算及公布下一学期每一个学生享有的优惠政策；已经获得的优惠只在连续的下一个学期有效，持有优惠但曾中断学习再恢复学习，优惠不再有效；</p></li>
@@ -631,8 +880,8 @@
 </div>
 <div class="section" id="报名通道">
 <h2>报名通道<a class="headerlink" href="#报名通道" title="永久链接至标题">¶</a></h2>
-<p>点击连接和扫码: <a class="reference external" href="https://forms.office.com/r/PvPwaF5hb9">https://forms.office.com/r/PvPwaF5hb9</a></p>
-<p><img alt="9dd05f06c8d14b689b15d5963cf3eed3" class="no-scaled-link" src="../../_images/application_form_qr_card.png" style="width: 200px;" /></p>
+<p>点击链接或扫码: <a class="reference external" href="https://forms.office.com/r/PvPwaF5hb9">https://forms.office.com/r/PvPwaF5hb9</a></p>
+<p><img alt="8fb92b532fd34d82ae8c855a70ba6d20" class="no-scaled-link" src="../../_images/application_form_qr_card.png" style="width: 200px;" /></p>
 </div>
 <div class="section" id="联系老师">
 <h2>联系老师<a class="headerlink" href="#联系老师" title="永久链接至标题">¶</a></h2>
@@ -646,6 +895,15 @@
 </li>
 <li><p>微信: Q394313203</p></li>
 </ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
