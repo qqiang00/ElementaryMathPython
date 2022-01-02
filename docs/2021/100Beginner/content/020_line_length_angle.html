@@ -223,6 +223,11 @@
        第22讲 两个数和与差的平方
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="023_parallelogram.html">
+       第23讲 平行四边形和它的面积
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -958,7 +963,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">line</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">line</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
         <span class="n">marker</span> <span class="o">=</span> <span class="n">markers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">mark</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">marker</span><span class="p">)</span>

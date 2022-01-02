@@ -230,7 +230,7 @@
     "square_down = [A, B, C, D]  \n",
     "            # [A, D, C, B]\n",
     "            # [B, C, D ，A]\n",
-    "polygon(square_down, color=\"red\", linewidth=3)       "
+    "polygon(square_down, color=\"red\", line_width=3)       "
    ]
   },
   {
@@ -263,7 +263,7 @@
    "outputs": [],
    "source": [
     "square_up = [A, B, E, F]\n",
-    "polygon(square_up, color=\"green\", linewidth=3)"
+    "polygon(square_up, color=\"green\", line_width=3)"
    ]
   },
   {

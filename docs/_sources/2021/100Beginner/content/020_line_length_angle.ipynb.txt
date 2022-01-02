@@ -239,7 +239,7 @@
    "outputs": [],
    "source": [
     "for i in range(len(points)//2):\n",
-    "    line(points[2*i], points[2*i+1], color=colors[i], linewidth=3)\n",
+    "    line(points[2*i], points[2*i+1], color=colors[i], line_width=3)\n",
     "    for j in [2*i, 2*i+1]:\n",
     "        marker = markers[j]+str(points[j])\n",
     "        mark(points[j], marker)"

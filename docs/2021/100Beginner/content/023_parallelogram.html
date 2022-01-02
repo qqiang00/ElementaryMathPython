@@ -5,39 +5,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第22讲 平行四边形和三角形的面积 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第23讲 平行四边形和它的面积 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="第二篇 进阶" href="../../200Intermediate/index.html" />
+    <link rel="prev" title="第22讲 两个数和与差的平方" href="022_square_of_sum.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -54,177 +56,182 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../001preface.html">
+  <a class="reference internal" href="../../../001preface.html">
    前言
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../002about_author.html">
+  <a class="reference internal" href="../../../002about_author.html">
    关于作者
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../003copyright.html">
+  <a class="reference internal" href="../../../003copyright.html">
    版权声明
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
    CS100 2021
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../100Beginner/index.html">
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
      第一篇 入门
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/001_hello_python.html">
+      <a class="reference internal" href="001_hello_python.html">
        第1讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/002_make_name_for_data.html">
+      <a class="reference internal" href="002_make_name_for_data.html">
        第2讲 起个名字吧
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/003_who_is_older.html">
+      <a class="reference internal" href="003_who_is_older.html">
        第3讲 谁的年龄大
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/004_guess_number.html">
+      <a class="reference internal" href="004_guess_number.html">
        第4讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/005_draw_basic_shapes.html">
+      <a class="reference internal" href="005_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/006_draw_regular_polygon.html">
+      <a class="reference internal" href="006_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/007_how_many_rice_awarded.html">
+      <a class="reference internal" href="007_how_many_rice_awarded.html">
        第7讲 一共奖励了多少袋大米
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/008_law_of_sequence.html">
+      <a class="reference internal" href="008_law_of_sequence.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/009_chicken_rabbit_in_same_cage.html">
+      <a class="reference internal" href="009_chicken_rabbit_in_same_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/010_divide_remainder_1.html">
+      <a class="reference internal" href="010_divide_remainder_1.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/011_divide_remainder_2.html">
+      <a class="reference internal" href="011_divide_remainder_2.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/012A_factor_composite_prime.html">
+      <a class="reference internal" href="012A_factor_composite_prime.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/012B_review.html">
+      <a class="reference internal" href="012B_review.html">
        Review 复习
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/012C_quiz.html">
+      <a class="reference internal" href="012C_quiz.html">
        Quiz 测验
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/013_draw_axis.html">
+      <a class="reference internal" href="013_draw_axis.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/014_locate_point_on_axis.html">
+      <a class="reference internal" href="014_locate_point_on_axis.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/015_how_many_lines.html">
+      <a class="reference internal" href="015_how_many_lines.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/016_how_many_queues.html">
+      <a class="reference internal" href="016_how_many_queues.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="018_what_did_your_classmates_say.html">
        第18讲 同学给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/020_line_length_angle.html">
+      <a class="reference internal" href="020_line_length_angle.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/021_square.html">
+      <a class="reference internal" href="021_square.html">
        第21讲 正方形与平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../100Beginner/content/022_square_of_sum.html">
+      <a class="reference internal" href="022_square_of_sum.html">
        第22讲 两个数和与差的平方
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       第23讲 平行四边形和它的面积
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../200Intermediate/index.html">
+    <a class="reference internal" href="../../200Intermediate/index.html">
      第二篇 进阶
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -236,7 +243,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../300Advanced/index.html">
+    <a class="reference internal" href="../../300Advanced/index.html">
      第三篇 高级
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -248,7 +255,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../500Answer/index.html">
+    <a class="reference internal" href="../../500Answer/index.html">
      练习答案
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -258,87 +265,87 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/005a_draw_basic_shapes.html">
+      <a class="reference internal" href="../../500Answer/content/005a_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/006a_draw_regular_polygon.html">
+      <a class="reference internal" href="../../500Answer/content/006a_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/008a_law_of_sequences.html">
+      <a class="reference internal" href="../../500Answer/content/008a_law_of_sequences.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/009a_chicken_rabbit_in_cage.html">
+      <a class="reference internal" href="../../500Answer/content/009a_chicken_rabbit_in_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/010_divide_remainder_1_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/010_divide_remainder_1_with_answer.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/011_divide_remainder_2_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/011_divide_remainder_2_with_answer.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/012A_factor_composite_prime_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/012A_factor_composite_prime_with_answer.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/012C_quiz-answer.html">
+      <a class="reference internal" href="../../500Answer/content/012C_quiz-answer.html">
        Answer for Quiz 测验参考答案
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/013_draw_axis_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/013_draw_axis_with_answer.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/014_locate_points_answer.html">
+      <a class="reference internal" href="../../500Answer/content/014_locate_points_answer.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/015_how_many_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/015_how_many_with_answer.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/016_how_many_queues_with_answer.html">
+      <a class="reference internal" href="../../500Answer/content/016_how_many_queues_with_answer.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="../../500Answer/content/017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="../../500Answer/content/018_what_did_your_classmates_say.html">
        第18讲 朋友给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="../../500Answer/content/019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/020_line_length_angle-Copy1.html">
+      <a class="reference internal" href="../../500Answer/content/020_line_length_angle-Copy1.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../500Answer/content/021_square-Copy1.html">
+      <a class="reference internal" href="../../500Answer/content/021_square-Copy1.html">
        第21讲 正方形与平方
       </a>
      </li>
@@ -347,7 +354,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/index.html">
+  <a class="reference internal" href="../../../2022/index.html">
    CS100 2022
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -357,7 +364,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2022/100Beginner/index.html">
+    <a class="reference internal" href="../../../2022/100Beginner/index.html">
      第一篇 入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -369,7 +376,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2022/200Intermediate/index.html">
+    <a class="reference internal" href="../../../2022/200Intermediate/index.html">
      第二篇 进阶
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -381,7 +388,7 @@
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2022/300Advanced/index.html">
+    <a class="reference internal" href="../../../2022/300Advanced/index.html">
      第三篇 高级
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -395,7 +402,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../600appendix/index.html">
+  <a class="reference internal" href="../../../600appendix/index.html">
    附录
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -405,29 +412,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../600appendix/content/000_intro_to_course-Copy1.html">
+    <a class="reference internal" href="../../../600appendix/content/000_intro_to_course-Copy1.html">
      附录一 初级课程介绍
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../600appendix/content/001_admission_notice.html">
+    <a class="reference internal" href="../../../600appendix/content/001_admission_notice.html">
      附录二 第一期招生通知
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../600appendix/content/010_install_jupyter_notebook_on_windows.html">
+    <a class="reference internal" href="../../../600appendix/content/010_install_jupyter_notebook_on_windows.html">
      附录三 Windows操作系统下搭建Python运行环境
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../600appendix/content/090_qianglib.html">
+    <a class="reference internal" href="../../../600appendix/content/090_qianglib.html">
      附录四 qianglib.py的代码
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../999Test/index.html">
+  <a class="reference internal" href="../../../999Test/index.html">
    新功能测试
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -437,7 +444,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../999Test/content/markdown_test.html">
+    <a class="reference internal" href="../../../999Test/content/markdown_test.html">
      MarkDown test Title
     </a>
    </li>
@@ -484,7 +491,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2021/999NotOnline/023_Parallelogram_triangle_area.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/2021/100Beginner/content/023_parallelogram.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -548,13 +555,6 @@
   <a class="reference internal nav-link" href="#Assignments-作业">
    Assignments 作业
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#Complete-Question-4,5-and-6-完成本讲问题4，5和6.">
-     Complete Question 4,5 and 6 完成本讲问题4，5和6.
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -815,38 +815,65 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第22讲-平行四边形和三角形的面积">
-<h1>第22讲 平行四边形和三角形的面积<a class="headerlink" href="#第22讲-平行四边形和三角形的面积" title="永久链接至标题">¶</a></h1>
+<div class="section" id="第23讲-平行四边形和它的面积">
+<h1>第23讲 平行四边形和它的面积<a class="headerlink" href="#第23讲-平行四边形和它的面积" title="永久链接至标题">¶</a></h1>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
-<p><strong>Answer Area</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<ol class="arabic simple">
+<li><p>Use ‘black’ color, 3 as line width to draw following two quadrilaterals. 使用黑色、数值为3的线宽，分别绘制出下列两个列表所表示的四边形：</p>
+<ul class="simple">
+<li><p>quad1:[(2, 15), (10, 15), (14, 19), (6, 19)] （四边形1）</p></li>
+<li><p>quad2:[(6, 4), (14, 4), (14, 8), (6, 8)] （四边形2）</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>绘制出的两个图形是平行四边形或者矩形吗？ What are the exact shape names for the quadrilaterals drawn?</p>
+<ul class="simple">
+<li><p>is quad1 a parallelogram（平行四边形）: ?</p></li>
+<li><p>is quad2 a parallelogram: ?</p></li>
+<li><p>is quad1 a rectangle（矩形）: ?</p></li>
+<li><p>is quad2 a rectangle: ?</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Count manually how many small square units (side length = 1) are contained in each figure drawn. This result is also the area of each corresponding figure. <strong>Note</strong>: If a side line of a figure penetrates the small square unit, it means that the small square unit is not completely contained in the figure. However, if more than half of the area of this square unit is included in the figure, count it on; otherwise, discard it.
+手工数一数，绘制出的每一个图形内部包含多少个完整的边长为1的小正方形，这个数字同时就是对应的每一个图形的面积。<strong>注意</strong>：如果图形的一条边从正方形内部穿过，说明这个小正方形并不完全被包含在图形内部，仔细并估计这个正方形是否有超过一半的面积被包括在图形内部，如果是则可以把这个小正方形记入统计，如果不是，则放弃记入这个小正方形。</p>
+<ul class="simple">
+<li><p>Area for quad1 is:?</p></li>
+<li><p>Area for quad2 is:?</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Try to find a line, indicated by the coordiante values of its two end points, to cut each figure into two parts. Splicing the two parts to make it a rectangle. In the process of cutting and splicing, the total area of the graphics remains unchanged. Does it mean that each parallelogram can be transformed to a rectangle that has the same area?
+尝试找出一条线段（找到表示这条线段的两个端点即可），它把上面绘出的平行四边形分割成两部分，分割得到的两部分可以拼接称为绘制出的矩形。是不是每一个平行四边形都可以这样拼接称为一个面积和它相同的矩形？</p>
+<ul class="simple">
+<li><p>end points of the line: (?, ?) and (?, ?)</p></li>
+<li><p>Can every parallelogram be transformed to a rectangle with the same area by such cutting and splicing?: ?</p></li>
+</ul>
+</li>
+</ol>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>正方形的面积等于边长与自己的乘积</p></li>
-<li><p>两个相同的数相乘又称为这个数的乘方或2次方</p></li>
+<li><p>由四条边组成的封闭图形称为四边形；由两组平行线段组成的四边形称为平行四边形</p></li>
+<li><p>如果一个四边形是平行四边形，它不一定是矩形，更不一定是正方形</p></li>
+<li><p>如果一个图形是矩形，它一定也是平行四边形；如果一个图形是正方形，那它也是矩形，也是平行四边形</p></li>
+<li><p>平行四边形可以通过裁剪变成一个和它面积相同的矩形</p></li>
+<li><p>平行四边形的面积公式: <span class="math notranslate nohighlight">\(S=b \cdot h\)</span></p></li>
+<li><p>矩形的面积公式： <span class="math notranslate nohighlight">\(S=a \cdot b\)</span></p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
-<p>无</p>
+<p>[STRIKEOUT:rewrite <code class="docutils literal notranslate"><span class="pre">polygon</span></code> method in <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, add some support methods]</p>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li></li>
-</ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -854,7 +881,10 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span>
-<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">polygon</span>
+<span class="c1">#from qianglib import generate_parallelogram, generate_rectangle, get_center, add_v</span>
+<span class="c1">#from qianglib import rectangle</span>
 </pre></div>
 </div>
 </div>
@@ -865,102 +895,15 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="n">parallelogram1</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>
-<span class="n">polygon</span><span class="p">(</span><span class="n">parallelogram1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">B</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">F</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">F</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">F_p</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">polygon</span><span class="p">([</span><span class="n">B</span><span class="p">,</span> <span class="n">F_p</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">rectangle1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span>
-<span class="n">polygon</span><span class="p">(</span><span class="n">rectangle1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">triangle1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">19</span><span class="p">)]</span>
-<span class="n">polygon</span><span class="p">(</span><span class="n">triangle1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">triangle2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">34</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">19</span><span class="p">)]</span>
-<span class="n">polygon</span><span class="p">(</span><span class="n">triangle2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -975,12 +918,67 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="计算机小知识">
 <h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
-<p>暂缺</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<div class="section" id="Complete-Question-4,5-and-6-完成本讲问题4，5和6.">
-<h3>Complete Question 4,5 and 6 完成本讲问题4，5和6.<a class="headerlink" href="#Complete-Question-4,5-and-6-完成本讲问题4，5和6." title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>According to the definition of parallelogram, declare and implement a method to tell whether a list variable with 4 coordinate valus of points represents a parallelogram? Give the method a name and carefully design its parameters and return values. 根据平行四边形的定义，编写一个方法判断：一个拥有四个点坐标信息元素的列表变量是否代表着一个平行四边形。你可以自己设定方法名，在编写这个方法前认真思考这个方法的参数和返回值如何设计才比较好。</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Below are 6 lists, each contains the coordinates of four points and may represent a parallelogram. For each list: use the <code class="docutils literal notranslate"><span class="pre">polygon</span></code> method provided in <code class="docutils literal notranslate"><span class="pre">qianglib</span></code> to draw it. Then, call the method you implemented in the previous quantion and observe whether your method can correctly determine whether the drawn figure is a parallelogram or not.
+如下给出了6行由四个点的坐标组成的列表，每一行都有可能代表着一个平行四边形。对于每一行的列表数据：用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库里的<code class="docutils literal notranslate"><span class="pre">polygon</span></code>方法绘制出它代表的图形。随后，调用你上一步实现的方法，观察你的方法能否正确判断绘制出的图形是否是一个平行四边形。</p>
+<ul class="simple">
+<li><p>[(5, 9), (10, 9), (13, 14), (8, 14)]</p></li>
+<li><p>[(15, 9), (20, 9), (23, 14), (20, 14)]</p></li>
+<li><p>[(27, 9), (32, 10), (32, 14), (27, 13)]</p></li>
+<li><p>[(5, 1), (10, 2), (10, 7), (5, 5)]</p></li>
+<li><p>[(15, 4), (18, 1), (21, 4), (18, 7)]</p></li>
+<li><p>[(27, 1), (32, 1), (32, 7), (27, 7)]</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Assume that a list variable represents a parallelogram (only consider the case where at least one side of the parallelogram is parallel to either x or y axis), Can you figure out how to get the base and height of this parallelogram? Write a method to solve this problem.假设一个列表型变量表示一个平行四边形（仅考虑平行四边形一条边平行于坐标轴的情况），如何根据给定的四个顶点的坐标来得到这个平行四边形的一组底和高的大小？编写一个方法来求解这个问题。</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Use the method written in the previous question to calculate the base and height of each parallelogram filtered from the question 2; calculate the area of each quadrilateral and compare it with the area obtained by mnually counting introduced in the class. 用上一题编写的方法来计算从第2题中筛选出来的每一个平行四边形的一组底和高，然后计算这个四边形的面积，和用课堂上介绍的数格子的方法得到的结果进行比较。</p></li>
+</ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -992,7 +990,6 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-</div>
 
 
               </div>
@@ -1000,6 +997,8 @@ div.rendered_html tbody tr:hover {
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="022_square_of_sum.html" title="previous page">第22讲 两个数和与差的平方</a>
+    <a class='right-next' id="next-link" href="../../200Intermediate/index.html" title="next page">第二篇 进阶</a>
 
         </div>
         
@@ -1021,7 +1020,7 @@ div.rendered_html tbody tr:hover {
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
