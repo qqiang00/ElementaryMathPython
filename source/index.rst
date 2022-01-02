@@ -9,23 +9,18 @@
 欢迎来到《初等数学与Python程序设计》（讲义）。
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
-
 
    001preface
    002about_author
    003copyright
-
-   100beginner/*
-   200intermediate/*
-   300advanced/*
-   500answer/*
-   600appendix/*
-   800new_feature/*
+  
+   2021/*
+   2022/*
    
-   990inside_back_cover
-   991back_cover
+   600appendix/*  
+   999Test/*
 
 
 
