@@ -820,92 +820,6 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
-<ol class="arabic simple">
-<li><p>以点A(10, 12), B(20, 12)两点为端点，绘制一条线段AB，编程计算这条边的边长。Given the coordiante values of point A(10, 12) and B(20, 12), Draw a line segment with A and B as endpoints. Calculate the length of AB by programming.</p></li>
-</ol>
-<ol class="arabic simple" start="2">
-<li><p>绘制一个正方形，使得先前绘制的线段AB为正方形的一条边。Draw a square and make line segment AB be one side of the square.</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>数一数这个正方形内一共有多少个边长为1的单位正方形，这个数量同时也是这个正方形的面积。 Count how many unit square(side length with 1) does the Square have. The result will be the area of the square as well.</p></li>
-</ol>
-<ol class="arabic simple" start="4">
-<li><p>保持点A的横纵坐标值不变，保持点B的纵坐标不便，将点B的横坐标分别改为11至20之间的任何一个数，重新绘制线段AB，计算它的长度，并以它为一条边绘制正方形，对于每画出一次的正方形，计算或数出来这个正方形里有多少边长为1的单位正方形。将结果填入下面的表格。Keep the both coordinate values of A and vertical vlue of B as they are, change only the horizontal value of B to every integer from 11 to 20. redraw the line segment AB and corresponding square. For each square you draw, calculate its side length and
-how many unit square it contains. Write the result into the following table.</p></li>
-</ol>
-<table class="table">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 24%" />
-<col style="width: 40%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>Side Length</p></th>
-<th class="head"><p>#Unit Square(Area)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>(10, 12)</p></td>
-<td><p>(11, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>(10, 12)</p></td>
-<td><p>(12, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>(10, 12)</p></td>
-<td><p>(13, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>(10, 12)</p></td>
-<td><p>(14, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>(10, 12)</p></td>
-<td><p>(15, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>(10, 12)</p></td>
-<td><p>(16, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>(10, 12)</p></td>
-<td><p>(17, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>(10, 12)</p></td>
-<td><p>(18, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>(10, 12)</p></td>
-<td><p>(19, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>(10, 12)</p></td>
-<td><p>(20, 12)</p></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ol class="arabic simple" start="5">
-<li><p>编写一个方法，该方法接受一个整数参数，计算这个整数参数乘以自己的积，并把这个结果作为方法的返回值。然后调用该方法，将1-10之间的每一个整数作为参数传给该方法，打印每一次方法得到的返回值。Write a method which receives an integer <code class="docutils literal notranslate"><span class="pre">a</span></code> as a parameter and return the value of <code class="docutils literal notranslate"><span class="pre">a*a</span></code>。 For each integer from 1 to 10, call this method with the integer as parameter, print out the return value of the method.</p></li>
-</ol>
-<ol class="arabic simple" start="6">
-<li><p>用目前已经学过的编程知识，尝试编写一个方法来计算一个给定面积的正方形它的（近似）边长。调用你写的方法来计算当一个正方形面积分别位1，4，9，15，25，30时，它的边长大概是多少。Use the coding skills learned so far, try to write a method to get the side length of a square with given area. call the method you implemented to get the side length of the square whose areas are the following: 1, 4, 9, 15, 25, 30.</p></li>
-</ol>
 <p><strong>Answer Area</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -956,7 +870,7 @@ how many unit square it contains. Write the result into the following table.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -965,17 +879,63 @@ how many unit square it contains. Write the result into the following table.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">parallelogram1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">)]</span>
+<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">parallelogram1</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">parallelogram1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">B</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">D</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">F</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">polygon</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">F</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">F_p</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">polygon</span><span class="p">([</span><span class="n">B</span><span class="p">,</span> <span class="n">F_p</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -985,7 +945,7 @@ how many unit square it contains. Write the result into the following table.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -995,7 +955,7 @@ how many unit square it contains. Write the result into the following table.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
