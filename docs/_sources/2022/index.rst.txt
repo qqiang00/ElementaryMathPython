@@ -1,4 +1,4 @@
-CS100 2022
+MTH100 2022
 =============
 .. raw:: html
     
@@ -6,7 +6,6 @@ CS100 2022
     :maxdepth: 2
     :glob:
 
-    100Beginner/*
-    200Intermediate/*
-    300Advanced/*
+    Beginner/*
+    Answer/*
     
