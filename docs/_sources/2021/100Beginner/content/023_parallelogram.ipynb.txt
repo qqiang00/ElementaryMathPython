@@ -144,6 +144,215 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "13cdfc59-cfd6-4ed7-b703-6a9f074ae917",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Q1\n",
+    "quad1 = [(2, 15), (10, 15), (14, 19), (6, 19)]\n",
+    "quad2 = [(6, 4), (14, 4), (14, 8), (6, 8)]\n",
+    "polygon(quad1, line_width=3, color=\"black\")\n",
+    "polygon(quad2, line_width=3, color=\"black\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6f733b8b-d9d2-4faa-b961-2baece65772a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Q2\n",
+    "# quad1 is a parallelogram, not a rectangle\n",
+    "# quad2 is a parallelogram, and a rectangle as well."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "04346de2-8855-494e-81e6-dcbca899f71d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Q3\n",
+    "# Area for quad1 = 32\n",
+    "# Area for quad3 = 32\n",
+    "# Their areas are equal to each other."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "6a50b0b3-78bc-4b64-a62d-a59801342cb3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# point(6, 19) and point(6, 15) could be endpoints of the line \n",
+    "# which cut the parallelogram and build a rectangle\n",
+    "p1, p2 = (6, 19), (6, 15)\n",
+    "line(p1, p2, color=\"red\", line_width=2)\n",
+    "# Every parallelogram can be transformed to a rectangle (YES)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f3e2d041-144b-4161-945c-15bb067ecceb",
+   "metadata": {},
+   "source": [
+    "<img src=\"figures/L023_parallelogram_rectangle.png\" width=\"500\" />"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cdc7422d-3467-4939-9daf-895c85fc5e50",
+   "metadata": {},
+   "source": [
+    "### Exercise 课堂练习"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "be535c97-17c9-4d05-8776-b0138077752d",
+   "metadata": {},
+   "source": [
+    "Learn the role of method `get_center`. 体会`get_center`方法的作用"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "2e1fc664-212a-45d1-babf-6edbc68f8d91",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_center(points):\n",
+    "    x, y = 0, 0\n",
+    "    for point in points:\n",
+    "        x += point[0]\n",
+    "        y += point[1]\n",
+    "    return x/len(points), y/len(points)\n",
+    "\n",
+    "def add_v(point1, point2):\n",
+    "    return point1[0]+point2[0], point1[1]+point2[1]\n",
+    "\n",
+    "from random import randint\n",
+    "def get_random_point(x_min=0, x_max=35, y_min=0, y_max=25):\n",
+    "    return (randint(x_min, x_max), randint(y_min, y_max))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "b60ec8f4-f82d-463e-8eda-6108f8192a0c",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(28, 2)\n"
+     ]
+    }
+   ],
+   "source": [
+    "A = get_random_point()\n",
+    "print(A)\n",
+    "mark(A, \"A\"+str(A), color=\"red\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "aee9024d-afb5-4ad0-a936-b489408f247a",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(3, 2)\n"
+     ]
+    }
+   ],
+   "source": [
+    "B = get_random_point()\n",
+    "print(B)\n",
+    "mark(B, \"B\"+str(B), color=\"red\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "99266885-cc72-4dd6-a478-8ae45788fdc6",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "lineAB = [A, B]\n",
+    "C = get_center(lineAB)\n",
+    "mark(C, \"C\"+str(C), color=\"blue\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "5636fe2a-d4da-45e1-9b5b-e4ae9a86d68f",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "line(A, B)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "11551db4-dd8e-4619-8bb7-26b21f70c7d7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "triangle1 = []\n",
+    "for i in range(3):\n",
+    "    triangle1.append(get_random_point())\n",
+    "polygon(triangle1)\n",
+    "center_triangle1 = get_center(triangle1)\n",
+    "mark(center_triangle1, \"Center\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "4cfbd13d-2af0-44ae-bd5e-35767e0d4f2d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for i in range(len(triangle1)):\n",
+    "    line1 = [triangle1[i], triangle1[(i+1)%len(triangle1)]]\n",
+    "    line1_center = get_center(line1)\n",
+    "    third_point = triangle1[(i+2)%len(triangle1)]\n",
+    "    line(line1_center, third_point)\n",
+    "    mark(line1_center)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "00dcebdd-a200-409d-91d5-f60c6c47c7bd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bye()"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "id": "latest-contamination",
    "metadata": {},
@@ -156,9 +365,9 @@
    "id": "afb3f674",
    "metadata": {},
    "source": [
-    "1. 复习tuple\n",
-    "2. 复习qianglib的一些方法\n",
-    "3. 复习方法的返回值\n"
+    "1. 理解get_center方法的作用\n",
+    "2. 学习qianglib库的一些方法的更新\n",
+    "3. 复习方法的返回值：可以使用tuple类型让一个方法返回多个有意义的变量，这种返回方法也可以理解为方法只返回了一个tuple类型的变量\n"
    ]
   },
   {
@@ -192,7 +401,8 @@
    "id": "6b9e379a-260b-4f17-9687-9d7e9c663f74",
    "metadata": {},
    "source": [
-    "1. According to the definition of parallelogram, declare and implement a method to tell whether a list variable with 4 coordinate valus of points represents a parallelogram? Give the method a name and carefully design its parameters and return values. 根据平行四边形的定义，编写一个方法判断：一个拥有四个点坐标信息元素的列表变量是否代表着一个平行四边形。你可以自己设定方法名，在编写这个方法前认真思考这个方法的参数和返回值如何设计才比较好。"
+    "1. According to the definition of parallelogram, declare and implement a method to tell whether a list variable with 4 coordinate valus of points represents a parallelogram? Give the method a name and carefully design its parameters and return values. 根据平行四边形的定义，编写一个方法判断：一个拥有四个点坐标信息元素的列表变量是否代表着一个平行四边形。你可以自己设定方法名，在编写这个方法前认真思考这个方法的参数和返回值如何设计才比较好。    \n",
+    "   **Note**: only consider the situation where a parallelogram has two sides parallel to either x or y axis. **备注**:只考虑平行四边形有两条边平行于x或者y轴的情形"
    ]
   },
   {
@@ -247,7 +457,9 @@
    "id": "afb9199e-586b-4f79-ae20-00523da1b47d",
    "metadata": {},
    "source": [
-    "4. Use the method written in the previous question to calculate the base and height of each parallelogram filtered from the question 2; calculate the area of each quadrilateral and compare it with the area obtained by mnually counting introduced in the class. 用上一题编写的方法来计算从第2题中筛选出来的每一个平行四边形的一组底和高，然后计算这个四边形的面积，和用课堂上介绍的数格子的方法得到的结果进行比较。"
+    "4. Use the method written in the previous question to calculate the base and height of each parallelogram filtered from the question 2; calculate the area of each quadrilateral and compare it with the area obtained by mnually counting introduced in the class. 用上一题编写的方法来计算从第2题中筛选出来的每一个平行四边形的一组底和高，然后计算这个四边形的面积，和用课堂上介绍的数格子的方法得到的结果进行比较。\n",
+    "\n",
+    "   **Note**: only consider the situation where a parallelogram has two sides parallel to either x or y axis. **备注**:只考虑平行四边形有两条边平行于x或者y轴的情形"
    ]
   },
   {

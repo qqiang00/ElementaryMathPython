@@ -6,7 +6,11 @@
    "metadata": {},
    "source": [
     "## Course Plan 课程计划\n",
-    "for MTH100 2022 "
+    "for MTH100 2022 \n",
+    "\n",
+    "Created: Jan 2nd, 2022, Last Updated: Jan 3rd, 2022\n",
+    "\n",
+    "创建日期: 2022年01月02日， 最近更新：2022年01月03日"
    ]
   },
   {
@@ -22,7 +26,7 @@
     "- 05 Start to Draw 开始涂鸦\n",
     "- 06 Draw Rectangles 绘制矩形\n",
     "- 07 Draw Regular Polygons 绘制正多边形\n",
-    "- 08 Sum Between 1 and 100 1到100求和\n",
+    "- 08 Sum of 1 to 100 1到100求和\n",
     "- 09 King's Rewards 1 国王的奖励1\n",
     "- 10 King's Rewards 2 国王的奖励2\n",
     "- Mid Term Exam 期中考试"
@@ -33,14 +37,14 @@
    "id": "6a0ad2cb-6366-4b86-86ae-f190488371d7",
    "metadata": {},
    "source": [
-    "- 11 Basic Sequence 1 基本序列1\n",
-    "- 12 Basic Sequence 2 基本序列2\n",
-    "- 13 Basic Sequence 3 基本序列3\n",
-    "- 14 And or Or 和或或\n",
-    "- 15 Repeat and Loop 重复和循环\n",
-    "- 16 Chicken Rabbits in One Cage 鸡兔同笼\n",
-    "- 17 Empty the Pool 清空水池\n",
-    "- 18 Run and Catch 追逐游戏\n",
+    "- 11 Find Sequence Pattern 找数列规律\n",
+    "- 12 Sequence 1 序列1\n",
+    "- 13 Sequence 2 序列2\n",
+    "- 14 And or Or 和还是或\n",
+    "- 15 Chicken Rabbits in One Cage 鸡兔同笼\n",
+    "- 16 Empty the Pool 清空水池\n",
+    "- 17 Escape from Well Bottom 逃离井底\n",
+    "- 18 Maximize Area 找最大面积\n",
     "- Final Exam 期末考试"
    ]
   },
@@ -50,15 +54,15 @@
    "metadata": {},
    "source": [
     "### 2022 Summer\n",
-    "- 21 Divide and Remainder 1 整除和余数1\n",
-    "- 22 Divide and Remainder 2 整除和余数2\n",
+    "- 21 Division by Estimating Quotient 试商除法\n",
+    "- 22 Quotient and Remainder 商和余数\n",
     "- 23 Factors 因数\n",
     "- 24 Composite Numbers 合数\n",
     "- 25 Prime Numbers 质数\n",
     "- 26 Axis 数轴\n",
-    "- 27 Negative Number 负数\n",
-    "- 28 Decimal Number 小数\n",
-    "- 29 Locate Numbers on Axises 点在数轴上的位置\n",
+    "- 27 Negative Numbers 负数\n",
+    "- 28 Decimal Numbers 小数\n",
+    "- 29 Locate Numbers on Axis 点在数轴上的位置\n",
     "- Mid Term Exam 期中考试"
    ]
   },
@@ -108,9 +112,9 @@
     "- 54 Slope and Tangent 斜率和正切\n",
     "- 55 Distance Between Arbitary two Points 任意两点距离\n",
     "- 56 Axial Symmetry 轴对称\n",
-    "- 57 Rotational Symmetry 中心对称\n",
+    "- 57 Rotational Symmetry 旋转对称\n",
     "- 58 Sum, Mean and Median 总和、均值和中位数\n",
-    "- 59 Line and Bar Graph 折线和柱状图\n",
+    "- 59 Line and Bar Chart 折线和柱状图\n",
     "- Final Exam 期末考试"
    ]
   }

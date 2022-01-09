@@ -375,7 +375,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../2022/Beginner/content/000_LectureTitles.html">
-       Course Plan
+       Course Plan 课程计划
       </a>
      </li>
     </ul>
@@ -532,6 +532,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Solution-编程求解">
    Solution 编程求解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Exercise-课堂练习">
+   Exercise 课堂练习
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -900,13 +905,183 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Q1</span>
+<span class="n">quad1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">)]</span>
+<span class="n">quad2</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)]</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">quad1</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">quad2</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Q2</span>
+<span class="c1"># quad1 is a parallelogram, not a rectangle</span>
+<span class="c1"># quad2 is a parallelogram, and a rectangle as well.</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Q3</span>
+<span class="c1"># Area for quad1 = 32</span>
+<span class="c1"># Area for quad3 = 32</span>
+<span class="c1"># Their areas are equal to each other.</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># point(6, 19) and point(6, 15) could be endpoints of the line</span>
+<span class="c1"># which cut the parallelogram and build a rectangle</span>
+<span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Every parallelogram can be transformed to a rectangle (YES)</span>
+</pre></div>
+</div>
+</div>
+<p><img alt="3bc57b0dba8144ffb006e2274d15ddd5" class="no-scaled-link" src="../../../_images/L023_parallelogram_rectangle.png" style="width: 500px;" /></p>
+</div>
+<div class="section" id="Exercise-课堂练习">
+<h2>Exercise 课堂练习<a class="headerlink" href="#Exercise-课堂练习" title="永久链接至标题">¶</a></h2>
+<p>Learn the role of method <code class="docutils literal notranslate"><span class="pre">get_center</span></code>. 体会<code class="docutils literal notranslate"><span class="pre">get_center</span></code>方法的作用</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">get_center</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="n">y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_v</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="k">def</span> <span class="nf">get_random_point</span><span class="p">(</span><span class="n">x_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x_max</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">y_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_max</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span> <span class="o">=</span> <span class="n">get_random_point</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(28, 2)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">B</span> <span class="o">=</span> <span class="n">get_random_point</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(3, 2)
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">lineAB</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">get_center</span><span class="p">(</span><span class="n">lineAB</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">C</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">triangle1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">triangle1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_random_point</span><span class="p">())</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">triangle1</span><span class="p">)</span>
+<span class="n">center_triangle1</span> <span class="o">=</span> <span class="n">get_center</span><span class="p">(</span><span class="n">triangle1</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">center_triangle1</span><span class="p">,</span> <span class="s2">&quot;Center&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">triangle1</span><span class="p">)):</span>
+    <span class="n">line1</span> <span class="o">=</span> <span class="p">[</span><span class="n">triangle1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">triangle1</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(triangle1)]]
+    <span class="n">line1_center</span> <span class="o">=</span> <span class="n">get_center</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+    <span class="n">third_point</span> <span class="o">=</span> <span class="n">triangle1</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(triangle1)]
+    <span class="n">line</span><span class="p">(</span><span class="n">line1_center</span><span class="p">,</span> <span class="n">third_point</span><span class="p">)</span>
+    <span class="n">mark</span><span class="p">(</span><span class="n">line1_center</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">bye</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>复习tuple</p></li>
-<li><p>复习qianglib的一些方法</p></li>
-<li><p>复习方法的返回值</p></li>
+<li><p>理解get_center方法的作用</p></li>
+<li><p>学习qianglib库的一些方法的更新</p></li>
+<li><p>复习方法的返回值：可以使用tuple类型让一个方法返回多个有意义的变量，这种返回方法也可以理解为方法只返回了一个tuple类型的变量</p></li>
 </ol>
 </div>
 <div class="section" id="计算机小知识">
@@ -924,7 +1099,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>According to the definition of parallelogram, declare and implement a method to tell whether a list variable with 4 coordinate valus of points represents a parallelogram? Give the method a name and carefully design its parameters and return values. 根据平行四边形的定义，编写一个方法判断：一个拥有四个点坐标信息元素的列表变量是否代表着一个平行四边形。你可以自己设定方法名，在编写这个方法前认真思考这个方法的参数和返回值如何设计才比较好。</p></li>
+<li><p>According to the definition of parallelogram, declare and implement a method to tell whether a list variable with 4 coordinate valus of points represents a parallelogram? Give the method a name and carefully design its parameters and return values. 根据平行四边形的定义，编写一个方法判断：一个拥有四个点坐标信息元素的列表变量是否代表着一个平行四边形。你可以自己设定方法名，在编写这个方法前认真思考这个方法的参数和返回值如何设计才比较好。
+<strong>Note</strong>: only consider the situation where a parallelogram has two sides parallel to either x or y axis. <strong>备注</strong>:只考虑平行四边形有两条边平行于x或者y轴的情形</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -969,8 +1145,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Use the method written in the previous question to calculate the base and height of each parallelogram filtered from the question 2; calculate the area of each quadrilateral and compare it with the area obtained by mnually counting introduced in the class. 用上一题编写的方法来计算从第2题中筛选出来的每一个平行四边形的一组底和高，然后计算这个四边形的面积，和用课堂上介绍的数格子的方法得到的结果进行比较。</p></li>
+<ol class="arabic" start="4">
+<li><p>Use the method written in the previous question to calculate the base and height of each parallelogram filtered from the question 2; calculate the area of each quadrilateral and compare it with the area obtained by mnually counting introduced in the class. 用上一题编写的方法来计算从第2题中筛选出来的每一个平行四边形的一组底和高，然后计算这个四边形的面积，和用课堂上介绍的数格子的方法得到的结果进行比较。</p>
+<p><strong>Note</strong>: only consider the situation where a parallelogram has two sides parallel to either x or y axis. <strong>备注</strong>:只考虑平行四边形有两条边平行于x或者y轴的情形</p>
+</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:

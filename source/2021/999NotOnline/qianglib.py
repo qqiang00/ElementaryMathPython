@@ -4,7 +4,7 @@ from turtle import goto, seth, write, ht, st, home, dot, pen, speed
 from turtle import setworldcoordinates, begin_fill, end_fill
 
 
-def text(pos, info, align="left", font=("Arial", 8, "normal"), move=False, color="black"):
+def text(pos, info, align="center", font=("Arial", 8, "normal"), move=False, color="black"):
     pu()
     goto(pos)
     pd()
@@ -12,20 +12,22 @@ def text(pos, info, align="left", font=("Arial", 8, "normal"), move=False, color
     write(info, move=move, align=align, font=font)
 
 
-def mark(pos, info=None, 
-         size=5, color="red", offset=0.5, offset_direction=45, align="left", 
-         font=("Arial", 10, "normal"), move=False):
+def mark(pos, info=None,
+         size=5, color="red", offset=(0, 1), align="left", 
+         font=("Arial", 10, "normal"), move=False, ):
     pu()
     goto(pos)
     pd()
     dot(size, color)
-    pu()
-    seth(offset_direction)
-    fd(offset)
-    pd()
-    pen(pencolor=color)
-    info = str(pos) if info is None else info
-    write(info, move=move, align=align, font=font)
+    if info is not None:
+        if offset is not None:
+            pu()
+            goto(add_v(pos, offset))
+            pd()
+        pen(pencolor=color)
+        info = str(pos) if info is None else info
+        write(info, move=move, align=align, font=font)
+    return
     
     
 def line(start, end, line_width=1, color="black"):
@@ -125,11 +127,10 @@ def polygon(points, line_width = 3, color="black", fillcolor=None,
               center_text_offset=(0, -0.5),
               center_text_color="black",
               marker_texts=None,
+              marker_offsets=None,
               marker_text_font = ("Arial", 16, "italic"),
               marker_text_color = "red",
-              marker_dot_size = 5,
-              marker_offsets=[1, 1, 0, 0],
-              marker_offset_directions=[-90, -90, 45, 45]):
+              marker_dot_size = 5):
     
     if len(points) < 3:
         return
@@ -140,21 +141,32 @@ def polygon(points, line_width = 3, color="black", fillcolor=None,
     for i in range(len(points)):
         if marker_texts is not None and i<len(marker_texts) and \
         marker_texts[i] is not None:
+            marker_offset = (0, 0)
+            if marker_offsets is not None and i < len(marker_offsets) and \
+            marker_offsets[i] is not None:
+                marker_offset = marker_offsets[i]
+            
             mark(points[i], marker_texts[i], 
                  size=marker_dot_size, color=marker_text_color,
-                 offset=marker_offsets[i], 
-                 offset_direction = marker_offset_directions[i])
+                 offset=marker_offset)
             
         if side_texts is not None and i<len(side_texts) and \
         side_texts[i] is not None:
+            side_text_offset = (0, 0)
+            if side_text_offsets is not None and i < len(side_text_offsets) and \
+            side_text_offsets[i] is not None:
+                side_text_offset = side_text_offsets[i]
+                
             point1 = points[i]
             point2 = points[(i+1)%len(points)]
             center = get_center([point1, point2])
-            mark_pos = add_v(center, side_text_offsets[i])
+            mark_pos = add_v(center, side_text_offset)
             text(mark_pos, side_texts[i], align="center", 
                  font=side_text_font, color=side_text_color)
     
-    if center_text is not None and center_text != "":   
+    if center_text is not None and center_text != "":  
+        if center_text_offset is None:
+            center_text_offset = (0, 0)
         center_pos = add_v(get_center(points), center_text_offset)
         text(center_pos, center_text, align="center",
              font=center_text_font, color=center_text_color)
@@ -204,8 +216,3 @@ def generate_parallelogram(p_left_bottom, base, height, hor_offset):
 
 def generate_rectangle(p_left_bottom, base, height):
     return generate_parallelogram(p_left_bottom, base, height, 0)
-
-def get_parallelogram_center(parallelogram):
-    center_x = (parallelogram[0][0] + parallelogram[2][0])/2
-    center_y = (parallelogram[0][1] + parallelogram[2][1])/2
-    return (center_x, center_y)
