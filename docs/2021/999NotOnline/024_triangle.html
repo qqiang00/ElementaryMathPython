@@ -226,6 +226,11 @@
        第23讲 平行四边形和它的面积
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../100Beginner/content/024_triangle.html">
+       第24讲 三角形和它的面积
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -528,6 +533,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Exercise-练习">
+   Exercise 练习
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Solution-编程求解">
    Solution 编程求解
   </a>
@@ -808,26 +818,39 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="第23讲-三角形和它的面积">
 <h1>第23讲 三角形和它的面积<a class="headerlink" href="#第23讲-三角形和它的面积" title="永久链接至标题">¶</a></h1>
+<p>Lecture 23. Triangle and its area</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
-<p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
+<div class="line-block">
+<div class="line">Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</div>
+<div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
+</div>
+<p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形。</p>
+<p><img alt="cfd7f6109b494148882a40fc528b3c73" class="no-scaled-link" src="../../_images/L024_triangle_area1.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
-<li><p>给定三个点及其坐标A(22, 15), B(30, 15), C(26, 19)，连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给线段AB一个标记“b”，给这个三角形一个标记“T1”。注意适当调整标记文字的大小。</p></li>
+<li><p>Given the coordinates of the points ABC as A(22, 15), B(30, 15), C(26, 19), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter “b”; mark the triangle with “T1”. Give proper size to the markers.
+给定三个点及其坐标A(22, 15), B(30, 15), C(26, 19)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给线段AB一个标记“b”，给这个三角形一个标记“T1”。注意适当调整标记文字的大小。</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><p>在线段AB上找到一个点E，使得点E的横坐标与点C的横坐标相同。标记点E，绘制线段CE，并给线段CE添加标记“h”。</p></li>
+<li><p>Find a point E on line segment AB such that the X value of point E is the same as that of point C. Mark the point E, draw the line segment CE, and add the mark “h” to the line segment CE.
+在线段AB上找到一个点E，使得点E的横坐标与点C的横坐标相同。标记点E，绘制线段CE，并给线段CE添加标记“h”。</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>在线段BC的右上方找到一个点D，连接BD和CD，使得BD与AC平行，CD与AB平行。BDC形成另一个三角形。使用蓝色，线宽为3绘制这个三角形。标记D点，并给线段CD一个标记“b”，给这个三角形标记“T2”，注意适当调整标记文字的大小。</p></li>
+<li><p>Find a point D on the upper right of line segment BC, connect BD and CD so that BD is parallel to AC, and CD is parallel to AB. BDC forms another triangle. Draw this triangle using blue color with a line width of 3. Mark point D, and give the line segment CD a mark “b”, mark the triangle as “T2”. Give proper size to the markers.
+在线段BC的右上方找到一个点D，连接BD和CD，使得BD与AC平行，CD与AB平行。BDC形成另一个三角形。使用蓝色，线宽为3绘制这个三角形。标记D点，并给线段CD一个标记“b”，给这个三角形标记“T2”，注意适当调整标记文字的大小。</p></li>
 </ol>
 <ol class="arabic simple" start="4">
-<li><p>以A,B,D,C为顶点的四边形ABCD是一个平行四边形，将这个四边形的每一个顶点水平向右移动18个单位长度，得到点A’, B’, C’, D’。A’B’C’D’形成一个新的平行四边形。使用黑色，线宽为3来绘制这个新平行四边形。给每一个顶点分别标记：“A’”, “B’”, “C’”, “D’”，给线段A’B’和D’C’标记“h”。类似的把点E也向右平移相同的距离，得到点E’,绘制线段C’E’，并在其左侧标记“h”。给这个平行四边形标记“parallelogram1”。</p></li>
+<li><p>A quadrilateral ABCD with A, B, D, and C as vertices is a <strong>parallelogram</strong>. Move each vertex of this quadrilateral horizontally to the right by 18 unit lengths to obtain points A’, B’, C’, and D’. A’B’C’D’ form a new parallelogram. Use black color with a line width of 3 to draw this new parallelogram. Label each vertex separately: “A’”, “B’”, “C’”, “D’”, and label segments A’B’ and D’C’ with “b”. Similarly, move point E the same distance to the right to get point E’, draw line segment C’E’,
+and mark “h” on its left side. Label this parallelogram as “P1”.
+以A,B,D,C为顶点的四边形ABCD是一个<strong>平行四边形</strong>，将这个四边形的每一个顶点水平向右移动18个单位长度，得到点A’, B’, C’, D’。A’B’C’D’形成一个新的平行四边形。使用黑色，线宽为3来绘制这个新平行四边形。给每一个顶点分别标记：“A’”, “B’”, “C’”, “D’”，给线段A’B’和D’C’标记“b”。类似的把点E也向右平移相同的距离，得到点E’,绘制线段C’E’，并在其左侧标记“h”。给这个平行四边形标记“P1”。</p></li>
 </ol>
 <ol class="arabic simple" start="5">
-<li><p>通过上一节课，我们已经知道，每一个平行四边形都对应一个矩形，请在新的平行四边形下方适当的位置（自己决定）绘制这个对应的矩形。给顶点、边和矩形本身做好相应的标记。</p></li>
+<li><p>At the previous lecture, we already know that each parallelogram corresponds to a rectangle. Please draw the corresponding rectangle at the appropriate position (decide by yourself) under the new parallelogram. Label the vertices, edges, and the rectangle itself accordingly.
+通过上一节课，我们已经知道，每一个平行四边形都对应一个矩形，请在新的平行四边形下方适当的位置（自己决定）绘制这个对应的矩形。给顶点、边和矩形本身做好相应的标记。</p></li>
 </ol>
 <ol class="arabic simple" start="6">
-<li><p>思考并编程计算三角形T1的面积。</p></li>
+<li><p>Consider the relationship between the area of triangle T1 and the area of parallelogram P1. Write a method to calculate the area of a triangle whose one side is parallel to the X axis, and call this method to calculate the area of triangle T1.
+思考三角形T1的面积和平行四边形P1的面积的关系，编写一个方法计算一个边平行于X轴的三角形的面积，并调用这个方法计算三角形T1的面积。</p></li>
 </ol>
 </div>
 <div class="section" id="Math-Background-数学背景">
@@ -842,7 +865,40 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
-<p>无</p>
+<p><strong>Translation 平移</strong></p>
+<div class="line-block">
+<div class="line">By translating(moving) a point, line or shape a certain distance, we can get a new point, line, or shape. This translation can be any distance parallel to the X-axis, Y-axis, or in any direction. Write a method to describe this translation, the method accepts two parameters, one parameter represents the point, line or shape, and the other parameter represents the direction and distance of the translation; the method returns the new point, line or shape after translation.</div>
+<div class="line">移动一个点、线或者图形一定的距离可以得到新的点、线、和图形。这种移动可以是平行于X轴、Y轴或任意方向的任意距离。编写一个方法来描述这种移动，该方法接受的参数有两个，一个参数用来表示点、线或图形，另一个参数用来表示移动的方向和程度；该方法返回平移后在新的位置上的点、线或图形。</div>
+</div>
+<div class="line-block">
+<div class="line">Question: How to represent the degree of translation?</div>
+<div class="line">怎么样描述平移的程度?</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Exercise-练习">
+<h2>Exercise 练习<a class="headerlink" href="#Exercise-练习" title="永久链接至标题">¶</a></h2>
+<div class="line-block">
+<div class="line">Give an example of calling this method: specify a point(line, or shape) and a translation, draw it, call the method to get a new one, draw the new one again.</div>
+<div class="line">举一个调用这个方法的例子：指定一个点（线，或形状）和一个动作，绘制它，调用方法获取一个新的点(线，或者形状），重新绘制它。</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
@@ -854,7 +910,7 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span>
 <span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
-<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">add_v</span><span class="p">,</span> <span class="n">get_center</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">get_center</span>
 </pre></div>
 </div>
 </div>
@@ -874,6 +930,36 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;move a shape certain distance defined by offset</span>
+<span class="sd">    params:</span>
+<span class="sd">        shape: a point, line, or a polygon;</span>
+<span class="sd">               data type: tuple or list of tuple</span>
+<span class="sd">               example: (2, 4), [(1, 2), (3, 5)], [(1, 2), (3, 5), (5, 6)]</span>
+<span class="sd">        offset: distance</span>
+<span class="sd">               data type: tuple (dx, dy)</span>
+<span class="sd">               example: (9, 9)</span>
+<span class="sd">    return a tuple or list of tuple representing a point, or a line, polygon.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">new_shape</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">:</span>  <span class="c1"># a point</span>
+        <span class="n">new_shape</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">offset</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">offset</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span> <span class="c1"># a line or a polygon</span>
+        <span class="n">new_shape</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">shape</span><span class="p">:</span>
+            <span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">offset</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">offset</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">new_shape</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_point</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">new_shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
 <span class="n">triangle1</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
 
@@ -889,17 +975,17 @@ div.rendered_html tbody tr:hover {
 <span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">mark</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">line</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="n">add_v</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">C</span><span class="p">,</span> <span class="n">E</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
+<span class="n">text</span><span class="p">(</span><span class="n">translate</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">C</span><span class="p">,</span> <span class="n">E</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
      <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">D</span> <span class="o">=</span> <span class="n">add_v</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span></span><span class="n">D</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="n">triangle2</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">triangle2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">marker_texts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;BDC&quot;</span><span class="p">),</span>
@@ -915,51 +1001,53 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">Ap</span><span class="p">,</span> <span class="n">Bp</span> <span class="o">=</span> <span class="n">add_v</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">add_v</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
-<span class="n">Cp</span><span class="p">,</span> <span class="n">Dp</span> <span class="o">=</span> <span class="n">add_v</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">add_v</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
-<span class="n">parallelogram1</span> <span class="o">=</span> <span class="p">[</span><span class="n">Ap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">,</span> <span class="n">Dp</span><span class="p">,</span> <span class="n">Cp</span><span class="p">]</span>
+<span class="n">parallelogram1</span> <span class="o">=</span> <span class="n">translate</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">offset</span><span class="p">)</span>
+<span class="c1">#Ap, Bp = translate(A, offset), translate(B, offset)</span>
+<span class="c1">#Cp, Dp = translate(C, offset), translate(D, offset)</span>
+<span class="c1">#parallelogram1 = [Ap, Bp, Dp, Cp]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">parallelogram1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;B&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;D&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;C&#39;&quot;</span><span class="p">],</span>
         <span class="n">side_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span>
         <span class="n">side_text_offsets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
         <span class="n">marker_offsets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)],</span>
-        <span class="n">center_text</span> <span class="o">=</span> <span class="s2">&quot;Parallelogram1&quot;</span><span class="p">,</span>
+        <span class="n">center_text</span> <span class="o">=</span> <span class="s2">&quot;P1&quot;</span><span class="p">,</span>
         <span class="n">center_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">)</span>
        <span class="p">)</span>
+<span class="n">Ap</span><span class="p">,</span> <span class="n">Bp</span><span class="p">,</span> <span class="n">Dp</span><span class="p">,</span> <span class="n">Cp</span> <span class="o">=</span> <span class="n">parallelogram1</span>
 <span class="n">Ep</span> <span class="o">=</span> <span class="p">(</span><span class="n">Cp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Ap</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">mark</span><span class="p">(</span><span class="n">Ep</span><span class="p">,</span> <span class="s2">&quot;E&#39;&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">line</span><span class="p">(</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ep</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="n">add_v</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ep</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
+<span class="n">text</span><span class="p">(</span><span class="n">translate</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">Cp</span><span class="p">,</span> <span class="n">Ep</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
      <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">App</span><span class="p">,</span> <span class="n">Bpp</span> <span class="o">=</span> <span class="n">add_v</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">add_v</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+<span class="n">App</span><span class="p">,</span> <span class="n">Bpp</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">translate</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
 <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Cpp</span><span class="p">,</span> <span class="n">Dpp</span> <span class="o">=</span> <span class="n">add_v</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">add_v</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+<span class="n">Cpp</span><span class="p">,</span> <span class="n">Dpp</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">offset</span><span class="p">),</span> <span class="n">translate</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
 <span class="n">rectangle1</span> <span class="o">=</span> <span class="p">[</span><span class="n">App</span><span class="p">,</span> <span class="n">Bpp</span><span class="p">,</span> <span class="n">Dpp</span><span class="p">,</span> <span class="n">Cpp</span><span class="p">]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">rectangle1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&#39;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;B&#39;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;D&#39;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;C&#39;&#39;&quot;</span><span class="p">],</span>
         <span class="n">side_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">],</span>
         <span class="n">side_text_offsets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)],</span>
         <span class="n">marker_offsets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
-        <span class="n">center_text</span> <span class="o">=</span> <span class="s2">&quot;Rectangle1&quot;</span><span class="p">,</span>
+        <span class="n">center_text</span> <span class="o">=</span> <span class="s2">&quot;R1&quot;</span><span class="p">,</span>
         <span class="n">center_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">)</span>
        <span class="p">)</span>
 
 <span class="n">line</span><span class="p">(</span><span class="n">Cpp</span><span class="p">,</span> <span class="n">App</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="n">add_v</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">Cpp</span><span class="p">,</span> <span class="n">App</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
+<span class="n">text</span><span class="p">(</span><span class="n">translate</span><span class="p">(</span><span class="n">get_center</span><span class="p">([</span><span class="n">Cpp</span><span class="p">,</span> <span class="n">App</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)),</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span>
      <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -968,7 +1056,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>复习tuple</p></li>
+<li><p>学习平移的数学表达形式</p></li>
+<li><p>复习<code class="docutils literal notranslate"><span class="pre">type</span></code>方法</p></li>
 <li><p>复习qianglib的一些方法</p></li>
 <li><p>复习方法的返回值</p></li>
 </ol>
@@ -980,23 +1069,346 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>拼接两个完全一样的三角形T1可以得到不止一个平行四边形，本讲中得到的只是其中的一个，还存在2个不一样的平行四边形。请尝试绘制出另外两个平行四边形，并做好标记（可以对T1作适当的平移）。</p></li>
+<li><p>In this lecture, we learned that two identical triangles can be joined together to form a parallelogram. In fact, by splicing two identical triangles(ex. T1), more than one shape of parallelogram can be formed. Only one of them was introduced in the lecture. In this assignment, please try to draw two other parallelograms that are formed by 2 identical T1. mark them properly (You may make appropriate translations for
+T1).在本讲课程里，我们学到两个完全一样的三角形可以拼接成一个平行四边形。事实上，拼接两个完全一样的三角形T1可以得到不止一种形状的平行四边形，本讲中得到的只是其中的一个，还可以拼出其它形状的平行四边形。请尝试绘制出另外两个平行四边形，并做好标记（可以对T1作适当的平移）。</p></li>
 </ol>
-<ol class="arabic simple" start="2">
-<li><p>等腰三角形</p></li>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">triangle1</span> <span class="o">=</span> <span class="n">translate</span><span class="p">([</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">polygon</span><span class="p">(</span><span class="n">triangle1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">side_texts</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span>
+        <span class="n">marker_texts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABC&quot;</span><span class="p">),</span>
+        <span class="n">marker_offsets</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+        <span class="n">center_text</span> <span class="o">=</span> <span class="s2">&quot;T1&quot;</span><span class="p">,</span>
+        <span class="n">center_text_offset</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">center_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+       <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># write your code here</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Follow the steps to draw, and Answer the questions
+按流程编程绘图并回答问题</p>
+<ol class="arabic">
+<li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
+<li><p>Draw another line between points O(18, 0) and O’(18,25) with black color and line width of 1; 用黑色，线宽为1连接点O(18, 0), O’(18,25)，形成线段OO’；</p></li>
+<li><p>Randomly generate a point, X(18, 10) for example, on line OO’ by calling the method <code class="docutils literal notranslate"><span class="pre">randint</span></code>， draw the line of AX and AB with black color and line width of 1. Estimate the length of AX and BX and the angle AXB with you eyes.调用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法在线段OO’中随机选定一个点，假定生成的点是(18, 10)，用X标记。用黑色、线宽为1连接AX, BX,得到一个三角形ABX。记录点X的坐标，用肉眼估计线段AX，BX的长度，用肉眼比较角AXB与90度角的大小关系，记在下面的表格里。</p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="47c585f2b86645cfb3acc0ba503ff952" class="no-scaled-link" src="../../_images/L024_assign21.png" style="width: 500px;" /></p></li>
+<li><p>Repeat the third step(C) 10 times, mark the point randomly generated with the letter: C, D, E, F, G, H, I, J, K, L. Fill the following table.重复10次上一步骤，每次随机生成的点分别标记为：C, D, E, F, G, H, I, J, K, L。并把相关结果填入表格。</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Point X</p></th>
+<th class="head"><p>Length AX</p></th>
+<th class="head"><p>Length BX</p></th>
+<th class="head"><p>is Angle AXB &gt; 90?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X (18, 10)</p></td>
+<td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>C ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>D ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>E ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>F ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>G ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>H ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>I ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>J ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>K ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>L ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Observe the data in the table, Do you have any findings? Write down you findins here. 观察分析填写好的表格，你能得到一些什么发现？ 用文字写下你的发现。</p></li>
 </ol>
-<ol class="arabic simple" start="3">
-<li><p>直角三角形</p></li>
+</li>
 </ol>
-<ol class="arabic simple" start="4">
-<li><p>等腰直角三角形</p></li>
-</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">O</span><span class="p">,</span> <span class="n">Op</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="s2">&quot;O &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">O</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Op</span><span class="p">,</span> <span class="s2">&quot;O&#39; &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Op</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;X &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="3">
+<li><p>Follow the steps to draw, and Answer the questions
+按流程编程绘图并回答问题</p>
+<ol class="arabic">
+<li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
+<li><p>Draw another line between points O(5, 20) and O’(35, 20) with black color and line width of 1; 用黑色，线宽为1连接点O(18, 0), O’(18,25)，形成线段OO’；</p></li>
+<li><p>Randomly generate a point, X(18, 10) for example, on line OO’ by calling the method <code class="docutils literal notranslate"><span class="pre">randint</span></code>， draw the line of AX and AB with black color and line width of 1. Estimate the length of AX and BX and with you eyes. Calculate the area of the triangle AXB. 调用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法在线段OO’中随机选定一个点，假定生成的点是(18, 10)，用X标记。用黑色、线宽为1连接AX, BX,得到一个三角形ABX。记录点X的坐标，用肉眼估计线段AX，BX的长度，计算三角形AXB的面积，记在下面的表格里（第一行示例）。</p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="36ad32d6056a4c759b1d28fc6bca67fe" class="no-scaled-link" src="../../_images/L024_assign31.png" style="width: 500px;" /></p></li>
+<li><p>Repeat the third step(C) 10 times, mark the point randomly generated with the letter: C, D, E, F, G, H, I, J, K, L. Fill the following table.重复10次上一步骤，每次随机生成的点分别标记为：C, D, E, F, G, H, I, J, K, L。并把相关结果填入表格。</p>
+<table class="table">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Point X</p></th>
+<th class="head"><p>Length AX</p></th>
+<th class="head"><p>Length BX</p></th>
+<th class="head"><p>Area of AXB</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X (18, 20)</p></td>
+<td><p>14</p></td>
+<td><p>14</p></td>
+<td><p>84</p></td>
+</tr>
+<tr class="row-odd"><td><p>C ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>D ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>E ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>F ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>G ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>H ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>I ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>J ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>K ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>L ( , )</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Observe the data in the table, Do you have any findings? Write down you findins here. 观察分析填写好的表格，你能得到一些什么发现？ 用文字写下你的发现。</p></li>
+</ol>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">O</span><span class="p">,</span> <span class="n">Op</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="s2">&quot;O &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">O</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Op</span><span class="p">,</span> <span class="s2">&quot;O&#39; &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Op</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;X &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Follow the steps to draw, and Answer the questions
+按流程编程绘图并回答问题</p>
+<ol class="arabic simple">
+<li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
+<li><p>Give the third point C(18, 15), connect AC and AB form a triangle ABC. It is true that the angle ACB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>. A triangle with one right angle is called a right triangle. If you measure the length of AC and BC, you will find that they are equal. 给定第三个点C(18, 15), 连接AC和AB形成三角形ABC，那么<span class="math notranslate nohighlight">\(\angle\)</span>ACB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>。这样有一个角是直角的三角形称为三角形。如果你测量AC和BC的长度，你会发现他们一样长。</p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="504c1fa758364a9c93fc5b8a62aab1e8" class="no-scaled-link" src="../../_images/L024_assign41.png" style="width: 500px;" /></p></li>
+<li><p>In the drawing paper, can you find another point X such that the triangle AXB is a right triangle with angle AXB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到另外一个点X，使得三角形AXB是一个直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>AXB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
+<li><p>In the drawing paper, can you find other points Y such that the triangle AYB is a right triangle with the angle YAB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到其它一些点Y，使得三角形YAB是直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>YAB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
+<li><p>In the drawing paper, can you find other points Z such that the triangle AZB is a right triangle with the angle ZBA is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到其它一些点Z，使得三角形ZBA是直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>ZBA等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
+<li><p>Observe the triangles you draw, Write down your findings here. 观察你绘制的所有三角形，并在这里写下你的发现。</p></li>
+</ol>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;B &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;X &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">line</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

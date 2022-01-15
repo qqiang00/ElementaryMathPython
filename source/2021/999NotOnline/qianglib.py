@@ -13,7 +13,7 @@ def text(pos, info, align="center", font=("Arial", 8, "normal"), move=False, col
 
 
 def mark(pos, info=None,
-         size=5, color="red", offset=(0, 1), align="left", 
+         size=5, color="red", offset=(0.5, 0.5), align="left", 
          font=("Arial", 10, "normal"), move=False, ):
     pu()
     goto(pos)
