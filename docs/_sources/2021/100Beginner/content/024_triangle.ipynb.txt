@@ -37,8 +37,8 @@
    "id": "d1dd0125-5662-4c64-a90c-9b663cebf35a",
    "metadata": {},
    "source": [
-    "1. Given the coordinates of the points ABC as A(22, 15), B(30, 15), C(26, 19), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter \"b\"; mark the triangle with \"T1\". Give proper size to the markers.    \n",
-    "给定三个点及其坐标A(22, 15), B(30, 15), C(26, 19)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给线段AB一个标记\"b\"，给这个三角形一个标记\"T1\"。注意适当调整标记文字的大小。"
+    "1. Given the coordinates of the points ABC as A(5, 15), B(13, 15), C(7, 19), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter \"b\"; mark the triangle with \"T1\". Give proper size to the markers.    \n",
+    "给定三个点及其坐标A(5, 15), B(13, 15), C(7, 19)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给线段AB一个标记\"b\"，给这个三角形一个标记\"T1\"。注意适当调整标记文字的大小。"
    ]
   },
   {
@@ -126,11 +126,215 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
+   "id": "80437e29-2295-48b7-b195-c0a7f03e9cbc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import setup, reset, pu, pd, bye, left, right, fd, bk, screensize\n",
+    "from turtle import goto, seth, write, ht, st, home, dot, pen, speed\n",
+    "from qianglib import prepare_paper, draw_grid, mark, lines, line, polygon, text\n",
+    "from qianglib import get_center"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "70162687-84ed-42b5-8b9d-885c9b66ecec",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "width, height = 800, 600\n",
+    "setup(width, height, 0, 0)\n",
+    "prepare_paper(width, height, scale=20, min_x=0, min_y=0, max_y=25)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
    "id": "54de9d5b-2446-41a3-aa86-421032fa2ca2",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "P1 = (12, 8)\n",
+    "mark(P1, info=\"P1\"+str(P1), color=\"blue\", offset=(0, -2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "cb95aac5-dc5e-440b-a033-8f591f21cf2a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# move P1 right -> 15, up -> 12.\n",
+    "# 移动 P1 向右 15个单位， 向上 12 个单位\n",
+    "P2 = (P1[0]+15, P1[1]+12)\n",
+    "mark(P2, info=\"P2\"+str(P2), color=\"red\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "7f808219-057c-4cff-8d96-6d3709c596c6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# right 8, up -> 6\n",
+    "P3 = (P1[0]+8, P1[1]+12)\n",
+    "mark(P3, \"P3\"+str(P3))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "82fd4f88-6308-4fb2-ae60-7bf686cc1ad3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def move(point, right, up):\n",
+    "    new_point = (point[0]+right, point[1]+up)\n",
+    "    return new_point"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a8f31b71-97fe-42dd-a151-67bb12633975",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(16, 18)\n"
+     ]
+    }
+   ],
+   "source": [
+    "# P4 right 4, up 10\n",
+    "P4 = move(P1, 4, 10)\n",
+    "print(P4)\n",
+    "mark(P4, \"P4\"+str(P4), offset=(-3, 0))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "c5c09ede-27be-4248-b9b1-fb9f9c3de16c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def translate(shape, offset=(0, 0)):\n",
+    "    new_shape = None\n",
+    "    if type(shape) == tuple:\n",
+    "        new_shape = shape[0]+offset[0], shape[1]+offset[1]\n",
+    "    elif type(shape) == list:\n",
+    "        new_shape = []\n",
+    "        for point in shape:\n",
+    "            new_point = translate(point, offset) \n",
+    "            new_shape.append(new_point)\n",
+    "    else:\n",
+    "        pass\n",
+    "    return new_shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "12e9da3a-3f16-4ef1-b536-f19724d24c97",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "P5 = translate(P1, (3, 5))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "eac6381c-b024-48ca-9c5d-0899d3fa58d2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "P6 = translate(P5, (0, 1))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "6da20e23-6039-43df-be9a-2edfc14bfea8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "P7 = translate(P6, (0, 0))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "89f7df9c-eb31-4e6d-b405-9e76891d7219",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "P8 = translate(P2, (-4, -2))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "c9982f09-5aeb-43e7-b17c-93641740c1fc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "polygon1 = [P1, P2, P3, P4]\n",
+    "polygon(polygon1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "87abe193-79e3-49db-a21e-9dbdd61812b1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# right = 8, down = 7\n",
+    "offset = (8, -7)\n",
+    "polygon2 = []\n",
+    "for point in polygon1:\n",
+    "    new_point = translate(point, offset) \n",
+    "    polygon2.append(new_point)\n",
+    "    \n",
+    "polygon(polygon2, color=\"red\", line_width=5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "5f5a35b7-38bb-4d2e-bc73-b5ae65b506bf",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[(2, 10), (17, 22), (10, 22), (6, 20)]\n"
+     ]
+    }
+   ],
+   "source": [
+    "polygon3 = translate(polygon1, (-10, 2))\n",
+    "print(polygon3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "a2d33973-f8ff-492e-a9e4-99cc67d67d5d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "polygon(polygon3, color=\"blue\")"
+   ]
   },
   {
    "cell_type": "markdown",
@@ -167,7 +371,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 17,
    "id": "b1ae7be3-fdde-46b5-820e-c35a55d2fbe0",
    "metadata": {},
    "outputs": [],
@@ -180,7 +384,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 18,
    "id": "c9f69342-ebb2-4f71-a0a1-f53de9d5bd4d",
    "metadata": {},
    "outputs": [],
@@ -192,7 +396,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 19,
    "id": "a923e58c-9fde-4044-9281-e1a58574b809",
    "metadata": {},
    "outputs": [],
@@ -223,7 +427,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 20,
    "id": "0050bafb-33ff-40d7-bf92-b860ce1b317d",
    "metadata": {},
    "outputs": [],
@@ -249,7 +453,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 21,
    "id": "b1986646-cda7-44c5-8df1-f349d2833082",
    "metadata": {},
    "outputs": [],
@@ -269,7 +473,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 22,
    "id": "ac318cbd-82b3-458e-ba8a-fc54d97ea532",
    "metadata": {},
    "outputs": [],
@@ -297,7 +501,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 23,
    "id": "2c584b45-d7a6-47d4-bd3d-944b6899934d",
    "metadata": {},
    "outputs": [],
@@ -377,7 +581,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 24,
    "id": "80c955bd-8e90-4044-a5e2-819c8dae09db",
    "metadata": {},
    "outputs": [],
@@ -387,7 +591,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 25,
    "id": "230eaa5f-8bf3-43a7-9488-2d2bd7b20b9e",
    "metadata": {},
    "outputs": [],
@@ -407,7 +611,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 26,
    "id": "9996647f-c3e9-4634-8c56-b83173c68172",
    "metadata": {},
    "outputs": [],
@@ -482,6 +686,30 @@
     "        |L ( ,  ) |             |           |                     |\n",
     "   6. Observe the data in the table, Do you have any findings? Write down you findins here. 观察分析填写好的表格，你能得到一些什么发现？ 用文字写下你的发现。"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e2d53bce-8b80-485d-a195-8ca4b5a2d80b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "86d2e5cd-74e6-47be-937e-6e5db2d3d98b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "b2367150-297d-422e-aca4-227403e9b4d8",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   },
   {
    "cell_type": "code",
