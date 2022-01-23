@@ -848,7 +848,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形。</p>
-<p><img alt="75c61ff1a0a04a02af2e40420f16367f" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
+<p><img alt="978e64dacda040b38a2fd73012ff2ba6" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Given the coordinates of the points ABC as A(7, 16), B(15, 16), C(7, 22), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter “b”; mark the triangle with “T1”. Give proper size to the markers;
 给定三个点及其坐标A(7, 16), B(15, 16), C(7, 22)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给这个三角形一个标记“T1”;</p></li>
@@ -1154,7 +1154,7 @@ div.rendered_html tbody tr:hover {
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li><p>学习水平和垂直镜像的数学表达形式</p></li>
-<li><p>复习<code class="docutils literal notranslate"><span class="pre">type</span></code>方法,</p></li>
+<li><p>复习<code class="docutils literal notranslate"><span class="pre">type</span></code>方法</p></li>
 <li><p>复习<code class="docutils literal notranslate"><span class="pre">tuple</span></code>和<code class="docutils literal notranslate"><span class="pre">list</span></code>的区别</p></li>
 <li><p>复习在方法中调用方法</p></li>
 </ol>
@@ -1215,11 +1215,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <ol class="arabic simple">
-<li><ol class="arabic simple">
 <li><p>Improve your own <code class="docutils literal notranslate"><span class="pre">mirror</span></code> method, so that it can perform horizontal or vertical mirroring operations on any graphics, and get its mirror graphics.
 完善你自己编写的<code class="docutils literal notranslate"><span class="pre">mirror</span></code>方法，使得它能够对任意图形进行水平或垂直镜像操作，并得到它的镜像图形。</p></li>
-</ol>
-</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1255,34 +1252,6 @@ position and shape as shown in the lecture.Did the method you wrote actually get
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">polygon1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">17</span><span class="p">),</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">)]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">polygon1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[152]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon2</span> <span class="o">=</span> <span class="n">mirror</span><span class="p">(</span><span class="n">polygon1</span><span class="p">,</span> <span class="n">line_ver</span><span class="p">)</span>
-<span class="n">polygon</span><span class="p">(</span><span class="n">polygon2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[155]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon3</span> <span class="o">=</span> <span class="n">mirror</span><span class="p">(</span><span class="n">polygon1</span><span class="o">+</span><span class="n">polygon2</span><span class="p">,</span> <span class="n">line_hor</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[156]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">(</span><span class="n">polygon3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
