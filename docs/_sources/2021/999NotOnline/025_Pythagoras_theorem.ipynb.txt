@@ -5,7 +5,7 @@
    "id": "relative-location",
    "metadata": {},
    "source": [
-    "## 第20讲 勾股定理-毕达哥拉斯定理"
+    "## 第25讲 勾股定理-毕达哥拉斯定理"
    ]
   },
   {
@@ -18,11 +18,20 @@
   },
   {
    "cell_type": "markdown",
-   "id": "87c843e7-cbef-4128-9360-c3ebd33dcc1b",
+   "id": "2dc69c35-8349-4c87-b823-72f2bf77c214",
    "metadata": {},
    "source": [
-    "使用`qianglib`库提供的方法，绘制方格坐标纸，其中坐标系的原点`(0,0)`位于绘图区的最左下方，使用的`scale`值为`20`. Use the methods provided in the library `qianglib`, draw a grid coordinate system where the origin `(0, 0)` is at the bottom left of the coordinate system."
+    "给定两个正方形，它们的边长分别为$a=6$和$b=8$，请你找到第三个正方形，确定它的边长$c$，使得第三个正方形的面积正好是前两个正方形面积的和。即:$$a^2+b^2=c^2$$\n",
+    "\n",
+    "Given two squares with side lengths $a=6$ and $b=8$, find a third square by specifying its side length $c$ such that the area of the third square is exactly the sum of the areas of the first two squares:\n",
+    "$$a^2+b^2=c^2$$"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87c843e7-cbef-4128-9360-c3ebd33dcc1b",
+   "metadata": {},
+   "source": []
   },
   {
    "cell_type": "markdown",
@@ -66,7 +75,7 @@
    "id": "ac3f3f62-7bb0-4f00-9a4e-4085b96c14dd",
    "metadata": {},
    "source": [
-    "无"
+    "1. 使用`qianglib`库提供的方法，绘制方格坐标纸，其中坐标系的原点`(0,0)`位于绘图区的最左下方，使用的`scale`值为`20`. Use the methods provided in the library `qianglib`, draw a grid coordinate system where the origin `(0, 0)` is at the bottom left of the coordinate system."
    ]
   },
   {
@@ -87,7 +96,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 3,
    "id": "b1ae7be3-fdde-46b5-820e-c35a55d2fbe0",
    "metadata": {},
    "outputs": [],
@@ -99,7 +108,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 4,
    "id": "bed66e63-7d02-4c22-bf10-8863883aab94",
    "metadata": {},
    "outputs": [],
@@ -110,7 +119,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 5,
    "id": "88876840-dedf-4f9f-84b9-9ff8f1460360",
    "metadata": {},
    "outputs": [],
