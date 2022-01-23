@@ -216,3 +216,78 @@ def generate_parallelogram(p_left_bottom, base, height, hor_offset):
 
 def generate_rectangle(p_left_bottom, base, height):
     return generate_parallelogram(p_left_bottom, base, height, 0)
+
+
+def translate(shape, offset):
+    '''move a shape certain distance defined by offset
+    params:
+        shape: a point, line, or a polygon;
+               data type: tuple or list of tuple
+               example: (2, 4), [(1, 2), (3, 5)], [(1, 2), (3, 5), (5, 6)]
+        offset: distance
+               data type: tuple (dx, dy)
+               example: (9, 9)
+    return a tuple or list of tuple representing a point, or a line, polygon.
+    '''
+    new_shape = None
+    if type(shape) == tuple:  # a point
+        new_shape = shape[0]+offset[0], shape[1]+offset[1]
+    elif type(shape) == list: # a line or a polygon
+        new_shape = []
+        for point in shape:
+            new_point = point[0] + offset[0], point[1]+offset[1]
+            new_shape.append(new_point)
+    else:
+        pass
+    return new_shape  
+
+
+def mirror(shape, symmetry_axis):
+    '''mirror a shape based on a horizontal or vertical symmetry_axis 
+       represented by two points
+    params:
+        symmetry_axis: list of point, lenth = 2, either horizontal or vertical
+               data type: [(int, int), (int, int)]
+               example: [(0, 13), (38, 13)] a horizontal line
+        offset: shape, a point, line, or a polygon
+               data type: tuple or list of tuple
+               example: (2, 4), [(1, 2), (3, 5)], [(1, 2), (3, 5), (5, 6)]
+               
+    return a tuple or list of tuple representing a point, or a line, polygon.
+    '''
+    new_shape = None
+    is_axis_horizontal = False
+    is_axis_vertical = False
+    if len(symmetry_axis) != 2:
+        return None
+    if symmetry_axis[0][0] == symmetry_axis[1][0]:
+        is_axis_vertical = True # vertical
+    if symmetry_axis[0][1] == symmetry_axis[1][1]:
+        is_axis_horizontal = True
+    if not is_axis_horizontal and not is_axis_vertical:
+        return None  # don't know how to mirror so far
+    
+    the_value, the_index = None, None
+    if is_axis_horizontal:
+        the_value = symmetry_axis[0][1] # a y value
+        the_index = 1 # will update y value
+    else:
+        the_value = symmetry_axis[0][0]
+        the_index = 0 # will update x value
+        
+    if type(shape) == tuple:  # a point
+        new_value = 2*the_value - shape[the_index]
+        new_shape = list(shape)
+        new_shape[the_inex] = new_value
+        new_shape = tuple(new_shape)
+    elif type(shape) == list: # a line or a polygon
+        new_shape = []
+        for point in shape:
+            new_value = 2*the_value - point[the_index]
+            new_point = list(point)
+            new_point[the_index] = new_value
+            new_point = tuple(new_point)
+            new_shape.append(new_point)
+    else:
+        pass
+    return new_shape  

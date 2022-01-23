@@ -5,7 +5,7 @@
    "id": "relative-location",
    "metadata": {},
    "source": [
-    "## 第25讲 勾股定理-毕达哥拉斯定理"
+    "## 第26讲 勾股定理-毕达哥拉斯定理"
    ]
   },
   {
@@ -25,6 +25,8 @@
     "\n",
     "Given two squares with side lengths $a=6$ and $b=8$, find a third square by specifying its side length $c$ such that the area of the third square is exactly the sum of the areas of the first two squares:\n",
     "$$a^2+b^2=c^2$$\n",
+    "\n",
+    "\n",
     "<img src=\"figures/L025_pythagoras_theorem.png\" width=\"500px\" />"
    ]
   },

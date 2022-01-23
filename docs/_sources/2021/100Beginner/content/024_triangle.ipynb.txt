@@ -126,7 +126,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "id": "80437e29-2295-48b7-b195-c0a7f03e9cbc",
    "metadata": {},
    "outputs": [],
@@ -139,7 +139,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "id": "70162687-84ed-42b5-8b9d-885c9b66ecec",
    "metadata": {},
    "outputs": [],
@@ -151,7 +151,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": null,
    "id": "54de9d5b-2446-41a3-aa86-421032fa2ca2",
    "metadata": {},
    "outputs": [],
@@ -162,7 +162,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "id": "cb95aac5-dc5e-440b-a033-8f591f21cf2a",
    "metadata": {},
    "outputs": [],
@@ -175,7 +175,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": null,
    "id": "7f808219-057c-4cff-8d96-6d3709c596c6",
    "metadata": {},
    "outputs": [],
@@ -187,7 +187,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "id": "82fd4f88-6308-4fb2-ae60-7bf686cc1ad3",
    "metadata": {},
    "outputs": [],
@@ -199,18 +199,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "id": "a8f31b71-97fe-42dd-a151-67bb12633975",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "(16, 18)\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# P4 right 4, up 10\n",
     "P4 = move(P1, 4, 10)\n",
@@ -220,7 +212,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "id": "c5c09ede-27be-4248-b9b1-fb9f9c3de16c",
    "metadata": {},
    "outputs": [],
@@ -241,7 +233,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": null,
    "id": "12e9da3a-3f16-4ef1-b536-f19724d24c97",
    "metadata": {},
    "outputs": [],
@@ -251,7 +243,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": null,
    "id": "eac6381c-b024-48ca-9c5d-0899d3fa58d2",
    "metadata": {},
    "outputs": [],
@@ -261,7 +253,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": null,
    "id": "6da20e23-6039-43df-be9a-2edfc14bfea8",
    "metadata": {},
    "outputs": [],
@@ -271,7 +263,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": null,
    "id": "89f7df9c-eb31-4e6d-b405-9e76891d7219",
    "metadata": {},
    "outputs": [],
@@ -281,7 +273,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": null,
    "id": "c9982f09-5aeb-43e7-b17c-93641740c1fc",
    "metadata": {},
    "outputs": [],
@@ -292,7 +284,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": null,
    "id": "87abe193-79e3-49db-a21e-9dbdd61812b1",
    "metadata": {},
    "outputs": [],
@@ -309,18 +301,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": null,
    "id": "5f5a35b7-38bb-4d2e-bc73-b5ae65b506bf",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[(2, 10), (17, 22), (10, 22), (6, 20)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "polygon3 = translate(polygon1, (-10, 2))\n",
     "print(polygon3)"
@@ -328,7 +312,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": null,
    "id": "a2d33973-f8ff-492e-a9e4-99cc67d67d5d",
    "metadata": {},
    "outputs": [],
@@ -371,7 +355,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": null,
    "id": "b1ae7be3-fdde-46b5-820e-c35a55d2fbe0",
    "metadata": {},
    "outputs": [],
@@ -384,7 +368,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": null,
    "id": "c9f69342-ebb2-4f71-a0a1-f53de9d5bd4d",
    "metadata": {},
    "outputs": [],
@@ -396,7 +380,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": null,
    "id": "a923e58c-9fde-4044-9281-e1a58574b809",
    "metadata": {},
    "outputs": [],
@@ -427,7 +411,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": null,
    "id": "0050bafb-33ff-40d7-bf92-b860ce1b317d",
    "metadata": {},
    "outputs": [],
@@ -453,7 +437,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": null,
    "id": "b1986646-cda7-44c5-8df1-f349d2833082",
    "metadata": {},
    "outputs": [],
@@ -473,7 +457,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": null,
    "id": "ac318cbd-82b3-458e-ba8a-fc54d97ea532",
    "metadata": {},
    "outputs": [],
@@ -501,7 +485,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": null,
    "id": "2c584b45-d7a6-47d4-bd3d-944b6899934d",
    "metadata": {},
    "outputs": [],
@@ -581,7 +565,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": null,
    "id": "80c955bd-8e90-4044-a5e2-819c8dae09db",
    "metadata": {},
    "outputs": [],
@@ -591,7 +575,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": null,
    "id": "230eaa5f-8bf3-43a7-9488-2d2bd7b20b9e",
    "metadata": {},
    "outputs": [],
@@ -611,7 +595,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": null,
    "id": "9996647f-c3e9-4634-8c56-b83173c68172",
    "metadata": {},
    "outputs": [],
@@ -666,42 +650,9 @@
     "   按流程编程绘图并回答问题\n",
     "   1. Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；\n",
     "   2. Draw another line between points O(5, 20) and O'(35, 20) with black color and line width of 1; 用黑色，线宽为1连接点O(18, 0), O'(18,25)，形成线段OO'；\n",
-    "   3. Randomly generate a point, X(18, 10) for example, on line OO' by calling the method `randint`， draw the line of AX and AB with black color and line width of 1. Estimate the length of AX and BX and with you eyes. Calculate the area of the triangle AXB. 调用`randint`方法在线段OO'中随机选定一个点，假定生成的点是(18, 10)，用X标记。用黑色、线宽为1连接AX, BX,得到一个三角形ABX。记录点X的坐标，用肉眼估计线段AX，BX的长度，计算三角形AXB的面积，记在下面的表格里（第一行示例）。\n",
-    "   4. By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图：\n",
-    "   <img src=\"figures/L024_assign3.png\" width=\"500px\" />\n",
-    "   5. Repeat the third step(C) 10 times, mark the point randomly generated with the letter: C, D, E, F, G, H, I, J, K, L. Fill the following table.重复10次上一步骤，每次随机生成的点分别标记为：C, D, E, F, G, H, I, J, K, L。并把相关结果填入表格。\n",
-    "\n",
-    "        | Point X   |  Length AX  | Length BX | Area of AXB  |\n",
-    "        |:---------:|:-----------:|-----------|--------------------|\n",
-    "        |X (18, 20) |     14      |    14   |       84             |\n",
-    "        |C (   ,   ) |            |           |                     |\n",
-    "        |D (  ,  ) |             |           |                     |\n",
-    "        |E (  ,  ) |             |           |                     |\n",
-    "        |F (  ,  ) |             |           |                     |\n",
-    "        |G (  ,  ) |             |           |                     |\n",
-    "        |H (  ,  ) |             |           |                     |\n",
-    "        |I (  ,  ) |             |           |                     |\n",
-    "        |J (  ,  ) |             |           |                     |\n",
-    "        |K ( ,  ) |             |           |                     |\n",
-    "        |L ( ,  ) |             |           |                     |\n",
-    "   6. Observe the data in the table, Do you have any findings? Write down you findins here. 观察分析填写好的表格，你能得到一些什么发现？ 用文字写下你的发现。"
+    "   3. Randomly generate two points C and D on line OO' by calling the method `randint`， let C is left to D, draw the line of AC, BC, AD, and BD, you will find line AD and BC intersect at a point, let's say E. Now, 1). count how many triangles are there given these points A, B, C, D, and E as verticies. 2) among these triangles, are there any triangles that have the same area? list all the scenarios that two (or more) triangles have the same area. 用方法`randint`在线段OO’上随机生成两个点C和D，使得C位于D的左侧。绘制线段AC,BC,AD和BD，你会发现线段AD和BC相交于一个点，命名为E。现在：1)数一数由点A,B,C,D,E作为顶点一共能够组成多少个三角形？2)在所有的这些三角形中，有没有一些三角形的面积相等，把所有面积相等的三角形一一列举出来。\n",
+    "   <img src=\"figures/L024_assign3.png\" width=\"500px\" />"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "e2d53bce-8b80-485d-a195-8ca4b5a2d80b",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "86d2e5cd-74e6-47be-937e-6e5db2d3d98b",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   },
   {
    "cell_type": "code",
