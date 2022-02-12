@@ -403,6 +403,11 @@
        Course Plan 课程计划
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Beginner/content/001_hello_python.html">
+       第1讲 你好，Python
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -430,7 +435,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../600appendix/content/000_intro_to_course-Copy1.html">
+    <a class="reference internal" href="../../../600appendix/content/000_intro_to_course.html">
      附录一 初级课程介绍
     </a>
    </li>
@@ -442,6 +447,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../../600appendix/content/010_install_jupyter_notebook_on_windows.html">
      附录三 Windows操作系统下搭建Python运行环境
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../600appendix/content/011_install_jupyter_notebook_on_mac.html">
+     附录三 Mac操作系统下搭建Python运行环境
     </a>
    </li>
    <li class="toctree-l2">
@@ -848,7 +858,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形。</p>
-<p><img alt="978e64dacda040b38a2fd73012ff2ba6" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
+<p><img alt="4425290e087d45ca88e0b4dc31996278" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Given the coordinates of the points ABC as A(7, 16), B(15, 16), C(7, 22), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter “b”; mark the triangle with “T1”. Give proper size to the markers;
 给定三个点及其坐标A(7, 16), B(15, 16), C(7, 22)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给这个三角形一个标记“T1”;</p></li>
@@ -883,7 +893,7 @@ div.rendered_html tbody tr:hover {
 <p>如果你站在镜子前，镜子里会出现一个一模一样的你，你离镜子越近，你也会感觉镜子中的你离镜子也越近；你离镜子越远，你也会感觉镜子中的你离镜子也越远。镜子就相当于一个对称轴面，它把镜子外的人复制后按照一定的规律重新摆放在镜子里。在数学的几何中，也有类似的操作，可以设置一个线段当镜子，将点或各种图形镜像到一个新的位置，使得他们就好像在照镜子一样。这个充当镜子的线段称为对称轴，原来的点或图形称为原始图形，新得到的点或图形称为镜像图形。</p>
 <p>Question: How to represent the the mirror mathematically? 如何用数学公式来描述这种镜像操作？</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[113]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -895,7 +905,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[114]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -906,7 +916,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[115]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -918,11 +928,19 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[116]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">mirror_left_right</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">vertical_symmetric_line</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    params</span>
+<span class="sd">        point: type of tuple, example: (x, y)</span>
+<span class="sd">        vertical_symmetric_line: list of two points.</span>
+<span class="sd">            example: [(x0, y0), (x0, y1)], y0 != y1</span>
+<span class="sd">    return</span>
+<span class="sd">        mirrord point, type of tuple, example: (x_m, y_m)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">new_point</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="c1"># TODO: write your code here</span>
     <span class="k">return</span> <span class="n">new_point</span>
@@ -930,7 +948,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[117]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -961,11 +979,91 @@ div.rendered_html tbody tr:hover {
 <div class="line">举一个调用这个方法的例子：指定一个点（线，或形状）和一个动作，绘制它，调用方法获取一个新的点(线，或者形状），重新绘制它。</div>
 </div>
 <div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="s2">&quot;P(10, 10)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">P_mirror_tony</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">P_mirror_yunzi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">P_mirror_jason</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">P_mirror_sophie</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span> <span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">P_mirror_tony</span><span class="p">,</span> <span class="s2">&quot;P_mirror&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p_tony</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">p_tony</span><span class="p">,</span> <span class="s2">&quot;tony&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p_mirror_tony_by_yunzi</span> <span class="o">=</span> <span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">p_mirror_tony_by_yunzi</span><span class="p">,</span> <span class="s2">&quot;tony_mirror&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p_jason</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">p_jason</span><span class="p">,</span> <span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p_mirror_jason_by_sophie</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">p_mirror_jason_by_sophie</span><span class="p">,</span> <span class="s2">&quot;jason_mirror&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">O</span><span class="p">,</span> <span class="n">Op</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">Op</span>
+
+<span class="c1">#x == p[0], y == p[1]</span>
+<span class="n">p_mirror</span> <span class="o">=</span> <span class="p">(</span><span class="n">xm</span><span class="p">,</span> <span class="n">ym</span><span class="p">)</span>
+<span class="n">xm</span> <span class="o">=</span> <span class="c1">#p, O, Op, [0], [1]</span>
+<span class="n">ym</span> <span class="o">=</span> <span class="c1">#p, O, Op, [0], [1]</span>
 </pre></div>
 </div>
 </div>
