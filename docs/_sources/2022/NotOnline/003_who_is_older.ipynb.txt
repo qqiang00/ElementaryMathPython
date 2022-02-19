@@ -401,7 +401,7 @@
    "id": "digital-consensus",
    "metadata": {},
    "source": [
-    "### Exercise\n",
+    "### Assignments\n",
     "1. Write multi-line of Python codes in one cell to calculate and print out the sum of two integers that you input from the keyboard. 在一个代码单元格里书写多行Python代码来计算你从键盘输入的两个整数的和并将和打印输出\n",
     "Requirements: 要求:\n",
     "  - the codes you write receive two number strings from keyboard 你的代码能够从键盘接受两个数字字符串\n",

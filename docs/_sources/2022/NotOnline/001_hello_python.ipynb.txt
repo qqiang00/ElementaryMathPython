@@ -326,33 +326,69 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "floppy-audience",
    "metadata": {
     "hidden": true
    },
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "76"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(22+16)*2"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "id": "contemporary-indonesia",
    "metadata": {
     "hidden": true
    },
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "352"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "22*16"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "id": "healthy-auditor",
    "metadata": {
     "hidden": true
    },
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The perimeter of this rectangle is 76 cm, and its area is 352 cm*cm.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"The perimeter of this rectangle is 76 cm, and its area is 352 cm*cm.\")"
+   ]
   },
   {
    "cell_type": "markdown",

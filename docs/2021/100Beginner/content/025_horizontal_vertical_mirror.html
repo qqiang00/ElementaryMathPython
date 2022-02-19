@@ -405,7 +405,12 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../2022/Beginner/content/001_hello_python.html">
-       第1讲 你好，Python
+       第01讲 你好，Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Beginner/content/002_make_name_for_data.html">
+       第02讲 给数据起名字
       </a>
      </li>
     </ul>
@@ -858,7 +863,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形。</p>
-<p><img alt="4425290e087d45ca88e0b4dc31996278" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
+<p><img alt="070bb070d3644d64b229828858650db9" class="no-scaled-link" src="../../../_images/L025_mirror_lecture.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Given the coordinates of the points ABC as A(7, 16), B(15, 16), C(7, 22), connect ABC in order to create a triangle. Draw this triangle use black color and line width of 3. mark every vertex with letters A,B, and C; mark the line AB with letter “b”; mark the triangle with “T1”. Give proper size to the markers;
 给定三个点及其坐标A(7, 16), B(15, 16), C(7, 22)，依次连接ABC可以得到一个三角形。使用黑色、线宽为3，绘制这个三角形，用字母ABC分别标记每一个顶点，给这个三角形一个标记“T1”;</p></li>
@@ -979,7 +984,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">举一个调用这个方法的例子：指定一个点（线，或形状）和一个动作，绘制它，调用方法获取一个新的点(线，或者形状），重新绘制它。</div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -989,12 +994,33 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">line</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">Op</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mark</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">O</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Op</span><span class="p">,</span> <span class="s2">&quot;O&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Op</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># distance from P to line OO&#39;</span>
+<span class="c1"># O, Op, P</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="o">?</span>
 </pre></div>
 </div>
 </div>

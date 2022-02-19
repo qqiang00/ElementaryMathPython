@@ -403,7 +403,12 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../Beginner/content/001_hello_python.html">
-       第1讲 你好，Python
+       第01讲 你好，Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Beginner/content/002_make_name_for_data.html">
+       第02讲 给数据起名字
       </a>
      </li>
     </ul>
@@ -517,7 +522,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/002_make_name_for_data.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/002_make_name_for_data_assignments.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -548,28 +553,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Objective-学习目标">
-   Objective 学习目标
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Math">
-   Math
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Python">
-   Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Did-you-know?">
-   Did you know?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Exercise">
-   Exercise
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
   </a>
  </li>
 </ul>
@@ -834,299 +819,14 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Lecture02-Naming">
 <h1>Lecture02 Naming<a class="headerlink" href="#Lecture02-Naming" title="永久链接至标题">¶</a></h1>
 <p>第02讲 起个名字吧</p>
-<div class="section" id="Objective-学习目标">
-<h2>Objective 学习目标<a class="headerlink" href="#Objective-学习目标" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p>Understand what a variable is 理解什么是变量</p></li>
-<li><p>The key to learn a programming language is to learn the syntax/format/style of the languange 学习一门编程语言的关键在于学习这门语言的语法/格式/风格</p></li>
-<li><p>Python is a case sensitive programming language Python中大小写不同表示不同的名称</p></li>
-<li><p>Special meaning of “=” in programming 等于号在Programming中的另一种意义：赋值</p></li>
-<li><p>Use variable to refer a string or a number 用变量表示字符串或数字</p></li>
-<li><p>Write beautiful Python codes 书写漂亮的Python代码</p>
-<ul>
-<li><p>space between operator 操作符两边留一个空格</p></li>
-<li><p>assign multiple variables in one line 在一行代码中给多个变量赋值</p></li>
-</ul>
+<div class="section" id="Assignments-作业">
+<h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p>Xiaoming has a puppy, and Xiaoming named it “DaHuang”. Xiaoming’s father didn’t like this name and changed it to “HuaHua”. Xiao Ming’s mother felt that neither of these two names sounded good and still wanted to change the name. But she just couldn’t find a good name. Please help Xiaoming’s mother give a name for the puppy.</p>
+<p>小明的家里养了一只小狗，小明给这条狗起了一个名字叫:“大黄”。小明的爸爸觉得这个名字不好听，把小狗的名字改成了“花花”。小明的妈妈觉得这两个名字都不好听，还是想给小狗换一个名字，只是不知道起什么名字好。现在请你帮小明的妈妈给小狗想一个名字。</p>
+<p>Write a program: use a variable <code class="docutils literal notranslate"><span class="pre">name_dog</span></code> to represent (store) the dog’s name, assign the three names for the dog, provided by Xiaoming, Xiaoming’s father, and you, into this variable step by step. Every time the dog had a new name, use <code class="docutils literal notranslate"><span class="pre">print</span></code> method to print the name in the variable <code class="docutils literal notranslate"><span class="pre">name_dog</span></code>.</p>
+<p>编写程序：使用一个变量名<code class="docutils literal notranslate"><span class="pre">name_dog</span></code>来表示（存储）小狗的名字，把小明、小明的爸爸还有你给小狗起的名字分别放进这个变量中，小狗每有一个新名字，就使用<code class="docutils literal notranslate"><span class="pre">print</span></code>方法来打印输出变量<code class="docutils literal notranslate"><span class="pre">name_dog</span></code>里的名字。</p>
 </li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">print</span></code> to print the value of a variable 用<code class="docutils literal notranslate"><span class="pre">print</span></code>打印变量值</p></li>
-</ul>
-</div>
-<div class="section" id="Math">
-<h2>Math<a class="headerlink" href="#Math" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>, <span class="math notranslate nohighlight">\(\div\)</span></p></li>
-</ul>
-</div>
-<div class="section" id="Python">
-<h2>Python<a class="headerlink" href="#Python" title="永久链接至标题">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Jason</span> <span class="o">=</span> <span class="s2">&quot;Jason&quot;</span>
-</pre></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;I am learning programming in Python.&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># a string</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-I am learning programming in Python.
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;I spoke another sentence.&quot;</span>
-<span class="c1"># expression 表达式</span>
-<span class="c1"># assignment expression 赋值表达式</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-I spoke another sentence.
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_sentence</span> <span class="o">=</span> <span class="mi">2021</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
-<span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;2021&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-2021
-2021
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">cm</span> <span class="o">=</span> <span class="s2">&quot;cm&quot;</span>
-<span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">unit</span> <span class="o">=</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">cm</span>
-<span class="n">perimeter</span> <span class="o">=</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="n">width</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
-<span class="c1"># Jason:   62 234</span>
-<span class="c1"># Sophine: No output</span>
-<span class="c1"># Tony:    No output</span>
-<span class="c1"># Yunzi:   62 234</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">perimeter</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">cm</span><span class="p">)</span>
-<span class="c1"># 62 234 cm</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-62 234 cm
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;James&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-James
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am learning programming in Python.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-I am learning programming in Python.
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am learning programming in Python.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-I am learning programming in Python.
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Jason_1</span> <span class="o">=</span> <span class="s2">&quot;Jason: I am learning programming.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Jason_1</span><span class="p">)</span>
-<span class="n">Tony_1</span> <span class="o">=</span> <span class="s2">&quot;Tony: I am learning programming too.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Tony_1</span><span class="p">)</span>
-<span class="n">Sophie_1</span> <span class="o">=</span> <span class="s2">&quot;Sophie: I am learning programming too.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Sophie_1</span><span class="p">)</span>
-<span class="n">Yunzi_1</span> <span class="o">=</span> <span class="s2">&quot;Yunzi: 我也在学习编程。&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Yunzi_1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Jason: I am learning programming.
-Tony: I am learning programming too.
-Sophie: I am learning programming too.
-Yunzi: 我也在学习编程。
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-
-
-<span></span><span class="n">Jason_2</span> <span class="o">=</span> <span class="s2">&quot;Jason: I like it. How about you?&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Jason_2</span><span class="p">)</span>
-<span class="n">Tony_2</span> <span class="o">=</span> <span class="s2">&quot;Tony: It&#39;s interesting, I think.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Tony_2</span><span class="p">)</span>
-<span class="n">Sophie_2</span> <span class="o">=</span> <span class="s2">&quot;Sophie: The teacher is my Daddy.&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Sophie_2</span><span class="p">)</span>
-<span class="n">Yunzi_2</span> <span class="o">=</span> <span class="s2">&quot;Yunzi: I know, but the teacher is my uncle.&quot;</span>
-
-<span class="n">Jason_3</span> <span class="o">=</span> <span class="s2">&quot;Jason: Really?&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Jason_3</span><span class="p">)</span>
-<span class="n">Tony_3</span> <span class="o">=</span> <span class="s2">&quot;Tony: It&#39;s funny, isn&#39;t it?&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Tony_3</span><span class="p">)</span>
-<span class="n">Sophie_3</span> <span class="o">=</span> <span class="s2">&quot;Sophie: It&#39;s time to start the class, let&#39;s Zoom&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Sophie_3</span><span class="p">)</span>
-<span class="n">Yunzi_3</span> <span class="o">=</span> <span class="s2">&quot;Yunzi: 马上就来。&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Yunzi_3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Jason: I like it. How about you?
-Tony: It&#39;s interesting, I think.
-Sophie: The teacher is my Daddy.
-Jason: Really?
-Tony: It&#39;s funny, isn&#39;t it?
-Sophie: It&#39;s time to start the class, let&#39;s Zoom
-Yunzi: 马上就来。
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">age_daddy</span> <span class="o">=</span> <span class="mi">41</span>
-<span class="n">age_mummy</span> <span class="o">=</span> <span class="mi">39</span>
-<span class="n">age_me</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="n">age_sister</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="n">age_total</span> <span class="o">=</span> <span class="n">age_daddy</span> <span class="o">+</span> <span class="n">age_mummy</span> <span class="o">+</span> <span class="n">age_me</span> <span class="o">+</span> <span class="n">age_sister</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total age in my family is:&quot;</span><span class="p">,</span> <span class="n">age_total</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-total age in my family is: 96
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">age_daddy</span><span class="p">,</span> <span class="n">age_mummy</span><span class="p">,</span> <span class="n">age_me</span><span class="p">,</span> <span class="n">age_sister</span> <span class="o">=</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span>
-<span class="n">age_total</span> <span class="o">=</span> <span class="n">age_daddy</span> <span class="o">+</span> <span class="n">age_mummy</span> <span class="o">+</span> <span class="n">age_me</span> <span class="o">+</span> <span class="n">age_sister</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total age in my family is:&quot;</span><span class="p">,</span> <span class="n">age_total</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="Did-you-know?">
-<h2>Did you know?<a class="headerlink" href="#Did-you-know?" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p>There are many programming languages, and Python is just one of them. Python language can almost do anything programming work you want to. 有许多种编程语言，Python只是其中的一种。Python语言几乎能帮你做任何你想做的关于编程的工作。</p></li>
-</ul>
-</div>
-<div class="section" id="Exercise">
-<h2>Exercise<a class="headerlink" href="#Exercise" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Design a dialog between you and one of you parents. Each person need to say at least three sentences to the other in turn. print the dialog out like the teacher did on class in one cell. 设计一段有关你和你父母其中之一的一段对话，要求每一个人交替说三句话。像老师在课堂上做的那样在一个单元格中打印出这段对话。</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1137,53 +837,106 @@ total age in my family is: 96
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>The following codes have some errors; it cann’t be successfully run. Try to find and fix the error so that the codes provides the total age of the students in the class. 下面的代码中有一些错误导致它不能成功的运行。尝试着去修复这些错误并让程序输出班级里所有学生的年龄之和。</p></li>
+<ol class="arabic" start="2">
+<li><p>The following codes have some errors; it cann’t be successfully run. Try to find and fix the error so that the codes provides the total age of the students in the class.</p>
+<p>下面的代码中有一些错误导致它不能成功的运行。尝试着去修复这些错误并让程序输出班级里所有学生的年龄之和。</p>
+<p>Follow the steps listed below 按照下面的步骤来完成此题</p>
+<ul class="simple">
+<li><p>The codes is in the code cell below 这三行代码在下面的代码单元格中</p></li>
+<li><p>Click “Run” button and look at the errors 运行代码观察错误</p></li>
+<li><p>Copy the codes to next new cell 把上面代码复制到另一个新的单元格中</p></li>
+<li><p>Fix the errors and run the codes again till you see the correct result. 修复代码中的错误直到程序成功运行</p></li>
+</ul>
+<p><strong>Note</strong>: Don’t change the values of the age of each student even if the values are not real your ages.</p>
+<p><strong>注意</strong>：不要修改题目给定的每个学生的年龄，即使你的年龄并不是那个数字。</p>
+</li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age_Jason</span><span class="p">,</span> <span class="n">age_Tony</span><span class="p">,</span> <span class="n">age_Sophie</span><span class="p">,</span> <span class="n">age_Yunzi</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span>
-<span class="n">age_total</span> <span class="o">=</span> <span class="n">age_jason</span> <span class="o">+</span> <span class="n">ageTony</span> <span class="o">+</span> <span class="n">agesophie</span> <span class="o">+</span> <span class="n">age_yunzi</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">age_Cynthia</span><span class="p">,</span> <span class="n">age_Xixi</span><span class="p">,</span> <span class="n">age_Milly</span><span class="p">,</span> <span class="n">age_Yunzi</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">age_total</span> <span class="o">=</span> <span class="n">age_cynthia</span> <span class="o">+</span> <span class="n">ageXixi</span> <span class="o">+</span> <span class="n">Milly</span> <span class="o">+</span> <span class="n">age_yunzi</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;total age of these four students is&quot;</span><span class="p">,</span> <span class="n">age_Total</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Follow the steps listed below 按照下面的步骤来完成此题 - Copy the codes to a new cell 把上面三行代码复制到一个新的单元格中 - Click “Run” button and look at the errors 运行代码观察错误 - Copy the codes to next new cell 把上面代码复制到另一个新的单元格中 - Fix the errors and run the codes again till you see the correct result. 修复代码中的错误知道程序成功运行</p>
-<p>Note: Don’t change the values of the age of each student even if your age is not the value. 注意：不要修改题目给定的每个学生的年龄，即使你的年龄并不是那个数字。</p>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-17-50dcd69987e4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> age_Cynthia<span class="ansi-blue-fg">,</span> age_Xixi<span class="ansi-blue-fg">,</span> age_Milly<span class="ansi-blue-fg">,</span> age_Yunzi <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">11</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">9</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>age_total <span class="ansi-blue-fg">=</span> age_cynthia <span class="ansi-blue-fg">+</span> ageXixi <span class="ansi-blue-fg">+</span> Milly <span class="ansi-blue-fg">+</span> age_yunzi
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;total age of these four students is&#34;</span><span class="ansi-blue-fg">,</span> age_Total<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ageXixi&#39; is not defined
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># write your modified code here 在这里写上你修改号的代码</span>
+<span class="c1"># Run this code cell 运行该代码单元格子中的代码</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>The following codes, written by Celine, calculate the difference of the age between Celine and Yunzi. The codes are not well written but can provide correct result. Please help Celine to beautify the codes while keeping the result unchanged. 思思写的下面一段代码计算了她自己和耘耔之间的年龄差。这些代码能正确运行但是写的不好看。请你帮助思思在不改变代码运行结果的前提下美化这段代码。</p></li>
+<ol class="arabic" start="3">
+<li><p>The following codes were written by Celine, a 5 year old girl. the codes try to calculate the age difference of Xixi and Milly. The codes can provide correct result but are not well formatted. Please help Celine to beautify the codes while keeping the result unchanged.</p>
+<p>下面这段代码是5岁的思思写的，这段代码计算Xixi和Milly两个小朋友的年龄差。这段代码能够正确运行，但是写的不是很好看。请你帮助思思在不改变代码运行结果的前提下美化这段代码。</p>
+<p>The codes are provided in below cell, Copy the codes to a new code cell , beautify it, run it, and observe the result. The result should be the same as that from previous cell.</p>
+<p>代码在下面的单元格中提供，将代码复制到新的代码单元格中，美化它，运行它，观察结果。结果应该与前一个单元格的结果相同。</p>
+</li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Celine_age</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">age_yunzi</span><span class="o">=</span><span class="mi">9</span>
-<span class="n">cha</span> <span class="o">=</span><span class="n">age_yunzi</span><span class="o">-</span><span class="n">Celine_age</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yunzi bi Celine da&quot;</span><span class="p">,</span> <span class="n">cha</span><span class="p">,</span> <span class="s2">&quot;sui.&quot;</span><span class="p">)</span>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<p>The codes are provided in below cell, beautify it directly on this cell and run it. 这段代码已经在下面的单元格中给出，请直接在下面的单元格中修改美化代码，并运行它。</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">Xixi_age</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">age_Milly</span><span class="o">=</span><span class="mi">9</span>
+<span class="n">cha</span> <span class="o">=</span><span class="n">Xixi_age</span><span class="o">-</span><span class="n">age_Milly</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Xixi bi Milly da&quot;</span><span class="p">,</span> <span class="n">cha</span><span class="p">,</span> <span class="s2">&quot;sui.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Xixi bi Milly da 1 sui.
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Paste the code in above cell here</span>
+
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Please <strong>solve this problem using mathematics and programming separately</strong></p>
+<p>请<strong>分别用数学和编程</strong>的方式求解这个问题:</p>
+<p>There are 6 people in Yunzi’s family, namely grandfather, grandma, father, mother, Yunzi and Yunzi’s younger brother. In 2022, they are 67, 65, 35, 37, 10 and 5 years old, respectively. What is the total age of this family in 2022? By the year 2035, what will be the total age of the family?</p>
+<p>耘籽的家里一共有6口人，分别是爷爷、奶奶、爸爸、妈妈、耘籽和耘籽的弟弟。2022年，他们的年龄分别是67，65，35，37，10和5岁。请问在2022年这一家人的年龄加起来一共是多少岁？ 到2035年的时候，这一家人的年龄加起来又是多少呢？</p>
+</li>
+</ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">Celine_age</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">age_yunzi</span><span class="o">=</span><span class="mi">9</span>
-<span class="n">cha</span> <span class="o">=</span><span class="n">age_yunzi</span><span class="o">-</span><span class="n">Celine_age</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yunzi bi Celine da&quot;</span><span class="p">,</span> <span class="n">cha</span><span class="p">,</span> <span class="s2">&quot;sui.&quot;</span><span class="p">)</span>
+<span></span>
 </pre></div>
 </div>
 </div>
