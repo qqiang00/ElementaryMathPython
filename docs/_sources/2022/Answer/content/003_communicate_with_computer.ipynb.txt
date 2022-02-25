@@ -1,0 +1,313 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第03讲 和计算机对话\n",
+    "Lecture03 Communicate with Computer"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Assignments 作业"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d15bb705-50dc-43a8-bf40-948094ef9f2a",
+   "metadata": {},
+   "source": [
+    "1. Referring to the example in this lecture, design a simple program that can perform **subtraction**. When the program runs, first print out a sentence telling that the computer will do a **substraction** operation and who will be **minuend** and **subtrahend**, respectively. You can determin the content by yourself but the information should be clear enough without any ambiguity. The rest of the requirements are the same as the example in this lecture. \n",
+    "\n",
+    "   参照本讲示例的内容，设计一个简单的可以进行减法运算的程序。当程序运行时，你需要首先向屏幕打印输出一行文字，提示即将进行的是减法运算以及明确**被减数**和**减数**。你可以自己决定文字的具体内容，但必须足够清晰以及没有歧义。其它要求同本讲示例的要求。\n",
+    "    \n",
+    "   **Think and Answer in text**： If the subtrahend is greater than minuend, will your program provide an answer? \n",
+    "   \n",
+    "   **思考并用文字回答**:如果减数比被减数大，你的程序能给出一个答案吗？"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "192b1a79-08c6-43ab-b140-61704f0d0cf0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your code here\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "9256a73b-5f49-48ce-819c-ac8c0ce21c04",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your answer for the thinking here\n",
+    "# "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2753ccfd-9ba2-4c8b-8f6b-b2514846d624",
+   "metadata": {},
+   "source": [
+    "2. Referring to the example in this lecture, design a simple program that can perform **Division**. When the program runs, first print out a sentence telling that the computer will do a **Division** operation and who will be **Dividend** and **divisor**, respectively. You can determin the content by yourself but the information should be clear enough without any ambiguity. The rest of the requirements are the same as the example in this lecture. \n",
+    "\n",
+    "   参照本讲示例的内容，设计一个简单的可以进行**除法**的程序。当程序运行时，你需要首先向屏幕打印输出一行文字，提示即将进行的是**除法**运算以及明确**被除数**和**除数**。你可以自己决定文字的具体内容，但必须足够清晰以及没有歧义。其它要求同本讲示例的要求。\n",
+    "    \n",
+    "   **Think and Answer in text**： If the divisor is equal to 0, will your program provide an answer? Why?\n",
+    "   \n",
+    "   **思考并用文字回答**:如果除数为0，你的程序能给出答案吗？ 为什么？"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6e8d151d-f43b-41d9-8d86-98d19a565d5e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your code here\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1051b472-8c03-4ab3-bd22-b7b3d733075e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your answer for the thinking here\n",
+    "# "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "947f8bf8-763f-4f31-9b04-6b47ccf38a03",
+   "metadata": {},
+   "source": [
+    "3. Use the 2rd to 11th code cells, write a piece of code in a separate code cell to make the program accepts input from the keyboard. Enter the each content listed below in one code cell, try to convert the received string data to an integer using the `int` method, print it out to the screen again. Observe whether the program can run normally without errors. Write all results in the first code cell as a comment. The first data `0` is given as an example. 使用第2-11个单元格，分别用一个单独的代码单元格编写一段代码，使得程序接受来自键盘的输入。通过键盘输入下面所列的内容，尝试使用`int`方法把接收到的字符串数据转换为整数，并再次打印输出到屏幕上。观察程序是否能够正常运行并把每次结果汇总作为注释写在第一个代码单元格中。\n",
+    "\n",
+    "   输入的内容依次为：`0`, `100`, `10.1`, `10.9`, `\"100\"`, `Milly`, `\"Milly\"`, `Cynthia`, `\"Cynthia\"`, ` `, 共计10个。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "820dfa83-4696-4af2-aa9e-f8e39695564b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 1 for your final text answer\n",
+    "# 0          Success, the integer is: 0\n",
+    "# 100       \n",
+    "# 10.1      \n",
+    "# 10.9      \n",
+    "# 100       \n",
+    "# Milly     \n",
+    "# \"Milly\"   \n",
+    "# Cynthia   \n",
+    "# “Cynthia\" "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "7ba04976-abc0-40f7-a162-204a79d40d8c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      " 0\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Code Cell 2 for your code for the input 0\n",
+    "my_input = input()\n",
+    "num1 = int(my_input)\n",
+    "print(num1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "cf6cbee1-b73f-466a-b17b-73ef5bdeabbd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 3 for your code for the input 100\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "2cea04e0-4734-4286-94b3-5ea3e56b6722",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 4 for your code for the input 10.1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "91cf2ec4-fce7-4ae7-810a-fe69f420a06b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 5 for your code for the input 10.9\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "cfb9a0b0-036f-4f62-9b3a-bad54d3e1343",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 6 for your code for the input 100\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "7705feda-1bfc-45c6-a5c0-150ddc72a46b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 7 for your code for the input Milly\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "2fc1066b-738d-4771-beb1-77994b386480",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 8 for your code for the input \"Milly\"\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "e797946e-2b8d-4efc-9a1c-0061a3c02723",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 9 for your code for the input Cynthia\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "0fd07332-83a9-4f0f-a58f-3d332cf74853",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 10 for your code for the input \"Cynthia\"\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "d247137a-8a32-4163-b8c7-decfe36b9514",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Code Cell 11 for your code for the input  <a blank character> <一个空格字符>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "controversial-sleeve",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "4. You are able to design some simple programs. When you are writing and running programs, the computer is like your little assistant to help you solve some mathematical and real problems. As your assistant, the computer would like to know some of your personal information, such as your name, age, age, what grade you are in school, etc. Please write a program to simulate the following dialogue between you and the computer.\n",
+    "\n",
+    "   你现在已经能够设计一些最简单的程序了。在编写并运行程序的过程中，计算机就相当于你的小助手协助你解决一些数学和实际问题。作为你的小助手，计算机很想知道你的一些个人信息，比如你的姓名、年龄、年龄、你在几年级上学等。请你编写一段程序模拟下面这段你与计算机之间的对话。\n",
+    "   \n",
+    "   **Note1**:Before writing the program, give your computer a virtual name, such as \"Happy Little Computer\". Ask your parents how old the computer is, such as 5 years old. These information will be included in the dialog. \n",
+    "   \n",
+    "   **注意1**：在正式编写程序之前，给你的计算机起一个虚拟的名字，例如“开心小电脑”。询问你的爸爸妈妈正在使用的这台计算机的岁数，例如5岁。这些信息需要再对话中使用。\n",
+    "   \n",
+    "   **Note2**: In addition to your name, age, and class level, please provide another piece of you personal information to your assistant. Use a descent style to include this information in the dialog between you and your assitant by programming. \n",
+    "   \n",
+    "   **注意2**：除了姓名、年龄，和年级之外，请你再向计算机提供一条关于你的个人信息，并通过编程体现与计算机的对话中，注意衔接自然。\n",
+    "\n",
+    "    ```text\n",
+    "    - Computer: Hello, my name is Happy Little Computer, what is your name?\n",
+    "    - You: (enter your name, eg. XXX)\n",
+    "    - Computer: Hello, XXX , nice to meet you. I'd be happy to help you learn programming. How old are you?\n",
+    "    - you: (enter age, eg. Y)\n",
+    "    - Computer: You are already Y years old. I am 5 years old. What grade are you in school?\n",
+    "    - You: (Enter your grade, eg. \"4th grade of primary school\")\n",
+    "    - Computer: \"You must be able to learn a lot of new things in 4th grade of primary school. Let's learn and progress together.\n",
+    "    - You: Okay, but I'm going to play outside. I'll see you again when I do my programming homework, bye!\n",
+    "    - Computer: OK, bye!\n",
+    "\n",
+    "    - 计算机：你好，我叫 开心小电脑 ，你叫什么名字？\n",
+    "    - 你：（输入你的名字，例如XXX）\n",
+    "    - 计算机：XXX ，你好，很高兴认识你，我也很乐意协助你一起学习编程。你今年几岁了？\n",
+    "    - 你：（输入年龄，例如Y）\n",
+    "    - 计算机：原来你今年已经 Y 岁啦。我今年也有 5 岁了。你上小学几年级了？\n",
+    "    - 你：（输入你的年级，例如“小学4年级”）\n",
+    "    - 计算机：“小学4年级 一定能学到很多新的知识吧，咱们一起学习进步。\n",
+    "    - 你：好的，可是我现在要出去玩了，等我写编程作业的时候再来找你，再见！\n",
+    "    - 计算机：好的，再见！\n",
+    "    ```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "healthy-auditor",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

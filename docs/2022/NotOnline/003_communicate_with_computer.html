@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lecture01 Hello, Python &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第03讲 和计算机对话 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -422,7 +422,22 @@
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="simple">
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/001_hello_python.html">
+       第01讲 你好，Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/002_make_name_for_data.html">
+       第02讲 起个名字吧
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/003_communicate_with_computer.html">
+       第03讲 和计算机对话
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -522,7 +537,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/001_hello_python.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/003_communicate_with_computer.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -558,8 +573,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Mathematics-数学背景">
-   Mathematics 数学背景
+  <a class="reference internal nav-link" href="#Math-Background-数学背景">
+   Math Background 数学背景
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -578,8 +593,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#CS-Tips-计算机小知识">
-   CS Tips 计算机小知识
+  <a class="reference internal nav-link" href="#计算机小知识">
+   计算机小知识
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -846,124 +861,246 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="Lecture01-Hello,-Python">
-<h1>Lecture01 Hello, Python<a class="headerlink" href="#Lecture01-Hello,-Python" title="永久链接至标题">¶</a></h1>
-<p>第01讲 你好，Python</p>
+<div class="section" id="第03讲-和计算机对话">
+<h1>第03讲 和计算机对话<a class="headerlink" href="#第03讲-和计算机对话" title="永久链接至标题">¶</a></h1>
+<p>Lecture03 Communicate with Computer</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Write and run a python code line and let the computer output a sentence “I am learning Math with python programming.” 编写运行一行程序代码在屏幕上输出 “我正在用Python编程学数学。”</p></li>
-</ol>
-<ol class="arabic simple" start="2">
-<li><p>Introduce Jupyter Lab. 介绍Jupyter Lab交互式环境</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>Calculate the following expressions using Python. 用Python语言计算下面算式的结果：</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(1+2=\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(3.14\times2\times5=\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(99\times97+99\times3=\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(100\div 20=\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(1+2+3+\cdots+97+98+99=\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2\times2\times2\times2\times2\times2=\)</span></p></li>
-</ul>
-</li>
-</ol>
+<p>Write a program to get the sum of two integers and print out the math expression. Here are the requirements. 编写一段程序，实现两个数的加法计算。具体要求如下： 1. The two numbers should be integers between 0 and 100 (both included). Besides, the two integers are specified during during the runtime, received by the input from keyboards rather than before the program runs. 这两个数字应该是 0 到 100 之间的整数（包括这两个数）。
+此外，这两个整数是在程序运行期间通过键盘输入确定的，而不是在程序运行之前就指定好的； 2. The program receives the two integers, sums them up and get the result.程序接收这两个整数，把他们相加得到他们的和； 3. the program prints out the whole math equation, including the two integers，add sign(+), equal sign(=), and the final result. 程序输出整个数学等式，包括两个整数、加法运算符(+)、等号(=)和它们和。</p>
 </div>
-<div class="section" id="Mathematics-数学背景">
-<h2>Mathematics 数学背景<a class="headerlink" href="#Mathematics-数学背景" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(-\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>, <span class="math notranslate nohighlight">\(\div\)</span></p></li>
-</ul>
+<div class="section" id="Math-Background-数学背景">
+<h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>简单的四则运算</p></li>
+</ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>In python, <span class="math notranslate nohighlight">\(\times\)</span> is replaced by <code class="docutils literal notranslate"><span class="pre">*</span></code> and <span class="math notranslate nohighlight">\(\div\)</span> is replaced by <code class="docutils literal notranslate"><span class="pre">/</span></code>. Python中乘法和除法符号分别被<code class="docutils literal notranslate"><span class="pre">*</span></code>和<code class="docutils literal notranslate"><span class="pre">/</span></code>替代</p></li>
-<li><p>Command <code class="docutils literal notranslate"><span class="pre">print</span></code> 命令</p></li>
-<li><p>role of a pair of parentheses<code class="docutils literal notranslate"><span class="pre">()</span></code> after a command. 一条命令后成对小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>的作用</p></li>
-<li><p>role of (double) quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code>. 单双引号的作用</p></li>
-<li><p>what is a string? 字符串是什么?</p></li>
+<li><p>如何通过键盘获取输入</p></li>
+<li><p>如何将键盘输入的字符串数据转化为整数类型的数据</p></li>
 </ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ 123
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;123&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What day is today:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+what day is today: Friday
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Friday&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">today</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What day is today:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Today is&quot;</span><span class="p">,</span> <span class="n">today</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+What day is today: Monday
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Today is Monday .
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;give me a integer:&quot;</span><span class="p">)</span>
+<span class="n">num_after</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_after</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+give me a integer: 12
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-11-0adb66023595&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> num <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;give me a integer:&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>num_after <span class="ansi-blue-fg">=</span> num <span class="ansi-blue-fg">+</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span>num_after<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: can only concatenate str (not &#34;int&#34;) to str
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;give me a integer:&quot;</span><span class="p">)</span>
+<span class="n">num_after</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number after you input is:&quot;</span><span class="p">,</span> <span class="n">num_after</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+give me a integer: 111
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number after you input is: 112 .
+</pre></div></div>
+</div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am learning Math with Python programming.&#39;</span><span class="p">)</span>
+<span></span><span class="n">first_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入第一个加数:&quot;</span><span class="p">)</span>
+<span class="n">second_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入第二个加数:&quot;</span><span class="p">)</span>
+<span class="n">num_a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">first_input</span><span class="p">)</span>
+<span class="n">num_b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">second_input</span><span class="p">)</span>
+<span class="n">sum_ab</span> <span class="o">=</span> <span class="n">num_a</span> <span class="o">+</span> <span class="n">num_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_a</span><span class="p">,</span><span class="s2">&quot;+&quot;</span><span class="p">,</span><span class="n">num_b</span><span class="p">,</span><span class="s2">&quot;=&quot;</span><span class="p">,</span><span class="n">sum_ab</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+请输入第一个加数: 1231
+请输入第二个加数: 1231
+</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-I am learning Math with Python programming.
+1231 + 1231 = 2462
 </pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我正在用Python编程学数学。&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-我正在用Python编程学数学。
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p>Understand what a string is 理解什么是字符串</p></li>
-<li><p>Be able to represent a string in Python 在Python中表示一个字符串</p></li>
-<li><p>Be able to display a string on screen 能够在屏幕上显示一个字符串</p></li>
-<li><p>Use Python as a calculator 把Python当成一个计算器使用</p></li>
-<li><p>Jupyter Lab 交互环境</p></li>
-</ul>
+<ol class="arabic simple">
+<li><p>Use method <code class="docutils literal notranslate"><span class="pre">input</span></code> to get data from keyboard input，received data is a string 使用<code class="docutils literal notranslate"><span class="pre">print</span></code>方法获取来自键盘的输入，得到的数据是一个字符串；</p></li>
+<li><p>Use method <code class="docutils literal notranslate"><span class="pre">int</span></code> to convert a string to integer if possible 如果可能，使用<code class="docutils literal notranslate"><span class="pre">int</span></code>方法可以将一个字符串编程一个整数；</p></li>
+<li><p>method <code class="docutils literal notranslate"><span class="pre">print</span></code> can print out multiple variable values or strings seperated by comma <code class="docutils literal notranslate"><span class="pre">print</span></code>方法可以同时打印由逗号分隔的多个变量的值或字符串；</p></li>
+</ol>
 </div>
-<div class="section" id="CS-Tips-计算机小知识">
-<h2>CS Tips 计算机小知识<a class="headerlink" href="#CS-Tips-计算机小知识" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li></li>
-</ul>
+<div class="section" id="计算机小知识">
+<h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
+<p>在计算机中，数据分为多个种类，例如：整数、小数（又称为浮点数）、字符串（一串字符）等。例如，123，0，10等是整数；3.14，12.00，2.71828， 1.414等是小数，‘a’，‘abc’，‘Milly’,’Cynthia’等是字符串。在计算机中小数也是使用整数的形式存储的。</p>
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">print</span></code> to print out exactly the following sentences(including the final period). 使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句打印出完全一样的下面的句子（包括末尾的句号）。</p>
-<ul class="simple">
-<li><p>I love China and Canada.</p></li>
-<li><p>I like Python programming language, and I like Math too.</p></li>
-<li><p>Our teacher’s name is Qiang.</p></li>
-<li><p>“CN” is the abbreviation of China.</p></li>
-<li><p>The abbreviation of Canda is “CAD”.</p></li>
-</ul>
-<p>The code for printing out first sentence is already given as an example: 作为示例第一个句子已经给出答案：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love China and Canada.&quot;</span><span class="p">)</span>
+<li><p>Referring to the example in this lecture, design a simple program that can perform <strong>subtraction</strong>. When the program runs, first print out a sentence telling that the computer will do a <strong>substraction</strong> operation and who will be <strong>minuend</strong> and <strong>subtrahend</strong>, respectively. You can determin the content by yourself but the information should be clear enough without any ambiguity. The rest of the requirements are the same as the example in this lecture.</p>
+<p>参照本讲示例的内容，设计一个简单的可以进行减法运算的程序。当程序运行时，你需要首先向屏幕打印输出一行文字，提示即将进行的是减法运算以及明确<strong>被减数</strong>和<strong>减数</strong>。你可以自己决定文字的具体内容，但必须足够清晰以及没有歧义。其它要求同本讲示例的要求。</p>
+<p><strong>Think and Answer in text</strong>： If the subtrahend is greater than minuend, will your program provide an answer?</p>
+<p><strong>思考并用文字回答</strong>:如果减数比被减数大，你的程序能给出一个答案吗？</p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<p>Please write your codes for the rest sentences in below cells (one sentence in each cell). 请在下面几个小格子里编写代码输出剩余的句子（每一个单元格输出一个句子）。</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># write your code here</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># write your answer for the thinking here</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Referring to the example in this lecture, design a simple program that can perform <strong>Division</strong>. When the program runs, first print out a sentence telling that the computer will do a <strong>Division</strong> operation and who will be <strong>Dividend</strong> and <strong>divisor</strong>, respectively. You can determin the content by yourself but the information should be clear enough without any ambiguity. The rest of the requirements are the same as the example in this lecture.</p>
+<p>参照本讲示例的内容，设计一个简单的可以进行<strong>除法</strong>的程序。当程序运行时，你需要首先向屏幕打印输出一行文字，提示即将进行的是<strong>除法</strong>运算以及明确<strong>被除数</strong>和<strong>除数</strong>。你可以自己决定文字的具体内容，但必须足够清晰以及没有歧义。其它要求同本讲示例的要求。</p>
+<p><strong>Think and Answer in text</strong>： If the divisor is equal to 0, will your program provide an answer? Why?</p>
+<p><strong>思考并用文字回答</strong>:如果除数为0，你的程序能给出答案吗？ 为什么？</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -971,7 +1108,8 @@ I am learning Math with Python programming.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># write your code here</span>
+
 </pre></div>
 </div>
 </div>
@@ -980,154 +1118,182 @@ I am learning Math with Python programming.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>In the following cells, write codes to calculate the following Arithmetic expressions (one cell for each): 在下面的单元格中，编写代码计算下面的算术表达式（每一个式子使用一个单元格）:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(1+3+5+7+9+11+13+15+17+19\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(10-9+8-7+6-5+4-3+2-1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(3.14\times 2\times 5\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2\times(6+9)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(2\times\times2\times2\times2\times2\times2\times2\times2\)</span></p></li>
-</ul>
-</li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># write your answer for the thinking here</span>
+<span class="c1">#</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="3">
-<li><p>The length and width of a rectangle are 22cm and 16cm, respectively. What the perimeter and the area of this rectangle? write only two lines of codes to provide the answer directly, and an extra line of code to print out the result like the follow sentence: 一个长方形的长和宽分别是22厘米和16厘米，它的周长和面积分别是多少？通过只编写两行代码给出答案，并使用额外一行代码输出如下格式的一句话：</p>
-<p>“The perimeter of this rectangle is xxx cm, and its area is xxx cm*cm.”</p>
-<p>Replace the xxx by your results. 用你得到的结果替代上面的 xxx。</p>
+<li><p>Use the 2rd to 11th code cells, write a piece of code in a separate code cell to make the program accepts input from the keyboard. Enter the each content listed below in one code cell, try to convert the received string data to an integer using the <code class="docutils literal notranslate"><span class="pre">int</span></code> method, print it out to the screen again. Observe whether the program can run normally without errors. Write all results in the first code cell as a comment. The first data <code class="docutils literal notranslate"><span class="pre">0</span></code> is given as an example.
+使用第2-11个单元格，分别用一个单独的代码单元格编写一段代码，使得程序接受来自键盘的输入。通过键盘输入下面所列的内容，尝试使用<code class="docutils literal notranslate"><span class="pre">int</span></code>方法把接收到的字符串数据转换为整数，并再次打印输出到屏幕上。观察程序是否能够正常运行并把每次结果汇总作为注释写在第一个代码单元格中。</p>
+<p>输入的内容依次为：<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">100</span></code>, <code class="docutils literal notranslate"><span class="pre">10.1</span></code>, <code class="docutils literal notranslate"><span class="pre">10.9</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;100&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">Milly</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Milly&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">Cynthia</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Cynthia&quot;</span></code>, <a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">``</span></a>, 共计10个。</p>
 </li>
 </ol>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="p">(</span><span class="mi">22</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span></span><span class="c1"># Code Cell 1 for your final text answer</span>
+<span class="c1"># 0          Success, the integer is: 0</span>
+<span class="c1"># 100</span>
+<span class="c1"># 10.1</span>
+<span class="c1"># 10.9</span>
+<span class="c1"># 100</span>
+<span class="c1"># Milly</span>
+<span class="c1"># &quot;Milly&quot;</span>
+<span class="c1"># Cynthia</span>
+<span class="c1"># “Cynthia&quot;</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 2 for your code for the input 0</span>
+<span class="n">my_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-76
+ 0
 </pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="mi">22</span><span class="o">*</span><span class="mi">16</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-352
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The perimeter of this rectangle is 76 cm, and its area is 352 cm*cm.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-The perimeter of this rectangle is 76 cm, and its area is 352 cm*cm.
+0
 </pre></div></div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>If you are asked to calculate the sum of all natural numbers between 1 and 100, what will you do? 如果要你计算从1到100这连续100个自然数的和，你会想到哪些方法？ What if you are asked to calculate the sum of all natural numbers between 100 to 10000? 如果要计算100到10000之间的所有自然数之和呢？</p></li>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 3 for your code for the input 100</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 4 for your code for the input 10.1</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 5 for your code for the input 10.9</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 6 for your code for the input 100</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 7 for your code for the input Milly</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 8 for your code for the input &quot;Milly&quot;</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 9 for your code for the input Cynthia</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 10 for your code for the input &quot;Cynthia&quot;</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Code Cell 11 for your code for the input  &lt;a blank character&gt; &lt;一个空格字符&gt;</span>
+
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="4">
+<li><p>You are able to design some simple programs. When you are writing and running programs, the computer is like your little assistant to help you solve some mathematical and real problems. As your assistant, the computer would like to know some of your personal information, such as your name, age, age, what grade you are in school, etc. Please write a program to simulate the following dialogue between you and the computer.</p>
+<p>你现在已经能够设计一些最简单的程序了。在编写并运行程序的过程中，计算机就相当于你的小助手协助你解决一些数学和实际问题。作为你的小助手，计算机很想知道你的一些个人信息，比如你的姓名、年龄、年龄、你在几年级上学等。请你编写一段程序模拟下面这段你与计算机之间的对话。</p>
+<p><strong>Note1</strong>:Before writing the program, give your computer a virtual name, such as “Happy Little Computer”. Ask your parents how old the computer is, such as 5 years old. These information will be included in the dialog.</p>
+<p><strong>注意1</strong>：在正式编写程序之前，给你的计算机起一个虚拟的名字，例如“开心小电脑”。询问你的爸爸妈妈正在使用的这台计算机的岁数，例如5岁。这些信息需要再对话中使用。</p>
+<p><strong>Note2</strong>: In addition to your name, age, and class level, please provide another piece of you personal information to your assistant. Use a descent style to include this information in the dialog between you and your assitant by programming.</p>
+<p><strong>注意2</strong>：除了姓名、年龄，和年级之外，请你再向计算机提供一条关于你的个人信息，并通过编程体现与计算机的对话中，注意衔接自然。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- Computer: Hello, my name is Happy Little Computer, what is your name?
+- You: (enter your name, eg. XXX)
+- Computer: Hello, XXX , nice to meet you. I&#39;d be happy to help you learn programming. How old are you?
+- you: (enter age, eg. Y)
+- Computer: You are already Y years old. I am 5 years old. What grade are you in school?
+- You: (Enter your grade, eg. &quot;4th grade of primary school&quot;)
+- Computer: &quot;You must be able to learn a lot of new things in 4th grade of primary school. Let&#39;s learn and progress together.
+- You: Okay, but I&#39;m going to play outside. I&#39;ll see you again when I do my programming homework, bye!
+- Computer: OK, bye!
+
+- 计算机：你好，我叫 开心小电脑 ，你叫什么名字？
+- 你：（输入你的名字，例如XXX）
+- 计算机：XXX ，你好，很高兴认识你，我也很乐意协助你一起学习编程。你今年几岁了？
+- 你：（输入年龄，例如Y）
+- 计算机：原来你今年已经 Y 岁啦。我今年也有 5 岁了。你上小学几年级了？
+- 你：（输入你的年级，例如“小学4年级”）
+- 计算机：“小学4年级 一定能学到很多新的知识吧，咱们一起学习进步。
+- 你：好的，可是我现在要出去玩了，等我写编程作业的时候再来找你，再见！
+- 计算机：好的，再见！
+</pre></div>
+</div>
+</li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
