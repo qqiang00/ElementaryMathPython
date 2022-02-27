@@ -872,13 +872,41 @@ div.rendered_html tbody tr:hover {
 <h1>第26讲 勾股定理-毕达哥拉斯定理<a class="headerlink" href="#第26讲-勾股定理-毕达哥拉斯定理" title="永久链接至标题">¶</a></h1>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
-<p>给定两个正方形，它们的边长分别为<span class="math notranslate nohighlight">\(a=6\)</span>和<span class="math notranslate nohighlight">\(b=8\)</span>，请你找到第三个正方形，确定它的边长<span class="math notranslate nohighlight">\(c\)</span>，使得第三个正方形的面积正好是前两个正方形面积的和。即:</p>
+<p><strong>Draw and Answer Questions 绘图并回答问题</strong></p>
+<div class="line-block">
+<div class="line">Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</div>
+<div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
+</div>
+<p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形.</p>
+<p><img alt="856815180fad49acb866413b169e9095" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+<ol class="arabic simple">
+<li><p>Mark three points A(10, 9), B(18, 9), C(10, 15), draw triangle BAC with black color; mark it with <code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, mark the vertices, mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line AC, AB, and BC, respectively; 标记三个点:A(10, 9), B(18, 9), C(10, 15)，用黑色绘制三角形BAC；标记为<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>; 将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
+<li><p>Create a square whose one side is AB below the triangle BAC, name the other tow points of the square D and E such that DE is parallel to AC, D is left to E; name the square as ABED. mark points D and E, Draw this square with green color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>;
+以直角三角形的直角边AB为边长，在三角形ABC的下方建立一个正方形，使得三角形的边AB与绘制的正方形重合；构成这个正方形的另外两个顶点命名为D和E，其中边DE与边AC平行，D位于E的左侧；该正方形则称为ABED。标记点D和E，并用绿色绘制这个正方形的边，标记为<code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>；</p></li>
+<li><p>Create a square whose one side is AC left to the triangle BAC, name the other tow points of the square F and G such that GF is parallel to AC, F is above E; name the square as ACFG. mark points D and E, Draw this square with red color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr2</span></code>; 以直角三角形的直角边AC为边长，在三角形ABC的左侧建立一个正方形，使得三角形的边AC与绘制的正方形重合；构成这个正方形的另外两个顶点命名为F和G，其中边GF与边AC平行，F位于G的上方；正方形则称为ACFG。用红色绘制这个正方形的边；标记为<code class="docutils literal notranslate"><span class="pre">Sqr2</span></code>;</p></li>
+<li><p>Mark the points H(24, 17), I(16, 23); polygon BHIC is a larger square, draw it with color cyan and mark it as <code class="docutils literal notranslate"><span class="pre">Sqr3</span></code>; 标记两个点H(24, 17), I(16, 23)，四边形BHIC是一个较大的正方形；用青色(cyan)绘制这个正方形，标记为<code class="docutils literal notranslate"><span class="pre">Sqr3</span></code>;</p></li>
+<li><p>Mark the points J(4, 1), K(18, 15); polygon FKEJ is a even larger square; it can be divided into 6 parts: square ACFG, square ABED, triangles BAC, CKG, GJD, GAD. Draw triangles: CKG, GJD, and GAD with color red for shortest side, cyan for longest one and green for the rest one. Mark the triangles as <code class="docutils literal notranslate"><span class="pre">Tri1</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Tri3</span></code>, respectively; 标记两个点J(4, 1), K(18, 15)，四边形FKEJ是一个更大的正方形；正方形FKEJ由6部分组成，分别是正方形ACFG，正方形ABED，三角形BAC, CKG, GJD, GAD,
+。绘制三角形CKB, GJD和GAD，颜色依据三角形的边长从短到长分别用红色、绿色、和青色绘制，三角形依次标记为Tri1, Tri2和Tri3；</p></li>
+<li><p>Translate triangle BAC with offset (18, -8), name the new triangle as Tri0’. Draw it with the same colors as Tri0, mark the triangle as <code class="docutils literal notranslate"><span class="pre">Tri0'</span></code>. name the corresponding vertices as B’, A’, and C’. Mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line A’C’, A’B’, and B’C’, respectively; 将三角形BAC做幅度为(18,
+-8)的平移，将得到的新三角形标记为Tri0’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；将这个直角三角形的三条边从短到长分别标记为:math:<cite>a</cite>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
+<li><p>Translate triangle CKB with offset (24, 0), name the new triangle as Tri1’. Draw it with the same colors as Tri1， mark the triangle as <code class="docutils literal notranslate"><span class="pre">Tri1'</span></code>; 将三角形CKB做幅度为(24, 0)的平移，将得到的新三角形标记为Tri1’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</p></li>
+<li><p>Mirror triangle GJD with the mirror GJ then translate the mirrored triangle with offset (38, 0). name the new triangle as <code class="docutils literal notranslate"><span class="pre">Tri2'</span></code>. Draw this new triangle with same colors as Tri2, name vertex with right angle as <code class="docutils literal notranslate"><span class="pre">J'</span></code>, 将线段GJ作为一个镜子，对三角形GJD做水平镜像，再把这个水平镜像做幅度为(38, 0)的平移操作，将得到的新三角形记为Tri2’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；新三角形的直角顶点标记为<code class="docutils literal notranslate"><span class="pre">J'</span></code>;</p></li>
+<li><p>Mirror triangle GAD with the mirror AD then translate the mirrored triangle with offset (18, 6). name the new triangle as <code class="docutils literal notranslate"><span class="pre">Tri3'</span></code>. Draw this new triangle with same colors as Tri3, name vertex with right angle as <code class="docutils literal notranslate"><span class="pre">A''</span></code>; 将线段AD作为一个镜子，对三角形GAD做水平镜像，再把这个水平镜像做幅度为(18, 6)的平移操作，将得到的新三角形记为Tri3’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；新三角形的直角顶点标记为<code class="docutils literal notranslate"><span class="pre">A''</span></code>;</p></li>
+<li><p>Draw a text <code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code> at the center of the polygon <code class="docutils literal notranslate"><span class="pre">B‘B’‘C’‘C’</span></code>； 在四边形<code class="docutils literal notranslate"><span class="pre">B‘B’‘C’‘C’</span></code>中心标记文字<code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code>；</p></li>
+<li><p>Find some spaces in the draw area, draw the following text:<code class="docutils literal notranslate"><span class="pre">a∙a</span> <span class="pre">+</span> <span class="pre">b∙b</span> <span class="pre">=</span> <span class="pre">c∙c</span></code>; 在绘图区空白处，绘制文字<code class="docutils literal notranslate"><span class="pre">a∙a</span> <span class="pre">+</span> <span class="pre">b∙b</span> <span class="pre">=</span> <span class="pre">c∙c</span></code>。</p></li>
+</ol>
+<p><strong>Questions</strong></p>
+<ol class="arabic simple">
+<li><p>Justify that triangle BACis a right triangle; 证明三角形BAC是一个直角三角形；</p></li>
+<li><p>Show that the areas of the four triangles(<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri1</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Tri3</span></code>) do not change during translation and mirror operations; 展示四个三角形(<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri1</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri2</span></code>, 和 <code class="docutils literal notranslate"><span class="pre">Tri3</span></code>)在平移和镜像转换时它们的面积不变化；</p></li>
+<li><p>Justify that the Polygon <code class="docutils literal notranslate"><span class="pre">A''K'J'A'</span></code> is a Square, let’s call it <code class="docutils literal notranslate"><span class="pre">Sqr4</span></code>; 证明多边形<code class="docutils literal notranslate"><span class="pre">A''K'J'A'</span></code> 是一个正方形。为下文方便，给它命名为：<code class="docutils literal notranslate"><span class="pre">Sqr4</span></code>；</p></li>
+<li><p>Justify that the the area of <code class="docutils literal notranslate"><span class="pre">Sqr4</span></code> is the same as the area of Square <code class="docutils literal notranslate"><span class="pre">KFJE</span></code>； 证明两个正方形<code class="docutils literal notranslate"><span class="pre">Sqr4</span></code>和<code class="docutils literal notranslate"><span class="pre">KFJE</span></code>面积相等；</p></li>
+<li><p>Justify that the polygon <code class="docutils literal notranslate"><span class="pre">C''B''B'C'</span></code> is a square(named <code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code>) that can be considered the translation of square <code class="docutils literal notranslate"><span class="pre">IHBC</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr3</span></code>), which means their areas are equal. Tell the offset of the tranlsation; 证明多边形<code class="docutils literal notranslate"><span class="pre">C''B''B'C'</span></code> 是一个正方形（命名为<code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code>),它可以通过平移正方形<code class="docutils literal notranslate"><span class="pre">IHBC</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr3</span></code>)得到。说出平移的幅度。</p></li>
+<li><p>Justify that the area of square <code class="docutils literal notranslate"><span class="pre">C''B''B'C'</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code>) is the sum of area of the square <code class="docutils literal notranslate"><span class="pre">ABED</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>) and the area of square <code class="docutils literal notranslate"><span class="pre">ACFG</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr2</span></code>); 证明正方形<code class="docutils literal notranslate"><span class="pre">C''B''B'C'</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr3'</span></code>)的面积是正方形<code class="docutils literal notranslate"><span class="pre">ABED</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>) 和正方形<code class="docutils literal notranslate"><span class="pre">ACFG</span></code>(<code class="docutils literal notranslate"><span class="pre">Sqr2</span></code>)的面积值和；</p></li>
+</ol>
+<p>If you successfully proved the above, you proved that for <strong>any right triangle</strong>, the area of the square whose side is the hypotenuse (the side opposite the right angle) is equal to the sum of the areas of the squares on the other two sides: 如果你成功证明的上述所有命题，那么你就证明了对于任意一个<strong>直角三角形</strong>，以两条较短的直角边为边长的正方形面积之和等于以直角顶点对应的斜边为边长的正方形的面积：</p>
 <div class="math notranslate nohighlight">
-\[a^2+b^2=c^2\]</div>
-<p>Given two squares with side lengths <span class="math notranslate nohighlight">\(a=6\)</span> and <span class="math notranslate nohighlight">\(b=8\)</span>, find a third square by specifying its side length <span class="math notranslate nohighlight">\(c\)</span> such that the area of the third square is exactly the sum of the areas of the first two squares:</p>
-<div class="math notranslate nohighlight">
-\[a^2+b^2=c^2\]</div>
-<p><img alt="41f48ae08c614b1f8c9d731ac45fdc59" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+\[a^2 + b^2 = c^2\]</div>
 <p><strong>Answer Area</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -899,9 +927,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p></li>
-</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
@@ -909,29 +943,29 @@ div.rendered_html tbody tr:hover {
 <li></li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span>
 <span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">mirror</span><span class="p">,</span> <span class="n">translate</span><span class="p">,</span> <span class="n">get_center</span><span class="p">,</span> <span class="n">add_v</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
 <span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -940,22 +974,132 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#1. 标记三个点:A(10, 9), B(18, 9), C(10, 15)，三角形ABC是一个直角三角形，</span>
+<span class="c1">#   用黑色绘制这个三角形；标记为Tri0;</span>
+<span class="c1">#   将这个直角三角形的三条边从短到长分别标记为 𝑎 , 𝑏 和 𝑐 ;</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span>      <span class="c1"># two side lengths of the right triangle ABC</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>              <span class="c1"># Start Point, vertex of triangle ABC with right angle</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Tri0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri0&quot;</span><span class="p">,</span>
+              <span class="n">side_texts</span><span class="o">=</span><span class="s2">&quot;bac&quot;</span><span class="p">,</span>
+              <span class="n">side_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span>
+              <span class="n">side_text_offsets</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+              <span class="n">side_text_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+              <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="s2">&quot;C&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">C</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 2. 以直角三角形的直角边AB为边长，在三角形ABC的下方建立一个正方形，使得三角形的边AB与绘制的</span>
+<span class="c1">#    正方形重合；构成这个正方形的另外两个顶点命名为D和E，其中边DE与边AC平行，D位于E的左侧；</span>
+<span class="c1">#    该正方形则称为ABED。标记点D和E，并用红色绘制这个正方形的边，标记为Sqr1；</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">Sqr1</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Sqr1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Sqr1&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">E</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">E</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 3. 以直角三角形的直角边AC为边长，在三角形ABC的左侧建立一个正方形，使得三角形的边AC与绘制的</span>
+<span class="c1">#    正方形重合；构成这个正方形的另外两个顶点命名为F和G，其中边GF与边AC平行，F位于G的上方；</span>
+<span class="c1">#    正方形则称为ACFG。用红色绘制这个正方形的边；标记为Sqr2</span>
+<span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">Sqr2</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">]</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Sqr2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Sqr2&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1">#  4. 标记两个点H(24, 17), I(16, 23)，四边形BHIC是一个较大的正方形；</span>
+<span class="c1">#     用青色绘制这个正方形，标记为Sqr3</span>
+<span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>                        <span class="c1"># (B[0] + 10*3/5, B[1] + 10*4/5)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>                        <span class="c1"># (C[0] + 10*3/5, C[1] + 10*4/5)</span>
+<span class="n">Sqr3</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Sqr3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Sqr3&quot;</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">I</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># re-mark all the points</span>
+<span class="c1"># points = [A, B, C, D, E, F, G, H, I]</span>
+<span class="c1"># point_names = &quot;ABCDEFGHI&quot;</span>
+<span class="c1"># for i, point in enumerate(points):</span>
+<span class="c1">#     mark(point, point_names[i]+str(point))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 5. 标记两个点J(4, 1), K(18, 15)，四边形FKEJ是一个更大的正方形；正方形FKEJ由6部分组成，</span>
+<span class="c1">#    分别是正方形ACFG，正方形ABED，三角形BAC, CKG, GJD, GAD, 。绘制三角形CKB, GJD和GAD，</span>
+<span class="c1">#    颜色依据三角形的边长从短到长分别用红色、绿色、和青色绘制，三角形依次标记为Tri1, Tri2和Tri3；</span>
+<span class="n">J</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>              <span class="c1"># (A[0]-6, A[1]-8)</span>
+<span class="n">K</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>            <span class="c1"># (A[0]+8, A[1]+6)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]</span>  <span class="c1"># colors for different sides of triangles</span>
+<span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>       <span class="c1"># rebuild Tri0 with different order to match the colors</span>
+<span class="n">Tri1</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span>
+<span class="n">Tri2</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>       <span class="c1"># the order matters the color of sides.</span>
+<span class="n">Tri3</span> <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">G</span><span class="p">]</span>
+<span class="n">triangles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tri0</span><span class="p">,</span> <span class="n">Tri1</span><span class="p">,</span> <span class="n">Tri2</span><span class="p">,</span> <span class="n">Tri3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">triangles</span><span class="p">):</span>
+    <span class="n">polygon</span><span class="p">(</span><span class="n">triangle</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">G</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="mi">4</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">I</span><span class="p">]</span>
-<span class="n">point_names</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHI&quot;</span>
+<span></span><span class="c1"># 6. 将三角形BAC(Tri0)做幅度为(18, -8)的平移，将得到的新三角形标记为Tri0&#39;，</span>
+<span class="c1">#    绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="c1">#   将这个直角三角形的三条边从短到长分别标记为 𝑎 , 𝑏 和 𝑐 ;</span>
+<span class="n">Tri0p</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">Tri0</span><span class="p">,</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">Bp</span><span class="p">,</span> <span class="n">Ap</span><span class="p">,</span> <span class="n">Cp</span> <span class="o">=</span> <span class="n">Tri0p</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Tri0p</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri0&#39;&quot;</span><span class="p">,</span>
+              <span class="n">side_texts</span><span class="o">=</span><span class="s2">&quot;bac&quot;</span><span class="p">,</span>
+              <span class="n">side_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span>
+              <span class="n">side_text_offsets</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+              <span class="n">side_text_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+              <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Bp</span><span class="p">),</span> <span class="s2">&quot;A&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Ap</span><span class="p">),</span> <span class="s2">&quot;C&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Cp</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -964,10 +1108,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">triangle</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
-<span class="n">square_small</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">G</span><span class="p">]</span>
-<span class="n">square_median</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>
-<span class="n">square_large</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
+<span></span><span class="c1"># 7. 将三角形CKB做幅度为(24, 0)的平移，将得到的新三角形标记为Tri1&#39;，绘制并标记这个三角形，</span>
+<span class="c1">#    颜色与之前的三角形各边颜色保持相同；</span>
+<span class="n">Tri1p</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">Tri1</span><span class="p">,</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Tri1p</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri1&#39;&quot;</span><span class="p">)</span>
+<span class="n">Cpp</span><span class="p">,</span> <span class="n">Kp</span><span class="p">,</span> <span class="n">Bpp</span> <span class="o">=</span> <span class="n">Tri1p</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Kp</span><span class="p">,</span> <span class="s2">&quot;K&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Kp</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Bpp</span><span class="p">,</span> <span class="s2">&quot;B&#39;&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Bpp</span><span class="p">))</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Cpp</span><span class="p">,</span> <span class="s2">&quot;C&#39;&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Cpp</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -976,7 +1124,15 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">(</span><span class="n">triangle</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span></span><span class="c1"># 8. 将线段GJ作为一个镜子，对三角形GJD(Tri2)做水平镜像，再把这个水平镜像做幅度为(38, 0)的平移操作，</span>
+<span class="c1">#    将得到的新三角形记为Tri2&#39;，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="c1">#    标记直角顶点为J&#39;</span>
+<span class="n">Tri2_temp</span> <span class="o">=</span> <span class="n">mirror</span><span class="p">(</span><span class="n">Tri2</span><span class="p">,</span> <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">J</span><span class="p">])</span>
+<span class="n">Tri2p</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">Tri2_temp</span><span class="p">,</span> <span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Tri2p</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri2&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">Jp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tri2p</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">Jp</span><span class="p">,</span> <span class="s2">&quot;J&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">Jp</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -985,7 +1141,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">(</span><span class="n">square_small</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span></span><span class="c1"># 9. 将线段AD作为一个镜子，对三角形GAD(Tri3)做水平镜像，再把这个水平镜像做幅度为(18, 6)的平移操作，</span>
+<span class="c1">#    将得到的新三角形记为Tri3&#39;，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="n">Tri3_temp</span> <span class="o">=</span> <span class="n">mirror</span><span class="p">(</span><span class="n">Tri3</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">D</span><span class="p">])</span>
+<span class="n">Tri3p</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">Tri3_temp</span><span class="p">,</span> <span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">polygon</span><span class="p">(</span><span class="n">Tri3p</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri3&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">App</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tri3p</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">App</span><span class="p">,</span> <span class="s2">&quot;A&#39;&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">App</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -994,7 +1157,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">(</span><span class="n">square_median</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+<span></span><span class="c1"># 10. Draw a text `Sqr3&#39;` at the center of the polygon `B‘B’‘C’‘C’`；</span>
+<span class="c1">#     在四边形`B‘B’‘C’‘C’`中心标记文字`Sqr3&#39;`；</span>
+<span class="n">text</span><span class="p">((</span><span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="s2">&quot;Sqr3&#39;&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1003,60 +1168,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">polygon</span><span class="p">(</span><span class="n">square_large</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
-    <span class="n">mark</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">point_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">point</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">AA</span> <span class="o">=</span> <span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">AA</span><span class="p">,</span> <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">8</span><span class="p">,</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">,</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">,</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">8</span><span class="p">),</span>
-          <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">,</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">6</span><span class="p">,</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">14</span><span class="p">),</span>
-          <span class="p">(</span><span class="n">AA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">AA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">6</span><span class="p">)]</span>
-
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-    <span class="n">line</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(points)], line_width=3, color=color)
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
-    <span class="n">line</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(points)], line_width=3, color=&quot;cyan&quot;)
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">J</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">K</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">8</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="n">line</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">)</span>
-<span class="n">line</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-<span class="n">line</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
-
-<span class="n">line</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-<span class="n">line</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">mark</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
-
+<span></span><span class="c1"># 11. 在绘图区空白处，绘制文字 a∙a + b∙b = c∙c</span>
+<span class="n">text</span><span class="p">((</span><span class="mi">35</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;a∙a + b∙b = c∙c&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

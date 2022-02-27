@@ -40,7 +40,7 @@ def line(start, end, line_width=1, color="black"):
     speed(old_speed)
     
     
-def lines(points, line_width=1, color="black", fillcolor=None, closed=False):
+def lines(points, line_width=1, color="black", colors=None, fillcolor=None, closed=False):
     if len(points) < 2:
         return
     pu()
@@ -49,6 +49,8 @@ def lines(points, line_width=1, color="black", fillcolor=None, closed=False):
     pd()
     extra = 1 if closed else 0
     for i in range(1, len(points)+extra):
+        if colors is not None:
+            pen(pencolor = colors[i%len(colors)])
         goto(points[i%len(points)])
         
     
@@ -118,6 +120,7 @@ def add_v(point1, point2):
     return point1[0]+point2[0], point1[1]+point2[1]
 
 def polygon(points, line_width = 3, color="black", fillcolor=None, 
+              colors = None,
               side_texts=None, 
               side_text_font = ("Arial", 12, "italic"),
               side_text_offsets=[(0, -1), (0.5, -0.5), (0, 0), (-0.5, -0.5)],
@@ -135,13 +138,13 @@ def polygon(points, line_width = 3, color="black", fillcolor=None,
     if len(points) < 3:
         return
     begin_fill()
-    lines(points, line_width=line_width, color=color, fillcolor=fillcolor, closed=True)
+    lines(points, line_width=line_width, color=color, colors=colors, fillcolor=fillcolor, closed=True)
     end_fill()
     
     for i in range(len(points)):
         if marker_texts is not None and i<len(marker_texts) and \
         marker_texts[i] is not None:
-            marker_offset = (0, 0)
+            marker_offset = (0.5, 0.5)
             if marker_offsets is not None and i < len(marker_offsets) and \
             marker_offsets[i] is not None:
                 marker_offset = marker_offsets[i]
