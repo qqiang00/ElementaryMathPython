@@ -588,6 +588,24 @@
   <a class="reference internal nav-link" href="#Prerequisites-预备知识">
    Prerequisites 预备知识
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-enumerate方法介绍和应用">
+     1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+     方法介绍和应用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-extract-list-variable-and-assign-part-of-the-elements-to-variables">
+     2. extract list variable and assign part of the elements to variables
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Solution-编程求解">
@@ -870,6 +888,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="第26讲-勾股定理-毕达哥拉斯定理">
 <h1>第26讲 勾股定理-毕达哥拉斯定理<a class="headerlink" href="#第26讲-勾股定理-毕达哥拉斯定理" title="永久链接至标题">¶</a></h1>
+<p>Lecture26 Pythagorean theorem</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p><strong>Draw and Answer Questions 绘图并回答问题</strong></p>
@@ -878,7 +897,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形.</p>
-<p><img alt="856815180fad49acb866413b169e9095" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+<p><img alt="bbdbe2bba3534b4ab26760fce7ae4112" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Mark three points A(10, 9), B(18, 9), C(10, 15), draw triangle BAC with black color; mark it with <code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, mark the vertices, mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line AC, AB, and BC, respectively; 标记三个点:A(10, 9), B(18, 9), C(10, 15)，用黑色绘制三角形BAC；标记为<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>; 将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
 <li><p>Create a square whose one side is AB below the triangle BAC, name the other tow points of the square D and E such that DE is parallel to AC, D is left to E; name the square as ABED. mark points D and E, Draw this square with green color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>;
@@ -927,21 +946,166 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
+<div class="section" id="1.-enumerate方法介绍和应用">
+<h3>1. <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>方法介绍和应用<a class="headerlink" href="#1.-enumerate方法介绍和应用" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="s2">&quot;Sophie&quot;</span><span class="p">,</span> <span class="s2">&quot;Tony&quot;</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># iterate each student</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Jason
+Sophie
+Tony
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># iterate each student with index</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0 Jason
+1 Sophie
+2 Tony
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># iterate each student with enumerate</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">student</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">students</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">student</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0 Jason
+1 Sophie
+2 Tony
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="2.-extract-list-variable-and-assign-part-of-the-elements-to-variables">
+<h3>2. extract list variable and assign part of the elements to variables<a class="headerlink" href="#2.-extract-list-variable-and-assign-part-of-the-elements-to-variables" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jason&quot;</span><span class="p">,</span> <span class="s2">&quot;Sophie&quot;</span><span class="p">,</span> <span class="s2">&quot;Tony&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">first_student</span><span class="p">,</span> <span class="n">second_student</span><span class="p">,</span> <span class="n">third_student</span> <span class="o">=</span> <span class="n">students</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_student</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">second_student</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">third_student</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Jason
+Sophie
+Tony
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># what if I only need the name of second student?</span>
+<span class="c1"># use `_` as a place holder</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">second_stu</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">students</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">second_stu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sophie
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># by using `_`, should mark all elements who you dont want to extract</span>
+<span class="c1"># the follwoing will raise an error</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">second_stu2</span> <span class="o">=</span> <span class="n">students</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-26-548cc5a17ba4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># by using `_`, should mark all elements who you dont want to extract</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg"># the follwoing will raise an error</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>_<span class="ansi-blue-fg">,</span> second_stu2 <span class="ansi-blue-fg">=</span> students
+
+<span class="ansi-red-fg">ValueError</span>: too many values to unpack (expected 2)
+</pre></div></div>
 </div>
 </div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li></li>
-</ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -989,11 +1153,11 @@ div.rendered_html tbody tr:hover {
 <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
 <span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
 <span class="n">polygon</span><span class="p">(</span><span class="n">Tri0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri0&quot;</span><span class="p">,</span>
-              <span class="n">side_texts</span><span class="o">=</span><span class="s2">&quot;bac&quot;</span><span class="p">,</span>
-              <span class="n">side_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span>
-              <span class="n">side_text_offsets</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
-              <span class="n">side_text_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
-              <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="s2">&quot;C&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">C</span><span class="p">)])</span>
+        <span class="n">side_texts</span><span class="o">=</span><span class="s2">&quot;bac&quot;</span><span class="p">,</span>
+        <span class="n">side_text_font</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span>
+        <span class="n">side_text_offsets</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+        <span class="n">side_text_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">marker_texts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">),</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="s2">&quot;C&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">C</span><span class="p">)])</span>
 </pre></div>
 </div>
 </div>
@@ -1074,13 +1238,14 @@ div.rendered_html tbody tr:hover {
 <span class="n">mark</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">]</span>  <span class="c1"># colors for different sides of triangles</span>
-<span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>       <span class="c1"># rebuild Tri0 with different order to match the colors</span>
+<span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>       <span class="c1"># the order matters the color of sides.</span>
 <span class="n">Tri1</span> <span class="o">=</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">B</span><span class="p">]</span>
-<span class="n">Tri2</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>       <span class="c1"># the order matters the color of sides.</span>
+<span class="n">Tri2</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">,</span> <span class="n">J</span><span class="p">,</span> <span class="n">D</span><span class="p">]</span>
 <span class="n">Tri3</span> <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">G</span><span class="p">]</span>
 <span class="n">triangles</span> <span class="o">=</span> <span class="p">[</span><span class="n">Tri0</span><span class="p">,</span> <span class="n">Tri1</span><span class="p">,</span> <span class="n">Tri2</span><span class="p">,</span> <span class="n">Tri3</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">triangles</span><span class="p">):</span>
-    <span class="n">polygon</span><span class="p">(</span><span class="n">triangle</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">polygon</span><span class="p">(</span><span class="n">triangle</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+            <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1177,10 +1342,8 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>乘方运算符<code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
-<li><p>复习tuple</p></li>
-<li><p>复习qianglib的一些方法</p></li>
-<li><p>复习方法的返回值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code>方法的使用</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_</span></code> 作为占位符使用</p></li>
 </ol>
 </div>
 <div class="section" id="计算机小知识">
@@ -1189,6 +1352,306 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>The three side lengths of a right triangle satisfies the Pythagorean theorem mentioned in this lecture; its inverse proposition is also true; that is, when the three numbers <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> satisfy <span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span>, then the triangle formed by these three lengths <strong>must</strong> be a <strong>right triangle</strong>, and the angle to the longest side is a right angle. Please write a method to find all three integers within 1-100 that satisfy the above equation and print them out. The name
+of the method, the parameters it accepts, the parameter types, and part of the code for the method are given.
+直角三角形的三边长度满足本讲提到的勾股定理；它的逆命题也成立，即当三个数字<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>,<span class="math notranslate nohighlight">\(c\)</span>满足<span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span>时，以这三个长度构成的三角形<strong>一定</strong>是一个<strong>直角三角形</strong>，且最长的边对应的三角形的角是直角。请编写一个方法找出在1-100以内所有的符合上述公式关系的三个整数，并打印出来。方法的名称，接受的参数、参数类型以及方法的部分代码已经给出。</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">find_all_right_triangles</span><span class="p">(</span><span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;find all triangles whose sides are integers while satisfying the</span>
+<span class="sd">    Pythagorean theorem</span>
+<span class="sd">    Params</span>
+<span class="sd">        min_length: the minimal possible side length</span>
+<span class="sd">        max_length: the maximal possible side length</span>
+<span class="sd">    Return</span>
+<span class="sd">        results: list of a tuple with (a, b, c) where a*a+b*b=c*c, a&lt;=b&lt;c,</span>
+<span class="sd">    and a,b,c are integers</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1">#TODO: Add your own codes here</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">verify_find_all_right_triangles</span><span class="p">(</span><span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">results</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;this method can not tell whether possible combinations are all found, it</span>
+<span class="sd">    only verify existing possibilities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Empty Results&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">get_code</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+
+    <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">n_passed</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">hash_results</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">min_length</span> <span class="ow">or</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">min_length</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">)</span> <span class="ow">or</span> \
+           <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">min_length</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;one of a(</span><span class="si">{}</span><span class="s2">),b(</span><span class="si">{}</span><span class="s2">),c(</span><span class="si">{}</span><span class="s2">) is out of range </span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">))</span>
+            <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c(</span><span class="si">{}</span><span class="s2">) is not greater than a(</span><span class="si">{}</span><span class="s2">) or b(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+            <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a(</span><span class="si">{}</span><span class="s2">) is greater than b(</span><span class="si">{}</span><span class="s2">), wrong!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+            <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">!=</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">^2+</span><span class="si">{}</span><span class="s2">^2 != </span><span class="si">{}</span><span class="s2">^2&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+            <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">get_code</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">hash_results</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;duplicated result for </span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+                <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">n_passed</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">hash_results</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Success:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed:&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> passed&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_passed</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="c1">#results = find_all_right_triangles(min_value, max_value)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">verify_find_all_right_triangles</span><span class="p">(</span><span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(3, 4, 5)
+(4, 5, 7)
+(6, 8, 10)
+(5, 12, 13)
+(-1, 1, 100)
+(3, 4, 5)
+4^2+5^2 != 7^2
+one of a(-1),b(1),c(100) is out of range 1-100
+duplicated result for 3,4,5
+Failed:3/6 passed
+</pre></div></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Suppose you have successfully found all combinations of the three sides of the triangle that satisfy the Pythagorean theorem within 1-100, you will find that (3, 4, 5), (5, 12, 13), (6, 8, 10), (10, 24, 26) are withen the results. Actually, (3, 4, 5) and (6, 8, 10) can be classified into the same category, because multiplying each number (3, 4, 5) by 2 producess (6, 8, 10). Similarly, (5, 12, 13) and (10, 24, 26) belong to the same category as well. (3, 4, 5) and (5, 12, 13) are the smallest
+combination in that category. Please write a program to answer, out of all the combinations you found in the previous question, how many different categories are there. For each category, print the combination with the smallest number.
+假设你已经成功找出1-100以内所有满足毕达哥拉斯定理的三角形三边长组合，你会发现这里面有(3, 4, 5),(5, 12, 13), (6, 8, 10), (10, 24, 26)等等组合。这其中(3，4，5)和(6，8，10)可以归为同一类别，因为把(3，4，5)每一个数都乘以2就能得到(6, 8, 10)。类似的，(5，12，13)和(10，24，26)是属于同一类组合。(3，4，5)和(5，12，13)组合分别是所在类别中最小的一组。请编写程序回答，在你上一题中找到的所有组合中，一共有多少个不同的组合类别。对于每一个类别的组合，请打印出数字最小的那一组。 <strong>Note</strong> you may assume that the
+combinations you acquired by previous question is ordered by the first number(a) of each element with an ascending order. <strong>注意</strong> 可以假定在上一题中得到的结果列表中是根据每一个组合中的第一个元素a从小到大排列的。</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">find_smallest_categories</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
+    <span class="n">smallest_categories</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#TODO: add your own codes here</span>
+
+
+    <span class="k">return</span> <span class="n">smallest_categories</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">smallests</span> <span class="o">=</span> <span class="n">find_smallest_categories</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">smallest</span> <span class="ow">in</span> <span class="n">smallests</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">smallest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Here are the coordiantes for some points: (0, 0), (6, 12), (10, 24), (24, 18), (16, 16), (25, 25). 这里给出了一些点的坐标，请编写程序/方法来完成下面的任务 Write program and/or methods to do the following tasks:</p>
+<ul class="simple">
+<li><p>1). Mark all the points in a draw paper; 在绘图纸上标记上述所有的点；</p></li>
+<li><p>2). For each point except O(0, 0), calculate the exact area of a square whose side length is the distance between O(0, 0) to that point. you don’t need to draw the square; 对于除了O(0,0)以外的其它所有点，准确计算由这个点到圆点O(0, 0)的距离为边长的正方形的面积。你不需要绘制这个正方形；</p></li>
+<li><p>3). For each point except O(0, 0), estimate the distance between O(0, 0) to the point; 对于除了O(0,0)以外的其它所有点，近似计算由这个点到圆点O(0, 0)的距离；</p></li>
+<li><p>4). Draw the line AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE. approximately calculate the length of these lines. the result should be precised to 0.1; 绘制下列线段AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE，并且近似计算这些线段的长度，结果精确到0.1</p></li>
+</ul>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">mirror</span><span class="p">,</span> <span class="n">translate</span><span class="p">,</span> <span class="n">get_center</span><span class="p">,</span> <span class="n">add_v</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">600</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">O</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">O</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">E</span><span class="p">]</span>
+<span class="n">point_names</span> <span class="o">=</span> <span class="s2">&quot;OABCDE&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># mark all points use enumerate method</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 2) write method to get area and side length</span>
+<span class="k">def</span> <span class="nf">area_square</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># TODO: add your own codes here</span>
+    <span class="k">return</span> <span class="n">area</span>
+    <span class="k">return</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">get_side_by_area</span><span class="p">(</span><span class="n">area</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">side</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># TODO: ad your own codes here</span>
+    <span class="k">return</span> <span class="n">side</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">area_square</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+    <span class="n">side</span> <span class="o">=</span> <span class="n">get_side_by_area</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+    <span class="n">line</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="n">O</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;area of square build by O</span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2"> is: </span><span class="si">{}</span><span class="s2">. side is </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">point_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">area</span><span class="p">,</span> <span class="n">side</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+area of square build by OA, (6, 12) is: None. side is 0.00
+area of square build by OB, (10, 24) is: None. side is 0.00
+area of square build by OC, (24, 18) is: None. side is 0.00
+area of square build by OD, (16, 16) is: None. side is 0.00
+area of square build by OE, (25, 25) is: None. side is 0.00
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point_start</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">continue</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+        <span class="n">point_end</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">line</span><span class="p">(</span><span class="n">point_start</span><span class="p">,</span> <span class="n">point_end</span><span class="p">)</span>
+        <span class="n">line_v</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># TODO: assign proper value to live_v variable</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">area_square</span><span class="p">(</span><span class="n">line_v</span><span class="p">)</span>
+        <span class="n">side</span> <span class="o">=</span> <span class="n">get_side_by_area</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;from </span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">) to </span><span class="si">{}</span><span class="s2">(</span><span class="si">{}</span><span class="s2">), length is about: </span><span class="si">{:.2f}</span><span class="s2">, area is: </span><span class="si">{}</span><span class="s2">&quot;</span>\
+            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">point_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">point_start</span><span class="p">,</span>
+                    <span class="n">point_names</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">point_end</span><span class="p">,</span>
+                    <span class="n">side</span><span class="p">,</span> <span class="n">area</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+from A((6, 12)) to B((10, 24)), length is about: 0.00, area is: None
+from A((6, 12)) to C((24, 18)), length is about: 0.00, area is: None
+from A((6, 12)) to D((16, 16)), length is about: 0.00, area is: None
+from A((6, 12)) to E((25, 25)), length is about: 0.00, area is: None
+from B((10, 24)) to C((24, 18)), length is about: 0.00, area is: None
+from B((10, 24)) to D((16, 16)), length is about: 0.00, area is: None
+from B((10, 24)) to E((25, 25)), length is about: 0.00, area is: None
+from C((24, 18)) to D((16, 16)), length is about: 0.00, area is: None
+from C((24, 18)) to E((25, 25)), length is about: 0.00, area is: None
+from D((16, 16)) to E((25, 25)), length is about: 0.00, area is: None
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
