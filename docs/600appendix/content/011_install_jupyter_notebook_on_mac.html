@@ -884,52 +884,52 @@ div.rendered_html tbody tr:hover {
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -V
 </pre></div>
 </div>
-<p><img alt="a7492b8489b04789a4e2d1d1613fc93f" class="no-scaled-link" src="600appendix/content/figures/0111_check_python_v.png" style="width: 500px;" /></p>
+<p><img alt="64a010ce61754a2eb64f18e3d754a80a" class="no-scaled-link" src="600appendix/content/figures/0111_check_python_v.png" style="width: 500px;" /></p>
 <p>如果计算机上已经正确安装了Python，命令行窗口会输出已安装的版本号，例如：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.5.4
 </pre></div>
 </div>
 <p>其中<code class="docutils literal notranslate"><span class="pre">3.5.4</span></code>就是其版本号。本书建议使用<code class="docutils literal notranslate"><span class="pre">3.5.X</span></code>版本号，其中<code class="docutils literal notranslate"><span class="pre">X</span></code>可以是任意可能的数字。本课程涉及的绝大多数代码支持3.5至3.7之间的版本。这里仅以<code class="docutils literal notranslate"><span class="pre">3.5</span></code>版本的Python解释器为例。</p>
 <p>如果执行上述命令显示的是如下图所示的一些信息:</p>
-<p><img alt="795adbbc461e4cef8d07f4a9d1b7749b" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
+<p><img alt="8edc1711fb1f46ec9057cfdfd04b5fd5" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
 <p>表明你的计算机上并没有安装Python解释器。</p>
 <p>在Mac操作系统上卸载旧版本的Python解释器与卸载一般应用程序一样，在此不再赘述。可以通过下列链接下载3.5版本的Python解释器安装程序：(<a class="reference external" href="https://www.python.org/downloads/release/python-354/">https://www.python.org/downloads/release/python-354/</a>) 。主要版本的Python解释器通常都会提供32位和64位两种安装程序文件，建议选择和计算机操作系统相同位数的版本。右键点击“我的计算机”，选择“属性”来可以查看你的计算机是32位还是64位的系统。如下图系统类别(System type)行所示：</p>
-<p><img alt="8c78eeab80274fd2ace95c477d95fe47" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
+<p><img alt="eb884572ef45465092344f8d0a1dd18c" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="2.-安装Python解释器">
 <h2>2. 安装Python解释器<a class="headerlink" href="#2.-安装Python解释器" title="永久链接至标题">¶</a></h2>
 <p>下载好相应的Python解释器安装程序后，可以双击运行安装，选择“个性化安装”(Customize Installation)，同时勾选中“将Python3.5加入路径”（Add Python3.5 to Path)，如下图所示：</p>
-<p><img alt="f52c1a945a7e4415831c81ebf5bbcf5b" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
+<p><img alt="bcffced0773f4ba88dde0ab33a7cbc4c" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
 <p>在随后的，安装提示信息中，勾选中所有选项，包括“为本计算机上所有用户安装”（for all users）:</p>
-<p><img alt="6d0fc31c06a64775a01e859a94a5ca0b" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
+<p><img alt="5594dae094b14bca945e73cf92ac0c08" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
 <p>继续选中“为所有用户安装”（install for all users）。其余使用默认配置，跟随安装程序向导完成安装。</p>
-<p><img alt="c307dff19e6a4f0782a9d1a39d927909" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
+<p><img alt="ef453ef60d6840fcbd83faf7ebd6f9f9" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
 <p>当下图出现，即表明Python解释器已顺利安装完成。关闭该窗口。</p>
-<p><img alt="df8473e0e0044f35b5b3aa72ac49f1ba" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
+<p><img alt="4633eca43c3d42f4850eb2a3aeea14cd" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
 <p>完成安装后，再次打开命令行工具，按照前文的描述确认符合要求版本的Python已经安装。到此，你的电脑已经具备了执行Python程序的能力了。可以重新启动计算机。</p>
 </div>
 <div class="section" id="3.-安装虚拟环境">
 <h2>3. 安装虚拟环境<a class="headerlink" href="#3.-安装虚拟环境" title="永久链接至标题">¶</a></h2>
 <p>本步骤虽不是必需，且对初学者也不是很容易理解，虽然可以直接跳过本步骤跟随下一步骤安装“jupyter lab”，但仍然强烈建议读者跟随完成本步骤，这有助于维持你干净的计算机系统。简单地说，虚拟环境是计算机单独、额外开辟出来的一部分资源专门用于做某些特定的事情，与整个操作系统有严格的界限，也不会干扰操作系统。从Python3.3开始，创建Python虚拟环境已经变得非常容易。</p>
 <p>首先确定一个目录，这个目录将要被用来作为安装虚拟环境的位置，建议这个目录不要设置在很深层次，可以直接设在D盘符根目录下。打开Mac系统的命令行提示工具，切换至盘符D下：</p>
-<p><img alt="1e9e7d6949a94e9cad7265dea881c3b4" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="826192bf247544f0ae8e6561ad9fd312" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
 <p>随后在提示光标后输入如下命令：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m venv venv
 </pre></div>
 </div>
-<p><img alt="dbc7f46f0b604612afe6fdc3c54cee69" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="982ad671382b4bd7beb4ad359b4dec31" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
 <p>这行命令表示用python所带的<code class="docutils literal notranslate"><span class="pre">venv</span></code>功能（命令中的第一个venv）在当前目录下建立一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>（命令中的第二个venv）的目录，并以该目录为根目录创建Python运行的虚拟环境。通常人们偏好使用<code class="docutils literal notranslate"><span class="pre">venv</span></code>这个目录名。顺利执行该命令后命令行提示工具不会有额外的提示，但目录<code class="docutils literal notranslate"><span class="pre">D:\</span></code>下已经多了一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>的目录，并且其下也已经有了一些子目录和文件，表明虚拟环境已经创建好了。</p>
 <p>虚拟环境创建好了之后会复制操作系统内安装的Python解释器的相关库。虚拟环境需要激活才能有效使用，它通常在被使用前通过命令激活，在使用结束后通过命令使之离开激活状态。在虚拟环境<code class="docutils literal notranslate"><span class="pre">venv</span></code>目录下有一个<code class="docutils literal notranslate"><span class="pre">Script</span></code>子目录，该子目录下有“activate.bat”和“deactivate.bat”两个文件，分别用于激活是失活虚拟环境。例如我们要激活刚刚创建的虚拟环境，可以在命令行提示工具下输入如下命令：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>D:\venv\Scripts\activate.bat
 </pre></div>
 </div>
-<p><img alt="9574db997d6b47ccb6abe6e6cdd88f00" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
+<p><img alt="4113662965a74c1eaa789cb435485232" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
 <p>激活后，命令行提示工具的提示符前会多出字符串<code class="docutils literal notranslate"><span class="pre">(venv)</span></code>，表明当前处在虚拟环境下，在该环境下执行Python程序时仅调用当前虚拟环境下的Python解释器下的一些库。使用命令</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>pip list
 </pre></div>
 </div>
 <p>查看当前已经安装的Python库，结果可能如下图所示：</p>
-<p><img alt="4cdd84427e8e44598b06aa610c4a3d48" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
+<p><img alt="fa140223bf0e4821acbbfe045c57ad01" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="4.-安装Jupyter-Lab">
 <h2>4. 安装Jupyter Lab<a class="headerlink" href="#4.-安装Jupyter-Lab" title="永久链接至标题">¶</a></h2>
@@ -938,14 +938,14 @@ div.rendered_html tbody tr:hover {
 python -m pip install --upgrade setuptools
 </pre></div>
 </div>
-<p><img alt="36ba8129a8a3479780ba89cc9e11d249" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
+<p><img alt="921f0773b602422c971d6365bfa7c88e" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
 <p>执行完上述命令后，使用下面的命令来安装“Jupyter Lab”：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m pip install jupyterlab
 </pre></div>
 </div>
-<p><img alt="e18cfaac969b4ca9826a585fe7146b6d" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="2175255bdb5f49de847f988053e2dc0f" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
 <p>该过程由于需要安装较多的支持库，因此需要的时间略长些。一切顺利的情况下，Jupyter Lab就安装好了，如下图所示：</p>
-<p><img alt="5bd8ee096c8a464193def386e20100fc" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="7664c608d27943eeb2d2d775257b0db3" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="5.-使用Jupyter-Lab进行Python交互式编程">
 <h2>5. 使用Jupyter Lab进行Python交互式编程<a class="headerlink" href="#5.-使用Jupyter-Lab进行Python交互式编程" title="永久链接至标题">¶</a></h2>
@@ -953,27 +953,27 @@ python -m pip install --upgrade setuptools
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
-<p><img alt="f8cc8631567540658ca2c309ca8efbe8" class="no-scaled-link" src="../../_images/0203_command_jupyter_lab.png" style="width: 500px;" /></p>
+<p><img alt="29fd56497e4f416b89bec29b6f7b9dfa" class="no-scaled-link" src="../../_images/0203_command_jupyter_lab.png" style="width: 500px;" /></p>
 <p>上述命令的运行需要一些时间等后，稍后启动Jupyter Lab服务，并打开浏览器，进入如下图所示的Jupyter Lab提供的基于网页的交互式编程环境：</p>
-<p><img alt="0a0dab2dca05478ab53fede4f7944081" class="no-scaled-link" src="../../_images/0301_jupyter_lab_launch.png" style="width: 500px;" /></p>
+<p><img alt="c4dab41699184c699ce3444809b2986e" class="no-scaled-link" src="../../_images/0301_jupyter_lab_launch.png" style="width: 500px;" /></p>
 <p>上图界面左侧显示的内容和资源管理器中的内容一致，右侧有几个交大的方形按钮，选中“Notebook”栏目下的“Python 3”方形按钮，会打开一个新的窗口供编写代码。如下图所示。</p>
-<p><img alt="59dd2acf84984944869cc6082ba362bc" class="no-scaled-link" src="../../_images/0302_jupyter_lab_new_file.png" style="width: 500px;" /></p>
+<p><img alt="4d3a534b515d484794821e01ccfdb736" class="no-scaled-link" src="../../_images/0302_jupyter_lab_new_file.png" style="width: 500px;" /></p>
 <p>如此就在界面的右侧建立并展示了一个以Python3为解释器的交互式编程环境文件，该文件名默认为“untitled.ipynb”。其中蓝色竖条右侧的灰色区域可以用鼠标点击选中形成一个代码输入单元。我们像下图中显示的那样输入如下的一行Python代码:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我正在Jupyter Lab编程环境下编写Python代码&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="be338d48d23c4b8bb7aabdb7aa17714f" class="no-scaled-link" src="../../_images/0303_jupyter_lab_write_code.png" style="width: 500px;" /></p>
+<p><img alt="ef8f984e64534cbb958f370ac025c054" class="no-scaled-link" src="../../_images/0303_jupyter_lab_write_code.png" style="width: 500px;" /></p>
 <p>书写完毕后，将鼠标或光标保留在当前单元格内，保持左侧的蓝色竖条可见，通过下面三种方式之一来执行这一个代码单元格： 1. 点击并展开菜单“Run”，点击第一个子菜单“Selected Cells” 2. 直接点击界面右侧单元格上方工具栏中的表示向右的三角形按钮来运行当前单元格 3. 直接同时按下键盘中的“Shift”和“Enter”键</p>
 <p>运行后，可以看出当前单元格下方多出一行文字，那就是这一行程序的输出信息。</p>
-<p><img alt="bd7923dc304446d0a8c215767ae46aa7" class="no-scaled-link" src="../../_images/0304_jupyter_lab_run_code.png" style="width: 500px;" /></p>
+<p><img alt="5406bcb922ff4c2086dff99429c3b417" class="no-scaled-link" src="../../_images/0304_jupyter_lab_run_code.png" style="width: 500px;" /></p>
 <p>还可以通过点击工具栏上的“+”号来增加单元格。可以在选中某一个单元格后，切换工具栏上方的属性。常见的单元格的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。 此外，可以通过界面左侧的文件浏览视图来修改当前文件的文件名。选中一个文件并右键点击，选择“rename”，在弹出的窗口里输入你想要的文件名。</p>
 <p>更多关于如何使用“Jupyter Lab”的内容将在课程中详细介绍。</p>
 </div>
 <div class="section" id="6.-退出Jupyter-Lab及虚拟环境">
 <h2>6. 退出Jupyter Lab及虚拟环境<a class="headerlink" href="#6.-退出Jupyter-Lab及虚拟环境" title="永久链接至标题">¶</a></h2>
-<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter lab”的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="8bb5e3f0f9344588a562e180906ab253" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
+<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter lab”的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="098b5b69432e4768ac7b5376a403c56c" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
 <p>通过在命令行提示窗口内执行虚拟环境中路径为“venv:nbsphinx-math:<cite>Scripts</cite><span class="math">\deactivate</span>.bat”离开虚拟环境。如下图所示。</p>
-<p><img alt="e1a08b4ae9214e858141ba581c39ebca" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
+<p><img alt="93d26176c10b49f5b68c624195c461d7" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
 <p>如此，就完全顺利退出了Mac操作系统下的虚拟Python编程环境。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
