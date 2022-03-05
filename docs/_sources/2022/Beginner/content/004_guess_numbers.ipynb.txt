@@ -53,6 +53,58 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "d9f9e5d0-5084-4b74-8f59-315aa8b8d1ca",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'variable_a' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-2-3f13b4e447b4>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mvariable_a\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'variable_a' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "variable_a"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "07f8bd1a-efcb-4cca-a69b-7f8a9314dee9",
+   "metadata": {},
+   "source": [
+    "一对圆括号`()`前面的名字一般表示的是一个方法名。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "8a2eedd5-ec9a-41c4-bb09-4112c9bf53d6",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'randint' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-1-2e7906960da7>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mrandint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'randint' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "randint()"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "id": "2d8b82e3-fd6d-4ce6-ac0b-bfee0f7440c8",
    "metadata": {},
@@ -62,7 +114,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 3,
    "id": "9c1f45c3-133d-45f3-9e0f-9da2238828ee",
    "metadata": {},
    "outputs": [
@@ -120,12 +172,72 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 5,
    "id": "9873a7f9-dc17-4568-9f07-81ea2d4bbe99",
    "metadata": {},
    "outputs": [],
    "source": [
     "from random import randint"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a032ee2f-d4ae-43f0-b5b6-ea0e299ff087",
+   "metadata": {},
+   "source": [
+    "下面这段代码执行时会报错，提示不存在一个名叫`random2`的模块（仓库）。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "a1e56cdd-a1d7-47b1-a2ff-2c2f4810ffef",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'random2'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-6-83e1eae1b338>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mrandom2\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mrandint\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'random2'"
+     ]
+    }
+   ],
+   "source": [
+    "from random2 import randint"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "98659a21-0604-4c37-ac89-b940e2ed41a5",
+   "metadata": {},
+   "source": [
+    "下面这段代码执行时也会报错，它提示在名称为random2的模块（仓库）找不到名字为`randomint`的方法。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "3d9c6bc5-ffd5-4041-ad54-35aeac43ea11",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ImportError",
+     "evalue": "cannot import name 'randomint' from 'random' (/usr/lib/python3.8/random.py)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mImportError\u001b[0m                               Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-7-597b3c9c70ab>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mrandom\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mrandomint\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mImportError\u001b[0m: cannot import name 'randomint' from 'random' (/usr/lib/python3.8/random.py)"
+     ]
+    }
+   ],
+   "source": [
+    "from random import randomint"
    ]
   },
   {
@@ -138,32 +250,161 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 15,
    "id": "d6f461b8-0d71-4d87-a126-b6ea7a7c9e81",
    "metadata": {},
    "outputs": [],
    "source": [
-    "randint(0, 9)"
+    "num = randint(0, 9)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "36ccbad4-b2c8-4340-b383-6629a0529bfe",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(num)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8f3b854c-738d-494b-bfd3-1be124e90c19",
+   "metadata": {},
+   "source": [
+    "尝试重复多次运行上面这行代码，观察每一次运行代码给出的数字是否一样，0和9有没有出现过？有没有出现过不在0-9范围内的整数呢？"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f083fd25-a774-4bc0-8b51-b5e95f1a021f",
+   "metadata": {},
+   "source": [
+    "改变`randint`方法后面圆括号内两个数的大小，生成的随机数的范围也会发生变化。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "1170e417-c50f-4b34-b0de-47c953d574ef",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "num2 = randint(0, 100)\n",
+    "print(num2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b25f3c30-4322-4ce6-a080-a8f6b8c021b4",
+   "metadata": {},
+   "source": [
+    "如果这两个相同，那么生成的随机数就不再随机了，而是确定的这个数。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "f00e92f6-4438-4b9d-817c-87e136602914",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "100\n"
+     ]
+    }
+   ],
+   "source": [
+    "num3 = randint(100, 100)\n",
+    "print(num3)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afd3df0a-e64e-4dcc-9dbb-00d5d0378d4e",
+   "metadata": {},
+   "source": [
+    "如果让圆括号内左边的数比右边的数大，也无法生成出随机数，因为找不到一个数比9大的同时又比0小。可以看出，圆括号内的数字的数序时有讲究的。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "c63744c0-c105-4839-bd49-66c209f235d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "randint() takes 3 positional arguments but 4 were given",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-31-175c639ec894>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mnum4\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mrandint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m9\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m-\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mnum4\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mTypeError\u001b[0m: randint() takes 3 positional arguments but 4 were given"
+     ]
+    }
+   ],
+   "source": [
+    "num4 = randint(9, 0)\n",
+    "print(num4)"
    ]
   },
   {
    "cell_type": "markdown",
    "id": "5fb8e033-7b1b-4a3d-8969-8913b23a46fb",
-   "metadata": {},
+   "metadata": {
+    "tags": []
+   },
    "source": [
-    "尝试重复多次运行上面这行代码，观察每一次运行代码给出的数字是否一样，0和9有没有出现过？有没有出现过不在0-9范围内的整数呢？\n",
-    "\n",
     "下面的代码把随机生成得到的整数赋值给一个名为`num_computer_generated`这个变量。如果不使用`print`语句，就只有计算机知道生成的随机数是什么了。"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 26,
    "id": "27738f58-a305-4935-b508-3d4d75a3dacd",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "I have a number, your turn to guess: 2\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "You guessed:  2 .\n"
+     ]
+    }
+   ],
    "source": [
-    "num_computer_generated = randint(0, 9)"
+    "from random import randint\n",
+    "num_computer_generated = randint(0, 9)\n",
+    "num_guess = int(input(\"I have a number, your turn to guess:\"))\n",
+    "print(\"You guessed: \", num_guess, \".\")"
    ]
   },
   {
@@ -190,6 +431,40 @@
     "    print(\"备备可以获得一个乐高积木奖励。\")\n",
     "else:                     # 否则\n",
     "    print(\"备备不会有奖励，因为成绩不够好。\")\n",
+    "    \n",
+    "print(\"备备你满意这样的结果吗?\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "58374957-387b-42a8-852c-a562c230e034",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "备备数学考了多少分: 94\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "备备不会有奖励，因为成绩不够好。\n",
+      "备备你满意这样的结果吗?\n"
+     ]
+    }
+   ],
+   "source": [
+    "# if >= is not allowed to use and 95 should still be used\n",
+    "# we can write the program like this:\n",
+    "score_math = int(input(\"备备数学考了多少分:\"))\n",
+    "if score_math < 95:      # 如果数学成绩低于95分\n",
+    "    print(\"备备不会有奖励，因为成绩不够好。\")\n",
+    "else:                     # 否则\n",
+    "    print(\"备备可以获得一个乐高积木奖励。\")    \n",
     "    \n",
     "print(\"备备你满意这样的结果吗?\")"
    ]
@@ -234,7 +509,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 39,
    "id": "6cf0130b-541a-4fa3-8959-4b44a5082a17",
    "metadata": {},
    "outputs": [
@@ -247,7 +522,7 @@
       "你不可以用`print`方法偷看这个数字\n",
       "你可以用键盘输入告诉我你猜的数字，我们把你猜的数字放在变量`num_you_guessed`里\n",
       "好的，游戏开始！我开始选数字了...\n",
-      "不好意思，稍等。我得去仓库里先找个东西\n",
+      "不好意思，稍等。我得去仓库里先找个东西...\n",
       "让你久等了，我回来拉。我开始选数字了...\n"
      ]
     },
@@ -255,14 +530,14 @@
      "name": "stdin",
      "output_type": "stream",
      "text": [
-      "我选好了，现在你来猜吧(0-9): 123\n"
+      "我选好了，现在你来猜吧(0-9): 6\n"
      ]
     },
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "真可惜，你没有猜对。我选的数字是: 3\n",
+      "真可惜，你没有猜对。我选的数字是: 7\n",
       "如果你想继续再玩一次，就再运行依次这个代码单元格吧。\n"
      ]
     }
@@ -275,7 +550,7 @@
     "print(\"好的，游戏开始！我开始选数字了...\")\n",
     "print(\"不好意思，稍等。我得去仓库里先找个东西...\")\n",
     "from time import sleep            # 这是什么？\n",
-    "sleep(10)                         # sleep(10) 有什么用\n",
+    "sleep(6)                         # sleep(10) 有什么用\n",
     "from random import randint\n",
     "print(\"让你久等了，我回来拉。我开始选数字了...\")\n",
     "num_computer_generated = randint(0, 9)\n",
