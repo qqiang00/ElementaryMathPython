@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = '初等数学与Python程序设计(讲义)'
-copyright = '2021, Ye Qiang'
+copyright = '2022, Ye Qiang'
 author = 'Ye Qiang'
 
 
