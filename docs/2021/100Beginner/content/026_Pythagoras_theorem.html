@@ -907,7 +907,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形.</p>
-<p><img alt="adda4535afea4a3090469967e71ed771" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+<p><img alt="1601bad092204234a734cfc8ff2fcf81" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Mark three points A(10, 9), B(18, 9), C(10, 15), draw triangle BAC with black color; mark it with <code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, mark the vertices, mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line AC, AB, and BC, respectively; 标记三个点:A(10, 9), B(18, 9), C(10, 15)，用黑色绘制三角形BAC；标记为<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>; 将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
 <li><p>Create a square whose one side is AB below the triangle BAC, name the other tow points of the square D and E such that DE is parallel to AC, D is left to E; name the square as ABED. mark points D and E, Draw this square with green color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>;
@@ -1152,13 +1152,22 @@ Sophie
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span>      <span class="c1"># two side lengths of the right triangle ABC</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>      <span class="c1"># Start Point, vertex of triangle ABC with right angle</span>
+<span class="n">spacing</span> <span class="o">=</span> <span class="mi">8</span>       <span class="c1"># spacing between two bigest squares</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1">#1. 标记三个点:A(10, 9), B(18, 9), C(10, 15)，三角形ABC是一个直角三角形，</span>
 <span class="c1">#   用黑色绘制这个三角形；标记为Tri0;</span>
 <span class="c1">#   将这个直角三角形的三条边从短到长分别标记为 𝑎 , 𝑏 和 𝑐 ;</span>
 
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span>      <span class="c1"># two side lengths of the right triangle ABC</span>
 
-<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>              <span class="c1"># Start Point, vertex of triangle ABC with right angle</span>
 <span class="n">B</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
 <span class="n">Tri0</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">]</span>
@@ -1172,7 +1181,7 @@ Sophie
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1189,7 +1198,7 @@ Sophie
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1206,7 +1215,7 @@ Sophie
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1222,7 +1231,7 @@ Sophie
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1235,7 +1244,7 @@ Sophie
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1256,15 +1265,6 @@ Sophie
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">triangle</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">triangles</span><span class="p">):</span>
     <span class="n">polygon</span><span class="p">(</span><span class="n">triangle</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
             <span class="n">center_text</span><span class="o">=</span><span class="s2">&quot;Tri</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">spacing</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># spacing between two bigest squares</span>
 </pre></div>
 </div>
 </div>
@@ -1419,7 +1419,17 @@ Sophie
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
+<li><p>Reran the solution code and draw the figure using different values for <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> listed below: 用下面所列的不同的a,b值来重新运行示例代码，观察绘制的图形。</p>
+<ul class="simple">
+<li><p>a, b = 6, 10</p></li>
+<li><p>a, b = 7, 6</p></li>
+<li><p>a, b = 8, 8</p></li>
+</ul>
+<p>In the solution code, the “red” side is used as a mirror when doing mirroring, But in this assignment, use the side with “green” color as a mirror when doing mirroring.在示例代码中，我们使用了三角形红色的边作为镜子来进行镜像操作，但是在这个作业中，请你使用绿色的边作为镜子执行镜像操作。</p>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
 <li><p>The three side lengths of a right triangle satisfies the Pythagorean theorem mentioned in this lecture; its inverse proposition is also true; that is, when the three numbers <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> satisfy <span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span>, then the triangle formed by these three lengths <strong>must</strong> be a <strong>right triangle</strong>, and the angle to the longest side is a right angle. Please write a method to find all three integers within 1-100 that satisfy the above equation and print them out. The name
 of the method, the parameters it accepts, the parameter types, and part of the code for the method are given.
 直角三角形的三边长度满足本讲提到的勾股定理；它的逆命题也成立，即当三个数字<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>,<span class="math notranslate nohighlight">\(c\)</span>满足<span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span>时，以这三个长度构成的三角形<strong>一定</strong>是一个<strong>直角三角形</strong>，且最长的边对应的三角形的角是直角。请编写一个方法找出在1-100以内所有的符合上述公式关系的三个整数，并打印出来。方法的名称，接受的参数、参数类型以及方法的部分代码已经给出。</p></li>
@@ -1531,7 +1541,7 @@ duplicated result for 3,4,5
 Failed:3/6 passed
 </pre></div></div>
 </div>
-<ol class="arabic" start="2">
+<ol class="arabic" start="3">
 <li><p>Suppose you have successfully found all combinations of the three sides of the triangle that satisfy the Pythagorean theorem within 1-100, you will find that (3, 4, 5), (5, 12, 13), (6, 8, 10), (10, 24, 26) are withen the results. Actually, (3, 4, 5) and (6, 8, 10) can be classified into the same category, because multiplying each number (3, 4, 5) by 2 producess (6, 8, 10). Similarly, (5, 12, 13) and (10, 24, 26) belong to the same category as well. (3, 4, 5) and (5, 12, 13) are the smallest
 combination in that category. Please write a program to answer, out of all the combinations you found in the previous question, how many different categories are there. For each category, print the combination with the smallest number.</p>
 <p>假设你已经成功找出1-100以内所有满足毕达哥拉斯定理的三角形三边长组合，你会发现这里面有(3, 4, 5),(5, 12, 13), (6, 8, 10), (10, 24, 26)等等组合。这其中(3，4，5)和(6，8，10)可以归为同一类别，因为把(3，4，5)每一个数都乘以2就能得到(6, 8, 10)。类似的，(5，12，13)和(10，24，26)是属于同一类组合。(3，4，5)和(5，12，13)组合分别是所在类别中最小的一组。请编写程序回答，在你上一题中找到的所有组合中，一共有多少个不同的组合类别。对于每一个类别的组合，请打印出数字最小的那一组。</p>
@@ -1564,7 +1574,7 @@ combination in that category. Please write a program to answer, out of all the c
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="4">
 <li><p>Here are the coordiantes for some points: (0, 0), (6, 12), (10, 24), (24, 18), (16, 16), (25, 25). 这里给出了一些点的坐标，请编写程序/方法来完成下面的任务 Write program and/or methods to do the following tasks:</p>
 <ul class="simple">
 <li><p>1). Mark all the points in a draw paper; 在绘图纸上标记上述所有的点；</p></li>
