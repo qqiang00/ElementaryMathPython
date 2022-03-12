@@ -34,7 +34,23 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# write your codes here 在这里写你的代码\n"
+    "# write your codes here 在这里写你的代码\n",
+    "print(\"I will calculate the average of 10 random integers from 1 to 100.\")\n",
+    "from random import randint\n",
+    "num1 = int(randint(1, 100))\n",
+    "num2 = int(randint(1, 100))\n",
+    "num3 = int(randint(1, 100))\n",
+    "num4 = int(randint(1, 100))\n",
+    "num5 = int(randint(1, 100))\n",
+    "num6 = int(randint(1, 100))\n",
+    "num7 = int(randint(1, 100))\n",
+    "num8 = int(randint(1, 100))\n",
+    "num9 = int(randint(1, 100))\n",
+    "num10 = int(randint(1, 100))\n",
+    "print(\"The random numbers I chose are\", num1, num2, num3, num4, num5, num6, num7, num8, num9, \"and\", num10, \".\")\n",
+    "sum = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10\n",
+    "average = sum / 10\n",
+    "print(\"The average is \", average, \".\")"
    ]
   },
   {
@@ -58,7 +74,8 @@
    "source": [
     "# a) write your codes in this cell, and run it any times you want\n",
     "#    在这里写上你的代码，可以执行任意次数\n",
-    "\n"
+    "from random import random\n",
+    "random()"
    ]
   },
   {
@@ -69,7 +86,9 @@
    "outputs": [],
    "source": [
     "# b) Write your answer here:\n",
-    "#"
+    "# b) It normally comes out as a number smaller than 1 with decimals. \n",
+    "# Though when I try to place numbers in the bracket for the range, it says you don't need numbers inside.\n",
+    "# I think \"random\" method only chooses decimal numbers less than 1."
    ]
   },
   {
@@ -80,7 +99,16 @@
    "outputs": [],
    "source": [
     "# c) Write your answer here:\n",
-    "#"
+    "# 在中国，有一个吉林省，还有一个吉林市，吉林省包括吉林市\n",
+    "# 此外在加拿大，有一个魁北克省，还有一个魁北克市，魁北克市位于魁北克省内\n",
+    "\n",
+    "# I have a classmate now named Alex (Alexandra), though in Kindergarten I had another classmate named Alex (Alexander). \n",
+    "# They are two very different people, but they have the same shortened name.\n",
+    "\n",
+    "# There are also many words in English that are the same but mean different things. \n",
+    "# In Chinese there are also many similar situations.\n",
+    "# 差, 可以是不好的意思，但是也可以是像年龄差一样，是比较两个东西。\n",
+    "# Mean, can be defined as not nice, also can be used as a math term, and can also define mean. (what does it \"mean\")"
    ]
   },
   {
@@ -101,14 +129,16 @@
    "outputs": [],
    "source": [
     "# modify the codes below 修改下面的代码\n",
-    "\n",
     "print(\"我是新版的整数除法运算小能手\")\n",
     "first_input = input(\"请输入被除数(整数)：\")\n",
     "second_input = input(\"请输入除数(整数)：\")\n",
     "dividend = int(first_input)            # 被除数\n",
     "divisor = int(second_input)            # 除数\n",
-    "quotien = dividend / divisor           # 商\n",
-    "print(dividend, \"/\", divisor, \"=\", quotien)"
+    "if divisor == 0:\n",
+    "    print(\"It is wrong, divisor can not be 0.\")\n",
+    "else:\n",
+    "    quotien = dividend / divisor           # 商\n",
+    "    print(\"The quotien is\", quotien,\".\")"
    ]
   },
   {
@@ -134,7 +164,7 @@
     "  | length    |  width     |        output                   |\n",
     "  | --------- |:----------:|:-------------------------------:|\n",
     "  |   12      |   12       | perimeter is: 48, area is: 144  |\n",
-    "  |   18      |   14       | perimeter is: 48, area is: 144  |\n",
+    "  |   18      |   14       | perimeter: 64, area is: 252     |\n",
     "  |   0       |   4        |      Not a rectangle            |\n",
     "  |   1091    |   0        |      Not a rectangle            |\n",
     "  |   0       |   0        |      Not a rectangle            |\n"
@@ -147,7 +177,26 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Write your code here 在这里写上你的代码\n"
+    "# Write your code here 在这里写上你的代码\n",
+    "length = int(input(\"length:\"))\n",
+    "width = int(input(\"width:\"))\n",
+    "perimeter = (length + width) * 2\n",
+    "area = length * width\n",
+    "if width * length == 0: \n",
+    "    print(\"Not a rectangle.\")\n",
+    "else:\n",
+    "    print(\"perimeter is\", perimeter, \",area is\", area, \".\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fbf458b0-b4a3-429e-9fdc-af15a7053864",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# should run the above code cell with all the values provided in the table.\n",
+    "# 运行上面的代码时，应该分5次分别使用表格中提到的数据来作为输入，"
    ]
   }
  ],
