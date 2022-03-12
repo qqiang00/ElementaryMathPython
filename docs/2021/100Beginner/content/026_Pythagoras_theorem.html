@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第26讲 勾股定理-毕达哥拉斯定理 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -41,7 +41,10 @@
     <link rel="next" title="第二篇 进阶" href="../../200Intermediate/index.html" />
     <link rel="prev" title="第25讲 水平或垂直镜像" href="025_horizontal_vertical_mirror.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -53,10 +56,16 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -64,8 +73,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -495,11 +504,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../../600appendix/content/011_install_jupyter_notebook_on_mac.html">
-     附录三 Mac操作系统下搭建Python运行环境
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../../600appendix/content/090_qianglib.html">
      附录四 qianglib.py的代码
     </a>
@@ -539,25 +543,25 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">切换导航</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -565,11 +569,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2021/100Beginner/content/026_Pythagoras_theorem.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -578,8 +582,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -587,12 +591,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> 内容
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Problem-问题描述">
@@ -655,7 +659,78 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>第26讲 勾股定理-毕达哥拉斯定理</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 内容 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题描述">
+   Problem 问题描述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Math-Background-数学背景">
+   Math Background 数学背景
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Prerequisites-预备知识">
+   Prerequisites 预备知识
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#1.-enumerate方法介绍和应用">
+     1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+     方法介绍和应用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#2.-extract-list-variable-and-assign-part-of-the-elements-to-variables">
+     2. extract list variable and assign part of the elements to variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-编程求解">
+   Solution 编程求解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Summary-知识点小结">
+   Summary 知识点小结
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#计算机小知识">
+   计算机小知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   
@@ -917,7 +992,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形.</p>
-<p><img alt="7e7e4cccff3241128a290c5942487501" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+<p><img alt="42dbcf2a6b424d3eaf7522df954734c9" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Mark three points A(10, 9), B(18, 9), C(10, 15), draw triangle BAC with black color; mark it with <code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, mark the vertices, mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line AC, AB, and BC, respectively; 标记三个点:A(10, 9), B(18, 9), C(10, 15)，用黑色绘制三角形BAC；标记为<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>; 将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
 <li><p>Create a square whose one side is AB below the triangle BAC, name the other tow points of the square D and E such that DE is parallel to AC, D is left to E; name the square as ABED. mark points D and E, Draw this square with green color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>;
@@ -927,7 +1002,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Mark the points J(4, 1), K(18, 15); polygon FKEJ is a even larger square; it can be divided into 6 parts: square ACFG, square ABED, triangles BAC, CKG, GJD, GAD. Draw triangles: CKG, GJD, and GAD with color red for shortest side, cyan for longest one and green for the rest one. Mark the triangles as <code class="docutils literal notranslate"><span class="pre">Tri1</span></code>, <code class="docutils literal notranslate"><span class="pre">Tri2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Tri3</span></code>, respectively; 标记两个点J(4, 1), K(18, 15)，四边形FKEJ是一个更大的正方形；正方形FKEJ由6部分组成，分别是正方形ACFG，正方形ABED，三角形BAC, CKG, GJD, GAD,
 。绘制三角形CKB, GJD和GAD，颜色依据三角形的边长从短到长分别用红色、绿色、和青色绘制，三角形依次标记为Tri1, Tri2和Tri3；</p></li>
 <li><p>Translate triangle BAC with offset (18, -8), name the new triangle as Tri0’. Draw it with the same colors as Tri0, mark the triangle as <code class="docutils literal notranslate"><span class="pre">Tri0'</span></code>. name the corresponding vertices as B’, A’, and C’. Mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line A’C’, A’B’, and B’C’, respectively; 将三角形BAC做幅度为(18,
--8)的平移，将得到的新三角形标记为Tri0’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；将这个直角三角形的三条边从短到长分别标记为:math:<cite>a</cite>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
+-8)的平移，将得到的新三角形标记为Tri0’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
 <li><p>Translate triangle CKB with offset (24, 0), name the new triangle as Tri1’. Draw it with the same colors as Tri1， mark the triangle as <code class="docutils literal notranslate"><span class="pre">Tri1'</span></code>; 将三角形CKB做幅度为(24, 0)的平移，将得到的新三角形标记为Tri1’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</p></li>
 <li><p>Mirror triangle GJD with the mirror GJ then translate the mirrored triangle with offset (38, 0). name the new triangle as <code class="docutils literal notranslate"><span class="pre">Tri2'</span></code>. Draw this new triangle with same colors as Tri2, name vertex with right angle as <code class="docutils literal notranslate"><span class="pre">J'</span></code>, 将线段GJ作为一个镜子，对三角形GJD做水平镜像，再把这个水平镜像做幅度为(38, 0)的平移操作，将得到的新三角形记为Tri2’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；新三角形的直角顶点标记为<code class="docutils literal notranslate"><span class="pre">J'</span></code>;</p></li>
 <li><p>Mirror triangle GAD with the mirror AD then translate the mirrored triangle with offset (18, 6). name the new triangle as <code class="docutils literal notranslate"><span class="pre">Tri3'</span></code>. Draw this new triangle with same colors as Tri3, name vertex with right angle as <code class="docutils literal notranslate"><span class="pre">A''</span></code>; 将线段AD作为一个镜子，对三角形GAD做水平镜像，再把这个水平镜像做幅度为(18, 6)的平移操作，将得到的新三角形记为Tri3’，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；新三角形的直角顶点标记为<code class="docutils literal notranslate"><span class="pre">A''</span></code>;</p></li>
@@ -1112,21 +1187,21 @@ Sophie
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-548cc5a17ba4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># by using `_`, should mark all elements who you dont want to extract</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg"># the follwoing will raise an error</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>_<span class="ansi-blue-fg">,</span> second_stu2 <span class="ansi-blue-fg">=</span> students
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># by using `_`, should mark all elements who you dont want to extract</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)"># the follwoing will raise an error</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span> _, second_stu2 <span style="color: rgb(98,98,98)">=</span> students
 
-<span class="ansi-red-fg">ValueError</span>: too many values to unpack (expected 2)
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>: too many values to unpack (expected 2)
 </pre></div></div>
 </div>
 </div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
@@ -1138,6 +1213,26 @@ Sophie
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Traceback <span class="ansi-cyan-intense-fg ansi-bold">(most recent call last)</span>:
+
+  File <span class="ansi-green-fg">d:\elementarymathpython\venv\lib\site-packages\IPython\core\interactiveshell.py:3361</span> in <span class="ansi-magenta-fg">run_code</span>
+    exec(code_obj, self.user_global_ns, self.user_ns)
+
+<span class="ansi-cyan-intense-fg ansi-bold">  Input </span><span class="ansi-green-intense-fg ansi-bold">In [9]</span><span class="ansi-cyan-intense-fg ansi-bold"> in </span><span class="ansi-magenta-intense-fg ansi-bold">&lt;cell line: 3&gt;</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    from qianglib import prepare_paper, draw_grid, mark, lines, line, polygon, text</span>
+
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">D:\ElementaryMathPython\source\2021\100Beginner\content\qianglib.py:1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    /home/qiang/Documents/ElementaryMathPython/source/2021/999NotOnline/qianglib.py</span>
+<span class="ansi-white-intense-fg ansi-bold">    ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
+
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -1148,7 +1243,7 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
@@ -1156,6 +1251,19 @@ Sophie
 <span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">prepare_paper</span>(width, height, scale<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">20</span>, min_x<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>, min_y<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;prepare_paper&#39; is not defined
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1168,7 +1276,7 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
@@ -1190,7 +1298,27 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [13]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 9&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      7</span> C <span style="color: rgb(98,98,98)">=</span> (A[<span style="color: rgb(98,98,98)">0</span>], A[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">+</span> a)
+<span class="ansi-green-fg">      8</span> Tri0 <span style="color: rgb(98,98,98)">=</span> [B, A, C]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 9</span> <span class="ansi-yellow-bg">polygon</span>(Tri0, color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">black</span><span style="color: rgb(175,0,0)">&#34;</span>, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tri0</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">     10</span>         side_texts<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">bac</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">     11</span>         side_text_font <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arial</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(98,98,98)">16</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">italic</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-fg">     12</span>         side_text_offsets<span style="color: rgb(98,98,98)">=</span>[(<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1.5</span>), (<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>), (<span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">0</span>)],
+<span class="ansi-green-fg">     13</span>         side_text_color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">     14</span>         marker_texts <span style="color: rgb(98,98,98)">=</span> [<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">B</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(B), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(A), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">C</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(C)])
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;polygon&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
@@ -1207,7 +1335,24 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      5</span> E <span style="color: rgb(98,98,98)">=</span> (B[<span style="color: rgb(98,98,98)">0</span>], B[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">-</span> b)
+<span class="ansi-green-fg">      6</span> Sqr1 <span style="color: rgb(98,98,98)">=</span> [A, B, E, D]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span> <span class="ansi-yellow-bg">polygon</span>(Sqr1, color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">green</span><span style="color: rgb(175,0,0)">&#34;</span>, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sqr1</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      8</span> mark(D, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">D</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(D))
+<span class="ansi-green-fg">      9</span> mark(E, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">E</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(E))
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;polygon&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
@@ -1224,7 +1369,24 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [15]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      5</span> G <span style="color: rgb(98,98,98)">=</span> (A[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">-</span>a, A[<span style="color: rgb(98,98,98)">1</span>])
+<span class="ansi-green-fg">      6</span> Sqr2 <span style="color: rgb(98,98,98)">=</span> [A, C, F, G]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span> <span class="ansi-yellow-bg">polygon</span>(Sqr2, color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sqr2</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      8</span> mark(F, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">F</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(F))
+<span class="ansi-green-fg">      9</span> mark(G, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">G</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(G))
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;polygon&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
@@ -1240,6 +1402,23 @@ Sophie
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [16]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 6&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      4</span> I <span style="color: rgb(98,98,98)">=</span> (A[<span style="color: rgb(98,98,98)">0</span>]<span style="color: rgb(98,98,98)">+</span>a, A[<span style="color: rgb(98,98,98)">1</span>]<span style="color: rgb(98,98,98)">+</span>a<span style="color: rgb(98,98,98)">+</span>b)          <span style="color: rgb(95,135,135)">#</span>
+<span class="ansi-green-fg">      5</span> Sqr3 <span style="color: rgb(98,98,98)">=</span> [B, H, I, C]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span> <span class="ansi-yellow-bg">polygon</span>(Sqr3, color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">cyan</span><span style="color: rgb(175,0,0)">&#34;</span>, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sqr3</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      7</span> mark(H, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">H</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(H))
+<span class="ansi-green-fg">      8</span> mark(I, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">I</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(I))
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;polygon&#39; is not defined
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1253,7 +1432,7 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
@@ -1278,7 +1457,24 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [18]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 6&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      4</span> J <span style="color: rgb(98,98,98)">=</span> (A[<span style="color: rgb(98,98,98)">0</span>] <span style="color: rgb(98,98,98)">-</span> a, A[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">-</span> b)              <span style="color: rgb(95,135,135)"># (A[0]-6, A[1]-8)</span>
+<span class="ansi-green-fg">      5</span> K <span style="color: rgb(98,98,98)">=</span> (A[<span style="color: rgb(98,98,98)">0</span>] <span style="color: rgb(98,98,98)">+</span> b, A[<span style="color: rgb(98,98,98)">1</span>] <span style="color: rgb(98,98,98)">+</span> a)            <span style="color: rgb(95,135,135)"># (A[0]+8, A[1]+6)</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span> <span class="ansi-yellow-bg">mark</span>(J, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">J</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(J))
+<span class="ansi-green-fg">      7</span> mark(K, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">K</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(K))
+<span class="ansi-green-fg">      9</span> colors <span style="color: rgb(98,98,98)">=</span> [<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">cyan</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">green</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>]  <span style="color: rgb(95,135,135)"># colors for different sides of triangles</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;mark&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
@@ -1298,7 +1494,31 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [19]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 6. 将三角形BAC(Tri0)做幅度为(18, -8)的平移，将得到的新三角形标记为Tri0&#39;，</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)">#    绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="ansi-green-fg">      3</span> <span style="color: rgb(95,135,135)">#   将这个直角三角形的三条边从短到长分别标记为 𝑎 , 𝑏 和 𝑐 ;</span>
+<span class="ansi-green-fg">      4</span> offset_tri0 <span style="color: rgb(98,98,98)">=</span> (spacing <span style="color: rgb(98,98,98)">+</span> b, <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span> <span style="color: rgb(98,98,98)">*</span> b)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span> Tri0p <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">translate</span>(Tri0, offset_tri0)
+<span class="ansi-green-fg">      6</span> Bp, Ap, Cp <span style="color: rgb(98,98,98)">=</span> Tri0p
+<span class="ansi-green-fg">      7</span> polygon(Tri0p, colors<span style="color: rgb(98,98,98)">=</span>colors, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tri0</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">      8</span>               side_texts<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">bac</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">      9</span>               side_text_font <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arial</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(98,98,98)">16</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">italic</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-fg">     10</span>               side_text_offsets<span style="color: rgb(98,98,98)">=</span>[(<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1.5</span>), (<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">0.5</span>), (<span style="color: rgb(98,98,98)">0.5</span>, <span style="color: rgb(98,98,98)">0</span>)],
+<span class="ansi-green-fg">     11</span>               side_text_color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>,
+<span class="ansi-green-fg">     12</span>               marker_texts <span style="color: rgb(98,98,98)">=</span> [<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">B</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(Bp), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(Ap), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">C</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(Cp)])
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;translate&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
@@ -1315,7 +1535,25 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [20]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 7. 将三角形CKB做幅度为(24, 0)的平移，将得到的新三角形标记为Tri1&#39;，绘制并标记这个三角形，</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)">#    颜色与之前的三角形各边颜色保持相同；</span>
+<span class="ansi-green-fg">      3</span> offset_tri1 <span style="color: rgb(98,98,98)">=</span> (spacing <span style="color: rgb(98,98,98)">+</span> a <span style="color: rgb(98,98,98)">+</span> b, <span style="color: rgb(98,98,98)">0</span>)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 4</span> Tri1p <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">translate</span>(Tri1, offset_tri1)
+<span class="ansi-green-fg">      5</span> polygon(Tri1p, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>, colors<span style="color: rgb(98,98,98)">=</span>colors, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tri1</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      6</span> Cpp, Kp, Bpp <span style="color: rgb(98,98,98)">=</span> Tri1p
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;translate&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
@@ -1329,7 +1567,25 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 8. 将线段GJ作为一个镜子，对三角形GJD(Tri2)做水平镜像，再把这个水平镜像做幅度为(38, 0)的平移操作，</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)">#    将得到的新三角形记为Tri2&#39;，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="ansi-green-fg">      3</span> <span style="color: rgb(95,135,135)">#    标记直角顶点为J&#39;</span>
+<span class="ansi-green-fg">      4</span> mirror_line_tri2 <span style="color: rgb(98,98,98)">=</span> [G, J]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span> Tri2_temp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">mirror</span>(Tri2, mirror_line_tri2)
+<span class="ansi-green-fg">      6</span> polygon(Tri2_temp, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">1</span>, colors<span style="color: rgb(98,98,98)">=</span>colors)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;mirror&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
@@ -1343,7 +1599,23 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [22]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> offset_tri2 <span style="color: rgb(98,98,98)">=</span> (spacing <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">2</span><span style="color: rgb(98,98,98)">*</span>a <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">2</span><span style="color: rgb(98,98,98)">*</span>b, <span style="color: rgb(98,98,98)">0</span>)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> Tri2p <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">translate</span>(Tri2_temp, offset_tri2)
+<span class="ansi-green-fg">      3</span> polygon(Tri2p, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>, colors<span style="color: rgb(98,98,98)">=</span>colors, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tri2</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      5</span> _, Jp, _ <span style="color: rgb(98,98,98)">=</span> Tri2p
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;translate&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
@@ -1356,7 +1628,24 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [23]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 9. 将线段AD作为一个镜子，对三角形GAD(Tri3)做水平镜像，再把这个水平镜像做幅度为(18, 6)的平移操作，</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)">#    将得到的新三角形记为Tri3&#39;，绘制并标记这个三角形，颜色与之前的三角形各边颜色保持相同；</span>
+<span class="ansi-green-fg">      3</span> mirror_line_tri3 <span style="color: rgb(98,98,98)">=</span> [A, D]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 4</span> Tri3_temp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">mirror</span>(Tri3, mirror_line_tri3)
+<span class="ansi-green-fg">      5</span> polygon(Tri3_temp, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">1</span>, colors<span style="color: rgb(98,98,98)">=</span>colors)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;mirror&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
@@ -1370,7 +1659,23 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [24]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> offset_tri3 <span style="color: rgb(98,98,98)">=</span> (spacing <span style="color: rgb(98,98,98)">+</span> b, a)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> Tri3p <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">translate</span>(Tri3_temp, offset_tri3)
+<span class="ansi-green-fg">      3</span> polygon(Tri3p, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>, colors<span style="color: rgb(98,98,98)">=</span>colors, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tri3</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      5</span> _, App, _ <span style="color: rgb(98,98,98)">=</span> Tri3p
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;translate&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
@@ -1382,7 +1687,23 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [25]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 10. Draw a text `Sqr3&#39;` at the center of the polygon `B‘B’‘C’‘C’`； </span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)">#     在四边形`B‘B’‘C’‘C’`中心标记文字`Sqr3&#39;`；</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span> Sqr3p <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">Cpp</span>, Bpp, Bp, Cp]
+<span class="ansi-green-fg">      4</span> text(get_center(Sqr3p), <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sqr3</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>, font<span style="color: rgb(98,98,98)">=</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arial</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(98,98,98)">16</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">italic</span><span style="color: rgb(175,0,0)">&#34;</span>), color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">black</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;Cpp&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
@@ -1394,7 +1715,22 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> offset_sqr3p <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span><span style="color: rgb(98,98,98)">*</span>spacing<span style="color: rgb(98,98,98)">-</span>b, b)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> Sqr3pp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">translate</span>(Sqr3p, offset_sqr3p)
+<span class="ansi-green-fg">      3</span> polygon(Sqr3pp, line_width<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>, color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">cyan</span><span style="color: rgb(175,0,0)">&#39;</span>, center_text<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sqr3</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;translate&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
@@ -1405,7 +1741,22 @@ Sophie
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [27]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> Ip, Hp, _, _ <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">Sqr3pp</span>
+<span class="ansi-green-fg">      2</span> mark(Ip, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">I</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(Ip))
+<span class="ansi-green-fg">      3</span> mark(Hp, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Hp</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">+</span><span style="color: rgb(0,135,0)">str</span>(Kp))
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;Sqr3pp&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
@@ -1414,6 +1765,20 @@ Sophie
 <span class="n">text</span><span class="p">((</span><span class="mi">35</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="s1">&#39;a∙a + b∙b = c∙c&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [28]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># 11. 在绘图区空白处，绘制文字 a∙a + b∙b = c∙c</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> <span class="ansi-yellow-bg">text</span>((<span style="color: rgb(98,98,98)">35</span>, <span style="color: rgb(98,98,98)">20</span>), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">a∙a + b∙b = c∙c</span><span style="color: rgb(175,0,0)">&#39;</span>, font<span style="color: rgb(98,98,98)">=</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arial</span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(98,98,98)">16</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">italic</span><span style="color: rgb(175,0,0)">&#34;</span>), color<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;text&#39; is not defined
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Summary-知识点小结">
@@ -1594,7 +1959,7 @@ combination in that category. Please write a program to answer, out of all the c
 </ul>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
@@ -1606,6 +1971,26 @@ combination in that category. Please write a program to answer, out of all the c
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Traceback <span class="ansi-cyan-intense-fg ansi-bold">(most recent call last)</span>:
+
+  File <span class="ansi-green-fg">d:\elementarymathpython\venv\lib\site-packages\IPython\core\interactiveshell.py:3361</span> in <span class="ansi-magenta-fg">run_code</span>
+    exec(code_obj, self.user_global_ns, self.user_ns)
+
+<span class="ansi-cyan-intense-fg ansi-bold">  Input </span><span class="ansi-green-intense-fg ansi-bold">In [34]</span><span class="ansi-cyan-intense-fg ansi-bold"> in </span><span class="ansi-magenta-intense-fg ansi-bold">&lt;cell line: 3&gt;</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    from qianglib import prepare_paper, draw_grid, mark, lines, line, polygon, text</span>
+
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">D:\ElementaryMathPython\source\2021\100Beginner\content\qianglib.py:1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    /home/qiang/Documents/ElementaryMathPython/source/2021/999NotOnline/qianglib.py</span>
+<span class="ansi-white-intense-fg ansi-bold">    ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
+
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
@@ -1616,7 +2001,7 @@ combination in that category. Please write a program to answer, out of all the c
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
@@ -1624,6 +2009,19 @@ combination in that category. Please write a program to answer, out of all the c
 <span></span><span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">min_x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">min_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_y</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [36]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">prepare_paper</span>(width, height, scale<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">20</span>, min_x<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>, min_y<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">0</span>, max_y<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">25</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;prepare_paper&#39; is not defined
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
@@ -1686,11 +2084,16 @@ combination in that category. Please write a program to answer, out of all the c
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-area of square build by OA, (6, 12) is: None. side is 0.00
-area of square build by OB, (10, 24) is: None. side is 0.00
-area of square build by OC, (24, 18) is: None. side is 0.00
-area of square build by OD, (16, 16) is: None. side is 0.00
-area of square build by OE, (25, 25) is: None. side is 0.00
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [40]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      4</span> area <span style="color: rgb(98,98,98)">=</span> area_square(point)
+<span class="ansi-green-fg">      5</span> side <span style="color: rgb(98,98,98)">=</span> get_side_by_area(area)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span> <span class="ansi-yellow-bg">line</span>(start <span style="color: rgb(98,98,98)">=</span> O, end <span style="color: rgb(98,98,98)">=</span> points[i])
+<span class="ansi-green-fg">      7</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">area of square build by O</span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">, </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)"> is: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">. side is </span><span class="ansi-bold" style="color: rgb(175,95,135)">{:.2f}</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">.</span>format(
+<span class="ansi-green-fg">      8</span>     point_names[i], points[i], area, side))
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;line&#39; is not defined
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -1720,16 +2123,16 @@ area of square build by OE, (25, 25) is: None. side is 0.00
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-from A((6, 12)) to B((10, 24)), length is about: 0.00, area is: None
-from A((6, 12)) to C((24, 18)), length is about: 0.00, area is: None
-from A((6, 12)) to D((16, 16)), length is about: 0.00, area is: None
-from A((6, 12)) to E((25, 25)), length is about: 0.00, area is: None
-from B((10, 24)) to C((24, 18)), length is about: 0.00, area is: None
-from B((10, 24)) to D((16, 16)), length is about: 0.00, area is: None
-from B((10, 24)) to E((25, 25)), length is about: 0.00, area is: None
-from C((24, 18)) to D((16, 16)), length is about: 0.00, area is: None
-from C((24, 18)) to E((25, 25)), length is about: 0.00, area is: None
-from D((16, 16)) to E((25, 25)), length is about: 0.00, area is: None
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [41]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> j <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">range</span>(i<span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(0,135,0)">len</span>(points)):
+<span class="ansi-green-fg">      5</span>     point_end <span style="color: rgb(98,98,98)">=</span> points[j]
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span>     <span class="ansi-yellow-bg">line</span>(point_start, point_end)
+<span class="ansi-green-fg">      7</span>     line_v <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">      8</span>     <span style="color: rgb(95,135,135)"># TODO: assign proper value to live_v variable</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;line&#39; is not defined
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1747,34 +2150,42 @@ from D((16, 16)) to E((25, 25)), length is about: 0.00, area is: None
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="025_horizontal_vertical_mirror.html" title="previous page">第25讲 水平或垂直镜像</a>
-    <a class='right-next' id="next-link" href="../../200Intermediate/index.html" title="next page">第二篇 进阶</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="025_horizontal_vertical_mirror.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">第25讲 水平或垂直镜像</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../../200Intermediate/index.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">第二篇 进阶</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ye Qiang<br/>
-        
-            &copy; Copyright 2022, Ye Qiang.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      通过 Ye Qiang<br/>
+    
+        &copy; 版权 2022, Ye Qiang.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

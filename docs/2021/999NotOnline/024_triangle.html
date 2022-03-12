@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第23讲 三角形和它的面积 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -33,13 +33,16 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -51,10 +54,16 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -62,8 +71,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -493,11 +502,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../600appendix/content/011_install_jupyter_notebook_on_mac.html">
-     附录三 Mac操作系统下搭建Python运行环境
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../600appendix/content/090_qianglib.html">
      附录四 qianglib.py的代码
     </a>
@@ -537,25 +541,25 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">切换导航</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -563,11 +567,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/2021/999NotOnline/024_triangle.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -576,8 +580,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -585,12 +589,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> 内容
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
@@ -605,7 +609,30 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>第23讲 三角形和它的面积</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 内容 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   
@@ -962,7 +989,7 @@ T1).在本讲课程里，我们学到两个完全一样的三角形可以拼接�
 <li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
 <li><p>Draw another line between points O(18, 0) and O’(18,25) with black color and line width of 1; 用黑色，线宽为1连接点O(18, 0), O’(18,25)，形成线段OO’；</p></li>
 <li><p>Randomly generate a point, X(18, 10) for example, on line OO’ by calling the method <code class="docutils literal notranslate"><span class="pre">randint</span></code>， draw the line of AX and AB with black color and line width of 1. Estimate the length of AX and BX and the angle AXB with you eyes.调用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法在线段OO’中随机选定一个点，假定生成的点是(18, 10)，用X标记。用黑色、线宽为1连接AX, BX,得到一个三角形ABX。记录点X的坐标，用肉眼估计线段AX，BX的长度，用肉眼比较角AXB与90度角的大小关系，记在下面的表格里。</p></li>
-<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="35ebe5dab65a4e3facae3849f7488691" class="no-scaled-link" src="../../_images/L024_assign22.png" style="width: 500px;" /></p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="e3d0c4392981458db5fe8b298cb8c687" class="no-scaled-link" src="../../_images/L024_assign22.png" style="width: 500px;" /></p></li>
 <li><p>Repeat the third step(C) 10 times, mark the point randomly generated with the letter: C, D, E, F, G, H, I, J, K, L. Fill the following table.重复10次上一步骤，每次随机生成的点分别标记为：C, D, E, F, G, H, I, J, K, L。并把相关结果填入表格。</p>
 <table class="table">
 <colgroup>
@@ -1094,7 +1121,7 @@ T1).在本讲课程里，我们学到两个完全一样的三角形可以拼接�
 <li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
 <li><p>Draw another line between points O(5, 20) and O’(35, 20) with black color and line width of 1; 用黑色，线宽为1连接点O(18, 0), O’(18,25)，形成线段OO’；</p></li>
 <li><p>Randomly generate a point, X(18, 10) for example, on line OO’ by calling the method <code class="docutils literal notranslate"><span class="pre">randint</span></code>， draw the line of AX and AB with black color and line width of 1. Estimate the length of AX and BX and with you eyes. Calculate the area of the triangle AXB. 调用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法在线段OO’中随机选定一个点，假定生成的点是(18, 10)，用X标记。用黑色、线宽为1连接AX, BX,得到一个三角形ABX。记录点X的坐标，用肉眼估计线段AX，BX的长度，计算三角形AXB的面积，记在下面的表格里（第一行示例）。</p></li>
-<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="5adaaa4930e74d8683041a11204a3054" class="no-scaled-link" src="../../_images/L024_assign32.png" style="width: 500px;" /></p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="064f4b5b2bd54a0d84f0ecf44f9759af" class="no-scaled-link" src="../../_images/L024_assign32.png" style="width: 500px;" /></p></li>
 <li><p>Repeat the third step(C) 10 times, mark the point randomly generated with the letter: C, D, E, F, G, H, I, J, K, L. Fill the following table.重复10次上一步骤，每次随机生成的点分别标记为：C, D, E, F, G, H, I, J, K, L。并把相关结果填入表格。</p>
 <table class="table">
 <colgroup>
@@ -1483,7 +1510,7 @@ Congratulations, passed! 1000/1000 passed
 <ol class="arabic simple">
 <li><p>Given two points A(11, 8) and B(25, 8), mark them, connect them to draw a line AB with black color and line width of 3. 给定两个点，分别为A(11, 8), B(25, 8)，标记这两个点，并连接这两点得到线段AB，用黑色，线宽为3绘制线段AB；</p></li>
 <li><p>Give the third point C(18, 15), connect AC and AB form a triangle ABC. It is true that the angle ACB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>. A triangle with one right angle is called a right triangle. If you measure the length of AC and BC, you will find that they are equal. 给定第三个点C(18, 15), 连接AC和AB形成三角形ABC，那么<span class="math notranslate nohighlight">\(\angle\)</span>ACB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>。这样有一个角是直角的三角形称为三角形。如果你测量AC和BC的长度，你会发现他们一样长。</p></li>
-<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="2d7cbc0709054b36b7399dbb84c74410" class="no-scaled-link" src="../../_images/L024_assign42.png" style="width: 500px;" /></p></li>
+<li><p>By far, you should have a figure like the following: 到目前位置，你应该能够绘制得到如下图： <img alt="64642c640ead4acc9652214b42a56e68" class="no-scaled-link" src="../../_images/L024_assign42.png" style="width: 500px;" /></p></li>
 <li><p>In the drawing paper, can you find another point X such that the triangle AXB is a right triangle with angle AXB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到另外一个点X，使得三角形AXB是一个直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>AXB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
 <li><p>In the drawing paper, can you find other points Y such that the triangle AYB is a right triangle with the angle YAB is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到其它一些点Y，使得三角形YAB是直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>YAB等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
 <li><p>In the drawing paper, can you find other points Z such that the triangle AZB is a right triangle with the angle ZBA is <span class="math notranslate nohighlight">\(90^{\circ}\)</span>? 在绘图纸上，你能找到其它一些点Z，使得三角形ZBA是直角三角形并且<span class="math notranslate nohighlight">\(\angle\)</span>ZBA等于<span class="math notranslate nohighlight">\(90^{\circ}\)</span>吗？</p></li>
@@ -1531,32 +1558,28 @@ Congratulations, passed! 1000/1000 passed
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-
-        </div>
-        
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ye Qiang<br/>
-        
-            &copy; Copyright 2022, Ye Qiang.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      通过 Ye Qiang<br/>
+    
+        &copy; 版权 2022, Ye Qiang.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
