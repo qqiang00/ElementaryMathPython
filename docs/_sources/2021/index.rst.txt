@@ -6,8 +6,6 @@ MTH100 2021
     :maxdepth: 2
     :glob:
 
-    100Beginner/*
-    200Intermediate/*
-    300Advanced/*
-    500Answer/*
+    Beginner/*
+    Answer/*
     

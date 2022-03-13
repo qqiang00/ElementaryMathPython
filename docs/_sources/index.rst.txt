@@ -12,15 +12,15 @@
    :maxdepth: 3
    :glob:
 
-   001preface
-   002about_author
-   003copyright
+   preface
+   about_author
+   copyright
   
    2021/*
    2022/*
    
-   600appendix/*  
-   999Test/*
+   appendix/*  
+   Test/*
 
 
 
