@@ -51,7 +51,6 @@
     "# make sure that you executed the cell where turtle methods are imported in this page\n",
     "# 如果你重启了本页面，在执行本单元格的代码前，\n",
     "# 确保你已经执行了本页面中导入turtle库的诸多方法的那一个单元格\n",
-    "\n",
     "setup(500, 400, 0, 0)    # prepare a draw area with size 500*400\n",
     "reset()                  # 将所有内容清空\n",
     "st()                     # 显示乌龟\n",
