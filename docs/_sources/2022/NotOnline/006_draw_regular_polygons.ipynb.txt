@@ -181,7 +181,7 @@
    "metadata": {},
    "source": [
     "**Exercise**\n",
-    "use `while` loop to draw a regular hexagon(6-gon)"
+    "1. use `while` loop to draw a regular hexagon(6-gon) 使用`while`循环化一个正六边形"
    ]
   },
   {
@@ -191,6 +191,32 @@
    "metadata": {},
    "outputs": [],
    "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "be73c70a-f090-4bc3-92e0-14f4c38dccc7",
+   "metadata": {},
+   "source": [
+    "2. Run the following code and describe how turtle is walking 运行下面的代码描述海龟的运行路线"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "57b368b5-9de8-42a7-aa46-b46659bf3bf9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import left, fd, reset, ht, setup\n",
+    "setup(600, 600) \n",
+    "reset()\n",
+    "ht()\n",
+    "for i in range(50):\n",
+    "    left(7.2)\n",
+    "    fd(200)\n",
+    "    left(180)\n",
+    "    \n"
+   ]
   },
   {
    "cell_type": "markdown",

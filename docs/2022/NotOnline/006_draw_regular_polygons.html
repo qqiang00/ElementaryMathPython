@@ -991,7 +991,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Hide turtle. 隐藏海龟图标。</p></li>
 </ol>
 <p>Finally, you will be get a figure like the following:</p>
-<p><img alt="687670f1b6724802a6a59e689453eba9" class="no-scaled-link" src="../../_images/L006_01_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="e1769a8c2eea47159dc178f15a683e84" class="no-scaled-link" src="../../_images/L006_01_regular_polygons.png" style="width: 500px;" /></p>
 <p>The figures drawn in turn are: regular triangle, regular quadrilateral (square), regular pentagon, regular hexagon, regular heptagon, regular octagon, regular nonagon, and regular decagon. 依次绘制出来的图形分别为：正三角形、正四边形（正方形）、正五边形、正六边形、正七边形、正八边形、正九边形、和正十边形。</p>
 <p>For each regular polygon, calculate the product of the number of sides and the angle of each turn. 对于每一个正多边形，计算边的数量和每一次转的角度的乘积。Take regular triangle as an example, the product is 3 * 120 = 360, where 3 is the number of sides(edges) and 120 is the degrees of each left turn。以正三角形为例，它的边数为3，每一次转120度，两者的乘积是3*120=360度。</p>
 </div>
@@ -1084,7 +1084,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p><strong>Exercise</strong> use <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to draw a regular hexagon(6-gon)</p>
+<p><strong>Exercise</strong> 1. use <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to draw a regular hexagon(6-gon) 使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环化一个正六边形</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1094,12 +1094,32 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<ol class="arabic simple" start="2">
+<li><p>Run the following code and describe how turtle is walking 运行下面的代码描述海龟的运行路线</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">left</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">setup</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<span class="n">reset</span><span class="p">()</span>
+<span class="n">ht</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">(</span><span class="mf">7.2</span><span class="p">)</span>
+    <span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1111,7 +1131,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1124,7 +1144,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1143,7 +1163,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Solution1-方案1">
 <h3>Solution1 方案1<a class="headerlink" href="#Solution1-方案1" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1159,7 +1179,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1174,7 +1194,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1189,7 +1209,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1204,7 +1224,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1219,7 +1239,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1234,7 +1254,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1249,7 +1269,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1264,7 +1284,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1276,7 +1296,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Solution2-方案2">
 <h3>Solution2 方案2<a class="headerlink" href="#Solution2-方案2" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1293,7 +1313,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1337,7 +1357,7 @@ div.rendered_html tbody tr:hover {
 <li><p>仿照本讲示例，绘制边长为50的正二十边形。海龟起始点同本讲示例；颜色任选。</p></li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1368,7 +1388,7 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [20]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 11&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 11&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-fg">      9</span> pencolor(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-fg">     10</span> side, n_sides_to_draw <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">50</span>, <span style="color: rgb(98,98,98)">20</span>
 <span class="ansi-green-intense-fg ansi-bold">---&gt; 11</span> degree <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(98,98,98)">360</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">/</span><span class="ansi-yellow-bg">n_edges</span>
@@ -1382,7 +1402,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [20]</span>, in <span cla
 <li><p>仿照本讲示例，绘制边长为10的正一百边形。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域<strong>左右</strong>居中，颜色任选。</p></li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1415,7 +1435,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [20]</span>, in <span cla
 <div class="highlight"><pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 13&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+Input <span class="ansi-green-intense-fg ansi-bold">In [22]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 13&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-fg">     10</span> pd()
 <span class="ansi-green-fg">     11</span> pencolor(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">red</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-intense-fg ansi-bold">---&gt; 13</span> degree <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(98,98,98)">360</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">/</span><span class="ansi-yellow-bg">n_edges</span>
@@ -1432,7 +1452,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span cla
 <li><p>三个正方形的边长依次为250，150，和50。</p></li>
 <li><p>给每一行代码添加注释，解释其作用。</p></li>
 </ul>
-<p><img alt="c4dd95f7d8ff4d9bbaef2dc9746b094e" class="no-scaled-link" src="../../_images/L005_01_squares3.png" style="width: 500px;" /></p>
+<p><img alt="3f204d05d37044f6b52665d2657b0640" class="no-scaled-link" src="../../_images/L005_01_squares3.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1452,7 +1472,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span cla
 <li><p>你的代码可以使用也可以不使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句；</p></li>
 <li><p>给每一行代码添加注释，解释其作用。</p></li>
 </ul>
-<p><img alt="936ef39b64144d828fb255df4472d943" class="no-scaled-link" src="../../_images/L006_e03_square_combinations.png" style="width: 500px;" /></p>
+<p><img alt="5324485089c24cb3bca02230ddcb874e" class="no-scaled-link" src="../../_images/L006_e03_square_combinations.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1473,7 +1493,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span cla
 </li>
 </ol>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1497,11 +1517,11 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [21]</span>, in <span cla
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-avg:  49.45 diff to 50 is: -0.5499999999999972
+avg:  48.32 diff to 50 is: -1.6799999999999997
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1525,7 +1545,7 @@ avg:  49.45 diff to 50 is: -0.5499999999999972
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-avg:  50.7553 diff to 50 is: 0.7552999999999983
+avg:  50.5242 diff to 50 is: 0.5242000000000004
 </pre></div></div>
 </div>
 </div>
