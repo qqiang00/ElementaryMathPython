@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第18讲 同学给你发了什么消息(简单加密) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -42,10 +42,7 @@
     <link rel="next" title="第19讲 重新认识矩形" href="019_can_build_horizontal_rectangle.html" />
     <link rel="prev" title="第17讲 编写方法求一个数的相反数和绝对值" href="017_oppo_abs_number.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="zh_CN">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -57,16 +54,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
-      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -74,8 +65,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -520,25 +511,25 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">切换导航</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -546,11 +537,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2021/Beginner/content/018_what_did_your_classmates_say.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -559,8 +550,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
-        title="全屏模式"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -568,12 +559,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 内容
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Problem-问题描述">
@@ -625,67 +616,7 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第18讲 同学给你发了什么消息(简单加密)</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> 内容 </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Problem-问题描述">
-   Problem 问题描述
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#Background-背景">
-     Background 背景
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#Activity-活动">
-     Activity 活动
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Math-Background-数学背景">
-   Math Background 数学背景
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Prerequisites-预备知识">
-   Prerequisites 预备知识
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Solution-解决方案">
-   Solution 解决方案
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Summary-知识点小结">
-   Summary 知识点小结
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Assignments-作业">
-   Assignments 作业
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   
@@ -946,7 +877,7 @@ div.rendered_html tbody tr:hover {
 <p>Jason想要在一个有着Jason，Yunzi，Tony和Sophie的4人群里发送一条秘密消息给Tony，为了不让另外两个小朋友知道Jason发给Tony的消息内容，Jason想了一个办法：他会把他发送给Tony的那句话中的每一个字母用这个字母在字母顺序表中往后数第3位的字母代替，这样重新组成一个看上去没有意思的一串乱码。</p>
 <p>For example, assume Jason’s message to Tony is: “<strong>Play a game after dinner</strong>” (晚饭后玩游戏). The transformed sentence becomes “<strong>sodb ylghr jdphv diwhu glqqhu</strong>”. Among them, the first letter “p” becomes “s” because in the alphabetical order table, the letter “s” is the third after the letter “p”. Similarly, “l” is replaced by “o”, and “a” is replaced by “d”. The letter “y” appears at the tail part of the alphabet table, there may not be enough letters after it. In this case, continue counting
 by cycling to the begining of the alphabet table. In this example, the letter “y” has been replaced by “b”. Characters that are not letters, such as ” “(space), will not be changed, and the space will be reserved in the transformed sentence.</p>
-<p>举个例子，假如Jason要发送给Tony的消息是:“play video games after dinner”(晚饭后玩游戏）。变换之后就变成了”sodb ylghr jdphv diwhu glqqhu”。其中原文第一个字母”p”变成了”s”，这是由于在字母顺序表中，字母”s”在字母”p”后面第3个位置。类似的，“l”被”o”替换了，“a”被”d”替换了。字母”y”出现在字母表中的尾部，它的后面可能没有足够数量的字母，此时不够的可以从字母表的开始”a”接续。本例中，字母”y”被”b”替换了。碰到字母表中没有的字符，例如” “(空格)，可以不做变换，保留空格。</p>
+<p>举个例子，假如Jason要发送给Tony的消息是:“play video games after dinner”(晚饭后玩游戏）。变换之后就变成了“sodb ylghr jdphv diwhu glqqhu”。其中原文第一个字母“p”变成了“s”，这是由于在字母顺序表中，字母“s”在字母“p”后面第3个位置。类似的，“l”被“o”替换了，“a”被“d”替换了。字母“y”出现在字母表中的尾部，它的后面可能没有足够数量的字母，此时不够的可以从字母表的开始“a”接续。本例中，字母“y”被“b”替换了。碰到字母表中没有的字符，例如” “(空格)，可以不做变换，保留空格。</p>
 <p>When Jason sends the transformed sentence to the group, if people don’t know Jason’s transformation rules, no one will be able to understand Jason’s text. So how can Jason make Tony understand. Jason needs to tell Tony his rules, especially the number <strong>3</strong> he uses. Because this number 3 determines what each new letter is. After Tony understand this rule, he can easily restore the original content, and finally know that Jason wants to play games with him after dinner.</p>
 <p>当Jason把变换后的这句话发送到群里时，如果不知道Jason的变换规则，没有小朋友能够明白Jason的意思。那Jason该如何让Tony看懂这句话呢。这就需要Jason事先告诉Tony他的变换规则，特别是他使用的数字3。因为这个数字3决定了每一个字母会变成哪一个新字母。当Tony知道了这个秘密后，他就能把这条看似乱码的信息还原回有意义的内容，最终知道原来Jason是想和他吃晚饭后一起玩游戏。</p>
 <p>This process of converting simple readable sentence into an hard-to-understand sentence is called “<strong>encryption</strong>”; conversely, the process of restoring simple readable text from the hard-to-understand sentence is called “<strong>decryption</strong>”. The hard-to-understand sentence is called “<strong>ciphertext</strong>”. The method used for encryption is called encryption “algorithm”, and some key data in the algorithm is called “<strong>key</strong>”. For example, in our example, the number 3 is the <strong>key</strong>. The key is a secret
@@ -1347,42 +1278,34 @@ Guess with Offset 25: p svcl jvkpun
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="017_oppo_abs_number.html" title="上一页 页">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">第17讲 编写方法求一个数的相反数和绝对值</p>
+    <a class='left-prev' id="prev-link" href="017_oppo_abs_number.html" title="previous page">第17讲 编写方法求一个数的相反数和绝对值</a>
+    <a class='right-next' id="next-link" href="019_can_build_horizontal_rectangle.html" title="next page">第19讲 重新认识矩形</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="019_can_build_horizontal_rectangle.html" title="下一页 页">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">第19讲 重新认识矩形</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
+        
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      通过 Ye Qiang<br/>
-    
-        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
-  </p>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; <a href="../../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

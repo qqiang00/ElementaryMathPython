@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>附录三 Windows操作系统下搭建Python运行环境 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../genindex.html" />
@@ -42,10 +42,7 @@
     <link rel="next" title="附录四 qianglib.py的代码" href="090_qianglib.html" />
     <link rel="prev" title="附录二 第一期招生通知" href="001_admission_notice.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="zh_CN">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -57,16 +54,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
-      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -74,8 +65,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -520,25 +511,25 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">切换导航</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -546,11 +537,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/appendix/content/010_install_jupyter_notebook_on_windows.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -559,8 +550,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
-        title="全屏模式"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -568,12 +559,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 内容
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#1.-检查计算机有无安装Python解释器及其版本">
@@ -613,55 +604,7 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>附录三 Windows操作系统下搭建Python运行环境</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> 内容 </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#1.-检查计算机有无安装Python解释器及其版本">
-   1. 检查计算机有无安装Python解释器及其版本
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#2.-安装Python解释器">
-   2. 安装Python解释器
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#3.-安装虚拟环境">
-   3. 安装虚拟环境
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#4.-安装Jupyter-Lab">
-   4. 安装Jupyter Lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#5.-使用Jupyter-Lab进行Python交互式编程">
-   5. 使用Jupyter Lab进行Python交互式编程
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#6.-退出Jupyter-Lab及虚拟环境">
-   6. 退出Jupyter Lab及虚拟环境
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   
@@ -923,52 +866,52 @@ div.rendered_html tbody tr:hover {
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -V
 </pre></div>
 </div>
-<p><img alt="097e4077eac84f14af064516ba030035" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
+<p><img alt="2d04175dc161456ba239f407547fa2b2" class="no-scaled-link" src="../../_images/0101_check_python_v.png" style="width: 500px;" /></p>
 <p>如果计算机上已经正确安装了Python，命令行窗口会输出已安装的版本号，例如：</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Python 3.5.4
 </pre></div>
 </div>
 <p>其中<code class="docutils literal notranslate"><span class="pre">3.5.4</span></code>就是其版本号。本书建议使用<code class="docutils literal notranslate"><span class="pre">3.5.X</span></code>版本号，其中<code class="docutils literal notranslate"><span class="pre">X</span></code>可以是任意可能的数字。本课程涉及的绝大多数代码支持3.5至3.7之间的版本。这里仅以以<code class="docutils literal notranslate"><span class="pre">3.5</span></code>版本的Python解释器为例。</p>
 <p>如果执行上述命令显示的是如下图所示的一些信息:</p>
-<p><img alt="963c6e8a6f5e46eba36dca8d3b1305b8" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
+<p><img alt="6ec1b46d459845e08f12a05293901def" class="no-scaled-link" src="../../_images/00_check_before_install.png" style="width: 500px;" /></p>
 <p>表明你的计算机上并没有安装Python解释器。</p>
-<p>在Windows操作系统上卸载旧版本的Python解释器与卸载一般应用程序一样，在此不再赘述。可以通过下列链接下载3.5版本的Python解释器安装程序：(<a class="reference external" href="https://www.python.org/downloads/release/python-354/">https://www.python.org/downloads/release/python-354/</a>) 。主要版本的Python解释器通常都会提供32位和64位两种安装程序文件，建议选择和计算机操作系统相同位数的版本。右键点击”我的计算机”，选择“属性”来可以查看你的计算机是32位还是64位的系统。如下图系统类别(System type)行所示：</p>
-<p><img alt="cf4b29d0a35b4509aa48e9e717f695ab" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
+<p>在Windows操作系统上卸载旧版本的Python解释器与卸载一般应用程序一样，在此不再赘述。可以通过下列链接下载3.5版本的Python解释器安装程序：(<a class="reference external" href="https://www.python.org/downloads/release/python-354/">https://www.python.org/downloads/release/python-354/</a>) 。主要版本的Python解释器通常都会提供32位和64位两种安装程序文件，建议选择和计算机操作系统相同位数的版本。右键点击“我的计算机”，选择“属性”来可以查看你的计算机是32位还是64位的系统。如下图系统类别(System type)行所示：</p>
+<p><img alt="2988c9582fda403d848925e52d5408df" class="no-scaled-link" src="../../_images/00_check_system_bits.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="2.-安装Python解释器">
 <h2>2. 安装Python解释器<a class="headerlink" href="#2.-安装Python解释器" title="永久链接至标题">¶</a></h2>
 <p>下载好相应的Python解释器安装程序后，可以双击运行安装，选择“个性化安装”(Customize Installation)，同时勾选中“将Python3.5加入路径”（Add Python3.5 to Path)，如下图所示：</p>
-<p><img alt="b20396f1a4b44c6aaa6e3cf73f6e99fd" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
+<p><img alt="f5b93dc4c4bf47a6bf99eca883b8e45b" class="no-scaled-link" src="../../_images/0101_install_python354_01.png" style="width: 500px;" /></p>
 <p>在随后的，安装提示信息中，勾选中所有选项，包括“为本计算机上所有用户安装”（for all users）:</p>
-<p><img alt="423e187d2f724e99ab37f68eefeac71c" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
+<p><img alt="2ab1b6c699be4b84982371413fdd6cbb" class="no-scaled-link" src="../../_images/0101_install_python354_02.png" style="width: 500px;" /></p>
 <p>继续选中“为所有用户安装”（install for all users）。其余使用默认配置，跟随安装程序向导完成安装。</p>
-<p><img alt="d9bcc2d2deb84840ac298c755876642b" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
+<p><img alt="a3a1c9a7514944e7b80ebfd3f285cd9f" class="no-scaled-link" src="../../_images/0101_install_python354_03.png" style="width: 500px;" /></p>
 <p>当下图出现，即表明Python解释器已顺利安装完成。关闭该窗口。</p>
-<p><img alt="53d7d5046b7a4fb88105bf3477411cc9" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
+<p><img alt="5cd327bc38e34999b30d1c2c03798f90" class="no-scaled-link" src="../../_images/0101_install_python354_04_success.png" style="width: 500px;" /></p>
 <p>完成安装后，再次打开命令行工具，按照前文的描述确认符合要求版本的Python已经安装。到此，你的电脑已经具备了执行Python程序的能力了。可以重新启动计算机。</p>
 </div>
 <div class="section" id="3.-安装虚拟环境">
 <h2>3. 安装虚拟环境<a class="headerlink" href="#3.-安装虚拟环境" title="永久链接至标题">¶</a></h2>
 <p>本步骤虽不是必需，且对初学者也不是很容易理解，虽然可以直接跳过本步骤跟随下一步骤安装“jupyter lab”，但仍然强烈建议读者跟随完成本步骤，这有助于维持你干净的计算机系统。简单地说，虚拟环境是计算机单独、额外开辟出来的一部分资源专门用于做某些特定的事情，与整个操作系统有严格的界限，也不会干扰操作系统。从Python3.3开始，创建Python虚拟环境已经变得非常容易。</p>
 <p>首先确定一个目录，这个目录将要被用来作为安装虚拟环境的位置，建议这个目录不要设置在很深层次，可以直接设在D盘符根目录下。打开Windows系统的命令行提示工具，切换至盘符D下：</p>
-<p><img alt="95b283d09c464c9a9ae822fde36b3c25" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="147a84a2266b4c02a2f0af1e42ec852c" class="no-scaled-link" src="../../_images/0201_python_install_venv.png" style="width: 500px;" /></p>
 <p>随后在提示光标后输入如下命令：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m venv venv
 </pre></div>
 </div>
-<p><img alt="4e8af787aeef4fa184be3c0e396f4609" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
+<p><img alt="3569d34dabc545c6a76329ed61c30ccc" class="no-scaled-link" src="../../_images/0202_python_install_venv.png" style="width: 500px;" /></p>
 <p>这行命令表示用python所带的<code class="docutils literal notranslate"><span class="pre">venv</span></code>功能（命令中的第一个venv）在当前目录下建立一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>（命令中的第二个venv）的目录，并以该目录为根目录创建Python运行的虚拟环境。通常人们偏好使用<code class="docutils literal notranslate"><span class="pre">venv</span></code>这个目录名。顺利执行该命令后命令行提示工具不会有额外的提示，但目录<code class="docutils literal notranslate"><span class="pre">D:\</span></code>下已经多了一个名为<code class="docutils literal notranslate"><span class="pre">venv</span></code>的目录，并且其下也已经有了一些子目录和文件，表明虚拟环境已经创建好了。</p>
 <p>虚拟环境创建好了之后会复制操作系统内安装的Python解释器的相关库。虚拟环境需要激活才能有效使用，它通常在被使用前通过命令激活，在使用结束后通过命令使之离开激活状态。在虚拟环境<code class="docutils literal notranslate"><span class="pre">venv</span></code>目录下有一个<code class="docutils literal notranslate"><span class="pre">Script</span></code>子目录，该子目录下有“activate.bat”和“deactivate.bat”两个文件，分别用于激活是失活虚拟环境。例如我们要激活刚刚创建的虚拟环境，可以在命令行提示工具下输入如下命令：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>D:\venv\Scripts\activate.bat
 </pre></div>
 </div>
-<p><img alt="98f1a90afc7c44f08625424787cc4f2d" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
+<p><img alt="2535b1dbf159445b93a409b05aaf85f9" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv.png" style="width: 500px;" /></p>
 <p>激活后，命令行提示工具的提示符前会多出字符串<code class="docutils literal notranslate"><span class="pre">(venv)</span></code>，表明当前处在虚拟环境下，在该环境下执行Python程序时仅调用当前虚拟环境下的Python解释器下的一些库。使用命令</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>pip list
 </pre></div>
 </div>
 <p>查看当前已经安装的Python库，结果可能如下图所示：</p>
-<p><img alt="fafd0dc7b815422b80773e600b684bcf" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
+<p><img alt="294ab49733804d0493024eebddfde382" class="no-scaled-link" src="../../_images/0201_python_old_pip_list_venv.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="4.-安装Jupyter-Lab">
 <h2>4. 安装Jupyter Lab<a class="headerlink" href="#4.-安装Jupyter-Lab" title="永久链接至标题">¶</a></h2>
@@ -977,14 +920,14 @@ div.rendered_html tbody tr:hover {
 python -m pip install --upgrade setuptools
 </pre></div>
 </div>
-<p><img alt="bf11e7da030c4d328fc9c83feb86140d" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
+<p><img alt="2cf090232250452e9096d94e0e42e52d" class="no-scaled-link" src="../../_images/0201_python_upgrade_lib_venv2.png" style="width: 500px;" /></p>
 <p>执行完上述命令后，使用下面的命令来安装“Jupyter Lab”：</p>
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>python -m pip install jupyterlab
 </pre></div>
 </div>
-<p><img alt="d19d7cb5f07b48e9933bfc9174902611" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="9bdc3f0eea8c4162b5d244a5c851fd20" class="no-scaled-link" src="../../_images/0202_python_install_jupyter_notebook.png" style="width: 500px;" /></p>
 <p>该过程由于需要安装较多的支持库，因此需要的时间略长些。一切顺利的情况下，Jupyter Lab就安装好了，如下图所示：</p>
-<p><img alt="2e27d007b3d4401d810167db3594d10a" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
+<p><img alt="a7586b9232674c8ea3d99fc95d5fa4f6" class="no-scaled-link" src="../../_images/0202_python_after_install_jupyter_notebook.png" style="width: 500px;" /></p>
 </div>
 <div class="section" id="5.-使用Jupyter-Lab进行Python交互式编程">
 <h2>5. 使用Jupyter Lab进行Python交互式编程<a class="headerlink" href="#5.-使用Jupyter-Lab进行Python交互式编程" title="永久链接至标题">¶</a></h2>
@@ -992,27 +935,27 @@ python -m pip install --upgrade setuptools
 <div class="highlight-code notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
-<p><img alt="1facb856d1f0493e9e1fb815228ac64f" class="no-scaled-link" src="../../_images/0203_command_jupyter_lab.png" style="width: 500px;" /></p>
+<p><img alt="2b09c293501b425986dc2149a6658b0a" class="no-scaled-link" src="../../_images/0203_command_jupyter_lab.png" style="width: 500px;" /></p>
 <p>上述命令的运行需要一些时间等后，稍后启动Jupyter Lab服务，并打开浏览器，进入如下图所示的Jupyter Lab提供的基于网页的交互式编程环境：</p>
-<p><img alt="7e2893bad4db4737a9f0d66d8c8b9f5c" class="no-scaled-link" src="../../_images/0301_jupyter_lab_launch.png" style="width: 500px;" /></p>
-<p>上图界面左侧显示的内容和资源管理器中的内容一致，右侧有几个交大的方形按钮，选中”Notebook”栏目下的“Python 3”方形按钮，会打开一个新的窗口供编写代码。如下图所示。</p>
-<p><img alt="99dfa5c0be034828b66768f165ea7c60" class="no-scaled-link" src="../../_images/0302_jupyter_lab_new_file.png" style="width: 500px;" /></p>
-<p>如此就在界面的右侧建立并展示了一个以Python3为解释器的交互式编程环境文件，该文件名默认为”untitled.ipynb”。其中蓝色竖条右侧的灰色区域可以用鼠标点击选中形成一个代码输入单元。我们像下图中显示的那样输入如下的一行Python代码:</p>
+<p><img alt="1a359474ae6747c893f39e2b0958dbeb" class="no-scaled-link" src="../../_images/0301_jupyter_lab_launch.png" style="width: 500px;" /></p>
+<p>上图界面左侧显示的内容和资源管理器中的内容一致，右侧有几个交大的方形按钮，选中“Notebook”栏目下的“Python 3”方形按钮，会打开一个新的窗口供编写代码。如下图所示。</p>
+<p><img alt="0795e4d461c44efda5993ed0be29cbbf" class="no-scaled-link" src="../../_images/0302_jupyter_lab_new_file.png" style="width: 500px;" /></p>
+<p>如此就在界面的右侧建立并展示了一个以Python3为解释器的交互式编程环境文件，该文件名默认为“untitled.ipynb”。其中蓝色竖条右侧的灰色区域可以用鼠标点击选中形成一个代码输入单元。我们像下图中显示的那样输入如下的一行Python代码:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我正在Jupyter Lab编程环境下编写Python代码&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="175b7a4efc5f40c98d3ec4fce4168868" class="no-scaled-link" src="../../_images/0303_jupyter_lab_write_code.png" style="width: 500px;" /></p>
-<p>书写完毕后，将鼠标或光标保留在当前单元格内，保持左侧的蓝色竖条可见，通过下面三种方式之一来执行这一个代码单元格： 1. 点击并展开菜单”Run”，点击第一个子菜单”Selected Cells” 2. 直接点击界面右侧单元格上方工具栏中的表示向右的三角形按钮来运行当前单元格 3. 直接同时按下键盘中的”Shift”和”Enter”键</p>
+<p><img alt="6ff8f380752146f9bf8643f11009e652" class="no-scaled-link" src="../../_images/0303_jupyter_lab_write_code.png" style="width: 500px;" /></p>
+<p>书写完毕后，将鼠标或光标保留在当前单元格内，保持左侧的蓝色竖条可见，通过下面三种方式之一来执行这一个代码单元格： 1. 点击并展开菜单“Run”，点击第一个子菜单“Selected Cells” 2. 直接点击界面右侧单元格上方工具栏中的表示向右的三角形按钮来运行当前单元格 3. 直接同时按下键盘中的“Shift”和“Enter”键</p>
 <p>运行后，可以看出当前单元格下方多出一行文字，那就是这一行程序的输出信息。</p>
-<p><img alt="f8d4501671f948ceac6f60654891cbc8" class="no-scaled-link" src="../../_images/0304_jupyter_lab_run_code.png" style="width: 500px;" /></p>
-<p>还可以通过点击工具栏上的“+”号来增加单元格。可以在选中某一个单元格后，切换工具栏上方的属性。常见的单元格的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。 此外，可以通过界面左侧的文件浏览视图来修改当前文件的文件名。选中一个文件并右键点击，选择”rename”，在弹出的窗口里输入你想要的文件名。</p>
-<p>更多关于如何使用”Jupyter Lab”的内容将在课程中详细介绍。</p>
+<p><img alt="4bd286114ce74d9eac67d529ccc950dc" class="no-scaled-link" src="../../_images/0304_jupyter_lab_run_code.png" style="width: 500px;" /></p>
+<p>还可以通过点击工具栏上的“+”号来增加单元格。可以在选中某一个单元格后，切换工具栏上方的属性。常见的单元格的属性有“Code”、“Markdown”等，前者表明该输入框为代码输入框，多用于程序的代码部分，后者表明其实一段使用“Markdown”语法规则书写的文本内容，多用于书写一些解释性的内容。两者都可以执行。读者可以自己操作体会。 此外，可以通过界面左侧的文件浏览视图来修改当前文件的文件名。选中一个文件并右键点击，选择“rename”，在弹出的窗口里输入你想要的文件名。</p>
+<p>更多关于如何使用“Jupyter Lab”的内容将在课程中详细介绍。</p>
 </div>
 <div class="section" id="6.-退出Jupyter-Lab及虚拟环境">
 <h2>6. 退出Jupyter Lab及虚拟环境<a class="headerlink" href="#6.-退出Jupyter-Lab及虚拟环境" title="永久链接至标题">¶</a></h2>
-<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入”jupyter lab”的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="fc64f2be8eaf4ff49cb922a8bed8938a" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
+<p>可以直接通过关闭浏览器页面来退出Jupyter Notebook的编辑运行网页。完毕网页后，应在当初通过输入“jupyter lab”的命令行提示窗口中按“Ctrl+C”组合键来终止jupyyter Notebook服务。如下图所示。 <img alt="b7eef2af6c7d40ed9dc5501beeff562e" class="no-scaled-link" src="../../_images/0305_jupyter_notebook_shut_down.png" style="width: 500px;" /></p>
 <p>通过在命令行提示窗口内执行虚拟环境中路径为“venv:nbsphinx-math:<cite>Scripts</cite><span class="math">\deactivate</span>.bat”离开虚拟环境。如下图所示。</p>
-<p><img alt="49d95d81474d49d4842becba3562a2e7" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
+<p><img alt="94d02d8cb4414c15b4ce5a5e63c49247" class="no-scaled-link" src="../../_images/0401_deactivate_venv.png" style="width: 500px;" /></p>
 <p>如此，就完全顺利退出了Windows操作系统下的虚拟Python编程环境。</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1029,42 +972,34 @@ python -m pip install --upgrade setuptools
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="001_admission_notice.html" title="上一页 页">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">附录二 第一期招生通知</p>
+    <a class='left-prev' id="prev-link" href="001_admission_notice.html" title="previous page">附录二 第一期招生通知</a>
+    <a class='right-next' id="next-link" href="090_qianglib.html" title="next page">附录四 qianglib.py的代码</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="090_qianglib.html" title="下一页 页">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">附录四 qianglib.py的代码</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
+        
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      通过 Ye Qiang<br/>
-    
-        &copy; <a href="../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
-  </p>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; <a href="../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>
