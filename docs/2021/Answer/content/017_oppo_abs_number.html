@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第17讲 编写方法求一个数的相反数和绝对值 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -42,10 +42,7 @@
     <link rel="next" title="第18讲 朋友给你发了什么消息(简单加密)" href="018_what_did_your_classmates_say.html" />
     <link rel="prev" title="第16讲 一共可以排出多少个不同的队伍" href="016_how_many_queues_with_answer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="zh_CN">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -57,16 +54,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
-      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -74,8 +65,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -520,25 +511,25 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">切换导航</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -546,11 +537,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2021/Answer/content/017_oppo_abs_number.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -559,8 +550,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
-        title="全屏模式"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -568,12 +559,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 内容
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
@@ -588,30 +579,7 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第17讲 编写方法求一个数的相反数和绝对值</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> 内容 </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Assignments-作业">
-   Assignments 作业
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   
@@ -1018,7 +986,7 @@ div.rendered_html tbody tr:hover {
 \[C =2 \pi  r\]</div>
 <p>其中<span class="math notranslate nohighlight">\(r\)</span>是圆的半径，<span class="math notranslate nohighlight">\(\pi\)</span>是圆周率，值约为3.14，表示的是圆的周长与直径的的比值。圆的直径是圆上任意两个点的距离的最大值，圆的直径是半径的两倍。</p>
 <p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the ratio of the circumference of a circle to its diameter, Its value is approximately equal to 3.14. The diameter of a circle is the maximum value of the distance between any two points on the circle, The radius of a circle is half of the diameters.</p>
-<p><img alt="7f4b98a1d0fa45d496782876c6c8bfb4" class="no-scaled-link" src="../../../_images/L017_circle_diameter_radius.png" style="width: 300px;" /></p>
+<p><img alt="00fb74ee3137434586eed6c35d5b2e9b" class="no-scaled-link" src="../../../_images/L017_circle_diameter_radius.png" style="width: 300px;" /></p>
 <p>现在有50个圆，其半径分别为下列一组数据：</p>
 <p>Here are 50 circles with radius values given below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">30.48</span><span class="p">,</span> <span class="mf">28.66</span><span class="p">,</span> <span class="mf">49.76</span><span class="p">,</span> <span class="mf">23.95</span><span class="p">,</span> <span class="mf">21.96</span><span class="p">,</span> <span class="mf">49.82</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">30.95</span><span class="p">,</span> <span class="mf">22.63</span><span class="p">,</span> <span class="mf">38.55</span><span class="p">,</span> <span class="mf">47.91</span><span class="p">,</span> <span class="mf">47.54</span><span class="p">,</span> <span class="mf">49.41</span><span class="p">,</span> <span class="mf">21.18</span><span class="p">,</span> <span class="mf">40.41</span><span class="p">,</span> <span class="mf">42.77</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">24.52</span><span class="p">,</span> <span class="mf">30.39</span><span class="p">,</span> <span class="mf">29.97</span><span class="p">,</span> <span class="mf">22.57</span><span class="p">,</span> <span class="mf">29.09</span><span class="p">,</span> <span class="mf">33.31</span><span class="p">,</span> <span class="mf">40.26</span><span class="p">,</span> <span class="mf">49.88</span><span class="p">,</span> <span class="mf">31.52</span><span class="p">,</span> <span class="mf">42.23</span><span class="p">,</span> <span class="mf">27.66</span><span class="p">,</span> <span class="mf">32.01</span><span class="p">,</span> <span class="mf">48.19</span><span class="p">,</span> <span class="mf">32.92</span><span class="p">,</span> <span class="mf">37.53</span><span class="p">,</span> <span class="mf">35.61</span><span class="p">,</span> <span class="mf">49.8</span><span class="p">,</span> <span class="mf">35.55</span><span class="p">,</span> <span class="mf">38.98</span><span class="p">,</span> <span class="mf">32.59</span><span class="p">,</span> <span class="mf">48.98</span><span class="p">,</span> <span class="mf">35.02</span><span class="p">,</span> <span class="mf">23.97</span><span class="p">,</span> <span class="mf">27.55</span><span class="p">,</span> <span class="mf">31.84</span><span class="p">,</span> <span class="mf">41.39</span><span class="p">,</span> <span class="mf">24.61</span><span class="p">,</span> <span class="mf">31.27</span><span class="p">,</span> <span class="mf">24.94</span><span class="p">,</span> <span class="mf">49.23</span><span class="p">,</span> <span class="mf">39.81</span><span class="p">,</span> <span class="mf">48.12</span><span class="p">,</span> <span class="mf">21.91</span><span class="p">]</span>
@@ -1225,42 +1193,34 @@ Test Stats: 5 passed, 0 failed, 5 tested.
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="016_how_many_queues_with_answer.html" title="上一页 页">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">第16讲 一共可以排出多少个不同的队伍</p>
+    <a class='left-prev' id="prev-link" href="016_how_many_queues_with_answer.html" title="previous page">第16讲 一共可以排出多少个不同的队伍</a>
+    <a class='right-next' id="next-link" href="018_what_did_your_classmates_say.html" title="next page">第18讲 朋友给你发了什么消息(简单加密)</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="018_what_did_your_classmates_say.html" title="下一页 页">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">第18讲 朋友给你发了什么消息(简单加密)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
+        
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      通过 Ye Qiang<br/>
-    
-        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
-  </p>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; <a href="../../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>

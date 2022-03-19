@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第05讲 绘制简单图形 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -42,10 +42,7 @@
     <link rel="next" title="附录" href="../../../appendix/index.html" />
     <link rel="prev" title="第04讲 猜数字" href="004_guess_numbers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="zh_CN">
-    
-
-    <!-- Google Analytics -->
+    <meta name="docsearch:language" content="en" />
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -57,16 +54,10 @@
     <div class="container-xl">
       <div class="row">
           
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
-      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -74,8 +65,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -520,25 +511,25 @@
 
 
           
-<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
-<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            <div class="topbar-left">
-                
-                <label class="nav-toggle-button" for="__navigation">
-                    <div class="visually-hidden">切换导航</div>
-                    <i class="fas fa-bars"></i>
-                </label>
-                
-            </div>
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -546,11 +537,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2022/Answer/content/005_draw_basic_shapes_student_name.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -559,8 +550,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
-        title="全屏模式"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -568,12 +559,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 内容
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
@@ -588,30 +579,7 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第05讲 绘制简单图形</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> 内容 </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#Assignments-作业">
-   Assignments 作业
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   
@@ -938,7 +906,7 @@ div.rendered_html tbody tr:hover {
 <ul class="simple">
 <li><p>a). If it is possible to write less codes to complete the same task (drawing the three squares) 是否可能通过更少的代码完成同样的绘制三个正方形的工作</p></li>
 <li><p>b). If the answer for previous question is Yes, where can we improve? 如果上题的答案是肯定的，那么在哪些环节我们的代码可以改进？</p></li>
-<li><p>c). If it is necessary to do so, why? 这样做（用更少的代码完成同样的任务）有没有必要，为什么？ <img alt="016565d73bfc4de593ae4da4140c7a30" class="no-scaled-link" src="../../../_images/L005_01_squares2.png" style="width: 500px;" /></p></li>
+<li><p>c). If it is necessary to do so, why? 这样做（用更少的代码完成同样的任务）有没有必要，为什么？ <img alt="17332cd5a61644f1a540d32bc09b7323" class="no-scaled-link" src="2022/Notonline/figures/L005_01_squares.png" style="width: 500px;" /></p></li>
 </ul>
 </li>
 </ol>
@@ -1004,20 +972,18 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">Terminator</span>                                Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 6&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># Start your codes here, you can write as many codes as you want</span>
-<span class="ansi-green-fg">      2</span> <span style="color: rgb(95,135,135)"># 从这里开始书写里的代码</span>
-<span class="ansi-green-fg">      3</span> <span style="color: rgb(95,135,135)"># and don&#39;t forget to hide the turtle pointer in the end.</span>
-<span class="ansi-green-fg">      4</span> <span style="color: rgb(95,135,135)"># 最后不要忘了隐藏表示乌龟的小三角形。</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span> <span class="ansi-yellow-bg">setup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">600</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">400</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">0</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">0</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg">      7</span> reset()
-<span class="ansi-green-fg">      8</span> pu()
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">Terminator</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-59a0a7dcd250&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg"># 最后不要忘了隐藏表示乌龟的小三角形。</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>setup<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">600</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">400</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> reset<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> pu<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
-File <span class="ansi-green-intense-fg ansi-bold">&lt;string&gt;:5</span>, in <span class="ansi-cyan-fg">setup</span><span class="ansi-blue-intense-fg ansi-bold">(width, height, startx, starty)</span>
+<span class="ansi-green-fg">/usr/lib/python3.8/turtle.py</span> in <span class="ansi-cyan-fg">setup</span><span class="ansi-blue-fg">(width, height, startx, starty)</span>
 
-<span class="ansi-red-intense-fg ansi-bold">Terminator</span>:
+<span class="ansi-red-fg">Terminator</span>:
 </pre></div></div>
 </div>
 <p>Write your thinking here (between 50 - 100 words) # 在这里写下你的思考(50-200字或单词期间) your words should answer the questions listed below: 你的文字应该能回答下列三个问题</p>
@@ -1148,42 +1114,34 @@ File <span class="ansi-green-intense-fg ansi-bold">&lt;string&gt;:5</span>, in <
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="004_guess_numbers.html" title="上一页 页">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">第04讲 猜数字</p>
+    <a class='left-prev' id="prev-link" href="004_guess_numbers.html" title="previous page">第04讲 猜数字</a>
+    <a class='right-next' id="next-link" href="../../../appendix/index.html" title="next page">附录</a>
+
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../../appendix/index.html" title="下一页 页">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">附录</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
+        
         </div>
     </div>
-    <footer class="footer">
-  <p>
-    
-      通过 Ye Qiang<br/>
-    
-        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
-  </p>
-</footer>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ye Qiang<br/>
+        
+            &copy; <a href="../../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
+  
   </body>
 </html>
