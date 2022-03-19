@@ -3,7 +3,6 @@ from turtle import goto, seth, write, ht, st, home, dot, pen, speed, getscreen
 
 from turtle import setworldcoordinates, begin_fill, end_fill
 
-
 def text(pos, info, align="center", font=("Arial", 8, "normal"), move=False, color="black"):
     pu()
     goto(pos)

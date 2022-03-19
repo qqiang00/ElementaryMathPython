@@ -5,14 +5,17 @@
    "id": "included-education",
    "metadata": {},
    "source": [
-    "## 第06讲 绘制正多边形\n",
-    "Lecture06 Draw Regular Polygons"
+    "## 第06讲 绘制正多边形（一)\n",
+    "Lecture06 Draw Regular Polygons(Part 1)"
    ]
   },
   {
    "cell_type": "markdown",
    "id": "periodic-register",
-   "metadata": {},
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
    "source": [
     "### Problem 问题\n",
     "\n",
@@ -21,7 +24,7 @@
     "1. Open a window(draw area) with both width and height 600; 打开宽高均为600的绘图窗口；\n",
     "2. Reset to make the turtle at the center and heading right; 重置海龟使其位于绘图区中央并朝向右侧；\n",
     "3. Lift up the pen; 抬起绘图笔；\n",
-    "4. Move turtle 200 right and 60 backward to its current position(center of the draw area), keep the turtle heading right; 将海龟移动至当前位置(绘图区中央）的右侧200和后方60的位置，保持海龟仍然朝向右侧；\n",
+    "4. Move turtle 200 right and 60 backward to its current position(center of the draw area), keep the turtle heading right; 将海龟移动至当前位置(绘图区中央）的正右侧200和正后方60的位置，保持海龟仍然朝向右侧；\n",
     "5. Put down the pen, start to Draw; 放下绘图笔，准备绘图；\n",
     "6. Use **<span style=\"color:red\">red</span>** color, repeat **3** times: move forward 120, turn **120** degrees to left; 使用红色画笔，重复3次: 向前移动120后向左转120度；\n",
     "7. Use **<span style=\"color:orange\">orange</span>** color, repeat **4** times: move forward 120, turn **90** degrees to left; 使用橙色画笔，重复4次: 向前移动120后向左转90度；\n",
@@ -49,12 +52,7 @@
    "source": [
     "### Math Background 数学背景\n",
     "1. 多边形(Polygon)是由有限个线段首尾相连形成的封闭(closed)的平面图形。这些线段称为多边形的边(side or edge)；两条相邻的边相交共有的点成为顶点(vertex, vertices pl.)，\n",
-    "1. 任何一个正三角形或边的数量大于3的正多边形的每一条边长(side)相等且每一个顶点(vertex)的内角相等；\n",
-    "2. 对于任意一个（正）多边形，其内角和（sum of interior angles）`total_angle`可以用下面的公式来计算：\n",
-    "  ```python\n",
-    "  total_angle = (num_side - 2) * 180 # 其中，`num_side`表示的是这个（正）多边形的边的数量。\n",
-    "  ``` \n",
-    "6. 正多边形，其外角和（sum of exterior angles）永远是360度。事实上对于任意一个凸（convex)多边形，即使不是正多边形，其外交和也总是360度。"
+    "1. 任何一个正三角形或边的数量大于3的正多边形的每一条边长(side)相等且每一个顶点(vertex)的内角相等；"
    ]
   },
   {
@@ -69,7 +67,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "7879012d-02eb-4b5b-b3b1-6a9cba77dfdb",
    "metadata": {},
    "outputs": [],
@@ -78,8 +76,7 @@
     "from turtle import setup, reset, bye, pu, pd, bk, fd, left, right, st, ht\n",
     "# from turtle import penup, pendown, backward, forward, showturtle, hideturtle\n",
     "from turtle import pencolor\n",
-    "setup(600, 400, 0, 0)\n",
-    "reset()"
+    "setup(600, 600, 0, 0)"
    ]
   },
   {
@@ -94,13 +91,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "id": "720819ed-c2bb-4bf2-89f4-8af33a18f47a",
    "metadata": {},
    "outputs": [],
    "source": [
     "pencolor(\"red\") # \n",
-    "fd(100)"
+    "side = 120\n",
+    "degree = 120\n",
+    "fd(side)\n",
+    "left(degree)\n",
+    "fd(side)\n",
+    "left(degree)\n",
+    "fd(side)\n",
+    "left(degree)"
    ]
   },
   {
@@ -124,35 +128,6 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "b07bdf84-6814-42be-a1be-9316ebda6d90",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "reset()\n",
-    "pencolor(\"red\")\n",
-    "side = 120"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "numeric-metallic",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# Shape1 Regular Triangle(3-gon)\n",
-    "degree = 120\n",
-    "fd(side)\n",
-    "left(degree)\n",
-    "fd(side)\n",
-    "left(degree)\n",
-    "fd(side)\n",
-    "left(degree)"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "id": "ebe546fe-332f-4a84-9ef4-baa28b2d301a",
    "metadata": {},
@@ -162,7 +137,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "id": "f92758b5-6369-4673-b716-6cf397d7fead",
    "metadata": {},
    "outputs": [],
@@ -202,20 +177,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 4,
    "id": "57b368b5-9de8-42a7-aa46-b46659bf3bf9",
    "metadata": {},
    "outputs": [],
    "source": [
-    "from turtle import left, fd, reset, ht, setup\n",
-    "setup(600, 600) \n",
     "reset()\n",
     "ht()\n",
-    "for i in range(50):\n",
+    "i = 0\n",
+    "while i < 26:\n",
     "    left(7.2)\n",
     "    fd(200)\n",
     "    left(180)\n",
-    "    \n"
+    "    i = i + 1  \n"
    ]
   },
   {
@@ -228,7 +202,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 9,
    "id": "hidden-farmer",
    "metadata": {},
    "outputs": [],
@@ -236,31 +210,22 @@
     "from random import randint\n",
     "from turtle import setup, reset, bye, pu, pd, bk, fd, left, right, st, ht\n",
     "# from turtle import penup, pendown, backward, forward, showturtle, hideturtle\n",
-    "from turtle import pencolor"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "comic-grill",
-   "metadata": {},
-   "outputs": [],
-   "source": [
+    "from turtle import pencolor\n",
     "# prepare a draw area with length 600px and width 400 px\n",
     "# 准备一个窗口，宽度600像素，高度400像素\n",
-    "setup(600, 600, 0, 0) \n",
-    "side = 120\n",
-    "half_side = side / 2"
+    "setup(600, 600, 0, 0) "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 10,
    "id": "ac2746dc-d631-46cd-a9bb-227846f8a7bd",
    "metadata": {},
    "outputs": [],
    "source": [
     "# move to a specified place\n",
+    "side = 120\n",
+    "half_side = side / 2\n",
     "reset()                                  # 重置海龟（位置和朝向）\n",
     "pu()                                     # 抬起画笔\n",
     "right(90)                                # 右转90度\n",
@@ -272,16 +237,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "ca3cae67-0e08-48a9-8555-63ffb498f541",
-   "metadata": {},
-   "source": [
-    "#### Solution1 方案1"
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 11,
    "id": "78370d4f-c912-42dd-869f-c7241827f16a",
    "metadata": {},
    "outputs": [],
@@ -298,7 +255,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 12,
    "id": "dee7206f-2693-4830-b375-d7aa81aeef32",
    "metadata": {},
    "outputs": [],
@@ -314,7 +271,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 13,
    "id": "258166ed-2ebd-4df2-a9e1-3b6ea46513c1",
    "metadata": {},
    "outputs": [],
@@ -330,7 +287,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 14,
    "id": "aea344cc-14d5-48a8-a106-9623f5d6977e",
    "metadata": {},
    "outputs": [],
@@ -346,7 +303,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 15,
    "id": "00593ba2-ebd6-440b-a758-5f7d2cee0419",
    "metadata": {},
    "outputs": [],
@@ -362,7 +319,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 16,
    "id": "3132ce69-b39f-4094-81dd-a07794a52468",
    "metadata": {},
    "outputs": [],
@@ -378,7 +335,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 17,
    "id": "10aa4c4e-8994-443c-a540-337192b4fa74",
    "metadata": {},
    "outputs": [],
@@ -394,7 +351,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 18,
    "id": "597967c2-9e36-4f44-803e-796f58653dbe",
    "metadata": {},
    "outputs": [],
@@ -410,7 +367,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 19,
    "id": "a07af359-c4a8-41db-a24c-e7bf5e4cd5e3",
    "metadata": {},
    "outputs": [],
@@ -420,17 +377,17 @@
   },
   {
    "cell_type": "markdown",
-   "id": "00a66af5-6ce4-42c2-ab51-e658b672dffe",
+   "id": "a08592a1-54a6-47a0-a1b7-fbc47fed85a9",
    "metadata": {
     "tags": []
    },
    "source": [
-    "#### Solution2 方案2"
+    "#### Solution2* 方案2*"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 20,
    "id": "d4ee07e4-113c-427a-8a93-ecfe49f6eb74",
    "metadata": {},
    "outputs": [],
@@ -448,7 +405,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 21,
    "id": "a6a0e877-2561-4e28-bca3-67a182323ec7",
    "metadata": {},
    "outputs": [],
@@ -478,15 +435,16 @@
    "source": [
     "### Summary 知识点小结\n",
     "\n",
-    "1. `while`循环，语法格式，缩进；格式类似于`if`语句，有条件判断表达式，但没有对应的`else`部分；循环执行的代码部分称为循环体\n",
-    "2. `while`循环内部也可以有`while`循环；\n",
-    "3. 循环语句必须在循环体内部设置一个终止（跳出）循环的条件，否则计算机一旦执行到循环体代码，就一直执行不会跳出；这种情况称为“死循环”；"
+    "1. 多余多次重复执行的代码可以使用`while`循环来表达。其语法格式，缩进；格式类似于`if`语句，有条件判断表达式，但没有对应的`else`部分；循环执行的代码部分称为循环体；\n",
+    "2. 循环语句必须在循环体内部设置一个终止（跳出）循环的条件，否则计算机一旦执行到循环体代码，就一直执行不会跳出；这种情况称为“死循环”；"
    ]
   },
   {
    "cell_type": "markdown",
    "id": "bc1af148-1c1d-4b2b-90d9-5a87aab8ebc2",
-   "metadata": {},
+   "metadata": {
+    "tags": []
+   },
    "source": [
     "### CS Tips 计算机小知识\n",
     "\n",
@@ -496,9 +454,54 @@
   {
    "cell_type": "markdown",
    "id": "f9f70484-6376-4931-90fd-d86eca0986cd",
-   "metadata": {},
+   "metadata": {
+    "tags": []
+   },
    "source": [
     "### Assignments 作业"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e9bb8f7e-7f1d-423e-a2b8-d4e1911ccf5e",
+   "metadata": {},
+   "source": [
+    "1. 在不使用循环语句的条件下，按照要求一步一步完成本讲示例的编程，最终在绘图窗口里绘制出同样的正三、四、...、十边形。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "55fcb3c0-ecd9-405e-bbd0-a269180bf70f",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6d1163fb-34a0-4393-8906-0782d9006c5c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bba2d9ba-df7a-44fe-a0c2-b3b4ad4420b3",
+   "metadata": {},
+   "source": [
+    "2. 思考在绘制某一个正多边形的时候，为什么小海龟每次绘制的边的长度相同，每次转的度数也相同？如果改变海龟每次绘制的边长或者（和）改变每次转动的角度，那么还能绘制出正多边形吗？请用文字回答。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "138ad958-9cd2-4543-bd99-44b39a4f6558",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# \n",
+    "#"
    ]
   },
   {
@@ -506,7 +509,7 @@
    "id": "digital-consensus",
    "metadata": {},
    "source": [
-    "1. 仿照本讲示例，绘制边长为50的正二十边形。海龟起始点同本讲示例；颜色任选。"
+    "3. 仿照本讲示例，绘制边长为50的**正二十边形**。海龟起始点同本讲示例。颜色任选。"
    ]
   },
   {
@@ -515,32 +518,14 @@
    "id": "ea26b4cd-8b73-4f0d-87d6-256ad9732a53",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "reset()\n",
-    "pu()\n",
-    "right(90)\n",
-    "fd(200)\n",
-    "right(90)\n",
-    "fd(half_side)\n",
-    "right(180)\n",
-    "pd()\n",
-    "pencolor(\"red\")\n",
-    "side, n_sides_to_draw = 50, 20\n",
-    "degree = 360/n_edges\n",
-    "n_sides_drawn = 0\n",
-    "degree = 360/n_sides_to_draw             # degrees to turn after each move\n",
-    "while n_sides_drawn < n_sides_to_draw:\n",
-    "    fd(side)\n",
-    "    left(degree)\n",
-    "    n_sides_drawn = n_sides_drawn + 1"
-   ]
+   "source": []
   },
   {
    "cell_type": "markdown",
    "id": "9ca5ecdf-36eb-4d41-bdac-130707951492",
    "metadata": {},
    "source": [
-    "2. 仿照本讲示例，绘制边长为10的正一百边形。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域**左右**居中，颜色任选。"
+    "4. 仿照本讲示例，绘制边长为10的**正一百边形**。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域**左右**居中，颜色任选。"
    ]
   },
   {
@@ -549,128 +534,6 @@
    "id": "d11874ff-1700-468e-8289-b9c69fa64eb5",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "side, n_sides_to_draw = 10, 100\n",
-    "\n",
-    "reset()\n",
-    "pu()\n",
-    "right(90)\n",
-    "fd(200)\n",
-    "right(90)\n",
-    "fd(side/2)\n",
-    "right(180)\n",
-    "pd()\n",
-    "pencolor(\"red\")\n",
-    "\n",
-    "degree = 360/n_edges\n",
-    "n_sides_drawn = 0\n",
-    "degree = 360/n_sides_to_draw             # degrees to turn after each move\n",
-    "while n_sides_drawn < n_sides_to_draw:\n",
-    "    fd(side)\n",
-    "    left(degree)\n",
-    "    n_sides_drawn = n_sides_drawn + 1"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "3c843578-33b0-4e36-a753-35a6fd639f9f",
-   "metadata": {},
-   "source": [
-    "3. 使用`while`循环绘制下图。要求：\n",
-    "      - 所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心；\n",
-    "      - 三个正方形的边长依次为250，150，和50。\n",
-    "      - 给每一行代码添加注释，解释其作用。\n",
-    "\n",
-    "   <img src = \"figures/L005_01_squares.png\" width = 500>"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "77dabcbe-f4b3-4b3b-a3df-6fc36acefff9",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6de8eb4b-5674-4052-b804-99501e591f56",
-   "metadata": {},
-   "source": [
-    "4. 使用`turtle`绘图库中已经学过的方法，在一个或多个代码单元格中编写任意行数的代码，绘制出按下面排列的一组(5个)正方形。具体要求：\n",
-    "   - 最中间的正方形位于画布（绘图区）的正中央；\n",
-    "   - 每一个正方形的边长为80；\n",
-    "   - 你的代码可以使用也可以不使用`while`循环语句；\n",
-    "   - 给每一行代码添加注释，解释其作用。\n",
-    "   \n",
-    "   \n",
-    "   <img src = \"figures/L006_e03_square_combinations.png\" width = 500>"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "cd59a905-c3cb-44d0-83c4-aa37fd3ed24a",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "id": "adca4acd-8c5f-4992-aec1-223e48207e37",
-   "metadata": {},
-   "source": [
-    "5. 使用`while`循环，使用`randint`方法，编程完成下面两小题:\n",
-    "    - 生成100个范围在1,100（包括1和100）的随机数，计算这100个随机数的平均数，并计算该平均数与50的差值。打印这个平均数和得到的差。\n",
-    "    - 生成10000个这样的随机数，计算平均值和平均值与50的差，打印出来。"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "f8edd849-bb6f-4f26-80d5-b94a45d59d86",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "from random import randint\n",
-    "n = 100\n",
-    "i = 0\n",
-    "num, sum_num = 0, 0\n",
-    "while i < n:\n",
-    "    num = randint(1, 100)\n",
-    "    sum_num += num\n",
-    "    i += 1\n",
-    "    \n",
-    "avg = sum_num / n\n",
-    "diff = avg - 50\n",
-    "print(\"avg: \", avg, \"diff to 50 is:\", diff)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "2e3bd543-88c8-42b6-96ce-40a83bbf0dbe",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "from random import randint\n",
-    "n = 10000\n",
-    "i = 0\n",
-    "num, sum_num = 0, 0\n",
-    "while i < n:\n",
-    "    num = randint(1, 100)\n",
-    "    sum_num += num\n",
-    "    i += 1\n",
-    "    \n",
-    "avg = sum_num / n\n",
-    "diff = avg - 50\n",
-    "print(\"avg: \", avg, \"diff to 50 is:\", diff)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6c8edb19-5555-4e4c-b0b6-8870f8b29ac5",
-   "metadata": {},
    "source": []
   }
  ],

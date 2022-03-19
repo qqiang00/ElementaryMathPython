@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第22讲 两个数和与差的平方 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -42,7 +42,10 @@
     <link rel="next" title="第23讲 平行四边形和它的面积" href="023_parallelogram.html" />
     <link rel="prev" title="第21讲 正方形与平方" href="021_square.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -54,10 +57,16 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -65,8 +74,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -405,6 +414,11 @@
        第05讲 绘制简单图形
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Beginner/content/006_draw_regular_polygons1.html">
+       第06讲 绘制正多边形（一)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -440,6 +454,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../../../2022/Answer/content/005_draw_basic_shapes_student_name.html">
        第05讲 绘制简单图形
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Answer/content/006_student_name_assignment.html">
+       第06讲 绘制正多边形（一)
       </a>
      </li>
     </ul>
@@ -511,25 +530,25 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">切换导航</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -537,11 +556,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2021/Beginner/content/022_square_of_sum.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -550,8 +569,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -559,12 +578,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> 内容
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Problem-问题描述">
@@ -616,7 +635,67 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>第22讲 两个数和与差的平方</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 内容 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题描述">
+   Problem 问题描述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Math-Background-数学背景">
+   Math Background 数学背景
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Prerequisites-预备知识">
+   Prerequisites 预备知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-编程求解">
+   Solution 编程求解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Summary-知识点小结">
+   Summary 知识点小结
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#计算机小知识">
+   计算机小知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#Complete-Question-5-and-6-完成本讲问题5和6.">
+     Complete Question 5 and 6 完成本讲问题5和6.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   
@@ -873,18 +952,18 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
 <ol class="arabic simple">
-<li><p>绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位置书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use”red” color and line width 3 to draw it. Write a letter “A” in the center of the square.</p></li>
+<li><p>绘制一个边长为12各边平行于坐标轴的正方形，使得正方形左下角的顶点坐标为(7, 2)。画笔选择红色，画笔线的宽度为3。在正方形内部接近正中的位置书写一个字母”A“来表示这个正方形。 Draw a square with a side length of 12 and each side parallel to the coordinate axis; make sure that the vertex coordinates of the lower left corner of the square is (7, 2). Use “red” color and line width 3 to draw it. Write a letter “A” in the center of the square.</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><p>绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。 Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use”blue” color and line width 3 to draw it. Write a letter “B” in the
-center of the square.</p></li>
+<li><p>绘制一个新的边长为8个边平行与坐标轴的正方形，使得该正方形左下角的顶点恰好为先前绘制的正方形右上角的顶点。环比选择蓝色，画笔线宽度为3。在正方形内部接近正中的位值书写一个字母”B“来表示这个正方形。 Draw a new square whose side length is 8 and all sides parallel to the coordinate axis; make sure that the vertex of the lower left corner of the square is exactly the vertex of the upper right corner of the square previously drawn. Use “blue” color and line width 3 to draw it. Write a letter “B” in
+the center of the square.</p></li>
 </ol>
 <ol class="arabic simple" start="3">
 <li><p>绘制第三个各边平行于坐标轴的正方型，使得该正方形的左下角顶点与正方形A左下角的顶点重合，右上角顶点与正方形B右上角顶点重合。画笔选择黑色，画笔线宽度为2。Draw the third square with each side parallel to the coordinate axis; make sure that the vertex of the lower left corner of the new square coincides with the vertex of the lower left corner of square A, and the vertex of the upper right corner of the new square coincides with the vertex of the upper right corner of square B. Use color “black”
 and line width 2 to draw it.</p></li>
 </ol>
 <ol class="arabic simple" start="4">
-<li><p>第三个正方形被分割为4个部分，分别为正方形A、B、以及正方形A的上方B的左侧和正方形A的右方B的下方的剩余的两块矩形区域，记作C和D并在图上标记C，D。the Third square is divided into 4 parts: square A, B, and rectangle above A, and rectangle below B, denoted as C and D, respectively. 完成后的图形应该如下图所示： The finished figure should look like the following: <img alt="b4a48f188dc34376a341e565d5c3bd12" class="no-scaled-link" src="../../../_images/L022_square_sum.png" style="width: 600px;" /></p></li>
+<li><p>第三个正方形被分割为4个部分，分别为正方形A、B、以及正方形A的上方B的左侧和正方形A的右方B的下方的剩余的两块矩形区域，记作C和D并在图上标记C，D。the Third square is divided into 4 parts: square A, B, and rectangle above A, and rectangle below B, denoted as C and D, respectively. 完成后的图形应该如下图所示： The finished figure should look like the following: <img alt="de9d45efeeef4287a289fbca71aff18b" class="no-scaled-link" src="../../../_images/L022_square_sum.png" style="width: 600px;" /></p></li>
 </ol>
 <ol class="arabic simple" start="5">
 <li><p>先根据第三个正方形的边长计算该正方形的面积，记作S1。再根据这个正方形由四块区域ABCD组成，计算这四块区域的面积的和，记作S2。S1的大小和S2的大小应该相等。First calculate the area of the third square based on the side length of it, denoted as S1. Then according to this square is composed of four areas A,B,C, and D, calculate the sum of the four areas, denoted as S2. S1 should be exactly equal to S2.</p></li>
@@ -1356,34 +1435,42 @@ equal to S2.</p></li>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="021_square.html" title="previous page">第21讲 正方形与平方</a>
-    <a class='right-next' id="next-link" href="023_parallelogram.html" title="next page">第23讲 平行四边形和它的面积</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="021_square.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">第21讲 正方形与平方</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="023_parallelogram.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">第23讲 平行四边形和它的面积</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ye Qiang<br/>
-        
-            &copy; <a href="../../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      通过 Ye Qiang<br/>
+    
+        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

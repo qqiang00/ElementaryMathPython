@@ -5,42 +5,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第06讲 绘制正多边形 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第06讲 绘制正多边形（一) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="copyright" title="版权所有" href="../../copyright.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="copyright" title="版权所有" href="../../../copyright.html" />
+    <link rel="next" title="参考答案" href="../../Answer/index.html" />
+    <link rel="prev" title="第05讲 绘制简单图形" href="005_draw_basic_shapes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -52,38 +57,44 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../preface.html">
+  <a class="reference internal" href="../../../preface.html">
    前言
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about_author.html">
+  <a class="reference internal" href="../../../about_author.html">
    关于作者
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../copyright.html">
+  <a class="reference internal" href="../../../copyright.html">
    版权声明
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/index.html">
+  <a class="reference internal" href="../../../2021/index.html">
    MTH100 2021
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -93,7 +104,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/Beginner/index.html">
+    <a class="reference internal" href="../../../2021/Beginner/index.html">
      第一篇 初级
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -103,149 +114,149 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/001_hello_python.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/001_hello_python.html">
        第1讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/002_make_name_for_data.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/002_make_name_for_data.html">
        第2讲 起个名字吧
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/003_who_is_older.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/003_who_is_older.html">
        第3讲 谁的年龄大
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/004_guess_number.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/004_guess_number.html">
        第4讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/005_draw_basic_shapes.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/005_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/006_draw_regular_polygon.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/006_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/007_how_many_rice_awarded.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/007_how_many_rice_awarded.html">
        第7讲 一共奖励了多少袋大米
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/008_law_of_sequence.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/008_law_of_sequence.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/009_chicken_rabbit_in_same_cage.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/009_chicken_rabbit_in_same_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/010_divide_remainder_1.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/010_divide_remainder_1.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/011_divide_remainder_2.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/011_divide_remainder_2.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012A_factor_composite_prime.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012A_factor_composite_prime.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012B_review.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012B_review.html">
        Review 复习
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012C_quiz.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012C_quiz.html">
        Quiz 测验
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/013_draw_axis.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/013_draw_axis.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/014_locate_point_on_axis.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/014_locate_point_on_axis.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/015_how_many_lines.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/015_how_many_lines.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/016_how_many_queues.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/016_how_many_queues.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/018_what_did_your_classmates_say.html">
        第18讲 同学给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/020_line_length_angle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/020_line_length_angle.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/021_square.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/021_square.html">
        第21讲 正方形与平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/022_square_of_sum.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/022_square_of_sum.html">
        第22讲 两个数和与差的平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/023_parallelogram.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/023_parallelogram.html">
        第23讲 平行四边形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/024_triangle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/024_triangle.html">
        第24讲 三角形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/025_horizontal_vertical_mirror.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/025_horizontal_vertical_mirror.html">
        第25讲 水平或垂直镜像
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/026_Pythagoras_theorem.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/026_Pythagoras_theorem.html">
        第26讲 勾股定理-毕达哥拉斯定理
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/Answer/index.html">
+    <a class="reference internal" href="../../../2021/Answer/index.html">
      练习答案
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -255,97 +266,97 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/005a_draw_basic_shapes.html">
+      <a class="reference internal" href="../../../2021/Answer/content/005a_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/006a_draw_regular_polygon.html">
+      <a class="reference internal" href="../../../2021/Answer/content/006a_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/008a_law_of_sequences.html">
+      <a class="reference internal" href="../../../2021/Answer/content/008a_law_of_sequences.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/009a_chicken_rabbit_in_cage.html">
+      <a class="reference internal" href="../../../2021/Answer/content/009a_chicken_rabbit_in_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/010_divide_remainder_1_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/010_divide_remainder_1_with_answer.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/011_divide_remainder_2_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/011_divide_remainder_2_with_answer.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/012A_factor_composite_prime_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/012A_factor_composite_prime_with_answer.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/012C_quiz-answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/012C_quiz-answer.html">
        Answer for Quiz 测验参考答案
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/013_draw_axis_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/013_draw_axis_with_answer.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/014_locate_points_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/014_locate_points_answer.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/015_how_many_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/015_how_many_with_answer.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/016_how_many_queues_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/016_how_many_queues_with_answer.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="../../../2021/Answer/content/017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="../../../2021/Answer/content/018_what_did_your_classmates_say.html">
        第18讲 朋友给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="../../../2021/Answer/content/019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/020_line_length_angle-Copy1.html">
+      <a class="reference internal" href="../../../2021/Answer/content/020_line_length_angle-Copy1.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/021_square-Copy1.html">
+      <a class="reference internal" href="../../../2021/Answer/content/021_square-Copy1.html">
        第21讲 正方形与平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/023_parallelogram_area.html">
+      <a class="reference internal" href="../../../2021/Answer/content/023_parallelogram_area.html">
        第23讲 平行四边形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/024_triangle.html">
+      <a class="reference internal" href="../../../2021/Answer/content/024_triangle.html">
        第24讲 三角形和它的面积
       </a>
      </li>
@@ -353,60 +364,65 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
    MTH100 2022
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Beginner/index.html">
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
      第一篇 初级
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/000_LectureTitles.html">
+      <a class="reference internal" href="000_LectureTitles.html">
        Course Plan 课程计划
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/001_hello_python.html">
+      <a class="reference internal" href="001_hello_python.html">
        第01讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/002_make_name_for_data.html">
+      <a class="reference internal" href="002_make_name_for_data.html">
        第02讲 给数据起名字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/003_communicate_with_computer.html">
+      <a class="reference internal" href="003_communicate_with_computer.html">
        第03讲 和计算机对话
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/004_guess_numbers.html">
+      <a class="reference internal" href="004_guess_numbers.html">
        第04讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/005_draw_basic_shapes.html">
+      <a class="reference internal" href="005_draw_basic_shapes.html">
        第05讲 绘制简单图形
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       第06讲 绘制正多边形（一)
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Answer/index.html">
+    <a class="reference internal" href="../../Answer/index.html">
      参考答案
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -416,28 +432,33 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/001_hello_python.html">
+      <a class="reference internal" href="../../Answer/content/001_hello_python.html">
        第01讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/002_make_name_for_data.html">
+      <a class="reference internal" href="../../Answer/content/002_make_name_for_data.html">
        第02讲 起个名字吧
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/003_communicate_with_computer.html">
+      <a class="reference internal" href="../../Answer/content/003_communicate_with_computer.html">
        第03讲 和计算机对话
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/004_guess_numbers.html">
+      <a class="reference internal" href="../../Answer/content/004_guess_numbers.html">
        第04讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/005_draw_basic_shapes_student_name.html">
+      <a class="reference internal" href="../../Answer/content/005_draw_basic_shapes_student_name.html">
        第05讲 绘制简单图形
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Answer/content/006_student_name_assignment.html">
+       第06讲 绘制正多边形（一)
       </a>
      </li>
     </ul>
@@ -445,7 +466,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../appendix/index.html">
+  <a class="reference internal" href="../../../appendix/index.html">
    附录
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -455,29 +476,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/000_intro_to_course.html">
+    <a class="reference internal" href="../../../appendix/content/000_intro_to_course.html">
      附录一 初级课程介绍
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/001_admission_notice.html">
+    <a class="reference internal" href="../../../appendix/content/001_admission_notice.html">
      附录二 第一期招生通知
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/010_install_jupyter_notebook_on_windows.html">
+    <a class="reference internal" href="../../../appendix/content/010_install_jupyter_notebook_on_windows.html">
      附录三 Windows操作系统下搭建Python运行环境
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/090_qianglib.html">
+    <a class="reference internal" href="../../../appendix/content/090_qianglib.html">
      附录四 qianglib.py的代码
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../Test/index.html">
+  <a class="reference internal" href="../../../Test/index.html">
    新功能测试
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -487,7 +508,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Test/content/markdown_test.html">
+    <a class="reference internal" href="../../../Test/content/markdown_test.html">
      MarkDown test Title
     </a>
    </li>
@@ -509,37 +530,37 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">切换导航</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/006_draw_regular_polygons.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+        <a class="dropdown-buttons" href="../../../_sources/2022/Beginner/content/006_draw_regular_polygons1.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -548,8 +569,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -557,12 +578,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> 内容
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Problem-问题">
@@ -597,13 +618,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#Solution1-方案1">
-     Solution1 方案1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#Solution2-方案2">
-     Solution2 方案2
+    <a class="reference internal nav-link" href="#Solution2*-方案2*">
+     Solution2* 方案2*
     </a>
    </li>
   </ul>
@@ -631,7 +647,79 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>第06讲 绘制正多边形（一)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 内容 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题">
+   Problem 问题
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Math-Background-数学背景">
+   Math Background 数学背景
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Prerequisites-预备知识">
+   Prerequisites 预备知识
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#如何使用颜色绘图">
+     如何使用颜色绘图
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#如何简化重复的代码">
+     如何简化重复的代码
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-编程求解">
+   Solution 编程求解
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#Solution2*-方案2*">
+     Solution2* 方案2*
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Summary-知识点小结">
+   Summary 知识点小结
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#CS-Tips-计算机小知识">
+   CS Tips 计算机小知识
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   
@@ -882,9 +970,9 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第06讲-绘制正多边形">
-<h1>第06讲 绘制正多边形<a class="headerlink" href="#第06讲-绘制正多边形" title="永久链接至标题">¶</a></h1>
-<p>Lecture06 Draw Regular Polygons</p>
+<div class="section" id="第06讲-绘制正多边形（一)">
+<h1>第06讲 绘制正多边形（一)<a class="headerlink" href="#第06讲-绘制正多边形（一)" title="永久链接至标题">¶</a></h1>
+<p>Lecture06 Draw Regular Polygons(Part 1)</p>
 <div class="section" id="Problem-问题">
 <h2>Problem 问题<a class="headerlink" href="#Problem-问题" title="永久链接至标题">¶</a></h2>
 <p>Use the methods in the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to draw step by step as follows: 使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>模块里的方法按步骤绘制：</p>
@@ -892,7 +980,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Open a window(draw area) with both width and height 600; 打开宽高均为600的绘图窗口；</p></li>
 <li><p>Reset to make the turtle at the center and heading right; 重置海龟使其位于绘图区中央并朝向右侧；</p></li>
 <li><p>Lift up the pen; 抬起绘图笔；</p></li>
-<li><p>Move turtle 200 right and 60 backward to its current position(center of the draw area), keep the turtle heading right; 将海龟移动至当前位置(绘图区中央）的右侧200和后方60的位置，保持海龟仍然朝向右侧；</p></li>
+<li><p>Move turtle 200 right and 60 backward to its current position(center of the draw area), keep the turtle heading right; 将海龟移动至当前位置(绘图区中央）的正右侧200和正后方60的位置，保持海龟仍然朝向右侧；</p></li>
 <li><p>Put down the pen, start to Draw; 放下绘图笔，准备绘图；</p></li>
 <li><p>Use <strong>red</strong> color, repeat <strong>3</strong> times: move forward 120, turn <strong>120</strong> degrees to left; 使用红色画笔，重复3次: 向前移动120后向左转120度；</p></li>
 <li><p>Use <strong>orange</strong> color, repeat <strong>4</strong> times: move forward 120, turn <strong>90</strong> degrees to left; 使用橙色画笔，重复4次: 向前移动120后向左转90度；</p></li>
@@ -905,7 +993,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Hide turtle. 隐藏海龟图标。</p></li>
 </ol>
 <p>Finally, you will be get a figure like the following:</p>
-<p><img alt="182a8fbd2e3d44d689020963b3d7803c" class="no-scaled-link" src="../../_images/L006_01_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="807450e785f44d4e99914f76ee7f187e" class="no-scaled-link" src="../../../_images/L006_01_regular_polygons.png" style="width: 500px;" /></p>
 <p>The figures drawn in turn are: regular triangle, regular quadrilateral (square), regular pentagon, regular hexagon, regular heptagon, regular octagon, regular nonagon, and regular decagon. 依次绘制出来的图形分别为：正三角形、正四边形（正方形）、正五边形、正六边形、正七边形、正八边形、正九边形、和正十边形。</p>
 <p>For each regular polygon, calculate the product of the number of sides and the angle of each turn. 对于每一个正多边形，计算边的数量和每一次转的角度的乘积。Take regular triangle as an example, the product is 3 * 120 = 360, where 3 is the number of sides(edges) and 120 is the degrees of each left turn。以正三角形为例，它的边数为3，每一次转120度，两者的乘积是3*120=360度。</p>
 </div>
@@ -914,13 +1002,6 @@ div.rendered_html tbody tr:hover {
 <ol class="arabic simple">
 <li><p>多边形(Polygon)是由有限个线段首尾相连形成的封闭(closed)的平面图形。这些线段称为多边形的边(side or edge)；两条相邻的边相交共有的点成为顶点(vertex, vertices pl.)，</p></li>
 <li><p>任何一个正三角形或边的数量大于3的正多边形的每一条边长(side)相等且每一个顶点(vertex)的内角相等；</p></li>
-<li><p>对于任意一个（正）多边形，其内角和（sum of interior angles）<code class="docutils literal notranslate"><span class="pre">total_angle</span></code>可以用下面的公式来计算：</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_side</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span> <span class="c1"># 其中，`num_side`表示的是这个（正）多边形的边的数量。</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="6">
-<li><p>正多边形，其外角和（sum of exterior angles）永远是360度。事实上对于任意一个凸（convex)多边形，即使不是正多边形，其外交和也总是360度。</p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
@@ -934,8 +1015,7 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
 <span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span>
-<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">reset</span><span class="p">()</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -947,32 +1027,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1">#</span>
-<span class="n">fd</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>彩虹色的名称分别为“red”,“orange”,“yellow”,“green”,“cyan”,“blue”,“purple”。</p>
-</div>
-<div class="section" id="如何简化重复的代码">
-<h3>如何简化重复的代码<a class="headerlink" href="#如何简化重复的代码" title="永久链接至标题">¶</a></h3>
-<p>以正三角形为例</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reset</span><span class="p">()</span>
-<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
 <span class="n">side</span> <span class="o">=</span> <span class="mi">120</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Shape1 Regular Triangle(3-gon)</span>
 <span class="n">degree</span> <span class="o">=</span> <span class="mi">120</span>
 <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
 <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
@@ -983,9 +1038,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<p>彩虹色的名称分别为”red”,“orange”,“yellow”,“green”,“cyan”,“blue”,“purple”。</p>
+</div>
+<div class="section" id="如何简化重复的代码">
+<h3>如何简化重复的代码<a class="headerlink" href="#如何简化重复的代码" title="永久链接至标题">¶</a></h3>
+<p>以正三角形为例</p>
 <p>上面的代码可以用下面的代码替换</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1012,18 +1072,18 @@ div.rendered_html tbody tr:hover {
 <li><p>Run the following code and describe how turtle is walking 运行下面的代码描述海龟的运行路线</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">left</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">setup</span>
-<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-<span class="n">reset</span><span class="p">()</span>
+<span></span><span class="n">reset</span><span class="p">()</span>
 <span class="n">ht</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">:</span>
     <span class="n">left</span><span class="p">(</span><span class="mf">7.2</span><span class="p">)</span>
     <span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">left</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 
 </pre></div>
 </div>
@@ -1033,7 +1093,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1041,28 +1101,20 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
 <span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># prepare a draw area with length 600px and width 400 px</span>
+<span class="c1"># prepare a draw area with length 600px and width 400 px</span>
 <span class="c1"># 准备一个窗口，宽度600像素，高度400像素</span>
 <span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">side</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">half_side</span> <span class="o">=</span> <span class="n">side</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># move to a specified place</span>
+<span class="n">side</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">half_side</span> <span class="o">=</span> <span class="n">side</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="n">reset</span><span class="p">()</span>                                  <span class="c1"># 重置海龟（位置和朝向）</span>
 <span class="n">pu</span><span class="p">()</span>                                     <span class="c1"># 抬起画笔</span>
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                                <span class="c1"># 右转90度</span>
@@ -1074,10 +1126,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Solution1-方案1">
-<h3>Solution1 方案1<a class="headerlink" href="#Solution1-方案1" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1093,7 +1143,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1108,7 +1158,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1123,7 +1173,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1138,7 +1188,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1153,7 +1203,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1168,7 +1218,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1183,7 +1233,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1198,7 +1248,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1206,11 +1256,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Solution2-方案2">
-<h3>Solution2 方案2<a class="headerlink" href="#Solution2-方案2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="Solution2*-方案2*">
+<h3>Solution2* 方案2*<a class="headerlink" href="#Solution2*-方案2*" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1227,7 +1276,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1255,8 +1304,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code>循环，语法格式，缩进；格式类似于<code class="docutils literal notranslate"><span class="pre">if</span></code>语句，有条件判断表达式，但没有对应的<code class="docutils literal notranslate"><span class="pre">else</span></code>部分；循环执行的代码部分称为循环体</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code>循环内部也可以有<code class="docutils literal notranslate"><span class="pre">while</span></code>循环；</p></li>
+<li><p>多余多次重复执行的代码可以使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环来表达。其语法格式，缩进；格式类似于<code class="docutils literal notranslate"><span class="pre">if</span></code>语句，有条件判断表达式，但没有对应的<code class="docutils literal notranslate"><span class="pre">else</span></code>部分；循环执行的代码部分称为循环体；</p></li>
 <li><p>循环语句必须在循环体内部设置一个终止（跳出）循环的条件，否则计算机一旦执行到循环体代码，就一直执行不会跳出；这种情况称为“死循环”；</p></li>
 </ol>
 </div>
@@ -1268,106 +1316,41 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>仿照本讲示例，绘制边长为50的正二十边形。海龟起始点同本讲示例；颜色任选。</p></li>
+<li><p>在不使用循环语句的条件下，按照要求一步一步完成本讲示例的编程，最终在绘图窗口里绘制出同样的正三、四、…、十边形。</p></li>
 </ol>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">half_side</span><span class="p">)</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
-<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">side</span><span class="p">,</span> <span class="n">n_sides_to_draw</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span>
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n_edges</span>
-<span class="n">n_sides_drawn</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n_sides_to_draw</span>             <span class="c1"># degrees to turn after each move</span>
-<span class="k">while</span> <span class="n">n_sides_drawn</span> <span class="o">&lt;</span> <span class="n">n_sides_to_draw</span><span class="p">:</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">n_sides_drawn</span> <span class="o">=</span> <span class="n">n_sides_drawn</span> <span class="o">+</span> <span class="mi">1</span>
+<span></span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-d04034e7f055&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span> pencolor<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;red&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> side<span class="ansi-blue-fg">,</span> n_sides_to_draw <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">50</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">20</span>
-<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg"> </span>degree <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">360</span><span class="ansi-blue-fg">/</span>n_edges
-<span class="ansi-green-intense-fg ansi-bold">     12</span> n_sides_drawn <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> degree <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">360</span><span class="ansi-blue-fg">/</span>n_sides_to_draw             <span class="ansi-red-fg"># degrees to turn after each move</span>
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for /: &#39;int&#39; and &#39;list&#39;
-</pre></div></div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>仿照本讲示例，绘制边长为10的正一百边形。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域<strong>左右</strong>居中，颜色任选。</p></li>
+<li><p>思考在绘制某一个正多边形的时候，为什么小海龟每次绘制的边的长度相同，每次转的度数也相同？如果改变海龟每次绘制的边长或者（和）改变每次转动的角度，那么还能绘制出正多边形吗？请用文字回答。</p></li>
 </ol>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">side</span><span class="p">,</span> <span class="n">n_sides_to_draw</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span>
-
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
-<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n_edges</span>
-<span class="n">n_sides_drawn</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n_sides_to_draw</span>             <span class="c1"># degrees to turn after each move</span>
-<span class="k">while</span> <span class="n">n_sides_drawn</span> <span class="o">&lt;</span> <span class="n">n_sides_to_draw</span><span class="p">:</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">n_sides_drawn</span> <span class="o">=</span> <span class="n">n_sides_drawn</span> <span class="o">+</span> <span class="mi">1</span>
+<span></span><span class="c1">#</span>
+<span class="c1">#</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-63c16e2d3223&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> pencolor<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;red&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg"> </span>degree <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">360</span><span class="ansi-blue-fg">/</span>n_edges
-<span class="ansi-green-intense-fg ansi-bold">     14</span> n_sides_drawn <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">0</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> degree <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">360</span><span class="ansi-blue-fg">/</span>n_sides_to_draw             <span class="ansi-red-fg"># degrees to turn after each move</span>
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for /: &#39;int&#39; and &#39;list&#39;
-</pre></div></div>
-</div>
-<ol class="arabic" start="3">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
-<ul class="simple">
-<li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心；</p></li>
-<li><p>三个正方形的边长依次为250，150，和50。</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
-</ul>
-<p><img alt="a74b354b6f4441e097914a2fc56476ae" class="no-scaled-link" src="../../_images/L005_01_squares3.png" style="width: 500px;" /></p>
-</li>
+<ol class="arabic simple" start="3">
+<li><p>仿照本讲示例，绘制边长为50的<strong>正二十边形</strong>。海龟起始点同本讲示例。颜色任选。</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1378,16 +1361,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<ol class="arabic" start="4">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>绘图库中已经学过的方法，在一个或多个代码单元格中编写任意行数的代码，绘制出按下面排列的一组(5个)正方形。具体要求：</p>
-<ul class="simple">
-<li><p>最中间的正方形位于画布（绘图区）的正中央；</p></li>
-<li><p>每一个正方形的边长为80；</p></li>
-<li><p>你的代码可以使用也可以不使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句；</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
-</ul>
-<p><img alt="0629d34b204a403088a940c2d113c3a4" class="no-scaled-link" src="../../_images/L006_e03_square_combinations.png" style="width: 500px;" /></p>
-</li>
+<ol class="arabic simple" start="4">
+<li><p>仿照本讲示例，绘制边长为10的<strong>正一百边形</strong>。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域<strong>左右</strong>居中，颜色任选。</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1397,70 +1372,6 @@ div.rendered_html tbody tr:hover {
 <span></span>
 </pre></div>
 </div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，使用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法，编程完成下面两小题:</p>
-<ul class="simple">
-<li><p>生成100个范围在1,100（包括1和100）的随机数，计算这100个随机数的平均数，并计算该平均数与50的差值。打印这个平均数和得到的差。</p></li>
-<li><p>生成10000个这样的随机数，计算平均值和平均值与50的差，打印出来。</p></li>
-</ul>
-</li>
-</ol>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">num</span><span class="p">,</span> <span class="n">sum_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">sum_num</span> <span class="o">+=</span> <span class="n">num</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">avg</span> <span class="o">=</span> <span class="n">sum_num</span> <span class="o">/</span> <span class="n">n</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">avg</span> <span class="o">-</span> <span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg: &quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="s2">&quot;diff to 50 is:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-avg:  50.43 diff to 50 is: 0.4299999999999997
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">num</span><span class="p">,</span> <span class="n">sum_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">sum_num</span> <span class="o">+=</span> <span class="n">num</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">avg</span> <span class="o">=</span> <span class="n">sum_num</span> <span class="o">/</span> <span class="n">n</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">avg</span> <span class="o">-</span> <span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg: &quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="s2">&quot;diff to 50 is:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-avg:  50.6685 diff to 50 is: 0.6685000000000016
-</pre></div></div>
 </div>
 </div>
 </div>
@@ -1468,32 +1379,42 @@ avg:  50.6685 diff to 50 is: 0.6685000000000016
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="005_draw_basic_shapes.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">第05讲 绘制简单图形</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../../Answer/index.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">参考答案</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ye Qiang<br/>
-        
-            &copy; <a href="../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      通过 Ye Qiang<br/>
+    
+        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>第04讲 猜数字 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,9 +23,9 @@
 
     
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -33,7 +33,7 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="索引" href="../../../genindex.html" />
@@ -42,7 +42,10 @@
     <link rel="next" title="第05讲 绘制简单图形" href="005_draw_basic_shapes_student_name.html" />
     <link rel="prev" title="第03讲 和计算机对话" href="003_communicate_with_computer.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -54,10 +57,16 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
@@ -65,8 +74,8 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -405,6 +414,11 @@
        第05讲 绘制简单图形
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Beginner/content/006_draw_regular_polygons1.html">
+       第06讲 绘制正多边形（一)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
@@ -440,6 +454,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="005_draw_basic_shapes_student_name.html">
        第05讲 绘制简单图形
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="006_student_name_assignment.html">
+       第06讲 绘制正多边形（一)
       </a>
      </li>
     </ul>
@@ -511,25 +530,25 @@
 
 
           
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
     <div class="topbar container-xl fixed-top">
     <div class="topbar-contents row">
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">切换导航</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -537,11 +556,11 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../../_sources/2022/Answer/content/004_guess_numbers.ipynb.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -550,8 +569,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -559,12 +578,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> 内容
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
@@ -579,7 +598,30 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>第04讲 猜数字</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> 内容 </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Assignments-作业">
+   Assignments 作业
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   
@@ -871,8 +913,8 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 I will calculate the average of 10 random integers from 1 to 100.
-The random numbers I chose are 5 55 40 15 34 13 73 57 39 and 66 .
-The average is  39.7 .
+The random numbers I chose are 24 40 87 32 76 80 60 68 30 and 83 .
+The average is  58.0 .
 </pre></div></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -911,7 +953,7 @@ The average is  39.7 .
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-0.9584558533976771
+0.3502611408956978
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -983,23 +1025,34 @@ is 0, the division cannot be performed”; otherwise, the original division oper
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-86a5538af1aa&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># modify the codes below 修改下面的代码</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;我是新版的整数除法运算小能手&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>first_input <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;请输入被除数(整数)：&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> second_input <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;请输入除数(整数)：&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> dividend <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>first_input<span class="ansi-blue-fg">)</span>            <span class="ansi-red-fg"># 被除数</span>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [5]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># modify the codes below 修改下面的代码</span>
+<span class="ansi-green-fg">      2</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">我是新版的整数除法运算小能手</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span> first_input <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">请输入被除数(整数)：</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">      4</span> second_input <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">input</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">请输入除数(整数)：</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">      5</span> dividend <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(first_input)            <span style="color: rgb(95,135,135)"># 被除数</span>
 
-<span class="ansi-green-fg">~/Documents/ElementaryMathPython/venv/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ansi-cyan-fg">raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    843</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    844</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_allow_stdin<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 845</span><span class="ansi-red-fg">             raise StdinNotImplementedError(
-</span><span class="ansi-green-intense-fg ansi-bold">    846</span>                 <span class="ansi-blue-fg">&#34;raw_input was called, but this frontend does not support input requests.&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    847</span>             )
+File <span class="ansi-green-intense-fg ansi-bold">d:\elementarymathpython\venv\lib\site-packages\ipykernel\kernelbase.py:1072</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-intense-fg ansi-bold">(self, prompt)</span>
+<span class="ansi-green-fg">   1065</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Forward raw_input to frontends</span>
+<span class="ansi-green-fg">   1066</span>
+<span class="ansi-green-fg">   1067</span> <span style="color: rgb(175,0,0)">Raises</span>
+<span class="ansi-green-fg">   1068</span> <span style="color: rgb(175,0,0)">------</span>
+<span class="ansi-green-fg">   1069</span> <span style="color: rgb(175,0,0)">StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="ansi-green-fg">   1070</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">   1071</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1072</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(
+<span class="ansi-green-fg">   1073</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">   1074</span>     )
+<span class="ansi-green-fg">   1075</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-fg">   1076</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-fg">   1077</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-fg">   1078</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-fg">   1079</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-fg">   1080</span> )
 
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<span class="ansi-red-intense-fg ansi-bold">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div></div>
 </div>
 <ol class="arabic" start="4">
@@ -1073,23 +1126,33 @@ is 0, the division cannot be performed”; otherwise, the original division oper
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-f17f05fc7ec5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># Write your code here 在这里写上你的代码</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>length <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;length:&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> width <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;width:&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> perimeter <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>length <span class="ansi-blue-fg">+</span> width<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">*</span> <span class="ansi-cyan-fg">2</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> area <span class="ansi-blue-fg">=</span> length <span class="ansi-blue-fg">*</span> width
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span style="color: rgb(95,135,135)"># Write your code here 在这里写上你的代码</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span> length <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(<span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">length:</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>)
+<span class="ansi-green-fg">      3</span> width <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(<span style="color: rgb(0,135,0)">input</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">width:</span><span style="color: rgb(175,0,0)">&#34;</span>))
+<span class="ansi-green-fg">      4</span> perimeter <span style="color: rgb(98,98,98)">=</span> (length <span style="color: rgb(98,98,98)">+</span> width) <span style="color: rgb(98,98,98)">*</span> <span style="color: rgb(98,98,98)">2</span>
 
-<span class="ansi-green-fg">~/Documents/ElementaryMathPython/venv/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ansi-cyan-fg">raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">    843</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    844</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>_allow_stdin<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 845</span><span class="ansi-red-fg">             raise StdinNotImplementedError(
-</span><span class="ansi-green-intense-fg ansi-bold">    846</span>                 <span class="ansi-blue-fg">&#34;raw_input was called, but this frontend does not support input requests.&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    847</span>             )
+File <span class="ansi-green-intense-fg ansi-bold">d:\elementarymathpython\venv\lib\site-packages\ipykernel\kernelbase.py:1072</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-intense-fg ansi-bold">(self, prompt)</span>
+<span class="ansi-green-fg">   1065</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Forward raw_input to frontends</span>
+<span class="ansi-green-fg">   1066</span>
+<span class="ansi-green-fg">   1067</span> <span style="color: rgb(175,0,0)">Raises</span>
+<span class="ansi-green-fg">   1068</span> <span style="color: rgb(175,0,0)">------</span>
+<span class="ansi-green-fg">   1069</span> <span style="color: rgb(175,0,0)">StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
+<span class="ansi-green-fg">   1070</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
+<span class="ansi-green-fg">   1071</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1072</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(
+<span class="ansi-green-fg">   1073</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">   1074</span>     )
+<span class="ansi-green-fg">   1075</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-fg">   1076</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-fg">   1077</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-fg">   1078</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-fg">   1079</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-fg">   1080</span> )
 
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<span class="ansi-red-intense-fg ansi-bold">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1108,34 +1171,42 @@ is 0, the division cannot be performed”; otherwise, the original division oper
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="003_communicate_with_computer.html" title="previous page">第03讲 和计算机对话</a>
-    <a class='right-next' id="next-link" href="005_draw_basic_shapes_student_name.html" title="next page">第05讲 绘制简单图形</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="003_communicate_with_computer.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">第03讲 和计算机对话</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="005_draw_basic_shapes_student_name.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">第05讲 绘制简单图形</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ye Qiang<br/>
-        
-            &copy; <a href="../../../copyright.html">Copyright</a> 2022, Ye Qiang.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      通过 Ye Qiang<br/>
+    
+        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
