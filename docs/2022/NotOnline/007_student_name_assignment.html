@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第06讲 绘制正多边形 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第07讲 绘制正多边形（二) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -403,8 +403,8 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/004_guess_numbers.html">
-       第04讲 猜数字
+      <a class="reference internal" href="../Beginner/content/004_guess_numbers1.html">
+       第04讲 猜数字（一）
       </a>
      </li>
      <li class="toctree-l3">
@@ -553,7 +553,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/006_assignment_student_name.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/007_student_name_assignment.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -598,7 +598,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第06讲 绘制正多边形</h1>
+                <h1>第07讲 绘制正多边形（二)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -870,52 +870,77 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第06讲-绘制正多边形">
-<h1>第06讲 绘制正多边形<a class="headerlink" href="#第06讲-绘制正多边形" title="永久链接至标题">¶</a></h1>
-<p>Lecture06 Draw Regular Polygons</p>
-<p><strong>-/100</strong> Marked by</p>
-<ol class="arabic simple">
-<li><p>Note1</p></li>
-<li><p>Note2</p></li>
-</ol>
+<div class="section" id="第07讲-绘制正多边形（二)">
+<h1>第07讲 绘制正多边形（二)<a class="headerlink" href="#第07讲-绘制正多边形（二)" title="永久链接至标题">¶</a></h1>
+<p>Lecture07 Draw Regular Polygons（Part 2)</p>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<ol class="arabic simple">
-<li><p>仿照本讲示例，绘制边长为50的正二十边形。海龟起始点同本讲示例；颜色任选。</p></li>
-</ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
+<span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span><span class="p">,</span> <span class="n">pensize</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>仿照本讲示例，绘制边长为10的正一百边形。通过修改刚开始绘图时海龟的位置，使得绘制的正一百边形在绘图区域<strong>左右</strong>居中，颜色任选。</p></li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic" start="3">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
+<ol class="arabic">
+<li><p>使用已经教学过的知识，绘制如下图类似的正八边形。具体要求如下：</p>
 <ul class="simple">
-<li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心；</p></li>
-<li><p>三个正方形的边长依次为250，150，和50。</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
+<li><p>它一个边为120的正八边形，<strong>左右</strong>居中位于绘图区，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最下方不是一条边而是一个顶点</p></li>
+<li><p>正八边形每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与八边形边长相等的线段</p></li>
+<li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="355da15fce0649459488d22054605986" class="no-scaled-link" src="../../_images/L005_01_squares4.png" style="width: 500px;" /></p>
+<p><img alt="90236ff9b083433dafbb78d20523c512" class="no-scaled-link" src="../../_images/L007_assign01_regular_polygons.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>使用已经教学过的知识，编程绘制出下图所示的图形。具体要求如下：</p>
+<ul class="simple">
+<li><p>它一个边为120的正六边形，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最下方不是一条边而是一个顶点</p></li>
+<li><p>正六边形中距离最远的3对顶点是用颜色为红色的宽为1的线条连接起来的</p></li>
+<li><p>给每一行代码添加注释</p></li>
+</ul>
+<p><img alt="25809f471a7b42f3967b81447c429cc1" class="no-scaled-link" src="../../_images/L007_assign02_regular_polygons.png" style="width: 500px;" /></p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>使用已经教学过的知识，编程绘制出下图所示的图形。具体要求如下：</p>
+<ul class="simple">
+<li><p>它一个边为120的正五边形，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最<strong>上方</strong>是正五边形的一个顶点，且这个顶点距离绘图区中心（海龟一开始的位置）的距离等于正五边形的边长；</p></li>
+<li><p>每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与边长相等的线段</p></li>
+<li><p>给每一行代码添加注释</p></li>
+</ul>
+<p><img alt="811a21fab9c94b109646ec21861c905b" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons.png" style="width: 500px;" /></p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -924,18 +949,20 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <ol class="arabic" start="4">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>绘图库中已经学过的方法，在一个或多个代码单元格中编写任意行数的代码，绘制出按下面排列的一组(5个)正方形。具体要求：</p>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
 <ul class="simple">
-<li><p>最中间的正方形位于画布（绘图区）的正中央；</p></li>
-<li><p>每一个正方形的边长为80；</p></li>
-<li><p>你的代码可以使用也可以不使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句；</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
+<li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心（包括左右和上下都是居中）</p></li>
+<li><p>三个正方形的边长依次为250，150，和50</p></li>
+<li><p>三个正方形的线宽一次为3, 2, 1</p></li>
+<li><p>可以只使用一个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环来实现，也可以使用两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环嵌套来实现</p></li>
+<li><p>使用了两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环<strong>并且</strong>代码总行数控制在35行以内（import, setup所在的行不计入总行数），结果正确可以获得额外的10分加分</p></li>
+<li><p>给每一行代码添加你的注释</p></li>
 </ul>
-<p><img alt="6f6e67fce4b4414fb08581dda265856d" class="no-scaled-link" src="../../_images/L006_e03_square_combinations.png" style="width: 500px;" /></p>
+<p><img alt="5ea418486c9540cfad52d78dbad6daee" class="no-scaled-link" src="../../_images/L007_assign04_regular_polygons.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -943,14 +970,6 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>（<strong>可选做</strong>）使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，使用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法，编程完成下面两小题:</p>
-<ul class="simple">
-<li><p>生成100个范围在1,100（包括1和100）的随机数，计算这100个随机数的平均数，并计算该平均数与50的差值。打印这个平均数和得到的差。</p></li>
-<li><p>生成10000个这样的随机数，计算平均值和平均值与50的差，打印出来。</p></li>
-</ul>
-</li>
-</ol>
 </div>
 </div>
 

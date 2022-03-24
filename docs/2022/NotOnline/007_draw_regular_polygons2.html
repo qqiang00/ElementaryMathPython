@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第06讲 绘制正多边形（二) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第07讲 绘制正多边形（二) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -403,8 +403,8 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/004_guess_numbers.html">
-       第04讲 猜数字
+      <a class="reference internal" href="../Beginner/content/004_guess_numbers1.html">
+       第04讲 猜数字（一）
       </a>
      </li>
      <li class="toctree-l3">
@@ -597,6 +597,35 @@
   <a class="reference internal nav-link" href="#Prerequisites-预备知识">
    Prerequisites 预备知识
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-pensize-method-to-specify-line-size(width)-使用pensize方法确定线的尺寸（宽度）">
+     use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pensize
+      </span>
+     </code>
+     method to specify line size(width) 使用
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pensize
+      </span>
+     </code>
+     方法确定线的尺寸（宽度）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculation-of-dgrees-for-each-turn-每一次转角度数的计算">
+     calculation of dgrees for each turn 每一次转角度数的计算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-connection-between-line-size-and-the-side-to-draw-在要绘制的边和线宽之间建立联系">
+     build connection between line size and the side to draw 在要绘制的边和线宽之间建立联系
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Solution-编程求解">
@@ -628,7 +657,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第06讲 绘制正多边形（二)</h1>
+                <h1>第07讲 绘制正多边形（二)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -652,6 +681,35 @@
   <a class="reference internal nav-link" href="#Prerequisites-预备知识">
    Prerequisites 预备知识
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-pensize-method-to-specify-line-size(width)-使用pensize方法确定线的尺寸（宽度）">
+     use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pensize
+      </span>
+     </code>
+     method to specify line size(width) 使用
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pensize
+      </span>
+     </code>
+     方法确定线的尺寸（宽度）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculation-of-dgrees-for-each-turn-每一次转角度数的计算">
+     calculation of dgrees for each turn 每一次转角度数的计算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-connection-between-line-size-and-the-side-to-draw-在要绘制的边和线宽之间建立联系">
+     build connection between line size and the side to draw 在要绘制的边和线宽之间建立联系
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Solution-编程求解">
@@ -930,42 +988,48 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第06讲-绘制正多边形（二)">
-<h1>第06讲 绘制正多边形（二)<a class="headerlink" href="#第06讲-绘制正多边形（二)" title="永久链接至标题">¶</a></h1>
-<p>Lecture06 Draw Regular Polygons（Part 2)</p>
+<div class="section" id="第07讲-绘制正多边形（二)">
+<h1>第07讲 绘制正多边形（二)<a class="headerlink" href="#第07讲-绘制正多边形（二)" title="永久链接至标题">¶</a></h1>
+<p>Lecture07 Draw Regular Polygons（Part 2)</p>
 <div class="section" id="Problem-问题">
 <h2>Problem 问题<a class="headerlink" href="#Problem-问题" title="永久链接至标题">¶</a></h2>
-<p>Use the methods in the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to draw step by step as follows: 使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>模块里的方法按步骤绘制：</p>
+<p>Draw and answer questions 绘图并回答问题</p>
+<p><strong>Draw</strong> a modified regular hextagon(6 sides) using methods in module <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. Here are the requirements: 使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>模块里的方法按要求绘制一个边长为160的正六边形，并对其做一特定的修饰。具体要求如下： 1. Draw area should be 600 pixels for both heigh and width; 绘图区的宽高均为600； 2. The regular hextagon should be in centered left and right in the draw area; 正六边形应该位于绘图区的水平正中； 3. Side length of the hextagon is 160 and line color is “green”;
+六边形每边长为160，颜色为绿色； 4. Counterclockwise from the bottom line, the line size for each side is 1, 2, 3, 4, 5, 6, respectively; 从最低边逆时针算起，每条边的尺寸（线宽）为分别为1，2，3，4，5，6； 4. Extend each side 40 pixel as the figure shows; 正六边形的每一条边绘制完后，需如图所示向一侧延伸40pixel长；</p>
+<p><img alt="149428fbb49043ddb2b2024a728af32a" class="no-scaled-link" src="../../_images/L007_01_regular_polygons.png" style="width: 500px;" /></p>
+<p><strong>Answer</strong> the following questions: 回答下列问题： 1. How many degrees did the turle turn during the entire process of drawing the regular hexagon with the code you wrote? 小海龟在用你编写的代码绘制正六边形的整个过程中一共转了多少度？ 2. To complete the drawing of a regular hexagon, what is the smallest number of degree that a turtle needs to turn? 要完成一个正六边形的绘制，小海龟至少需要一共转多少度？ 3. The 6 interior angles of a regular hexagon are all equal. What is it? What is the sum of
+all the interior angles of a regular hexagon? 正六边形6个内角都相等，这个度数是多少？正六边形的所有内角加起来的和是多少度？</p>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
+<li><p>直线或线段可以认为是180度的角；</p></li>
 <li><p>对于任意一个（正）多边形，其内角和（sum of interior angles）<code class="docutils literal notranslate"><span class="pre">total_angle</span></code>可以用下面的公式来计算：</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">num_side</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span> <span class="c1"># 其中，`num_side`表示的是这个（正）多边形的边的数量。</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>正多边形，其外角和（sum of exterior angles）永远是360度。事实上对于任意一个凸（convex)多边形，即使不是正多边形，其外交和也总是360度。</p></li>
+<li><p>正多边形，其外角和（sum of exterior angles）永远是360度。事实上对于任意一个凸（convex)多边形，即使不是正多边形，其外角和也总是360度。</p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
 <span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
-<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span>
-<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span><span class="p">,</span> <span class="n">pensize</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>彩虹色的名称分别为”red”,“orange”,“yellow”,“green”,“cyan”,“blue”,“purple”。</p>
-<p><strong>Exercise</strong> 1. use <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to draw a regular hexagon(6-gon) 使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环化一个正六边形</p>
+<div class="section" id="use-pensize-method-to-specify-line-size(width)-使用pensize方法确定线的尺寸（宽度）">
+<h3>use <code class="docutils literal notranslate"><span class="pre">pensize</span></code> method to specify line size(width) 使用<code class="docutils literal notranslate"><span class="pre">pensize</span></code>方法确定线的尺寸（宽度）<a class="headerlink" href="#use-pensize-method-to-specify-line-size(width)-使用pensize方法确定线的尺寸（宽度）" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -975,127 +1039,158 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Run the following code and describe how turtle is walking 运行下面的代码描述海龟的运行路线</p></li>
-</ol>
-<ol class="arabic simple" start="3">
-<li><p>初步理解<code class="docutils literal notranslate"><span class="pre">if</span></code>和<code class="docutils literal notranslate"><span class="pre">while</span></code>的区别 Understand the difference between <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
-</ol>
+</div>
+<div class="section" id="calculation-of-dgrees-for-each-turn-每一次转角度数的计算">
+<h3>calculation of dgrees for each turn 每一次转角度数的计算<a class="headerlink" href="#calculation-of-dgrees-for-each-turn-每一次转角度数的计算" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">half_side</span> <span class="o">=</span> <span class="n">side</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">bk</span><span class="p">(</span><span class="n">half_side</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
+<span></span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">st</span><span class="p">()</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 已经画了几条边</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>                <span class="c1"># 几边形</span>
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">40</span>          <span class="c1"># 对于九边形来说</span>
-<span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>            <span class="c1"># 只要 i&lt;n（没画完)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>         <span class="c1">#   前进一小步</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>     <span class="c1">#   转个左弯</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>        <span class="c1">#   i需要增加一下表示又画了一条边</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out of if,从if里面出来了&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-out of if,从if里面出来了
-</pre></div></div>
-</div>
+<div class="section" id="build-connection-between-line-size-and-the-side-to-draw-在要绘制的边和线宽之间建立联系">
+<h3>build connection between line size and the side to draw 在要绘制的边和线宽之间建立联系<a class="headerlink" href="#build-connection-between-line-size-and-the-side-to-draw-在要绘制的边和线宽之间建立联系" title="永久链接至标题">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">side</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">half_side</span> <span class="o">=</span> <span class="n">side</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">bk</span><span class="p">(</span><span class="n">half_side</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
+<span></span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">st</span><span class="p">()</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># 已经画了几条边</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>                <span class="c1"># 几边形</span>
-<span class="n">degree</span> <span class="o">=</span> <span class="mi">40</span>          <span class="c1"># 对于九边形来说</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>         <span class="c1"># 只要 i&lt;n（没画完)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>         <span class="c1">#   前进一小步</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>     <span class="c1">#   转个左弯</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>        <span class="c1">#   i需要增加一下表示又画了一条边</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;out of while,从while里面出来了&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-out of while,从while里面出来了
-</pre></div></div>
 </div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
+<span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span><span class="p">,</span> <span class="n">pensize</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>                               <span class="c1"># 重置海龟位于中心，朝向正右方</span>
+<span class="n">pu</span><span class="p">()</span>                                  <span class="c1"># 抬起画笔</span>
+<span class="n">side_length</span> <span class="o">=</span> <span class="mi">160</span>                     <span class="c1"># 设定边长</span>
+<span class="n">ext_length</span> <span class="o">=</span> <span class="mi">40</span>                       <span class="c1"># 设定额外伸出的长度</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                             <span class="c1"># 右转海龟（朝向正下方）</span>
+<span class="n">fd</span><span class="p">(</span><span class="mi">130</span><span class="p">)</span>                               <span class="c1"># 前进130像素</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                              <span class="c1"># 左转海龟（朝向正右方）</span>
+<span class="n">bk</span><span class="p">(</span><span class="n">side_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                     <span class="c1"># 后退边长的一半（向左）</span>
+<span class="n">pd</span><span class="p">()</span>                                  <span class="c1"># 放下画笔准备画图</span>
+
+<span class="n">edge_drawn</span><span class="p">,</span> <span class="n">edge_total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span>         <span class="c1"># 设定已经绘制完成的边的数量和总的边的数量</span>
+<span class="n">degree</span> <span class="o">=</span> <span class="mi">360</span> <span class="o">/</span> <span class="n">edge_total</span>             <span class="c1"># 设定每一次要转的角度</span>
+<span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>                     <span class="c1"># 设定画笔的颜色</span>
+<span class="n">line_width</span> <span class="o">=</span> <span class="mi">1</span>                        <span class="c1"># 设定画线的宽度</span>
+<span class="k">while</span> <span class="n">edge_drawn</span> <span class="o">&lt;</span> <span class="n">edge_total</span><span class="p">:</span>        <span class="c1"># 根据条件判断是否进入循环</span>
+    <span class="n">line_width</span> <span class="o">=</span> <span class="n">edge_drawn</span> <span class="o">+</span> <span class="mi">1</span>       <span class="c1"># 设定当前应该使用的线宽</span>
+    <span class="n">pensize</span><span class="p">(</span><span class="n">line_width</span><span class="p">)</span>               <span class="c1"># 选用当前的线宽来绘图</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span> <span class="o">+</span> <span class="n">ext_length</span><span class="p">)</span>      <span class="c1"># 前进边长加额外长度</span>
+    <span class="n">bk</span><span class="p">(</span><span class="n">ext_length</span><span class="p">)</span>                    <span class="c1"># 后退额外长度</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>                      <span class="c1"># 左转海龟degree表示的度数</span>
+    <span class="n">edge_drawn</span> <span class="o">+=</span> <span class="mi">1</span>                   <span class="c1"># 更新已经完成绘制的变数，表示已经完成一条边和额外线段的绘制</span>
+
+<span class="n">ht</span><span class="p">()</span>                                  <span class="c1"># 当离开循环时隐藏海龟</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>理解<code class="docutils literal notranslate"><span class="pre">if</span></code>和<code class="docutils literal notranslate"><span class="pre">while</span></code>代码块在执行流程上的相同点和不同点；</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code>循环内部也可以有<code class="docutils literal notranslate"><span class="pre">while</span></code>循环；</p></li>
-<li><p>控制循环的条件语句中使用到的变量可以发挥重要作用</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pensize</span></code>方法用于确定绘画线条的宽度</p></li>
+<li><p>参与控制循环条件的变量可以在循环体内发挥其它重要的作用</p></li>
 </ol>
 </div>
 <div class="section" id="CS-Tips-计算机小知识">
 <h2>CS Tips 计算机小知识<a class="headerlink" href="#CS-Tips-计算机小知识" title="永久链接至标题">¶</a></h2>
+<p>在通过计算机技术绘制斜线的时候，有时候线段并不是很平滑，显现出一些类似毛刺或锯子的齿一样的形态，我们称这样的线条有“锯齿”。锯齿的形成与计算机绘图硬件有关。可以通过提高显示设备的分辨率和其它一些技术来减轻锯齿发生的程度。</p>
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
+<span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span><span class="p">,</span> <span class="n">pensize</span>
+<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <ol class="arabic">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
+<li><p>使用已经教学过的知识，绘制如下图类似的正八边形。具体要求如下：</p>
 <ul class="simple">
-<li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心；</p></li>
-<li><p>三个正方形的边长依次为250，150，和50。</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
+<li><p>它一个边为120的正八边形，<strong>左右</strong>居中位于绘图区，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最下方不是一条边而是一个顶点</p></li>
+<li><p>正八边形每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与八边形边长相等的线段</p></li>
+<li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="adf86cee877b42f28a6532b83d859403" class="no-scaled-link" src="../../_images/L005_01_squares4.png" style="width: 500px;" /></p>
+<p><img alt="b8213332410f4b649b159f43c6693482" class="no-scaled-link" src="2022/NotOnline/figures/L007_04_regular_polygons.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>使用已经教学过的知识，编程绘制出下图所示的图形。具体要求如下：</p>
+<ul class="simple">
+<li><p>它一个边为120的正六边形，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最下方不是一条边而是一个顶点</p></li>
+<li><p>正六边形中距离最远的3对顶点是用颜色为红色的宽为1的线条连接起来的</p></li>
+<li><p>给每一行代码添加注释</p></li>
+</ul>
+<p><img alt="88dbc63a45ca46f9ab451b80273da7c0" class="no-scaled-link" src="2022/NotOnline/figures/L007_02_regular_polygons.png" style="width: 500px;" /></p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="2">
+<li><p>使用已经教学过的知识，编程绘制出下图所示的图形。具体要求如下：</p>
+<ul class="simple">
+<li><p>它一个边为120的正五边形，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
+<li><p>它最<strong>上方</strong>是正五边形的一个顶点，且这个顶点距离绘图区中心（海龟一开始的位置）的距离等于正五边形的边长；</p></li>
+<li><p>每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与边长相等的线段</p></li>
+<li><p>给每一行代码添加注释</p></li>
+</ul>
+<p><img alt="385aad7ec69544aa9131baac65befc4e" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons.png" style="width: 500px;" /></p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1104,70 +1199,24 @@ out of while,从while里面出来了
 </div>
 </div>
 <ol class="arabic" start="4">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">turtle</span></code>绘图库中已经学过的方法，在一个或多个代码单元格中编写任意行数的代码，绘制出按下面排列的一组(5个)正方形。具体要求：</p>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
 <ul class="simple">
-<li><p>最中间的正方形位于画布（绘图区）的正中央；</p></li>
-<li><p>每一个正方形的边长为80；</p></li>
-<li><p>你的代码可以使用也可以不使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句；</p></li>
-<li><p>给每一行代码添加注释，解释其作用。</p></li>
+<li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心（包括左右和上下都是居中）</p></li>
+<li><p>三个正方形的边长依次为250，150，和50</p></li>
+<li><p>三个正方形的线宽一次为3, 2, 1</p></li>
+<li><p>可以只使用一个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环来实现，也可以使用两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环嵌套来实现</p></li>
+<li><p>使用了两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环<strong>并且</strong>代码总行数控制在35行以内（import, setup所在的行不计入总行数），结果正确可以获得额外的10分加分</p></li>
+<li><p>给每一行代码添加你的注释</p></li>
 </ul>
-<p><img alt="eca52545022d43a681aac52b27d67f0c" class="no-scaled-link" src="../../_images/L006_e03_square_combinations.png" style="width: 500px;" /></p>
+<p><img alt="438b9641c97b4c64a02e77acceb101bb" class="no-scaled-link" src="../../_images/L007_assign04_regular_polygons.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，使用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法，编程完成下面两小题:</p>
-<ul class="simple">
-<li><p>生成100个范围在1,100（包括1和100）的随机数，计算这100个随机数的平均数，并计算该平均数与50的差值。打印这个平均数和得到的差。</p></li>
-<li><p>生成10000个这样的随机数，计算平均值和平均值与50的差，打印出来。</p></li>
-</ul>
-</li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">num</span><span class="p">,</span> <span class="n">sum_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">sum_num</span> <span class="o">+=</span> <span class="n">num</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">avg</span> <span class="o">=</span> <span class="n">sum_num</span> <span class="o">/</span> <span class="n">n</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">avg</span> <span class="o">-</span> <span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg: &quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="s2">&quot;diff to 50 is:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">num</span><span class="p">,</span> <span class="n">sum_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">sum_num</span> <span class="o">+=</span> <span class="n">num</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">avg</span> <span class="o">=</span> <span class="n">sum_num</span> <span class="o">/</span> <span class="n">n</span>
-<span class="n">diff</span> <span class="o">=</span> <span class="n">avg</span> <span class="o">-</span> <span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg: &quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span> <span class="s2">&quot;diff to 50 is:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
