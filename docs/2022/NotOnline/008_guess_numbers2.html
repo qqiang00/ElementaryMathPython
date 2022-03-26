@@ -609,13 +609,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#1.-如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系">
-     1. 如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系
+    <a class="reference internal nav-link" href="#1.-条件语句和循环语句的嵌套使用">
+     1. 条件语句和循环语句的嵌套使用
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#2.-如何根据不同条件让计算机执行不同的程序代码">
-     2. 如何根据不同条件让计算机执行不同的程序代码
+    <a class="reference internal nav-link" href="#2.-break语句提前终止循环">
+     2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     语句提前终止循环
     </a>
    </li>
   </ul>
@@ -676,13 +682,19 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#1.-如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系">
-     1. 如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系
+    <a class="reference internal nav-link" href="#1.-条件语句和循环语句的嵌套使用">
+     1. 条件语句和循环语句的嵌套使用
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#2.-如何根据不同条件让计算机执行不同的程序代码">
-     2. 如何根据不同条件让计算机执行不同的程序代码
+    <a class="reference internal nav-link" href="#2.-break语句提前终止循环">
+     2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       break
+      </span>
+     </code>
+     语句提前终止循环
     </a>
    </li>
   </ul>
@@ -971,176 +983,44 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>Write a program to play a number guessing game with the computer. Here is how the game works: 编写一个程序和计算机玩一个猜数字的游戏。具体流程如下：</p>
 <ol class="arabic simple">
-<li><p>Let the computer <strong>randomly</strong> generate an integer in the range of 0-9 (both included), this number is known only by the computer itself; 让计算机<strong>随机</strong>生成一个范围在0-9之间的整数（包括这两个整数），这个数字只有计算机自己知道；</p></li>
-<li><p>As the person who write and run this program, you try to guess what the number is and tell the computer the number by input from keyboard;作为编写并运行这个程序的你尝试着猜一猜这个数字是什么，把你猜的数字通过键盘输入告诉计算机；</p></li>
-<li><p>After the computer receives your input, it compares it with the number it generates. If two values are equal, the computer outputs: “Congratulations, you are right!”; If two values are not equal, you lose the game, and the computer outputs: “Sorry, you failed to make it out.” 计算机接收到你的输入后，把它和自己生成的数进行比较，如果一样，计算机输出：“恭喜你，你猜对了!”；如果不一样，计算机输出：“真可惜，你没有猜对。”</p></li>
+<li><p>let the computer <strong>randomly</strong> generate an integer in the range of 0-9 (both included), this number is known only by the computer itself; 让计算机<strong>随机</strong>生成一个范围在0-9之间的整数（包括这两个整数），这个数字只有计算机自己知道；</p></li>
+<li><p>as the person who write and run this program, you try to guess what the number is and tell the computer the number by input from keyboard;作为编写并运行这个程序的你尝试着猜一猜这个数字是什么，把你猜的数字通过键盘输入告诉计算机；</p></li>
+<li><p>when the computer receives your input, it compares it with the number it generates. If two values are equal, the computer outputs: “Congratulations, you are right!”, and the program ends; 计算机接收到你的输入后，把它和自己生成的数进行比较，如果一样，计算机输出：“恭喜你，你猜对了!”，程序运行结束；</p></li>
+<li><p>If two values are not equal, the computer will let you try again and again until you hit the number; 如果两个数不一样，计算机会让你反复继续尝试直到你猜中那个数字；</p></li>
+<li><p>When you did hit the number, and the computer asks you to continue to guess, you can also choose not to play. At this time, you only need to input one of the following codes: “I don’t want to play anymore”, “I quit”, “My Mom called me home for dinner”, “Bye”, “bye”. When the computer receives it, it outputs “Unfortunately, you didn’t guess it, let’s play next time.” on the screen, and then the program
+ends；当你没猜中，计算机让你继续猜的时候，你也可以选择不玩了，此时你只需要在输入数字的输入框内输入任意一条下面的信息：“不玩了”、“不猜了”、“我妈喊我回家吃饭了”、“Bye”、“bye”。当计算机接收到你这样的信息后，在屏幕上输出”很遗憾，你没有猜出来，下次再玩吧”，然后程序运行结束。</p></li>
 </ol>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li><p>比较大小，比较运算符: <span class="math notranslate nohighlight">\(\gt\)</span>, <span class="math notranslate nohighlight">\(\lt\)</span>, <span class="math notranslate nohighlight">\(=\)</span>, <span class="math notranslate nohighlight">\(\ge\)</span>, <span class="math notranslate nohighlight">\(\le\)</span></p></li>
-<li><p>平均数的概念</p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
-<div class="section" id="1.-如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系">
-<h3>1. 如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系<a class="headerlink" href="#1.-如何让计算机生成一个在一定范围内的随机数，模块（仓库）的概念，模块和方法（命令）的关系" title="永久链接至标题">¶</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">variable_a</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-2-3f13b4e447b4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>variable_a
-
-<span class="ansi-red-fg">NameError</span>: name &#39;variable_a&#39; is not defined
-</pre></div></div>
-</div>
-<p>一对圆括号<code class="docutils literal notranslate"><span class="pre">()</span></code>前面的名字一般表示的是一个方法名。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">randint</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-2e7906960da7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>randint<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;randint&#39; is not defined
-</pre></div></div>
-</div>
-<p>为什么我们没有告诉计算机存在一个<code class="docutils literal notranslate"><span class="pre">print</span></code>的方法，但是我们可以直接使用这个方法？</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`print`方法没有告诉过计算机，但是计算机就允许我使用它向屏幕输出信息。&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;这一定是计算机造就准备好的方法了。`input`方法也一样。&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-`print`方法没有告诉过计算机，但是计算机就允许我使用它向屏幕输出信息。
-这一定是计算机造就准备好的方法了。`input`方法也一样。
-</pre></div></div>
-</div>
-<p>是否存在一个生成随机整数的方法可以直接使用呢？例如：<code class="docutils literal notranslate"><span class="pre">give_me_a_number_between_0_and_9</span></code></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;`give_me_a_number_between_0_and_9`不是一个计算机认识的方法。&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;它不能生成一个范围在0-9之间的随机数。&quot;</span><span class="p">)</span>
-<span class="n">give_me_a_number_between_0_and_9</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<p>但是有一个你不认识的小哥哥，自己发明了这样一个方法，可以实现生成一定范围的随机数的功能。</p>
-<p>并且这个小哥哥把这个方法存放在一个单独的仓库里，只是你现在正在使用的计算机不知道而已。</p>
-<p>小哥哥告诉你这个方法的名字叫<code class="docutils literal notranslate"><span class="pre">randint</span></code>，它被存放在一个名叫<code class="docutils literal notranslate"><span class="pre">random</span></code>的仓库里。仓库里还存放着其它一些有趣的方法。</p>
-<p>如何让你正在使用的计算机能够使用<code class="docutils literal notranslate"><span class="pre">random</span></code>仓库里的<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法呢？</p>
-<p>运行下面这句话相当于让计算机去<code class="docutils literal notranslate"><span class="pre">random</span></code>仓库找<code class="docutils literal notranslate"><span class="pre">randint</span></code>这个方法，并且学会这个方法，供你使用。</p>
-<p>如果执行这句代码没有发生错误，那么代表着在接下来的和计算机的对话中就可以使用<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法了。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-</pre></div>
-</div>
-</div>
-<p>下面这段代码执行时会报错，提示不存在一个名叫<code class="docutils literal notranslate"><span class="pre">random2</span></code>的模块（仓库）。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random2</span> <span class="kn">import</span> <span class="n">randint</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-83e1eae1b338&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> random2 <span class="ansi-green-fg">import</span> randint
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;random2&#39;
-</pre></div></div>
-</div>
-<p>下面这段代码执行时也会报错，它提示在名称为random2的模块（仓库）找不到名字为<code class="docutils literal notranslate"><span class="pre">randomint</span></code>的方法。</p>
+<div class="section" id="1.-条件语句和循环语句的嵌套使用">
+<h3>1. 条件语句和循环语句的嵌套使用<a class="headerlink" href="#1.-条件语句和循环语句的嵌套使用" title="永久链接至标题">¶</a></h3>
+<p>假设我们来模拟一周内思思小朋友对吃早饭的感受。在某一个星期的每一天，思思的妈妈给思思准备的早餐都是”甜甜圈加鸡蛋”。思思很喜欢吃这份早餐，每次都会说一句”谢谢妈妈，我喜欢甜甜圈加鸡蛋”。</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randomint</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-597b3c9c70ab&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> random <span class="ansi-green-fg">import</span> randomint
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_day_of_week</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;模拟开始&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">day</span> <span class="o">&lt;=</span> <span class="n">n_day_of_week</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;== 第</span><span class="si">{}</span><span class="s2">天 ==&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：妈妈，今天早饭吃什么？&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;妈妈：是你最爱吃的甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                                <span class="c1"># 睡2秒钟表示这一天过去了，第二天即将开始</span>
+    <span class="n">day</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="ansi-red-fg">ImportError</span>: cannot import name &#39;randomint&#39; from &#39;random&#39; (/usr/lib/python3.8/random.py)
-</pre></div></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">randint</span></code>方法可以随机生成一定范围内的整数，但是如何告诉它这个范围呢？可以在调用这个方法时在它的括号内依次写上0和9，用逗号隔开。像下面这样：</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">num</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;在第</span><span class="si">{}</span><span class="s2">天，模拟结束&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1149,199 +1029,218 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-9
-</pre></div></div>
-</div>
-<p>尝试重复多次运行上面这行代码，观察每一次运行代码给出的数字是否一样，0和9有没有出现过？有没有出现过不在0-9范围内的整数呢？</p>
-<p>改变<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法后面圆括号内两个数的大小，生成的随机数的范围也会发生变化。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">num2</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-10
-</pre></div></div>
-</div>
-<p>如果这两个相同，那么生成的随机数就不再随机了，而是确定的这个数。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">num3</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-100
-</pre></div></div>
-</div>
-<p>如果让圆括号内左边的数比右边的数大，也无法生成出随机数，因为找不到一个数比9大的同时又比0小。可以看出，圆括号内的数字的数序时有讲究的。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">num4</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">num4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-31-175c639ec894&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>num4 <span class="ansi-blue-fg">=</span> randint<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">9</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>num4<span class="ansi-blue-fg">)</span>
+模拟开始
+== 第1天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
 
-<span class="ansi-red-fg">TypeError</span>: randint() takes 3 positional arguments but 4 were given
+== 第2天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第3天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第4天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第5天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第6天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第7天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+在第8天，模拟结束
 </pre></div></div>
 </div>
-<p>下面的代码把随机生成得到的整数赋值给一个名为<code class="docutils literal notranslate"><span class="pre">num_computer_generated</span></code>这个变量。如果不使用<code class="docutils literal notranslate"><span class="pre">print</span></code>语句，就只有计算机知道生成的随机数是什么了。</p>
+<p>现在我们添加一些变化。由于新鲜感过去了，从第四天开始思思就讨厌这份早餐了，她会说“妈妈，我不想再吃甜甜圈加鸡蛋了”。</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">num_guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;I have a number, your turn to guess:&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You guessed: &quot;</span><span class="p">,</span> <span class="n">num_guess</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_day_of_week</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;模拟开始&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">day</span> <span class="o">&lt;=</span> <span class="n">n_day_of_week</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;== 第</span><span class="si">{}</span><span class="s2">天 ==&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：妈妈，今天早饭吃什么？&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;妈妈：是你最爱吃的甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：妈妈，我不想再吃甜甜圈加鸡蛋了。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                                <span class="c1"># 睡2秒钟表示这一天过去了，第二天即将开始</span>
+    <span class="n">day</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;在第</span><span class="si">{}</span><span class="s2">天，模拟结束&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-I have a number, your turn to guess: 2
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-You guessed:  2 .
+模拟开始
+== 第1天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第2天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第3天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第4天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：妈妈，我不想再吃甜甜圈加鸡蛋了。
+
+== 第5天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：妈妈，我不想再吃甜甜圈加鸡蛋了。
+
+== 第6天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：妈妈，我不想再吃甜甜圈加鸡蛋了。
+
+== 第7天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：妈妈，我不想再吃甜甜圈加鸡蛋了。
+
+在第8天，模拟结束
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="2.-如何根据不同条件让计算机执行不同的程序代码">
-<h3>2. 如何根据不同条件让计算机执行不同的程序代码<a class="headerlink" href="#2.-如何根据不同条件让计算机执行不同的程序代码" title="永久链接至标题">¶</a></h3>
-<p>想象下面的场景：备备是一个对编程很感兴趣的小朋友，他的妈妈给备备的编程学习制定了一个奖励计划，约定如果备备一学期下来编程总成绩在95分或以上，那么备备可以获得一个乐高积木作为奖励；如果达不到这个成绩，奖励就没有了。假如备备的编程课成绩是由你通过键盘来输入的，如何编写程序来输出不同分数下备备是否能获得奖励呢？</p>
-<p>我们可以使用下面的代码片段来实现这个功能:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">score_math</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;备备数学考了多少分:&quot;</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">score_math</span> <span class="o">&gt;=</span> <span class="mi">95</span><span class="p">:</span>      <span class="c1"># 如果数学成绩达到或超过95分</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备可以获得一个乐高积木奖励。&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>                     <span class="c1"># 否则</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备不会有奖励，因为成绩不够好。&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备你满意这样的结果吗?&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="2.-break语句提前终止循环">
+<h3>2. <code class="docutils literal notranslate"><span class="pre">break</span></code>语句提前终止循环<a class="headerlink" href="#2.-break语句提前终止循环" title="永久链接至标题">¶</a></h3>
+<p>由于思思在第四天说出了不再喜欢甜甜圈加鸡蛋这份早餐，我们打算不再模拟剩余几天了。此时应该怎么做呢？运行下面的程序并<strong>思考</strong>：程序有没有模拟第四天夜间睡觉的过程？</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># if &gt;= is not allowed to use and 95 should still be used</span>
-<span class="c1"># we can write the program like this:</span>
-<span class="n">score_math</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;备备数学考了多少分:&quot;</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">score_math</span> <span class="o">&lt;</span> <span class="mi">95</span><span class="p">:</span>      <span class="c1"># 如果数学成绩低于95分</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备不会有奖励，因为成绩不够好。&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>                     <span class="c1"># 否则</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备可以获得一个乐高积木奖励。&quot;</span><span class="p">)</span>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_day_of_week</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;模拟开始&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">day</span> <span class="o">&lt;=</span> <span class="n">n_day_of_week</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;== 第</span><span class="si">{}</span><span class="s2">天 ==&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：妈妈，今天早饭吃什么？&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;妈妈：是你最爱吃的甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">day</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;思思：妈妈，我不想再吃甜甜圈加鸡蛋了。&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                                <span class="c1"># 睡2秒钟表示这一天过去了，第二天即将开始</span>
+    <span class="n">day</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备你满意这样的结果吗?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;在第</span><span class="si">{}</span><span class="s2">天，模拟结束&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-备备数学考了多少分: 94
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-备备不会有奖励，因为成绩不够好。
-备备你满意这样的结果吗?
+模拟开始
+== 第1天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第2天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第3天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：谢谢妈妈，我喜欢甜甜圈加鸡蛋。
+
+== 第4天 ==
+思思：妈妈，今天早饭吃什么？
+妈妈：是你最爱吃的甜甜圈加鸡蛋。
+思思：妈妈，我不想再吃甜甜圈加鸡蛋了。
+在第4天，模拟结束
 </pre></div></div>
-</div>
-<p>把上述代码的第七行前面添加四个空格，与第5行对齐，重新运行程序多次，观察程序输出有什么变化？</p>
-<p>如果小明只有在考到满分100分的时候，才有这个奖励。那么程序可以这样写:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">score_math</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;备备数学考了多少分:&quot;</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">score_math</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备可以获得一个乐高积木奖励。&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;备备不会有奖励，因为成绩不够好。&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从0-9之间随便挑出一个数字，把它放在变量`num_computer_generated`里&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你不可以用`print`方法偷看这个数字&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你可以用键盘输入告诉我你猜的数字，我们把你猜的数字放在变量`num_you_guessed`里&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;好的，游戏开始！我开始选数字了...&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不好意思，稍等。我得去仓库里先找个东西...&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>            <span class="c1"># 这是什么？</span>
-<span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>                         <span class="c1"># sleep(10) 有什么用</span>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>            <span class="c1"># 这是什么？</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;让你久等了，我回来拉。我开始选数字了...&quot;</span><span class="p">)</span>
-<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(0-9):&quot;</span><span class="p">)</span>
-<span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;真可惜，你没有猜对。我选的数字是:&quot;</span><span class="p">,</span> <span class="n">num_computer_generated</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你想继续再玩一次，就再运行依次这个代码单元格吧。&quot;</span><span class="p">)</span>
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># codes 是一个 code 的复数形式</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My Mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;没猜对，继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1351,12 +1250,9 @@ You guessed:  2 .
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 我是你的小助手，我想和你玩一个猜数字的游戏。
-我会从0-9之间随便挑出一个数字，把它放在变量`num_computer_generated`里
-你不可以用`print`方法偷看这个数字
-你可以用键盘输入告诉我你猜的数字，我们把你猜的数字放在变量`num_you_guessed`里
-好的，游戏开始！我开始选数字了...
-不好意思，稍等。我得去仓库里先找个东西...
-让你久等了，我回来拉。我开始选数字了...
+我会从0-9之间随便挑出一个数字，你可以反复猜直到才对为止
+如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。
+[&#34;I don&#39;t want to play anymore&#34;, &#39;I quit&#39;, &#39;My Mom called me home for dinner&#39;, &#39;Bye&#39;, &#39;bye&#39;, &#39;不玩了&#39;, &#39;不猜了&#39;, &#39;我妈喊我回家吃饭了&#39;]
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -1364,7 +1260,7 @@ You guessed:  2 .
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-我选好了，现在你来猜吧(0-9): 6
+我选好了，现在你来猜吧(0-9): 32地方
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1372,8 +1268,16 @@ You guessed:  2 .
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-真可惜，你没有猜对。我选的数字是: 7
-如果你想继续再玩一次，就再运行依次这个代码单元格吧。
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
+Input <span class="ansi-green-intense-fg ansi-bold">In [27]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 24&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">     26</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">break</span>
+<span class="ansi-green-fg">     28</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 29</span>     num_you_guessed <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">int</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">your_guess</span><span class="ansi-yellow-bg">)</span>                 <span style="color: rgb(95,135,135)"># 尝试把你的输入变成一个数字</span>
+<span class="ansi-green-fg">     30</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> num_you_guessed <span style="color: rgb(98,98,98)">==</span> num_computer_generated:
+<span class="ansi-green-fg">     31</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">恭喜你，你猜对了。</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-intense-fg ansi-bold">ValueError</span>: invalid literal for int() with base 10: &#39;32地方&#39;
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -1381,26 +1285,7 @@ You guessed:  2 .
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Solutoin: English Version</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m your little assistant. Let&#39;s play a number guessing game&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will choose an integer randomly from 0-9, and assign it to a variable `num_computer_generated`&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You may not peek the value by using `print` method.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can tell me what you guess by input from keyboard, and we keep the value in a variable `num_you_guessed`&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OK, let&#39;s start! I am selecting the number...&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oh, sorry. I have to leave for a while...&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>            <span class="c1"># what&#39;s this?</span>
-<span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                         <span class="c1"># what&#39;s the use of sleep(10)?</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry for kep you waiting, I am back. I am selecting the number...&quot;</span><span class="p">)</span>
-<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;I am done, now tell me your guess:&quot;</span><span class="p">)</span>
-<span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congratulations, you are right!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, you didn&#39;t to make it. My number is&quot;</span><span class="p">,</span> <span class="n">num_computer_generated</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you want to play once again, rerun this code cell.&quot;</span><span class="p">)</span>
+<span></span>
 </pre></div>
 </div>
 </div>
@@ -1408,54 +1293,97 @@ You guessed:  2 .
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>可以通过<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">a</span> <span class="pre">import</span> <span class="pre">b</span></code>的形式从模块(仓库)<code class="docutils literal notranslate"><span class="pre">a</span></code>导入一个<code class="docutils literal notranslate"><span class="pre">b</span></code>，前提是<code class="docutils literal notranslate"><span class="pre">a</span></code>和<code class="docutils literal notranslate"><span class="pre">b</span></code>存在。 <code class="docutils literal notranslate"><span class="pre">b</span></code>可以是一个方法名；</p></li>
-<li><p>方法<code class="docutils literal notranslate"><span class="pre">randint</span></code>存在于模块（仓库）<code class="docutils literal notranslate"><span class="pre">random</span></code>中，它可以随机生成一定范围内的整数；</p></li>
-<li><p>方法<code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>等存在于一个计算机默认的仓库中，不需要<code class="docutils literal notranslate"><span class="pre">import</span></code>操作，可以直接使用；</p></li>
-<li><p>调用一个方法时，方法名后面的一对圆括号内可以添加一些额外的信息，这些信息可以改变方法实现的一些细节；</p></li>
-<li><p>可以通过关键词<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>引导的条件控制语句实现根据条件是否满足而执行不同的程序代码片段；</p></li>
-<li><p>条件控制语句有特定的格式：冒号、缩进等；这些格式是一门语言语法的一部分，属于“约定”，需要遵守；</p></li>
-<li><p>Python中的<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>分别对应于“大于”、“大于或等于”、“小于”、“小于或等于”、“等于”数学中的比较运算；</p></li>
-<li><p>条件表达式的结果只有2个：要么是真的（条件满足），要么是假的（条件不满足），这两个结果分别记为<code class="docutils literal notranslate"><span class="pre">True</span></code>和<code class="docutils literal notranslate"><span class="pre">False</span></code>；</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code>模块（仓库）中的<code class="docutils literal notranslate"><span class="pre">sleep</span></code>方法；</p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句内嵌套<code class="docutils literal notranslate"><span class="pre">if</span></code>条件语句，<code class="docutils literal notranslate"><span class="pre">if</span></code>条件语句自身嵌套使用；</p></li>
+<li><p>理论上，<code class="docutils literal notranslate"><span class="pre">if</span></code>条件语句、<code class="docutils literal notranslate"><span class="pre">while</span></code>循环语句可以任意自身或相互嵌套无限多次；实际使用时不应当嵌套次数太多；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>语句提前终止循环；</p></li>
+<li><p>格式化字符串：用类似<code class="docutils literal notranslate"><span class="pre">&quot;I</span> <span class="pre">am</span> <span class="pre">{}.&quot;.format(my_name)</span></code>的格式可以可对字符串做特定的格式修饰，<code class="docutils literal notranslate"><span class="pre">{}</span></code>作为占位符使用，表示<code class="docutils literal notranslate"><span class="pre">format</span></code>后面括号内的变量的值应该出现在<code class="docutils literal notranslate"><span class="pre">{}</span></code>里。当有多个<code class="docutils literal notranslate"><span class="pre">{}</span></code>时，变量和他的值出现的位置按照其在<code class="docutils literal notranslate"><span class="pre">format</span></code>后括号内的次序一一配对；</p></li>
+<li><p>初步了解<code class="docutils literal notranslate"><span class="pre">list</span></code>数据类型：用方括号可以把多个数据（变量或常量）放在一起用逗号隔开形成一个列表，赋值给一个变量，方便对这些数据的管理。列表型变量的名字一般应体现“复数”的含义，表示它包含多个数据元素；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>是一个表示条件的常量值，它不是一个变量，它表示一个条件的结果，它表示的条件的结果永远成立。如果把<code class="docutils literal notranslate"><span class="pre">True</span></code>放在<code class="docutils literal notranslate"><span class="pre">if</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>语句的判断表达式的位置上，那么对应的代码块将肯定会被执行；</p></li>
+<li><p>复习：随机数的生成，input获取的信息是字符串，当其内容是整数时，可以使用<code class="docutils literal notranslate"><span class="pre">int</span></code>方法将其转换成整数。</p></li>
 </ol>
 </div>
 <div class="section" id="CS-Tips-计算机小知识">
 <h2>CS Tips 计算机小知识<a class="headerlink" href="#CS-Tips-计算机小知识" title="永久链接至标题">¶</a></h2>
-<p>个人计算机一般通过随机数生成算法来生成随机数，通过这种形式生成的随机数并不是完全随机的，而是根据一个初始条件生成的像是随机出现的随机数序列，它们称为“伪随机数”，这个初始条件一般称为“种子”。真正的随机数通常需要专门的硬件设备采集真实环境信息并在此基础上通过算法来实现。</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>和<code class="docutils literal notranslate"><span class="pre">while</span></code>语句是几乎所有高级计算机编程语言的最重要的两个流程控制语句。合理地使用<code class="docutils literal notranslate"><span class="pre">if</span></code>和<code class="docutils literal notranslate"><span class="pre">while</span></code>语句可以解决绝大多数实际问题。</p>
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<ol class="arabic">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">randint</span></code> method in the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to randomly select 10 numbers from the 100 natural numbers 1-100, calculate the average of the 10 numbers chosen and print the average value. 使用<code class="docutils literal notranslate"><span class="pre">random</span></code>模块里的<code class="docutils literal notranslate"><span class="pre">randint</span></code>方法，从1-100这100个自然数中随机选出10数，计算这10个数的平均数，并把这个平均数打印出来。</p>
-<p><strong>Note</strong>: The average of a group of numbers is the sum of this group of numbers divided by the number in the group. <strong>备注</strong>:一组数的平均数是这组数的和除以这组数的个数。</p>
-</li>
+<ol class="arabic simple">
+<li><p>运行下面三段程序代码，观察各自的输出结果，说出他们的相同点和不同点，你喜欢哪一种？为什么？</p></li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># write your codes here 在这里写你的代码</span>
+<span></span><span class="c1"># 程序代码 1</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love &quot;</span> <span class="o">+</span> <span class="n">country</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 程序代码 2</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love&quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China .
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 程序代码 3</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China.
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Your answer here</span>
 
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>There are some other interesting methods in <code class="docutils literal notranslate"><span class="pre">random</span></code> module (warehouse), all of which are related to “random”. One of the methods is quite special. Its name is also called <code class="docutils literal notranslate"><span class="pre">random</span></code>, which means that the name of the module (warehouse) is exactly the same as the name of the method.<code class="docutils literal notranslate"><span class="pre">random</span></code>模块（仓库）里面还有许多有趣的方法，这些方法都和“随机”有关，其中有一个方法比较特别，它的名字也叫<code class="docutils literal notranslate"><span class="pre">random</span></code>，也就是说模块（仓库）的名字和方法的名字完全一样。</p>
-<ul class="simple">
-<li><ol class="loweralpha simple">
-<li><p>Try to let your computer find the <code class="docutils literal notranslate"><span class="pre">random</span></code> method from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module (warehouse), and run this method repeatedly; 试着让计算机从<code class="docutils literal notranslate"><span class="pre">random</span></code>仓库里找到导入<code class="docutils literal notranslate"><span class="pre">random</span></code>方法，然后重复多次运行这个方法;</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>Observe the data output by the method. Guess what are the characteristics of the numbers generated by this method? 观察方法每一次输出的数据，猜一猜这个方法生成的随机数有什么特点？</p></li>
-</ol>
-</li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>In your life, have you ever encountered different things with the same name? Try to give some examples. 在生活中，你有没有遇到过不同的东西它们的名字是一样的？试着举几个例子。</p></li>
-</ol>
-</li>
-</ul>
+<ol class="arabic" start="2">
+<li><p>Perfect number guessing game 1: At present, our number guessing game program can only generate a certain number between 0 and 9(both included). Many players are not satisfied with only guessing numbers smaller than or equal to 9. They want to challenge this number guessing game with much lager number.</p>
+<p>完善猜数字游戏一：目前我们的猜数字游戏程序只能固定生成0-9这两个数之间（包括）的某一个数，许多玩家不满意只猜比9小的数，他们希望挑战的更大数字范围的猜数字游戏。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question。 The program will allow a player to tell the computer the maximum upper limit of the random number (such as 100). The player tell the computer by keyboard input before the game starts. It should be noted that, in order to control the difficulty of the game, the number required by the program must be above 20 (inclusive) and below 1000 (inclusive), otherwise the computer will ask you to re-enter until
+this requirement is met. Then the computer randomly generates a random number greater than or equal to 0 and less than or equal to the number you give, and let the player guess the number. Please write the complete code in the code cell below.</p>
+<p>请你修改示例程序，让猜数字游戏程序可以让猜数字的人在游戏开始前通过键盘输入来告诉计算机能够生成的随机数的最大上限（比如100）。需要注意的是，为了控制游戏难度，程序要求输入的这个数必须是20（含）以上，1000（含）一下，否则计算机会让你重新输入直到满足这个要求。随后计算机随机生成大于等于0且小于等于你给定的这个数之内的随机数，让玩家猜这个数。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1463,37 +1391,15 @@ You guessed:  2 .
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># a) write your codes in this cell, and run it any times you want</span>
-<span class="c1">#    在这里写上你的代码，可以执行任意次数</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
 
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># b) Write your answer here:</span>
-<span class="c1">#</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># c) Write your answer here:</span>
-<span class="c1">#</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="3">
-<li><p>In one of the previous homeworks, you were asked to wrote a program that implements the division operation. This program accepts the dividend and divisor from keyboard input and calculate the quotient. The program will report an error when it encounters a divisor of 0. We can avoid this error by adding a conditional statement. More specific, when the program detects that the divisor is 0, it does not perform the division operation, but outputs a piece of information like “the divisor provided
-is 0, the division cannot be performed”; otherwise, the original division operation is performed and shown by <code class="docutils literal notranslate"><span class="pre">print</span></code> method. Please try to make appropriate modifications to the following program to complete this function.</p>
-<p>在上一讲的作业中，我们编写了一段程序实现了除法运算，这个程序接受来自键盘输入的被除数和除数并计算出商。这个程序在碰到除数为0时会报错无法顺利。我们可以通过添加一段条件语句代码来避免这个报错。具体的方法时，当程序检测到除数为0时就不执行除法运算，而是输出一段信息，提示“来自键盘输入的除数为0，不能执行除法”；否则，则执行原定的除法运算，并给出运算的结果。请你试着对下面的程序做适当的修改，完成这个功能。</p>
+<li><p>完善猜数字游戏二：目前我们的猜数字游戏程序在任何时候当玩家输入表示不想猜的代码后，程序都会输入相同的信息”很遗憾，你没有猜出来，下次再玩吧。“并退出。这在某些情况下是不合理的。比如说，当玩家一次都没有猜就不想猜的时候，程序不应该输出”很遗憾，你没有猜出来，下次再玩吧。“。</p>
+<p>请你在示例程序或者上一题已经完成的程序上做修改，实现下述功能：当玩家还没有猜满<strong>3</strong>次的时候想退出时，程序提示玩家”你才猜了{}次，你真的不想猜了？“({}表示当前已经猜了的次数），并提供一个输入框供玩家输入他们的回答。当程序接收到的回答是“yes”,“Yes”,“是”,“真的不想猜了”中的某一个时，表示玩家确实不想玩了，此时程序输出类似“有点扫兴呢，下次你想玩的时候再玩吧”，随后程序运行结束；如果程序收到的回答不在设计的几个之内，则让玩家。</p>
+<p>特别的，如果玩家一次都没有猜就不想玩时，可以将计算机的提示修改为：“你一次都没猜呢”。你可以按照自己的喜好来设计这些提示信息，只要其符合当时的场景即可。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1501,73 +1407,32 @@ is 0, the division cannot be performed”; otherwise, the original division oper
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># modify the codes below 修改下面的代码</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是新版的整数除法运算小能手&quot;</span><span class="p">)</span>
-<span class="n">first_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入被除数(整数)：&quot;</span><span class="p">)</span>
-<span class="n">second_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入除数(整数)：&quot;</span><span class="p">)</span>
-<span class="n">dividend</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">first_input</span><span class="p">)</span>            <span class="c1"># 被除数</span>
-<span class="n">divisor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">second_input</span><span class="p">)</span>            <span class="c1"># 除数</span>
-<span class="n">quotien</span> <span class="o">=</span> <span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span>           <span class="c1"># 商</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dividend</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">divisor</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">quotien</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="4">
-<li><p>Write multi-line of Python codes in one cell to calculate and print out the perimeter and area of a rectagle with the length and width provided from keyboard input. 在一个代码单元格里书写多行Python代码来计算一个长方形的周长和面积，确定这个长方形的长和宽从键盘输入得到。</p>
-<p>Requirements: 要求:</p>
-<ul class="simple">
-<li><p>the codes you write receive two number strings from keyboard indicating the length and width of a potential rectangle 你的代码能够从键盘接受两个数字字符串分别表示可能的长方形的长和宽；</p></li>
-<li><p>convert these two strings to two Integer numbers, assign them to two variables. The names of the length and width should be easy to understand 将这两个字符串转化为两个整数型数字并将其赋值给表示长和宽的两个变量，要求这两个变量名直观易看懂；</p></li>
-<li><p>Check whether the length and width provided can build a rectangle. If not, print out “Not a rectangle”; otherwise, continue the following step 检查得到的长宽能否构成一个长方形，如果不行，打印输出“Not a rectangle”，否则，执行下面这步；</p></li>
-<li><p>calculate the perimiter and the area of this rectangle, assign the result to <code class="docutils literal notranslate"><span class="pre">perimeter</span></code> and <code class="docutils literal notranslate"><span class="pre">area</span></code> variable, print out the perimeter and area 计算这个长方形的周长和面积，并将结果分别赋值给名为<code class="docutils literal notranslate"><span class="pre">perimeter</span></code>和<code class="docutils literal notranslate"><span class="pre">area</span></code>的变量；打印出这个长方形的周长和面积；</p></li>
-</ul>
-<p>Run and test 5 times your codes with the following inputs (length, width) in the table. For each test, observe whether the results are equal to the Perimeter and Area provided. 分别使用下表中的length和width的值作为键盘输入运行并测试你的代码共计5次，观察结果是否与对应的Perimiter和Area值一样；</p>
-<p><strong>Note</strong>: You should run the same code on all test data; that being said, you may not change the codes between each run. <strong>注意</strong>: 你应该用同样的代码来运行所有的测试数据，也就是说，你不应该在两次测试间隙修改你的代码</p>
-<p><strong>Hint</strong>: Use <code class="docutils literal notranslate"><span class="pre">if</span></code> <code class="docutils literal notranslate"><span class="pre">else</span></code> statements to control the output. You can assume that the rectangle will not be formed if length*width equals 0. <strong>提示</strong>：使用<code class="docutils literal notranslate"><span class="pre">if</span></code>，<code class="docutils literal notranslate"><span class="pre">else</span></code>语句来控制输出.当长度和宽度相乘为0是，你可以认为不能构成一个矩形。</p>
+<li><p>Perfect Number Guessing Game 3: Many children saied that they liked this number guessing game very much, and they also competed with each other to see who could guess the number with the least number of times. Sometimes they guessed so many times that they could not remember how many times they guessed, so they want the program to tell each player how many times they guessed for the randomly generated number before the program ends.</p>
+<p>完善猜数字游戏三：有很多小朋友表示非常喜欢玩这个猜数字游戏，他们在玩的时候也相互比赛看谁能够用最少的次数猜中数字。有时候他们猜的次数太多了，自己都记不住自己猜了几次了，所以他们希望程序再运行结束前告诉每一个玩家这一局共猜了多少次。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question to add this function. Please write the complete code in the code cell below.请你在示例程序或者上一题已经完成的程序上做修改，增加这个功能。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
-<table class="table">
-<colgroup>
-<col style="width: 15%" />
-<col style="width: 12%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>length</p></th>
-<th class="head"><p>width</p></th>
-<th class="head"><p>output</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>12</p></td>
-<td><p>12</p></td>
-<td><p>perimeter is: 48, area is: 144</p></td>
-</tr>
-<tr class="row-odd"><td><p>18</p></td>
-<td><p>14</p></td>
-<td><p>perimeter is: 48, area is: 144</p></td>
-</tr>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>4</p></td>
-<td><p>Not a rectangle</p></td>
-</tr>
-<tr class="row-odd"><td><p>1091</p></td>
-<td><p>0</p></td>
-<td><p>Not a rectangle</p></td>
-</tr>
-<tr class="row-even"><td><p>0</p></td>
-<td><p>0</p></td>
-<td><p>Not a rectangle</p></td>
-</tr>
-</tbody>
-</table>
+<ol class="arabic" start="5">
+<li><p>(<strong>Optional, 可选做 /10</strong>) Perfect number guessing game 4: Some players find the game a little difficult, especially when the range of guessing numbers becomes wider. They might have guessed many times and have not guessed correctly. They hope that the program can give some hints every time they fail to guess. For example, tell the player whether the correct number is larger or smaller than the number he guessed, so that the guess range can be narrowed in next guess. This looks like a nice
+feature, but other players may not like it since it makes the game less difficult and less interesting. To take care of both, our program needs to be modified.</p>
+<p>完善猜数字游戏四：有一些小朋友玩家觉得有点难，特别是当猜的数字的范围变大时，猜了很多次都没有猜中，他们希望程序能够在每次没猜中的时候给一些提示，告诉玩家正确的数字比自己猜的数字是大还是小，这样在下一次猜的时候就缩小猜的范围了。这看起来是一个很不错的功能，但是也有一些玩家不喜欢这个功能，认为这会降低难度减少趣味性。为了兼顾两者，我们的程序需要做些修改。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question. Add the following feature: when the program starts to run, ask the player whether or not the player needs a hint of which number is larger when there is a wrong guess. Provide an input box for the player to enter a answer. For this question, it’s up to you to design a list of answers that indicate the need for a hint. When the player needs a hint, the player will be told such which number is larger
+after every wrong guess; when the player chooses no hint, no hint will be given after each wrong guess. Please write the complete code in the code cell below.</p>
+<p>请你在示例程序或者上一题已经完成的程序上做修改，增加下述功能：在程序一开始运行的时候，询问玩家是否需在每次猜测错误后给出和要猜的数字谁大谁小的提示。提供一个输入框供玩家输入他们的回答。这一次由你自己来设计一些表示需要提示的回答列表。当玩家需要这类提示信息时，在每一次猜错后就告诉玩家这样的提示；当玩家选择不需要提示时，在玩家猜错后就不给提示。请将完整的代码写在下面的代码单元格里。</p>
+</li>
+</ol>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Write your code here 在这里写上你的代码</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
 
 </pre></div>
 </div>
