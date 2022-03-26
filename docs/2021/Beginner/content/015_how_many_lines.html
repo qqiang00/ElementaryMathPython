@@ -419,6 +419,11 @@
        第06讲 绘制正多边形（一)
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Beginner/content/007_draw_regular_polygons2.html">
+       第07讲 绘制正多边形（二)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -457,8 +462,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../2022/Answer/content/006_student_name_assignment.html">
+      <a class="reference internal" href="../../../2022/Answer/content/006_draw_regular_polygons.html">
        第06讲 绘制正多边形（一)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../2022/Answer/content/007_student_polygons2.html">
+       第07讲 绘制正多边形（二)
       </a>
      </li>
     </ul>
@@ -1010,7 +1020,7 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>数轴上有6个点，对应的数字分别为<code class="docutils literal notranslate"><span class="pre">[-4.5,</span> <span class="pre">-2.0,</span> <span class="pre">0,</span> <span class="pre">1.5,</span> <span class="pre">3.5,</span> <span class="pre">5.0]</span></code>。连接其中任意的两个点可以形成一条线段。请问这6个点一共可形成多少条线段？参照下图，在宽高分别为600和400的绘图区绘制一条数轴，在数轴上标记这些点，并用不同颜色绘制出这6个点能形成的所有的线段并给每条线段标记一个序号。为避免绘制出的线段相互重合，每条线段间隔10个像素。图中已经绘制出了从<code class="docutils literal notranslate"><span class="pre">-4.5</span></code>开始到所有其它点的线段。</p>
 <p>下面的代码已经完成了数轴绘制和对每一个点的标记。</p>
-<p><img alt="a63d5530e42248a98f6af7dae6b17039" class="no-scaled-link" src="../../../_images/L015_draw_all_lines1.png" style="width: 600px;" /></p>
+<p><img alt="bc09fe147b0647b5b4efb0561cde5a61" class="no-scaled-link" src="../../../_images/L015_draw_all_lines1.png" style="width: 600px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -1133,7 +1143,7 @@ div.rendered_html tbody tr:hover {
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">SCALE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="ee3323cd5cad48cbbf165752fb4363a9" class="no-scaled-link" src="../../../_images/L015_one_line1.png" style="width: 600px;" /></p>
+<p><img alt="ac159080505e4864bc6eef9263e419ba" class="no-scaled-link" src="../../../_images/L015_one_line1.png" style="width: 600px;" /></p>
 <p>在调用方法时，给方法提供的参数的次序需要与声明方法时的次序一致，否则会出错或预期以外的功能。</p>
 <p>如果需要给绘制的线段进行标号，那么需要额外完成一些诸如：提起、移动画笔和绘制文字的步骤。同时我们还应该有标号使用的数字（或文字），需要新设定一个参数来表示它，可以用<code class="docutils literal notranslate"><span class="pre">label</span></code>来表示，下面的代码请读者自己添加这几行代码给这个方法添加线段标号的功能。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">linewidth</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
@@ -1175,7 +1185,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="3.-Solution-编程求解">
 <h2>3. Solution 编程求解<a class="headerlink" href="#3.-Solution-编程求解" title="永久链接至标题">¶</a></h2>
-<p><img alt="1ca4b72a1d1d49c19a9b306736543af8" class="no-scaled-link" src="../../../_images/L015_solution_figure.png" style="width: 600px;" /></p>
+<p><img alt="f3d2e48eac384291955b1ac5d3eb53dc" class="no-scaled-link" src="../../../_images/L015_solution_figure.png" style="width: 600px;" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -1362,7 +1372,7 @@ square should be parallel to X axis. Besides, your method should also be able to
 <p><strong>要求</strong>：使用<code class="docutils literal notranslate"><span class="pre">goto</span></code>方法来移动画笔，禁止使用<code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>等方法。</p>
 <p><strong>Requirement</strong>: Only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen, you are not allowed to use methods like <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>;</p>
 <p><strong>提示</strong>：先计算出正方形每一个顶点的位置。</p>
-<p><strong>Hint</strong>: Calculate the position of each vertex of the square bfore you draw it. <img alt="34a1ae3bda3945d1bf0f2f4c77da0ba9" class="no-scaled-link" src="../../../_images/L015_exercise_31.png" style="width: 600px;" /></p>
+<p><strong>Hint</strong>: Calculate the position of each vertex of the square bfore you draw it. <img alt="ba366859a21c4d64bba1fdc898dd863e" class="no-scaled-link" src="../../../_images/L015_exercise_31.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1422,7 +1432,7 @@ colors and line widths. 实现这个方法后，用下面的数据来绘制3个�
 <p><strong>Requirement</strong>: Try to only use <code class="docutils literal notranslate"><span class="pre">goto</span></code> to move pen instead of using <code class="docutils literal notranslate"><span class="pre">left</span></code>,<code class="docutils literal notranslate"><span class="pre">right</span></code>,<code class="docutils literal notranslate"><span class="pre">fd</span></code>,<code class="docutils literal notranslate"><span class="pre">bk</span></code>.</p>
 <p><strong>提示</strong>：使用goto方法时，需要用到一个数值<code class="docutils literal notranslate"><span class="pre">1.732</span></code>来帮助定位三角形的端点。请在你实现方法的代码里使用这个数值。</p>
 <p><strong>Hint</strong>: You may need <code class="docutils literal notranslate"><span class="pre">1.732</span></code> to help locate the position of a vertex. Please use this value when implementing your method.</p>
-<p><img alt="10424a0af3944f63b7eca7d2388161b4" class="no-scaled-link" src="../../../_images/L015_exercise_41.png" style="width: 600px;" /></p>
+<p><img alt="4ecd5fc7fe7443d7b394dbf68440d804" class="no-scaled-link" src="../../../_images/L015_exercise_41.png" style="width: 600px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">

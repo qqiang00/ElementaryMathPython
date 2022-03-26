@@ -417,6 +417,11 @@
        第06讲 绘制正多边形（一)
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Beginner/content/007_draw_regular_polygons2.html">
+       第07讲 绘制正多边形（二)
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -455,8 +460,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/006_student_name_assignment.html">
+      <a class="reference internal" href="../Answer/content/006_draw_regular_polygons.html">
        第06讲 绘制正多边形（一)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/007_student_polygons2.html">
+       第07讲 绘制正多边形（二)
       </a>
      </li>
     </ul>
@@ -876,7 +886,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -896,7 +906,7 @@ div.rendered_html tbody tr:hover {
 <li><p>正八边形每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与八边形边长相等的线段</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="ef878f3421414231bc07a2ebfd79709b" class="no-scaled-link" src="../../_images/L007_assign01_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="a1bfe85b40354b86b7499317bc9fa111" class="no-scaled-link" src="../../_images/L007_assign01_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -938,7 +948,7 @@ div.rendered_html tbody tr:hover {
 <li><p>正六边形中距离最远的3对顶点是用颜色为红色的宽为1的线条连接起来的</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="d41bf61cc5ad4e69b7651bb2513fe576" class="no-scaled-link" src="../../_images/L007_assign02_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="27dc60e7578a4ff59c735426d58f1b04" class="no-scaled-link" src="../../_images/L007_assign02_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -980,11 +990,11 @@ div.rendered_html tbody tr:hover {
 <li><p>每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与边长相等的线段</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="d8590d6709234e3e90d019fb55ed7553" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="91de39991413493692f7f5c5fe1de1c2" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1017,6 +1027,42 @@ div.rendered_html tbody tr:hover {
 <ol class="arabic" start="4">
 <li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
 <ul class="simple">
+<li><p>给每一行代码添加你的注释</p></li>
+</ul>
+<p><img alt="b9f38465653349429546ee9836c025b7" class="no-scaled-link" src="2022/NotOnline/figures/L007_assign04_regular_polygons.png" style="width: 500px;" /></p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">side_length</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">90</span>
+<span class="n">spacing</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">repeat_times</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">repeat_times</span><span class="p">:</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
+    <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
+    <span class="n">side_length</span> <span class="o">+=</span> <span class="n">spacing</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">ht</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="5">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
+<ul class="simple">
 <li><p>所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心（包括左右和上下都是居中）</p></li>
 <li><p>三个正方形的边长依次为250，150，和50</p></li>
 <li><p>三个正方形的线宽一次为3, 2, 1</p></li>
@@ -1024,7 +1070,7 @@ div.rendered_html tbody tr:hover {
 <li><p>使用了两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环<strong>并且</strong>代码总行数控制在35行以内（import, setup所在的行不计入总行数），结果正确可以获得额外的10分加分</p></li>
 <li><p>给每一行代码添加你的注释</p></li>
 </ul>
-<p><img alt="781903790392465d99b694c19c8db9c7" class="no-scaled-link" src="../../_images/L007_assign04_regular_polygons.png" style="width: 500px;" /></p>
+<p><img alt="ffb8231c189a400ea94c875aa2260b2c" class="no-scaled-link" src="../../_images/L007_assign05_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
