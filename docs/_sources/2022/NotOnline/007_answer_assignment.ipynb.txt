@@ -173,6 +173,52 @@
   },
   {
    "cell_type": "markdown",
+   "id": "cc5ead11-a918-41c8-847c-0d83ef70b4ef",
+   "metadata": {},
+   "source": [
+    "4. Observe 7 regular polygons including regular triangle, square, regular pentagon, regular hexagon, regular octagon, regular nonagon, and regular decagon, answer the following questions: 观察正三、正四、正五、正六、正八、正九、正十边形等7个正多边形，回答下列问题：\n",
+    "   - when drawing each regular polygon, how many degrees does the little turtle turn after each edge is drawn? 在绘制每一个正多边形时，小海龟在绘制完成一条边后要转多少度？\n",
+    "   - for each regular polygon, how many interior angle does it have, What is the sum of these interior angles? 对于每一个正多边形，它有多少个度数相同的内角？这些内角加起来的和是多少？\n",
+    "   - for each regular polygon, how many exterior angles does it have? What is the sum of these exterior angles?对于每一个正多边形，它有多少个度数相同的外角？这些外角加起来的和是多少？，\n",
+    "   - is it true that the more sides of a regular polygon, the greater the sum of the interior and exterior angles?是不是正多边形的边数越多，内、外角和就越大？\n",
+    "   \n",
+    "   Fill in the answers in the two cells below, where the answer for regular triangle has been given as an example 将答案填写在下面的两个单元格中，其中三角形作为示例答案已经给出"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "725b28d2-6f18-4dda-a200-7b87aa8786b8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# number        degree for         number of      number of       sum of degree of       sum of degree of \n",
+    "# of edges      each turn          inner angle    outer angle     inner angles           inner angles\n",
+    "# 正多边形边数   绘图时每次转的度数   内角个数       外角个数         内角和（度）            外角和（度）      \n",
+    "#     3              120             3               3              180                   360\n",
+    "#     4              90              4               4              360                   360\n",
+    "#     5              72              5               5              540                   360                  \n",
+    "#     6              60              6               6              720                   360\n",
+    "#     8              45              8               8              1080                  360\n",
+    "#     9              40              9               9              1260                  360\n",
+    "#    10              36              10              10             1440                  360"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8447f098-e697-4db8-8a83-4c5a510f0393",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 是不是正多边形的边数越多，内、外角和就越大？\n",
+    "# 答：\n",
+    "# 内角和：是的，如果要求内角和，还可以用这个公式来计算：（边的数量 - 2） * 180。\n",
+    "# 外角和：不是的，所以多边形（不论是正多边形还是多边形），外角和都是360度。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "8cf02b83-4957-49ae-9adf-41007a4053f9",
    "metadata": {},
    "source": [

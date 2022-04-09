@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第07讲 绘制正多边形（二) &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第08讲 猜数字（二） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -39,8 +39,8 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="copyright" title="版权所有" href="../../../copyright.html" />
-    <link rel="next" title="第08讲 猜数字（二）" href="008_student_guess_numbers2.html" />
-    <link rel="prev" title="第06讲 绘制正多边形（一)" href="006_draw_regular_polygons.html" />
+    <link rel="next" title="附录" href="../../../appendix/index.html" />
+    <link rel="prev" title="第07讲 绘制正多边形（二)" href="007_student_polygons2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -471,13 +471,13 @@
        第06讲 绘制正多边形（一)
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="007_student_polygons2.html">
        第07讲 绘制正多边形（二)
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="008_student_guess_numbers2.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        第08讲 猜数字（二）
       </a>
      </li>
@@ -575,7 +575,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/2022/Answer/content/007_student_polygons2.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/2022/Answer/content/008_student_guess_numbers2.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -606,6 +606,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题描述">
+   Problem 问题描述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-解决方案">
+   Solution 解决方案
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
    Assignments 作业
   </a>
@@ -620,7 +630,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第07讲 绘制正多边形（二)</h1>
+                <h1>第08讲 猜数字（二）</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -630,6 +640,16 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Problem-问题描述">
+   Problem 问题描述
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#Solution-解决方案">
+   Solution 解决方案
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#Assignments-作业">
    Assignments 作业
@@ -892,158 +912,216 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第07讲-绘制正多边形（二)">
-<h1>第07讲 绘制正多边形（二)<a class="headerlink" href="#第07讲-绘制正多边形（二)" title="永久链接至标题">¶</a></h1>
-<p>Lecture07 Draw Regular Polygons（Part 2)</p>
+<div class="section" id="第08讲-猜数字（二）">
+<h1>第08讲 猜数字（二）<a class="headerlink" href="#第08讲-猜数字（二）" title="永久链接至标题">¶</a></h1>
+<p>Lecture08 Guess Numbers(Part 2)</p>
+<div class="section" id="Problem-问题描述">
+<h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
+<p>Write a program to play a number guessing game with the computer. Here is how the game works: 编写一个程序和计算机玩一个猜数字的游戏。具体流程如下：</p>
+<ol class="arabic simple">
+<li><p>let the computer <strong>randomly</strong> generate an integer in the range of 0-9 (both included), this number is known only by the computer itself; 让计算机<strong>随机</strong>生成一个范围在0-9之间的整数（包括这两个整数），这个数字只有计算机自己知道；</p></li>
+<li><p>as the person who write and run this program, you try to guess what the number is and tell the computer the number by input from keyboard;作为编写并运行这个程序的你尝试着猜一猜这个数字是什么，把你猜的数字通过键盘输入告诉计算机；</p></li>
+<li><p>when the computer receives your input, it compares it with the number it generates. If two values are equal, the computer outputs: “Congratulations, you are right!”, and the program ends; 计算机接收到你的输入后，把它和自己生成的数进行比较，如果一样，计算机输出：“恭喜你，你猜对了!”，程序运行结束；</p></li>
+<li><p>If two values are not equal, the computer will let you try again and again until you hit the number; 如果两个数不一样，计算机会让你反复继续尝试直到你猜中那个数字；</p></li>
+<li><p>When you did hit the number, and the computer asks you to continue to guess, you can also choose not to play. At this time, you only need to input one of the following codes: “I don’t want to play anymore”, “I quit”, “My Mom called me home for dinner”, “Bye”, “bye”. When the computer receives it, it outputs “Unfortunately, you didn’t guess it, let’s play next time.” on the screen, and then the program
+ends；当你没猜中，计算机让你继续猜的时候，你也可以选择不玩了，此时你只需要在输入数字的输入框内输入任意一条下面的信息：“不玩了”、“不猜了”、“我妈喊我回家吃饭了”、“Bye”、“bye”。当计算机接收到你这样的信息后，在屏幕上输出”很遗憾，你没有猜出来，下次再玩吧”，然后程序运行结束。</p></li>
+</ol>
+</div>
+<div class="section" id="Solution-解决方案">
+<h2>Solution 解决方案<a class="headerlink" href="#Solution-解决方案" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># codes 是一个 code 的复数形式</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;没猜对，继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我是你的小助手，我想和你玩一个猜数字的游戏。
+我会从0-9之间随便挑出一个数字，你可以反复猜直到才对为止
+如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。
+[&#34;I don&#39;t want to play anymore&#34;, &#39;I quit&#39;, &#39;My mom called me home for dinner&#39;, &#39;Bye&#39;, &#39;bye&#39;, &#39;不玩了&#39;, &#39;不猜了&#39;, &#39;我妈喊我回家吃饭了&#39;]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我选好了，现在你来猜吧(0-9): 3
+没猜对，继续猜: 4
+没猜对，继续猜: 5
+没猜对，继续猜: 6
+没猜对，继续猜: 7
+没猜对，继续猜: 8
+没猜对，继续猜: 9
+没猜对，继续猜: 1
+没猜对，继续猜: 2
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+恭喜你，你猜对了。
+猜数字游戏结束。
+</pre></div></div>
+</div>
+</div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">ht</span>
-<span class="c1"># from turtle import penup, pendown, backward, forward, showturtle, hideturtle</span>
-<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">pencolor</span><span class="p">,</span> <span class="n">pensize</span>
-<span class="n">setup</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 <ol class="arabic simple">
-<li><p>Use skills you learned so far, draw a regular octagon like the following figure shows. 使用已经教学过的知识，绘制如下图类似的正八边形。Detailed requirements are 具体要求如下：</p></li>
+<li><p>运行下面三段程序代码，观察各自的输出结果，说出他们的相同点和不同点，你喜欢哪一种？为什么？</p></li>
 </ol>
-<ul class="simple">
-<li><p>side length is 120, centered left and right middle, line size is 3, line color is green 它边为120，<strong>左右</strong>居中位于绘图区，每条边的线宽总是3，颜色是绿色</p></li>
-<li><p>the lowest part of the octagon is a vertex instead of an edge 它最下方不是一条边而是一个顶点</p></li>
-<li><p>from each vertex of the octangon, there is a red line (size is 1) pointing to its center with the same length as the octagon itself 正八边形每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与八边形边长相等的线段</p></li>
-<li><p>comment each line of your code 给每一行代码添加注释</p></li>
-</ul>
-<p><img alt="a72e556344b24de69d1d870d06e76951" class="no-scaled-link" src="../../../_images/L007_assign01_regular_polygons.png" style="width: 500px;" /></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>                                  <span class="c1">#</span>
-<span class="n">side</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">360</span><span class="o">/</span><span class="mi">8</span>              <span class="c1">#</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="o">+</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span> <span class="o">+</span> <span class="n">degree</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
+<span></span><span class="c1"># 程序代码 1</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love &quot;</span> <span class="o">+</span> <span class="n">country</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 程序代码 2</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love&quot;</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China .
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 程序代码 3</span>
+<span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;China&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+I love China.
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Your answer here</span>
 
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span> <span class="o">+</span> <span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">bk</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">right</span><span class="p">((</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">ht</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="2">
-<li><p>Use skills you learned so far, draw a regular hexagon like the following figure shows.使用已经教学过的知识，编程绘制出下图所示的图形。Detailed requirements are 具体要求如下：</p>
-<ul class="simple">
-<li><p>side length is 120, centered left and right middle, line size is 3, line color is green 它边长为120，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
-<li><p>the lowest part of the octagon is a vertex instead of an edge 它最下方不是一条边而是一个顶点</p></li>
-<li><p>the 3 furthest pairs of vertices in the regular hexagon are connected by red lines of width 1 正六边形中距离最远的3对顶点是用颜色为红色的宽为1的线条连接起来的</p></li>
-<li><p>comment each line of your code 给每一行代码添加注释</p></li>
-</ul>
-<p><img alt="9aaeddf526c2477891ca50ef1ebe0553" class="no-scaled-link" src="../../../_images/L007_assign02_regular_polygons.png" style="width: 500px;" /></p>
+<li><p>Perfect number guessing game 1: At present, our number guessing game program can only generate a certain number between 0 and 9(both included). Many players are not satisfied with only guessing numbers smaller than or equal to 9. They want to challenge this number guessing game with much lager number. 完善猜数字游戏一：目前我们的猜数字游戏程序只能固定生成0-9这两个数之间（包括）的某一个数，许多玩家不满意只猜比9小的数，他们希望挑战的更大数字范围的猜数字游戏。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question。 The program will allow a player to tell the computer the maximum upper limit of the random number (such as 100). The player tell the computer by keyboard input before the game starts. It should be noted that, in order to control the difficulty of the game, the number required by the program must be above 20 (inclusive) and below 1000 (inclusive), otherwise the computer will ask you to re-enter until
+this requirement is met. Then the computer randomly generates a random number greater than or equal to 0 and less than or equal to the number you give, and let the player guess the number. Please write the complete code in the code cell below.
+请你修改示例程序，让猜数字游戏程序可以让猜数字的人在游戏开始前通过键盘输入来告诉计算机能够生成的随机数的最大上限（比如100）。需要注意的是，为了控制游戏难度，程序要求输入的这个数必须是20（含）以上，1000（含）一下，否则计算机会让你重新输入直到满足这个要求。随后计算机随机生成大于等于0且小于等于你给定的这个数之内的随机数，让玩家猜这个数。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">side</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">360</span><span class="o">/</span><span class="mi">6</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="o">+</span><span class="n">degree</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
 
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span> <span class="o">+</span> <span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">bk</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">right</span><span class="p">((</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">ht</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="3">
-<li><p>Use skills you learned so far, draw a regular pentagon like the following figure shows 使用已经教学过的知识，编程绘制出下图所示的图形。Detailed requirements are 具体要求如下：</p>
-<ul class="simple">
-<li><p>side length is 120, centered left and right middle, line size is 3, line color is green 它边为120，仍然在绘图区<strong>左右</strong>居中，每条边的线宽总是3，颜色是绿色；</p></li>
-<li><p>its <strong>top</strong> is a vertex of a regular pentagon, and the distance from this vertex to the center of the drawing area (the starting position of the turtle) is equal to the side length of the regular pentagon 它最<strong>上方</strong>是正五边形的一个顶点，且这个顶点距离绘图区中心（海龟一开始的位置）的距离等于正五边形的边长；</p></li>
-<li><p>each vertex extends toward the center with a line with a width of 1 and a color of red with a length equal to the length of the side.每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与边长相等的线段</p></li>
-<li><p>comment each line of your code 给每一行代码添加注释</p></li>
-</ul>
-<p><img alt="5c3d5c286de8410b87ee0302f708b506" class="no-scaled-link" src="../../../_images/L007_assign03_regular_polygons.png" style="width: 500px;" /></p>
+<li><p>Perfect number guessing game 2: Currently, our number guessing game will output same information (“Unfortunately, you didn’t guess it, let’s play next time”) when a player don’t want guess anymore. Actually, this is not always reasonable, especially when the player does not make a single guess at all. In this situation, the game should not output that information.
+完善猜数字游戏二：目前我们的猜数字游戏程序在任何时候当玩家输入表示不想猜的代码后，程序都会输出相同的信息”很遗憾，你没有猜出来，下次再玩吧。“并退出。这在某些情况下是不合理的。比如说，当玩家一次都没有猜就不想猜的时候，程序不应该输出”很遗憾，你没有猜出来，下次再玩吧。“。</p>
+<p>lease modify the solution code in this lecture or the code completed in previous question to add the following features to the game: when the times that a player guesses does not reach 3, the game will output “you only guessed {} times, are you really want to quit?”, where {} represents the times that the player guessed. Provide a box to let player answer the question. If the player answers(by typing on keyboard) one of the following words: “yes”, “Yes”, “是”, and “真的不想猜了”, the game
+will output “It’s a bit disappointing, tell me if you want to play in the future.”, the the game terminates. If the player’s answer is not in the list, then let the game continue.
+请你在示例程序或者上一题已经完成的程序上做修改，实现下述功能：当玩家还没有猜满<strong>3</strong>次的时候想退出时，程序提示玩家”你才猜了{}次，你真的不想猜了？“({}表示当前已经猜了的次数），并提供一个输入框供玩家输入他们的回答。当程序接收到的回答是“yes”,“Yes”,“是”,“真的不想猜了”中的某一个时，表示玩家确实不想玩了，此时程序输出类似“有点扫兴呢，下次你想玩的时候再玩吧”，随后程序运行结束；如果程序收到的回答不在设计的几个之内，则让玩家继续猜。</p>
+<p>More specially, if a player want to stop the game before making the first guess, the game will output the information “you have not make the first guess” instead of “You only guessed 0 times, are you really want to quit?”. Actually, for this scenario, you can customize the response youself as long as it fits the scenario. 特别的，如果玩家一次都没有猜就不想玩时，可以将计算机的提示修改为：“你一次都没猜呢”。你可以按照自己的喜好来设计这些提示信息，只要其符合当时的场景即可。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">side</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="o">+</span><span class="n">degree</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">pd</span><span class="p">()</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
 
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span> <span class="o">+</span> <span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">pencolor</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">bk</span><span class="p">(</span><span class="n">side</span><span class="p">)</span>
-    <span class="n">right</span><span class="p">((</span><span class="mi">180</span> <span class="o">-</span> <span class="n">degree</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">ht</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="4">
-<li><p>Observe 7 regular polygons including regular triangle, square, regular pentagon, regular hexagon, regular octagon, regular nonagon, and regular decagon, answer the following questions: 观察正三、正四、正五、正六、正八、正九、正十边形等7个正多边形，回答下列问题：</p>
-<ul class="simple">
-<li><p>when drawing each regular polygon, how many degrees does the little turtle turn after each edge is drawn? 在绘制每一个正多边形时，小海龟在绘制完成一条边后要转多少度？</p></li>
-<li><p>for each regular polygon, how many interior angle does it have, What is the sum of these interior angles? 对于每一个正多边形，它有多少个度数相同的内角？这些内角加起来的和是多少？</p></li>
-<li><p>for each regular polygon, how many exterior angles does it have? What is the sum of these exterior angles?对于每一个正多边形，它有多少个度数相同的外角？这些外角加起来的和是多少？，</p></li>
-<li><p>is it true that the more sides of a regular polygon, the greater the sum of the interior and exterior angles?是不是正多边形的边数越多，内、外角和就越大？</p></li>
-</ul>
-<p>Fill in the answers in the two cells below, where the answer for regular triangle has been given as an example 将答案填写在下面的两个单元格中，其中三角形作为示例答案已经给出</p>
+<li><p>Perfect Number Guessing Game 3: Many children saied that they liked this number guessing game very much, and they also competed with each other to see who could guess the number with the least number of times. Sometimes they guessed so many times that they could not remember how many times they guessed, so they want the program to tell each player how many times they guessed for the randomly generated number before the program ends.
+完善猜数字游戏三：有很多小朋友表示非常喜欢玩这个猜数字游戏，他们在玩的时候也相互比赛看谁能够用最少的次数猜中数字。有时候他们猜的次数太多了，自己都记不住自己猜了几次了，所以他们希望程序再运行结束前告诉每一个玩家这一局共猜了多少次。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question to add this function. Please write the complete code in the code cell below.请你在示例程序或者上一题已经完成的程序上做修改，增加这个功能。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1051,118 +1129,27 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># number        degree for         number of      number of       sum of degree of       sum of degree of</span>
-<span class="c1"># of edges      each turn          inner angle    outer angle     inner angles           inner angles</span>
-<span class="c1"># 正多边形边数   绘图时每次转的度数   内角个数       外角个数         内角和（度）            外角和（度）</span>
-<span class="c1">#     3              120             3               3              180                   360</span>
-<span class="c1">#     4              90              4               4              360                   360</span>
-<span class="c1">#     5              72              5               5              540                   360</span>
-<span class="c1">#     6              60              6               6              720                   360</span>
-<span class="c1">#     8              45              8               8              1080                  360</span>
-<span class="c1">#     9              40              9               9              1260                  360</span>
-<span class="c1">#    10              36              10              10             1440                  360</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># 是不是正多边形的边数越多，内、外角和就越大？</span>
-<span class="c1"># 答：</span>
-<span class="c1"># 内角和：是的，如果要求内角和，还可以用这个公式来计算：（边的数量 - 2） * 180。</span>
-<span class="c1"># 外角和：不是的，所以多边形（不论是正多边形还是多边形），外角和都是360度。</span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+
 </pre></div>
 </div>
 </div>
 <ol class="arabic" start="5">
-<li><p>(<strong>Hard Optional; 困难，选做， /25</strong>）Use skills you learned so far, draw the following figure 使用已经教学过的知识，编程绘制下图所示的图形。Detailed requirements are 具体要求如下：</p>
-<ul class="simple">
-<li><p>this is a shape composed of 20 end-to-end line segments, counting from left to right with 10 vertical line segments; counting from top to bottom with 10 horizontal line segments; 这是由20条首尾连接的线段组成的一个图案，自左向右数一个有10条垂直方向的线段；自上向下数有10条水平方向的线段；</p></li>
-<li><p>Start drawing from the center of the screen, the length of the initial horizontal line segment and the vertical line segment drawn after turning 90 degrees to the left are both 20; 从屏幕正中央开始绘图，最初的水平线段和随后左转90度后绘制的垂直线段长度均为20；</p></li>
-<li><p>The two line segments drawn each time (respectively a horizontal and a vertical line segment drawn after turning 90 degrees to the left) are equal in length and 20 longer than the previous two line segments; 每次绘制的两条线段（分别为一条水平和左转90度后绘制的一条垂直线段）长度相等且比之前的两条线段长20；</p></li>
-<li><p>Repeat this until 20 line segments are drawnRepeat this until 20 line segments are drawn; 如此重复直至绘制完成20条线段；</p></li>
-</ul>
-<p><img alt="9996446159404e36a750f7555785b1fd" class="no-scaled-link" src="../../../_images/L007_assign05_regular_polygons.png" style="width: 500px;" /></p>
+<li><p>(<strong>Optional, 可选做 /10</strong>) Perfect number guessing game 4: Some players find the game a little difficult, especially when the range of guessing numbers becomes wider. They might have guessed many times and have not guessed correctly. They hope that the program can give some hints every time they fail to guess. For example, tell the player whether the correct number is larger or smaller than the number he guessed, so that the guess range can be narrowed in next guess. This looks like a nice
+feature, but other players may not like it since it makes the game less difficult and less interesting. To take care of both, our program needs to be modified.
+完善猜数字游戏四：有一些小朋友玩家觉得有点难，特别是当猜的数字的范围变大时，猜了很多次都没有猜中，他们希望程序能够在每次没猜中的时候给一些提示，告诉玩家正确的数字比自己猜的数字是大还是小，这样在下一次猜的时候就缩小猜的范围了。这看起来是一个很不错的功能，但是也有一些玩家不喜欢这个功能，认为这会降低难度减少趣味性。为了兼顾两者，我们的程序需要做些修改。</p>
+<p>Please modify the solution code in this lecture or the code completed in previous question. Add the following feature: when the program starts to run, ask the player whether or not the player needs a hint of which number is larger when there is a wrong guess. Provide an input box for the player to enter a answer. For this question, it’s up to you to design a list of answers that indicate the need for a hint. When the player needs a hint, the player will be told such which number is larger
+after every wrong guess; when the player chooses no hint, no hint will be given after each wrong guess. Please write the complete code in the code cell below.
+请你在示例程序或者上一题已经完成的程序上做修改，增加下述功能：在程序一开始运行的时候，询问玩家是否需在每次猜测错误后给出和要猜的数字谁大谁小的提示。提供一个输入框供玩家输入他们的回答。这一次由你自己来设计一些表示需要提示的回答列表。当玩家需要这类提示信息时，在每一次猜错后就告诉玩家这样的提示；当玩家选择不需要提示时，在玩家猜错后就不给提示。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reset</span><span class="p">()</span>
-<span class="n">side_length</span><span class="p">,</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">90</span>
-<span class="n">spacing</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">i</span><span class="p">,</span> <span class="n">repeat_times</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">repeat_times</span><span class="p">:</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
-    <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>
-    <span class="n">side_length</span> <span class="o">+=</span> <span class="n">spacing</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<ol class="arabic" start="6">
-<li><p>(<strong>Hard Optional; 困难，选做, /(25+10)</strong>)使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
-<ul class="simple">
-<li><p>all the three squares are absolutely located in the middle of the draw area whose size is 600*400; 所有的三个正方形都完全位于尺寸为600×400的绘图区域的中心</p></li>
-<li><p>the side lengths of the three squares are: 250, 150, and 50, respectively; 三个正方形的边长依次为250，150，和50;</p></li>
-<li><p>line size for each square is 1, 2, and 3 from inside to outside; 三个正方形从内到外线宽依次为1，2，和3;</p></li>
-<li><p>you can use either one <code class="docutils literal notranslate"><span class="pre">while</span></code> loop or two wrapped <code class="docutils literal notranslate"><span class="pre">while</span></code> loops; 可以只使用一个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环来实现，也可以使用两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环嵌套来实现；</p></li>
-<li><p>if you use two <code class="docutils literal notranslate"><span class="pre">while</span></code> loops <strong>and</strong> the all codes are controlled within 35 lines (the line where the import, setup is located is not included in the total lines), you can get an extra 10 points if the result is correct; 如果你使用了两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环<strong>并且</strong>代码总行数控制在35行以内（import, setup所在的行不计入总行数），结果正确可以获得额外的10分加分;</p></li>
-</ul>
-<p><img alt="dc4ec0f7c852484cb6df3a4054293cdc" class="no-scaled-link" src="../../../_images/L007_assign06_regular_polygons.png" style="width: 500px;" /></p>
-</li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">square_drawn</span><span class="p">,</span> <span class="n">square_total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span>            <span class="c1"># 已经绘制好的正方形和一共要绘制的正方形数量</span>
-<span class="n">side_length</span><span class="p">,</span> <span class="n">line_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>          <span class="c1"># 正方形的边长的线宽</span>
-<span class="n">min_side_length</span> <span class="o">=</span> <span class="mi">50</span>                         <span class="c1"># 最小的正方形的边长</span>
-<span class="n">side_total</span> <span class="o">=</span> <span class="mi">4</span>                               <span class="c1"># 绘制的是正四边形</span>
-<span class="n">degree</span><span class="p">,</span> <span class="n">spacing</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">side_total</span><span class="p">,</span> <span class="mi">50</span>         <span class="c1"># 正方形每次转动的角度，正方形之间的间隙</span>
-<span class="n">reset</span><span class="p">()</span>
-<span class="n">pu</span><span class="p">()</span>
-<span class="n">bk</span><span class="p">(</span><span class="n">min_side_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                        <span class="c1"># 移动海龟直至其位于要绘制的最内部的正方形的左下角</span>
-<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="n">fd</span><span class="p">(</span><span class="n">min_side_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>                        <span class="c1"># 海龟此时朝向正下方</span>
-<span class="k">while</span> <span class="n">square_drawn</span> <span class="o">&lt;</span> <span class="n">square_total</span><span class="p">:</span>           <span class="c1"># 根据已经绘制的正方形数量判断是否需要继续绘制</span>
-    <span class="n">pd</span><span class="p">()</span>
-    <span class="n">side_length</span> <span class="o">=</span> <span class="n">min_side_length</span> <span class="o">+</span> <span class="n">square_drawn</span> <span class="o">*</span> <span class="n">spacing</span> <span class="o">*</span> <span class="mi">2</span>
-                                             <span class="c1"># 根据当前正方形来确定边长</span>
-    <span class="n">line_size</span> <span class="o">=</span> <span class="n">square_drawn</span> <span class="o">+</span> <span class="mi">1</span>             <span class="c1"># 根据当前正方形来确定线宽</span>
-    <span class="n">pensize</span><span class="p">(</span><span class="n">line_size</span><span class="p">)</span>                       <span class="c1"># 选取线宽</span>
-    <span class="n">side_drawn</span> <span class="o">=</span> <span class="mi">0</span>                           <span class="c1"># 在绘制当前正方形时，已经绘制了的边的数量和总边数</span>
-    <span class="k">while</span> <span class="n">side_drawn</span> <span class="o">&lt;</span> <span class="n">side_total</span><span class="p">:</span>           <span class="c1"># 根据已经绘制的边数判断是否需要继续绘制边</span>
-        <span class="n">left</span><span class="p">(</span><span class="n">degree</span><span class="p">)</span>                         <span class="c1"># 海龟左转，依次朝向正右、上、左、下</span>
-        <span class="n">fd</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>                      <span class="c1"># 前进绘制边长</span>
-        <span class="n">side_drawn</span> <span class="o">+=</span> <span class="mi">1</span>                      <span class="c1"># 更新绘制好的边的数量</span>
-
-    <span class="n">square_drawn</span> <span class="o">+=</span> <span class="mi">1</span>                        <span class="c1"># 更新绘制好的正方形的数量（又一个正方形画好了）</span>
-    <span class="n">pu</span><span class="p">()</span>                                     <span class="c1"># 抬起画笔准备移动到下一个正方形的左下角</span>
-    <span class="n">fd</span><span class="p">(</span><span class="n">spacing</span><span class="p">)</span>                              <span class="c1"># 朝下方前进</span>
-    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                                 <span class="c1"># 左转朝右</span>
-    <span class="n">bk</span><span class="p">(</span><span class="n">spacing</span><span class="p">)</span>                              <span class="c1"># 后退</span>
-    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                                <span class="c1"># 右转朝下（恢复到朝下的状态，特别重要）</span>
-
-<span class="n">ht</span><span class="p">()</span>
-
-</pre></div>
-</div>
-</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+
 </pre></div>
 </div>
 </div>
@@ -1175,17 +1162,17 @@ div.rendered_html tbody tr:hover {
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="006_draw_regular_polygons.html" title="上一页 页">
+    <a class='left-prev' id="prev-link" href="007_student_polygons2.html" title="上一页 页">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">第06讲 绘制正多边形（一)</p>
+            <p class="prev-next-title">第07讲 绘制正多边形（二)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="008_student_guess_numbers2.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="../../../appendix/index.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">第08讲 猜数字（二）</p>
+        <p class="prev-next-title">附录</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

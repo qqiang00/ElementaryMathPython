@@ -49,11 +49,35 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "id": "3e2d7634-9658-40cf-8a07-b722543a667e",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "n = 8                                  #\n",
+    "side, degree = 120, 360/8              #\n",
+    "reset()\n",
+    "pu()\n",
+    "right(90)\n",
+    "fd(side+20)\n",
+    "left(90 + degree/2)\n",
+    "pd()\n",
+    "\n",
+    "i = 0\n",
+    "while i < n:\n",
+    "    pensize(3)\n",
+    "    pencolor(\"green\")\n",
+    "    fd(side)\n",
+    "    left(degree + (180 - degree)/2)\n",
+    "    pensize(1)\n",
+    "    pencolor(\"red\")\n",
+    "    fd(side)\n",
+    "    bk(side)\n",
+    "    right((180 - degree)/2)\n",
+    "    i += 1\n",
+    "\n",
+    "ht()"
+   ]
   },
   {
    "cell_type": "markdown",
@@ -71,11 +95,35 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "id": "e7f6aafb-833b-459a-abe9-c03daad4ee41",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "n = 6\n",
+    "side, degree = 120, 360/6\n",
+    "reset()\n",
+    "pu()\n",
+    "right(90)\n",
+    "fd(side)\n",
+    "left(90+degree/2)\n",
+    "pd()\n",
+    "\n",
+    "i = 0\n",
+    "while i < n:\n",
+    "    pensize(3)\n",
+    "    pencolor(\"green\")\n",
+    "    fd(side)\n",
+    "    left(degree + (180 - degree)/2)\n",
+    "    pensize(1)\n",
+    "    pencolor(\"red\")\n",
+    "    fd(side)\n",
+    "    bk(side)\n",
+    "    right((180 - degree)/2)\n",
+    "    i += 1\n",
+    "\n",
+    "ht()"
+   ]
   },
   {
    "cell_type": "markdown",
@@ -89,6 +137,38 @@
     "   - comment each line of your code 给每一行代码添加注释\n",
     "   \n",
     "   <img src=\"figures/L007_assign03_regular_polygons.png\" width = 500>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "d8981593-3858-40fc-9840-40b86c51dfaf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "n = 5\n",
+    "side, degree = 160, 360/n\n",
+    "reset()\n",
+    "pu()\n",
+    "left(90)\n",
+    "fd(side)\n",
+    "left(90+degree/2)\n",
+    "pd()\n",
+    "\n",
+    "i = 0\n",
+    "while i < n:\n",
+    "    pensize(3)\n",
+    "    pencolor(\"green\")\n",
+    "    fd(side)\n",
+    "    left(degree + (180 - degree)/2)\n",
+    "    pensize(1)\n",
+    "    pencolor(\"red\")\n",
+    "    fd(side)\n",
+    "    bk(side)\n",
+    "    right((180 - degree)/2)\n",
+    "    i += 1\n",
+    "\n",
+    "ht()"
    ]
   },
   {
@@ -115,13 +195,13 @@
     "# number        degree for         number of      number of       sum of degree of       sum of degree of \n",
     "# of edges      each turn          inner angle    outer angle     inner angles           inner angles\n",
     "# 正多边形边数   绘图时每次转的度数   内角个数       外角个数         内角和（度）            外角和（度）      \n",
-    "#     3              120                   3        3              180                   360\n",
-    "#     4\n",
-    "#     5\n",
-    "#     6\n",
-    "#     8\n",
-    "#     9\n",
-    "#    10"
+    "#     3              120             3               3              180                   360\n",
+    "#     4              90              4               4              360                   360\n",
+    "#     5              72              5               5              540                   360                  \n",
+    "#     6              60              6               6              720                   360\n",
+    "#     8              45              8               8              1080                  360\n",
+    "#     9              40              9               9              1260                  360\n",
+    "#    10              36              10              10             1440                  360"
    ]
   },
   {
@@ -132,7 +212,9 @@
    "outputs": [],
    "source": [
     "# 是不是正多边形的边数越多，内、外角和就越大？\n",
-    "# "
+    "# 答：\n",
+    "# 内角和：是的，如果要求内角和，还可以用这个公式来计算：（边的数量 - 2） * 180。\n",
+    "# 外角和：不是的，所以多边形（不论是正多边形还是多边形），外角和都是360度。"
    ]
   },
   {
@@ -151,11 +233,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 62,
+   "execution_count": 5,
    "id": "5396d0b9-0897-46aa-b9f5-b584e88267ed",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "reset()\n",
+    "side_length, degree = 20, 90\n",
+    "spacing = 20\n",
+    "i, repeat_times = 0, 10\n",
+    "while i < repeat_times:\n",
+    "    fd(side_length)\n",
+    "    left(degree)\n",
+    "    fd(side_length)\n",
+    "    left(degree)\n",
+    "    side_length += spacing\n",
+    "    i += 1  "
+   ]
   },
   {
    "cell_type": "markdown",
@@ -174,8 +268,47 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 6,
    "id": "fe4241c6-2893-4c52-ad28-f780824a70ac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "square_drawn, square_total = 0, 3            # 已经绘制好的正方形和一共要绘制的正方形数量\n",
+    "side_length, line_size = None, None          # 正方形的边长的线宽\n",
+    "min_side_length = 50                         # 最小的正方形的边长\n",
+    "side_total = 4                               # 绘制的是正四边形\n",
+    "degree, spacing = 360/side_total, 50         # 正方形每次转动的角度，正方形之间的间隙\n",
+    "reset()\n",
+    "pu()\n",
+    "bk(min_side_length/2)                        # 移动海龟直至其位于要绘制的最内部的正方形的左下角\n",
+    "right(90)\n",
+    "fd(min_side_length/2)                        # 海龟此时朝向正下方\n",
+    "while square_drawn < square_total:           # 根据已经绘制的正方形数量判断是否需要继续绘制\n",
+    "    pd()\n",
+    "    side_length = min_side_length + square_drawn * spacing * 2    \n",
+    "                                             # 根据当前正方形来确定边长\n",
+    "    line_size = square_drawn + 1             # 根据当前正方形来确定线宽\n",
+    "    pensize(line_size)                       # 选取线宽\n",
+    "    side_drawn = 0                           # 在绘制当前正方形时，已经绘制了的边的数量和总边数\n",
+    "    while side_drawn < side_total:           # 根据已经绘制的边数判断是否需要继续绘制边\n",
+    "        left(degree)                         # 海龟左转，依次朝向正右、上、左、下\n",
+    "        fd(side_length)                      # 前进绘制边长\n",
+    "        side_drawn += 1                      # 更新绘制好的边的数量\n",
+    "    \n",
+    "    square_drawn += 1                        # 更新绘制好的正方形的数量（又一个正方形画好了）\n",
+    "    pu()                                     # 抬起画笔准备移动到下一个正方形的左下角\n",
+    "    fd(spacing)                              # 朝下方前进\n",
+    "    left(90)                                 # 左转朝右\n",
+    "    bk(spacing)                              # 后退\n",
+    "    right(90)                                # 右转朝下（恢复到朝下的状态，特别重要）\n",
+    "\n",
+    "ht()     \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bf92b8b5-c8e3-4fad-8d1b-fe430b986e0d",
    "metadata": {},
    "outputs": [],
    "source": []

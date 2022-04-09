@@ -422,6 +422,11 @@
        第07讲 绘制正多边形（二)
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Beginner/content/008_guess_numbers2.html">
+       第08讲 猜数字（二）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -467,6 +472,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Answer/content/007_student_polygons2.html">
        第07讲 绘制正多边形（二)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/008_student_guess_numbers2.html">
+       第08讲 猜数字（二）
       </a>
      </li>
     </ul>
@@ -906,7 +916,7 @@ div.rendered_html tbody tr:hover {
 <li><p>正八边形每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与八边形边长相等的线段</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="6980b5b1f8da42f19b647b44cf6effa3" class="no-scaled-link" src="../../_images/L007_assign01_regular_polygons2.png" style="width: 500px;" /></p>
+<p><img alt="7208679f15684a1884ba6777b07636e9" class="no-scaled-link" src="../../_images/L007_assign01_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -948,7 +958,7 @@ div.rendered_html tbody tr:hover {
 <li><p>正六边形中距离最远的3对顶点是用颜色为红色的宽为1的线条连接起来的</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="6a4f39afacf64709ad6099d30ccef76b" class="no-scaled-link" src="../../_images/L007_assign02_regular_polygons2.png" style="width: 500px;" /></p>
+<p><img alt="db86bdb6c7a5499fbb1ae8d25cf11e49" class="no-scaled-link" src="../../_images/L007_assign02_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -990,7 +1000,7 @@ div.rendered_html tbody tr:hover {
 <li><p>每一个顶点都朝向中心延伸出一条线宽为1颜色为红色的长度与边长相等的线段</p></li>
 <li><p>给每一行代码添加注释</p></li>
 </ul>
-<p><img alt="e91a2e4013c340c796089664010cc31c" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons2.png" style="width: 500px;" /></p>
+<p><img alt="5df38d2264c3440a811c7197801859ad" class="no-scaled-link" src="../../_images/L007_assign03_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1025,11 +1035,52 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <ol class="arabic" start="4">
+<li><p>Observe 7 regular polygons including regular triangle, square, regular pentagon, regular hexagon, regular octagon, regular nonagon, and regular decagon, answer the following questions: 观察正三、正四、正五、正六、正八、正九、正十边形等7个正多边形，回答下列问题：</p>
+<ul class="simple">
+<li><p>when drawing each regular polygon, how many degrees does the little turtle turn after each edge is drawn? 在绘制每一个正多边形时，小海龟在绘制完成一条边后要转多少度？</p></li>
+<li><p>for each regular polygon, how many interior angle does it have, What is the sum of these interior angles? 对于每一个正多边形，它有多少个度数相同的内角？这些内角加起来的和是多少？</p></li>
+<li><p>for each regular polygon, how many exterior angles does it have? What is the sum of these exterior angles?对于每一个正多边形，它有多少个度数相同的外角？这些外角加起来的和是多少？，</p></li>
+<li><p>is it true that the more sides of a regular polygon, the greater the sum of the interior and exterior angles?是不是正多边形的边数越多，内、外角和就越大？</p></li>
+</ul>
+<p>Fill in the answers in the two cells below, where the answer for regular triangle has been given as an example 将答案填写在下面的两个单元格中，其中三角形作为示例答案已经给出</p>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># number        degree for         number of      number of       sum of degree of       sum of degree of</span>
+<span class="c1"># of edges      each turn          inner angle    outer angle     inner angles           inner angles</span>
+<span class="c1"># 正多边形边数   绘图时每次转的度数   内角个数       外角个数         内角和（度）            外角和（度）</span>
+<span class="c1">#     3              120             3               3              180                   360</span>
+<span class="c1">#     4              90              4               4              360                   360</span>
+<span class="c1">#     5              72              5               5              540                   360</span>
+<span class="c1">#     6              60              6               6              720                   360</span>
+<span class="c1">#     8              45              8               8              1080                  360</span>
+<span class="c1">#     9              40              9               9              1260                  360</span>
+<span class="c1">#    10              36              10              10             1440                  360</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 是不是正多边形的边数越多，内、外角和就越大？</span>
+<span class="c1"># 答：</span>
+<span class="c1"># 内角和：是的，如果要求内角和，还可以用这个公式来计算：（边的数量 - 2） * 180。</span>
+<span class="c1"># 外角和：不是的，所以多边形（不论是正多边形还是多边形），外角和都是360度。</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic" start="4">
 <li><p>使用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环绘制下图。要求：</p>
 <ul class="simple">
 <li><p>给每一行代码添加你的注释</p></li>
 </ul>
-<p><img alt="d05129329e8a42f5ae5f59b864307e3a" class="no-scaled-link" src="../../_images/L007_assign05_regular_polygons2.png" style="width: 500px;" /></p>
+<p><img alt="ca9f8603fe0c474f9bf8ac568a8048ba" class="no-scaled-link" src="../../_images/L007_assign05_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
@@ -1070,7 +1121,7 @@ div.rendered_html tbody tr:hover {
 <li><p>使用了两个<code class="docutils literal notranslate"><span class="pre">while</span></code>循环<strong>并且</strong>代码总行数控制在35行以内（import, setup所在的行不计入总行数），结果正确可以获得额外的10分加分</p></li>
 <li><p>给每一行代码添加你的注释</p></li>
 </ul>
-<p><img alt="45c1957318074b549ab988ba3a459ed3" class="no-scaled-link" src="../../_images/L007_assign06_regular_polygons2.png" style="width: 500px;" /></p>
+<p><img alt="be338eaa37614589aec6af490e5a5067" class="no-scaled-link" src="../../_images/L007_assign06_regular_polygons2.png" style="width: 500px;" /></p>
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
