@@ -24,7 +24,7 @@
    "source": [
     "使用`qianglib`库提供的方法，绘制方格坐标纸，其中坐标系的原点`(0,0)`位于绘图区的最左下方，使用的`scale`值为`20`. Use the methods provided in the library `qianglib`, draw a grid coordinate system where the origin `(0, 0)` is at the bottom left of the coordinate system.\n",
     "\n",
-    "1. Mark all the points in a draw paper; 在绘图纸上标记上述所有的点；\n",
+    "1. Mark all the points (0, 0), (6, 12), (10, 24), (24, 18), (16, 16), (25, 25) in a draw paper; 在绘图纸上标记上述所有的点；\n",
     "2. For each point except O(0, 0), calculate the exact area of a square whose side length is the distance between O(0, 0) to that point. you don't need to draw the square; 对于除了O(0,0)以外的其它所有点，准确计算由这个点到圆点O(0, 0)的距离为边长的正方形的面积。你不需要绘制这个正方形；\n",
     "3. For each point except O(0, 0), estimate the distance between O(0, 0) to the point. The result should be precised to 0.001; 对于除了O(0,0)以外的其它所有点，计算由这个点到圆点O(0, 0)的距离。结果精确到0.001；\n",
     "4. Draw the line AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE. approximately calculate the length of these lines. The result should be precised to 0.001; 绘制下列线段AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE，计算这些线段的长度。结果精确到0.001.\n",
@@ -52,6 +52,171 @@
    },
    "source": [
     "### Prerequisites 预备知识"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "10d7cbd2-e8ae-4d34-aa19-40dd730997dd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "area = 180\n",
+    "side = None\n",
+    "\n",
+    "#square:  area = side * side\n",
+    "# side     area\n",
+    "#  3       9     \n",
+    "#  4       16\n",
+    "#  a       s_a <= 180\n",
+    "#  b=a+1   s_b >= 180"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "84e792f7-0544-412d-af3c-16ae4669414b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def find_int_a2(area):\n",
+    "    a, step = 0, 0.1\n",
+    "    #print(\"let's start from a = {}\".format(a))\n",
+    "    while a**2 <= area:\n",
+    "        #print(\"-\"*20)\n",
+    "        #print(\"{}*{} is smaller than or equal to {}\".format(a, area))\n",
+    "        a+=step\n",
+    "        #print(\"let's increase {} by 1 to try {} again\".format(a-1, a))\n",
+    "    \n",
+    "    #print(\"Out of loop, because {}*{} > {}\".format(a, a, area)) \n",
+    "    #print(\"the result will be {}\".format(a-1))\n",
+    "    return a-step"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "a5dbee95-8736-4301-b237-29e0114b2819",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "31622776.60168379"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from math import sqrt   # sqrt\n",
+    "sqrt(1000000000000000)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39e042bf-3d38-4b59-afc8-e19d4df4a906",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# To calcualte the square root of a number is equivalent to calcualte the side length of a square whose area is the number.\n",
+    "# To calculate the square of a number is equivalent to calcualte the area of a square whose side length is the number."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "89e8c6e3-c20c-4cd7-980c-9715b5450602",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "# sqrt()   +, - * /\n",
+    "# 2+2, 4-2, a+b, a-b\n",
+    "\n",
+    "a = 16\n",
+    "result = sqrt(a)\n",
+    "print(result)\n",
+    "# the square root of 16 is 4.0\n",
+    "# if the area of a square is 16, then the side length of this square is 4.0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "55ddbd8a-4ff4-4b2c-8266-eb22255069f0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# **2  + - * / \n",
+    "# square(a) <=> a*a\n",
+    "# the square of a a is equal to a*a, and is equal to a**2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a5e8e744-2ee9-49fa-afdb-91a0d279943c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# power overwhelming\n",
+    "# power(a, b)   # a*a*a*a....*a   (multiplication of b numbers of a \n",
+    "# **"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "ab4948ee-8678-4b78-ac04-f27c4d4d28f3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from math import pow"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "4702f93c-e938-4434-b152-2d764d5cfb6c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pow(2, 10) == 2**10\n",
+    "\n",
+    "pow(10, 2) == 10*10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5425dc77-0787-41aa-9962-ceec14adbb9e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from math import pow, sqrt\n",
+    "# "
    ]
   },
   {

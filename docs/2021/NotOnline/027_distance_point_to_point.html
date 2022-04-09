@@ -465,7 +465,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2022/Answer/content/007_student_polygons2.html">
+      <a class="reference internal" href="../../2022/Answer/content/007_answer_assignment.html">
        第07讲 绘制正多边形（二)
       </a>
      </li>
@@ -947,7 +947,7 @@ div.rendered_html tbody tr:hover {
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>. Use the methods provided in the library <code class="docutils literal notranslate"><span class="pre">qianglib</span></code>, draw a grid coordinate system where the origin <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> is at the bottom left of the coordinate system.</p>
 <ol class="arabic simple">
-<li><p>Mark all the points in a draw paper; 在绘图纸上标记上述所有的点；</p></li>
+<li><p>Mark all the points (0, 0), (6, 12), (10, 24), (24, 18), (16, 16), (25, 25) in a draw paper; 在绘图纸上标记上述所有的点；</p></li>
 <li><p>For each point except O(0, 0), calculate the exact area of a square whose side length is the distance between O(0, 0) to that point. you don’t need to draw the square; 对于除了O(0,0)以外的其它所有点，准确计算由这个点到圆点O(0, 0)的距离为边长的正方形的面积。你不需要绘制这个正方形；</p></li>
 <li><p>For each point except O(0, 0), estimate the distance between O(0, 0) to the point. The result should be precised to 0.001; 对于除了O(0,0)以外的其它所有点，计算由这个点到圆点O(0, 0)的距离。结果精确到0.001；</p></li>
 <li><p>Draw the line AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE. approximately calculate the length of these lines. The result should be precised to 0.001; 绘制下列线段AB, AC, AD, AE, BC, BD, BE, CD, CE, and DE，计算这些线段的长度。结果精确到0.001.</p></li>
@@ -963,6 +963,158 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">area</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">side</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1">#square:  area = side * side</span>
+<span class="c1"># side     area</span>
+<span class="c1">#  3       9</span>
+<span class="c1">#  4       16</span>
+<span class="c1">#  a       s_a &lt;= 180</span>
+<span class="c1">#  b=a+1   s_b &gt;= 180</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">find_int_a2</span><span class="p">(</span><span class="n">area</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span>
+    <span class="c1">#print(&quot;let&#39;s start from a = {}&quot;.format(a))</span>
+    <span class="k">while</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">area</span><span class="p">:</span>
+        <span class="c1">#print(&quot;-&quot;*20)</span>
+        <span class="c1">#print(&quot;{}*{} is smaller than or equal to {}&quot;.format(a, area))</span>
+        <span class="n">a</span><span class="o">+=</span><span class="n">step</span>
+        <span class="c1">#print(&quot;let&#39;s increase {} by 1 to try {} again&quot;.format(a-1, a))</span>
+
+    <span class="c1">#print(&quot;Out of loop, because {}*{} &gt; {}&quot;.format(a, a, area))</span>
+    <span class="c1">#print(&quot;the result will be {}&quot;.format(a-1))</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">-</span><span class="n">step</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>   <span class="c1"># sqrt</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">1000000000000000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+31622776.60168379
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># To calcualte the square root of a number is equivalent to calcualte the side length of a square whose area is the number.</span>
+<span class="c1"># To calculate the square of a number is equivalent to calcualte the area of a square whose side length is the number.</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># sqrt()   +, - * /</span>
+<span class="c1"># 2+2, 4-2, a+b, a-b</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># the square root of 16 is 4.0</span>
+<span class="c1"># if the area of a square is 16, then the side length of this square is 4.0</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4.0
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># **2  + - * /</span>
+<span class="c1"># square(a) &lt;=&gt; a*a</span>
+<span class="c1"># the square of a a is equal to a*a, and is equal to a**2</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># power overwhelming</span>
+<span class="c1"># power(a, b)   # a*a*a*a....*a   (multiplication of b numbers of a</span>
+<span class="c1"># **</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="nb">pow</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+
+<span class="nb">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+True
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="nb">pow</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
 <p>无</p>
 </div>
 <div class="section" id="Solution-编程求解">

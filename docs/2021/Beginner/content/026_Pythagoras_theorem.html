@@ -467,7 +467,7 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../../2022/Answer/content/007_student_polygons2.html">
+      <a class="reference internal" href="../../../2022/Answer/content/007_answer_assignment.html">
        第07讲 绘制正多边形（二)
       </a>
      </li>
@@ -989,7 +989,7 @@ div.rendered_html tbody tr:hover {
 <div class="line">使用<code class="docutils literal notranslate"><span class="pre">qianglib</span></code>库提供的方法，绘制方格坐标纸，其中坐标系的原点<code class="docutils literal notranslate"><span class="pre">(0,0)</span></code>位于绘图区的最左下方，使用的<code class="docutils literal notranslate"><span class="pre">scale</span></code>值为<code class="docutils literal notranslate"><span class="pre">20</span></code>.</div>
 </div>
 <p>Follow the steps below，draw a graph slimilar to the picture below. 跟随下面的步骤，绘制出类似如下图所示的图形.</p>
-<p><img alt="fe66b5b258894064bcaf33db14d916db" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
+<p><img alt="0c24daabb63f4d9ba777d2c4a930c3ae" class="no-scaled-link" src="../../../_images/L025_pythagoras_theorem.png" style="width: 500px;" /></p>
 <ol class="arabic simple">
 <li><p>Mark three points A(10, 9), B(18, 9), C(10, 15), draw triangle BAC with black color; mark it with <code class="docutils literal notranslate"><span class="pre">Tri0</span></code>, mark the vertices, mark the sides with <span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span> for line AC, AB, and BC, respectively; 标记三个点:A(10, 9), B(18, 9), C(10, 15)，用黑色绘制三角形BAC；标记为<code class="docutils literal notranslate"><span class="pre">Tri0</span></code>; 将这个直角三角形的三条边从短到长分别标记为<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>和<span class="math notranslate nohighlight">\(c\)</span>；</p></li>
 <li><p>Create a square whose one side is AB below the triangle BAC, name the other tow points of the square D and E such that DE is parallel to AC, D is left to E; name the square as ABED. mark points D and E, Draw this square with green color, mark it as <code class="docutils literal notranslate"><span class="pre">Sqr1</span></code>;
@@ -1130,6 +1130,90 @@ div.rendered_html tbody tr:hover {
 <span class="n">_</span><span class="p">,</span> <span class="n">second_stu2</span> <span class="o">=</span> <span class="n">students</span>
 </pre></div>
 </div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Difference between <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code> in a loop</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jason&quot;</span><span class="p">,</span> <span class="s2">&quot;sophie&quot;</span><span class="p">,</span> <span class="s2">&quot;tony&quot;</span><span class="p">,</span> <span class="s2">&quot;yunzi&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i: </span><span class="si">{}</span><span class="s2">, name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{}</span><span class="s2"> found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    out of if condition&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+i: 0, name: jason
+i: 1, name: sophie
+    sophie found
+    out of if condition
+i: 2, name: tony
+i: 3, name: yunzi
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i: </span><span class="si">{}</span><span class="s2">, name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{}</span><span class="s2"> found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   out of if condition&quot;</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+i: 0, name: jason
+i: 1, name: sophie
+    sophie found
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i: </span><span class="si">{}</span><span class="s2">, name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    </span><span class="si">{}</span><span class="s2"> found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">continue</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   out of if condition&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+i: 0, name: jason
+i: 1, name: sophie
+    sophie found
+i: 2, name: tony
+i: 3, name: yunzi
+</pre></div></div>
 </div>
 </div>
 </div>
@@ -1436,7 +1520,7 @@ of the method, the parameters it accepts, the parameter types, and part of the c
 直角三角形的三边长度满足本讲提到的勾股定理；它的逆命题也成立，即当三个数字<span class="math notranslate nohighlight">\(a\)</span>,<span class="math notranslate nohighlight">\(b\)</span>,<span class="math notranslate nohighlight">\(c\)</span>满足<span class="math notranslate nohighlight">\(a^2+b^2=c^2\)</span>时，以这三个长度构成的三角形<strong>一定</strong>是一个<strong>直角三角形</strong>，且最长的边对应的三角形的角是直角。请编写一个方法找出在1-100以内所有的符合上述公式关系的三个整数，并打印出来。方法的名称，接受的参数、参数类型以及方法的部分代码已经给出。</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1452,6 +1536,12 @@ of the method, the parameters it accepts, the parameter types, and part of the c
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">max_length</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">max_length</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="o">*</span><span class="n">c</span><span class="p">:</span>
+                    <span class="n">combination</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combination</span><span class="p">)</span>
 
     <span class="c1">#TODO: Add your own codes here</span>
 
@@ -1460,7 +1550,7 @@ of the method, the parameters it accepts, the parameter types, and part of the c
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1511,22 +1601,30 @@ of the method, the parameters it accepts, the parameter types, and part of the c
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span>
-<span class="n">results</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
-<span class="c1">#results = find_all_right_triangles(min_value, max_value)</span>
-<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1">#results = [(3,4,5), (4,5,7), (6,8,10), (5, 12, 13), (-1, 1, 100), (3,4, 5)]</span>
+<span class="n">combinations</span> <span class="o">=</span> <span class="n">find_all_right_triangles</span><span class="p">(</span><span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">)</span>
 <span class="n">verify_find_all_right_triangles</span><span class="p">(</span><span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">combinations</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Success:52/52 passed
+[(3, 4, 5), (5, 12, 13), (6, 8, 10), (7, 24, 25), (8, 15, 17), (9, 12, 15), (9, 40, 41), (10, 24, 26), (11, 60, 61), (12, 16, 20), (12, 35, 37), (13, 84, 85), (14, 48, 50), (15, 20, 25), (15, 36, 39), (16, 30, 34), (16, 63, 65), (18, 24, 30), (18, 80, 82), (20, 21, 29), (20, 48, 52), (21, 28, 35), (21, 72, 75), (24, 32, 40), (24, 45, 51), (24, 70, 74), (25, 60, 65), (27, 36, 45), (28, 45, 53), (28, 96, 100), (30, 40, 50), (30, 72, 78), (32, 60, 68), (33, 44, 55), (33, 56, 65), (35, 84, 91), (36, 48, 60), (36, 77, 85), (39, 52, 65), (39, 80, 89), (40, 42, 58), (40, 75, 85), (42, 56, 70), (45, 60, 75), (48, 55, 73), (48, 64, 80), (51, 68, 85), (54, 72, 90), (57, 76, 95), (60, 63, 87), (60, 80, 100), (65, 72, 97)]
+</pre></div></div>
+</div>
 <ol class="arabic" start="3">
-<li><p>Suppose you have successfully found all combinations of the three sides of the triangle that satisfy the Pythagorean theorem within 1-100, you will find that (3, 4, 5), (5, 12, 13), (6, 8, 10), (10, 24, 26) are withen the results. Actually, (3, 4, 5) and (6, 8, 10) can be classified into the same category, because multiplying each number (3, 4, 5) by 2 producess (6, 8, 10). Similarly, (5, 12, 13) and (10, 24, 26) belong to the same category as well. (3, 4, 5) and (5, 12, 13) are the smallest
+<li><p>Suppose you have successfully found all combinations of the three sides of the triangle that satisfy the Pythagorean theorem within 1-100, you will find that (3, 4, 5), (5, 12, 13), (6, 8, 10), (10, 24, 26) are within the results. Actually, (3, 4, 5) and (6, 8, 10) can be classified into the same category, because multiplying each number (3, 4, 5) by 2 produces (6, 8, 10). Similarly, (5, 12, 13) and (10, 24, 26) belong to the same category as well. (3, 4, 5) and (5, 12, 13) are the smallest
 combination in that category. Please write a program to answer, out of all the combinations you found in the previous question, how many different categories are there. For each category, print the combination with the smallest number.</p>
 <p>假设你已经成功找出1-100以内所有满足毕达哥拉斯定理的三角形三边长组合，你会发现这里面有(3, 4, 5),(5, 12, 13), (6, 8, 10), (10, 24, 26)等等组合。这其中(3，4，5)和(6，8，10)可以归为同一类别，因为把(3，4，5)每一个数都乘以2就能得到(6, 8, 10)。类似的，(5，12，13)和(10，24，26)是属于同一类组合。(3，4，5)和(5，12，13)组合分别是所在类别中最小的一组。请编写程序回答，在你上一题中找到的所有组合中，一共有多少个不同的组合类别。对于每一个类别的组合，请打印出数字最小的那一组。</p>
 <p><strong>Note</strong> you may assume that the combinations you acquired by previous question is ordered by the first number(a) of each element with an ascending order.</p>
@@ -1534,27 +1632,165 @@ combination in that category. Please write a program to answer, out of all the c
 </li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">find_smallest_categories</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
     <span class="n">smallest_categories</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1">#TODO: add your own codes here</span>
 
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">combination</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
+        <span class="n">is_smallest</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">combination</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">smallest</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">smallest_categories</span><span class="p">):</span>
+            <span class="n">min_a</span><span class="p">,</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">min_c</span> <span class="o">=</span> <span class="n">smallest</span>
+            <span class="n">quotien_a</span><span class="p">,</span> <span class="n">remainder_a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">min_a</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">min_a</span>         <span class="c1"># a=15, b=36, c=39; min_a=5, min_b=12, min_c=13</span>
+            <span class="n">quotien_b</span><span class="p">,</span> <span class="n">remainder_b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">//</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">b</span> <span class="o">%</span> <span class="n">min_b</span>
+            <span class="n">quotien_c</span><span class="p">,</span> <span class="n">remainder_c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">//</span> <span class="n">min_c</span><span class="p">,</span> <span class="n">c</span> <span class="o">%</span> <span class="n">min_c</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">remainder_a</span> <span class="o">+</span> <span class="n">remainder_b</span> <span class="o">+</span> <span class="n">remainder_c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> \
+               <span class="p">(</span><span class="n">quotien_a</span> <span class="o">==</span> <span class="n">quotien_b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">quotien_b</span> <span class="o">==</span> <span class="n">quotien_c</span><span class="p">):</span>
+                <span class="c1"># quotien_a == quotien_b == quotien_c is not allowed</span>
+                <span class="n">is_smallest</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">is_smallest</span><span class="p">:</span>
+            <span class="n">smallest_categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combination</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">smallest_categories</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">39</span>
+<span class="n">min_a</span><span class="p">,</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">min_c</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">quotien_a</span><span class="p">,</span> <span class="n">remainder_a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">min_a</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">min_a</span>
+<span class="n">quotien_b</span><span class="p">,</span> <span class="n">remainder_b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">//</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">b</span> <span class="o">%</span> <span class="n">min_b</span>
+<span class="n">quotien_c</span><span class="p">,</span> <span class="n">remainder_c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">//</span> <span class="n">min_c</span><span class="p">,</span> <span class="n">c</span> <span class="o">%</span> <span class="n">min_c</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">quotien_a</span><span class="p">,</span> <span class="n">remainder_a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quotien_b</span><span class="p">,</span> <span class="n">remainder_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quotien_c</span><span class="p">,</span> <span class="n">remainder_c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1 2
+3 0
+2 3
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">find_smallest_categories</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">smallest_categories</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">combination</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">combinations</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For loop </span><span class="si">{}</span><span class="se">\t</span><span class="s2"> combination:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">combination</span><span class="p">))</span>
+        <span class="n">is_smallest</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">combination</span>           <span class="c1"># (6, 8 10)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  is_smallest: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">is_smallest</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  a, b, c: </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  categories:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">categories</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  smallest_categories:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smallest_categories</span><span class="p">))</span>
+        <span class="c1"># combination = (3, 4, 5)</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">categories</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  ------------------------------------------&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  For inner loop </span><span class="si">{}</span><span class="se">\t</span><span class="s2"> category:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">category</span><span class="p">))</span>
+            <span class="n">smallest</span> <span class="o">=</span> <span class="n">category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>      <span class="c1"># (3, 4, 5), (5, 12, 13)</span>
+            <span class="n">min_a</span><span class="p">,</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">min_c</span> <span class="o">=</span> <span class="n">smallest</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    smallest: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smallest</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    min_a, min_b, min_c: </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_a</span><span class="p">,</span> <span class="n">min_b</span><span class="p">,</span> <span class="n">min_c</span><span class="p">))</span>
+            <span class="n">is_divisable_a</span><span class="p">,</span> <span class="n">quotien_a</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="n">min_a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">is_divisable_a</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">quotien_a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">min_a</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_divisable_a</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    is_divisable_a:True, quotien_a:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quotien_a</span><span class="p">))</span>
+            <span class="n">is_divisable_b</span><span class="p">,</span> <span class="n">quotien_b</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">b</span> <span class="o">%</span> <span class="n">min_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">is_divisable_b</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">quotien_b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">//</span> <span class="n">min_b</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_divisable_b</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    is_divisable_b:True, quotien_b:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quotien_b</span><span class="p">))</span>
+            <span class="n">is_divisable_c</span><span class="p">,</span> <span class="n">quotien_c</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">%</span> <span class="n">min_c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">is_divisable_c</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">quotien_c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">//</span> <span class="n">min_c</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_divisable_c</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    is_divisable_c:True, quotien_c:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">quotien_c</span><span class="p">))</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">quotien_a</span> <span class="o">==</span> <span class="n">quotien_b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">quotien_b</span> <span class="o">==</span> <span class="n">quotien_c</span><span class="p">):</span>
+                <span class="n">is_smallest</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    is_smallest:False&quot;</span><span class="p">)</span>
+                <span class="n">category</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combination</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   category updated:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">category</span><span class="p">))</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">is_smallest</span><span class="p">:</span>
+            <span class="n">categories</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">combination</span><span class="p">])</span>
+            <span class="n">smallest_categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combination</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  categories: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">categories</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  smallest_categories:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">smallest_categories</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">smallest_categories</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">result</span> <span class="o">=</span> <span class="n">find_smallest_categories</span><span class="p">(</span><span class="n">combinations</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># [(3, 4, 5), (5, 12, 13)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(3, 4, 5), (5, 12, 13), (7, 24, 25), (8, 15, 17), (9, 40, 41), (11, 60, 61), (12, 35, 37), (13, 84, 85), (16, 63, 65), (20, 21, 29), (28, 45, 53), (33, 56, 65), (36, 77, 85), (39, 80, 89), (48, 55, 73), (65, 72, 97)]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">smallests</span> <span class="o">=</span> <span class="n">find_smallest_categories</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">smallest</span> <span class="ow">in</span> <span class="n">smallests</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">smallest</span><span class="p">)</span>
+<span></span>
 </pre></div>
 </div>
 </div>
