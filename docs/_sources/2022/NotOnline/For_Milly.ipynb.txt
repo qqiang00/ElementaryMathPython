@@ -1,0 +1,165 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aa855e96-1139-475f-9714-51e995f73c3a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f695310e-7110-4fdc-b66a-de827cf63eaa",
+   "metadata": {},
+   "source": [
+    "Milly:\n",
+    "   对于第3题，你的整体思路是正确的，把确定生成数的范围和猜数字环节作为两个单独的部分来处理，先用一个while循环确定生成的数字的最大范围，再用一个while循环来负责猜数字和处理其它输入。这个思路是正确的。你代码部分写的还是比较清楚的，在修改了一处语法错误(while后面没有加冒号）之后，程序是可以运行的，只是运行的结果和流程有时候不符合预期。这主要是由于你在太多地方使用了input来接受输入了。\n",
+    "   我给你一个提示，在猜数字环节，只使用一个while循环，而且只在这个while循环里的一开始用一个input来接受输入，在这个while的其它地方都尽量不要再使用任何input来接受猜的数字了，需要退出确认的时候除外，可以再使用一个input。用if和else组合来解决分情况的控制：当程序判断用户需要退出猜数字的时候使用break，当选择继续猜的时候就让代码重复循环里的代码。\n",
+    "   试着按照老师给的思路再修改修改？如果写不出来也没关系，这个题目有点难。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "88f1da08-d606-4e72-afd5-a5cb843cba5d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "a number that bigger then or equal 20 smaller then or equal 1000: 10\n",
+      "a nember that bigger then equal 20 smaller then or equal 1000: 20\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "我是你的小助手，我想和你玩一个猜数字的游戏。\n",
+      "我会从0-20之间随便挑出一个数字，你可以反复猜直到才对为止\n",
+      "如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。\n",
+      "[\"I don't want to play anymore\", 'I quit', 'My mom called me home for dinner', 'Bye', 'bye', '不玩了', '不猜了', '我妈喊我回家吃饭了']\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "我选好了，现在你来猜吧(0-20): 10\n",
+      "没猜对，继续猜: bye\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "你还没有猜过呢,确定不猜了？输入 ['yes', 'Yes', '是', '真的不想猜了'] 我就知道你真的不想猜了\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "请回答: no\n",
+      "OK，我们继续猜吧： 11\n"
+     ]
+    },
+    {
+     "ename": "NameError",
+     "evalue": "name 'you_guess' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Input \u001b[1;32mIn [4]\u001b[0m, in \u001b[0;36m<cell line: 27>\u001b[1;34m()\u001b[0m\n\u001b[0;32m     39\u001b[0m     \u001b[38;5;28;01mbreak\u001b[39;00m\n\u001b[0;32m     40\u001b[0m \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m---> 41\u001b[0m     \u001b[38;5;28;01mwhile\u001b[39;00m \u001b[43myou_guess\u001b[49m:                 \u001b[38;5;66;03m# you_guess 后面缺少冒号\u001b[39;00m\n\u001b[0;32m     42\u001b[0m         your_guess \u001b[38;5;241m=\u001b[39m \u001b[38;5;28minput\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m没猜对，继续猜:\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m     43\u001b[0m         time_you_try \u001b[38;5;241m=\u001b[39m time_you_try \u001b[38;5;241m+\u001b[39m \u001b[38;5;241m1\u001b[39m\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'you_guess' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "from time import sleep\n",
+    "from random import randint\n",
+    "min_num, max_num = 0, int(input(\"a number that bigger then or equal 20 smaller then or equal 1000:\"))\n",
+    "if 1000 >= max_num and max_num >= 20:\n",
+    "    nem_to_guess = randint(min_num, max_num)             # nem_to_guess 好像没有使用到？它和后面的num_computer_generated 有什么联系吗？\n",
+    "else:\n",
+    "    while 1000 < max_num or max_num < 20:                # 我还没有教过 or 的使用，不建议使用我没有教过的内容。\n",
+    "        min_num, max_num = 0, int(input(\"a nember that bigger then equal 20 smaller then or equal 1000:\"))\n",
+    "codes = [\"I don't want to play anymore\",\n",
+    "         \"I quit\", \"My mom called me home for dinner\",\n",
+    "         \"Bye\",\n",
+    "         \"bye\",\n",
+    "         \"不玩了\",\n",
+    "         \"不猜了\",\n",
+    "         \"我妈喊我回家吃饭了\"\n",
+    "        ]\n",
+    "time_you_try = 0\n",
+    "codes2 = [\"yes\", \"Yes\", \"是\", \"真的不想猜了\"]\n",
+    "no = \"no\"\n",
+    "print(\"我是你的小助手，我想和你玩一个猜数字的游戏。\")\n",
+    "print(\"我会从{}-{}之间随便挑出一个数字，你可以反复猜直到才对为止\".format(min_num, max_num))\n",
+    "print(\"如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。\")\n",
+    "print(codes)\n",
+    "num_computer_generated = randint(min_num, max_num)        # max_num \n",
+    "your_guess = input(\"我选好了，现在你来猜吧({}-{}):\".format(min_num, max_num))\n",
+    "while True:\n",
+    "    if your_guess in codes:\n",
+    "        if time_you_try == 0:\n",
+    "            print(\"你还没有猜过呢,确定不猜了？输入\", codes2, \"我就知道你真的不想猜了\")\n",
+    "            answer = input(\"请回答:\")\n",
+    "            if answer in codes2:\n",
+    "                print(\"好吧，你一次都没有猜呢。下次再玩的时候，记得来找我哦。\")\n",
+    "                break\n",
+    "            else:\n",
+    "                next_time_to_guess = input(\"OK，我们继续猜吧：\")\n",
+    "                if num_you_guessed == num_computer_generated:\n",
+    "                    time_you_try = time_you_try + 1\n",
+    "                    print(\"恭喜你，你猜对了,你一共猜了{}次。\".format(time_you_try))\n",
+    "                    break\n",
+    "                else:\n",
+    "                    while you_guess:                 # you_guess 后面缺少冒号\n",
+    "                        your_guess = input(\"没猜对，继续猜:\")\n",
+    "                        time_you_try = time_you_try + 1\n",
+    "        if time_you_try == 1 or time_you_try == 2 :\n",
+    "            print(\"你真的不想猜了？\")\n",
+    "            answer = int(input(\"请回答：\"))\n",
+    "            if answer is yes:                        # yes 这个变量没有声明\n",
+    "                    print(\"好吧，你才猜了{}次。下次再玩的时候，记得来找我哦。\".format(time_you_try))\n",
+    "                    break\n",
+    "        print(\"很遗憾，你没有猜出来，下次再玩吧, 要猜的数是{}。\".format(nem_to_guess))\n",
+    "        break\n",
+    "    else:\n",
+    "        num_you_guessed = int(your_guess)\n",
+    "        if num_you_guessed == num_computer_generated:\n",
+    "            print(\"恭喜你，你猜对了,你一共猜了{}次。\".format(time_you_try))\n",
+    "            break\n",
+    "        else:\n",
+    "            your_guess = input(\"没猜对，继续猜:\")\n",
+    "print(\"猜数字游戏结束。\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -429,6 +429,11 @@
        第08讲 猜数字（二）
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Beginner/content/009_correction_review.html">
+       第09讲 猜数字(二)作业讲解
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
@@ -1086,18 +1091,158 @@ I love China.
 <li><p>Perfect number guessing game 1: At present, our number guessing game program can only generate a certain number between 0 and 9(both included). Many players are not satisfied with only guessing numbers smaller than or equal to 9. They want to challenge this number guessing game with much lager number. 完善猜数字游戏一：目前我们的猜数字游戏程序只能固定生成0-9这两个数之间（包括）的某一个数，许多玩家不满意只猜比9小的数，他们希望挑战的更大数字范围的猜数字游戏。</p>
 <p>Please modify the solution code in this lecture or the code completed in previous question。 The program will allow a player to tell the computer the maximum upper limit of the random number (such as 100). The player tell the computer by keyboard input before the game starts. It should be noted that, in order to control the difficulty of the game, the number required by the program must be above 20 (inclusive) and below 1000 (inclusive), otherwise the computer will ask you to re-enter until
 this requirement is met. Then the computer randomly generates a random number greater than or equal to 0 and less than or equal to the number you give, and let the player guess the number. Please write the complete code in the code cell below.
-请你修改示例程序，让猜数字游戏程序可以让猜数字的人在游戏开始前通过键盘输入来告诉计算机能够生成的随机数的最大上限（比如100）。需要注意的是，为了控制游戏难度，程序要求输入的这个数必须是20（含）以上，1000（含）一下，否则计算机会让你重新输入直到满足这个要求。随后计算机随机生成大于等于0且小于等于你给定的这个数之内的随机数，让玩家猜这个数。请将完整的代码写在下面的代码单元格里。</p>
+请你修改示例程序，让猜数字游戏程序可以让猜数字的人在游戏开始前通过键盘输入来告诉计算机能够生成的随机数的最大上限（比如100）。需要注意的是，为了控制游戏难度，程序要求输入的这个数必须是20（含）以上，1000（含）以下，否则计算机会让你重新输入直到满足这个要求。随后计算机随机生成大于等于0且小于等于你给定的这个数之内的随机数，让玩家猜这个数。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;由你来确定要猜的数字的最大可能的值(20-1000):&quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">max_num</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">max_num</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字符合要求，就用它了&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太大了，太难了&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太小了，没有难度了&quot;</span><span class="p">)</span>
+
+    <span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;重新输入最大的数字：&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;没猜对，继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我是你的小助手，我想和你玩一个猜数字的游戏。
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+由你来确定要猜的数字的最大可能的值(20-1000之间): 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字太小了，没有难度了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+重新输入最大的数字： 2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字太小了，没有难度了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+重新输入最大的数字： 1001
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字太大了，太难了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+重新输入最大的数字： 20
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字正好，就用它了
+我会从0-20之间随便挑出一个数字，你可以反复猜直到才对为止
+如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。
+[&#34;I don&#39;t want to play anymore&#34;, &#39;I quit&#39;, &#39;My mom called me home for dinner&#39;, &#39;Bye&#39;, &#39;bye&#39;, &#39;不玩了&#39;, &#39;不猜了&#39;, &#39;我妈喊我回家吃饭了&#39;]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我选好了，现在你来猜吧(0-20): 0
+没猜对，继续猜: bye
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+很遗憾，你没有猜出来，下次再玩吧。
+猜数字游戏结束。
+</pre></div></div>
 </div>
 <ol class="arabic" start="3">
 <li><p>Perfect number guessing game 2: Currently, our number guessing game will output same information (“Unfortunately, you didn’t guess it, let’s play next time”) when a player don’t want guess anymore. Actually, this is not always reasonable, especially when the player does not make a single guess at all. In this situation, the game should not output that information.
@@ -1113,8 +1258,69 @@ will output “It’s a bit disappointing, tell me if you want to play in the fu
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+<span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># codes 是一个 code 的复数形式</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="n">confirm_quit_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="s2">&quot;是&quot;</span><span class="p">,</span><span class="s2">&quot;真的不想猜了&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;由你来确定要猜的数字的最大可能的值（20-1000):&quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">max_num</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">max_num</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字符合要求，就用它了&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太大了，太难了&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太小了，没有难度了&quot;</span><span class="p">)</span>
+
+    <span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;重新输入最大的数字：&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="n">time_guessed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>       　　　　　　　　　　　　　<span class="c1"># 表示不想玩了</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你才猜了</span><span class="si">{}</span><span class="s2">次，不想猜了？&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_guessed</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你还没有猜呢就想玩了?&quot;</span>
+            <span class="n">confirm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">confirm</span> <span class="ow">in</span> <span class="n">confirm_quit_codes</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>                                                 <span class="c1"># 认为猜了一次数字</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="n">time_guessed</span> <span class="o">+=</span> <span class="mi">1</span>　　　　　　　　　　　　　　　　　　<span class="c1"># 此时更新猜的次数</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;没猜对&quot;</span><span class="p">)</span>
+
+    <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1124,15 +1330,265 @@ will output “It’s a bit disappointing, tell me if you want to play in the fu
 <p>Please modify the solution code in this lecture or the code completed in previous question to add this function. Please write the complete code in the code cell below.请你在示例程序或者上一题已经完成的程序上做修改，增加这个功能。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># codes 是一个 code 的复数形式</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="n">confirm_quit_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="s2">&quot;是&quot;</span><span class="p">,</span><span class="s2">&quot;真的不想猜了&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;由你来确定要猜的数字的最大可能的值(20-1000之间):&quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">max_num</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">max_num</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字符合要求，就用它了&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太大了，太难了&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太小了，没有难度了&quot;</span><span class="p">)</span>
+
+    <span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;重新输入最大的数字：&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="n">time_guessed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>                              <span class="c1"># 不想玩了</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你才猜了</span><span class="si">{}</span><span class="s2">次，不想猜了？&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_guessed</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你还没有猜呢就想玩了?&quot;</span>
+            <span class="n">confirm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">confirm</span> <span class="ow">in</span> <span class="n">confirm_quit_codes</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="n">time_guessed</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;没猜对&quot;</span><span class="p">)</span>
+
+    <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。你一共猜了</span><span class="si">{}</span><span class="s2">次&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_guessed</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我是你的小助手，我想和你玩一个猜数字的游戏。
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+由你来确定要猜的数字的最大可能的值: 20
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字正好，就用它了
+我会从0-20之间随便挑出一个数字，你可以反复猜直到才对为止
+如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。
+[&#34;I don&#39;t want to play anymore&#34;, &#39;I quit&#39;, &#39;My mom called me home for dinner&#39;, &#39;Bye&#39;, &#39;bye&#39;, &#39;不玩了&#39;, &#39;不猜了&#39;, &#39;我妈喊我回家吃饭了&#39;]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我选好了，现在你来猜吧(0-20): 1
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 2
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 3
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 4
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 5
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 6
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 7
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 8
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 9
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 10
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+恭喜你，你猜对了。
+猜数字游戏结束。你一共猜了10次
+</pre></div></div>
 </div>
 <ol class="arabic" start="5">
 <li><p>(<strong>Optional, 可选做 /10</strong>) Perfect number guessing game 4: Some players find the game a little difficult, especially when the range of guessing numbers becomes wider. They might have guessed many times and have not guessed correctly. They hope that the program can give some hints every time they fail to guess. For example, tell the player whether the correct number is larger or smaller than the number he guessed, so that the guess range can be narrowed in next guess. This looks like a nice
@@ -1143,15 +1599,248 @@ after every wrong guess; when the player chooses no hint, no hint will be given 
 请你在示例程序或者上一题已经完成的程序上做修改，增加下述功能：在程序一开始运行的时候，询问玩家是否需在每次猜测错误后给出和要猜的数字谁大谁小的提示。提供一个输入框供玩家输入他们的回答。这一次由你自己来设计一些表示需要提示的回答列表。当玩家需要这类提示信息时，在每一次猜错后就告诉玩家这样的提示；当玩家选择不需要提示时，在玩家猜错后就不给提示。请将完整的代码写在下面的代码单元格里。</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># 在这里输入你完善后的程序代码</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
+<span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># codes 是一个 code 的复数形式</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I don&#39;t want to play anymore&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I quit&quot;</span><span class="p">,</span> <span class="s2">&quot;My mom called me home for dinner&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bye&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不玩了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;不猜了&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;我妈喊我回家吃饭了&quot;</span>
+        <span class="p">]</span>
+
+<span class="n">confirm_quit_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="s2">&quot;是&quot;</span><span class="p">,</span><span class="s2">&quot;真的不想猜了&quot;</span><span class="p">]</span>
+<span class="n">need_hint_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;Yes&quot;</span><span class="p">,</span> <span class="s2">&quot;是&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是你的小助手，我想和你玩一个猜数字的游戏。&quot;</span><span class="p">)</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;由你来确定要猜的数字的最大可能的值(20-1000之间):&quot;</span><span class="p">))</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">max_num</span> <span class="o">&gt;=</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">max_num</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字符合要求，就用它了&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太大了，太难了&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的数字太小了，没有难度了&quot;</span><span class="p">)</span>
+
+    <span class="n">max_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;重新输入最大的数字：&quot;</span><span class="p">))</span>
+
+<span class="n">need_hint</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;是否需要每次猜错后给提示?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">need_hint</span> <span class="ow">in</span> <span class="n">need_hint_codes</span><span class="p">:</span>
+    <span class="n">need_hint</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你猜错会告诉你猜大了还是猜小了&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">need_hint</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜错了不会给提示&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我会从</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">之间随便挑出一个数字，你可以反复猜直到才对为止&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+<span class="n">num_computer_generated</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">)</span>
+<span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;我选好了，现在你来猜吧(</span><span class="si">{}</span><span class="s2">-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_num</span><span class="p">,</span> <span class="n">max_num</span><span class="p">))</span>
+<span class="n">time_guessed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">your_guess</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>       <span class="c1"># 不想玩了</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你才猜了</span><span class="si">{}</span><span class="s2">次，不想猜了？&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_guessed</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">time_guessed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;你还没有猜呢就想玩了?&quot;</span>
+            <span class="n">confirm</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">confirm</span> <span class="ow">in</span> <span class="n">confirm_quit_codes</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;很遗憾，你没有猜出来，下次再玩吧。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num_you_guessed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">your_guess</span><span class="p">)</span>                 <span class="c1"># 尝试把你的输入变成一个数字</span>
+        <span class="n">time_guessed</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">==</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;恭喜你，你猜对了。&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prompt2</span> <span class="o">=</span> <span class="s2">&quot;没猜对&quot;</span>
+            <span class="k">if</span> <span class="n">need_hint</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">num_you_guessed</span> <span class="o">&lt;</span> <span class="n">num_computer_generated</span><span class="p">:</span>
+                    <span class="n">prompt2</span> <span class="o">=</span> <span class="s2">&quot;没猜对,你猜的数字小了&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">prompt2</span> <span class="o">=</span> <span class="s2">&quot;没猜对，你猜的数字大了&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">prompt2</span><span class="p">)</span>
+
+    <span class="n">your_guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;继续猜:&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;猜数字游戏结束。你一共猜了</span><span class="si">{}</span><span class="s2">次&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time_guessed</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我是你的小助手，我想和你玩一个猜数字的游戏。
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+由你来确定要猜的数字的最大可能的值: 100
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你输入的数字正好，就用它了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+是否需要每次猜错后给提示? yes
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+你猜错会告诉你猜大了还是猜小了
+我会从0-100之间随便挑出一个数字，你可以反复猜直到才对为止
+如果你不想猜了，可以在输数字的地方输入下面任意一句，我就知道你不想玩了。
+[&#34;I don&#39;t want to play anymore&#34;, &#39;I quit&#39;, &#39;My mom called me home for dinner&#39;, &#39;Bye&#39;, &#39;bye&#39;, &#39;不玩了&#39;, &#39;不猜了&#39;, &#39;我妈喊我回家吃饭了&#39;]
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+我选好了，现在你来猜吧(0-100): 50
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对，你猜的数字大了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 25
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对,你猜的数字小了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 37
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对,你猜的数字小了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 43
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对,你猜的数字小了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 46
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对,你猜的数字小了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 48
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+没猜对，你猜的数字大了
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+继续猜: 47
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+恭喜你，你猜对了。
+猜数字游戏结束。你一共猜了7次
+</pre></div></div>
 </div>
 </div>
 </div>
