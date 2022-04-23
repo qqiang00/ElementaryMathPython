@@ -21,7 +21,7 @@
    "id": "c7cd1f0b-8266-49f3-a77e-806bec2c40ce",
    "metadata": {},
    "source": [
-    "The mid term math exam for a grade 1 class 3 students is approaching, the math lecturer is ill and he doesn't have time to prepare the calculation questions for the exam. Please help the lecturer generate some calculation questions that can be used in the exam. The detailed requirement follows: \n",
+    "The mid term math exam for students in grade 1 class 3 is approaching. The math lecturer is ill and he doesn't have time to prepare the calculation questions for the exam. Please help the lecturer generate some calculation questions that can be used in the exam. The detailed requirement follows: \n",
     "\n",
     "上海某小学一年级3班近期会有一次数学期中考试，可是数学老师生病了，没有时间准备给学生们考试用的数学试卷。请你通过编程来帮助数学老师制作一份数学试卷中将要使用的题目。具体要求如下：\n",
     "1. There are 50 addition questions in the exam 这张试卷只有50加法运算题；\n",
