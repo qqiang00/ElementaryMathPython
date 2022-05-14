@@ -1,0 +1,101 @@
+Feature Set	Model	Model Sex	Test Sex	AUC Test
+Framingham	Logistic	Both Sexes	Same	78
+Framingham	Logistic	Female	Same	73
+Framingham	Logistic	Male	Same	73
+Framingham	MLP	Both Sexes	Same	78
+Framingham	MLP	Female	Same	74
+Framingham	MLP	Male	Same	73
+FraminghamPlus	Logistic	Both Sexes	Same	78
+FraminghamPlus	Logistic	Female	Same	75
+FraminghamPlus	Logistic	Male	Same	74
+FraminghamPlus	MLP	Both Sexes	Same	79
+FraminghamPlus	MLP	Female	Same	76
+FraminghamPlus	MLP	Male	Same	75
+PGS13COV	Logistic	Both Sexes	Same	76
+PGS13COV	Logistic	Female	Same	70
+PGS13COV	Logistic	Male	Same	67
+PGS13COV	MLP	Both Sexes	Same	78
+PGS13COV	MLP	Female	Same	72
+PGS13COV	MLP	Male	Same	72
+PGS18COV	Logistic	Both Sexes	Same	77
+PGS18COV	Logistic	Female	Same	72
+PGS18COV	Logistic	Male	Same	72
+PGS18COV	MLP	Both Sexes	Same	78
+PGS18COV	MLP	Female	Same	72
+PGS18COV	MLP	Male	Same	72
+FraminghamPGS13COV	Logistic	Both Sexes	Same	79
+FraminghamPGS13COV	Logistic	Female	Same	72
+FraminghamPGS13COV	Logistic	Male	Same	72
+FraminghamPGS13COV	MLP	Both Sexes	Same	81
+FraminghamPGS13COV	MLP	Female	Same	76
+FraminghamPGS13COV	MLP	Male	Same	76
+FraminghamCOVPlus	Logistic	Both Sexes	Same	79
+FraminghamCOVPlus	Logistic	Female	Same	73
+FraminghamCOVPlus	Logistic	Male	Same	72
+FraminghamCOVPlus	MLP	Both Sexes	Same	81
+FraminghamCOVPlus	MLP	Female	Same	77
+FraminghamCOVPlus	MLP	Male	Same	75
+PHENO44	Logistic	Both Sexes	Same	80
+PHENO44	Logistic	Female	Same	75
+PHENO44	Logistic	Male	Same	74
+PHENO44	MLP	Both Sexes	Same	82
+PHENO44	MLP	Female	Same	77
+PHENO44	MLP	Male	Same	77
+PHENO44PCS	Logistic	Both Sexes	Same	80
+PHENO44PCS	Logistic	Female	Same	75
+PHENO44PCS	Logistic	Male	Same	74
+PHENO44PCS	MLP	Both Sexes	Same	81
+PHENO44PCS	MLP	Female	Same	77
+PHENO44PCS	MLP	Male	Same	76
+PHENO44PGS13	Logistic	Both Sexes	Same	81
+PHENO44PGS13	Logistic	Female	Same	76
+PHENO44PGS13	Logistic	Male	Same	76
+PHENO44PGS13	MLP	Both Sexes	Same	83
+PHENO44PGS13	MLP	Female	Same	78
+PHENO44PGS13	MLP	Male	Same	78
+PHENO44PGS18	Logistic	Both Sexes	Same	81
+PHENO44PGS18	Logistic	Female	Same	76
+PHENO44PGS18	Logistic	Male	Same	76
+PHENO44PGS18	MLP	Both Sexes	Same	83
+PHENO44PGS18	MLP	Female	Same	78
+PHENO44PGS18	MLP	Male	Same	79
+Framingham	Logistic	Female	Other	65.4
+Framingham	Logistic	Male	Other	55.6
+Framingham	MLP	Female	Other	71.9
+Framingham	MLP	Male	Other	74.8
+FraminghamPlus	Logistic	Female	Other	72.8
+FraminghamPlus	Logistic	Male	Other	72.7
+FraminghamPlus	MLP	Female	Other	75.6
+FraminghamPlus	MLP	Male	Other	76.3
+PGS13COV	Logistic	Female	Other	67.9
+PGS13COV	Logistic	Male	Other	72.1
+PGS13COV	MLP	Female	Other	71.4
+PGS13COV	MLP	Male	Other	72.5
+PGS18COV	Logistic	Female	Other	71.5
+PGS18COV	Logistic	Male	Other	72.9
+PGS18COV	MLP	Female	Other	71.4
+PGS18COV	MLP	Male	Other	72.6
+FraminghamPGS13COV	Logistic	Female	Other	62.9
+FraminghamPGS13COV	Logistic	Male	Other	65.9
+FraminghamPGS13COV	MLP	Female	Other	75.8
+FraminghamPGS13COV	MLP	Male	Other	76.1
+FraminghamCOVPlus	Logistic	Female	Other	72.9
+FraminghamCOVPlus	Logistic	Male	Other	73.4
+FraminghamCOVPlus	MLP	Female	Other	75.5
+FraminghamCOVPlus	MLP	Male	Other	77.9
+PHENO44	Logistic	Female	Other	74
+PHENO44	Logistic	Male	Other	75
+PHENO44	MLP	Female	Other	76.9
+PHENO44	MLP	Male	Other	78.9
+PHENO44PCS	Logistic	Female	Other	74.6
+PHENO44PCS	Logistic	Male	Other	74.3
+PHENO44PCS	MLP	Female	Other	76.6
+PHENO44PCS	MLP	Male	Other	78.3
+PHENO44PGS13	Logistic	Female	Other	75
+PHENO44PGS13	Logistic	Male	Other	76.3
+PHENO44PGS13	MLP	Female	Other	78
+PHENO44PGS13	MLP	Male	Other	77.6
+PHENO44PGS18	Logistic	Female	Other	75.5
+PHENO44PGS18	Logistic	Male	Other	76.5
+PHENO44PGS18	MLP	Female	Other	78.6
+PHENO44PGS18	MLP	Male	Other	79.9

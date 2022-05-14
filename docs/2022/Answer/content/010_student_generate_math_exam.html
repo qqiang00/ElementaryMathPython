@@ -39,7 +39,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="copyright" title="版权所有" href="../../../copyright.html" />
-    <link rel="next" title="附录" href="../../../appendix/index.html" />
+    <link rel="next" title="第11讲 国王的奖励" href="011_student_kings_rice_award.html" />
     <link rel="prev" title="Mid Term Exam 期中考试" href="009B_midterm_exam.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
@@ -444,6 +444,11 @@
        第10讲 设计数学考试试卷
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Beginner/content/011_kings_rice_award_1.html">
+       第11讲 国王的奖励（一）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
@@ -504,6 +509,11 @@
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        第10讲 设计数学考试试卷
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="011_student_kings_rice_award.html">
+       第11讲 国王的奖励
       </a>
      </li>
     </ul>
@@ -945,18 +955,42 @@ div.rendered_html tbody tr:hover {
 </ul>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">cities_visited</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
+<span class="n">cities_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Beijing&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
+<span class="n">cities_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Shanghai&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
+<span class="n">cities_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Chongqing&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
+<span class="n">cities_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Hefei&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
+<span class="n">cities_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Sanya&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities_visited</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[]
+[&#39;Beijing&#39;]
+[&#39;Beijing&#39;, &#39;Shanghai&#39;]
+[&#39;Beijing&#39;, &#39;Shanghai&#39;, &#39;Chongqing&#39;]
+[&#39;Beijing&#39;, &#39;Shanghai&#39;, &#39;Chongqing&#39;, &#39;Hefei&#39;]
+[&#39;Beijing&#39;, &#39;Shanghai&#39;, &#39;Chongqing&#39;, &#39;Hefei&#39;, &#39;Sanya&#39;]
+</pre></div></div>
+</div>
 <ol class="arabic" start="2">
-<li><p>Shanghai is fighting against the pandamic of COVID; many families’ food and vegetables are transported by trucks from other provinces to Shanghai and then distributed by volunteers to every household in the community. Assuming that there are 3 trucks loaded with rice, vegetables, edible oil, potatoes. These goods are going to be transported to Shanghai. It is also known that the rice loaded on the three trucks is 20 kg per bag, the vegetables are 30 kg per big bag, the edible oil is 5 kg per
-barrel, and the potatoes are 50 kg per big bag. In order to avoid overweight for each truck and keep the safety of transportation, you are asked to calculate the total load of each truck and tell whether a truck is over loaded or not. The plate number information of the 3 trucks, the number of goods currently loaded and the maximum allowable load are listed in the table below.</p>
+<li><p>Shanghai is fighting against the pandamic of COVID; many families’ food and vegetables are transported by trucks from other provinces to Shanghai and then distributed by volunteers to every household in the community. Assuming that there are 3 trucks loaded with rice, vegetables, edible oil, potatoes. These goods are going to be transported to Shanghai. It is also known that the rice loaded on the three trucks is 20 kg per bag, the vegetables are 15 kg per big bag, the edible oil is 5 kg per
+barrel, and the potatoes are 40 kg per big bag. In order to avoid overweight for each truck and keep the safety of transportation, you are asked to calculate the total load of each truck and tell whether a truck is over loaded or not. The plate number information of the 3 trucks, the number of goods currently loaded and the maximum allowable load are listed in the table below.</p>
 <p>上海正在抗击新冠疫情，许多家庭的粮食、蔬菜都是卡车从外地运送到上海再由志愿者分发给小区内的每一户。假设现在有3辆卡车装载着大米、青菜、食用油、土豆等4类物资正准备从某地运往上海。已知这3辆卡车上装载的大米都是20千克每袋，青菜都是15千克每大袋，食用油都是5千克每桶，土豆是40千克每大袋。为了避免卡车装了过多的物资超重而影响驾驶安全，你需要在车辆出发前根据每一辆卡车装载的物资数量汇总出每一辆车上装载的货物总重量并确定它们是否超载。3辆卡车牌号信息、目前装载的货物数量以及最大允许载重如下表所列。</p>
 <table class="table">
 <colgroup>
@@ -1009,15 +1043,122 @@ barrel, and the potatoes are 50 kg per big bag. In order to avoid overweight for
 卡车3 苏A E4385, 实际载重 10400 kg(千克), 最大允许载重 10 吨， 已超载 400 kg(千克)
 </pre></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution provided by Cynthia</span>
+<span class="n">rice</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">veggie</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">oil</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">potato</span> <span class="o">=</span> <span class="mi">40</span>
 
-<span></span>
+<span class="n">rice_1</span><span class="p">,</span> <span class="n">veggie_1</span><span class="p">,</span> <span class="n">oil_1</span><span class="p">,</span> <span class="n">potato_1</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span>
+<span class="n">rice_2</span><span class="p">,</span> <span class="n">veggie_2</span><span class="p">,</span> <span class="n">oil_2</span><span class="p">,</span> <span class="n">potato_2</span> <span class="o">=</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span>
+<span class="n">rice_3</span><span class="p">,</span> <span class="n">veggie_3</span><span class="p">,</span> <span class="n">oil_3</span><span class="p">,</span> <span class="n">potato_3</span> <span class="o">=</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span>
+
+
+<span class="n">car1</span> <span class="o">=</span> <span class="s2">&quot;苏A E5432&quot;</span>
+<span class="n">car2</span> <span class="o">=</span> <span class="s2">&quot;苏A R0662&quot;</span>
+<span class="n">car3</span> <span class="o">=</span> <span class="s2">&quot;苏A E4385&quot;</span>
+
+<span class="c1">#kg</span>
+<span class="n">car1_max</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">car2_max</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">car3_max</span> <span class="o">=</span> <span class="mi">10000</span>
+
+
+<span class="n">car1_rice</span> <span class="o">=</span> <span class="n">rice</span> <span class="o">*</span> <span class="n">rice_1</span>
+<span class="n">car1_veggie</span> <span class="o">=</span> <span class="n">veggie</span> <span class="o">*</span> <span class="n">veggie_1</span>
+<span class="n">car1_oil</span> <span class="o">=</span> <span class="n">oil</span> <span class="o">*</span> <span class="n">oil_1</span>
+<span class="n">car1_potato</span> <span class="o">=</span> <span class="n">potato</span> <span class="o">*</span> <span class="n">potato_1</span>
+<span class="n">car1_sum_weight</span> <span class="o">=</span> <span class="n">car1_rice</span> <span class="o">+</span> <span class="n">car1_veggie</span> <span class="o">+</span> <span class="n">car1_oil</span> <span class="o">+</span> <span class="n">car1_potato</span>
+<span class="k">if</span> <span class="n">car1_sum_weight</span> <span class="o">&gt;</span> <span class="n">car1_max</span><span class="p">:</span>
+    <span class="n">car1_over_num</span> <span class="o">=</span> <span class="n">car1_sum_weight</span> <span class="o">-</span> <span class="n">car1_max</span>
+    <span class="n">car1_overweight</span> <span class="o">=</span> <span class="s2">&quot;已超载 </span><span class="si">{}</span><span class="s2"> kg&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car1_over_num</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">car1_overweight</span> <span class="o">=</span> <span class="s2">&quot;未超载&quot;</span>
+
+<span class="n">car2_rice</span> <span class="o">=</span> <span class="n">rice</span> <span class="o">*</span> <span class="n">rice_2</span>
+<span class="n">car2_veggie</span> <span class="o">=</span> <span class="n">veggie</span> <span class="o">*</span> <span class="n">veggie_2</span>
+<span class="n">car2_oil</span> <span class="o">=</span> <span class="n">oil</span> <span class="o">*</span> <span class="n">oil_2</span>
+<span class="n">car2_potato</span> <span class="o">=</span> <span class="n">potato</span> <span class="o">*</span> <span class="n">potato_2</span>
+<span class="n">car2_sum_weight</span> <span class="o">=</span> <span class="n">car2_rice</span> <span class="o">+</span> <span class="n">car2_veggie</span> <span class="o">+</span> <span class="n">car2_oil</span> <span class="o">+</span> <span class="n">car2_potato</span>
+<span class="k">if</span> <span class="n">car2_sum_weight</span> <span class="o">&gt;</span> <span class="n">car2_max</span><span class="p">:</span>
+    <span class="n">car2_over_num</span> <span class="o">=</span> <span class="n">car2_sum_weight</span> <span class="o">-</span> <span class="n">car2_max</span>
+    <span class="n">car2_overweight</span> <span class="o">=</span> <span class="s2">&quot;已超载 </span><span class="si">{}</span><span class="s2"> kg&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car2_over_num</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">car2_overweight</span> <span class="o">=</span> <span class="s2">&quot;未超载&quot;</span>
+
+<span class="n">car3_rice</span> <span class="o">=</span> <span class="n">rice</span> <span class="o">*</span> <span class="n">rice_3</span>
+<span class="n">car3_veggie</span> <span class="o">=</span> <span class="n">veggie</span> <span class="o">*</span> <span class="n">veggie_3</span>
+<span class="n">car3_oil</span> <span class="o">=</span> <span class="n">oil</span> <span class="o">*</span> <span class="n">oil_3</span>
+<span class="n">car3_potato</span> <span class="o">=</span> <span class="n">potato</span> <span class="o">*</span> <span class="n">potato_3</span>
+<span class="n">car3_sum_weight</span> <span class="o">=</span> <span class="n">car3_rice</span> <span class="o">+</span> <span class="n">car3_veggie</span> <span class="o">+</span> <span class="n">car3_oil</span> <span class="o">+</span> <span class="n">car3_potato</span>
+<span class="k">if</span> <span class="n">car3_sum_weight</span> <span class="o">&gt;</span> <span class="n">car3_max</span><span class="p">:</span>
+    <span class="n">car3_over_num</span> <span class="o">=</span> <span class="n">car3_sum_weight</span> <span class="o">-</span> <span class="n">car3_max</span>
+    <span class="n">car3_overweight</span> <span class="o">=</span> <span class="s2">&quot;已超载 </span><span class="si">{}</span><span class="s2"> kg&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car3_over_num</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">car3_overweight</span> <span class="o">=</span> <span class="s2">&quot;未超载&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;卡车1 </span><span class="si">{}</span><span class="s2">, 实际载重  </span><span class="si">{:&gt;6}</span><span class="s2"> kg, 最大允许载重 </span><span class="si">{:&gt;6}</span><span class="s2"> kg， </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car1</span><span class="p">,</span> <span class="n">car1_sum_weight</span><span class="p">,</span> <span class="n">car1_max</span><span class="p">,</span> <span class="n">car1_overweight</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;卡车2 </span><span class="si">{}</span><span class="s2">, 实际载重  </span><span class="si">{:&gt;6}</span><span class="s2"> kg, 最大允许载重 </span><span class="si">{:&gt;6}</span><span class="s2"> kg， </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car2</span><span class="p">,</span> <span class="n">car2_sum_weight</span><span class="p">,</span> <span class="n">car2_max</span><span class="p">,</span> <span class="n">car2_overweight</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;卡车3 </span><span class="si">{}</span><span class="s2">, 实际载重  </span><span class="si">{:&gt;6}</span><span class="s2"> kg, 最大允许载重 </span><span class="si">{:&gt;6}</span><span class="s2"> kg， </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">car3</span><span class="p">,</span> <span class="n">car3_sum_weight</span><span class="p">,</span> <span class="n">car3_max</span><span class="p">,</span> <span class="n">car3_overweight</span><span class="p">))</span>
+
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+卡车1 苏A E5432, 实际载重    2025 kg, 最大允许载重   2000 kg， 已超载 25 kg.
+卡车2 苏A R0662, 实际载重    5175 kg, 最大允许载重   5000 kg， 已超载 175 kg.
+卡车3 苏A E4385, 实际载重   10400 kg, 最大允许载重  10000 kg， 已超载 400 kg.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution2</span>
+<span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>       <span class="c1"># kg per bag/barrel</span>
+<span class="n">loads</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>    <span class="c1"># list of list</span>
+         <span class="p">[</span><span class="mi">65</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">130</span><span class="p">]]</span>
+
+<span class="n">limits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="n">plates</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;苏A E5432&quot;</span><span class="p">,</span> <span class="s2">&quot;苏A R0662&quot;</span><span class="p">,</span> <span class="s2">&quot;苏A E4385&quot;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># 3 trucks</span>
+    <span class="n">total_loads</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">total_loads</span> <span class="o">+=</span> <span class="n">units</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">loads</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">over_loaded</span> <span class="o">=</span> <span class="n">total_loads</span> <span class="o">-</span> <span class="n">limits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">over_load_info</span> <span class="o">=</span> <span class="s2">&quot;未超载&quot;</span>
+    <span class="k">if</span> <span class="n">over_loaded</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">over_load_info</span> <span class="o">=</span> <span class="s2">&quot;已超载</span><span class="si">{:&gt;6}</span><span class="s2"> kg(千克)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">over_loaded</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;卡车</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> 实际载重</span><span class="si">{:&gt;6}</span><span class="s2"> kg(千克), 最大允许载重</span><span class="si">{:&gt;6}</span><span class="s2"> kg(千克), </span><span class="si">{}</span><span class="s2">&quot;</span> \
+                <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">plates</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">total_loads</span><span class="p">,</span> <span class="n">limits</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">over_load_info</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+卡车1 苏A E5432 实际载重  2025 kg(千克), 最大允许载重  2000 kg(千克), 已超载    25 kg(千克)
+卡车2 苏A R0662 实际载重  5175 kg(千克), 最大允许载重  5000 kg(千克), 已超载   175 kg(千克)
+卡车3 苏A E4385 实际载重 10400 kg(千克), 最大允许载重 10000 kg(千克), 已超载   400 kg(千克)
+</pre></div></div>
 </div>
 <ol class="arabic" start="3">
 <li><p>Lecturer Wang in the Grade. 2 heard that you can design a math exam paper by programming. He is very proud of you and would like to ask you to help design a math exam paper that their class will use. The difference is that the exam papers they are going to use are 30 multiplication problems of two integers whose product is within 100, and 20 division problems that dividends are with 100 and be divided evenly by an divisor. Please help Lecturer Wang design such an exam. Pay attention to
@@ -1025,14 +1166,128 @@ alignment and avoid duplication of questions.</p>
 <p>二年级的王老师听说你能通过编程设计数学试卷，他为你感到高兴，同时也想请你帮忙设计一份他们班将要使用的数学考试卷。不同的是，他们要设计的试卷是30道乘积在100以内的两个整数相乘的运算题，以及20道被除数在100以内的能够整除的除法运算题。请你帮王老师设计一份这样试卷，同样需要注意对齐和避免题目重复。</p>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># Solution provided by Cynthia</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">times_questions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">div_questions</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">i_times</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n_times</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">min_factor</span><span class="p">,</span> <span class="n">max_factor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grade Two Mid-Term Math Exam&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication Questions, __/30&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="n">i_times</span> <span class="o">&lt;</span> <span class="n">n_times</span><span class="p">:</span>
+    <span class="n">n_generated1</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_factor</span><span class="p">,</span> <span class="n">max_factor</span><span class="p">)</span>
+    <span class="n">n_generated2</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_factor</span><span class="p">,</span> <span class="n">max_factor</span><span class="p">)</span>
+    <span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:&gt;2}</span><span class="s2"> x </span><span class="si">{:&gt;2}</span><span class="s2"> = ____&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_generated1</span><span class="p">,</span> <span class="n">n_generated2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">question</span> <span class="ow">in</span> <span class="n">times_questions</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>      <span class="c1"># or: not in</span>
+        <span class="n">times_questions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="n">i_times</span> <span class="o">=</span> <span class="n">i_times</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2}</span><span class="s2">.  </span><span class="si">{:&gt;10}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">question</span><span class="p">))</span>
+
+
+<span class="n">n_div</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">min_dividend</span><span class="p">,</span> <span class="n">max_dividend</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">min_divisor</span><span class="p">,</span> <span class="n">max_divisor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">i_div</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division Questions, __/20 points&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="n">i_div</span> <span class="o">&lt;</span> <span class="n">n_div</span><span class="p">:</span>
+    <span class="n">n_generated3</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_dividend</span><span class="p">,</span> <span class="n">max_dividend</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_generated4</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">min_divisor</span><span class="p">,</span> <span class="n">max_divisor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_generated3</span> <span class="o">&gt;=</span> <span class="n">n_generated4</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n_generated3</span> <span class="o">/</span> <span class="n">n_generated4</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">n_generated3</span> <span class="o">/</span> <span class="n">n_generated4</span><span class="p">):</span>
+        <span class="n">div_question</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:&gt;2}</span><span class="s2"> / </span><span class="si">{:&gt;2}</span><span class="s2"> = ____&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_generated3</span><span class="p">,</span> <span class="n">n_generated4</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">div_question</span> <span class="ow">in</span> <span class="n">div_questions</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>      <span class="c1"># or: not in</span>
+            <span class="n">div_questions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">div_question</span><span class="p">)</span>
+            <span class="n">i_div</span> <span class="o">=</span> <span class="n">i_div</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:2}</span><span class="s2">.  </span><span class="si">{:&gt;10}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">div_question</span><span class="p">))</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Grade Two Mid-Term Math Exam
+
+Multiplication Questions, __/30
+
+ 1.   9 x  4 = ____
+ 2.   7 x  8 = ____
+ 3.   6 x  4 = ____
+ 4.   3 x  4 = ____
+ 5.   8 x 10 = ____
+ 6.   9 x  7 = ____
+ 7.   8 x  2 = ____
+ 8.   0 x  2 = ____
+ 9.   9 x  1 = ____
+10.   6 x  5 = ____
+11.   9 x  5 = ____
+12.  10 x  9 = ____
+13.   6 x  8 = ____
+14.   0 x  9 = ____
+15.   4 x  1 = ____
+16.   5 x  7 = ____
+17.   8 x  9 = ____
+18.   5 x  9 = ____
+19.   9 x  6 = ____
+20.   2 x  6 = ____
+21.  10 x  3 = ____
+22.   3 x  3 = ____
+23.   9 x  0 = ____
+24.  10 x  4 = ____
+25.   4 x  9 = ____
+26.   5 x  1 = ____
+27.   3 x  0 = ____
+28.   2 x  3 = ____
+29.   7 x  5 = ____
+30.   5 x  8 = ____
+
+Division Questions, __/20 points
+
+31.  78 /  3 = ____
+32.  62 /  1 = ____
+33.  44 /  1 = ____
+34.  101 /  1 = ____
+35.  52 / 52 = ____
+36.  44 / 11 = ____
+37.  62 /  2 = ____
+38.  80 /  5 = ____
+39.  23 / 23 = ____
+40.  11 /  1 = ____
+41.  28 /  4 = ____
+42.  66 /  2 = ____
+43.  74 /  1 = ____
+44.  20 / 20 = ____
+45.  64 / 32 = ____
+46.  38 / 38 = ____
+47.  27 /  3 = ____
+48.  100 / 100 = ____
+49.  24 /  6 = ____
+50.  14 / 14 = ____
+</pre></div></div>
 </div>
 <ol class="arabic" start="4">
 <li><p>The integers 4, 8, 12, … etc. can be called the product of 4 multiplied by another integer. For example, 4 can be regarded as the product of 4 and 1, 8 can be regarded as the product of 4 and 2, 12 can be regarded as the product of 4 and 3, and so on. We also call integers 4, 8, 12, … etc. the multiples of 4, and 4 is a factor of these numbers.</p>
@@ -1044,14 +1299,34 @@ alignment and avoid duplication of questions.</p>
 </ul>
 </li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">productions</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cur_num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">interval</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">cur_num</span> <span class="o">&lt;</span> <span class="n">max_num</span><span class="p">:</span>
+    <span class="n">productions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_num</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">cur_num</span>
+    <span class="n">cur_num</span> <span class="o">+=</span> <span class="n">interval</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">productions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100]
+1300
+</pre></div></div>
 </div>
 </div>
 </div>
@@ -1069,10 +1344,10 @@ alignment and avoid duplication of questions.</p>
             <p class="prev-next-title">Mid Term Exam 期中考试</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../../appendix/index.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="011_student_kings_rice_award.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">附录</p>
+        <p class="prev-next-title">第11讲 国王的奖励</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

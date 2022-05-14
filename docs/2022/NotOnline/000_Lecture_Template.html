@@ -442,6 +442,11 @@
        第10讲 设计数学考试试卷
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Beginner/content/011_kings_rice_award_1.html">
+       第11讲 国王的奖励（一）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -502,6 +507,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Answer/content/010_student_generate_math_exam.html">
        第10讲 设计数学考试试卷
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/011_student_kings_rice_award.html">
+       第11讲 国王的奖励
       </a>
      </li>
     </ul>
@@ -979,11 +989,25 @@ div.rendered_html tbody tr:hover {
 <h1>第0讲 模板<a class="headerlink" href="#第0讲-模板" title="永久链接至标题">¶</a></h1>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
+<p>在古代，由于科学技术水平并不是很发达，人们并不是总能吃饱，因而像米面这样的食物就显得很珍贵，经常会被用来作为礼物赠送或奖赏给关系亲密的人。</p>
+<p>有这样一位生活在古代的国王，他很欣赏手下的一位将军，想奖励他一些大米并借机考察考察将军的算术能力，国王制定了两个奖励方案让将军选择：</p>
+<p>方案一、第一天奖励100袋，以后每天都比前一天多奖励100袋，如此连续奖励14天； 方案二、第一天奖励1袋，以后每一天奖励的大米袋数都是前一天的2倍，如此连续奖励14天；</p>
+<p>假如你是哪位将军，并且你的目的是希望从国王那里得到尽可能多的奖励，以便分享尽可能多的大米给你手下的士兵。请回答： 1. 你应该选择哪一种方案，为什么？ 2. 从第几天起，第二种方案当天的奖励就会一直比第一种方案当天的奖励多？ 3. 请把每一种方案下国王每一天应该奖励给将军的大米的袋数（右对齐）打印出来（如下表所示）</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Day   Option1    Option2
+ 1       100          1
+ 2       200          2
+ 3       300          4
+ 4       400          8
+ 5       500         16
+...     ...     ...
+</pre></div>
+</div>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li></li>
+<li><p>数列的基本概念</p></li>
+<li><p>初步认识等差等比数列</p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
@@ -991,6 +1015,145 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution1</span>
+<span class="n">total_awarded_option1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_awarded_option2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cur_award_option1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">cur_award_option2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">award_increase_option1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">award_times_option2</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">next_award_option1</span> <span class="o">=</span> <span class="n">cur_award_option1</span>
+<span class="n">next_award_option2</span> <span class="o">=</span> <span class="n">cur_award_option2</span>
+<span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">days_total</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">special_day</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Day</span><span class="se">\t</span><span class="s2">Option1</span><span class="se">\t</span><span class="s2">Option2&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">days_awarded</span> <span class="o">&lt;</span> <span class="n">days_total</span><span class="p">:</span>
+    <span class="c1"># Option1</span>
+    <span class="n">cur_award_option1</span> <span class="o">=</span> <span class="n">next_award_option1</span>
+    <span class="n">total_awarded_option1</span> <span class="o">+=</span> <span class="n">cur_award_option1</span>
+    <span class="n">next_award_option1</span> <span class="o">=</span> <span class="n">cur_award_option1</span> <span class="o">+</span> <span class="n">award_increase_option1</span>
+    <span class="c1"># Option2</span>
+    <span class="n">cur_award_option2</span> <span class="o">=</span> <span class="n">next_award_option2</span>
+    <span class="n">total_awarded_option2</span> <span class="o">+=</span> <span class="n">cur_award_option2</span>
+    <span class="n">next_award_option2</span> <span class="o">=</span> <span class="n">cur_award_option2</span> <span class="o">*</span> <span class="n">award_times_option2</span>
+
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&gt;2}</span><span class="se">\t</span><span class="si">{:&gt;4}</span><span class="se">\t</span><span class="si">{:&gt;4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">days_awarded</span><span class="p">,</span>
+                                       <span class="n">cur_award_option1</span><span class="p">,</span>
+                                       <span class="n">cur_award_option2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cur_award_option2</span> <span class="o">&gt;</span> <span class="n">cur_award_option1</span> <span class="ow">and</span> <span class="n">special_day</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">special_day</span> <span class="o">=</span> <span class="n">days_awarded</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;从第</span><span class="si">{}</span><span class="s2">天开始，方案二每天奖励的大米将会比方案一多&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">special_day</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;方案一将军最终获得大米:</span><span class="si">{}</span><span class="s2">袋，方案二将军最终获得大米</span><span class="si">{}</span><span class="s2">袋&quot;</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_awarded_option1</span><span class="p">,</span> <span class="n">total_awarded_option2</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">total_awarded_option1</span> <span class="o">&gt;</span> <span class="n">total_awarded_option2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;将军应该选择方案一&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">total_awarded_option1</span> <span class="o">&lt;</span> <span class="n">total_awarded_option2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;将军应该选择方案二&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;两种方案将军获得的最终奖励一样，都是</span><span class="si">{}</span><span class="s2">袋&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_awarded_option1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Day     Option1 Option2
+ 1       100       1
+ 2       200       2
+ 3       300       4
+ 4       400       8
+ 5       500      16
+ 6       600      32
+ 7       700      64
+ 8       800     128
+ 9       900     256
+10      1000     512
+11      1100    1024
+12      1200    2048
+13      1300    4096
+14      1400    8192
+从第12天开始，方案二每天奖励的大米将会比方案一多
+方案一将军最终获得大米:10500袋，方案二将军最终获得大米16383袋
+将军应该选择方案二
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solution2</span>
+<span class="n">total_awarded_option1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_awarded_option2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cur_award_option1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">cur_award_option2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">award_increase_option1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">award_times_option2</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">days_awarded</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">days_total</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">special_day</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Day</span><span class="se">\t</span><span class="s2">Option1</span><span class="se">\t</span><span class="s2">Option2&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">days_awarded</span> <span class="o">&lt;</span> <span class="n">days_total</span><span class="p">:</span>
+    <span class="n">total_awarded_option1</span> <span class="o">+=</span> <span class="n">cur_award_option1</span>
+    <span class="n">total_awarded_option2</span> <span class="o">+=</span> <span class="n">cur_award_option2</span>
+    <span class="n">days_awarded</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&gt;2}</span><span class="se">\t</span><span class="si">{:&gt;4}</span><span class="se">\t</span><span class="si">{:&gt;4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">days_awarded</span><span class="p">,</span>
+                                       <span class="n">cur_award_option1</span><span class="p">,</span>
+                                       <span class="n">cur_award_option2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cur_award_option2</span> <span class="o">&gt;</span> <span class="n">cur_award_option1</span> <span class="ow">and</span> <span class="n">special_day</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">special_day</span> <span class="o">=</span> <span class="n">days_awarded</span>
+    <span class="n">cur_award_option1</span> <span class="o">+=</span> <span class="n">award_increase_option1</span>
+    <span class="n">cur_award_option2</span> <span class="o">*=</span> <span class="n">award_times_option2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;从第</span><span class="si">{}</span><span class="s2">天开始，方案二每天奖励的大米将会比方案一多&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">special_day</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;方案一将军最终获得大米:</span><span class="si">{}</span><span class="s2">袋，方案二将军最终获得大米</span><span class="si">{}</span><span class="s2">袋&quot;</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_awarded_option1</span><span class="p">,</span> <span class="n">total_awarded_option2</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">total_awarded_option1</span> <span class="o">&gt;</span> <span class="n">total_awarded_option2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;将军应该选择方案一&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">total_awarded_option1</span> <span class="o">&lt;</span> <span class="n">total_awarded_option2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;将军应该选择方案二&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;两种方案将军获得的最终奖励一样，都是</span><span class="si">{}</span><span class="s2">袋&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_awarded_option1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Day     Option1 Option2
+ 1       100       1
+ 2       200       2
+ 3       300       4
+ 4       400       8
+ 5       500      16
+ 6       600      32
+ 7       700      64
+ 8       800     128
+ 9       900     256
+10      1000     512
+11      1100    1024
+12      1200    2048
+13      1300    4096
+14      1400    8192
+从第12天开始，方案二每天奖励的大米将会比方案一多
+方案一将军最终获得大米:10500袋，方案二将军最终获得大米16383袋
+将军应该选择方案二
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
