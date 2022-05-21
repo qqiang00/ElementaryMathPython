@@ -1,0 +1,776 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "relative-location",
+   "metadata": {},
+   "source": [
+    "## 第13讲 分析考试成绩（一）\n",
+    "Lecture 13. Analysis Exam Scores"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d12f05dd",
+   "metadata": {},
+   "source": [
+    "### Problem 问题描述"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7cd1f0b-8266-49f3-a77e-806bec2c40ce",
+   "metadata": {},
+   "source": [
+    "Do you remember the math exam paper you designed for a class of a primary school? The lecturer hosted a mid term math exam using the questions you designed for all students in the class. Now their results were released; the scores are:\n",
+    "\n",
+    "你还记得你为小学某班级设计的数学试卷吗？ 老师使用你设计的题目为班上所有学生举行了数学期中考试。 现在他们的成绩出来了，分别是：\n",
+    "```text\n",
+    "74, 86, 100, 92, 72, 70, 74, 86, 72, 100, 86, 84, 96, 92, 78, 90, 82, 90, 82, 88, 100, 78, 92, 78, 92, 86, 84, 88, 90, 88, 98, 86, 100, 96, 96, 94, 54, 90, 100, 78, 100, 98, 84, 100, 78, 86, 98, 88, 94, 88\n",
+    "```\n",
+    "Please help the lecturer do the following basic analysis of the scores: 请你帮数学老师对考试成绩做下列简单的分析：\n",
+    "1. What is the highest score? How many students have this highest score? 最高分是多少？有几位同学拿到了这个最高分？\n",
+    "2. What is the lowest score? How many students have this lowest score? 最低分是多少？有几位同学的成绩是这个最低分？\n",
+    "3. What is the average score of class? 全班的平均成绩是多少？\n",
+    "4. How many students have scores below the average one? 有多少位同学的成绩是在平均成绩以下？"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "58b48659-5d09-4297-ad74-02cd03a78bb7",
+   "metadata": {},
+   "source": [
+    "### Math Background 数学背景"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "84ff5c68-6020-4bd6-9155-4ca62bd7f828",
+   "metadata": {},
+   "source": [
+    "1. 求一组数的最大值、最小值\n",
+    "2. 计数某一个数在一组数中出现的次数\n",
+    "3. 平均数的概念\n",
+    "4. 比较数的大小"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c87f2ab2-933c-4283-8f53-d650737089f3",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "### Prerequisites 预备知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "72945ac6-c014-4153-89d3-c5c47587ccc0",
+   "metadata": {},
+   "source": [
+    "#### 1. 使用索引值获取列表变量中的每一个元素\n",
+    "python list 的索引是从0开始逐渐增大的整数。列表中排在**最前面**的元素的索引值是**0**，排在**最后面**的元素的索引值是**列表中元素的个数减1**。"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "c4955636-c054-475e-8a4d-e530957a635d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "family_ages = [11, 5, 64, 37, 35]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "158707db-a028-4d34-97dc-bd73d39c790f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "11\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(family_ages[0])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "f4aa99d8-58c4-4713-9493-c21cb5967495",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(family_ages[1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "8aae6019-3b55-496b-a00a-bfa2bc1bafd7",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "IndexError",
+     "evalue": "list index out of range",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mIndexError\u001b[0m                                Traceback (most recent call last)",
+      "Input \u001b[1;32mIn [40]\u001b[0m, in \u001b[0;36m<cell line: 1>\u001b[1;34m()\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[43mfamily_ages\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;241;43m5\u001b[39;49m\u001b[43m]\u001b[49m)\n",
+      "\u001b[1;31mIndexError\u001b[0m: list index out of range"
+     ]
+    }
+   ],
+   "source": [
+    "print(family_ages[5])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "0c31c5e5-989b-4994-8f0e-5c941f21991f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[11, 5, 64, 37, 35, 67]\n"
+     ]
+    }
+   ],
+   "source": [
+    "family_ages.append(67)\n",
+    "print(family_ages)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "0ea6327c-419e-4a84-9082-2883cfcf540d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "67\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(family_ages[5])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "3b8b0d82-1d80-49b6-abe9-c8c0286ea61b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "There are 6 age values.\n"
+     ]
+    }
+   ],
+   "source": [
+    "n_age = len(family_ages)\n",
+    "print(\"There are {} age values.\".format(n_age))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2e32c1e-8872-4770-b1a8-1266de4801c9",
+   "metadata": {},
+   "source": [
+    "#### 2. 使用循环遍历列表中的所有元素"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "7a7b28c9-6691-4f78-b5af-136786b36c94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "11\n",
+      "5\n",
+      "64\n",
+      "37\n",
+      "35\n",
+      "67\n"
+     ]
+    }
+   ],
+   "source": [
+    "i = 0\n",
+    "n = len(family_ages)\n",
+    "while i < n:\n",
+    "    print(family_ages[i])\n",
+    "    i+=1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "53bec078-ecef-4cd9-830f-db941f49b4b9",
+   "metadata": {},
+   "source": [
+    "#### 3. 列表中最大最小值和平均值"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "id": "b987f7e2-0f08-4b4a-bb91-6ec9fc0964cc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "最大年龄: 67\n",
+      "最小年龄:  5\n",
+      "平均年龄: 36.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "i = 0\n",
+    "n = len(family_ages)\n",
+    "min_age, max_age = 100, 0       # initialize\n",
+    "total_age, average_age = 0, 0\n",
+    "\n",
+    "while i < n:\n",
+    "    age = family_ages[i]\n",
+    "    total_age += age\n",
+    "    if age < min_age:\n",
+    "        min_age = age\n",
+    "    if age > max_age:\n",
+    "        max_age = age\n",
+    "    i += 1\n",
+    "    \n",
+    "average_age = total_age / n\n",
+    "print(\"最大年龄:{:>3}\".format(max_age))\n",
+    "print(\"最小年龄:{:>3}\".format(min_age))\n",
+    "print(\"平均年龄:{:>5.3}\".format(average_age))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d55f37d9",
+   "metadata": {},
+   "source": [
+    "### Solution 编程求解"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c0bf70f7-d7c2-4eb4-889a-d2341bccb7dc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "scores = [98, 70, 78, 92, 74, 86, 90, 78, 72, 90, 98, 80, 82, 100, 80, 80, 100,\n",
+    "          68, 96, 62, 80, 100, 100, 76, 82, 88, 72, 94, 100, 70, 64, 90, 86, 100, \n",
+    "          86, 86, 84, 76, 96, 72, 100, 88, 94, 80, 76, 100, 92, 100, 90, 100]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "92cd9dfb-72cf-4d81-a328-4bfef9ded5a5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "最高分:100\n",
+      "最低分: 62\n",
+      "平均分: 85.9\n",
+      "10人获得了最高分100\n",
+      " 1人获得了最低分62\n",
+      "22人的成绩低于平均分85.92\n"
+     ]
+    }
+   ],
+   "source": [
+    "highest_score = 0             # 假定一开始最高分是0, 为什么不设得高些？\n",
+    "lowest_score = 100            # 假定一开始最低分是100，为什么不设的更低些？\n",
+    "n_score = len(scores)         # 成绩的数量\n",
+    "total_score = 0               # 成绩总和\n",
+    "i = 0\n",
+    "while i < n_score:\n",
+    "    cur_score = scores[i]\n",
+    "    total_score += cur_score\n",
+    "    if cur_score > highest_score:\n",
+    "        highest_score = cur_score\n",
+    "    if cur_score < lowest_score:\n",
+    "        lowest_score = cur_score\n",
+    "    i += 1\n",
+    "    \n",
+    "average_score = total_score / n_score          # 平均分\n",
+    "print(\"最高分:{:>3}\".format(highest_score))\n",
+    "print(\"最低分:{:>3}\".format(lowest_score))\n",
+    "print(\"平均分:{:>5.3}\".format(average_score))\n",
+    "\n",
+    "i = 0\n",
+    "n_lowest, n_highest = 0, 0    # 分别得到最低最高分的学生数量\n",
+    "n_below_average = 0           # 假定低于平均分的学生个数\n",
+    "while i < n_score:\n",
+    "    cur_score = scores[i]\n",
+    "    if cur_score == lowest_score:\n",
+    "        n_lowest += 1\n",
+    "    if cur_score == highest_score:\n",
+    "        n_highest += 1\n",
+    "    if cur_score < average_score:\n",
+    "        n_below_average += 1\n",
+    "    i += 1\n",
+    "print(\"{:2}人获得了最高分{}\".format(n_highest, highest_score))\n",
+    "print(\"{:2}人获得了最低分{}\".format(n_lowest, lowest_score))\n",
+    "print(\"{:2}人的成绩低于平均分{}\".format(n_below_average, average_score))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1b2d4608-24b3-4a6d-871c-7acdc23ce7f9",
+   "metadata": {},
+   "source": [
+    "注: 本讲实例中列出的成绩是通过下面的程序代码生成的"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "id": "99536414-d32d-4e00-b1fa-fcd26bda234b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[98, 70, 78, 92, 74, 86, 90, 78, 72, 90, 98, 80, 82, 100, 80, 80, 100, 68, 96, 62, 80, 100, 100, 76, 82, 88, 72, 94, 100, 70, 64, 90, 86, 100, 86, 86, 84, 76, 96, 72, 100, 88, 94, 80, 76, 100, 92, 100, 90, 100]\n"
+     ]
+    }
+   ],
+   "source": [
+    "from random import randint, gauss, seed\n",
+    "seed(0)\n",
+    "scores = []\n",
+    "n_student = 50\n",
+    "for i in range(n_student):\n",
+    "    score = 2*int(gauss(44, 6))\n",
+    "    score = 100 if score >= 100 else score\n",
+    "    scores.append(score)\n",
+    "    \n",
+    "print(scores)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 88,
+   "id": "2863a1b3-7c16-4706-bcfe-c15e16083104",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "最高分，最低分，平均分分别是： 100 62 85.92\n",
+      "拥有最高分的人数: 10\n",
+      "拥有最低分的人数: 1\n",
+      "低于平均分的人数: 22\n"
+     ]
+    }
+   ],
+   "source": [
+    "# this is a 4 line codes that can get the answer for the problem. \n",
+    "# but it's hard to read.\n",
+    "# 下面的四行代码也可以得到问题的答案，但是不容易理解和阅读。\n",
+    "print(\"最高分，最低分，平均分分别是：\", max(scores), min(scores), sum(scores)/len(scores))\n",
+    "print(\"拥有最高分的人数:\", sum([scores[i] == max(scores) for i in range(len(scores))]))\n",
+    "print(\"拥有最低分的人数:\", sum([scores[i] == min(scores) for i in range(len(scores))]))\n",
+    "print(\"低于平均分的人数:\", sum([scores[i] < sum(scores)/len(scores) for i in range(len(scores))]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "latest-contamination",
+   "metadata": {},
+   "source": [
+    "### Summary 知识点小结"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "afb3f674",
+   "metadata": {},
+   "source": [
+    "1. 列表的索引，列表元素值的获取\n",
+    "2. 复习`while`循环，循环与条件语句的嵌套"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "rural-branch",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "urban-glance",
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bizarre-assurance",
+   "metadata": {},
+   "source": [
+    "### 计算机小知识"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "92100f08",
+   "metadata": {},
+   "source": [
+    "人们在长期的生产生活中，优化总结了做好某一件事情的流程。计算机算法很多时候就是把这些流程用计算机编程语言的形式反映出来。许多优秀的算法其理念都来源于生活。例如，银行柜台的排队叫号系统，等待办理业务的客户是有先后次序的，当某一个柜台可以办理下一个客户业务的时候，排在最前面的客户就可以去办理了。每一个客户手中的号码确定了该客户排在队伍的什么位置。这样的排队叫号系统是比较公平有效的。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "digital-consensus",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Assignments 作业"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "controversial-sleeve",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "1. 找到下面100个数中的最大值、最小值和平均值，并统计整数50在其中出现的次数\n",
+    "```python\n",
+    "values = [59, 36, 43, 53, 39, 49, 51, 41, 36, 51, 59, 43, 46, 66, 44, 44, 74, \n",
+    "          34, 57, 29, 44, 65, 62, 40, 45, 50, 37, 55, 72, 36, 30, 52, 48, 68, \n",
+    "          48, 49, 48, 40, 56, 36, 61, 50, 55, 44, 40, 68, 54, 62, 51, 76, 53, \n",
+    "          39, 57, 54, 26, 48, 59, 58, 46, 37, 54, 38, 63, 46, 40, 44, 41, 44, \n",
+    "          42, 46, 52, 55, 38, 40, 45, 50, 50, 29, 67, 41, 68, 36, 40, 47, 47, \n",
+    "          42, 57, 31, 60, 41, 62, 45, 36, 54, 72, 49, 51, 46, 41, 42]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 92,
+   "id": "d02e3afd-1d94-429a-942c-8942afe418ed",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "from random import randint, gauss, seed\n",
+    "seed(0)\n",
+    "i, n = 0, 100\n",
+    "values = []\n",
+    "while i < n:\n",
+    "    values.append(int(gauss(50, 10)))\n",
+    "    i += 1\n",
+    "#print(values)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "63f2c424-dfca-44d1-ad2e-cbda95145414",
+   "metadata": {},
+   "source": [
+    "2. 用随机数方法`randint`分别随机生成100个、10000个、1000000个数量的范围在0，100之间的整数（不必打印出这些数），分别计算生成的100，10000，和1000000个整数的平均值，并把每一次得到的平均值与50相比较，比较三次结果，你能发现些什么吗？你怎么解释这种现象？"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 112,
+   "id": "162c9372-c0e9-4e72-bb93-14ee136658c9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-0.03551000000000215\n"
+     ]
+    }
+   ],
+   "source": [
+    "# n = 100\n",
+    "from random import randint\n",
+    "min_v, max_v = 0, 100\n",
+    "i, n = 0, 1000000\n",
+    "\n",
+    "average = 0\n",
+    "while i < n:\n",
+    "    average += randint(min_v, max_v) \n",
+    "    i += 1\n",
+    "\n",
+    "average /= n\n",
+    "print(average-50)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 113,
+   "id": "c2ae2f2a-2c87-4b8a-87fd-9d0d29d5fa87",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# n = 10000\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "16b5bdd7-a4b4-4453-b95a-c546b5c42686",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# n = 1000000\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a4165380-8f45-4881-b7f2-850533fe67f3",
+   "metadata": {},
+   "source": [
+    "3. 编写程序计算下面三个列表中所有元素的平均数\n",
+    "```python\n",
+    "[11, 35, 34, 67, 59] \n",
+    "[3, 1, 2, 4, 31, 91, 9]\n",
+    "[1, 66, 81, 18, 95, 61, 60, 91, 24, 50, 10, 38, 13, 99, 76, 68, 48, 75, 5, 16, 53, 37, 77, 70, 4, 89, 72, 26, 35, 22, 82, 30, 78, 59, 2, 84, 52, 20, 28, 19, 79, 97, 90, 73, 69, 46, 33, 58, 32, 98, 39, 57, 71, 44, 96, 3, 8, 25, 67, 83, 62, 36, 63, 42, 86, 31, 17, 51, 93, 65, 56, 45, 47, 88, 94, 7, 9, 43, 12, 55, 15, 23, 85, 87, 74, 40, 64, 27, 41, 54, 49, 21, 34, 14, 11, 92, 80, 29, 6]\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "id": "dd3c3885-0973-4f2a-9783-c0233809e2cd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [3, 1, 2, 4, 31, 91, 9]\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 115,
+   "id": "38a6c130-4be4-43de-be10-c057cd1dd94c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [3, 1, 2, 4, 7, 11, 9]\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 116,
+   "id": "d329e12d-8838-4b97-8e17-03c731d4b56b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [1, 66, 81, 18, 95, 61, 60, 91, 24, 50, 10, 38, 13, 99, 76, 68, 48, 75,\n",
+    "          5, 16, 53, 37, 77, 70, 4, 89, 72, 26, 35, 22, 82, 30, 78, 59, 2, 84, \n",
+    "          52, 20, 28, 19, 79, 97, 90, 73, 69, 46, 33, 58, 32, 98, 39, 57, 71, \n",
+    "          44, 96, 3, 8, 25, 67, 83, 62, 36, 63, 42, 86, 31, 17, 51, 93, 65, 56, \n",
+    "          45, 47, 88, 94, 7, 9, 43, 12, 55, 15, 23, 85, 87, 74, 40, 64, 27, 41, \n",
+    "          54, 49, 21, 34, 14, 11, 92, 80, 29, 6]\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2cfd55f7-2734-46de-b0a5-547aeabdc6e9",
+   "metadata": {},
+   "source": [
+    "4. 假如小明家有5口人，分别是小明，小明的爸爸妈妈和爷爷奶奶。他们的年龄分别是小明11岁, 爸爸35岁, 妈妈34岁, 爷爷67岁, 奶奶59岁。可以看出爸爸的年龄在所有5个人的年龄中间。也就是说，比爸爸岁数小的人有2个，他们是小明和妈妈；比爸爸岁数大的人也有两个，他们是爷爷和奶奶。    \n",
+    "\n",
+    "   我们可以用下面的列表型变量来表示这一家5口人的年龄：ages = [11, 35, 34, 67, 59]。其中，比元素35大的数有2个，比它小的数也有2个，此时元素35根据大小比较处在所有5个数的中间，我们称元素35是这一组数的**中位数**(**median**)。当由奇数个数字组成一组数时，**我们总能找到其中的某一个数是中位数**。\n",
+    "\n",
+    "   请利用本讲所学的知识，思考并编写一段程序，运行该程序能找到一个有列表型变量表示的一组数的中位数。假定这个列表型变量元数个数是奇数，每一个数都是正整数。\n",
+    "   \n",
+    "   当你写好这段程序后，分别将下面5个列表型变量代入你的程序，分别运行程序找出每一组数的中位数：\n",
+    "   ```python\n",
+    "   [11, 35, 34, 67, 59]      # 中位数是35\n",
+    "   [3, 1, 4, 2, 31, 91, 9]   # 中位数是4\n",
+    "   [1, 2, 2, 2, 2, 3, 4]     # 中位数是2\n",
+    "   [1, 2, 2, 3, 3, 3, 4]     # 中位数是3  \n",
+    "   [1, 66, 81, 18, 95, 61, 60, 91, 24, 50, 10, 38, 13, 99, 76, 68, 48, 75, 5, 16, 53, 37, 77, 70, 4, 89, 72, 26, 35, 22, 82, 30, 78, 59, 2, 84, 52, 20, 28, 19, 79, 97, 90, 73, 69, 46, 33, 58, 32, 98, 39, 57, 71, 44, 96, 3, 8, 25, 67, 83, 62, 36, 63, 42, 86, 31, 17, 51, 93, 65, 56, 45, 47, 88, 94, 7, 9, 43, 12, 55, 15, 23, 85, 87, 74, 40, 64, 27, 41, 54, 49, 21, 34, 14, 11, 92, 80, 29, 6] # 中位数是50\n",
+    "    ```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 133,
+   "id": "1f11cdb6-f4b5-459f-8990-bf3e04681a2a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [11, 35, 34, 67, 59] \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 139,
+   "id": "95ff8869-6e1d-4009-8807-e2ae721cae5e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [3, 1, 4, 2, 31, 91, 9]\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 140,
+   "id": "bbbdf0f2-159b-4573-b2d9-6181f9d6cf06",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [1, 66, 81, 18, 95, 61, 60, 91, 24, 50, 10, 38, 13, 99, 76, 68, 48, 75,\n",
+    "          5, 16, 53, 37, 77, 70, 4, 89, 72, 26, 35, 22, 82, 30, 78, 59, 2, 84, \n",
+    "          52, 20, 28, 19, 79, 97, 90, 73, 69, 46, 33, 58, 32, 98, 39, 57, 71, \n",
+    "          44, 96, 3, 8, 25, 67, 83, 62, 36, 63, 42, 86, 31, 17, 51, 93, 65, 56, \n",
+    "          45, 47, 88, 94, 7, 9, 43, 12, 55, 15, 23, 85, 87, 74, 40, 64, 27, 41, \n",
+    "          54, 49, 21, 34, 14, 11, 92, 80, 29, 6]\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 141,
+   "id": "573a787b-845a-4c51-94b5-8e38de71aa51",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [1, 2, 2, 2, 2, 3, 4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 142,
+   "id": "a1400c3e-b7b3-459c-b199-8922eb59fbc0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "values = [1, 2, 2, 3, 3, 3, 4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 143,
+   "id": "6bd2be9b-e2a4-4b06-9ad2-1714e1162c62",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3 is the median number\n",
+      "3 values < 3 (3values) < 1 values\n"
+     ]
+    }
+   ],
+   "source": [
+    "n = len(values)\n",
+    "i, j = 0, 0\n",
+    "\n",
+    "while i < n:\n",
+    "    candidate_median = values[i]\n",
+    "    is_candidate_real_median = False\n",
+    "    j = 0\n",
+    "    n_smaller, n_greater, n_equal = 0, 0, 0\n",
+    "    while j < n:\n",
+    "        if values[j] < candidate_median:\n",
+    "            n_smaller += 1\n",
+    "        elif values[j] > candidate_median:\n",
+    "            n_greater += 1\n",
+    "        else: # equal\n",
+    "            n_equal += 1\n",
+    "        j += 1\n",
+    "        \n",
+    "    if abs(n_smaller-n_greater) <= n_equal:\n",
+    "        is_candidate_real_median = True\n",
+    "        print(\"{} is the median number\".format(candidate_median))\n",
+    "        print(\"{} values < {} ({}values) < {} values\".format(n_smaller, candidate_median, n_equal, n_greater))\n",
+    "        break\n",
+    "    i += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bc2ffea7-833d-4b93-9708-c0e349a802e5",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
