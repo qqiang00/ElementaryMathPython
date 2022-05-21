@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第13讲 分析考试成绩 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第13讲 分析考试成绩（二） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -618,7 +618,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/013_score_analysis.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/014_build_grade_bar.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -710,7 +710,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第13讲 分析考试成绩</h1>
+                <h1>第13讲 分析考试成绩（二）</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1029,26 +1029,16 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第13讲-分析考试成绩">
-<h1>第13讲 分析考试成绩<a class="headerlink" href="#第13讲-分析考试成绩" title="永久链接至标题">¶</a></h1>
-<p>Lecture 13. Analysis Exam Scores</p>
+<div class="section" id="第13讲-分析考试成绩（二）">
+<h1>第13讲 分析考试成绩（二）<a class="headerlink" href="#第13讲-分析考试成绩（二）" title="永久链接至标题">¶</a></h1>
+<p>Lecture 14. Score Analysis (Part 2)</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
-<p>Do you remember the math exam paper you designed for a class of a primary school? The lecturer hosted a mid term math exam using the questions you designed for all students in the class. Now their results were released; the scores are:</p>
-<p>你还记得你为小学某班级设计的数学试卷吗？ 老师使用你设计的题目为班上所有学生举行了数学期中考试。 现在他们的成绩出来了，分别是：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>74, 86, 100, 92, 72, 70, 74, 86, 72, 100, 86, 84, 96, 92, 78, 90, 82, 90, 82, 88, 100, 78, 92, 78, 92, 86, 84, 88, 90, 88, 98, 86, 100, 96, 96, 94, 54, 90, 100, 78, 100, 98, 84, 100, 78, 86, 98, 88, 94, 88
-</pre></div>
-</div>
-<p>Please help the lecturer do the following basic analysis of the scores: 请你帮数学老师对考试成绩做下列简单的分析： 1. What is the highest score? How many students have this highest score? 最高分是多少？有几位同学拿到了这个最高分？ 2. What is the lowest score? How many students have this lowest score? 最低分是多少？有几位同学的成绩是这个最低分？ 3. What is the average score of class? 全班的平均成绩是多少？ 4. How many students have scores below the average one?
-有多少位同学的成绩是在平均成绩以下？</p>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>求一组数的最大值、最小值</p></li>
-<li><p>计数某一个数在一组数中出现的次数</p></li>
-<li><p>平均数的概念</p></li>
-<li><p>比较数的大小</p></li>
+<li><p>加权平均数</p></li>
 </ol>
 </div>
 <div class="section" id="Prerequisites-预备知识">
