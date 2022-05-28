@@ -5,40 +5,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第13讲 分析考试成绩 &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第13讲 分析考试成绩（一） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/translations.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="../../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="copyright" title="版权所有" href="../../copyright.html" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="copyright" title="版权所有" href="../../../copyright.html" />
+    <link rel="next" title="参考答案" href="../../Answer/index.html" />
+    <link rel="prev" title="第12讲 国王的奖励（二）" href="012_kings_rice_award_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -63,36 +65,36 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
       
       
       
       <h1 class="site-logo" id="site-title">初等数学与Python程序设计(讲义)  文档</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../preface.html">
+  <a class="reference internal" href="../../../preface.html">
    前言
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about_author.html">
+  <a class="reference internal" href="../../../about_author.html">
    关于作者
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../copyright.html">
+  <a class="reference internal" href="../../../copyright.html">
    版权声明
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/index.html">
+  <a class="reference internal" href="../../../2021/index.html">
    MTH100 2021
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -102,7 +104,7 @@
   </label>
   <ul>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/Beginner/index.html">
+    <a class="reference internal" href="../../../2021/Beginner/index.html">
      第一篇 初级
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -112,149 +114,149 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/001_hello_python.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/001_hello_python.html">
        第1讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/002_make_name_for_data.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/002_make_name_for_data.html">
        第2讲 起个名字吧
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/003_who_is_older.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/003_who_is_older.html">
        第3讲 谁的年龄大
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/004_guess_number.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/004_guess_number.html">
        第4讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/005_draw_basic_shapes.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/005_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/006_draw_regular_polygon.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/006_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/007_how_many_rice_awarded.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/007_how_many_rice_awarded.html">
        第7讲 一共奖励了多少袋大米
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/008_law_of_sequence.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/008_law_of_sequence.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/009_chicken_rabbit_in_same_cage.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/009_chicken_rabbit_in_same_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/010_divide_remainder_1.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/010_divide_remainder_1.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/011_divide_remainder_2.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/011_divide_remainder_2.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012A_factor_composite_prime.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012A_factor_composite_prime.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012B_review.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012B_review.html">
        Review 复习
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/012C_quiz.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/012C_quiz.html">
        Quiz 测验
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/013_draw_axis.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/013_draw_axis.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/014_locate_point_on_axis.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/014_locate_point_on_axis.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/015_how_many_lines.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/015_how_many_lines.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/016_how_many_queues.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/016_how_many_queues.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/018_what_did_your_classmates_say.html">
        第18讲 同学给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/020_line_length_angle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/020_line_length_angle.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/021_square.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/021_square.html">
        第21讲 正方形与平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/022_square_of_sum.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/022_square_of_sum.html">
        第22讲 两个数和与差的平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/023_parallelogram.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/023_parallelogram.html">
        第23讲 平行四边形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/024_triangle.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/024_triangle.html">
        第24讲 三角形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/025_horizontal_vertical_mirror.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/025_horizontal_vertical_mirror.html">
        第25讲 水平或垂直镜像
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Beginner/content/026_Pythagoras_theorem.html">
+      <a class="reference internal" href="../../../2021/Beginner/content/026_Pythagoras_theorem.html">
        第26讲 勾股定理-毕达哥拉斯定理
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/Answer/index.html">
+    <a class="reference internal" href="../../../2021/Answer/index.html">
      练习答案
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -264,97 +266,97 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/005a_draw_basic_shapes.html">
+      <a class="reference internal" href="../../../2021/Answer/content/005a_draw_basic_shapes.html">
        第5讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/006a_draw_regular_polygon.html">
+      <a class="reference internal" href="../../../2021/Answer/content/006a_draw_regular_polygon.html">
        第6讲 绘制正多边形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/008a_law_of_sequences.html">
+      <a class="reference internal" href="../../../2021/Answer/content/008a_law_of_sequences.html">
        第8讲 找规律猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/009a_chicken_rabbit_in_cage.html">
+      <a class="reference internal" href="../../../2021/Answer/content/009a_chicken_rabbit_in_cage.html">
        第9讲 鸡兔同笼问题
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/010_divide_remainder_1_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/010_divide_remainder_1_with_answer.html">
        第10讲 整除与余数（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/011_divide_remainder_2_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/011_divide_remainder_2_with_answer.html">
        第11讲 整除和余数（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/012A_factor_composite_prime_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/012A_factor_composite_prime_with_answer.html">
        第12讲 找出所有能整除120的整数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/012C_quiz-answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/012C_quiz-answer.html">
        Answer for Quiz 测验参考答案
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/013_draw_axis_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/013_draw_axis_with_answer.html">
        第13讲 认识和绘制数轴
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/014_locate_points_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/014_locate_points_answer.html">
        第14讲 在数轴上标记不同的数
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/015_how_many_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/015_how_many_with_answer.html">
        第15讲 编写方法绘制线段
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/016_how_many_queues_with_answer.html">
+      <a class="reference internal" href="../../../2021/Answer/content/016_how_many_queues_with_answer.html">
        第16讲 一共可以排出多少个不同的队伍
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/017_oppo_abs_number.html">
+      <a class="reference internal" href="../../../2021/Answer/content/017_oppo_abs_number.html">
        第17讲 编写方法求一个数的相反数和绝对值
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/018_what_did_your_classmates_say.html">
+      <a class="reference internal" href="../../../2021/Answer/content/018_what_did_your_classmates_say.html">
        第18讲 朋友给你发了什么消息(简单加密)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/019_can_build_horizontal_rectangle.html">
+      <a class="reference internal" href="../../../2021/Answer/content/019_can_build_horizontal_rectangle.html">
        第19讲 重新认识矩形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/020_line_length_angle-Copy1.html">
+      <a class="reference internal" href="../../../2021/Answer/content/020_line_length_angle-Copy1.html">
        第20讲 线段与坐标轴的平行关系及长度
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/021_square-Copy1.html">
+      <a class="reference internal" href="../../../2021/Answer/content/021_square-Copy1.html">
        第21讲 正方形与平方
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/023_parallelogram_area.html">
+      <a class="reference internal" href="../../../2021/Answer/content/023_parallelogram_area.html">
        第23讲 平行四边形和它的面积
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/Answer/content/024_triangle.html">
+      <a class="reference internal" href="../../../2021/Answer/content/024_triangle.html">
        第24讲 三角形和它的面积
       </a>
      </li>
@@ -362,100 +364,105 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
    MTH100 2022
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Beginner/index.html">
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
      第一篇 初级
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/000_LectureTitles.html">
+      <a class="reference internal" href="000_LectureTitles.html">
        Course Plan 课程计划
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/001_hello_python.html">
+      <a class="reference internal" href="001_hello_python.html">
        第01讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/002_make_name_for_data.html">
+      <a class="reference internal" href="002_make_name_for_data.html">
        第02讲 给数据起名字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/003_communicate_with_computer.html">
+      <a class="reference internal" href="003_communicate_with_computer.html">
        第03讲 和计算机对话
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/004_guess_numbers1.html">
+      <a class="reference internal" href="004_guess_numbers1.html">
        第04讲 猜数字（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/005_draw_basic_shapes.html">
+      <a class="reference internal" href="005_draw_basic_shapes.html">
        第05讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/006_draw_regular_polygons1.html">
+      <a class="reference internal" href="006_draw_regular_polygons1.html">
        第06讲 绘制正多边形（一)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/007_draw_regular_polygons2.html">
+      <a class="reference internal" href="007_draw_regular_polygons2.html">
        第07讲 绘制正多边形（二)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/008_guess_numbers2.html">
+      <a class="reference internal" href="008_guess_numbers2.html">
        第08讲 猜数字（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/009A_correction_review.html">
+      <a class="reference internal" href="009A_correction_review.html">
        第09讲 猜数字(二)作业讲解
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/009B_yourname_midterm_exam.html">
+      <a class="reference internal" href="009B_yourname_midterm_exam.html">
        Mid Term Exam 期中考试
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/010_generate_math_exam.html">
+      <a class="reference internal" href="010_generate_math_exam.html">
        第10讲 设计数学考试试卷
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/011_kings_rice_award_1.html">
+      <a class="reference internal" href="011_kings_rice_award_1.html">
        第11讲 国王的奖励（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Beginner/content/012_kings_rice_award_2.html">
+      <a class="reference internal" href="012_kings_rice_award_2.html">
        第12讲 国王的奖励（二）
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       第13讲 分析考试成绩（一）
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../Answer/index.html">
+    <a class="reference internal" href="../../Answer/index.html">
      参考答案
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -465,63 +472,68 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/001_hello_python.html">
+      <a class="reference internal" href="../../Answer/content/001_hello_python.html">
        第01讲 你好，Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/002_make_name_for_data.html">
+      <a class="reference internal" href="../../Answer/content/002_make_name_for_data.html">
        第02讲 起个名字吧
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/003_communicate_with_computer.html">
+      <a class="reference internal" href="../../Answer/content/003_communicate_with_computer.html">
        第03讲 和计算机对话
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/004_guess_numbers.html">
+      <a class="reference internal" href="../../Answer/content/004_guess_numbers.html">
        第04讲 猜数字
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/005_draw_basic_shapes_student_name.html">
+      <a class="reference internal" href="../../Answer/content/005_draw_basic_shapes_student_name.html">
        第05讲 绘制简单图形
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/006_draw_regular_polygons.html">
+      <a class="reference internal" href="../../Answer/content/006_draw_regular_polygons.html">
        第06讲 绘制正多边形（一)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/007_student_polygons2.html">
+      <a class="reference internal" href="../../Answer/content/007_student_polygons2.html">
        第07讲 绘制正多边形（二)
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/008_student_guess_numbers2.html">
+      <a class="reference internal" href="../../Answer/content/008_student_guess_numbers2.html">
        第08讲 猜数字（二）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/009B_midterm_exam.html">
+      <a class="reference internal" href="../../Answer/content/009B_midterm_exam.html">
        Mid Term Exam 期中考试
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/010_student_generate_math_exam.html">
+      <a class="reference internal" href="../../Answer/content/010_student_generate_math_exam.html">
        第10讲 设计数学考试试卷
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/011_student_kings_rice_award.html">
+      <a class="reference internal" href="../../Answer/content/011_student_kings_rice_award.html">
        第11讲 国王的奖励（一）
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../Answer/content/012_student_kings_rice_award_2.html">
+      <a class="reference internal" href="../../Answer/content/012_student_kings_rice_award_2.html">
        第12讲 国王的奖励（二）
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../Answer/content/013_student_score_analysis.html">
+       第13讲 分析考试成绩（一）
       </a>
      </li>
     </ul>
@@ -529,7 +541,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../appendix/index.html">
+  <a class="reference internal" href="../../../appendix/index.html">
    附录
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -539,29 +551,29 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/000_intro_to_course.html">
+    <a class="reference internal" href="../../../appendix/content/000_intro_to_course.html">
      附录一 初级课程介绍
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/001_admission_notice.html">
+    <a class="reference internal" href="../../../appendix/content/001_admission_notice.html">
      附录二 第一期招生通知
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/010_install_jupyter_notebook_on_windows.html">
+    <a class="reference internal" href="../../../appendix/content/010_install_jupyter_notebook_on_windows.html">
      附录三 Windows操作系统下搭建Python运行环境
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../appendix/content/090_qianglib.html">
+    <a class="reference internal" href="../../../appendix/content/090_qianglib.html">
      附录四 qianglib.py的代码
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../Test/index.html">
+  <a class="reference internal" href="../../../Test/index.html">
    新功能测试
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -571,7 +583,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../Test/content/markdown_test.html">
+    <a class="reference internal" href="../../../Test/content/markdown_test.html">
      MarkDown test Title
     </a>
    </li>
@@ -618,7 +630,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/2022/NotOnline/013_score_analysis.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/2022/Beginner/content/013_score_analysis_1.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -674,8 +686,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#3.-列表中最大最小值和平均值">
-     3. 列表中最大最小值和平均值
+    <a class="reference internal nav-link" href="#3.-找列表中的最大值">
+     3. 找列表中的最大值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#4.-同时找列表中的最大最小值和平均值">
+     4. 同时找列表中的最大最小值和平均值
     </a>
    </li>
   </ul>
@@ -710,7 +727,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第13讲 分析考试成绩</h1>
+                <h1>第13讲 分析考试成绩（一）</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -746,8 +763,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#3.-列表中最大最小值和平均值">
-     3. 列表中最大最小值和平均值
+    <a class="reference internal nav-link" href="#3.-找列表中的最大值">
+     3. 找列表中的最大值
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#4.-同时找列表中的最大最小值和平均值">
+     4. 同时找列表中的最大最小值和平均值
     </a>
    </li>
   </ul>
@@ -1029,18 +1051,25 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第13讲-分析考试成绩">
-<h1>第13讲 分析考试成绩<a class="headerlink" href="#第13讲-分析考试成绩" title="永久链接至标题">¶</a></h1>
-<p>Lecture 13. Analysis Exam Scores</p>
+<div class="section" id="第13讲-分析考试成绩（一）">
+<h1>第13讲 分析考试成绩（一）<a class="headerlink" href="#第13讲-分析考试成绩（一）" title="永久链接至标题">¶</a></h1>
+<p>Lecture 13. Analysis Exam Scores(Part 1)</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>Do you remember the math exam paper you designed for a class of a primary school? The lecturer hosted a mid term math exam using the questions you designed for all students in the class. Now their results were released; the scores are:</p>
 <p>你还记得你为小学某班级设计的数学试卷吗？ 老师使用你设计的题目为班上所有学生举行了数学期中考试。 现在他们的成绩出来了，分别是：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>74, 86, 100, 92, 72, 70, 74, 86, 72, 100, 86, 84, 96, 92, 78, 90, 82, 90, 82, 88, 100, 78, 92, 78, 92, 86, 84, 88, 90, 88, 98, 86, 100, 96, 96, 94, 54, 90, 100, 78, 100, 98, 84, 100, 78, 86, 98, 88, 94, 88
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>74, 86, 100, 92, 72, 70, 74, 86, 72, 100, 86, 84, 96, 92, 78, 90, 82,
+90, 82, 88, 100, 78, 92, 78, 92, 86, 84, 88, 90, 88, 98, 86, 100, 96,
+96, 94, 54, 90, 100, 78, 100, 98, 84, 100, 78, 86, 98, 88, 94, 88
 </pre></div>
 </div>
-<p>Please help the lecturer do the following basic analysis of the scores: 请你帮数学老师对考试成绩做下列简单的分析： 1. What is the highest score? How many students have this highest score? 最高分是多少？有几位同学拿到了这个最高分？ 2. What is the lowest score? How many students have this lowest score? 最低分是多少？有几位同学的成绩是这个最低分？ 3. What is the average score of class? 全班的平均成绩是多少？ 4. How many students have scores below the average one?
-有多少位同学的成绩是在平均成绩以下？</p>
+<p>Please help the lecturer do the following basic analysis of the scores: 请你帮数学老师对考试成绩做下列简单的分析：</p>
+<ol class="arabic simple">
+<li><p>What is the average score of class? 全班的平均成绩是多少？</p></li>
+<li><p>What is the highest score? How many students have this highest score? 最高分是多少？有几位同学拿到了这个最高分？</p></li>
+<li><p>What is the lowest score? How many students have this lowest score? 最低分是多少？有几位同学的成绩是这个最低分？</p></li>
+<li><p>How many students have scores below the average one? 有多少位同学的成绩是在平均成绩以下？</p></li>
+</ol>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
@@ -1056,21 +1085,13 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="1.-使用索引值获取列表变量中的每一个元素">
 <h3>1. 使用索引值获取列表变量中的每一个元素<a class="headerlink" href="#1.-使用索引值获取列表变量中的每一个元素" title="永久链接至标题">¶</a></h3>
 <p>python list 的索引是从0开始逐渐增大的整数。列表中排在<strong>最前面</strong>的元素的索引值是<strong>0</strong>，排在<strong>最后面</strong>的元素的索引值是<strong>列表中元素的个数减1</strong>。</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span></span><span class="n">places</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1079,15 +1100,17 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-11
+[]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;上海&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
+
 </pre></div>
 </div>
 </div>
@@ -1096,15 +1119,89 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-5
+[&#39;上海&#39;]
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;北京&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;上海&#39;, &#39;北京&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;上海&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;上海&#39;, &#39;北京&#39;, &#39;上海&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># -4    -3     -2      -1                     # python supports</span>
+<span class="c1">#        0      1       2     3               # most languanges support</span>
+<span class="c1">#    [&quot;上海&quot;, &quot;北京&quot;, &quot;上海&quot;]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;上海&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">places</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;北京&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">places</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>           <span class="c1"># does not exist 不存在</span>
 </pre></div>
 </div>
 </div>
@@ -1115,78 +1212,25 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">IndexError</span>                                Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [40]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">family_ages</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">5</span><span class="ansi-yellow-bg">]</span>)
+Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">places</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">]</span>
 
 <span class="ansi-red-intense-fg ansi-bold">IndexError</span>: list index out of range
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">family_ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">67</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[11, 5, 64, 37, 35, 67]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-67
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n_age</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">{}</span><span class="s2"> age values.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_age</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-There are 6 age values.
 </pre></div></div>
 </div>
 </div>
 <div class="section" id="2.-使用循环遍历列表中的所有元素">
 <h3>2. 使用循环遍历列表中的所有元素<a class="headerlink" href="#2.-使用循环遍历列表中的所有元素" title="永久链接至标题">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -1195,25 +1239,95 @@ There are 6 age values.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-11
-5
-64
-37
-35
-67
+上海
+北京
+上海
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="3.-列表中最大最小值和平均值">
-<h3>3. 列表中最大最小值和平均值<a class="headerlink" href="#3.-列表中最大最小值和平均值" title="永久链接至标题">¶</a></h3>
+<div class="section" id="3.-找列表中的最大值">
+<h3>3. 找列表中的最大值<a class="headerlink" href="#3.-找列表中的最大值" title="永久链接至标题">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span></span><span class="c1"># Method1 方法1 （容易想到但有缺陷）</span>
+<span class="c1"># step1 步骤1: 先把列表中的前两个元素拿出来比较，把其中大的作为最大值</span>
+<span class="c1"># loop step2 循环步骤2：从列表第3个元素(索引值为2)开始，依次拿出后续的每一个元素，把它和当前的最大值比较</span>
+<span class="c1">#   比较的结果有3中可能性：</span>
+<span class="c1">#       a. 当前的元素比当前的最大值大</span>
+<span class="c1">#       b. 当前的元素和当前的最大值一样大</span>
+<span class="c1">#       c. 当前的元素比当前的最大值小</span>
+<span class="c1"># step3 当前的最大值就是整个列表元素的最大值</span>
+
+<span class="c1"># 这种方法有缺陷</span>
+<span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
+<span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">family_ages</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">oldest</span> <span class="o">=</span> <span class="n">first</span> <span class="k">if</span> <span class="n">first</span> <span class="o">&gt;</span> <span class="n">second</span> <span class="k">else</span> <span class="n">second</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">oldest</span><span class="p">:</span>
+        <span class="n">oldest</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">oldest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+65
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Method2 方法2</span>
+<span class="c1"># step1 步骤1: 先设定一个尽可能小的数作为一开始的最大值</span>
+<span class="c1"># loop step2 循环步骤2：从列表里依次拿出每一个元素，把它和当前的最大值比较</span>
+<span class="c1">#   比较的结果有3中可能性：</span>
+<span class="c1">#       a. 当前的元素比当前的最大值大</span>
+<span class="c1">#       b. 当前的元素和当前的最大值一样大</span>
+<span class="c1">#       c. 当前的元素比当前的最大值小</span>
+<span class="c1"># step3 当前的最大值就是整个列表元素的最大值</span>
+
+<span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
+<span class="n">oldest</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>       <span class="c1"># -1 可以约定表示没有最大值</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">oldest</span><span class="p">:</span>
+        <span class="n">oldest</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oldest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+65
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="4.-同时找列表中的最大最小值和平均值">
+<h3>4. 同时找列表中的最大最小值和平均值<a class="headerlink" href="#4.-同时找列表中的最大最小值和平均值" title="永久链接至标题">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span>
-<span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span>       <span class="c1"># initialize</span>
+<span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>       <span class="c1"># initialize 设定出事的最小最大值</span>
 <span class="n">total_age</span><span class="p">,</span> <span class="n">average_age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
@@ -1237,9 +1351,9 @@ There are 6 age values.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-最大年龄: 67
+最大年龄: 65
 最小年龄:  5
-平均年龄: 36.5
+平均年龄: 30.2
 </pre></div></div>
 </div>
 </div>
@@ -1247,18 +1361,18 @@ There are 6 age values.
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">98</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>
-          <span class="mi">68</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>
-          <span class="mi">86</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span>
+          <span class="mi">82</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>
+          <span class="mi">96</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1305,42 +1419,15 @@ There are 6 age values.
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 最高分:100
-最低分: 62
-平均分: 85.9
-10人获得了最高分100
- 1人获得了最低分62
-22人的成绩低于平均分85.92
-</pre></div></div>
-</div>
-<p>注: 本讲实例中列出的成绩是通过下面的程序代码生成的</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">gauss</span><span class="p">,</span> <span class="n">seed</span>
-<span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">n_student</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_student</span><span class="p">):</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">gauss</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">100</span> <span class="k">else</span> <span class="n">score</span>
-    <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[98, 70, 78, 92, 74, 86, 90, 78, 72, 90, 98, 80, 82, 100, 80, 80, 100, 68, 96, 62, 80, 100, 100, 76, 82, 88, 72, 94, 100, 70, 64, 90, 86, 100, 86, 86, 84, 76, 96, 72, 100, 88, 94, 80, 76, 100, 92, 100, 90, 100]
+最低分: 54
+平均分: 87.5
+ 7人获得了最高分100
+ 1人获得了最低分54
+22人的成绩低于平均分87.52
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[88]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1359,8 +1446,8 @@ There are 6 age values.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-最高分，最低分，平均分分别是： 100 62 85.92
-拥有最高分的人数: 10
+最高分，最低分，平均分分别是： 100 54 87.52
+拥有最高分的人数: 7
 拥有最低分的人数: 1
 低于平均分的人数: 22
 </pre></div></div>
@@ -1372,24 +1459,6 @@ There are 6 age values.
 <li><p>列表的索引，列表元素值的获取</p></li>
 <li><p>复习<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，循环与条件语句的嵌套</p></li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="计算机小知识">
 <h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
@@ -1550,118 +1619,6 @@ There are 6 age values.
 </pre></div>
 </div>
 </div>
-<ol class="arabic" start="4">
-<li><p>假如小明家有5口人，分别是小明，小明的爸爸妈妈和爷爷奶奶。他们的年龄分别是小明11岁, 爸爸35岁, 妈妈34岁, 爷爷67岁, 奶奶59岁。可以看出爸爸的年龄在所有5个人的年龄中间。也就是说，比爸爸岁数小的人有2个，他们是小明和妈妈；比爸爸岁数大的人也有两个，他们是爷爷和奶奶。</p>
-<p>我们可以用下面的列表型变量来表示这一家5口人的年龄：ages = [11, 35, 34, 67, 59]。其中，比元素35大的数有2个，比它小的数也有2个，此时元素35根据大小比较处在所有5个数的中间，我们称元素35是这一组数的<strong>中位数</strong>(<strong>median</strong>)。当由奇数个数字组成一组数时，<strong>我们总能找到其中的某一个数是中位数</strong>。</p>
-<p>请利用本讲所学的知识，思考并编写一段程序，运行该程序能找到一个有列表型变量表示的一组数的中位数。假定这个列表型变量元数个数是奇数，每一个数都是正整数。</p>
-<p>当你写好这段程序后，分别将下面5个列表型变量代入你的程序，分别运行程序找出每一组数的中位数：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>      <span class="c1"># 中位数是35</span>
-<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>   <span class="c1"># 中位数是4</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>     <span class="c1"># 中位数是2</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>     <span class="c1"># 中位数是3</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># 中位数是50</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[133]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[139]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span>
-          <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span>
-          <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span>
-          <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span>
-          <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-
-
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[141]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[142]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Solultion</span>
-
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">candidate_median</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">is_candidate_real_median</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">n_smaller</span><span class="p">,</span> <span class="n">n_greater</span><span class="p">,</span> <span class="n">n_equal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">candidate_median</span><span class="p">:</span>
-            <span class="n">n_smaller</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">candidate_median</span><span class="p">:</span>
-            <span class="n">n_greater</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span> <span class="c1"># equal</span>
-            <span class="n">n_equal</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n_smaller</span><span class="o">-</span><span class="n">n_greater</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">n_equal</span><span class="p">:</span>
-        <span class="n">is_candidate_real_median</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is the median number&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">candidate_median</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> values &lt; </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">values) &lt; </span><span class="si">{}</span><span class="s2"> values&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_smaller</span><span class="p">,</span> <span class="n">candidate_median</span><span class="p">,</span> <span class="n">n_equal</span><span class="p">,</span> <span class="n">n_greater</span><span class="p">))</span>
-        <span class="k">break</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-50 is the median number
-49 values &lt; 50 (1values) &lt; 49 values
-</pre></div></div>
-</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1679,7 +1636,21 @@ There are 6 age values.
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="012_kings_rice_award_2.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">第12讲 国王的奖励（二）</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../Answer/index.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">参考答案</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
@@ -1689,7 +1660,7 @@ There are 6 age values.
     
       通过 Ye Qiang<br/>
     
-        &copy; <a href="../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
+        &copy; <a href="../../../copyright.html">版权</a> 2022, Ye Qiang.<br/>
   </p>
 </footer>
 </main>
@@ -1698,7 +1669,7 @@ There are 6 age values.
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

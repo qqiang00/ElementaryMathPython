@@ -452,6 +452,11 @@
        第12讲 国王的奖励（二）
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Beginner/content/013_score_analysis_1.html">
+       第13讲 分析考试成绩（一）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -522,6 +527,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../Answer/content/012_student_kings_rice_award_2.html">
        第12讲 国王的奖励（二）
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../Answer/content/013_student_score_analysis.html">
+       第13讲 分析考试成绩（一）
       </a>
      </li>
     </ul>
@@ -1034,6 +1044,118 @@ div.rendered_html tbody tr:hover {
 <p>Lecture 14. Score Analysis (Part 2)</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
+<ol class="arabic" start="4">
+<li><p>假如小明家有5口人，分别是小明，小明的爸爸妈妈和爷爷奶奶。他们的年龄分别是小明11岁, 爸爸35岁, 妈妈34岁, 爷爷67岁, 奶奶59岁。可以看出爸爸的年龄在所有5个人的年龄中间。也就是说，比爸爸岁数小的人有2个，他们是小明和妈妈；比爸爸岁数大的人也有两个，他们是爷爷和奶奶。</p>
+<p>我们可以用下面的列表型变量来表示这一家5口人的年龄：ages = [11, 35, 34, 67, 59]。其中，比元素35大的数有2个，比它小的数也有2个，此时元素35根据大小比较处在所有5个数的中间，我们称元素35是这一组数的<strong>中位数</strong>(<strong>median</strong>)。当由奇数个数字组成一组数时，<strong>我们总能找到其中的某一个数是中位数</strong>。</p>
+<p>请利用本讲所学的知识，思考并编写一段程序，运行该程序能找到一个有列表型变量表示的一组数的中位数。假定这个列表型变量元数个数是奇数，每一个数都是正整数。</p>
+<p>当你写好这段程序后，分别将下面5个列表型变量代入你的程序，分别运行程序找出每一组数的中位数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>      <span class="c1"># 中位数是35</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>   <span class="c1"># 中位数是4</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>     <span class="c1"># 中位数是2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>     <span class="c1"># 中位数是3</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="c1"># 中位数是50</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[133]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[139]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span>
+          <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span>
+          <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span>
+          <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span>
+          <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span>
+          <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[141]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[142]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Solultion</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">candidate_median</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">is_candidate_real_median</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n_smaller</span><span class="p">,</span> <span class="n">n_greater</span><span class="p">,</span> <span class="n">n_equal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">candidate_median</span><span class="p">:</span>
+            <span class="n">n_smaller</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">candidate_median</span><span class="p">:</span>
+            <span class="n">n_greater</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># equal</span>
+            <span class="n">n_equal</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n_smaller</span><span class="o">-</span><span class="n">n_greater</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">n_equal</span><span class="p">:</span>
+        <span class="n">is_candidate_real_median</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is the median number&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">candidate_median</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> values &lt; </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">values) &lt; </span><span class="si">{}</span><span class="s2"> values&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_smaller</span><span class="p">,</span> <span class="n">candidate_median</span><span class="p">,</span> <span class="n">n_equal</span><span class="p">,</span> <span class="n">n_greater</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+50 is the median number
+49 values &lt; 50 (1values) &lt; 49 values
+</pre></div></div>
+</div>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
