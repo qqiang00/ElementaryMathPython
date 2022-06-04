@@ -457,6 +457,11 @@
        第13讲 分析考试成绩（一）
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2022/Beginner/content/014_score_analysis_2.html">
+       第14讲 分析考试成绩（二）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -942,7 +947,16 @@ div.rendered_html tbody tr:hover {
 <li><p>if distance(O, P) &lt; 0.99, mark P with red; if distance(O, P) &gt; 1.01 don’t mark P if 0.99 &lt;= distance(O, P) &lt;= 1.01, mark with blue</p></li>
 </ol>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -950,11 +964,13 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">getscreen</span>
 <span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
 <span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">get_center</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -964,7 +980,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -973,31 +989,23 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">min_n</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">40</span>
+<span class="n">min_n</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">400</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">min_n</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max_n</span><span class="p">:</span>
-    <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0]
-</pre></div></div>
-</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1008,7 +1016,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1018,7 +1026,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1028,19 +1036,16 @@ div.rendered_html tbody tr:hover {
 <span class="n">screen</span> <span class="o">=</span> <span class="n">getscreen</span><span class="p">()</span>
 <span class="n">n_temp</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">()</span>
 <span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="n">n_tracer</span><span class="p">)</span>
+<span class="n">circle_points</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
         <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
         <span class="n">dis</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
         <span class="n">color</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mf">0.99</span><span class="p">:</span>
-            <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-            <span class="n">mark</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">dis</span> <span class="o">&gt;</span> <span class="mf">1.01</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">dis</span> <span class="o">&gt;</span> <span class="mf">0.999</span> <span class="ow">and</span> <span class="n">dis</span> <span class="o">&lt;</span> <span class="mf">1.001</span><span class="p">:</span>
             <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+            <span class="n">circle_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
             <span class="n">mark</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
 
 <span class="n">mark</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
@@ -1054,6 +1059,467 @@ div.rendered_html tbody tr:hover {
 <li><p>line all blue points up in order and make a circle, sum up all the length of the lines made by adjacent blue points. print the sum of the lengths, name it L;</p></li>
 <li><p>calculate the fraction: L/D.</p></li>
 </ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">circle_points</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circle_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">circle_points</span><span class="p">:</span>
+    <span class="n">dis</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">point</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.65</span><span class="p">,</span> <span class="mf">2.76</span><span class="p">)</span>
+<span class="n">mark</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">line</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">O</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.828</span><span class="p">,</span> <span class="mf">2.828</span><span class="p">)</span>
+<span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.828</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_slope</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">p0</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p0</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">tan</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+<span class="k">def</span> <span class="nf">my_slope2</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">slope</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_slope</span><span class="p">(</span><span class="n">O</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_slope2</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">reset</span><span class="p">,</span> <span class="n">pu</span><span class="p">,</span> <span class="n">pd</span><span class="p">,</span> <span class="n">bye</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">bk</span><span class="p">,</span> <span class="n">screensize</span>
+<span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="n">goto</span><span class="p">,</span> <span class="n">seth</span><span class="p">,</span> <span class="n">write</span><span class="p">,</span> <span class="n">ht</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="n">home</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">pen</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">getscreen</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">prepare_paper</span><span class="p">,</span> <span class="n">draw_grid</span><span class="p">,</span> <span class="n">mark</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">qianglib</span> <span class="kn">import</span> <span class="n">get_center</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
+<span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">tan</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">reset</span><span class="p">()</span>
+<span class="n">prepare_paper</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3.141592653589793
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">delta_angle</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">circle_points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">angle</span> <span class="o">&lt;</span> <span class="mi">360</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">angle</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+        <span class="n">circle_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">angle</span> <span class="o">+=</span> <span class="n">delta_angle</span>
+
+    <span class="n">n_tracer</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">screen</span> <span class="o">=</span> <span class="n">getscreen</span><span class="p">()</span>
+    <span class="n">n_temp</span> <span class="o">=</span> <span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">()</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="n">n_tracer</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">circle_points</span><span class="p">):</span>
+        <span class="n">line</span><span class="p">(</span><span class="n">circle_points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">circle_points</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">len</span>(circle_points)])
+    <span class="n">screen</span><span class="o">.</span><span class="n">tracer</span><span class="p">(</span><span class="n">n_temp</span><span class="p">)</span>
+    <span class="c1">#return circle_points</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">delta_angle</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="n">degree</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">BC</span><span class="o">/</span><span class="n">AB</span> <span class="o">=</span> <span class="mf">7.1</span><span class="o">/</span><span class="mi">10</span> <span class="o">=</span> <span class="mf">0.71</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">AC</span><span class="o">/</span><span class="n">AB</span> <span class="o">=</span> <span class="mf">7.1</span><span class="o">/</span><span class="mi">10</span> <span class="o">=</span> <span class="mf">0.71</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">BC</span><span class="o">/</span><span class="n">AC</span> <span class="o">=</span> <span class="mf">7.1</span><span class="o">/</span><span class="mf">7.1</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">S</span> <span class="o">=</span> <span class="mf">4.2</span><span class="o">/</span><span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.7000000000000001
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mi">1</span><span class="o">/</span><span class="mf">2.3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.4347826086956522
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mf">2.172</span><span class="o">/</span><span class="mf">4.857</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.44718962322421246
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="mf">1.745</span><span class="o">/</span><span class="mf">3.903</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.44709198052779914
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">DE</span> <span class="o">=</span> <span class="mf">2.285</span> <span class="c1">#1.745</span>
+<span class="n">DA</span> <span class="o">=</span> <span class="mf">5.11</span>  <span class="c1">#3.903</span>
+<span class="n">AE</span> <span class="o">=</span> <span class="mf">4.571</span><span class="c1"># 3.491</span>
+
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">S</span> <span class="o">=</span> <span class="n">DE</span><span class="o">/</span><span class="n">DA</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">AE</span><span class="o">/</span><span class="n">DA</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">DE</span><span class="o">/</span><span class="n">AE</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="c1"># 0.44709198052779914 0.8944401742249551 0.4998567745631624</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0.4471624266144814 0.8945205479452054 0.4998906147451324
+</pre></div></div>
+</div>
+<p>visit website: <a class="reference external" href="https://www.geogebra.org/geometry">https://www.geogebra.org/geometry</a> 1. register a user account 2. for each degree in 0, 1, 30, 45，60, 89, 90 use at least 3 points for each degree to calculate compute the sin, cos, and tang of the following degrees:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 30</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 45</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 60</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 1:</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 0: don&#39;t draw, use</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 89:</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># degree 90: don&#39;t draw, use</span>
+<span class="c1"># group1 specify a position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group2  specify another position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+
+<span class="c1"># group3 specify the third position of point D</span>
+<span class="c1"># DA = ?, DE = ?, AE = ?</span>
+<span class="c1"># sin(30 degree) = ?    cos(30 degree) = ?, tan(30 degree) = ?</span>
+</pre></div>
+</div>
+</div>
 
 
               </div>

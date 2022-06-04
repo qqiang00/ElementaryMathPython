@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第13讲 分析考试成绩（一） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
+    <title>第14讲 分析考试成绩（二） &#8212; 初等数学与Python程序设计(讲义)  文档</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -39,8 +39,8 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="copyright" title="版权所有" href="../../../copyright.html" />
-    <link rel="next" title="第14讲 分析考试成绩（二）" href="014_score_analysis_2.html" />
-    <link rel="prev" title="第12讲 国王的奖励（二）" href="012_kings_rice_award_2.html" />
+    <link rel="next" title="参考答案" href="../../Answer/index.html" />
+    <link rel="prev" title="第13讲 分析考试成绩（一）" href="013_score_analysis_1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -454,13 +454,13 @@
        第12讲 国王的奖励（二）
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="013_score_analysis_1.html">
        第13讲 分析考试成绩（一）
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="014_score_analysis_2.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        第14讲 分析考试成绩（二）
       </a>
      </li>
@@ -635,7 +635,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/2022/Beginner/content/013_score_analysis_1.ipynb.txt"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/2022/Beginner/content/014_score_analysis_2.ipynb.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -681,23 +681,40 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#1.-使用索引值获取列表变量中的每一个元素">
-     1. 使用索引值获取列表变量中的每一个元素
+    <a class="reference internal nav-link" href="#1.-使用索引值-1表示列表中最后一个元素">
+     1. 使用索引值-1表示列表中最后一个元素
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#2.-使用循环遍历列表中的所有元素">
-     2. 使用循环遍历列表中的所有元素
+    <a class="reference internal nav-link" href="#2.-使用for…in…-循环遍历列表中的所有元素">
+     2. 使用
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     …
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       in
+      </span>
+     </code>
+     … 循环遍历列表中的所有元素
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#3.-找列表中的最大值">
-     3. 找列表中的最大值
+    <a class="reference internal nav-link" href="#3.-把最后一个元素转移至列表最前">
+     3. 把最后一个元素转移至列表最前
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#4.-同时找列表中的最大最小值和平均值">
-     4. 同时找列表中的最大最小值和平均值
+    <a class="reference internal nav-link" href="#4.-交换列表中某两个元素的位置">
+     4. 交换列表中某两个元素的位置
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#5.-insert-element-in-a-position">
+     5. insert element in a position
     </a>
    </li>
   </ul>
@@ -732,7 +749,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>第13讲 分析考试成绩（一）</h1>
+                <h1>第14讲 分析考试成绩（二）</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -758,23 +775,40 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#1.-使用索引值获取列表变量中的每一个元素">
-     1. 使用索引值获取列表变量中的每一个元素
+    <a class="reference internal nav-link" href="#1.-使用索引值-1表示列表中最后一个元素">
+     1. 使用索引值-1表示列表中最后一个元素
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#2.-使用循环遍历列表中的所有元素">
-     2. 使用循环遍历列表中的所有元素
+    <a class="reference internal nav-link" href="#2.-使用for…in…-循环遍历列表中的所有元素">
+     2. 使用
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     …
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       in
+      </span>
+     </code>
+     … 循环遍历列表中的所有元素
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#3.-找列表中的最大值">
-     3. 找列表中的最大值
+    <a class="reference internal nav-link" href="#3.-把最后一个元素转移至列表最前">
+     3. 把最后一个元素转移至列表最前
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#4.-同时找列表中的最大最小值和平均值">
-     4. 同时找列表中的最大最小值和平均值
+    <a class="reference internal nav-link" href="#4.-交换列表中某两个元素的位置">
+     4. 交换列表中某两个元素的位置
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#5.-insert-element-in-a-position">
+     5. insert element in a position
     </a>
    </li>
   </ul>
@@ -1056,9 +1090,9 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="第13讲-分析考试成绩（一）">
-<h1>第13讲 分析考试成绩（一）<a class="headerlink" href="#第13讲-分析考试成绩（一）" title="永久链接至标题">¶</a></h1>
-<p>Lecture 13. Analysis Exam Scores(Part 1)</p>
+<div class="section" id="第14讲-分析考试成绩（二）">
+<h1>第14讲 分析考试成绩（二）<a class="headerlink" href="#第14讲-分析考试成绩（二）" title="永久链接至标题">¶</a></h1>
+<p>Lecture 14. Analysis Exam Scores(Part 2)</p>
 <div class="section" id="Problem-问题描述">
 <h2>Problem 问题描述<a class="headerlink" href="#Problem-问题描述" title="永久链接至标题">¶</a></h2>
 <p>Do you remember the math exam paper you designed for a class of a primary school? The lecturer hosted a mid term math exam using the questions you designed for all students in the class. Now their results were released; the scores are:</p>
@@ -1075,179 +1109,6 @@ div.rendered_html tbody tr:hover {
 <li><p>What is the lowest score? How many students have this lowest score? 最低分是多少？有几位同学的成绩是这个最低分？</p></li>
 <li><p>How many students have scores below the average one? 有多少位同学的成绩是在平均成绩以下？</p></li>
 </ol>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-5
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[74, 86, 100, 92, 72, 100]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span>  <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span> <span class="c1"># i i += 1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-74
-86
-100
-92
-72
-100
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Beijing&quot;</span><span class="p">,</span> <span class="s2">&quot;Shanghai&quot;</span><span class="p">,</span> <span class="s2">&quot;Xianggang&quot;</span><span class="p">,</span> <span class="s2">&quot;Guangzhou&quot;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">cities</span><span class="p">:</span>     <span class="c1"># for var in list_var:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Beijing
-Beijing Beijing
-Shanghai
-Shanghai Shanghai
-Xianggang
-Xianggang Xianggang
-Guangzhou
-Guangzhou Guangzhou
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">cities</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">cities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Beijing
-Shanghai
-Xianggang
-Guangzhou
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cynthia&quot;</span><span class="p">,</span> <span class="s2">&quot;Milly&quot;</span><span class="p">,</span> <span class="s2">&quot;Yunzi&quot;</span><span class="p">]</span>
-<span class="n">reordered_students</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1">#</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">reordered_students</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">reordered_students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yunzi&quot;</span><span class="p">,</span> <span class="s2">&quot;Cynthia&quot;</span><span class="p">,</span> <span class="s2">&quot;Milly&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="c1">#   # Cynthia, Milly, Yunzi</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
-<span class="c1"># order ages in ascending</span>
-
-
-<span class="c1">#print(ages)</span>
-<span class="c1"># [9, 11]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[11, 9]
-</pre></div></div>
-</div>
 </div>
 <div class="section" id="Math-Background-数学背景">
 <h2>Math Background 数学背景<a class="headerlink" href="#Math-Background-数学背景" title="永久链接至标题">¶</a></h2>
@@ -1260,229 +1121,140 @@ Guangzhou
 </div>
 <div class="section" id="Prerequisites-预备知识">
 <h2>Prerequisites 预备知识<a class="headerlink" href="#Prerequisites-预备知识" title="永久链接至标题">¶</a></h2>
-<div class="section" id="1.-使用索引值获取列表变量中的每一个元素">
-<h3>1. 使用索引值获取列表变量中的每一个元素<a class="headerlink" href="#1.-使用索引值获取列表变量中的每一个元素" title="永久链接至标题">¶</a></h3>
-<p>python list 的索引是从0开始逐渐增大的整数。列表中排在<strong>最前面</strong>的元素的索引值是<strong>0</strong>，排在<strong>最后面</strong>的元素的索引值是<strong>列表中元素的个数减1</strong>。</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="section" id="1.-使用索引值-1表示列表中最后一个元素">
+<h3>1. 使用索引值-1表示列表中最后一个元素<a class="headerlink" href="#1.-使用索引值-1表示列表中最后一个元素" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
+<span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cynthia&quot;</span><span class="p">,</span> <span class="s2">&quot;Milly&quot;</span><span class="p">,</span> <span class="s2">&quot;Yunzi&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="section" id="2.-使用for…in…-循环遍历列表中的所有元素">
+<h3>2. 使用<code class="docutils literal notranslate"><span class="pre">for</span></code>…<code class="docutils literal notranslate"><span class="pre">in</span></code>… 循环遍历列表中的所有元素<a class="headerlink" href="#2.-使用for…in…-循环遍历列表中的所有元素" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;上海&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
-
+<span></span><span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;上海&#39;]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;北京&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;上海&#39;, &#39;北京&#39;]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;上海&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;上海&#39;, &#39;北京&#39;, &#39;上海&#39;]
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># -4    -3     -2      -1                     # python supports</span>
-<span class="c1">#        0      1       2     3               # most languanges support</span>
-<span class="c1">#    [&quot;上海&quot;, &quot;北京&quot;, &quot;上海&quot;]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&#39;上海&#39;
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&#39;北京&#39;
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">places</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>           <span class="c1"># does not exist 不存在</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">IndexError</span>                                Traceback (most recent call last)
-Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> <span class="ansi-yellow-bg">places</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">]</span>
-
-<span class="ansi-red-intense-fg ansi-bold">IndexError</span>: list index out of range
-</pre></div></div>
-</div>
-</div>
-<div class="section" id="2.-使用循环遍历列表中的所有元素">
-<h3>2. 使用循环遍历列表中的所有元素<a class="headerlink" href="#2.-使用循环遍历列表中的所有元素" title="永久链接至标题">¶</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="section" id="3.-把最后一个元素转移至列表最前">
+<h3>3. 把最后一个元素转移至列表最前<a class="headerlink" href="#3.-把最后一个元素转移至列表最前" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">places</span><span class="p">)</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">places</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">reordered_students</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">):</span>
+    <span class="n">reordered_students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reordered_students</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-上海
-北京
-上海
-</pre></div></div>
-</div>
-</div>
-<div class="section" id="3.-找列表中的最大值">
-<h3>3. 找列表中的最大值<a class="headerlink" href="#3.-找列表中的最大值" title="永久链接至标题">¶</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="section" id="4.-交换列表中某两个元素的位置">
+<h3>4. 交换列表中某两个元素的位置<a class="headerlink" href="#4.-交换列表中某两个元素的位置" title="永久链接至标题">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Method1 方法1 （容易想到但有缺陷）</span>
-<span class="c1"># step1 步骤1: 先把列表中的前两个元素拿出来比较，把其中大的作为最大值</span>
-<span class="c1"># loop step2 循环步骤2：从列表第3个元素(索引值为2)开始，依次拿出后续的每一个元素，把它和当前的最大值比较</span>
-<span class="c1">#   比较的结果有3中可能性：</span>
-<span class="c1">#       a. 当前的元素比当前的最大值大</span>
-<span class="c1">#       b. 当前的元素和当前的最大值一样大</span>
-<span class="c1">#       c. 当前的元素比当前的最大值小</span>
-<span class="c1"># step3 当前的最大值就是整个列表元素的最大值</span>
-
-<span class="c1"># 这种方法有缺陷</span>
-<span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
-<span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">family_ages</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">oldest</span> <span class="o">=</span> <span class="n">first</span> <span class="k">if</span> <span class="n">first</span> <span class="o">&gt;</span> <span class="n">second</span> <span class="k">else</span> <span class="n">second</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">oldest</span><span class="p">:</span>
-        <span class="n">oldest</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">oldest</span><span class="p">)</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<p>交换列表<code class="docutils literal notranslate"><span class="pre">students</span></code>变量中位置为0和2的两个元素的位置</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-65
-</pre></div></div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># method 1</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="n">ages</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1"># [9, 11]</span>
+</pre></div>
 </div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># method 2</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">first_age</span> <span class="o">=</span> <span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">second_age</span> <span class="o">=</span> <span class="n">ages</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="n">second_age</span><span class="p">,</span> <span class="n">first_age</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1"># [9, 11]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># method 3</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="c1">#   # Cynthia, Milly, Yunzi</span>
+<span class="n">reorganized_ages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">prev_age</span> <span class="o">=</span> <span class="n">ages</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">reorganized_ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prev_age</span><span class="p">)</span>
+<span class="n">cur_age</span> <span class="o">=</span> <span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">reorganized_ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur_age</span><span class="p">)</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">reorganized_ages</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># method 4 - Milly</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="n">the_ages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">the_ages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ages</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">the_ages</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="5.-insert-element-in-a-position">
+<h3>5. insert element in a position<a class="headerlink" href="#5.-insert-element-in-a-position" title="永久链接至标题">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Method2 方法2</span>
-<span class="c1"># step1 步骤1: 先设定一个尽可能小的数作为一开始的最大值</span>
-<span class="c1"># loop step2 循环步骤2：从列表里依次拿出每一个元素，把它和当前的最大值比较</span>
-<span class="c1">#   比较的结果有3中可能性：</span>
-<span class="c1">#       a. 当前的元素比当前的最大值大</span>
-<span class="c1">#       b. 当前的元素和当前的最大值一样大</span>
-<span class="c1">#       c. 当前的元素比当前的最大值小</span>
-<span class="c1"># step3 当前的最大值就是整个列表元素的最大值</span>
-
-<span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
-<span class="n">oldest</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>       <span class="c1"># -1 可以约定表示没有最大值</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">oldest</span><span class="p">:</span>
-        <span class="n">oldest</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">oldest</span><span class="p">)</span>
+<span></span><span class="n">ordered_cards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>  <span class="c1"># 按从小到大排列</span>
+<span class="n">next_card</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;       in left hand:&quot;</span><span class="p">,</span> <span class="n">ordered_cards</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;on desk(right hand):&quot;</span><span class="p">,</span> <span class="n">next_card</span><span class="p">)</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">2</span>               <span class="c1"># put next_card after 5 把next_card放到值为5的元素后面</span>
+<span class="n">ordered_cards</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">next_card</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   now in left hand:&quot;</span><span class="p">,</span> <span class="n">ordered_cards</span><span class="p">)</span>
+<span class="c1"># result: [3, 5, 6, 7]</span>
 </pre></div>
 </div>
 </div>
@@ -1491,47 +1263,9 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-65
-</pre></div></div>
-</div>
-</div>
-<div class="section" id="4.-同时找列表中的最大最小值和平均值">
-<h3>4. 同时找列表中的最大最小值和平均值<a class="headerlink" href="#4.-同时找列表中的最大最小值和平均值" title="永久链接至标题">¶</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">family_ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">65</span><span class="p">]</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">family_ages</span><span class="p">)</span>
-<span class="n">min_age</span><span class="p">,</span> <span class="n">max_age</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>       <span class="c1"># initialize 设定出事的最小最大值</span>
-<span class="n">total_age</span><span class="p">,</span> <span class="n">average_age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="n">family_ages</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">total_age</span> <span class="o">+=</span> <span class="n">age</span>
-    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="n">min_age</span><span class="p">:</span>
-        <span class="n">min_age</span> <span class="o">=</span> <span class="n">age</span>
-    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="n">max_age</span><span class="p">:</span>
-        <span class="n">max_age</span> <span class="o">=</span> <span class="n">age</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">average_age</span> <span class="o">=</span> <span class="n">total_age</span> <span class="o">/</span> <span class="n">n</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;最大年龄:</span><span class="si">{:&gt;3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">max_age</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;最小年龄:</span><span class="si">{:&gt;3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_age</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;平均年龄:</span><span class="si">{:&gt;5.3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">average_age</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-最大年龄: 65
-最小年龄:  5
-平均年龄: 30.2
+       in left hand: [3, 5, 7]
+on desk(right hand): 6
+   now in left hand: [3, 5, 6, 7]
 </pre></div></div>
 </div>
 </div>
@@ -1539,7 +1273,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 <div class="section" id="Solution-编程求解">
 <h2>Solution 编程求解<a class="headerlink" href="#Solution-编程求解" title="永久链接至标题">¶</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1550,7 +1284,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1558,26 +1292,22 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 <span class="n">lowest_score</span> <span class="o">=</span> <span class="mi">100</span>            <span class="c1"># 假定一开始最低分是100，为什么不设的更低些？</span>
 <span class="n">n_score</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>         <span class="c1"># 成绩的数量</span>
 <span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span>               <span class="c1"># 成绩总和</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_score</span><span class="p">:</span>
-    <span class="n">cur_score</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">cur_score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
     <span class="n">total_score</span> <span class="o">+=</span> <span class="n">cur_score</span>
     <span class="k">if</span> <span class="n">cur_score</span> <span class="o">&gt;</span> <span class="n">highest_score</span><span class="p">:</span>
         <span class="n">highest_score</span> <span class="o">=</span> <span class="n">cur_score</span>
     <span class="k">if</span> <span class="n">cur_score</span> <span class="o">&lt;</span> <span class="n">lowest_score</span><span class="p">:</span>
         <span class="n">lowest_score</span> <span class="o">=</span> <span class="n">cur_score</span>
-    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="n">average_score</span> <span class="o">=</span> <span class="n">total_score</span> <span class="o">/</span> <span class="n">n_score</span>          <span class="c1"># 平均分</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;最高分:</span><span class="si">{:&gt;3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">highest_score</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;最低分:</span><span class="si">{:&gt;3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowest_score</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;平均分:</span><span class="si">{:&gt;5.3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">average_score</span><span class="p">))</span>
 
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n_lowest</span><span class="p">,</span> <span class="n">n_highest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>    <span class="c1"># 分别得到最低最高分的学生数量</span>
 <span class="n">n_below_average</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1"># 假定低于平均分的学生个数</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_score</span><span class="p">:</span>
-    <span class="n">cur_score</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">cur_score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">cur_score</span> <span class="o">==</span> <span class="n">lowest_score</span><span class="p">:</span>
         <span class="n">n_lowest</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">cur_score</span> <span class="o">==</span> <span class="n">highest_score</span><span class="p">:</span>
@@ -1604,49 +1334,22 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 22人的成绩低于平均分87.52
 </pre></div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># this is a 4 line codes that can get the answer for the problem.</span>
-<span class="c1"># but it&#39;s hard to read.</span>
-<span class="c1"># 下面的四行代码也可以得到问题的答案，但是不容易理解和阅读。</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;最高分，最低分，平均分分别是：&quot;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">scores</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;拥有最高分的人数:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;拥有最低分的人数:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;低于平均分的人数:&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">))]))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-最高分，最低分，平均分分别是： 100 54 87.52
-拥有最高分的人数: 7
-拥有最低分的人数: 1
-低于平均分的人数: 22
-</pre></div></div>
-</div>
 </div>
 <div class="section" id="Summary-知识点小结">
 <h2>Summary 知识点小结<a class="headerlink" href="#Summary-知识点小结" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li><p>列表的索引，列表元素值的获取</p></li>
-<li><p>复习<code class="docutils literal notranslate"><span class="pre">while</span></code>循环，循环与条件语句的嵌套</p></li>
+<li><p>学习<code class="docutils literal notranslate"><span class="pre">for</span></code>…<code class="docutils literal notranslate"><span class="pre">in</span></code>…循环，循环与条件语句的嵌套</p></li>
 </ol>
 </div>
 <div class="section" id="计算机小知识">
 <h2>计算机小知识<a class="headerlink" href="#计算机小知识" title="永久链接至标题">¶</a></h2>
-<p>人们在长期的生产生活中，优化总结了做好某一件事情的流程。计算机算法很多时候就是把这些流程用计算机编程语言的形式反映出来。许多优秀的算法其理念都来源于生活。例如，银行柜台的排队叫号系统，等待办理业务的客户是有先后次序的，当某一个柜台可以办理下一个客户业务的时候，排在最前面的客户就可以去办理了。每一个客户手中的号码确定了该客户排在队伍的什么位置。这样的排队叫号系统是比较公平有效的。</p>
 </div>
 <div class="section" id="Assignments-作业">
 <h2>Assignments 作业<a class="headerlink" href="#Assignments-作业" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
-<li><p>Find the minimal, maximal values from the following 100 integers, calculate the average values for the 100 integers and count how many 50 among all the integers.</p>
-<p>找到下面100个数中的最大值、最小值, 计算这100个数的平均值并统计整数50在其中出现的次数</p>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">for</span></code>…<code class="docutils literal notranslate"><span class="pre">in</span></code>… loop, Find the minimal, maximal values from the following 100 integers, calculate the average values for the 100 integers and count how many 50 among all the integers.</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">for</span></code>…<code class="docutils literal notranslate"><span class="pre">in</span></code>…循环，找到下面100个数中的最大值、最小值, 计算这100个数的平均值并统计整数50在其中出现的次数</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">59</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span>
        <span class="mi">34</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span>
        <span class="mi">48</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span>
@@ -1668,7 +1371,7 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[92]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1686,51 +1389,227 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
 </pre></div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>编写程序计算下面三个列表中所有元素的平均数</p></li>
+<ol class="arabic" start="2">
+<li><p>Imagine you are playing a card picking game. There are 4 cards: 5, 3, 7, and 6, stacked on a table from top to bottom. You use your right hand to pick up the top card on the table and put it into your left hand. During this process, you need to always keep the cards sorted(left is smaller) in your left hand.
+想象一下你在玩抓牌的游戏。现在有分别显示为5，3，7，6的4张牌从上到下依次堆叠在桌子上，你使用右手从桌子上拿起最上面的牌，将它放到到左手上。在此过程中，你需要始终维持左手上的牌自左至右是从小到大排列的。</p>
+<p>In order to ensure that the cards in the left hand are always sorted in ascending order, after each pick, you need to determine where the cards picked in the right hand should be placed among the cards in the left hand. Please write code to complete this process. 为了确保左手上的牌始终是按照从小到大次序排列的，每一次摸牌后，你需要确定右手摸到的牌应该放在左手的牌中的位置。请你编写代码完成这个过程。</p>
+<p>The four cells below simulate each time you pick up a card. The variable <code class="docutils literal notranslate"><span class="pre">sorted_cards</span></code> represents the cards in order on the left hand, and the variable <code class="docutils literal notranslate"><span class="pre">card_being_picked</span></code> represents the card being picked by the right hand. 下面的四个单元格分别模拟了你每次摸牌的情形。其中变量<code class="docutils literal notranslate"><span class="pre">sorted_cards</span></code>表示的是左手上按顺序排列的牌，变量<code class="docutils literal notranslate"><span class="pre">card_being_picked</span></code>表示的是正在被右手拾起来的牌。</p>
+<p><strong>Requirements</strong>: You must use <strong>the exact same</strong> codes for each pick to determine the position of the picked card when it was inserted into the cards in left hand. <strong>要求</strong>：你必须使用一套<strong>完全相同</strong>的代码来确定每一次摸到的牌应该插入到左手牌中的位置。</p>
+<p>The table below shows in detail the situation of your left and right hands and the cards on the table before and after each picking.下表详细的展示了每一次摸牌前后你的左右手和卓子上的牌的情况：</p>
+</li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">59</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[114]:
+<table class="table">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 19%" />
+<col style="width: 20%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>状态</p></th>
+<th class="head"><p>左手上排好序的牌</p></th>
+<th class="head"><p>右手摸到的牌</p></th>
+<th class="head"><p>桌子上剩余的牌</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>State</p></td>
+<td><p>Cards sorted in left hand</p></td>
+<td><p>Card being picked</p></td>
+<td><p>Cards remaing on table</p></td>
+</tr>
+<tr class="row-odd"><td><p>还没开始摸牌not start picking)</p></td>
+<td><p>[]</p></td>
+<td></td>
+<td><p>[5, 3, 7, 6]</p></td>
+</tr>
+<tr class="row-even"><td><p>第一次摸牌时(1st pick)</p></td>
+<td><p>[]</p></td>
+<td><p>5</p></td>
+<td><p>[3, 7, 6]</p></td>
+</tr>
+<tr class="row-odd"><td><p>第二次摸牌时(2nd pick)</p></td>
+<td><p>[5]</p></td>
+<td><p>3</p></td>
+<td><p>[7, 6]</p></td>
+</tr>
+<tr class="row-even"><td><p>第三次摸牌时(3rd pick)</p></td>
+<td><p>[3, 5]</p></td>
+<td><p>7</p></td>
+<td><p>[6]</p></td>
+</tr>
+<tr class="row-odd"><td><p>第四次摸牌时(4th pick)</p></td>
+<td><p>[3, 5, 7]</p></td>
+<td><p>6</p></td>
+<td><p>[]</p></td>
+</tr>
+<tr class="row-even"><td><p>摸牌完毕后(picking complete)</p></td>
+<td><p>[3, 5, 6, 7]</p></td>
+<td></td>
+<td><p>[]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span></span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;1st pick 第一次摸牌时&quot;</span>
+<span class="n">sorted_cards</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 按从小到大排列</span>
+<span class="n">cards_on_table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">card_being_picked</span> <span class="o">=</span> <span class="n">cards_on_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>          <span class="c1"># always top card on table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards sorted in left hand&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;Card being picked&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards remaining on table&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">card_being_picked</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">cards_on_table</span><span class="p">)))</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
 
+<span class="c1"># TODO: use loop to find a proper value and assign it to variable position</span>
+<span class="c1">#       使用循环找到正确的值并把它赋值给变量position</span>
+<span class="c1">#       这里的代码必须和后面的单元格里对应位置的代码一摸一样</span>
 
+<span class="n">sorted_cards</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">card_being_picked</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;该次摸牌结束后&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">)))</span>
+<span class="c1"># result: [5]</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[115]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       State            Cards sorted in left hand       Card being picked       Cards remaining on table
+1st pick 第一次摸牌时         []                              5                       [3, 7, 6]
+该次摸牌结束后                 [5]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span></span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;2nd pick 第二次摸牌时&quot;</span>
+<span class="n">sorted_cards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># 按从小到大排列</span>
+<span class="n">cards_on_table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">card_being_picked</span> <span class="o">=</span> <span class="n">cards_on_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>          <span class="c1"># always top card on table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards sorted in left hand&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;Card being picked&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards remaining on table&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">card_being_picked</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">cards_on_table</span><span class="p">)))</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
 
+<span class="c1"># TODO: use loop to find a proper value and assign it to variable position</span>
+<span class="c1">#       使用循环找到正确的值并把它赋值给变量position</span>
+<span class="c1">#       这里的代码必须和后面的单元格里对应位置的代码一摸一样</span>
 
+<span class="n">sorted_cards</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">card_being_picked</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;该次摸牌结束后&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">)))</span>
+<span class="c1"># result: [3, 5]</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[116]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       State            Cards sorted in left hand       Card being picked       Cards remaining on table
+2nd pick 第二次摸牌时         [5]                             3                       [7, 6]
+该次摸牌结束后                 [3, 5]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span>
-          <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span>
-          <span class="mi">44</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span>
-          <span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span>
-          <span class="mi">54</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span></span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;3rd pick 第三次摸牌时&quot;</span>
+<span class="n">sorted_cards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># 按从小到大排列</span>
+<span class="n">cards_on_table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">card_being_picked</span> <span class="o">=</span> <span class="n">cards_on_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>          <span class="c1"># always top card on table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards sorted in left hand&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;Card being picked&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards remaining on table&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">card_being_picked</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">cards_on_table</span><span class="p">)))</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
 
+<span class="c1"># TODO: use loop to find a proper value and assign it to variable position</span>
+<span class="c1">#       使用循环找到正确的值并把它赋值给变量position</span>
+<span class="c1">#       这里的代码必须和后面的单元格里对应位置的代码一摸一样</span>
+
+<span class="n">sorted_cards</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">card_being_picked</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;该次摸牌结束后&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">)))</span>
+<span class="c1"># results: [3, 5, 7]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       State            Cards sorted in left hand       Card being picked       Cards remaining on table
+3rd pick 第三次摸牌时         [3, 5]                          7                       [6]
+该次摸牌结束后                 [7, 3, 5]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;4th pick 第四次摸牌时&quot;</span>
+<span class="n">sorted_cards</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>  <span class="c1"># 按从小到大排列</span>
+<span class="n">cards_on_table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">card_being_picked</span> <span class="o">=</span> <span class="n">cards_on_table</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>          <span class="c1"># always top card on table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards sorted in left hand&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;Card being picked&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards remaining on table&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">card_being_picked</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">cards_on_table</span><span class="p">)))</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># TODO: use loop to find a proper value and assign it to variable position</span>
+<span class="c1">#       使用循环找到正确的值并把它赋值给变量position</span>
+<span class="c1">#       这里的代码必须和后面的单元格里对应位置的代码一摸一样</span>
+
+<span class="n">sorted_cards</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">card_being_picked</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;该次摸牌结束后&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">)))</span>
+<span class="c1"># result: [3, 5, 6, 7]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       State            Cards sorted in left hand       Card being picked       Cards remaining on table
+4th pick 第四次摸牌时         [3, 5, 7]                       6                       []
+该次摸牌结束后                 [6, 3, 5, 7]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Do not modify this cell 不要改动这个单元格的代码</span>
+<span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;摸牌完毕后 picking complete&quot;</span>
+<span class="n">cards_on_table</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">card_being_picked</span> <span class="o">=</span> <span class="kc">None</span>          <span class="c1"># always top card on table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:^20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards sorted in left hand&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;Card being picked&quot;</span><span class="p">,</span> <span class="s2">&quot;Cards remaining on table&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="se">\t</span><span class="si">{:20}</span><span class="se">\t</span><span class="si">{:30}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sorted_cards</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">card_being_picked</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">cards_on_table</span><span class="p">)))</span>
 
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+       State            Cards sorted in left hand       Card being picked       Cards remaining on table
+摸牌完毕后 picking complete  [6, 3, 5, 7]                    None                    []
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1750,17 +1629,17 @@ Input <span class="ansi-green-intense-fg ansi-bold">In [26]</span>, in <span cla
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="012_kings_rice_award_2.html" title="上一页 页">
+    <a class='left-prev' id="prev-link" href="013_score_analysis_1.html" title="上一页 页">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">第12讲 国王的奖励（二）</p>
+            <p class="prev-next-title">第13讲 分析考试成绩（一）</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="014_score_analysis_2.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="../../Answer/index.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">第14讲 分析考试成绩（二）</p>
+        <p class="prev-next-title">参考答案</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
