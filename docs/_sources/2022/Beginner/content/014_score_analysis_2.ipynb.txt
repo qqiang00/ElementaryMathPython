@@ -236,20 +236,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "id": "bf145412-db06-4d45-a893-55c795869a18",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       in left hand: [3, 5, 7]\n",
-      "on desk(right hand): 6\n",
-      "   now in left hand: [3, 5, 6, 7]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "ordered_cards = [3, 5, 7]  # 按从小到大排列\n",
     "next_card = 6\n",
@@ -271,7 +261,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": null,
    "id": "c0bf70f7-d7c2-4eb4-889a-d2341bccb7dc",
    "metadata": {},
    "outputs": [],
@@ -283,23 +273,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": null,
    "id": "92cd9dfb-72cf-4d81-a328-4bfef9ded5a5",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "最高分:100\n",
-      "最低分: 54\n",
-      "平均分: 87.5\n",
-      " 7人获得了最高分100\n",
-      " 1人获得了最低分54\n",
-      "22人的成绩低于平均分87.52\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "highest_score = 0             # 假定一开始最高分是0, 为什么不设得高些？\n",
     "lowest_score = 100            # 假定一开始最低分是100，为什么不设的更低些？\n",
@@ -461,20 +438,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 61,
+   "execution_count": null,
    "id": "b628f205-ad28-44c6-a947-403727ed37cb",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       State        \tCards sorted in left hand     \tCard being picked   \tCards remaining on table      \n",
-      "1st pick 第一次摸牌时     \t[]                            \t5                   \t[3, 7, 6]                     \n",
-      "该次摸牌结束后             \t[5]                           \t\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "state = \"1st pick 第一次摸牌时\"\n",
     "sorted_cards = []  # 按从小到大排列\n",
@@ -482,7 +449,9 @@
     "card_being_picked = cards_on_table.pop(0)          # always top card on table    \n",
     "print(\"{:^20}\\t{:30}\\t{:20}\\t{:30}\".format(\"State\", \"Cards sorted in left hand\", \n",
     "                              \"Card being picked\", \"Cards remaining on table\"))\n",
-    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), str(card_being_picked), str(cards_on_table)))\n",
+    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), \n",
+    "                                          str(card_being_picked), \n",
+    "                                          str(cards_on_table)))\n",
     "position = 0\n",
     "\n",
     "# TODO: use loop to find a proper value and assign it to variable position\n",
@@ -496,22 +465,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 62,
+   "execution_count": null,
    "id": "e746c318-db26-4e93-8552-f4805117d801",
    "metadata": {
     "tags": []
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       State        \tCards sorted in left hand     \tCard being picked   \tCards remaining on table      \n",
-      "2nd pick 第二次摸牌时     \t[5]                           \t3                   \t[7, 6]                        \n",
-      "该次摸牌结束后             \t[3, 5]                        \t\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "state = \"2nd pick 第二次摸牌时\"\n",
     "sorted_cards = [5]  # 按从小到大排列\n",
@@ -519,7 +478,9 @@
     "card_being_picked = cards_on_table.pop(0)          # always top card on table    \n",
     "print(\"{:^20}\\t{:30}\\t{:20}\\t{:30}\".format(\"State\", \"Cards sorted in left hand\", \n",
     "                              \"Card being picked\", \"Cards remaining on table\"))\n",
-    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), str(card_being_picked), str(cards_on_table)))\n",
+    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), \n",
+    "                                          str(card_being_picked), \n",
+    "                                          str(cards_on_table)))\n",
     "position = 0\n",
     "\n",
     "# TODO: use loop to find a proper value and assign it to variable position\n",
@@ -533,22 +494,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 63,
+   "execution_count": null,
    "id": "aec65584-5006-4a87-b3a8-d25372b9269e",
    "metadata": {
     "tags": []
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       State        \tCards sorted in left hand     \tCard being picked   \tCards remaining on table      \n",
-      "3rd pick 第三次摸牌时     \t[3, 5]                        \t7                   \t[6]                           \n",
-      "该次摸牌结束后             \t[7, 3, 5]                     \t\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "state = \"3rd pick 第三次摸牌时\"\n",
     "sorted_cards = [3, 5]  # 按从小到大排列\n",
@@ -556,7 +507,9 @@
     "card_being_picked = cards_on_table.pop(0)          # always top card on table    \n",
     "print(\"{:^20}\\t{:30}\\t{:20}\\t{:30}\".format(\"State\", \"Cards sorted in left hand\", \n",
     "                              \"Card being picked\", \"Cards remaining on table\"))\n",
-    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), str(card_being_picked), str(cards_on_table)))\n",
+    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), \n",
+    "                                          str(card_being_picked), \n",
+    "                                          str(cards_on_table)))\n",
     "position = 0\n",
     "\n",
     "# TODO: use loop to find a proper value and assign it to variable position\n",
@@ -570,20 +523,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 64,
+   "execution_count": null,
    "id": "7e746af9-632b-4a9b-8a3e-51b8deee0fc3",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       State        \tCards sorted in left hand     \tCard being picked   \tCards remaining on table      \n",
-      "4th pick 第四次摸牌时     \t[3, 5, 7]                     \t6                   \t[]                            \n",
-      "该次摸牌结束后             \t[6, 3, 5, 7]                  \t\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "state = \"4th pick 第四次摸牌时\"\n",
     "sorted_cards = [3, 5, 7]  # 按从小到大排列\n",
@@ -591,7 +534,9 @@
     "card_being_picked = cards_on_table.pop(0)          # always top card on table    \n",
     "print(\"{:^20}\\t{:30}\\t{:20}\\t{:30}\".format(\"State\", \"Cards sorted in left hand\", \n",
     "                              \"Card being picked\", \"Cards remaining on table\"))\n",
-    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), str(card_being_picked), str(cards_on_table)))\n",
+    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), \n",
+    "                                          str(card_being_picked), \n",
+    "                                          str(cards_on_table)))\n",
     "position = 0\n",
     "\n",
     "# TODO: use loop to find a proper value and assign it to variable position\n",
@@ -605,19 +550,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 65,
+   "execution_count": null,
    "id": "2f9581de-4a8d-404b-bd7d-eb1dc1ffcaa1",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "       State        \tCards sorted in left hand     \tCard being picked   \tCards remaining on table      \n",
-      "摸牌完毕后 picking complete\t[6, 3, 5, 7]                  \tNone                \t[]                            \n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Do not modify this cell 不要改动这个单元格的代码\n",
     "state = \"摸牌完毕后 picking complete\"\n",
@@ -625,7 +561,9 @@
     "card_being_picked = None          # always top card on table \n",
     "print(\"{:^20}\\t{:30}\\t{:20}\\t{:30}\".format(\"State\", \"Cards sorted in left hand\", \n",
     "                              \"Card being picked\", \"Cards remaining on table\"))\n",
-    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), str(card_being_picked), str(cards_on_table)))\n"
+    "print(\"{:20}\\t{:30}\\t{:20}\\t{:30}\".format(state, str(sorted_cards), \n",
+    "                                          str(card_being_picked), \n",
+    "                                          str(cards_on_table)))\n"
    ]
   },
   {
