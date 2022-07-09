@@ -6,7 +6,10 @@
    "metadata": {},
    "source": [
     "## 第15讲 分析考试成绩（三）\n",
-    "Lecture 15. Analysis Exam Scores(Part 3)"
+    "\n",
+    "给成绩排序\n",
+    "\n",
+    "Lecture 15. Analysis Exam Scores(Part 3) Sorting"
    ]
   },
   {
@@ -78,10 +81,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "id": "e18465cc-8ad8-4078-8d6f-17882320a0ab",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[3, 5, 7]\n",
+      "[3, 5, 6, 7]\n"
+     ]
+    }
+   ],
    "source": [
     "sorted_cards = [3, 5, 7]     # 按从小到大排列\n",
     "print(sorted_cards)\n",
@@ -100,7 +112,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "id": "b4267725-e3a4-418d-96cd-bac3c0be3f39",
    "metadata": {},
    "outputs": [],
@@ -112,7 +124,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "id": "4c154b03-04a7-4c5b-a506-f95a8cd808b8",
    "metadata": {},
    "outputs": [],
@@ -124,7 +136,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 4,
    "id": "e56f5543-b4c3-4e3f-844f-61df8a841c66",
    "metadata": {},
    "outputs": [],
@@ -136,10 +148,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 5,
    "id": "c4ecfc67-32cf-431a-9fa1-f06f8c661d70",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[32, 9, 84, 102, 56, 1, 12]\n"
+     ]
+    }
+   ],
    "source": [
     "# 将整数型变量元素12插入到列表[32, 9, 84, 102, 56, 1]中，并且使得元素12在列表中的位置是6。\n",
     "nums = [32, 9, 84, 102, 56, 1]\n",
@@ -160,10 +180,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 6,
    "id": "e2b11905-49cc-4fde-a82c-2187a0954ed8",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[6, 7, 8, 9]\n"
+     ]
+    }
+   ],
    "source": [
     "sorted_cards = [7, 8, 9]  # 按从小到大排列\n",
     "card_right = 6\n",
@@ -187,7 +215,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 7,
    "id": "2422225e-232c-4cc1-aa08-838fa40df281",
    "metadata": {},
    "outputs": [
@@ -230,10 +258,19 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 8,
    "id": "2343a55e-b1ab-4140-83ff-09091d5292c2",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (2181476334.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  Input \u001b[1;32mIn [8]\u001b[1;36m\u001b[0m\n\u001b[1;33m    in While Loop\u001b[0m\n\u001b[1;37m    ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
    "source": [
     "in While Loop\n",
     "left card is larger than or equal to right card\n",
@@ -302,41 +339,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "id": "015b9f7a-f53c-440f-8b56-d30c19c5c2c6",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Pick 0\n",
-      "  Before Insert: cards in left hand: []\n",
-      "  Card picked:5\n",
-      "  Pos for the card: 0\n",
-      "  After insert, cards in left Hand: [5]\n",
-      "\n",
-      "Pick 1\n",
-      "  Before Insert: cards in left hand: [5]\n",
-      "  Card picked:3\n",
-      "  Pos for the card: 0\n",
-      "  After insert, cards in left Hand: [3, 5]\n",
-      "\n",
-      "Pick 2\n",
-      "  Before Insert: cards in left hand: [3, 5]\n",
-      "  Card picked:7\n",
-      "  Pos for the card: 2\n",
-      "  After insert, cards in left Hand: [3, 5, 7]\n",
-      "\n",
-      "Pick 3\n",
-      "  Before Insert: cards in left hand: [3, 5, 7]\n",
-      "  Card picked:6\n",
-      "  Pos for the card: 2\n",
-      "  After insert, cards in left Hand: [3, 5, 6, 7]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "sorted_cards = []\n",
     "table_cards = [5, 3, 7, 6]\n",
@@ -408,19 +414,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": null,
    "id": "847635a5-d6e7-4fb9-b787-53d80fd2b6ec",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "left1 20>15 right\n",
-      "left2 10<=15 right\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "card_left1 = 20\n",
     "card_left2 = 10\n",
@@ -435,18 +432,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": null,
    "id": "bc3802f9-210d-477c-97b6-2e2e26987fb3",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 left1 20>15 right\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "card_left1 = 20\n",
     "card_left2 = 10\n",
@@ -469,7 +458,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": null,
    "id": "c0bf70f7-d7c2-4eb4-889a-d2341bccb7dc",
    "metadata": {},
    "outputs": [],
@@ -481,18 +470,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": null,
    "id": "92cd9dfb-72cf-4d81-a328-4bfef9ded5a5",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[54, 70, 72, 72, 74, 74, 78, 78, 78, 78, 78, 82, 82, 84, 84, 84, 86, 86, 86, 86, 86, 86, 88, 88, 88, 88, 88, 90, 90, 90, 90, 92, 92, 92, 92, 94, 94, 96, 96, 96, 98, 98, 98, 100, 100, 100, 100, 100, 100, 100]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "sorted_scores = []\n",
     "n_pick = len(scores)\n",
@@ -572,64 +553,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": null,
    "id": "52018e2c-d589-4bee-8d1c-d03551f4e57f",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "\n",
-      "Pick 0\n",
-      "  Before Insert: cards in left hand: []\n",
-      "  Card picked:5\n",
-      "  Pos for the card: 0\n",
-      "  After insert, cards in left Hand: [5]\n",
-      "\n",
-      "Pick 1\n",
-      "  Before Insert: cards in left hand: [5]\n",
-      "  Card picked:3\n",
-      "  Pos for the card: 0\n",
-      "  After insert, cards in left Hand: [3, 5]\n",
-      "\n",
-      "Pick 2\n",
-      "  Before Insert: cards in left hand: [3, 5]\n",
-      "  Card picked:7\n",
-      "  Pos for the card: 2\n",
-      "  After insert, cards in left Hand: [3, 5, 7]\n",
-      "\n",
-      "Pick 3\n",
-      "  Before Insert: cards in left hand: [3, 5, 7]\n",
-      "  Card picked:6\n",
-      "  Pos for the card: 2\n",
-      "  After insert, cards in left Hand: [3, 5, 6, 7]\n"
-     ]
-    }
-   ],
-   "source": [
-    "sorted_cards = []\n",
-    "table_cards = [5, 3, 7, 6]\n",
-    "n_pick = len(table_cards)              # 需要摸牌的次数\n",
-    "cur_pick = 0\n",
-    "while cur_pick < n_pick:\n",
-    "    print(\"\\nPick {}\".format(cur_pick))\n",
-    "    card_being_picked = table_cards[cur_pick]\n",
-    "    print(\"  Before Insert: cards in left hand: {}\".format(sorted_cards))\n",
-    "    print(\"  Card picked:{}\".format(card_being_picked))\n",
-    "    i = 0\n",
-    "    while i < len(sorted_cards):       # 从左(小)到右(大)依次比较\n",
-    "        if card_being_picked < sorted_cards[i]:\n",
-    "            position = i\n",
-    "            break\n",
-    "        i += 1\n",
-    "        \n",
-    "    position = i                       # 为什么需要这一行代码？\n",
-    "    print(\"  Pos for the card: {}\".format(position))\n",
-    "    sorted_cards.insert(position, card_being_picked)\n",
-    "    print(\"  After insert, cards in left Hand: {}\".format(sorted_cards))\n",
-    "    cur_pick += 1"
-   ]
+   "outputs": [],
+   "source": []
   },
   {
    "cell_type": "markdown",
@@ -648,45 +576,28 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "c1ce7c03-c030-4aa7-b621-a30fb2297489",
+   "id": "ed8c8a6c-7967-4fc1-a4db-0c1c83761b57",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "cards = [10, 4, 7, 'K', 'J', 8, 9, 5, 3, 6, 'Q', 2, 1]\n",
-    "sorted_cards = []\n",
-    "\n",
-    "#TODO: write your codes here 在这里填写你的代码\n",
-    "# step1, transfer letters to numbers 第一步，将字母变成数字\n",
-    "\n",
-    "# step2, sort 排序\n",
-    "\n",
-    "# step3, transfer numbers to letters 把一些数字换回成对应的字母\n",
-    "\n",
-    "print(sorted_cards)"
-   ]
+   "source": []
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": null,
    "id": "d85b36c0-f15a-472f-9d13-d52a77233181",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[10, 4, 7, 'K', 'J', 8, 9, 5, 3, 6, 'Q', 2, 1]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# the cards was generated by the following codes. \n",
     "# 上面打乱了的list是由下面的代码生成的\n",
     "sorted_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, \"J\", \"Q\", \"K\"]\n",
     "from random import shuffle, seed\n",
     "seed(2)\n",
-    "shuffle(sorted_cards)         # 将列表里的元素次序打乱\n",
-    "print(sorted_cards)"
+    "i = 0\n",
+    "while i < 5:\n",
+    "    shuffle(sorted_cards)         # 将列表里的元素次序打乱\n",
+    "    print(sorted_cards)\n",
+    "    i += 1"
    ]
   },
   {
@@ -708,19 +619,7 @@
    "id": "f1c16cc1-6e66-4e5a-9f50-3b1969bfdbe5",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "#TODO: write you code here 在这里写你的代码\n"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "ad70b4fa-6e34-4b48-ac85-7a8e3d2f002b",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "#TODO：write you answer here\n"
-   ]
+   "source": []
   },
   {
    "cell_type": "markdown",
@@ -739,7 +638,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": null,
    "id": "ee13f376-7eac-41f1-a0cc-87e294fb0f69",
    "metadata": {},
    "outputs": [],
@@ -762,7 +661,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": null,
    "id": "9c77906a-7732-44bd-aa73-c00bd623582a",
    "metadata": {},
    "outputs": [],
@@ -781,7 +680,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": null,
    "id": "e310a195-4033-4569-9a2a-2a77825eca6b",
    "metadata": {},
    "outputs": [],
@@ -801,7 +700,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": null,
    "id": "e0b52836-1bf3-422f-87fd-b1d1dd559112",
    "metadata": {},
    "outputs": [],
@@ -821,7 +720,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": null,
    "id": "9da7034f-c7ee-4e32-ab58-5fd19f2f4011",
    "metadata": {},
    "outputs": [],

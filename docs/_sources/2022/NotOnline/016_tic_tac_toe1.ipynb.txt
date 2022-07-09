@@ -1,0 +1,296 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "6674527b-2570-406a-a335-af74e15846b9",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "## Design a Tic Tac Toe Game\n",
+    "\n",
+    "1. 3*3 square, 9 positions, each position has three status: '-', 'x', 'o'; \n",
+    "2. 2 players\n",
+    "3. char for first drop: 'x' or 'o'\n",
+    "4. players\n",
+    "5. player who first make a line wins.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "37e0bd6c-0b64-4a96-9734-a8b9b583d4e6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Start\n",
+    "#  -  -  -\n",
+    "#  -  -  -\n",
+    "#  -  -  -"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e8775f88-66b6-4f24-ad2e-543b42426e0c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "board = ['-']*9\n",
+    "print(board)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d2b2fb69-92e6-4ecb-a17e-799fe95ef75a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "board = ['-', 'x', '-', 'o', 'x', '-', '-', '-', '-']\n",
+    "display_board(board)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "67bc8e39-e646-4f5a-b16a-5f9fea8c638f",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "def display_board(board):\n",
+    "    # print 3 rows * 3 columns\n",
+    "    \"\"\"\n",
+    "      -  -  -\n",
+    "      -  -  -\n",
+    "      -  -  -\n",
+    "    \"\"\"\n",
+    "    print(\"===  board status ===\")\n",
+    "    for i, pos_status in enumerate(board):\n",
+    "        print(\"{}\".format(pos_status), end=\" \")\n",
+    "        if i % 3 == 2:\n",
+    "            print() \n",
+    "    print()\n",
+    "    return   \n",
+    "\n",
+    "def get_input(board, player):\n",
+    "    is_input_valid = False\n",
+    "    while not is_input_valid:\n",
+    "        try:\n",
+    "            pos = int(input(\"{}'s input:\".format(player)))\n",
+    "        except:\n",
+    "            pass\n",
+    "        if pos >= 0 and pos < 9:\n",
+    "            if board[pos] == '-':\n",
+    "                is_input_valid = True\n",
+    "                return pos\n",
+    "        print(\"Not valid, input again.\", end=\" \")\n",
+    "        \n",
+    "def is_somebody_win(board):\n",
+    "    i = 0\n",
+    "    while i < 3:\n",
+    "        if ((board[3*i] == board[3*i+1] == board[3*i+2]) and board[3*i] != '-'):\n",
+    "            print(\"row {} lines up\".format(i))\n",
+    "            return True        \n",
+    "        i += 1\n",
+    "    i = 0\n",
+    "    while i < 3:\n",
+    "        if ((board[i] == board[i+3] == board[i+6]) and board[i] != '-'):\n",
+    "            print(\"col {} lines up\".format(i))\n",
+    "            return True        \n",
+    "        i += 1\n",
+    "    \n",
+    "    if ((board[0] == board[4] == board[8]) and board[0] != '-') or \\\n",
+    "       ((board[2] == board[4] == board[6]) and board[2] != '-'):\n",
+    "        print(\"\\ or / lines up\")\n",
+    "        return True        \n",
+    "    \n",
+    "    return False\n",
+    "\n",
+    "\n",
+    "def is_board_full(board):\n",
+    "    return '-' not in board"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "52801bd7-1553-4097-afd8-00eb8450f3e1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "board = ['-']*9\n",
+    "#player1, player2 = \"Qiang\", \"Celine\" # player1 always first\n",
+    "players = []\n",
+    "chars = ['x', 'o', '-']\n",
+    "print(\"Welcome to Game 'Tic Tac Toe'\")\n",
+    "players.append(input(\"Player1 Name:\"))\n",
+    "players.append(input(\"Player2 Name:\"))\n",
+    "print(\"{} will have 'x'\".format(players[0]))\n",
+    "board = ['-']*9\n",
+    "display_board(board)\n",
+    "is_game_over = False\n",
+    "player_index = 0\n",
+    "winner = None\n",
+    "while not is_game_over:\n",
+    "    cur_player = players[player_index]\n",
+    "    pos_p1 = get_input(board, cur_player)\n",
+    "    board[pos_p1] = chars[player_index]\n",
+    "    display_board(board)\n",
+    "    if is_somebody_win(board):\n",
+    "        winner = cur_player\n",
+    "        is_game_over = True\n",
+    "    elif is_board_full(board):\n",
+    "        is_game_over = True\n",
+    "    else:\n",
+    "        player_index = 1 - player_index\n",
+    "\n",
+    "if winner is not None:\n",
+    "    print(\"{} win\".format(cur_player))    \n",
+    "else:\n",
+    "    print(\"TIE\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4c24c0c5-ed7b-4513-92b0-994bca1075ba",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import *\n",
+    "import turtle\n",
+    "  \n",
+    "def func(i,j):\n",
+    "     \n",
+    "    turtle.right(90)\n",
+    "    turtle.forward(150)\n",
+    "  \n",
+    "turtle.speed(6)\n",
+    "turtle.forward(100) \n",
+    "turtle.onclick(func)\n",
+    "turtle.done()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f8106855-49fb-4ea0-b64e-813fa34579d5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import *\n",
+    "\n",
+    "import turtle\n",
+    "  \n",
+    "\n",
+    "ws = turtle.Screen()\n",
+    "  \n",
+    "\n",
+    "def func(i, j):\n",
+    "  goto(i, j)\n",
+    "  write(str(i)+\",\"+str(j))\n",
+    "  \n",
+    "\n",
+    "ws.onclick(func)\n",
+    "ws.mainloop()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3d6805a5-025a-478e-91be-e8072cc384ba",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from turtle import setup, reset, pu, pd, bye, left, right, fd, bk, screensize\n",
+    "from turtle import goto, seth, write, ht, st, home, dot, pen, speed\n",
+    "from qianglib import prepare_paper, draw_grid, mark, lines, line, polygon, text"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e399e9eb-4e32-48e1-8e19-e927e3c200d3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "width, height = 500, 600\n",
+    "setup(width, height, 0, 0)\n",
+    "#prepare_paper(width, height, scale=100, min_x=0, min_y=0, max_y=3, max_x=3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d056a638-a84f-46e1-9063-a8fbb4c28320",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def draw_grid(center=(0, 0), width=100, line_width=3, color=\"black\"):\n",
+    "    line((-1.5*width, -0.5*width), (1.5*width, -0.5*width), line_width=line_width, color=color)\n",
+    "    line((-1.5*width, 0.5*width), (1.5*width, 0.5*width), line_width=line_width, color=color)\n",
+    "    line((-0.5*width, -1.5*width), (-0.5*width, 1.5*width), line_width=line_width, color=color)\n",
+    "    line((0.5*width, -1.5*width), (0.5*width, 1.5*width), line_width=line_width, color=color)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fc8be5f3-b915-48ca-a502-3bb664657c16",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import turtle\n",
+    "ws = turtle.Screen()\n",
+    "def func(i, j):\n",
+    "    return\n",
+    "    goto(i, j)\n",
+    "    write(str(i)+\",\"+str(j))\n",
+    "\n",
+    "draw_grid()\n",
+    "ws.onclick(func)\n",
+    "ws.mainloop()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "90dbc6a4-a57b-4719-9fbb-3b96900cfbb2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "052eeee5-ecc5-4a57-8a56-292a9c23af99",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
