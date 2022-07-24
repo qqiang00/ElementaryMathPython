@@ -472,6 +472,11 @@
        第16讲 综合实践：设计Tic Tac Toe游戏（一）
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2022/Beginner/content/017_tic_tac_toe2.html">
+       第17讲 综合实践：设计Tic Tac Toe游戏（二）
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
@@ -1606,7 +1611,57 @@ File <span class="ansi-green-intense-fg ansi-bold">&lt;string&gt;:5</span>, in <
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    check if there is a winner or tie for the board.</span>
+<span class="sd">    params</span>
+<span class="sd">        board: represents status of the board, list of str with length of 9.</span>
+<span class="sd">    return</span>
+<span class="sd">        states of the board, int,</span>
+<span class="sd">            1: palyer1(x) wins;            2: player2(o) wins</span>
+<span class="sd">            0: tie;                       -1: not game over, no winner, no tie.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 3 rows: 0, 1, 2;    3, 4, 5;      6, 7, 8</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]:</span>   <span class="c1"># 3 rows</span>
+            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># 3 cols: 0, 3, 6;     1, 4, 7;         2, 5, 8</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">6</span><span class="p">]:</span>   <span class="c1"># 3 cols</span>
+            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># \ / 0, 4, 8;       2, 4, 6;          i = 0 -&gt; 8, 1 -&gt; 6</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">board</span><span class="p">[</span><span class="mi">8</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># if program runs here, no player wins</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;if the program executes here, what does it mean?&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;how to implement following codes in this function?&quot;</span><span class="p">)</span>
+
+    <span class="c1">#TODO: complete this part.</span>
 </pre></div>
 </div>
 </div>
